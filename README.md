@@ -3,6 +3,12 @@
 
 #PROGRAM CONTROLS
 
+
+
 #KNOWN BUGS
 
-#details of any tools or processes your team used that aren't explicitly required
+
+
+#DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED
+
+GIMP2.0: Used for texture editing.
