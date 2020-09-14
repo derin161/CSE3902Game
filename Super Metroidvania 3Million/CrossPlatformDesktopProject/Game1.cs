@@ -2,9 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace CrossPlatformDesktopProject
+namespace SuperMetroidvania5Million
 {
-    ///Alex Nguyen
+    ///Authors: Alex Nguyen, Nyigel Spann
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
