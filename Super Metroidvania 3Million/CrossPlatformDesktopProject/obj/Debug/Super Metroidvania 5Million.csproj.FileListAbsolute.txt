@@ -17,3 +17,7 @@ C:\Users\derin\Source\Repos\CSE3902Game\Super Metroidvania 3Million\CrossPlatfor
 C:\Users\derin\Source\Repos\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CopyComplete
 C:\Users\derin\Source\Repos\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.exe
 C:\Users\derin\Source\Repos\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.pdb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\Team Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csprojAssemblyReference.cache
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\Team Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CoreCompileInputs.cache
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\Team Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.exe
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\Team Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.pdb

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrossPlatformDesktopProject
 {
-    ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann, Will Floyd
+    ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann, Will Floyd, Danny Attia
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
