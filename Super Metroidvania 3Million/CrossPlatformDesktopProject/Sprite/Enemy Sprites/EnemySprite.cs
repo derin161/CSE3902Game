@@ -17,7 +17,7 @@ namespace CrossPlatformDesktopProject
         public Texture2D[] Texture;
 
         public EnemySprite(Texture2D[] texture)
-        {
+        { 
             length = texture.Length;
             index = 0;
             for (int i = 0; i < length; i++)
