@@ -53,6 +53,12 @@ namespace CrossPlatformDesktopProject
             // TODO: Unload any non ContentManager content here
         }
 
+        public void chooseSprite(int entry)
+        {
+
+        }
+
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
