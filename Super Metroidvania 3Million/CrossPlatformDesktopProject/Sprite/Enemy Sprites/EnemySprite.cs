@@ -68,5 +68,10 @@ namespace CrossPlatformDesktopProject
             spriteBatch.End();
         }
 
+        public void Attack()
+        {
+            //Code for the attacks of different enemies
+        }
+
     }
 }
