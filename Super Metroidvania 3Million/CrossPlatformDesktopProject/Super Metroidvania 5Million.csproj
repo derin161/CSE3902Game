@@ -54,6 +54,8 @@
     <Compile Include="Sprite\Enemy Sprites\EnemySprite.cs" />
     <Compile Include="Sprite\Enemy Sprites\EnemyInterface.cs" />
     <Compile Include="Sprite\ISprite.cs" />
+    <Compile Include="Sprite\Player Sprites\PlayerSprite.cs" />
+    <Compile Include="Sprite\Player Sprites\PlayerInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
