@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrossPlatformDesktopProject
 {
-    ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann
+    ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann, Will Floyd, Danny Attia
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -52,6 +52,12 @@ namespace CrossPlatformDesktopProject
         {
             // TODO: Unload any non ContentManager content here
         }
+
+        public void chooseSprite(int entry)
+        {
+
+        }
+
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
