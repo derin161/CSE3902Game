@@ -52,6 +52,7 @@
     <Compile Include="SpriteFactory\SpriteFactory.cs" />
     <Compile Include="SpriteFactory\IFactory.cs" />
     <Compile Include="Sprite\Enemy Sprites\EnemySprite.cs" />
+    <Compile Include="Sprite\Enemy Sprites\EnemyInterface.cs" />
     <Compile Include="Sprite\ISprite.cs" />
   </ItemGroup>
   <ItemGroup>
