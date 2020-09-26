@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject
 {
-    class PlayerSprite : ISprite
+    class PlayerSprite //: ISprite
     {
 
         private int index;
