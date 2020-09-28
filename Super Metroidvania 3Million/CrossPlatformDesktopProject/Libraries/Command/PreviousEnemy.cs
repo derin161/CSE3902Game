@@ -5,19 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Command
-public class NextEnemy : ICommand
 {
-	private Game1 myGame;
-
-	public SetDeadPlayerSpriteCommand(Game1 game)
+	class PreviousEnemy : ICommand
 	{
-		myGame = game;
-	}
+		private Game1 myGame;
 
-	public void Execute()
-	{
-		myGame.sprite = new DeadPlayerSprite(); // tighter coupling
+		public PreviousEnemy(Game1 game)
+		{
+			myGame = game;
+		}
 
-		myGame.setSprite(new DeadPlayerSprite()); // looser coupling 
+		public void Execute()
+		{
+
+		}
 	}
 }
