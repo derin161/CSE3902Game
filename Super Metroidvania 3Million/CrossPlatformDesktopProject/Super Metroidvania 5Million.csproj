@@ -52,6 +52,7 @@
     <Compile Include="Libraries\Sprite\Items\ItemsInterface.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocket.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\Bomb.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\PowerBeam.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\WaveBeam.cs" />
     <Compile Include="Program.cs" />
