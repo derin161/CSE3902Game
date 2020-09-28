@@ -62,8 +62,8 @@
     <Compile Include="Libraries\Controller\IController.cs" />
     <Compile Include="Libraries\SpriteFactory\SpriteFactory.cs" />
     <Compile Include="Libraries\SpriteFactory\IFactory.cs" />
-    <Compile Include="Libraries\Sprite\Enemy Sprites\EnemySprite.cs" />
-    <Compile Include="Libraries\Sprite\Enemy Sprites\EnemyInterface.cs" />
+    <Compile Include="Libraries\Sprite\Enemy Sprites\Geega.cs" />
+    <Compile Include="Libraries\Sprite\Enemy Sprites\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\ISprite.cs" />
     <Compile Include="Libraries\Sprite\Player Sprites\PlayerSprite.cs" />
     <Compile Include="Libraries\Sprite\Player Sprites\PlayerInterface.cs" />
