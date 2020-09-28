@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\PowerBeam.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Libraries\Controller\IController.cs" />
@@ -56,7 +57,7 @@
     <Compile Include="Libraries\Sprite\ISprite.cs" />
     <Compile Include="Libraries\Sprite\Player Sprites\PlayerSprite.cs" />
     <Compile Include="Libraries\Sprite\Player Sprites\PlayerInterface.cs" />
-    <Compile Include="Libraries\Sprite\Projectiles\Interface1.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\IProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
