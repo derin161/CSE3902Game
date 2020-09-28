@@ -13,16 +13,14 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     class KeyboardController : IController
     {
-    //Written by Tristan Roman and Shyamal Shah Please Work 
-    private Dictionary<Keys, ICommand> controllerMappings;
+        //Written by Tristan Roman and Shyamal Shah Please Work 
+        private Dictionary<Keys, ICommand> controllerMappings;
 
         private KeyboardState oldState;
         KeyboardState newState; // ***
         Keys[] pressedKeys;
         private int choice;
         Game1 gameState;
-
-
 
         public KeyboardController(Game1 game, int current)
         {
@@ -34,13 +32,14 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             controllerMappings.Add(key, command);
         }
-        public int Update(int current) 
+        public int Update(int current)
         {
             pressedKeys = Keyboard.GetState().GetPressedKeys();
             choice = current;
             newState = Keyboard.GetState();
 
-            foreach (Keys key in pressedKeys) {
+            foreach (Keys key in pressedKeys)
+            {
                 controllerMappings[key].Execute();
             }
 
@@ -188,8 +187,6 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         public Boolean CycleEnemyLeft() { return newState.IsKeyDown(Keys.O) || oldState.IsKeyDown(Keys.O); } // Sprint 2 - Cycle Enemies (O/P)
         public Boolean CycleEnemyRight() { return newState.IsKeyDown(Keys.P) || oldState.IsKeyDown(Keys.P); } // Sprint 2 - Cycle Enemies (O/P)
         public Boolean Damaged() { return newState.IsKeyDown(Keys.E) || oldState.IsKeyDown(Keys.E); } // Sprint 2 - Damaged (E)
-
-
-
     }
 }
+
