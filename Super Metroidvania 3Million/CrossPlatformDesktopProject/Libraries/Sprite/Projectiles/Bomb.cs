@@ -44,21 +44,27 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 }
                 Rectangle destRec = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
                 spriteBatch.Draw(texture, destRec, srcRec, Color.White);
+                frame++;
             }
             else
             {
-                int timeSinceBoom = time - boomTimer;
                 int msPerFrame = 50;
-                if (timeSinceBoom / msPerFrame == 1) //Boom Animation 1
+                int boomFrame = (time - boomTimer) / msPerFrame;
+
+                //Boom Animation 1
+                Rectangle srcRec = new Rectangle(18, 8, 16, 16);
+                Rectangle destRec = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
+                
+                if (boomFrame / msPerFrame == 1) //Boom Animation 2
                 {
-
+                    srcRec = new Rectangle(35, 8, 16, 16);
+                } else if (boomFrame / msPerFrame == 2) //Boom Animation 3
+                {
+                    srcRec = new Rectangle(52, 0, 32, 32);
+                    destRec = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
                 }
-                else if (timeSinceBoom / msPerFrame == 2) //Boom Animation 2
-                { 
-
-                } else if (timeSinceBoom / msPerFrame == 3) //Boom Animation 3
-                { 
-
+                if (boomFrame < 3) {
+                    spriteBatch.Draw(texture, destRec, srcRec, Color.White);
                 }
             }
 
@@ -67,7 +73,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Update(GameTime gameTime)
         {
             time += gameTime.ElapsedGameTime.Milliseconds;
-            
         }
     }
 }
