@@ -63,7 +63,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Rectangle destinationRec2 = new Rectangle((int)Location.X, (int)Location.Y, texture.Width / 2, texture.Height / 2); //this value means nothing but can't be null
             wavePosSequence.Enqueue(Location);
 
-            int i = 0;
             if (time > 100) //delay the second orb from appearing for a bit
             {
 
