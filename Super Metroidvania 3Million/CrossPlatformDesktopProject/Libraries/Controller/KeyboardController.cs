@@ -60,10 +60,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             Select select = new Select(gameState);
             Damage damage = new Damage(gameState);
 
-            if (Up())
-            {
-                RegisterCommand(Keys.W, up);
-                RegisterCommand(Keys.Up, up);
+            RegisterCommand(Keys.W, up);
+            RegisterCommand(Keys.Up, up);
                 choice = 7;
             }
             else if (Down())
