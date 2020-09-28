@@ -44,6 +44,7 @@ namespace CrossPlatformDesktopProject.SpriteFactory
 			
 			//enemies
 			geega = content.Load<Texture2D>("enemies/geega");
+			kraid = content.Load<Texture2D>("enemies/Kraid");
 			memu = content.Load<Texture2D>("enemies/Memu");
 			ripper = content.Load<Texture2D>("enemies/Ripper");
 			sideHopper = content.Load<Texture2D>("enemies/SideHopper");
