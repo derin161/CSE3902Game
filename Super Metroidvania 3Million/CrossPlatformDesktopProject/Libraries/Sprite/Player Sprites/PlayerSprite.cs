@@ -13,8 +13,7 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
     class PlayerSprite : IPlayer
     {
         private int state;
-        private int x;
-        private int y;
+        public Vector2 Location { get; set; }
         public bool ice { get; set; }
         public bool wave { get; set; }
         public bool elong { get; set; }
@@ -28,8 +27,8 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 
         public PlayerSprite(Texture2D texture)
         {
-            x = 0;
-            y = 0;
+            Location.X = 0;
+            Location.Y = 0;
             facingRight = true;
             currentFrame = 0;
             Texture = texture;
@@ -96,7 +95,7 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
                     currentFrame = 0;
                 }
                 Rectangle sourceRectangle = new Rectangle(width, 0, width, height);
-                Rectangle destinationRectangle = new Rectangle(0, 0, width, height);
+                Rectangle destinationRectangle = new Rectangle((int) Location.X, (int) Location.Y, width, height);
             }
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
