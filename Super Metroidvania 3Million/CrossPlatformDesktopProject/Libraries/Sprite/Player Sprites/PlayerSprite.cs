@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 {
-    class PlayerSprite : PlayerInterface
+    class PlayerSprite : IPlayer
     {
         private int state;
         private int x;
