@@ -34,6 +34,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         }
         public int Update(int current)
         {
+            makeDict();
             pressedKeys = Keyboard.GetState().GetPressedKeys();
             choice = current;
             newState = Keyboard.GetState();
@@ -48,7 +49,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             return choice;
         }
 
-        public void check()     // If else of possible actions that updates choice
+        public void makeDict()     // If else of possible actions that updates choice
         {
             Jump up = new Jump(gameState);
             Crouch down = new Crouch(gameState);
