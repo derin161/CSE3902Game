@@ -1,6 +1,7 @@
 ﻿using CrossPlatformDesktopProject.Command;
 using CrossPlatformDesktopProject.Sprite.Player_Sprites;
 using CrossPlatformDesktopProject.SpriteFactory;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,15 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands
         }
         public void Execute()
         {
-            if (samus.wave)
+            Vector2 direction = new Vector2(1, 0);
+            if (!samus.facingRight)
             {
-                factory.CreateWaveBeam();
+                direction = new Vector2(-1, 0);
+            }
+            Vector2 location = new Vector2(samus);
+            if (samus.wave) {
+                
+                factory.CreateWaveBeam(location,direction, samus.elong, samus.ice);
             }
             else { 
             

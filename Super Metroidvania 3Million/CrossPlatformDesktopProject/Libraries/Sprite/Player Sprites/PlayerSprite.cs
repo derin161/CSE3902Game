@@ -18,7 +18,7 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         public bool ice { get; set; }
         public bool wave { get; set; }
         public bool elong { get; set; }
-        public bool facingRight;
+        public bool facingRight { get; set; }
         private int timeSinceLastFrame = 0;
         private int millisecondsPerFrame = 75;
         private int currentFrame;
