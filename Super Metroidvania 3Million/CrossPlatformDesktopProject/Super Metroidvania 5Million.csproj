@@ -75,7 +75,7 @@
     <Compile Include="Libraries\Sprite\Enemy Sprites\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\ISprite.cs" />
     <Compile Include="Libraries\Sprite\Player Sprites\PlayerSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player Sprites\PlayerInterface.cs" />
+    <Compile Include="Libraries\Sprite\Player Sprites\IPlayer.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\IProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
