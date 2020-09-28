@@ -48,6 +48,8 @@
     <Compile Include="Libraries\Command\NextEnemy.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Libraries\Sprite\Items\ItemsClass.cs" />
+    <Compile Include="Libraries\Sprite\Items\ItemsInterface.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\PowerBeam.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
