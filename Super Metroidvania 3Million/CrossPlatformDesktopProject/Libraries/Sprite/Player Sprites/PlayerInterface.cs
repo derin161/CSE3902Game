@@ -8,15 +8,20 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 {
     interface PlayerInterface : ISprite
     {
-        public void Attack();
-        public void Item1(); //edit based on Item interface
-        public void Item2(); //~~
-        public void Item3(); //~~
-        public void MoveLeft();
-        public void MoveRight();
         public void Jump();
         public void Crouch();
+        public void MoveLeft();
+        public void MoveRight();
 
+        public void Attack();
+
+        public void PowerBeam();
+        public void WaveBeam();
+        public void IceBeam();
+        public void MissleRocket();
+        public void Bomb();
+
+        public void Damage();
 
     }
 }
