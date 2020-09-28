@@ -51,14 +51,14 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         public void check()     // If else of possible actions that updates choice
         {
             Jump up = new Jump(gameState);
-            Crouch down = new Crouch(gameState));
-            MoveLeft left = new MoveLeft(gameState));
-            MoveRight right = new MoveRight(gameState));
-            Attack attack = new Attack(gameState));
-            Special special = new Special(gameState));
-            Start start = new Start(gameState));
-            Select select = new Select(gameState));
-            Damage damage = new Damage(gameState));
+            Crouch down = new Crouch(gameState);
+            MoveLeft left = new MoveLeft(gameState);
+            MoveRight right = new MoveRight(gameState);
+            Attack attack = new Attack(gameState);
+            Special special = new Special(gameState);
+            Start start = new Start(gameState);
+            Select select = new Select(gameState);
+            Damage damage = new Damage(gameState);
 
             if (Up())
             {
@@ -180,7 +180,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         public Boolean Start() { return newState.IsKeyDown(Keys.R) || oldState.IsKeyDown(Keys.R); } // Sprint 2 - Restart
         public Boolean Select() { return newState.IsKeyDown(Keys.Q) || oldState.IsKeyDown(Keys.Q); } // Sprint 2 - Quit
 
-        public Boolean CycleBlockLeft() { return newState.IsKeyDown(Keys.T) || oldState.IsKeyDown(Keys.T) } // Sprint 2 - Cycle Blocks (T/Y)
+        public Boolean CycleBlockLeft() { return newState.IsKeyDown(Keys.T) || oldState.IsKeyDown(Keys.T); } // Sprint 2 - Cycle Blocks (T/Y)
         public Boolean CycleBlockRight() { return newState.IsKeyDown(Keys.Y) || oldState.IsKeyDown(Keys.Y); } // Sprint 2 - Cycle Blocks (T/Y)
         public Boolean CycleItemLeft() { return newState.IsKeyDown(Keys.U) || oldState.IsKeyDown(Keys.U); } // Sprint 2 - Cycle Items (U/I)
         public Boolean CycleItemRight() { return newState.IsKeyDown(Keys.I) || oldState.IsKeyDown(Keys.I); } // Sprint 2 - Cycle Items (U/I)
