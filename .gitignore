@@ -2,4 +2,4 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Factory/Class1.cs
+/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Factory/Class1.cs *.jfm
