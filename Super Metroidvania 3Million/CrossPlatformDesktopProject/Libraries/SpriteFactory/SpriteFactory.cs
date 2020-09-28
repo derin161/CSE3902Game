@@ -102,10 +102,10 @@ namespace CrossPlatformDesktopProject.SpriteFactory
 			return new Bomb(bombTex, new Vector2(200, 200));
 		}
 
-		public ISprite CreateMissileRocket()
+		public ISprite CreateMissileRocket(Vector2 location)
 		{
 
-			return new Bomb(bombTex, new Vector2(200, 200));
+			return new Bomb(bombTex, location);
 		}
 
 		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)

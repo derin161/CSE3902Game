@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 {
-    interface PlayerInterface : ISprite
+    interface IPlayer : ISprite
     {
         public void Jump();
         public void Crouch();
