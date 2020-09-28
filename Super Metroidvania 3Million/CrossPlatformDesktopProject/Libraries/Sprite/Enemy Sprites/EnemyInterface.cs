@@ -11,6 +11,8 @@ namespace CrossPlatformDesktopProject.Sprite.Enemy_Sprites
 {
     interface EnemyInterface
     {
+        void Draw(SpriteBatch spriteBatch);
+        void Update(GameTime gameTime);
         public void Attack();
     }
 }
