@@ -11,6 +11,6 @@ namespace CrossPlatformDesktopProject
 {
     public interface IController
     {
-        public void Update();
+        public void Update(int current);
     }
 }
