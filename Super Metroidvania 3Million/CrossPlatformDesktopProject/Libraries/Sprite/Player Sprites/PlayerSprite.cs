@@ -15,6 +15,9 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         private int state;
         private int x;
         private int y;
+        public bool ice { get; set; }
+        public bool wave { get; set; }
+        public bool elong { get; set; }
 
 
         public Texture2D Texture;
@@ -81,9 +84,7 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
             Rectangle sourceRectangle = new Rectangle(width, 0, width, height);
             Rectangle destinationRectangle = new Rectangle(0, 0, width, height);
 
-            spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
 
         public void Attack() 

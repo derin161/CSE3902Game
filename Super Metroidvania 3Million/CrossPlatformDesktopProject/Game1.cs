@@ -16,8 +16,9 @@ namespace CrossPlatformDesktopProject
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private SpriteFactory factory;
         private int choice;
 
         public Game1()
@@ -49,6 +50,8 @@ namespace CrossPlatformDesktopProject
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            factory = new SpriteFactory();
+            factory.instance.LoadAllTextures(Content);
             keyboard = new KeyboardController(this, choice);
             mouse = new MouseController(this, choice);
 
@@ -94,6 +97,9 @@ namespace CrossPlatformDesktopProject
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            spriteBatch.Begin();
+
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
