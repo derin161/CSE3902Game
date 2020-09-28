@@ -13,6 +13,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     class KeyboardController : IController
     {
+        //Written by Tristan Roman and Shyamal Shah
         private Dictionary<Keys, ICommand> controllerMappings;
 
         private KeyboardState oldState;
