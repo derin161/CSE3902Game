@@ -5,17 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Command
-public class NextEnemy : ICommand
 {
-	private Game1 myGame;
-
-	public NextEnemy(Game1 game)
+	class NextEnemy : ICommand
 	{
-		myGame = game;
-	}
+		private Game1 myGame;
 
-	public void Execute()
-	{
-		
+		public NextEnemy(Game1 game)
+		{
+			myGame = game;
+		}
+
+		public void Execute()
+		{
+
+		}
 	}
 }
