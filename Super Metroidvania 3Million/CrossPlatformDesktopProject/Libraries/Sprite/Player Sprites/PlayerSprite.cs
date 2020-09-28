@@ -18,7 +18,9 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         public bool ice { get; set; }
         public bool wave { get; set; }
         public bool elong { get; set; }
-
+        private int timeSinceLastFrame = 0;
+        private int millisecondsPerFrame = 75;
+        private int currentFrame;
 
         public Texture2D Texture;
 
@@ -36,8 +38,9 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 
         public void Update(GameTime gameTime)
         {
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
             //User actions based on switch case of states that change when a new action is selected
-            switch(state){
+            switch (state){
                 case 1: // Attack
                     Attack();
                     break;
@@ -80,10 +83,13 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         {
             int width = Texture.Width;
             int height = Texture.Height;
-
-            Rectangle sourceRectangle = new Rectangle(width, 0, width, height);
-            Rectangle destinationRectangle = new Rectangle(0, 0, width, height);
-
+            if (timeSinceLastFrame > millisecondsPerFrame)
+            {
+                timeSinceLastFrame -= millisecondsPerFrame;
+                currentFrame++;
+                Rectangle sourceRectangle = new Rectangle(width, 0, width, height);
+                Rectangle destinationRectangle = new Rectangle(0, 0, width, height);
+            }
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
 
