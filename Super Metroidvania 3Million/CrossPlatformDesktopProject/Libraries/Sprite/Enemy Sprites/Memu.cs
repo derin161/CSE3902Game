@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Sprite.Enemy_Sprites
 {
-    class Geega : IEnemy
+    class Memu : IEnemy
     {
 
         public Texture2D Texture { get; set; }
@@ -18,10 +18,10 @@ namespace CrossPlatformDesktopProject.Sprite.Enemy_Sprites
         private int currentFrame;
         private int totalFrames;
 
-        public Geega(Texture2D texture)
+        public Memu(Texture2D texture)
         {
             Texture = texture;
-            Rows = 2;
+            Rows = 1;
             Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
