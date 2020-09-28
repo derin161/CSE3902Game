@@ -59,6 +59,8 @@
     <Compile Include="Libraries\Sprite\Enemy Sprites\Memu.cs" />
     <Compile Include="Libraries\Sprite\Items\ItemsClass.cs" />
     <Compile Include="Libraries\Sprite\Items\ItemsInterface.cs" />
+    <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
+    <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
