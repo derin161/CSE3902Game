@@ -96,10 +96,10 @@ namespace CrossPlatformDesktopProject.SpriteFactory
 			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
 		}
 
-		public ISprite CreateBomb()
+		public ISprite CreateBomb(Vector2 location)
 		{
 
-			return new Bomb(bombTex, new Vector2(200, 200));
+			return new Bomb(bombTex, location);
 		}
 
 		public ISprite CreateMissileRocket(Vector2 location)

@@ -1,4 +1,6 @@
 ﻿using CrossPlatformDesktopProject.Command;
+using CrossPlatformDesktopProject.Sprite.Player_Sprites;
+using CrossPlatformDesktopProject.SpriteFactory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +12,21 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands
     //Author: Nyigel Spann
     class ShootBeam : ICommand
     {
-        public ShootBeam(IPlayer player) { 
-            
+        private PlayerSprite samus;
+        private IFactory factory;
+        public ShootBeam(PlayerSprite player, IFactory factory) {
+            samus = player;
+            this.factory = factory;
         }
         public void Execute()
         {
-            throw new NotImplementedException();
+            if (samus.wave)
+            {
+                factory.CreateWaveBeam();
+            }
+            else { 
+            
+            }
         }
     }
 }
