@@ -18,9 +18,11 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         public bool ice { get; set; }
         public bool wave { get; set; }
         public bool elong { get; set; }
+        public bool facingRight;
         private int timeSinceLastFrame = 0;
         private int millisecondsPerFrame = 75;
         private int currentFrame;
+        private int totalFrames;
 
         public Texture2D Texture;
 
@@ -28,6 +30,8 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         {
             x = 0;
             y = 0;
+            facingRight = true;
+            currentFrame = 0;
             Texture = texture;
         }
 
@@ -87,6 +91,10 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
             {
                 timeSinceLastFrame -= millisecondsPerFrame;
                 currentFrame++;
+                if (currentFrame == totalFrames)
+                {
+                    currentFrame = 0;
+                }
                 Rectangle sourceRectangle = new Rectangle(width, 0, width, height);
                 Rectangle destinationRectangle = new Rectangle(0, 0, width, height);
             }
