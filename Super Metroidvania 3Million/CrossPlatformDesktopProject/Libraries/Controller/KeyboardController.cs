@@ -20,27 +20,21 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         KeyboardState newState; // ***
         Keys[] pressedKeys;
         private int choice;
+        Game1 gameState;
 
-        Jump up = new Jump();
-        Crouch down = new Crouch();
-        MoveLeft left = new MoveLeft();
-        MoveRight right = new MoveRight();
-        Attack attack = new Attack();
-        Special special = new Special();
-        Start start = new Start();
-        Select select = new Select();
-        Damage damage = new Damage();
 
-        public KeyboardController(int current)
+
+        public KeyboardController(Game1 game, int current)
         {
             oldState = Keyboard.GetState();
             choice = current;
+            gameState = game;
         }
         public void RegisterCommand(Keys key, ICommand command)
         {
             controllerMappings.Add(key, command);
         }
-        public void Update(int current) 
+        public int Update(int current) 
         {
             pressedKeys = Keyboard.GetState().GetPressedKeys();
             choice = current;
@@ -51,10 +45,22 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             }
 
             oldState = newState;
+
+            return choice;
         }
 
         public void check()     // If else of possible actions that updates choice
         {
+            Jump up = new Jump(gameState);
+            Crouch down = new Crouch(gameState));
+            MoveLeft left = new MoveLeft(gameState));
+            MoveRight right = new MoveRight(gameState));
+            Attack attack = new Attack(gameState));
+            Special special = new Special(gameState));
+            Start start = new Start(gameState));
+            Select select = new Select(gameState));
+            Damage damage = new Damage(gameState));
+
             if (Up())
             {
                 RegisterCommand(Keys.W, up);
