@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 {
+    //Author: Nyigel Spann
     class MissileRocketExplosion : ISprite
     {
         enum AnimationPos { 
@@ -102,7 +103,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                     sb.Draw(texture, dest, src, Color.White, 180, center, SpriteEffects.None, 0);
                     break;
                 case AnimationPos.BottomLeft:
-                    sb.Draw(texture, dest, src, Color.White, 90, center, SpriteEffects.None, 0);
+                    sb.Draw(texture, dest, src, Color.White, 0, center, SpriteEffects.FlipVertically, 0);
                     break;
                 default:
                     //Nothing here.
