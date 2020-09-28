@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Sprite.Enemy_Sprites
 {
-    interface EnemyInterface
+    interface IEnemy
     {
-        void Draw(SpriteBatch spriteBatch);
         void Update(GameTime gameTime);
-        public void Attack();
+        void Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

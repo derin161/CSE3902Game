@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/geega.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Kraid.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Memu.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Ripper.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/SideHopper.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Skree.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Zeela.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Enemies &amp; Bosses.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Samus Aran Power Suit.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/BombProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/IceBeamProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/MissleRocketProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/PowerBeamProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/WaveBeamProj.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

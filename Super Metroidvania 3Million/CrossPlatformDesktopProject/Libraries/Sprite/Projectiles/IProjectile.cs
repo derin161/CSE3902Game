@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Sprite.Projectiles
 {
+    //Author: Nyigel Spann
     interface IProjectile : ISprite
     {
     }

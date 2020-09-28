@@ -11,6 +11,16 @@ namespace CrossPlatformDesktopProject.SpriteFactory
     class SpriteFactory
     {
 		private Texture2D SpriteSheet;
+
+		//enemies
+		private Texture2D geega;
+		private Texture2D kraid;
+		private Texture2D memu;
+		private Texture2D ripper;
+		private Texture2D sideHopper;
+		private Texture2D skree;
+		private Texture2D zeela;
+
 		// More private Texture2Ds follow
 		// ...
 
@@ -31,6 +41,18 @@ namespace CrossPlatformDesktopProject.SpriteFactory
 		public void LoadAllTextures(ContentManager content)
 		{
 			SpriteSheet = content.Load<Texture2D>("enemy");
+			
+			//enemies
+			geega = content.Load<Texture2D>("enemies/geega");
+			kraid = content.Load<Texture2D>("enemies/Kraid");
+			memu = content.Load<Texture2D>("enemies/Memu");
+			ripper = content.Load<Texture2D>("enemies/Ripper");
+			sideHopper = content.Load<Texture2D>("enemies/SideHopper");
+			skree = content.Load<Texture2D>("enemies/Skree");
+			zeela = content.Load<Texture2D>("enemies/Zeela");
+
+
+
 			// More Content.Load calls follow
 			//...
 		}

@@ -9,69 +9,80 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 {
+    //Author: Nyigel Spann
     public class PowerBeam : IProjectile
     {
-        public Texture2D Texture { get; set; }
-        public Vector2 RelativePosition { get; set; }
+        public Vector2 Location { get; set; }
         public Vector2 Direction { get; set; }
-        public int Rows { get; set; }
-        public int Columns { get; set; }
+        public int Damage { get; set; }
+        public bool IsDead { get; set; }
+        public bool IsIceBeam { get; set; }
 
-        private int totalFrames;
-        private int currentFrame = 0;
-        private int timeSinceLastFrame = 0;
-        private int millisecondsPerFrame = 50;
+        private Texture2D texture;
+        private Vector2 initialLocation;
+        private bool isLongBeam;
 
-        public AnimatedMovingSprite(Texture2D texture);
+        public PowerBeam(Texture2D texture, Vector2 initialLocation, Vector2 direction, bool isLongBeam, bool isIceBeam)
         {
-            Texture = texture;
-            RelativePosition = new Vector2(0, 0);
+            // Need to set actual damage values at some point
+            if (isLongBeam)
+            {
+                Damage = 1;
+            }
+            else
+            {
+                Damage = 0;
+            }
+
+            IsIceBeam = isIceBeam;
+            IsDead = false;
+            this.isLongBeam = isLongBeam;
+            this.texture = texture;
+            Location = initialLocation;
+            this.initialLocation = initialLocation;
             Direction = direction;
-            Rows = rows;
-            Columns = columns;
-            totalFrames = Rows * Columns;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 initialLocation)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            //Determine the single frame width and height and the row and position of the current frame.
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            int row = (int)((float)currentFrame / (float)Columns);
-            int column = currentFrame % Columns;
+            
+            Rectangle destinationRec = new Rectangle((int)Location.X, (int)Location.Y, texture.Width / 2, texture.Height / 2);
+            Rectangle sourceRec = new Rectangle(0, 0, texture.Width / 2, texture.Height / 2); //Texture before collision
 
-            //Create source and destination and draw the sprite
-            Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)(initialLocation.X + RelativePosition.X), (int)(initialLocation.Y + RelativePosition.Y), width, height);
+            //Change texture if projectile has collided or run out
+            if (IsDead) {
+                sourceRec = new Rectangle(texture.Width / 2, texture.Height / 2, texture.Width / 2, texture.Height / 2); //Texture after collision
+            }
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(texture, destinationRec, sourceRec, Color.White);
         }
 
         public void Update(GameTime gameTime)
         {
-            //Only update the frames after each has been displayed for millisecondsPerFrame milliseconds.
-            //Idea from https://stackoverflow.com/questions/15594691/xna-slow-down-animation
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
-            {
-                timeSinceLastFrame -= millisecondsPerFrame;
-
-                //Advance the current frame and reset back to the first if at the final frame.
-                currentFrame++;
-                if (currentFrame == totalFrames)
-                    currentFrame = 0;
+            //Using temporary var til collisions are added
+            bool collision = false;
+            if (collision) {
+                IsDead = true;
             }
 
-            //If the Sprite has moved too far from its original position reverse the direction.
-            if (RelativePosition.Y > 100 || RelativePosition.Y < -100)
-            {
-                Direction = Vector2.Multiply(Direction, new Vector2(1, -1));
+
+            //Update position
+            Location = Vector2.Add(Location, Direction);
+
+            //If the Projectile is not a Long Beam, it dies after moving a set distance.
+            if (!isLongBeam) {
+
+                //Determine relative position and the bounds
+                int relativeX = (int)(Location.X - initialLocation.X);
+                int relativeY = (int)(Location.Y - initialLocation.Y);
+                int boundX = 100;
+                int boundY = 100;
+
+                if (relativeX > boundX || relativeX < -boundX || relativeY > boundY || relativeY < -boundY) {
+                    IsDead = true;
+                }
             }
-            if (RelativePosition.X > 200 || RelativePosition.X < -200)
-            {
-                Direction = Vector2.Multiply(Direction, new Vector2(-1, 1));
-            }
-            RelativePosition = Vector2.Add(RelativePosition, Direction);
+            
         }
     }
 }
