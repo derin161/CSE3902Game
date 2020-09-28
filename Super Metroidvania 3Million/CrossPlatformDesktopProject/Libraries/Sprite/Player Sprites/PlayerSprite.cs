@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
@@ -37,25 +38,31 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
                 case 1: // Attack
                     Attack();
                     break;
-                case 2: // Item1
-                    Item1();
+                case 2: // Item1 - PowerBeam
+                    PowerBeam();
                     break;
-                case 3: // Item2
-                    Item2();
+                case 3: // Item2 - WaveBeam
+                    WaveBeam();
                     break;
-                case 4: // Item3
-                    Item3();
+                case 4: // Item3 - IceBeam
+                    IceBeam();
                     break;
-                case 5: // Move Right
+                case 5: // Item4 - MissleRocket
+                    MissleRocket();
+                    break;
+                case 6: // Item5 - Bomb
+                    Bomb();
+                    break;
+                case 7: // Move Right
                     MoveRight();
                     break;
-                case 6: // Move Left
+                case 8: // Move Left
                     MoveLeft();
                     break;
-                case 7: // Jump
+                case 9: // Jump
                     Jump();
                     break;
-                case 8: // Crouch
+                case 10: // Crouch
                     Crouch();
                     break;
                 default: // Idle
@@ -85,25 +92,35 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
             state = 0;  // Resets back to Idle when the function completes
         }
 
-        public void Item1()
+        public void PowerBeam()
         {
 
             state = 0;
         }
 
-        public void Item2()
+        public void WaveBeam()
         {
 
             state = 0;
         }
-        public void Item3()
+        public void IceBeam()
+        {
+
+            state = 0;
+        }
+        public void MissleRocket()
+        {
+
+            state = 0;
+        }
+        public void Bomb()
         {
 
             state = 0;
         }
 
         public void MoveLeft()
-        {
+           {
             x -= 2;
             if (x < -16) x = 816; // Run to opposite side of the screen ***change to global variables***
 
@@ -129,6 +146,12 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 
             state = 0;
         }
-    }
+        public void Damage()
+        {
+
+            state = 0;
+        }
+
+}
     }
 }
