@@ -18,6 +18,7 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         public bool wave { get; set; }
         public bool elong { get; set; }
         public bool facingRight { get; set; }
+        public int TotalRockets { get; set; }
         private int timeSinceLastFrame = 0;
         private int millisecondsPerFrame = 75;
         private int currentFrame;
