@@ -31,9 +31,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            
-            
-            
             int frame = 0;
 
             //Change texture if projectile has collided or run out

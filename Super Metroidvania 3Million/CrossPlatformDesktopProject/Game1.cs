@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CrossPlatformDesktopProject.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -16,9 +17,14 @@ namespace CrossPlatformDesktopProject
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+
+        private List<ISprite> spriteList;
+
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private IFactory factory;
         private int choice;
+        
 
         public Game1()
         {
@@ -49,6 +55,8 @@ namespace CrossPlatformDesktopProject
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            factory = new SFactory();
+            factory.instance.LoadAllTextures(Content);
             keyboard = new KeyboardController(this, choice);
             mouse = new MouseController(this, choice);
 
@@ -82,6 +90,10 @@ namespace CrossPlatformDesktopProject
 
             choice = keyboard.Update(choice);
             choice = mouse.Update(choice);
+            foreach (ISprite entry in spriteList)
+            {
+                entry.Update(gameTime);
+            }
 
             base.Update(gameTime);
         }
@@ -94,7 +106,18 @@ namespace CrossPlatformDesktopProject
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            spriteBatch.Begin();
+
+            foreach (ISprite entry in spriteList) {
+                entry.Draw(spriteBatch);
+            }
+
+            spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public void AddSprite(ISprite s) {
+            spriteList.Add(s);
         }
     }
 }

@@ -10,19 +10,28 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 {
-    class PlayerSprite : PlayerInterface
+    class PlayerSprite : IPlayer
     {
         private int state;
-        private int x;
-        private int y;
-
+        public Vector2 Location { get; set; }
+        public bool ice { get; set; }
+        public bool wave { get; set; }
+        public bool elong { get; set; }
+        public bool facingRight { get; set; }
+        public int TotalRockets { get; set; }
+        private int timeSinceLastFrame = 0;
+        private int millisecondsPerFrame = 75;
+        private int currentFrame;
+        private int totalFrames;
 
         public Texture2D Texture;
 
         public PlayerSprite(Texture2D texture)
         {
-            x = 0;
-            y = 0;
+            Location.X = 0;
+            Location.Y = 0;
+            facingRight = true;
+            currentFrame = 0;
             Texture = texture;
         }
 
@@ -33,8 +42,9 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
 
         public void Update(GameTime gameTime)
         {
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
             //User actions based on switch case of states that change when a new action is selected
-            switch(state){
+            switch (state){
                 case 1: // Attack
                     Attack();
                     break;
@@ -77,13 +87,18 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
         {
             int width = Texture.Width;
             int height = Texture.Height;
-
-            Rectangle sourceRectangle = new Rectangle(width, 0, width, height);
-            Rectangle destinationRectangle = new Rectangle(0, 0, width, height);
-
-            spriteBatch.Begin();
+            if (timeSinceLastFrame > millisecondsPerFrame)
+            {
+                timeSinceLastFrame -= millisecondsPerFrame;
+                currentFrame++;
+                if (currentFrame == totalFrames)
+                {
+                    currentFrame = 0;
+                }
+                Rectangle sourceRectangle = new Rectangle(width, 0, width, height);
+                Rectangle destinationRectangle = new Rectangle((int) Location.X, (int) Location.Y, width, height);
+            }
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
 
         public void Attack() 
