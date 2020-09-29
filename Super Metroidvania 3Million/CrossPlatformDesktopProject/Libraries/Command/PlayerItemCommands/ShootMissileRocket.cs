@@ -33,7 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands
             Vector2 location = new Vector2(samus.Location.X, samus.Location.Y);
 
             //if(samus.TotalRockets > 0)
-            game.AddSprite(factory.CreateMissileRocket(location);
+            game.AddSprite(factory.CreateMissileRocket(location));
 
         }
     }
