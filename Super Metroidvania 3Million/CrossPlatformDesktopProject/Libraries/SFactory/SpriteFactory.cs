@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.SpriteFactory
+namespace CrossPlatformDesktopProject.SFactory
 {
-	class SpriteFactory
+	class SpriteFactory : IFactory
 	{
 		private Texture2D SpriteSheet;
 

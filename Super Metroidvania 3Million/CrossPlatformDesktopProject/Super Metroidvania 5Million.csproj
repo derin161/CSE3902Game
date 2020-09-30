@@ -44,6 +44,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Command\PlayerItemCommands\DropBomb.cs" />
+    <Compile Include="Libraries\Command\PlayerItemCommands\ShootMissileRocket.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootBeam.cs" />
     <Compile Include="Libraries\Command\PreviousEnemy.cs" />
     <Compile Include="Libraries\Command\NextEnemy.cs" />
@@ -59,6 +61,8 @@
     <Compile Include="Libraries\Sprite\Enemy Sprites\Memu.cs" />
     <Compile Include="Libraries\Sprite\Items\ItemsClass.cs" />
     <Compile Include="Libraries\Sprite\Items\ItemsInterface.cs" />
+    <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
+    <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
@@ -69,8 +73,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Libraries\Controller\IController.cs" />
-    <Compile Include="Libraries\SpriteFactory\SpriteFactory.cs" />
-    <Compile Include="Libraries\SpriteFactory\IFactory.cs" />
+    <Compile Include="Libraries\SFactory\SpriteFactory.cs" />
+    <Compile Include="Libraries\SFactory\IFactory.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Geega.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\ISprite.cs" />

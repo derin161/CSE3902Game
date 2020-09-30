@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.SpriteFactory
+namespace CrossPlatformDesktopProject.SFactory
 {
     interface IFactory
     {
