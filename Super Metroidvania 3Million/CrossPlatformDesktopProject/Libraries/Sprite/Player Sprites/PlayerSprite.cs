@@ -166,6 +166,5 @@ namespace CrossPlatformDesktopProject.Sprite.Player_Sprites
             state = 0;
         }
 
-}
     }
 }
