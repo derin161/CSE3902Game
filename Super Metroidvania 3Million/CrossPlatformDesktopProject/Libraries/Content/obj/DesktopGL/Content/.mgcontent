@@ -4,23 +4,23 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Enemies &amp; Bosses.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Samus Aran Power Suit.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/Jump.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/LeftMorph.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/RightMorph.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusLeftIdle.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusLeftWalk.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusRightIdle.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusRightWalk.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/BombProj.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/IceBeamProj.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/KraidHorn.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/KraidMissile.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/Map.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/MissleRocketProj.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/PowerBeamProj.png</File>
-    <File>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/WaveBeamProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Enemies &amp; Bosses.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Samus Aran Power Suit.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/Jump.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/LeftMorph.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/RightMorph.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusLeftIdle.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusLeftWalk.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusRightIdle.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusRightWalk.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/BombProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/IceBeamProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/KraidHorn.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/KraidMissile.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/Map.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/MissleRocketProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/PowerBeamProj.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/WaveBeamProj.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
