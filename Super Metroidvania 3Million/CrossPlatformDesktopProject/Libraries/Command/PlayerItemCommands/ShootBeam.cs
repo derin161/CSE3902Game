@@ -16,7 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private PlayerSprite samus;
         private IFactory factory;
         private Game1 game;
-        private float speed = 1;
+        private float speed = 7;
 
         public ShootBeam(Game1 game, PlayerSprite player) {
             samus = player;

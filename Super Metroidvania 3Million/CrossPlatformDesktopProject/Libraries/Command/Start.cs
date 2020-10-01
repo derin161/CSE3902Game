@@ -13,14 +13,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
     //Author: Nyigel Spann
     class Start : ICommand
     {
-        private Game1 game;
+        private Game1 currentGame;
         public Start(Game1 game)
         {
-            this.game = game;
+            currentGame = game;
         }
         public void Execute()
         {
-            game.Exit();
+            currentGame.Exit();
         }
     }
 }

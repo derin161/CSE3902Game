@@ -23,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            samus.UpdateState(PlayerSprite.State.MoveLeft, 0, false);
+            samus.UpdateState(PlayerSprite.State.MoveLeft, -1, false);
         }
     }
 }

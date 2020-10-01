@@ -8,7 +8,22 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class ItemsClass
+    public class ItemsClass : ItemsInterface
     {
+        public ItemsClass()
+        {
+        
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+
+        }
+
     }
 }

@@ -1,12 +1,12 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
-using Microsoft.Xna;
+﻿using Microsoft.Xna;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CrossPlatformDesktopProject.Libraries.Command;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
@@ -23,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            samus.UpdateState(PlayerSprite.State.MoveRight, 0, true);
+            samus.UpdateState(PlayerSprite.State.MoveRight, -1, true);
         }
     }
 }

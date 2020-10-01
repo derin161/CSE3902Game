@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    interface ItemsInterface
+    interface ItemsInterface : ISprite
     {
+
     }
 }
