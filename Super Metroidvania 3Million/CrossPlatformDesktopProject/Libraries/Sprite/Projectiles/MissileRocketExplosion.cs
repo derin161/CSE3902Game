@@ -80,7 +80,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         }
 
         public bool IsDead() {
-            return IsDead;
+            return isDead;
         }
 
         private void rotateAndDraw(SpriteBatch sb, AnimationPos pos, Rectangle dest, Rectangle src) {

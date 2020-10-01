@@ -381,6 +381,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             int x = 1 + 1;
         }
 
+        public bool IsDead() {
+            return false;
+        }
 
     }
 }
