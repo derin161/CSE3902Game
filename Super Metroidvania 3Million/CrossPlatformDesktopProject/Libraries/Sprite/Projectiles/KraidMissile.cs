@@ -40,6 +40,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Update(GameTime gameTime)
         {
 
+            bool collision = false; //temp var til collisions are added
+            if(collision){
+                isDead = true;
+            }
+
             //Update position
             Location = Vector2.Add(Location, Direction);
             

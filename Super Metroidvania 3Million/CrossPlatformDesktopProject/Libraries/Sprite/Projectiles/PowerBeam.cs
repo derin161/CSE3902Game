@@ -35,7 +35,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             }
 
             IsIceBeam = isIceBeam;
-            isDead = false;
             this.isLongBeam = isLongBeam;
             this.texture = texture;
             Location = initialLocation;
