@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,14 +18,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
+        private float x, y;
 
-        public SideHopper(Texture2D texture)
+        public SideHopper(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
             Columns = 6;
             currentFrame = 0;
             totalFrames = Rows * Columns;
+            x = location.X;
+            y = location.Y;
         }
 
         public void Update(GameTime gameTime)
@@ -35,7 +39,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
 
         
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
@@ -43,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width, height);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
