@@ -109,7 +109,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 		public ISprite CreateEnemySprite(Vector2 location)
 		{
-			return new Memu(memu, location);
+			return new Zeela(zeela, location);
 		}
 
 		/*public ISprite CreateBlockSprite(ILevel level)
