@@ -23,10 +23,10 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            if (samus.walkRightFrames == 7){
+            if (samus.moveRightFrames == 7){
                 samus.UpdateState(PlayerSprite.State.MoveRight, -1, true);
             }else {
-                samus.UpdateState(PlayerSprite.State.MoveRight, samus.walkRightFrames, true);
+                samus.UpdateState(PlayerSprite.State.MoveRight, samus.moveRightFrames, true);
             }
         }
     }
