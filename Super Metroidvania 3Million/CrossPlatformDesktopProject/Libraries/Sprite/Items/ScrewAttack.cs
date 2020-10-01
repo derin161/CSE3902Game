@@ -8,16 +8,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    public class ItemsClass : ItemsInterface
+    class ScrewAttack : IItems
     {
-        public ItemsClass()
-        {
-        
-        }
+        private bool isDead = false;
 
         public void Update(GameTime gameTime)
         {
-            
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -25,5 +22,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         }
 
+        public bool IsDead()
+        {
+            return isDead;
+        }
     }
 }

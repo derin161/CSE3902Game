@@ -16,9 +16,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public Vector2 Direction { get; set; }
         public int Damage { get; set; }
-        public bool IsDead { get; set; }
         public bool IsIceBeam { get; set; }
 
+        private bool isDead = false;
         private Texture2D texture;
         private Vector2 initialLocation;
         private bool isLongBeam;
@@ -49,7 +49,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             }
 
             IsIceBeam = isIceBeam;
-            IsDead = false;
+            isDead = false;
             this.isLongBeam = isLongBeam;
             this.texture = texture;
             Location = initialLocation;
@@ -73,7 +73,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Rectangle sourceRec = new Rectangle(0, 0, texture.Width / 2, texture.Height / 2); //Texture before collision
 
             //Change texture if projectile has collided or run out
-            if (IsDead)
+            if (isDead)
             {
                 sourceRec = new Rectangle(texture.Width / 2, texture.Height / 2, texture.Width / 2, texture.Height / 2); //Texture after collision
             }
@@ -92,7 +92,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             bool collision = false;
             if (collision)
             {
-                IsDead = true;
+                isDead = true;
             }
 
 
@@ -126,10 +126,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 if (isHorizontal && (relativeX > boundX || relativeX < -boundX) || !isHorizontal && (relativeY > boundY || relativeY < -boundY))
                 {
-                    IsDead = true;
+                    isDead = true;
                 }
             }
 
+        }
+
+        public bool IsDead() {
+            return isDead;
         }
     }
 }

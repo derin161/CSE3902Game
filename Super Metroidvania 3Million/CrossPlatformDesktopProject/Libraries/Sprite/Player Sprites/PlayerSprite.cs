@@ -61,7 +61,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             rightBound = 800 - pixelSize;
             Location = new Vector2(0, lowerBound);
             ice = false;
-            wave = false;
+            wave = true;
             elong = true;
             rTime = 80;
             jTime = (rTime*7)/8;
@@ -381,6 +381,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             int x = 1 + 1;
         }
 
+        public bool IsDead() {
+            return false;
+        }
 
     }
 }

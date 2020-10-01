@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     class MouseController : IController
-    {
+    { 
         public void Update() { }
     }
 }

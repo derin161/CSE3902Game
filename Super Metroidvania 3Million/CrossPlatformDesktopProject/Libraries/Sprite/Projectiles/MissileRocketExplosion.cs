@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
+    //This class isn't needed until collisions are added.
     class MissileRocketExplosion : ISprite
     {
         enum AnimationPos { 
@@ -21,6 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private Texture2D texture;
         private int time = 0;
         private int endTime = 500;
+        private bool isDead = false;
         public MissileRocketExplosion(Texture2D texture, Vector2 location) {
             this.texture = texture;
             explosionOrigin = location;
@@ -76,6 +78,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                     explosionAnimationPairs[entry.Key] = Vector2.Add(entry.Value, up);
                 }
             }
+        }
+
+        public bool IsDead() {
+            return isDead;
         }
 
         private void rotateAndDraw(SpriteBatch sb, AnimationPos pos, Rectangle dest, Rectangle src) {

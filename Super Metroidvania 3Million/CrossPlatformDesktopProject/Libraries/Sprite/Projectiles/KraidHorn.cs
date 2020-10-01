@@ -23,6 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private int timeSinceLastFrame = 0;
         private int millisecondsPerFrame = 50;
         private Vector2 initialLocation;
+        private bool isDead = false;
 
 
         public KraidHorn(Texture2D texture, Vector2 initialLocation, bool isMovingRight)
@@ -55,6 +56,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Update(GameTime gameTime)
         {
+            bool collision = false; //temp var til collisions are added
+            if(collision){
+                isDead = true;
+            }
+
             Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
             float x = (float) relativePos.X + 1;
             float y = (float)(0.2 * x * x - 10 * x); // 1/5x^2 - 10x. Gives projectile parabolic path to the right.
@@ -82,6 +88,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                     currentFrame = 0;
             }
 
+        }
+
+        public bool IsDead() {
+            return isDead;
         }
     }
 }

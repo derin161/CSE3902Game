@@ -131,3 +131,31 @@ C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\Cro
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CopyComplete
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.exe
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.pdb
+C:\Users\derin\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csprojAssemblyReference.cache
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\MissleRocketProj.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusRightAimUp.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusRightShooting.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\geega.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\Kraid.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\Memu.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\Ripper.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\SideHopper.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\Skree.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\Zeela.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\BombProj.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\IceBeamProj.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\KraidHorn.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\KraidMissile.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\Map.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\MissileRocketProj.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\PowerBeamProj.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\ProjSprites\WaveBeamProj.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\Jump.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\LeftMorph.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\RightMorph.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusLeftIdle.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusLeftWalk.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusRightIdle.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusRightWalk.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\NES - Metroid - Enemies & Bosses.xnb
+C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\NES - Metroid - Samus Aran Power Suit.xnb
