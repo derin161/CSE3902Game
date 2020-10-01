@@ -131,3 +131,4 @@ C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\Cro
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CopyComplete
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.exe
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.pdb
+C:\Users\derin\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csprojAssemblyReference.cache

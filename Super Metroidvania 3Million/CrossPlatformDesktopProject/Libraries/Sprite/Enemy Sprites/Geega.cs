@@ -17,14 +17,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
+        private float x, y;
 
-        public Geega(Texture2D texture)
+        public Geega(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
             Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
+            x = location.X;
+            y = location.Y;
         }
 
         public void Update(GameTime gameTime)
@@ -35,7 +38,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
 
         
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
