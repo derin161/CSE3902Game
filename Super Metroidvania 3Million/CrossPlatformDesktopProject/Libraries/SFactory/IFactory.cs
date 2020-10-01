@@ -14,9 +14,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         //Constructor
         public void LoadAllTextures(ContentManager content);
 
-		//Enemies
-		public ISprite CreateEnemySprite(Vector2 location);
-
         //Projectiles
 		public ISprite CreateBomb(Vector2 location);
 		public ISprite CreateMissileRocket(Vector2 location);

@@ -107,12 +107,12 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return (ISprite) new PlayerSprite(playerTextures);
 		}
 
-		public ISprite CreateEnemySprite(Vector2 location)
+		/*public ISprite CreateEnemySprite()
 		{
-			return new Geega(geega, location);
+			//return new EnemySprite(enemySpritesheet, 64, 64);
 		}
 
-		/*public ISprite CreateBlockSprite(ILevel level)
+		public ISprite CreateBlockSprite(ILevel level)
 		{
 			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
 		}
