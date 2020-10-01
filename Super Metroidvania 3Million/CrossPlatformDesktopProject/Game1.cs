@@ -60,6 +60,7 @@ namespace CrossPlatformDesktopProject
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
             AddSprite(Factory.CreatePlayerSprite());
+            AddSprite(Factory.CreateEnemySprite(new Vector2(100)));
             keyboard = new KeyboardController(this);
 
             // TODO: use this.Content to load your game content here
