@@ -18,6 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int totalFrames;
         private float x, y;
+        private int counter;
 
         public Geega(Texture2D texture, Vector2 location)
         {
@@ -28,14 +29,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             totalFrames = Rows * Columns;
             x = location.X;
             y = location.Y;
+            counter = 0;
         }
 
         public void Update(GameTime gameTime)
         {
+            if (counter == 10)
+            {
+                counter = 0;
+                currentFrame++;
+                if (currentFrame == 2)
+                    currentFrame = 0;
+            }
+            counter++;
+                
             
-            currentFrame++;
-            if (currentFrame == totalFrames)
-                currentFrame = 0;
         }
 
         
