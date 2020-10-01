@@ -11,16 +11,16 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Nyigel Spann
-    class Crouch : ICommand
+    class Start : ICommand
     {
-        private Game1 game;
-        public Crouch(Game1 game)
+        private Game1 currentGame;
+        public Start(Game1 game)
         {
-            this.game = game;
+            currentGame = game;
         }
         public void Execute()
         {
-            Exit(0);
+            currentGame.Exit();
         }
     }
 }

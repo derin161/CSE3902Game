@@ -31,8 +31,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private int pixelSize;
         private int lowerBound = 480;
         private int rightBound = 800;
-        private int xIncrease = 2;
-        private int yIncrease = 10;
+        private int xIncrease = 10;
+        private int yIncrease = 15;
 
         private Texture2D rightIdle;
         private Texture2D leftIdle;
@@ -127,6 +127,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                             Location = new Vector2(Location.X, Location.Y - yIncrease);
                         }else if (currentFrame == 6 || currentFrame == 7 || currentFrame == 8 || currentFrame == 9){
                             Location = new Vector2(Location.X, Location.Y + yIncrease);
+                        }
+                        if (Location.Y < 0){
+                            Location = new Vector2(Location.X, 0);
                         }
                     }
                     break;

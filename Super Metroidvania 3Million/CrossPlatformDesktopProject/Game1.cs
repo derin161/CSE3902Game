@@ -28,14 +28,11 @@ namespace CrossPlatformDesktopProject
         private SpriteBatch spriteBatch;
         public IFactory Factory { get; set;}
         private KeyboardController keyboard;
-        private int choice;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            choice = 0;
-            this.IsMouseVisible = true;
         }
 
         /// <summary>
@@ -58,12 +55,12 @@ namespace CrossPlatformDesktopProject
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
+            SpriteList = new List<ISprite>();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
             AddSprite(Factory.CreatePlayerSprite());
-            keyboard = new KeyboardController(this, choice);
-            //mouse = new MouseController(this, choice);
+            keyboard = new KeyboardController(this);
 
             // TODO: use this.Content to load your game content here
         }
@@ -88,7 +85,6 @@ namespace CrossPlatformDesktopProject
                 Exit();
 
             keyboard.Update();
-            //choice = mouse.Update(choice);
             foreach (ISprite entry in SpriteList)
             {
                 entry.Update(gameTime);
@@ -116,6 +112,15 @@ namespace CrossPlatformDesktopProject
 
         public void AddSprite(ISprite s) {
             SpriteList.Add(s);
+        }
+
+        public void Restart(){
+            SpriteList = new List<ISprite>();
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            Factory = SpriteFactory.Instance;
+            Factory.LoadAllTextures(Content);
+            AddSprite(Factory.CreatePlayerSprite());
+            keyboard = new KeyboardController(this);
         }
     }
 }
