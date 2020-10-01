@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         {
             Vector2 direction = new Vector2(speed, 0);
             samus.currentState = PlayerSprite.State.Attack;
-            samus.currentFrame = 0;
+            samus.idleFrames = 0;
             if (!samus.facingRight)
             {
                 direction = new Vector2(-speed, 0);
