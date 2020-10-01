@@ -44,6 +44,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Command\Crouch.cs" />
+    <Compile Include="Libraries\Command\Damage.cs" />
+    <Compile Include="Libraries\Command\Jump.cs" />
+    <Compile Include="Libraries\Command\MoveLeft.cs" />
+    <Compile Include="Libraries\Command\MoveRight.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\DropBomb.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootMissileRocket.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootBeam.cs" />
@@ -51,6 +56,8 @@
     <Compile Include="Libraries\Command\NextEnemy.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Libraries\Command\Select.cs" />
+    <Compile Include="Libraries\Command\Start.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Kraid.cs" />
@@ -87,6 +94,7 @@
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>

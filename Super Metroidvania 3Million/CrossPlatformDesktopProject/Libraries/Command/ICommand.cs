@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-    interface ICommand
+    public interface ICommand
     {
         public void Execute();
     }

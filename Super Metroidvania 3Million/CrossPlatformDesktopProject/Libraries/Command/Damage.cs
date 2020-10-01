@@ -1,5 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using System;
@@ -8,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Nyigel Spann
-    class ShootBeam : ICommand
+    class Damage : ICommand
     {
         private PlayerSprite samus;
         private IFactory factory;
         private Game1 game;
         private float speed = 1;
 
-        public ShootBeam(Game1 game, PlayerSprite player) {
+        public Damage(Game1 game, PlayerSprite player) {
             samus = player;
             this.game = game;
             this.factory = game.Factory;

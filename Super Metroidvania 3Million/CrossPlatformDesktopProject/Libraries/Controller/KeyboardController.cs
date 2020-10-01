@@ -1,23 +1,16 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Design;
+﻿using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands;
-using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
-    class KeyboardController : IController
+    public class KeyboardController : IController
     {
         //Written by Tristan Roman and Shyamal Shah
-        private Dictionary<Keys, ICommand> controllerMappings;
+        private Dictionary<Keys, ICommand> controllerMappings = new Dictionary<Keys, ICommand>();
 
         private KeyboardState oldState;
         private KeyboardState newState; // ***
@@ -33,7 +26,13 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         }
         public void RegisterCommand(Keys key, ICommand command)
         {
-            controllerMappings.Add(key, command);
+            if (!controllerMappings.ContainsKey(key))
+            {
+                controllerMappings.Add(key, command);
+            }
+            else {
+                controllerMappings[key] = command;
+            }
         }
         public void Update()
         {
@@ -59,9 +58,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand down = new Crouch(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
             ICommand left = new MoveLeft(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
             ICommand right = new MoveRight(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand attack = new ShootBeam(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
+            ICommand attack = new Command.ShootBeam(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
             //ICommand special = new Special(gameState);
-            ICommand start = new Start(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
+            ICommand start = new Start(gameState);
             //ICommand select = new Select(gameState);
             //ICommand damage = new Damage(gameState);
 

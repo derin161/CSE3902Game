@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool facingRight { get; set; }
         public int TotalRockets { get; set; }
         private int timeSinceLastFrame = 0;
-        private int millisecondsPerFrame = 75;
+        private int millisecondsPerFrame = 100;
         public int currentFrame = 0;
 
         private Texture2D rightIdle;
@@ -54,7 +54,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             jump = texture.ElementAt(6);
             currentText = rightIdle;
             ice = false;
-            wave = false;
+            wave = true;
             elong = false;
 
         }
@@ -68,6 +68,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 
         public void Update(GameTime gameTime)
         {
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
             if (timeSinceLastFrame > millisecondsPerFrame){
                 timeSinceLastFrame -= millisecondsPerFrame;
                 currentFrame++;
@@ -88,7 +89,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                         break;*/
                     case State.MoveRight: // Move Right
                         if (currentFrame != 0){
-                            Location = new Vector2(Location.X + 1, Location.Y);
+                            Location = new Vector2(Location.X + 5, Location.Y);
                             if (Location.X > 768){
                                 Location = new Vector2(768, Location.Y);
                             }
@@ -97,7 +98,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                     case State.MoveLeft: // Move Left
                         if (currentFrame != 0)
                         {
-                            Location = new Vector2(Location.X - 1, Location.Y);
+                            Location = new Vector2(Location.X - 5, Location.Y);
                             if (Location.X < 32)
                             {
                                 Location = new Vector2(32, Location.Y);
@@ -106,9 +107,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                         break;
                     case State.Jump: // Jump
                         if (currentFrame > 0 && currentFrame < 6){
-                            Location = new Vector2(Location.X, Location.Y - 1);
+                            Location = new Vector2(Location.X, Location.Y - 10);
                         }else if (currentFrame > 5 && currentFrame <= 10){
-                            Location = new Vector2(Location.X, Location.Y - 1);
+                            Location = new Vector2(Location.X, Location.Y + 10);
                         }
                         break;
                     case State.Crouch: // Crouch: Nothing needs to be updated.
@@ -117,7 +118,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                         currentFrame = 0;
                         break;
                 }
-                timeSinceLastFrame -= millisecondsPerFrame;
             }
 
         }

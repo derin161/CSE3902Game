@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands
+namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
     class ShootMissileRocket : ICommand
