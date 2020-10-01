@@ -82,9 +82,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             //RegisterCommand(Keys.X, special);
             //RegisterCommand(Keys.M, special);
 
-            RegisterCommand(Keys.R, start);
+            RegisterCommand(Keys.Q, start);
 
-            //RegisterCommand(Keys.Q, select);
+            //RegisterCommand(Keys.R, select);
 
             //RegisterCommand(Keys.E, damage);
 

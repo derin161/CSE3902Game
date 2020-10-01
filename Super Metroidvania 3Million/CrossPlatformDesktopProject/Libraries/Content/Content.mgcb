@@ -97,18 +97,6 @@
 /processorParam:TextureFormat=Color
 /build:PlayerSprites/SamusLeftWalk.png
 
-#begin PlayerSprites/SamusRightAimUp.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:PlayerSprites/SamusRightAimUp.png
-
 #begin PlayerSprites/SamusRightIdle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -120,18 +108,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:PlayerSprites/SamusRightIdle.png
-
-#begin PlayerSprites/SamusRightShooting.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:PlayerSprites/SamusRightShooting.png
 
 #begin PlayerSprites/SamusRightWalk.png
 /importer:TextureImporter
