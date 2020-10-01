@@ -25,7 +25,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public MissleRocket(Texture2D texture, Vector2 initialLocation, Vector2 direction)
         {
             isHorizontal = (int)direction.Y == 0;
-            isDead = false;
             this.texture = texture;
             Location = initialLocation;
             Direction = direction;

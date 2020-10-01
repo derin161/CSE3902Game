@@ -28,11 +28,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command
             Vector2 direction = new Vector2(speed, 0);
             samus.currentState = PlayerSprite.State.Attack;
             samus.currentFrame = 0;
+            Vector2 location = new Vector2(samus.Location.X + 45, samus.Location.Y + 18);
+
             if (!samus.facingRight)
             {
                 direction = new Vector2(-speed, 0);
+                location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
             }
-            Vector2 location = new Vector2(samus.Location.X, samus.Location.Y);
+            
             if (samus.wave)
             {
                 game.AddSprite(factory.CreateWaveBeam(location, direction, samus.elong, samus.ice));

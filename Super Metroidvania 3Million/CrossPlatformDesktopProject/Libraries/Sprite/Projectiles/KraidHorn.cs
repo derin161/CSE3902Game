@@ -56,6 +56,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Update(GameTime gameTime)
         {
+            bool collision = false; //temp var til collisions are added
+            if(collision){
+                isDead = true;
+            }
+
             Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
             float x = (float) relativePos.X + 1;
             float y = (float)(0.2 * x * x - 10 * x); // 1/5x^2 - 10x. Gives projectile parabolic path to the right.

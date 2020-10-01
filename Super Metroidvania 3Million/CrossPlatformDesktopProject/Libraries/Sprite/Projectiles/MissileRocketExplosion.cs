@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
+    //This class isn't needed until collisions are added.
     class MissileRocketExplosion : ISprite
     {
         enum AnimationPos { 
