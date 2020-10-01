@@ -16,7 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public int Damage { get; set; }
 
-        public private isDead = false;
+        private bool isDead = false;
         private Texture2D texture;
         private int time = 0;
         private int boomTimer = 1000;
