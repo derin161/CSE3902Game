@@ -24,6 +24,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         {
 
         }
-
+        public bool IsDead() {
+            return false;
+        }
     }
 }

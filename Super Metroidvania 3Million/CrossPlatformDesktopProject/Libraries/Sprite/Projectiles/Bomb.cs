@@ -63,7 +63,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 if (boomFrame < 3) {
                     spriteBatch.Draw(texture, destRec, srcRec, Color.White);
                 } else {
-                    IsDead = false;
+                    isDead = false;
                 }
             }
 
@@ -75,7 +75,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         }
 
         public bool IsDead() {
-            return IsDead;
+            return isDead;
         }
     }
 }

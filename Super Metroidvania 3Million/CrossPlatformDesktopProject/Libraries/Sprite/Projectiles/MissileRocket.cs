@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public MissleRocket(Texture2D texture, Vector2 initialLocation, Vector2 direction)
         {
             isHorizontal = (int)direction.Y == 0;
-            IsDead = false;
+            isDead = false;
             this.texture = texture;
             Location = initialLocation;
             Direction = direction;
@@ -34,7 +34,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            if (IsDead) { //Rocket has collided, explosion animation.
+            if (isDead) { //Rocket has collided, explosion animation.
                 
                 
             }
@@ -56,7 +56,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             //Using temporary var til collisions are added
             bool collision = false;
             if (collision) {
-                IsDead = true;
+                isDead = true;
             }
 
             //Update position
@@ -65,7 +65,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         }
 
         public bool IsDead() {
-            return IsDead;
+            return isDead;
         }
     }
 }
