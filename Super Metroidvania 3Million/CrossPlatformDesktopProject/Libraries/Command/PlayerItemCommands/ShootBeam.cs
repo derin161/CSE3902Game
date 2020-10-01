@@ -18,15 +18,16 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands
         private Game1 game;
         private float speed = 1;
 
-        public ShootBeam(Game1 game, PlayerSprite player, IFactory factory) {
+        public ShootBeam(Game1 game, PlayerSprite player) {
             samus = player;
             this.game = game;
-            this.factory = factory;
+            this.factory = game.Factory;
         }
         public void Execute()
         {
             Vector2 direction = new Vector2(speed, 0);
-
+            samus.currentState = samus.State.Attack;
+            samus.currentFrame = 0;
             if (!samus.facingRight)
             {
                 direction = new Vector2(-speed, 0);
@@ -43,8 +44,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands
             else { //Power beam
                 game.AddSprite(factory.CreatePowerBeam(location, direction, samus.elong));
             } 
-            
-            
         }
     }
 }

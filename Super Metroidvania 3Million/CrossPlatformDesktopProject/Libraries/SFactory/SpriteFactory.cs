@@ -1,4 +1,25 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.IProjectile;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.Bomb;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.KraidHorn;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.KraidMissile;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.MissileRocket;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.MissileRocketExplosion;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.PowerBeam;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.WaveBeam;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprites.IPlayer;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprites.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.IEnemy;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Geega;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Kraid;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Memu;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Ripper;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.SideHopper;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Skree;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Zeela;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items.ItemsInterface;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items.ItemsClass;
+using CrossPlatformDesktopProject.Libraries.Sprite.Map.MapInterface;
+using CrossPlatformDesktopProject.Libraries.Sprite.Map.MapSprite;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -12,9 +33,7 @@ namespace CrossPlatformDesktopProject.SFactory
 {
 	class SpriteFactory : IFactory
 	{
-		private Texture2D SpriteSheet;
-
-		//enemies
+		//Enemies
 		private Texture2D geega;
 		private Texture2D kraid;
 		private Texture2D memu;
@@ -32,11 +51,22 @@ namespace CrossPlatformDesktopProject.SFactory
 		private Texture2D waveBeamTex;
 		private Texture2D iceBeamTex;
 
+        //Player
+        private List<Texture2D> playerTextures;
+        private Texture2D rightIdle;
+        private Texture2D leftIdle;
+        private Texture2D rightWalk;
+        private Texture2D leftWalk;
+        private Texture2D rightCrouch;
+        private Texture2D leftCrouch;
+        private Texture2D jump;
 
-		// More private Texture2Ds follow
-		// ...
 
-		private static SpriteFactory instance = new SpriteFactory();
+
+        // More private Texture2Ds follow
+        // ...
+
+        private static SpriteFactory instance = new SpriteFactory();
 
 		public static SpriteFactory Instance
 		{
@@ -52,9 +82,7 @@ namespace CrossPlatformDesktopProject.SFactory
 
 		public void LoadAllTextures(ContentManager content)
 		{
-			SpriteSheet = content.Load<Texture2D>("enemy");
-
-			//enemies
+			//Enemies
 			geega = content.Load<Texture2D>("enemies/geega");
 			kraid = content.Load<Texture2D>("enemies/Kraid");
 			memu = content.Load<Texture2D>("enemies/Memu");
@@ -72,13 +100,29 @@ namespace CrossPlatformDesktopProject.SFactory
 			waveBeamTex = content.Load<Texture2D>("ProjSprites/WaveBeamProj");
 			iceBeamTex = content.Load<Texture2D>("ProjSprites/IceBeamProj");
 
-			// More Content.Load calls follow
-			//...
-		}
+            //Player 
+            rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdle");
+            playerTextures.Add(rightIdle);
+            leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdle");
+            playerTextures.Add(leftIdle);
+            rightWalk = content.Load<Texture2D>("PlayerSprites/SamusRightWalk");
+            playerTextures.Add(rightWalk);
+            leftWalk = content.Load<Texture2D>("PlayerSprites/SamusLeftWalk");
+            playerTextures.Add(leftWalk);
+            rightCrouch = content.Load<Texture2D>("PlayerSprites/RightMorph");
+            playerTextures.Add(rightCrouch);
+            lefttCrouch = content.Load<Texture2D>("PlayerSprites/LeftMorph");
+            playerTextures.Add(leftCrouch);
+            jump = content.Load<Texture2D>("PlayerSprites/Jump");
+            playerTextures.Add(jump);
+
+            // More Content.Load calls follow
+            //...
+        }
 
 		public ISprite CreatePlayerSprite()
 		{
-			//return new PlayerSprite(enemySpritesheet, 32, 32);
+			return new PlayerSprite(playerTextures);
 		}
 
 		public ISprite CreateEnemySprite()

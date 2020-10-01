@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CrossPlatformDesktopProject.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using CrossPlatformDesktopProject.Sprite;
+using CrossPlatformDesktopProject.SFactory;
+using CrossPlatformDesktopProject.Controller;
 
 namespace CrossPlatformDesktopProject
 {
@@ -18,14 +20,13 @@ namespace CrossPlatformDesktopProject
     public class Game1 : Game
     {
 
-        private List<ISprite> spriteList;
+        public List<ISprite> SpriteList {get; set;} //public for now. Maybe a class to hold sprites.
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private IFactory factory;
+        public SpriteFactory Factory { get; set;}
         private int choice;
         
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -55,8 +56,9 @@ namespace CrossPlatformDesktopProject
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            factory = new SFactory();
+            factory = new SpriteFactory();
             factory.instance.LoadAllTextures(Content);
+            AddSprite(factory.instance.CreatePlayerSprite());
             keyboard = new KeyboardController(this, choice);
             mouse = new MouseController(this, choice);
 

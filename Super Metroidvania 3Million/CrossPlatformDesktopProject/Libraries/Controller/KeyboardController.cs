@@ -13,14 +13,14 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     class KeyboardController : IController
     {
-        //Written by Tristan Roman and Shyamal Shah Please Work 
+        //Written by Tristan Roman and Shyamal Shah
         private Dictionary<Keys, ICommand> controllerMappings;
 
         private KeyboardState oldState;
-        KeyboardState newState; // ***
-        Keys[] pressedKeys;
+        private KeyboardState newState; // ***
+        private Keys[] pressedKeys;
         private int choice;
-        Game1 gameState;
+        private Game1 gameState;
 
         public KeyboardController(Game1 game, int current)
         {
@@ -54,15 +54,15 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         public void makeDict()     // If else of possible actions that updates choice
         {
-            Jump up = new Jump(gameState);
-            Crouch down = new Crouch(gameState);
-            MoveLeft left = new MoveLeft(gameState);
-            MoveRight right = new MoveRight(gameState);
-            Attack attack = new Attack(gameState);
-            Special special = new Special(gameState);
-            Start start = new Start(gameState);
-            Select select = new Select(gameState);
-            Damage damage = new Damage(gameState);
+            ICommand up = new Jump(gameState);
+            ICommand down = new Crouch(gameState);
+            ICommand left = new MoveLeft(gameState);
+            ICommand right = new MoveRight(gameState);
+            ICommand attack = new ShootBeam(gameState, gameState.SpriteList.ElementAt(0));
+            ICommand special = new Special(gameState);
+            ICommand start = new Start(gameState);
+            ICommand select = new Select(gameState);
+            ICommand damage = new Damage(gameState);
 
             RegisterCommand(Keys.W, up);
             RegisterCommand(Keys.Up, up);
