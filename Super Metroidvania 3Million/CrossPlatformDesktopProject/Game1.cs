@@ -22,6 +22,7 @@ namespace CrossPlatformDesktopProject
     {
 
         public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
+        public List<ISprite> DeadSprites = new List<ISprite>();
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -91,10 +92,16 @@ namespace CrossPlatformDesktopProject
                 if(entry == SpriteList[0] && entry.IsDead()) {
                     //game over sequence
                 } else if (entry.IsDead()) {
-                    SpriteList.Remove(entry);
+                    DeadSprites.Add(entry);
                 }
 
             }
+
+            foreach (ISprite dead in DeadSprites){
+                SpriteList.Remove(dead);
+            }
+            DeadSprites.Clear();
+
             base.Update(gameTime);
         }
 

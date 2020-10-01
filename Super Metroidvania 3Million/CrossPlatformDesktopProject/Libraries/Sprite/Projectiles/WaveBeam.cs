@@ -73,7 +73,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Rectangle sourceRec = new Rectangle(0, 0, texture.Width / 2, texture.Height / 2); //Texture before collision
 
             //Change texture if projectile has collided or run out
-            if (IsDead)
+            if (isDead)
             {
                 sourceRec = new Rectangle(texture.Width / 2, texture.Height / 2, texture.Width / 2, texture.Height / 2); //Texture after collision
             }
