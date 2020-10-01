@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Media;
 using CrossPlatformDesktopProject.Libraries.Sprite;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using CrossPlatformDesktopProject.Libraries.Controller;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 
 
 namespace CrossPlatformDesktopProject

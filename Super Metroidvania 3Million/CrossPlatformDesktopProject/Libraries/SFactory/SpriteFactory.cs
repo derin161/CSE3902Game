@@ -1,7 +1,7 @@
-﻿
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+using CrossPlatformDesktopProject.Libraries.Sprite;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -104,7 +104,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 		public ISprite CreatePlayerSprite()
 		{
-			return new PlayerSprite(playerTextures);
+			return (ISprite) new PlayerSprite(playerTextures);
 		}
 
 		/*public ISprite CreateEnemySprite()

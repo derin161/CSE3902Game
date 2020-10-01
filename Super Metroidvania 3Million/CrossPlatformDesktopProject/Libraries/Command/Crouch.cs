@@ -1,4 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Command;
+using CrossPlatformDesktopProject.Libraries.Sprite;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using Microsoft.Xna;
 using Microsoft.Xna.Framework;
@@ -11,19 +12,19 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Nyigel Spann
-    class MoveRight : ICommand
+    public class Crouch : ICommand
     {
         private PlayerSprite samus;
         private Game1 game;
 
-        public MoveRight(Game1 game, PlayerSprite player)
+        public Crouch(Game1 game, PlayerSprite player)
         {
             samus = player;
             this.game = game;
         }
         public void Execute()
         {
-            samus.UpdateState(PlayerSprite.State.MoveRight, -1, true);
+            samus.UpdateState(PlayerSprite.State.Crouch, 0, samus.facingRight);
         }
     }
 }

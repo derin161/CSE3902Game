@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using CrossPlatformDesktopProject.Libraries.Sprite;
-
 namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 {
     public class PlayerSprite : IPlayer
@@ -63,8 +61,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             rightBound = 800 - pixelSize;
             Location = new Vector2(0, lowerBound);
             ice = false;
-            wave = true;
-            elong = false;
+            wave = false;
+            elong = true;
             rTime = 80;
             jTime = (rTime*7)/8;
 
