@@ -15,9 +15,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public Vector2 Direction { get; set; }
         public int Damage { get; set; }
-        public bool IsDead { get; set; }
         public bool IsIceBeam { get; set; }
 
+        private bool isDead = false;
         private Texture2D texture;
         private Vector2 initialLocation;
         private bool isLongBeam;
@@ -83,6 +83,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 }
             }
             
+        }
+
+        public bool IsDead() {
+            return IsDead;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public int Damage { get; set; }
 
         private Texture2D texture;
+        private bool isDead = false;
 
         public KraidMissile(Texture2D texture, Vector2 initialLocation, Vector2 direction)
         {
@@ -42,6 +43,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             //Update position
             Location = Vector2.Add(Location, Direction);
             
+        }
+
+        public bool IsDead() {
+            return IsDead;
         }
     }
 }

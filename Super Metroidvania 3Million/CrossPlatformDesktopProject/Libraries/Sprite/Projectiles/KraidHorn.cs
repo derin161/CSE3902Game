@@ -23,6 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private int timeSinceLastFrame = 0;
         private int millisecondsPerFrame = 50;
         private Vector2 initialLocation;
+        private bool isDead = false;
 
 
         public KraidHorn(Texture2D texture, Vector2 initialLocation, bool isMovingRight)
@@ -82,6 +83,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                     currentFrame = 0;
             }
 
+        }
+
+        public bool IsDead() {
+            return IsDead;
         }
     }
 }

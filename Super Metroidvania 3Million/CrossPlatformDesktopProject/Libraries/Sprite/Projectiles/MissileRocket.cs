@@ -15,10 +15,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public Vector2 Direction { get; set; }
         public int Damage { get; set; }
-        public bool IsDead { get; set; }
 
         private Texture2D texture;
         private bool isHorizontal;
+        private bool isDead = false;
         
 
 
@@ -62,6 +62,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             //Update position
             Location = Vector2.Add(Location, Direction);
             
+        }
+
+        public bool IsDead() {
+            return IsDead;
         }
     }
 }

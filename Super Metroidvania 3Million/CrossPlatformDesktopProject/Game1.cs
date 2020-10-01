@@ -87,6 +87,13 @@ namespace CrossPlatformDesktopProject
             foreach (ISprite entry in SpriteList)
             {
                 entry.Update(gameTime);
+
+                if(entry == SpriteList[0] && entry.IsDead()) {
+                    //game over sequence
+                } else if (entry.IsDead()) {
+                    SpriteList.Remove(entry);
+                }
+
             }
             base.Update(gameTime);
         }
