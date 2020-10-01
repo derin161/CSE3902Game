@@ -32,6 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
@@ -46,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
