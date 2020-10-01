@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Command;
-using CrossPlatformDesktopProject.Sprite.Player_Sprites;
-using CrossPlatformDesktopProject.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Command;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerItemCommands
         public void Execute()
         {
             Vector2 direction = new Vector2(speed, 0);
-            samus.currentState = samus.State.Attack;
+            samus.currentState = PlayerSprite.State.Attack;
             samus.currentFrame = 0;
             if (!samus.facingRight)
             {

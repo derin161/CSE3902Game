@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Sprite.Projectiles;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -33,6 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             this.isMovingRight = isMovingRight;
             this.texture = texture;
             Location = initialLocation;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)

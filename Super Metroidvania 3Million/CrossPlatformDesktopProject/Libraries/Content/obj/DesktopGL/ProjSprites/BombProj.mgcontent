@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/derin/source/repos/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/BombProj.png</SourceFile>
-  <SourceTime>2020-09-28T16:59:59.3900767-04:00</SourceTime>
-  <DestFile>C:/Users/derin/source/repos/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/ProjSprites/BombProj.xnb</DestFile>
-  <DestTime>2020-09-28T17:16:55.5908591-04:00</DestTime>
+  <SourceFile>C:/Users/derin/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/BombProj.png</SourceFile>
+  <SourceTime>2020-09-30T22:48:25.8924158-04:00</SourceTime>
+  <DestFile>C:/Users/derin/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/ProjSprites/BombProj.xnb</DestFile>
+  <DestTime>2020-10-01T00:19:47.7257308-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

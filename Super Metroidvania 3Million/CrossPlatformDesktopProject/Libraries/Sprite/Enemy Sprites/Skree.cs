@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Sprite.Enemy_Sprites
+namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     class Skree : IEnemy
     {

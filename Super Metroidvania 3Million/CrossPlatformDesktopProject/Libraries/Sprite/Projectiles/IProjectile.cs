@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Sprite.Projectiles
+namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     interface IProjectile : ISprite

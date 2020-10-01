@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/derin/Source/Repos/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Samus Aran Power Suit.png</SourceFile>
-  <SourceTime>2020-09-27T21:12:09.8899922-04:00</SourceTime>
-  <DestFile>C:/Users/derin/Source/Repos/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/NES - Metroid - Samus Aran Power Suit.xnb</DestFile>
-  <DestTime>2020-09-28T20:25:20.1950758-04:00</DestTime>
+  <SourceFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Samus Aran Power Suit.png</SourceFile>
+  <SourceTime>2020-09-30T22:48:25.8894154-04:00</SourceTime>
+  <DestFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/NES - Metroid - Samus Aran Power Suit.xnb</DestFile>
+  <DestTime>2020-09-30T22:49:35.0517036-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

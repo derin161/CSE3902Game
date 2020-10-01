@@ -1,23 +1,23 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using CrossPlatformDesktopProject.Sprite.ISprite;
 
-namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
+using CrossPlatformDesktopProject.Libraries.Sprite;
+
+namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 {
-    class PlayerSprite : IPlayer
+    public class PlayerSprite : IPlayer
     {
         public enum State
         {
             Attack, Item1, Item2, Item3, Item4, Item5, MoveRight, MoveLeft, Crouch, Jump, Idle
         }
-        private State currentState;
+        public State currentState;
         public Vector2 Location { get; set; }
         public bool ice { get; set; } //ice beam
         public bool wave { get; set; } //wave beam
@@ -26,7 +26,7 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
         public int TotalRockets { get; set; }
         private int timeSinceLastFrame = 0;
         private int millisecondsPerFrame = 75;
-        private int currentFrame = 0;
+        public int currentFrame = 0;
 
         private Texture2D rightIdle;
         private Texture2D leftIdle;
@@ -42,8 +42,7 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
         public PlayerSprite(List<Texture2D> texture)
         {
             currentState = State.Idle;
-            Location.X = 0;
-            Location.Y = 448;
+            this.Location = new Vector2(0, 448);
             facingRight = true;
             currentFrame = 0;
             rightIdle = texture.ElementAt(0);
@@ -60,9 +59,11 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
 
         }
 
-        public void UpdateState(State newState) 
+        public void UpdateState(State newState, int newFrame, bool rightFace) 
         {
             currentState = newState;
+            currentFrame = newFrame;
+            facingRight = rightFace;
         }
 
         public void Update(GameTime gameTime)
@@ -73,46 +74,46 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
                 //User actions based on switch case of states that change when a new action is selected
                 switch (currentState)
                 {
-                    case Attack: // Attack
+                    case State.Attack: // Attack
                         break;
-                    case Item1: // Item1 - PowerBeam
+                    /*case State.Item1: // Item1 - PowerBeam
                         break;
-                    case Item2: // Item2 - WaveBeam
+                    case State.Item2: // Item2 - WaveBeam
                         break;
-                    case Item3: // Item3 - IceBeam
+                    case State.Item3: // Item3 - IceBeam
                         break;
-                    case Item4: // Item4 - MissleRocket
+                    case State.Item4: // Item4 - MissleRocket
                         break;
-                    case Item5: // Item5 - Bomb
-                        break;
-                    case MoveRight: // Move Right
+                    case State.Item5: // Item5 - Bomb
+                        break;*/
+                    case State.MoveRight: // Move Right
                         if (currentFrame != 0){
-                            Location.X += 1;
+                            Location = new Vector2(Location.X + 1, Location.Y);
                             if (Location.X > 768){
-                                Location.X = 768;
+                                Location = new Vector2(768, Location.Y);
                             }
                         }
                         break;
-                    case MoveLeft: // Move Left
+                    case State.MoveLeft: // Move Left
                         if (currentFrame != 0)
                         {
-                            Location.X -= 1;
+                            Location = new Vector2(Location.X - 1, Location.Y);
                             if (Location.X < 32)
                             {
-                                Location.X = 32;
+                                Location = new Vector2(32, Location.Y);
                             }
                         }
                         break;
-                    case Jump: // Jump
+                    case State.Jump: // Jump
                         if (currentFrame > 0 && currentFrame < 6){
-                            Location.Y -= 1;
+                            Location = new Vector2(Location.X, Location.Y - 1);
                         }else if (currentFrame > 5 && currentFrame <= 10){
-                            Location.Y -= 1;
+                            Location = new Vector2(Location.X, Location.Y - 1);
                         }
                         break;
-                    case Crouch: // Crouch: Nothing needs to be updated.
+                    case State.Crouch: // Crouch: Nothing needs to be updated.
                         break;
-                    case Idle: // Idle
+                    case State.Idle: // Idle
                         currentFrame = 0;
                         break;
                 }
@@ -126,37 +127,37 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
             //User actions based on switch case of states that change when a new action is selected
             switch (currentState)
             {
-                case Attack: // Attack
+                case State.Attack: // Attack
                     AttackAnimation(spriteBatch);
                     break;
-                case Item1: // Item1 - PowerBeam
+                /*case State.Item1: // Item1 - PowerBeam
                     PowerBeamAnimation(spriteBatch);
                     break;
-                case Item2: // Item2 - WaveBeam
+                case State.Item2: // Item2 - WaveBeam
                     WaveBeamAnimation(spriteBatch);
                     break;
-                case Item3: // Item3 - IceBeam
+                case State.Item3: // Item3 - IceBeam
                     IceBeamAnimation(spriteBatch);
                     break;
-                case Item4: // Item4 - MissleRocket
+                case State.Item4: // Item4 - MissleRocket
                     MissleRocketAnimation(spriteBatch);
                     break;
-                case Item5: // Item5 - Bomb
+                case State.Item5: // Item5 - Bomb
                     BombAnimation(spriteBatch);
-                    break;
-                case MoveRight: // Move Right
+                    break;*/
+                case State.MoveRight: // Move Right
                     MoveRightAnimation(spriteBatch);
                     break;
-                case MoveLeft: // Move Left
+                case State.MoveLeft: // Move Left
                     MoveLeftAnimation(spriteBatch);
                     break;
-                case Jump: // Jump
+                case State.Jump: // Jump
                     JumpAnimation(spriteBatch);
                     break;
-                case Crouch: // Crouch
+                case State.Crouch: // Crouch
                     CrouchAnimation(spriteBatch);
                     break;
-                case Idle: // Idle
+                case State.Idle: // Idle
                     IdleAnimation(spriteBatch);
                     break;
             }
@@ -181,7 +182,7 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
         {
             currentState = State.Idle;
         }
-
+        /*
         public void PowerBeamAnimation(SpriteBatch spriteBatch)
         {
             //Put Code for animation
@@ -203,7 +204,7 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
         {
             //Put Code for animation
         }
-
+        */
         public void MoveLeftAnimation(SpriteBatch spriteBatch)
         {
             facingRight = false;
@@ -293,7 +294,7 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
             currentText = jump;
             int width;
             int height;
-            int adjFrame;
+            int adjFrame = currentFrame;
             Rectangle srcRec;
             Rectangle destRec;
             if (facingRight){
@@ -370,8 +371,9 @@ namespace CrossPlatformDesktopProject.Sprite.PlayerSprite
         }
         public void DamageAnimation(SpriteBatch spriteBatch)
         {
-            //Put Code for animation
+            int x = 1 + 1;
         }
+
 
     }
 }

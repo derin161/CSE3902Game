@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Sprite.Projectiles;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -12,6 +12,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
     //Author: Nyigel Spann
     public class Bomb : IProjectile
     {
+
         public Vector2 Location { get; set; }
         public int Damage { get; set; }
         public bool IsDead { get; set; }

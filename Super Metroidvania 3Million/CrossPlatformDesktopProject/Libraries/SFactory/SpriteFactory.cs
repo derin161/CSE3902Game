@@ -1,25 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.IProjectile;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.Bomb;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.KraidHorn;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.KraidMissile;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.MissileRocket;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.MissileRocketExplosion;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.PowerBeam;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.WaveBeam;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprites.IPlayer;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprites.PlayerSprite;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.IEnemy;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Geega;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Kraid;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Memu;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Ripper;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.SideHopper;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Skree;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Zeela;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items.ItemsInterface;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items.ItemsClass;
-using CrossPlatformDesktopProject.Libraries.Sprite.Map.MapInterface;
-using CrossPlatformDesktopProject.Libraries.Sprite.Map.MapSprite;
+﻿
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -29,9 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.SFactory
+namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-	class SpriteFactory : IFactory
+	public class SpriteFactory : IFactory
 	{
 		//Enemies
 		private Texture2D geega;
@@ -52,7 +34,7 @@ namespace CrossPlatformDesktopProject.SFactory
 		private Texture2D iceBeamTex;
 
         //Player
-        private List<Texture2D> playerTextures;
+        private List<Texture2D> playerTextures = new List<Texture2D>();
         private Texture2D rightIdle;
         private Texture2D leftIdle;
         private Texture2D rightWalk;
@@ -111,7 +93,7 @@ namespace CrossPlatformDesktopProject.SFactory
             playerTextures.Add(leftWalk);
             rightCrouch = content.Load<Texture2D>("PlayerSprites/RightMorph");
             playerTextures.Add(rightCrouch);
-            lefttCrouch = content.Load<Texture2D>("PlayerSprites/LeftMorph");
+            leftCrouch = content.Load<Texture2D>("PlayerSprites/LeftMorph");
             playerTextures.Add(leftCrouch);
             jump = content.Load<Texture2D>("PlayerSprites/Jump");
             playerTextures.Add(jump);
@@ -125,7 +107,7 @@ namespace CrossPlatformDesktopProject.SFactory
 			return new PlayerSprite(playerTextures);
 		}
 
-		public ISprite CreateEnemySprite()
+		/*public ISprite CreateEnemySprite()
 		{
 			//return new EnemySprite(enemySpritesheet, 64, 64);
 		}
@@ -138,7 +120,7 @@ namespace CrossPlatformDesktopProject.SFactory
 		public ISprite CreateItemSprite(ILevel level)
 		{
 			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
-		}
+		}*/
 
 		public ISprite CreateBomb(Vector2 location)
 		{

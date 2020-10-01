@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/derin/source/repos/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/MissleRocketProj.png</SourceFile>
-  <SourceTime>2020-09-28T16:59:59.3920766-04:00</SourceTime>
-  <DestFile>C:/Users/derin/source/repos/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/ProjSprites/MissleRocketProj.xnb</DestFile>
-  <DestTime>2020-09-28T17:16:55.63887-04:00</DestTime>
+  <SourceFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/Jump.png</SourceFile>
+  <SourceTime>2020-09-30T22:48:25.8904155-04:00</SourceTime>
+  <DestFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/PlayerSprites/Jump.xnb</DestFile>
+  <DestTime>2020-09-30T22:51:39.8537128-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Command;
-using CrossPlatformDesktopProject.Sprite.Player_Sprites;
-using CrossPlatformDesktopProject.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Command;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

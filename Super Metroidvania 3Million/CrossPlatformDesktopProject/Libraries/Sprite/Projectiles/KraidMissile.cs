@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Sprite.Projectiles;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;

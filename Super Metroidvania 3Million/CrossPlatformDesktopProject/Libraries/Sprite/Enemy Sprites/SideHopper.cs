@@ -7,9 +7,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Sprite.Enemy_Sprites
+namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
-    class Ripper : IEnemy
+    class SideHopper : IEnemy
     {
 
         public Texture2D Texture { get; set; }
@@ -18,11 +18,11 @@ namespace CrossPlatformDesktopProject.Sprite.Enemy_Sprites
         private int currentFrame;
         private int totalFrames;
 
-        public Ripper(Texture2D texture)
+        public SideHopper(Texture2D texture)
         {
             Texture = texture;
             Rows = 2;
-            Columns = 1;
+            Columns = 6;
             currentFrame = 0;
             totalFrames = Rows * Columns;
         }

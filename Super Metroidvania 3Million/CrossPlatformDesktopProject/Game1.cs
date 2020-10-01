@@ -7,9 +7,11 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using CrossPlatformDesktopProject.Sprite;
-using CrossPlatformDesktopProject.SFactory;
-using CrossPlatformDesktopProject.Controller;
+using CrossPlatformDesktopProject.Libraries.Sprite;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+
 
 namespace CrossPlatformDesktopProject
 {
@@ -20,11 +22,12 @@ namespace CrossPlatformDesktopProject
     public class Game1 : Game
     {
 
-        public List<ISprite> SpriteList {get; set;} //public for now. Maybe a class to hold sprites.
+        public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        public SpriteFactory Factory { get; set;}
+        public IFactory Factory { get; set;}
+        private KeyboardController keyboard;
         private int choice;
         
         public Game1()
@@ -56,11 +59,11 @@ namespace CrossPlatformDesktopProject
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            factory = new SpriteFactory();
-            factory.instance.LoadAllTextures(Content);
-            AddSprite(factory.instance.CreatePlayerSprite());
+            Factory = SpriteFactory.Instance;
+            Factory.LoadAllTextures(Content);
+            AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this, choice);
-            mouse = new MouseController(this, choice);
+            //mouse = new MouseController(this, choice);
 
             // TODO: use this.Content to load your game content here
         }
@@ -90,9 +93,9 @@ namespace CrossPlatformDesktopProject
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            choice = keyboard.Update(choice);
-            choice = mouse.Update(choice);
-            foreach (ISprite entry in spriteList)
+            keyboard.Update();
+            //choice = mouse.Update(choice);
+            foreach (ISprite entry in SpriteList)
             {
                 entry.Update(gameTime);
             }
@@ -110,7 +113,7 @@ namespace CrossPlatformDesktopProject
 
             spriteBatch.Begin();
 
-            foreach (ISprite entry in spriteList) {
+            foreach (ISprite entry in SpriteList) {
                 entry.Draw(spriteBatch);
             }
 
@@ -119,7 +122,7 @@ namespace CrossPlatformDesktopProject
         }
 
         public void AddSprite(ISprite s) {
-            spriteList.Add(s);
+            SpriteList.Add(s);
         }
     }
 }

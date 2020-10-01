@@ -10,7 +10,7 @@ namespace CrossPlatformDesktopProject
 {
     public interface ISprite
     {
-        public bool isDead();
+        //public bool isDead();
         public void Draw(SpriteBatch spriteBatch);
         public void Update(GameTime gameTime);
     }

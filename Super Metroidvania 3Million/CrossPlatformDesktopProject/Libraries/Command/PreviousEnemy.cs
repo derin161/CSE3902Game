@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Command
+namespace CrossPlatformDesktopProject.Libraries.Command
 {
 	class PreviousEnemy : ICommand
 	{

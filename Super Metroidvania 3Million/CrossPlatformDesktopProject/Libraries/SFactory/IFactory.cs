@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CrossPlatformDesktopProject.Sprite.ISprite;
+using CrossPlatformDesktopProject.Libraries.Sprite;
 
-namespace CrossPlatformDesktopProject.SFactory
+namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    interface IFactory
+    public interface IFactory
     {
         //Constructor
         public void LoadAllTextures(ContentManager content);
@@ -22,9 +22,7 @@ namespace CrossPlatformDesktopProject.SFactory
 		public ISprite CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam);
 		public ISprite CreateKraidHorn(Vector2 location, bool isMovingRight);
 		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction);
-
-        //Player
-        public ISprite
+		public ISprite CreatePlayerSprite();
 
 
 	}
