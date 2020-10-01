@@ -1,22 +1,41 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using CrossPlatformDesktopProject.Libraries.Sprite;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+
 
 namespace CrossPlatformDesktopProject
 {
-    ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann
+    ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann, Will Floyd, Danny Attia
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+
+        public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
+
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        public IFactory Factory { get; set;}
+        private KeyboardController keyboard;
+        private int choice;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            choice = 0;
+            this.IsMouseVisible = true;
         }
 
         /// <summary>
@@ -40,6 +59,11 @@ namespace CrossPlatformDesktopProject
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Factory = SpriteFactory.Instance;
+            Factory.LoadAllTextures(Content);
+            AddSprite(Factory.CreatePlayerSprite());
+            keyboard = new KeyboardController(this, choice);
+            //mouse = new MouseController(this, choice);
 
             // TODO: use this.Content to load your game content here
         }
@@ -53,6 +77,12 @@ namespace CrossPlatformDesktopProject
             // TODO: Unload any non ContentManager content here
         }
 
+        public void chooseSprite(int entry)
+        {
+
+        }
+
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -63,7 +93,12 @@ namespace CrossPlatformDesktopProject
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            keyboard.Update();
+            //choice = mouse.Update(choice);
+            foreach (ISprite entry in SpriteList)
+            {
+                entry.Update(gameTime);
+            }
 
             base.Update(gameTime);
         }
@@ -76,9 +111,18 @@ namespace CrossPlatformDesktopProject
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
 
+            foreach (ISprite entry in SpriteList) {
+                entry.Draw(spriteBatch);
+            }
+
+            spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public void AddSprite(ISprite s) {
+            SpriteList.Add(s);
         }
     }
 }
