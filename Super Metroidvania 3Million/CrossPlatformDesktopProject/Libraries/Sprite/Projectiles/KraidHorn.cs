@@ -86,7 +86,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         }
 
         public bool IsDead() {
-            return IsDead;
+            return isDead;
         }
     }
 }

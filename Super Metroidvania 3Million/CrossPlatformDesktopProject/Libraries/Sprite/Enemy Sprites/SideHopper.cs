@@ -53,6 +53,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        
+        public Boolean IsDead()
+        {
+            return false;
+        }
+
     }
 }
