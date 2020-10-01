@@ -24,7 +24,12 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            samus.UpdateState(PlayerSprite.State.Crouch, 0, samus.facingRight);
+            if (samus.crouchFrames == 4){
+                samus.UpdateState(PlayerSprite.State.Crouch, -1, samus.facingRight);
+            }else {
+                samus.UpdateState(PlayerSprite.State.Crouch, samus.crouchFrames, samus.facingRight);
+            }
+
         }
     }
 }

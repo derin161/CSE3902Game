@@ -115,7 +115,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 		public ISprite CreateEnemySprite(Vector2 location)
 		{
-			return new Geega(geega, location);
+			return new Zeela(zeela, location);
 		}
 
 		/*public ISprite CreateBlockSprite(ILevel level)

@@ -27,7 +27,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private int timeSinceLastFrame = 0;
         private int rTime;
         private int jTime;
-        public int currentFrame = 0;
         private int pixelSize;
         private int lowerBound = 480;
         private int rightBound = 800;
@@ -47,12 +46,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         //private SpriteFont healthFont;
 
         private int health = 100;
+        public int idleFrames = 0;
+        public int moveLeftFrames = -1;
+        public int moveRightFrames = -1;
+        public int crouchFrames = -1;
+        public int jumpFrames = 0;
 
         public PlayerSprite(List<Texture2D> texture, List<SpriteFont> font)
         {
             currentState = State.Idle;
             facingRight = true;
-            currentFrame = 0;
             rightIdle = texture.ElementAt(0);
             leftIdle = texture.ElementAt(1);
             rightWalk = texture.ElementAt(2);
@@ -78,8 +81,38 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public void UpdateState(State newState, int newFrame, bool rightFace) 
         {
             currentState = newState;
-            currentFrame = newFrame;
             facingRight = rightFace;
+                        //User actions based on switch case of states that change when a new action is selected
+            switch (currentState){
+                case State.Attack: // Attack
+                    idleFrames = newFrame;
+                    break;
+                /*case State.Item1: // Item1 - PowerBeam
+                    break;
+                case State.Item2: // Item2 - WaveBeam
+                    break;
+                case State.Item3: // Item3 - IceBeam
+                    break;
+                case State.Item4: // Item4 - MissleRocket
+                    break;
+                case State.Item5: // Item5 - Bomb
+                    break;*/
+                case State.MoveRight: // Move Right
+                    moveRightFrames = newFrame;
+                    break;
+                case State.MoveLeft: // Move Left
+                    moveLeftFrames = newFrame;
+                    break;
+                case State.Jump: // Jump
+                    idleFrames = newFrame;
+                    break;
+                case State.Crouch: // Crouch: Nothing needs to be updated.
+                    crouchFrames = newFrame;               
+                    break;
+                case State.Idle: // Idle
+                    idleFrames = newFrame;
+                    break;
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -90,7 +123,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Attack: // Attack
                     if (timeSinceLastFrame > rTime){
                         timeSinceLastFrame -= rTime;
-                        currentFrame++;
+                        idleFrames = 0;
                     }
                     break;
                 /*case State.Item1: // Item1 - PowerBeam
@@ -106,7 +139,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.MoveRight: // Move Right
                     if (timeSinceLastFrame > rTime){
                         timeSinceLastFrame -= rTime;
-                        currentFrame++;
+                        moveRightFrames++;
                         Location = new Vector2(Location.X + xIncrease, Location.Y);
                         if (Location.X > rightBound){
                             Location = new Vector2(rightBound, Location.Y);
@@ -116,7 +149,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.MoveLeft: // Move Left
                     if (timeSinceLastFrame > rTime){
                         timeSinceLastFrame -= rTime;
-                        currentFrame++;
+                        moveLeftFrames++;
                         Location = new Vector2(Location.X - xIncrease, Location.Y);
                         if (Location.X < 0){
                             Location = new Vector2(0, Location.Y);
@@ -127,7 +160,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Jump: // Jump
                     if (timeSinceLastFrame > jTime){
                         timeSinceLastFrame -= jTime;
-                        currentFrame++;                   
+                        jumpFrames++;                   
                         if (currentFrame == 1 || currentFrame == 2 || currentFrame == 3 || currentFrame == 4){
                             Location = new Vector2(Location.X, Location.Y - yIncrease);
                         }else if (currentFrame == 6 || currentFrame == 7 || currentFrame == 8 || currentFrame == 9){
@@ -141,12 +174,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Crouch: // Crouch: Nothing needs to be updated.
                     if (timeSinceLastFrame > rTime){
                         timeSinceLastFrame -= rTime;
-                        currentFrame++;
+                        crouchFrames++;
                     }                    
                     break;
                 case State.Idle: // Idle
                     if (timeSinceLastFrame > rTime){
                         timeSinceLastFrame -= rTime;
+                        idleFrames = 0;
                     } 
                     break;
             }
@@ -208,7 +242,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             }
             Rectangle destRec = new Rectangle((int)Location.X, (int)Location.Y, currentText.Width, currentText.Height);
             spriteBatch.Draw(currentText, destRec, Color.White);
-            currentFrame = 0;
+            idleFrames = 0;
         }
 
         public void AttackAnimation(SpriteBatch spriteBatch) 
@@ -245,14 +279,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         {
             facingRight = false;
             currentText = leftWalk;
-            int adjFrame = currentFrame;
-            if (currentFrame % 4 == 0){
+            int adjFrame = moveLeftFrames;
+            if (moveLeftFrames % 4 == 0){
                 adjFrame = 3;
-            }else if (currentFrame % 4 == 1){
+            }else if (moveLeftFrames % 4 == 1){
                 adjFrame = 2;
-            }else if (currentFrame % 4 == 2){
+            }else if (moveLeftFrames % 4 == 2){
                 adjFrame = 1;
-            }else if (currentFrame % 4 == 3){
+            }else if (moveLeftFrames % 4 == 3){
                 adjFrame = 0;
             }
 
@@ -261,9 +295,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             Rectangle srcRec = new Rectangle((width * adjFrame), 0, width, height);
             Rectangle destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
             spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
-            if (currentFrame == 7)
+            if (moveLeftFrames == 7)
             {
                 currentState = State.Idle;
+                moveLeftFrames = -1;
             }
 
         }
@@ -274,37 +309,38 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             currentText = rightWalk;
             int width = currentText.Width / 4;
             int height = currentText.Height;
-            Rectangle srcRec = new Rectangle((width * (currentFrame % 4)), 0, width, height);
+            Rectangle srcRec = new Rectangle((width * (moveRightFrames % 4)), 0, width, height);
             Rectangle destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
             spriteBatch.Draw(currentText, destRec, srcRec, Color.White); 
-            if (currentFrame == 7){
+            if (moveRightFrames == 7){
                 currentState = State.Idle;
+                moveRightFrames = -1;
             }
         }
 
         public void CrouchAnimation(SpriteBatch spriteBatch)
         {
-            int adjFrame = currentFrame;
+            int adjFrame = crouchFrames;
             int width;
             int height;
             Rectangle srcRec;
             Rectangle destRec;
             if (facingRight){
                 currentText = rightCrouch;
-                if (currentFrame == 0 || currentFrame == 4){
+                if (crouchFrames == 0 || crouchFrames == 4){
                     adjFrame = 0;
-                }else if (currentFrame == 1 || currentFrame == 3){
+                }else if (crouchFrames == 1 || crouchFrames == 3){
                     adjFrame = 1;
-                }else if (currentFrame == 2){
+                }else if (crouchFrames == 2){
                     adjFrame = 2;
                 }
             }else {
                 currentText = leftCrouch;
-                if (currentFrame == 0 || currentFrame == 4){
+                if (crouchFrames == 0 || crouchFrames == 4){
                     adjFrame = 2;
-                }else if (currentFrame == 1 || currentFrame == 3){
+                }else if (crouchFrames == 1 || crouchFrames == 3){
                     adjFrame = 1;
-                }else if (currentFrame == 2){
+                }else if (crouchFrames == 2){
                     adjFrame = 0;
                 }
             }
@@ -313,9 +349,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             srcRec = new Rectangle((width * adjFrame), 0, width, height);
             destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
             spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
-            if (currentFrame == 4)
+            if (crouchFrames == 4)
             {
                 currentState = State.Idle;
+                crouchFrames = -1;
             }
         }
 
@@ -324,32 +361,32 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             currentText = jump;
             int width;
             int height;
-            int adjFrame = currentFrame;
+            int adjFrame = jumpFrames;
             Rectangle srcRec;
             Rectangle destRec;
 
-            if (currentFrame == 0 || currentFrame == 10){
-                if (currentFrame == 10){
+            if (jumpFrames == 0 || jumpFrames == 10){
+                if (jumpFrames == 10){
                     currentState = State.Idle;
                 }
-                currentFrame = 0;
+                jumpFrames = 0;
                 IdleAnimation(spriteBatch);
-            }else if (currentFrame == 1 || currentFrame == 9){
-                adjFrame = currentFrame;
-                currentFrame = 1;
+            }else if (jumpFrames == 1 || jumpFrames == 9){
+                adjFrame = crouchFrames;
+                crouchFrames = 1;
                 CrouchAnimation(spriteBatch);
-                currentFrame = adjFrame;
+                crouchFrames = adjFrame;
             }else if (facingRight){
                 width = currentText.Width / 4;
                 height = currentText.Height;
-                if (currentFrame == 2 || currentFrame == 6){
+                if (jumpFrames == 2 || jumpFrames == 6){
                    adjFrame = 0;
                 }
-                else if (currentFrame == 3 || currentFrame == 7){
+                else if (jumpFrames == 3 || jumpFrames == 7){
                     adjFrame = 1;
-                }else if (currentFrame == 4 || currentFrame == 8){
+                }else if (jumpFrames == 4 || jumpFrames == 8){
                     adjFrame = 2;
-                }else if (currentFrame == 5){
+                }else if (jumpFrames == 5){
                     adjFrame = 3;
                 }
                 srcRec = new Rectangle((width * adjFrame), 0, width, height);
@@ -359,24 +396,24 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 width = currentText.Width / 4;
                 height = currentText.Height;
                 if (facingRight){
-                    if (currentFrame == 2 || currentFrame == 6){
+                    if (jumpFrames == 2 || jumpFrames == 6){
                         adjFrame = 0;
                     }
-                    else if (currentFrame == 3 || currentFrame == 7){
+                    else if (jumpFrames == 3 || jumpFrames == 7){
                         adjFrame = 1;
-                    }else if (currentFrame == 4 || currentFrame == 8){
+                    }else if (jumpFrames == 4 || jumpFrames == 8){
                         adjFrame = 2;
-                    }else if (currentFrame == 5){
+                    }else if (jumpFrames == 5){
                         adjFrame = 3;
                     }
                 }else {
-                    if (currentFrame == 2 || currentFrame == 6){
+                    if (jumpFrames == 2 || jumpFrames == 6){
                         adjFrame = 3;
-                    }else if (currentFrame == 3 || currentFrame == 7){
+                    }else if (jumpFrames == 3 || jumpFrames == 7){
                         adjFrame = 2;
-                    }else if (currentFrame == 4 || currentFrame == 8){
+                    }else if (jumpFrames == 4 || jumpFrames == 8){
                         adjFrame = 1;
-                    }else if (currentFrame == 5){
+                    }else if (jumpFrames == 5){
                         adjFrame = 0; 
                     }
                 }
