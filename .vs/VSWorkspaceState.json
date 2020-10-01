@@ -4,12 +4,13 @@
     "\\Super Metroidvania 3Million",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Controller",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command\\PlayerItemCommands",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Content",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Content\\PlayerSprites",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\obj",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\obj\\Release",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Properties"
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player Sprites"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Controller\\MouseController.cs",
+  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player Sprites\\PlayerSprite.cs",
   "PreviewInSolutionExplorer": false
 }
