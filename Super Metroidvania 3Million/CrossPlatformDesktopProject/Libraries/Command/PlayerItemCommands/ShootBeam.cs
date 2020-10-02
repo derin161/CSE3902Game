@@ -31,19 +31,19 @@ namespace CrossPlatformDesktopProject.Libraries.Command
             if (!samus.facingRight)
             {
                 direction = new Vector2(-speed, 0);
-                location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
+                samus.Location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
             }
             
             if (samus.wave)
             {
-                game.AddSprite(factory.CreateWaveBeam(location, direction, samus.elong, samus.ice));
+                game.AddSprite(factory.CreateWaveBeam(samus.Location, direction, samus.elong, samus.ice));
             }
             else if (samus.ice)
             {
-                game.AddSprite(factory.CreateIceBeam(location, direction, samus.elong));
+                game.AddSprite(factory.CreateIceBeam(samus.Location, direction, samus.elong));
             }
             else { //Power beam
-                game.AddSprite(factory.CreatePowerBeam(location, direction, samus.elong));
+                game.AddSprite(factory.CreatePowerBeam(samus.Location, direction, samus.elong));
             } 
         }
     }

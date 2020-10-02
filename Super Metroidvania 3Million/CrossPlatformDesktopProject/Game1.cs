@@ -129,11 +129,13 @@ namespace CrossPlatformDesktopProject
         }
 
         public void Restart(){
+            // Create a new SpriteBatch, which can be used to draw textures.
             SpriteList = new List<ISprite>();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
             AddSprite(Factory.CreatePlayerSprite());
+            AddSprite(Factory.CreateEnemySprite(new Vector2(700, 250)));
             keyboard = new KeyboardController(this);
         }
     }
