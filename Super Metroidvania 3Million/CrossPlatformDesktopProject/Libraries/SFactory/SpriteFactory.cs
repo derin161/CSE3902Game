@@ -43,12 +43,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         private Texture2D leftCrouch;
         private Texture2D jump;
 
+		//Fonts
+		private List<SpriteFont> playerFonts = new List<SpriteFont>();
+		private SpriteFont healthFont;
 
+		// More private Texture2Ds follow
+		// ...
 
-        // More private Texture2Ds follow
-        // ...
-
-        private static SpriteFactory instance = new SpriteFactory();
+		private static SpriteFactory instance = new SpriteFactory();
 
 		public static SpriteFactory Instance
 		{
@@ -98,13 +100,17 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             jump = content.Load<Texture2D>("PlayerSprites/Jump");
             playerTextures.Add(jump);
 
-            // More Content.Load calls follow
-            //...
-        }
+			//Fonts
+			healthFont = content.Load<SpriteFont>("PlayerHealth");
+			playerFonts.Add(healthFont);
+
+			// More Content.Load calls follow
+			//...
+		}
 
 		public ISprite CreatePlayerSprite()
 		{
-			return (ISprite) new PlayerSprite(playerTextures);
+			return (ISprite) new PlayerSprite(playerTextures, playerFonts);
 		}
 
 		public ISprite CreateEnemySprite(Vector2 location)

@@ -121,6 +121,13 @@
 /processorParam:TextureFormat=Color
 /build:NES - Metroid - Samus Aran Power Suit.png
 
+#begin PlayerHealth.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:PlayerHealth.spritefont
+
 #begin PlayerSprites/Jump.png
 /importer:TextureImporter
 /processor:TextureProcessor

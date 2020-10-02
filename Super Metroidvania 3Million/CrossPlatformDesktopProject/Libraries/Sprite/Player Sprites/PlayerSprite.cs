@@ -15,6 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         {
             Attack, Item1, Item2, Item3, Item4, Item5, MoveRight, MoveLeft, Crouch, Jump, Idle
         }
+
         public State currentState;
         public Vector2 Location { get; set; }
         public bool ice { get; set; } //ice beam
@@ -22,6 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool elong { get; set; } //long beam
         public bool facingRight { get; set; }
         public int TotalRockets { get; set; }
+
         private int timeSinceLastFrame = 0;
         private int rTime;
         private int jTime;
@@ -40,6 +42,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private Texture2D jump;
         private Texture2D currentText;
 
+        //private SpriteFont currentFont;
+        //private SpriteFont healthFont;
+
         private int health = 100;
         public int idleFrames = 0;
         public int moveLeftFrames = -1;
@@ -47,7 +52,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public int crouchFrames = -1;
         public int jumpFrames = 0;
 
-        public PlayerSprite(List<Texture2D> texture)
+        public PlayerSprite(List<Texture2D> texture, List<SpriteFont> font)
         {
             currentState = State.Idle;
             facingRight = true;
@@ -58,6 +63,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             rightCrouch = texture.ElementAt(4);
             leftCrouch = texture.ElementAt(5);
             jump = texture.ElementAt(6);
+            //healthFont = font.ElementAt(0);
+            //currentFont = healthFont;
             currentText = rightIdle;
             pixelSize = currentText.Height;
             lowerBound = 480 - pixelSize;
@@ -217,7 +224,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Idle: // Idle
                     IdleAnimation(spriteBatch);
                     break;
+
             }
+            //currentFont = healthFont;
+            //spriteBatch.DrawString(currentFont, "health", new Vector2(200, 300), Color.Black);
         }
 
         public void IdleAnimation(SpriteBatch spriteBatch)

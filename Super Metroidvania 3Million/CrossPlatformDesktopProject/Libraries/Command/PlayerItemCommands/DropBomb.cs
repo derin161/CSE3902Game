@@ -15,7 +15,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
         private PlayerSprite samus;
         private IFactory factory;
-        private float speed = 1;
         Game1 game;
 
         public DropBomb(Game1 game, PlayerSprite player, IFactory factory) {
