@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.texture, new Vector2(Location.X, Location.Y), Color.White);
+            spriteBatch.Draw(this.texture, new Vector2(xLoc, yLoc), Color.White);
         }
 
         public bool IsDead()

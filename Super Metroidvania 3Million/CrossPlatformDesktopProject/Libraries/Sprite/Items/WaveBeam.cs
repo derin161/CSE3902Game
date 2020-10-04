@@ -18,8 +18,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         public WaveBeam(Texture2D texture, Vector2 initialLocation)
         {
             this.texture = texture;
-            this.xLoc = x;
-            this.yLoc = y;
+            this.xLoc = (int)initialLocation.X;
+            this.yLoc = (int)initialLocation.Y;
         }
 
 

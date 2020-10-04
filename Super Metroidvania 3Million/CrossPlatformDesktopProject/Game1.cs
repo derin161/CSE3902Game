@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Media;
 using CrossPlatformDesktopProject.Libraries.Sprite;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using CrossPlatformDesktopProject.Libraries.Controller;
-
+using System.Net;
 
 namespace CrossPlatformDesktopProject
 {
@@ -23,6 +23,8 @@ namespace CrossPlatformDesktopProject
 
         public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
         public List<ISprite> DeadSprites = new List<ISprite>();
+        public List<ISprite> enemySprites;
+        public int enemyIndex = 0;
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -60,9 +62,9 @@ namespace CrossPlatformDesktopProject
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
             AddSprite(Factory.CreatePlayerSprite());
-            AddSprite(Factory.CreateEnemySprite(new Vector2(700, 250)));
             keyboard = new KeyboardController(this);
-
+            enemySprites = Factory.CreateEnemySpriteList(new Vector2(700, 250));
+            
             // TODO: use this.Content to load your game content here
         }
 
@@ -98,6 +100,8 @@ namespace CrossPlatformDesktopProject
 
             }
 
+            enemySprites[enemyIndex].Update(gameTime);
+
             foreach (ISprite dead in DeadSprites){
                 SpriteList.Remove(dead);
             }
@@ -120,6 +124,8 @@ namespace CrossPlatformDesktopProject
                 entry.Draw(spriteBatch);
             }
 
+            enemySprites[enemyIndex].Draw(spriteBatch);
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -135,8 +141,8 @@ namespace CrossPlatformDesktopProject
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
             AddSprite(Factory.CreatePlayerSprite());
-            AddSprite(Factory.CreateEnemySprite(new Vector2(700, 250)));
             keyboard = new KeyboardController(this);
+            enemyIndex = 0;
         }
     }
 }

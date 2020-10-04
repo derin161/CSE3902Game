@@ -48,9 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width, height);
 
-            spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
         public Boolean IsDead()
         {
