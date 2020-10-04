@@ -161,9 +161,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                     if (timeSinceLastFrame > jTime){
                         timeSinceLastFrame -= jTime;
                         jumpFrames++;                   
-                        if (currentFrame == 1 || currentFrame == 2 || currentFrame == 3 || currentFrame == 4){
+                        if (jumpFrames == 1 || jumpFrames == 2 || jumpFrames == 3 || jumpFrames == 4){
                             Location = new Vector2(Location.X, Location.Y - yIncrease);
-                        }else if (currentFrame == 6 || currentFrame == 7 || currentFrame == 8 || currentFrame == 9){
+                        }else if (jumpFrames == 6 || jumpFrames == 7 || jumpFrames == 8 || jumpFrames == 9){
                             Location = new Vector2(Location.X, Location.Y + yIncrease);
                         }
                         if (Location.Y < 0){

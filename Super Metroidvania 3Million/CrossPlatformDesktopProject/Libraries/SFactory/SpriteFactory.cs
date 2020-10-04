@@ -24,6 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D skree;
 		private Texture2D zeela;
 
+
 		//Projectiles
 		private Texture2D bombTex;
 		private Texture2D kraidHornTex;
@@ -113,9 +114,18 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return (ISprite) new PlayerSprite(playerTextures, playerFonts);
 		}
 
-		public ISprite CreateEnemySprite(Vector2 location)
+		public List<ISprite> CreateEnemySpriteList(Vector2 location)
 		{
-			return new Zeela(zeela, location);
+			List<ISprite> enemyList = new List<ISprite>();
+			enemyList.Add(new Zeela(zeela, location));
+			enemyList.Add(new Skree(skree, location));
+			enemyList.Add(new SideHopper(sideHopper, location));
+			enemyList.Add(new Ripper(ripper, location));
+			enemyList.Add(new Memu(memu, location));
+			enemyList.Add(new Geega(geega, location));
+			enemyList.Add(new Kraid(kraid, location));
+
+			return enemyList;
 		}
 
 		/*public ISprite CreateBlockSprite(ILevel level)
