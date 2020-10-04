@@ -10,15 +10,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
     class IceBeam : IItems
     {
-        public Vector2 Location { get; set; }
-
         private Texture2D texture;
+        private int xLoc = 0;
+        private int yLoc = 0;
         private bool isDead = false;
 
-        public IceBeam(Texture2D texture, Vector2 initialLocation)
+        public IceBeam(Texture2D texture, int x, int y)
         {
             this.texture = texture;
-            Location = initialLocation;
+            this.xLoc = x;
+            this.yLoc = y;
         }
 
         public void Update(GameTime gameTime)
@@ -28,9 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
             spriteBatch.Draw(this.texture, new Vector2(Location.X, Location.Y), Color.White);
-            spriteBatch.End();
         }
 
         public bool IsDead()
