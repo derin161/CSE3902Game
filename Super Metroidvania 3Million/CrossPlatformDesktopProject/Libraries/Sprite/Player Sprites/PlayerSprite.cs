@@ -13,8 +13,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
     {
         public enum State
         {
-            Attack, Item1, Item2, Item3, Item4, Item5, MoveRight, MoveLeft, Crouch, Jump, Idle
+            Attack, Item1, Item2, Item3, Item4, Item5, MoveRight, MoveLeft, Crouch, Jump, Idle, Damage
         }
+
+        public enum HealthState
+        {
+            Normal,
+            Low, 
+            Critical
+        };
+
+        public HealthState currentHealthState;
+
+        public Vector2 HealthPosition = new Vector2(20, 20);
+
+        public int currentHealth = 100;
+        public int maxHealth = 100;
+        public int newHealth; //Used for animating the damage change
 
         public State currentState;
         public Vector2 Location { get; set; }
@@ -42,15 +57,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private Texture2D jump;
         private Texture2D currentText;
 
+        private Texture2D damaged_rightIdle;
+        private Texture2D damaged_leftIdle;
+        private Texture2D healthBar;
         //private SpriteFont currentFont;
         //private SpriteFont healthFont;
-
-        private int health = 100;
+        
         public int idleFrames = 0;
         public int moveLeftFrames = -1;
         public int moveRightFrames = -1;
         public int crouchFrames = -1;
         public int jumpFrames = 0;
+        public int damageFrames = -1;
+        public int invinsibilityFrames = 24;
 
         public PlayerSprite(List<Texture2D> texture, List<SpriteFont> font)
         {
@@ -63,6 +82,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             rightCrouch = texture.ElementAt(4);
             leftCrouch = texture.ElementAt(5);
             jump = texture.ElementAt(6);
+            damaged_rightIdle = texture.ElementAt(7);
+            damaged_leftIdle = texture.ElementAt(8);
+            healthBar = texture.ElementAt(9);
             //healthFont = font.ElementAt(0);
             //currentFont = healthFont;
             currentText = rightIdle;
@@ -113,6 +135,28 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                     idleFrames = newFrame;
                     break;
             }
+        }
+
+        public void HealthBar(int currentHealth, int maxHealth)
+        {
+            this.currentHealth = currentHealth;
+            this.maxHealth = maxHealth;
+        }
+        public void UpdateHealth(int currentHealth, int maxHealth)
+        {
+            newHealth = currentHealth;
+            this.maxHealth = maxHealth;
+        }
+
+        public void UpdateHealthState()
+        {
+            float percent = (float)currentHealth / (float)maxHealth;
+            if (percent < 0.2)
+                currentHealthState = HealthState.Critical;
+            else if (percent < 0.5)
+                currentHealthState = HealthState.Low;
+            else
+                currentHealthState = HealthState.Normal;
         }
 
         public void Update(GameTime gameTime)
@@ -183,6 +227,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                         idleFrames = 0;
                     } 
                     break;
+                case State.Damage: // Damaged
+                    if (timeSinceLastFrame > rTime){
+                        timeSinceLastFrame -= rTime;
+                        damageFrames++;
+                    } 
+                    break;
             }
         }
 
@@ -224,8 +274,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Idle: // Idle
                     IdleAnimation(spriteBatch);
                     break;
+                case State.Damage: // Damage
+                    DamageAnimation(spriteBatch, facingRight);
+                    break;
 
             }
+
+            DrawHealthBar(spriteBatch, HealthPosition);
             //currentFont = healthFont;
             //spriteBatch.DrawString(currentFont, "health", new Vector2(200, 300), Color.Black);
         }
@@ -423,9 +478,226 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             }
         }
 
-        public void DamageAnimation(SpriteBatch spriteBatch)
+        public void DamageAnimation(SpriteBatch spriteBatch, Boolean facingRight)
         {
-            int x = 1 + 1;
+            int width = currentText.Width / 4;
+            int height = currentText.Height;
+
+            if (facingRight)
+            {
+                currentText = damaged_rightIdle;
+            }
+            else
+            {
+                currentText = damaged_leftIdle;
+            }
+            
+            Rectangle srcRec = new Rectangle((width * (damageFrames % 4)), 0, width, height);
+            Rectangle destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
+
+            if (damageFrames == invinsibilityFrames)
+            {
+                currentState = State.Idle;
+                damageFrames = -1;
+            }
+        }
+
+        public void DrawHealthBar(SpriteBatch spriteBatch, Vector2 HealthPosition)
+        {
+            currentText = healthBar;
+            int width = currentText.Width;
+            int height = currentText.Height / 3;
+            Rectangle srcRec = new Rectangle(0, 3 * (int)currentHealthState, 1, 3);
+            Rectangle destRec;
+            if (currentHealth > maxHealth * 9 / 10) //Draw 10 bars
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 3, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 4, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 5, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 6, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 7, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 8, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 9, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 8 / 10) //Draw 9 bars
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 3, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 4, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 5, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 6, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 7, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 8, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 7 / 10) //Draw 8 bars
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 3, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 4, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 5, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 6, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 7, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 6 / 10) //Draw 7 bars ... etc.
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 3, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 4, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 5, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 6, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 5 / 10)
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 3, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 4, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 5, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 4 / 10)
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 3, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 4, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 3 / 10)
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 3, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 2 / 10)
+            {
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 2, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > maxHealth * 1 / 10)
+            {
+
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+
+                destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 1, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            else if (currentHealth > 0)
+            {
+                srcRec = new Rectangle(0, 3 * (int)currentHealthState, 1, 3);
+                destRec = new Rectangle((int)HealthPosition.X, (int)HealthPosition.Y, width, height);
+                spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
+            }
+            
         }
 
         public bool IsDead() {

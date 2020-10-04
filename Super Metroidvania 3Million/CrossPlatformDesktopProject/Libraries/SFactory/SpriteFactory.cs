@@ -44,6 +44,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         private Texture2D leftCrouch;
         private Texture2D jump;
 
+		private Texture2D damaged_rightIdle;
+		private Texture2D damaged_leftIdle;
+		private Texture2D healthBar;
 		//Fonts
 		private List<SpriteFont> playerFonts = new List<SpriteFont>();
 		private SpriteFont healthFont;
@@ -100,6 +103,13 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             playerTextures.Add(leftCrouch);
             jump = content.Load<Texture2D>("PlayerSprites/Jump");
             playerTextures.Add(jump);
+
+			damaged_rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdleDamaged");
+			playerTextures.Add(damaged_rightIdle);
+			damaged_leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdleDamaged");
+			playerTextures.Add(damaged_leftIdle);
+			healthBar = content.Load<Texture2D>("HealthBar");
+            playerTextures.Add(healthBar);
 
 			//Fonts
 			healthFont = content.Load<SpriteFont>("PlayerHealth");
