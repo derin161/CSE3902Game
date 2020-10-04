@@ -151,9 +151,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public void UpdateHealthState()
         {
             float percent = (float)currentHealth / (float)maxHealth;
-            if (percent < 0.2)
+            if (percent < 0.4)
                 currentHealthState = HealthState.Critical;
-            else if (percent < 0.5)
+            else if (percent < 0.7)
                 currentHealthState = HealthState.Low;
             else
                 currentHealthState = HealthState.Normal;
