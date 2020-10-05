@@ -16,7 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         //The suppressedKeyTimer keeps track of all the keys and, if mapped to a positive number, how long they are suppressed for.
         private Dictionary<Keys, int> suppressedKeyTimer = new Dictionary<Keys, int>();
 
-        private int msSuppressTimer = 150;
+        private int msSuppressTimer = 100;
         private KeyboardState oldState;
         private KeyboardState newState;
         private Keys[] pressedKeys;
