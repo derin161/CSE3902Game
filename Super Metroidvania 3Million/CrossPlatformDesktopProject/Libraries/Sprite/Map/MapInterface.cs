@@ -10,7 +10,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
 {
     interface MapInterface : ISprite
     {
+        public void Update(GameTime gameTime);
 
+        public void Draw(SpriteBatch spriteBatch);
        
     }
 }
