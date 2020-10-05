@@ -21,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 
         public void AttackAnimation(SpriteBatch spriteBatch);
 
-        public void DamageAnimation(SpriteBatch spriteBatch, Boolean facingRight);
+        public void DamageAnimation(SpriteBatch spriteBatch);
         public void IdleAnimation(SpriteBatch spriteBatch);
 
     }

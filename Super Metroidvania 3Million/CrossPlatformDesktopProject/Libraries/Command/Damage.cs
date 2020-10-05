@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
             if (samus.damageFrames == -1)
             {
                 samus.UpdateHealth(samus.currentHealth - 10, samus.maxHealth);
-                samus.HealthBar(samus.currentHealth - 10, samus.maxHealth);
+                samus.HealthBar(samus.currentHealth, samus.maxHealth);
                 samus.UpdateHealthState();
                 
                 samus.UpdateState(PlayerSprite.State.Damage, samus.damageFrames, samus.facingRight);

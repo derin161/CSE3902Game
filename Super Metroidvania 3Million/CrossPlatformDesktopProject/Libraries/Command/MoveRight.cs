@@ -23,7 +23,9 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            if (samus.moveRightFrames == 7){
+            if (samus.currentState == PlayerSprite.State.Jump){
+                samus.Location = new Vector2(samus.Location.X + 5, samus.Location.Y);
+            }else if (samus.moveRightFrames == 7){
                 samus.UpdateState(PlayerSprite.State.MoveRight, -1, true);
             }else {
                 samus.UpdateState(PlayerSprite.State.MoveRight, samus.moveRightFrames, true);
