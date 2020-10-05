@@ -80,6 +80,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool jumpDisabled = false;
         public bool crouchDisabled = false;
         public bool damageDisabled = false;
+        public bool varia = false;
 
         public PlayerSprite(List<Texture2D> texture, List<SpriteFont> font)
         {
@@ -105,6 +106,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             ice = false;
             wave = false;
             elong = false;
+            varia = false;
             rTime = 80;
             jTime = (rTime*7)/8;
             TotalRockets = 10;
@@ -497,7 +499,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 }
                 srcRec = new Rectangle((width * adjFrame), 0, width, height);
                 destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
-                spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
+                spriteBatch.Draw(currentText, destRec, srcRec, Color.Blue);
             }
         }
 
@@ -578,6 +580,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                     break;
                 case UpgradeType.Longbeam:
                     elong = !elong;
+                    break;
+                case UpgradeType.Varia:
+                    varia = !varia;
                     break;
                 default:
                     break;
