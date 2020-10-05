@@ -1,0 +1,25 @@
+Review Author: Nyigel Spann
+Review Date: 10/05/2020
+Sprint No: 2
+Name of the .cs file being reviewed: PlayerSprite.cs
+Author of the .cs file being reviewed: Shyamal Shah
+Number of minutes taken to complete the review: 20
+
+============================================================
+
+Coupling: Low
+Comments: The class has few dependencies and doesn't rely on too much info directly from other classes.
+
+Cohesion: Medium
+Comments: All of the state variables and methods are related to the player, but this class covers an extremely large range of player functionality and info.
+
+Maintainability: Good
+Comments: The player class has a lot of potential for supporting additional features going forward.
+
+List any "code smells":
+1) Textures are taken from specific positions in a list. Seems odd.
+2) A lot of state information is stored here in many different variables. Could probably be separated into another class or various collections.
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+Support for an additional player character (CO-OP). Using two separate instances of this class, 
+however, one instance would probably be the "lead" character who determines the side scrolling.

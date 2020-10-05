@@ -166,7 +166,9 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Code Reviews\Code Quality\NyigelQualityReviewShyamal.txt" />
     <Content Include="Code Reviews\Code Quality\WillQualityReviewDanny.txt" />
+    <Content Include="Code Reviews\Code Readability\NyigelReadabilityReviewShyamal.txt" />
     <Content Include="Code Reviews\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
