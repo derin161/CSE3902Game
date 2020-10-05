@@ -433,6 +433,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public void JumpAnimation(SpriteBatch spriteBatch)
         {
             crouchDisabled = true;
+            damageDisabled = true;
             currentText = jump;
             int width;
             int height;
@@ -444,6 +445,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 if (jumpFrames == 10){
                     currentState = State.Idle;
                     crouchDisabled = false;
+                    damageDisabled = false;
                 }
                 jumpFrames = 0;
                 IdleAnimation(spriteBatch);

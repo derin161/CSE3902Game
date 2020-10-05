@@ -22,11 +22,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
+            if (!samus.damageDisabled){
                 samus.UpdateHealth(samus.currentHealth - 10, samus.maxHealth);
                 samus.HealthBar(samus.currentHealth - 10, samus.maxHealth);
                 samus.UpdateHealthState();
-                
+
                 samus.UpdateState(PlayerSprite.State.Damage, samus.damageFrames++, samus.facingRight);
+            }
+
         }
     }
 }
