@@ -48,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             //Create source and destination and draw the sprite
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)Location.X, (int)Location.Y, width*2, height*2);
 
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
 
