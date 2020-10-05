@@ -47,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private int rTime;
         private int jTime;
         private int pixelSize;
-        private int lowerBound = 480;
+        private int lowerBound = 400;
         private int rightBound = 800;
         public int xIncrease = 10;
         public int yIncrease = 20;

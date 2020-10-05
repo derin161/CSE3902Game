@@ -373,3 +373,5 @@ C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.pdb
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CopyComplete
+C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\EnergyDropItem.xnb
+C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\RocketDropItem.xnb
