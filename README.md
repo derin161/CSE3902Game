@@ -1,6 +1,10 @@
 # CSE3902Game
 # Super Metroidvania 5Million
 
+**PROGRAM DESCRIPTION**
+
+This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight. At the moment, the program essentially showcases all enemies, items, blocks, the player, and all non-collision related behaviors.
+
 **PROGRAM CONTROLS**
 
 * UpArrow, W : Player Jump and enter briefly morph form.
