@@ -90,10 +90,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             //Using temporary var til collisions are added
             bool collision = false;
-            if (collision)
-            {
-                isDead = true;
-            }
 
 
             //Update position
@@ -124,10 +120,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             //If the Projectile is not a Long Beam, it dies after moving a set distance.
             if (!isLongBeam)
             {
-                if (isHorizontal && (relativeX > boundX || relativeX < -boundX) || !isHorizontal && (relativeY > boundY || relativeY < -boundY))
-                {
-                    isDead = true;
-                }
+                isDead = collision || isHorizontal && (relativeX > boundX || relativeX < -boundX) || !isHorizontal && (relativeY > boundY || relativeY < -boundY);
+            }
+            else {
+                //Die if a collision occurs or the projectile leaves the screen
+                isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
 
         }

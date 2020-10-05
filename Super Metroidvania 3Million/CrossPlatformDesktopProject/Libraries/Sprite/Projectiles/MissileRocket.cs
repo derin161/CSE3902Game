@@ -52,15 +52,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Update(GameTime gameTime)
         {
-            //Using temporary var til collisions are added
-            bool collision = false;
-            if (collision) {
-                isDead = true;
-            }
 
             //Update position
             Location = Vector2.Add(Location, Direction);
-            
+
+            //Using temporary var til collisions are added
+            bool collision = false;
+
+            //Die if a collision occurs or the projectile leaves the screen
+            isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
+
         }
 
         public bool IsDead() {
