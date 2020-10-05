@@ -13,18 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin ../../../../../../../../Documents/School/Fall 2020/Project/Enemy Sprites/kraidHorn.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../../../../../../../../Documents/School/Fall 2020/Project/Enemy Sprites/kraidHorn.png;ProjSprites/kraidHorn.png
-
 #begin Enemies/geega.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -427,6 +415,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:ProjSprites/IceBeamProj.png
+
+#begin ProjSprites/kraidHorn.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ProjSprites/kraidHorn.png
 
 #begin ProjSprites/KraidMissile.png
 /importer:TextureImporter
