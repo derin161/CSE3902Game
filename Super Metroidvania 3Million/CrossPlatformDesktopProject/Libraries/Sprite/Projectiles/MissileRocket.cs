@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public MissleRocket(Texture2D texture, Vector2 initialLocation, Vector2 direction)
         {
-            isHorizontal = (int)direction.Y == 0;
+            isHorizontal = (int) direction.Y == 0;
             this.texture = texture;
             Location = initialLocation;
             Direction = direction;
@@ -38,10 +38,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 
             }
             else { //Rocket still flying
-                Rectangle destinationRec = new Rectangle((int)Location.X, (int)Location.Y, texture.Width / 2, texture.Height / 2);
+                Rectangle destinationRec = new Rectangle((int)Location.X, (int)Location.Y, 16, 8);
                 Rectangle sourceRec = new Rectangle(0, 4, 16, 8); //Horizontal texture before collision
                 if (!isHorizontal)
                 {
+                    destinationRec = new Rectangle((int)Location.X, (int)Location.Y, 8, 16);
                     sourceRec = new Rectangle(17, 0, 8, 16); //Vertical texture before collision
                 }
                 spriteBatch.Draw(texture, destinationRec, sourceRec, Color.White); 

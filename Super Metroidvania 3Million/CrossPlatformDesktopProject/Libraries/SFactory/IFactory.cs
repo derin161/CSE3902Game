@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         public void LoadAllTextures(ContentManager content);
 
 		//Enemies
-		public List<ISprite> CreateEnemySpriteList(Vector2 location);
+		public List<ISprite> CreateEnemySpriteList(Vector2 location, Game1 game);
 
         //Projectiles
 		public ISprite CreateBomb(Vector2 location);

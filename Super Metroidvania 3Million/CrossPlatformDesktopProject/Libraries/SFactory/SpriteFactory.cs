@@ -149,7 +149,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return (ISprite) new PlayerSprite(playerTextures, playerFonts);
 		}
 
-		public List<ISprite> CreateEnemySpriteList(Vector2 location)
+		public List<ISprite> CreateEnemySpriteList(Vector2 location, Game1 game)
 		{
 			List<ISprite> enemyList = new List<ISprite>();
 			enemyList.Add(new Zeela(zeela, location));
@@ -158,7 +158,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			enemyList.Add(new Ripper(ripper, location));
 			enemyList.Add(new Memu(memu, location));
 			enemyList.Add(new Geega(geega, location));
-			enemyList.Add(new Kraid(kraid, location));
+			enemyList.Add(new Kraid(kraid, location, game));
 
 			return enemyList;
 		}
