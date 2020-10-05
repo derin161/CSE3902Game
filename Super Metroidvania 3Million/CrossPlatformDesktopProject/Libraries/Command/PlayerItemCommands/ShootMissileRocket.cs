@@ -26,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         public void Execute()
         {
             Vector2 direction = new Vector2(speed, 0);
-            Vector2 location = new Vector2(samus.Location.X + 45, samus.Location.Y + 18);
+            Vector2 location = new Vector2(samus.Location.X + 46, samus.Location.Y + 18);
 
             if (!samus.facingRight)
             {
