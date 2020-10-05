@@ -2,8 +2,24 @@
 # Super Metroidvania 5Million
 
 #PROGRAM CONTROLS
-
-
+UpArrow, W : Player Jump and enter briefly morph form.
+RightArrow, D : Player face and move right.
+LeftArrow, A : Player face and move left.
+DownArrow, S : Player crouch and briefly enter morph form.
+Z, N : Player shoots the beam weapon.
+E : Player takes damage.
+C : If in morph form, places bomb. Else, fires missile rocket.
+Y : Advances the block currently displayed.
+T : Previous block displayed.
+I : Advances the item currently displayed.
+U : Previous item displayed.
+P : Advances the enemy currently displayed.
+O : Previous enemy displayed.
+Q : Quit.
+R : Reset the program to initial state.
+D1, NUM1 : Toggles the ice beam upgrade.
+D2,NUM2: Toggles the wave beam upgrade.
+D3, NUM3 : Toggles the long beam upgrade.
 
 #KNOWN BUGS
 
