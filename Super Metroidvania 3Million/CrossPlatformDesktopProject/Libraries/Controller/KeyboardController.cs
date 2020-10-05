@@ -111,8 +111,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.O, previousEnemy);
             RegisterCommand(Keys.P, nextEnemy);
 
-            RegisterCommand(Keys.K, previousItem);
-            RegisterCommand(Keys.L, nextItem);
+            RegisterCommand(Keys.U, previousItem);
+            RegisterCommand(Keys.I, nextItem);
 
             //RegisterCommand(Keys.X, special);
             //RegisterCommand(Keys.M, special);
