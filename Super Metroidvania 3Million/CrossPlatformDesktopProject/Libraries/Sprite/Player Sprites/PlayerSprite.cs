@@ -134,6 +134,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Idle: // Idle
                     idleFrames = newFrame;
                     break;
+                case State.Damage:
+                    damageFrames = newFrame;
+                    break;
             }
         }
 
@@ -230,7 +233,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Damage: // Damaged
                     if (timeSinceLastFrame > rTime){
                         timeSinceLastFrame -= rTime;
-                        damageFrames++;
+                        damageFrames = -1;
                     } 
                     break;
             }
@@ -275,12 +278,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                     IdleAnimation(spriteBatch);
                     break;
                 case State.Damage: // Damage
-                    DamageAnimation(spriteBatch, facingRight);
+                    IdleAnimation(spriteBatch);
+                    DamageAnimation(spriteBatch);
                     break;
 
             }
 
-            DrawHealthBar(spriteBatch, HealthPosition);
+            DamageAnimation(spriteBatch);
             //currentFont = healthFont;
             //spriteBatch.DrawString(currentFont, "health", new Vector2(200, 300), Color.Black);
         }
@@ -478,23 +482,27 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             }
         }
 
-        public void DamageAnimation(SpriteBatch spriteBatch, Boolean facingRight)
+        public void DamageAnimation(SpriteBatch spriteBatch)
         {
-            int width = currentText.Width / 4;
-            int height = currentText.Height;
+            int width;
+            int height;
 
             if (facingRight)
             {
                 currentText = damaged_rightIdle;
+                width = currentText.Width / 4;
+                height = currentText.Height;
             }
             else
             {
                 currentText = damaged_leftIdle;
+                width = currentText.Width / 4;
+                height = currentText.Height;
             }
             
             Rectangle srcRec = new Rectangle((width * (damageFrames % 4)), 0, width, height);
             Rectangle destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
-            spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
+            DrawHealthBar(spriteBatch);
 
             if (damageFrames == invinsibilityFrames)
             {
@@ -503,12 +511,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             }
         }
 
-        public void DrawHealthBar(SpriteBatch spriteBatch, Vector2 HealthPosition)
+        public void DrawHealthBar(SpriteBatch spriteBatch)
         {
             currentText = healthBar;
             int width = currentText.Width;
             int height = currentText.Height / 3;
-            Rectangle srcRec = new Rectangle(0, 3 * (int)currentHealthState, 1, 3);
+            int tmp = 0;
+            if (currentHealthState == HealthState.Low){
+                tmp = 1;
+            }else if (currentHealthState == HealthState.Critical){
+                tmp = 2;
+            }
+            Rectangle srcRec = new Rectangle(0, 3 * tmp, 1, 3);
             Rectangle destRec;
             if (currentHealth > maxHealth * 9 / 10) //Draw 10 bars
             {
@@ -704,9 +718,5 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             return false;
         }
 
-        public void DamageAnimation(SpriteBatch spriteBatch)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -214,3 +214,6 @@ C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusLeftIdleDamaged.xnb
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusRightIdleDamaged.xnb
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\HealthBar.xnb
+C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusLeftIdleDamaged.xnb
+C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\PlayerSprites\SamusRightIdleDamaged.xnb
+C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\HealthBar.xnb
