@@ -46,7 +46,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private int lowerBound = 480;
         private int rightBound = 800;
         public int xIncrease = 10;
-        public int yIncrease = 15;
+        public int yIncrease = 20;
 
         private Texture2D rightIdle;
         private Texture2D leftIdle;

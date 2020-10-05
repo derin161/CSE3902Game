@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
@@ -24,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         public void Execute()
         {
             if (samus.currentState == PlayerSprite.State.Jump){
-                samus.Location = new Vector2(samus.Location.X + 5, samus.Location.Y);
+                samus.Location = new Vector2(samus.Location.X + samus.xIncrease, samus.Location.Y);
             }else if (samus.moveRightFrames == 7){
                 samus.UpdateState(PlayerSprite.State.MoveRight, -1, true);
             }else {
