@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Nyigel Spann
+    //Author: Shyamal Shah
     public class Crouch : ICommand
     {
         private PlayerSprite samus;

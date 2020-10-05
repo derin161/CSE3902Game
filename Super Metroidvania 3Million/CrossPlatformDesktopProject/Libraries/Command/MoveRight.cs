@@ -11,7 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Nyigel Spann
+    //Author: Shyamal Shah
     class MoveRight : ICommand
     {
         private PlayerSprite samus;
