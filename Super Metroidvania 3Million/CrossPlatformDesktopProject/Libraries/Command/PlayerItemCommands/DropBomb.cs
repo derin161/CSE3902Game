@@ -17,14 +17,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private IFactory factory;
         Game1 game;
 
-        public DropBomb(Game1 game, PlayerSprite player, IFactory factory) {
+        public DropBomb(Game1 game, PlayerSprite player) {
             this.game = game;
             samus = player;
-            this.factory = factory;
+            this.factory = game.Factory;
         }
         public void Execute()
         {
-            Vector2 location = new Vector2(samus.Location.X, samus.Location.Y);
+            Vector2 location = new Vector2(samus.Location.X + 30, samus.Location.Y + 50);
 
             //if(samus is in morph form)
             game.AddSprite(factory.CreateBomb(location));

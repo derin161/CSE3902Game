@@ -18,10 +18,10 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private float speed = 7;
         Game1 game;
 
-        public ShootMissileRocket(Game1 game, PlayerSprite player, IFactory factory) {
+        public ShootMissileRocket(Game1 game, PlayerSprite player) {
             this.game = game;
             samus = player;
-            this.factory = factory;
+            this.factory = game.Factory;
         }
         public void Execute()
         {

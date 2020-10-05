@@ -62,36 +62,40 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         private void makeDict()     // If else of possible actions that updates choice
         {
-            ICommand up = new Jump(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand down = new Crouch(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand left = new MoveLeft(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand right = new MoveRight(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand attack = new Command.ShootBeam(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            //ICommand special = new Special(gameState);
+            PlayerSprite player = (PlayerSprite)gameState.SpriteList.ElementAt(0); // The player sprite
+
+            ICommand up = new Jump(gameState, player);
+            ICommand down = new Crouch(gameState, player);
+            ICommand left = new MoveLeft(gameState, player);
+            ICommand right = new MoveRight(gameState, player);
+            ICommand attack = new ShootBeam(gameState, player);
+            ICommand missleOrBomb = new MissleOrBomb(gameState, player);
             ICommand start = new Start(gameState);
             ICommand select = new Select(gameState);
-            ICommand damage = new Damage(gameState, (PlayerSprite)gameState.SpriteList.ElementAt(0));
+            ICommand damage = new Damage(gameState, player);
 
             //enemies
             ICommand nextEnemy = new NextEnemy(gameState);
             ICommand previousEnemy = new PreviousEnemy(gameState);
 
             //Upgrade Toggles
-            ICommand up1 = new UpgradeToggle(PlayerSprite.UpgradeType.Icebeam, (PlayerSprite)gameState.SpriteList.ElementAt(0));
-            ICommand up2 = new UpgradeToggle(PlayerSprite.UpgradeType.Wavebeam, (PlayerSprite)gameState.SpriteList.ElementAt(0));
-            ICommand up3 = new UpgradeToggle(PlayerSprite.UpgradeType.Longbeam, (PlayerSprite)gameState.SpriteList.ElementAt(0));
+            ICommand iceToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Icebeam, player);
+            ICommand waveToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Wavebeam, player);
+            ICommand longToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Longbeam, player);
 
             //Items
             ICommand nextItem = new NextItem(gameState);
             ICommand previousItem = new PreviousItem(gameState);
 
-            //Item select
-            RegisterCommand(Keys.D1, up1);
-            RegisterCommand(Keys.NumPad1, up1);
-            RegisterCommand(Keys.D2, up2);
-            RegisterCommand(Keys.NumPad2, up2);
-            RegisterCommand(Keys.D3, up3);
-            RegisterCommand(Keys.NumPad3, up3);
+            //Upgrade Toggles
+            RegisterCommand(Keys.D1, iceToggle);
+            RegisterCommand(Keys.NumPad1, iceToggle);
+            RegisterCommand(Keys.D2, waveToggle);
+            RegisterCommand(Keys.NumPad2, waveToggle);
+            RegisterCommand(Keys.D3, longToggle);
+            RegisterCommand(Keys.NumPad3, longToggle);
+
+            RegisterCommand(Keys.C, missleOrBomb);
 
             RegisterCommand(Keys.W, up);
             RegisterCommand(Keys.Up, up);

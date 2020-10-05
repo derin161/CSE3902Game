@@ -102,6 +102,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             elong = false;
             rTime = 80;
             jTime = (rTime*7)/8;
+            TotalRockets = 10;
 
         }
 

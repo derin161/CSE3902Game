@@ -438,7 +438,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:ProjSprites/MissleRocketProj.png;ProjSprites/MissileRocketProj.png
+/build:ProjSprites/MissleRocketProj.png
 
 #begin ProjSprites/PowerBeamProj.png
 /importer:TextureImporter
