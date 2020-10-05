@@ -98,8 +98,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             rightBound = 800 - pixelSize;
             Location = new Vector2(0, lowerBound);
             ice = false;
-            wave = true;
-            elong = true;
+            wave = false;
+            elong = false;
             rTime = 80;
             jTime = (rTime*7)/8;
 
