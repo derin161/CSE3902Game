@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -50,6 +51,18 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		//Fonts
 		private List<SpriteFont> playerFonts = new List<SpriteFont>();
 		private SpriteFont healthFont;
+
+		//Items
+		private Texture2D bombItem;
+		private Texture2D energyTankItem;
+		private Texture2D highJumpItem;
+		private Texture2D iceBeamItem;
+		private Texture2D longBeamItem;
+		private Texture2D missleRocketItem;
+		private Texture2D morphBallItem;
+		private Texture2D screwAttackItem;
+		private Texture2D variaItem;
+		private Texture2D waveBeamItem;
 
 		// More private Texture2Ds follow
 		// ...
@@ -115,9 +128,21 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			healthFont = content.Load<SpriteFont>("PlayerHealth");
 			playerFonts.Add(healthFont);
 
-			// More Content.Load calls follow
-			//...
-		}
+			//Items
+			bombItem = content.Load<Texture2D>("Items/Bomb");
+			energyTankItem = content.Load<Texture2D>("Items/EnergyTank");
+			highJumpItem = content.Load<Texture2D>("Items/HighJump");
+			iceBeamItem = content.Load<Texture2D>("Items/IceBeam");
+			longBeamItem = content.Load<Texture2D>("Items/LongBeam");
+			missleRocketItem = content.Load<Texture2D>("Items/MissleRocket");
+			morphBallItem = content.Load<Texture2D>("Items/MorphBall");
+			screwAttackItem = content.Load<Texture2D>("Items/ScrewAttack");
+			variaItem = content.Load<Texture2D>("Items/Varia");
+			waveBeamItem = content.Load<Texture2D>("Items/WaveBeam");
+
+		// More Content.Load calls follow
+		//...
+	}
 
 		public ISprite CreatePlayerSprite()
 		{
@@ -141,12 +166,24 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		/*public ISprite CreateBlockSprite(ILevel level)
 		{
 			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
-		}
+		} */
 
-		public ISprite CreateItemSprite(ILevel level)
+		public List<ISprite> CreateItemSpriteList(Vector2 location)
 		{
-			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
-		}*/
+			List<ISprite> itemList = new List<ISprite>();
+			itemList.Add(new BombItem(bombItem, location));
+			itemList.Add(new EnergyTankItem(energyTankItem, location));
+			itemList.Add(new HighJumpItem(highJumpItem, location));
+			itemList.Add(new IceBeamItem(iceBeamItem, location));
+			itemList.Add(new LongBeamItem(longBeamItem, location));
+			itemList.Add(new MissleRocketItem(missleRocketItem, location));
+			itemList.Add(new MorphBallItem(morphBallItem, location));
+			itemList.Add(new ScrewAttackItem(screwAttackItem, location));
+			itemList.Add(new VariaItem(variaItem, location));
+			itemList.Add(new WaveBeamItem(waveBeamItem, location));
+
+			return itemList;
+		}
 
 		public ISprite CreateBomb(Vector2 location)
 		{

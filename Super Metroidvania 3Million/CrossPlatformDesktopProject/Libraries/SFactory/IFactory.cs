@@ -27,6 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction);
 		public ISprite CreatePlayerSprite();
 
+        //Items
+        public List<ISprite> CreateItemSpriteList(Vector2 location);
 
 	}
 }

@@ -8,19 +8,20 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class MissleRocket : IItems
+    class EnergyTankItem : IItems
     {
         private Texture2D texture;
         private int xLoc = 0;
         private int yLoc = 0;
         private bool isDead = false;
 
-        public MissleRocket(Texture2D texture, int x, int y)
+        public EnergyTankItem(Texture2D texture, Vector2 initialLocation)
         {
             this.texture = texture;
-            this.xLoc = x;
-            this.yLoc = y;
+            this.xLoc = (int)initialLocation.X;
+            this.yLoc = (int)initialLocation.Y;
         }
+
 
         public void Update(GameTime gameTime)
         {

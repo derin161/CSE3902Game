@@ -8,18 +8,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class Varia : IItems
+    class BombItem : IItems
     {
         private Texture2D texture;
         private int xLoc = 0;
         private int yLoc = 0;
         private bool isDead = false;
 
-        public Varia(Texture2D texture, int x, int y)
+        public BombItem(Texture2D texture, Vector2 initialLocation)
         {
             this.texture = texture;
-            this.xLoc = x;
-            this.yLoc = y;
+            this.xLoc = (int)initialLocation.X;
+            this.yLoc = (int)initialLocation.Y;
         }
 
 
@@ -32,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         {
             spriteBatch.Draw(this.texture, new Vector2(this.xLoc, this.yLoc), Color.White);
         }
-
+        
         public bool IsDead()
         {
             return isDead;
