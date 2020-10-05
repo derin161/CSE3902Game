@@ -47,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private int rTime;
         private int jTime;
         private int pixelSize;
-        private int lowerBound = 400;
+        private int lowerBound = 480;
         private int rightBound = 800;
         public int xIncrease = 10;
         public int yIncrease = 20;
@@ -98,7 +98,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             healthFont = font.ElementAt(0);
             currentText = rightIdle;
             pixelSize = currentText.Height;
-            lowerBound = 480 - pixelSize;
+            lowerBound = 410 - pixelSize;
             rightBound = 800 - pixelSize;
             Location = new Vector2(0, lowerBound);
             ice = false;
