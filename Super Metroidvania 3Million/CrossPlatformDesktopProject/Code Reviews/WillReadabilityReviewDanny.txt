@@ -1,0 +1,14 @@
+Review Author: Will Floyd
+Review Date: 10/5/2020
+Sprint No: 2
+Name of the .cs file being reviewed: SpriteFactory.cs
+Author of the .cs file being reviewed: Danny Attia
+Number of minutes taken to complete the review: 10
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) Lots of instance variables but they are all necessary and are grouped well to improve readability 
+2) LoadAllTextures is similar to the instance variables, very long but grouped well
+3) Other methods in the class have descriptive names and it is clear what they do
+4) Very few comments, could use a bit more in some areas.
