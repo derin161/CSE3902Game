@@ -1,7 +1,7 @@
 # CSE3902Game
 # Super Metroidvania 5Million
 
-** PROGRAM CONTROLS
+**PROGRAM CONTROLS**
 
 * UpArrow, W : Player Jump and enter briefly morph form.
 * RightArrow, D : Player face and move right.
@@ -23,10 +23,10 @@
   * D2,NUM2: Toggles the wave beam upgrade.
   * D3, NUM3 : Toggles the long beam upgrade.
 
-** KNOWN BUGS
+**KNOWN BUGS**
 
 
 
-** DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED
+**DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**
 
 * GIMP2.0: Used for texture editing.
