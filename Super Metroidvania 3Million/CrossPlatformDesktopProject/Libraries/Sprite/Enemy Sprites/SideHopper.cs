@@ -44,6 +44,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
             }
             count++;
+
         }
 
         
