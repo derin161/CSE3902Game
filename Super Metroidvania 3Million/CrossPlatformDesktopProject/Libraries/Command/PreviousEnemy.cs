@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using Microsoft.Xna.Framework.Input;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
@@ -19,12 +20,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
 		public void Execute()
 		{
+
 			if (game.enemyIndex == 0)
             {
 				game.enemyIndex = game.enemySprites.Count() - 1;
             }else{
 				game.enemyIndex -= 1;
             }
+			
 		}
 	}
 }
