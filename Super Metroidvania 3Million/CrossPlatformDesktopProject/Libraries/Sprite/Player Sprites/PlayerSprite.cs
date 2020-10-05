@@ -704,5 +704,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             return false;
         }
 
+        public void DamageAnimation(SpriteBatch spriteBatch)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
