@@ -146,6 +146,7 @@ namespace CrossPlatformDesktopProject
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
+            AddSprite(Factory.CreateMapSprite());
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemyIndex = 0;
