@@ -48,12 +48,16 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
                     controllerMappings[key].Execute();
                     suppressedKeyTimer[key] = msSuppressTimer;
                 } else if (controllerMappings.ContainsKey(key)) {
-                    suppressedKeyTimer[key] -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+                    suppressedKeyTimer[key] -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
                 }
             }
 
             oldState = newState;
 
+        }
+
+        public void GameOver(bool gameOver) { 
+            //update the controller however necessary for a game over
         }
 
         private void makeDict()     // If else of possible actions that updates choice
@@ -71,6 +75,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             //enemies
             ICommand nextEnemy = new NextEnemy(gameState);
             ICommand previousEnemy = new PreviousEnemy(gameState);
+
+            //Item select
+            List<ICommand> itemSelect = new List<ICommand> { };
 
             RegisterCommand(Keys.W, up);
             RegisterCommand(Keys.Up, up);
@@ -98,6 +105,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.R, select);
 
             RegisterCommand(Keys.E, damage);
+
 
         }
     }
