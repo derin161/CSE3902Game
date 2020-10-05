@@ -23,8 +23,10 @@ namespace CrossPlatformDesktopProject
 
         public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
         public List<ISprite> DeadSprites = new List<ISprite>();
-        public List<ISprite> enemySprites;
+        public List<ISprite> enemySprites = new List<ISprite>();
         public int enemyIndex = 0;
+        public List<ISprite> itemSprites = new List<ISprite>();
+        public int itemIndex = 0;
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
