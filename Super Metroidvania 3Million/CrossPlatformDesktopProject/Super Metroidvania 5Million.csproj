@@ -44,7 +44,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Libraries\Command\PlayerItemCommands\MissleOrBomb.cs" />
+    <Compile Include="Libraries\Command\PlayerItemCommands\MissileOrBomb.cs" />
     <Compile Include="Libraries\Command\UpgradeToggle.cs" />
     <Compile Include="Libraries\Command\Crouch.cs" />
     <Compile Include="Libraries\Command\Damage.cs" />

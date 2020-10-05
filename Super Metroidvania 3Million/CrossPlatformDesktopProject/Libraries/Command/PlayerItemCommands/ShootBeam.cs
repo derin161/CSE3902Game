@@ -17,6 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private IFactory factory;
         private Game1 game;
         private float speed = 7;
+        private List<PlayerSprite.State> bannedStates = new List<PlayerSprite.State> { PlayerSprite.State.Crouch, PlayerSprite.State.Jump};
 
         public ShootBeam(Game1 game, PlayerSprite player) {
             samus = player;
@@ -25,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
-            if (samus.currentState != PlayerSprite.State.Crouch && samus.currentState != PlayerSprite.State.Jump)
+            if (!bannedStates.Contains(samus.currentState))
             {
                 Vector2 direction = new Vector2(speed, 0);
                 samus.currentState = PlayerSprite.State.Attack;

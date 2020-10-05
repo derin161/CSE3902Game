@@ -11,29 +11,27 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class MissleOrBomb : ICommand
+    class MissileOrBomb : ICommand
     {
-        private ICommand missle;
+        private ICommand missile;
         private ICommand bomb;
         private PlayerSprite samus;
+        private List<PlayerSprite.State> bombStates = new List<PlayerSprite.State> { PlayerSprite.State.Crouch, PlayerSprite.State.Jump };
+        private List<PlayerSprite.State> missileStates = new List<PlayerSprite.State> { PlayerSprite.State.Idle, PlayerSprite.State.MoveLeft, PlayerSprite.State.MoveRight };
 
         //This should probably be changed at some point, but this class essentially just redirects to ShootMissleRocket or DropBomb depending on the player's state.
-        public MissleOrBomb(Game1 game, PlayerSprite player) {
-            missle = new ShootMissileRocket(game, player);
+        public MissileOrBomb(Game1 game, PlayerSprite player) {
+            missile = new ShootMissileRocket(game, player);
             bomb = new DropBomb(game, player);
             samus = player;
         }
         public void Execute()
         {
-            switch (samus.currentState)
-            {
-                case PlayerSprite.State.Crouch: //List all the states where Samus is allowed to drop bombs
-                case PlayerSprite.State.Jump:
-                    bomb.Execute();
-                    break;
-                default: //Otherwise she shoots a rocket
-                    missle.Execute();
-                    break;
+
+            if (bombStates.Contains(samus.currentState)) {
+                bomb.Execute();
+            } else if (missileStates.Contains(samus.currentState)) {
+                missile.Execute();
             }
 
         }

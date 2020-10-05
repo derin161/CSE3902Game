@@ -71,7 +71,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand left = new MoveLeft(gameState, player);
             ICommand right = new MoveRight(gameState, player);
             ICommand attack = new ShootBeam(gameState, player);
-            ICommand missleOrBomb = new MissleOrBomb(gameState, player);
+            ICommand missleOrBomb = new MissileOrBomb(gameState, player);
             ICommand start = new Start(gameState);
             ICommand select = new Select(gameState);
             ICommand damage = new Damage(gameState, player);
