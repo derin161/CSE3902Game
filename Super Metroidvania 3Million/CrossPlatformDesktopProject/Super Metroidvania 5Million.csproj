@@ -50,6 +50,7 @@
     <Compile Include="Libraries\Command\Jump.cs" />
     <Compile Include="Libraries\Command\MoveLeft.cs" />
     <Compile Include="Libraries\Command\MoveRight.cs" />
+    <Compile Include="Libraries\Command\NextItem.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\DropBomb.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootMissileRocket.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootBeam.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Libraries\Command\NextEnemy.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Libraries\Command\PreviousItem.cs" />
     <Compile Include="Libraries\Command\Select.cs" />
     <Compile Include="Libraries\Command\Start.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
