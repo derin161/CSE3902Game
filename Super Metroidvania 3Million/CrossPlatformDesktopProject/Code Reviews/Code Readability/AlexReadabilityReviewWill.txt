@@ -8,6 +8,6 @@ Number of minutes taken to complete the review: ~25mins
 ======================================================
 
 Specific comments on what is readable and what is not:
-1)Methods and Variables are all neatly spaced out making it easier to read.
+1)Methods and Variables are all neatly spaced out making it easier to read
 2)Variables names are easy to understand and self-explanatory
 3)Methods are easy to understand on what they are supposed to be doing

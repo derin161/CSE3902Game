@@ -17,8 +17,8 @@ Maintainability: Good
 Comments: The class has room for easy future maintanance and adaptability. Methods are also failry short making them easier to read and resuse.
 
 List any "code smells":
-1) The specific numbering in the update method
+1) The specific numbering in the update method.
 
 A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
 If the screen size were to change to a smaller window, the current update could possibly have the Skree of the screen for too long. The number for at
-it resets to its initial position would need to be adjusted
+it resets to its initial position would need to be adjusted.
