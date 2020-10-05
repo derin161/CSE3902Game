@@ -4,6 +4,7 @@ using System.Linq;
 using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
+using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
@@ -11,7 +12,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
     {
         //Written by Tristan Roman and Shyamal Shah
         private Dictionary<Keys, ICommand> controllerMappings = new Dictionary<Keys, ICommand>();
+        private Dictionary<Keys, int> suppressedKeyTimer = new Dictionary<Keys, int>();
 
+        private int msSuppressTimer = 100;
         private KeyboardState oldState;
         private KeyboardState newState; // ***
         private Keys[] pressedKeys;
@@ -21,27 +24,31 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             oldState = Keyboard.GetState();
             gameState = game;
+            makeDict();
         }
         public void RegisterCommand(Keys key, ICommand command)
         {
             if (!controllerMappings.ContainsKey(key))
             {
                 controllerMappings.Add(key, command);
+                suppressedKeyTimer.Add(key, 0);
             }
             else {
                 controllerMappings[key] = command;
             }
         }
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            makeDict();
             pressedKeys = Keyboard.GetState().GetPressedKeys();
             newState = Keyboard.GetState();
 
             foreach (Keys key in pressedKeys)
             {
-                if (controllerMappings.ContainsKey(key)){
+                if (controllerMappings.ContainsKey(key) && suppressedKeyTimer[key] < 0) {
                     controllerMappings[key].Execute();
+                    suppressedKeyTimer[key] = msSuppressTimer;
+                } else if (controllerMappings.ContainsKey(key)) {
+                    suppressedKeyTimer[key] -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
                 }
             }
 
@@ -49,7 +56,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         }
 
-        public void makeDict()     // If else of possible actions that updates choice
+        private void makeDict()     // If else of possible actions that updates choice
         {
             ICommand up = new Jump(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
             ICommand down = new Crouch(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
