@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Nyigel Spann
+    //Author: Shyamal Shah
     public class Jump : ICommand
     {
         private PlayerSprite samus;

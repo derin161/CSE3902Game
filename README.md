@@ -31,6 +31,13 @@ This program is a clone of the original *Metroid NES* first mini-boss hideout. T
 
 
 
+
+
+**DETAILS OF ANY FEATURES THAT AREN'T IMPLEMENTED**
+
+* Currently, the player does not "die" when health drops below 0.
+
+
 **DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**
 
-* GIMP2.0: Used for texture editing.
+* GIMP2.0: Used for texture editing. 

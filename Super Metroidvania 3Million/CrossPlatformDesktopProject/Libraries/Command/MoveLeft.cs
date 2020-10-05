@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Nyigel Spann
+    //Author: Shyamal Shah
     class MoveLeft : ICommand
     {
         private PlayerSprite samus;

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Nyigel Spann
+    //Author: Shyamal Shah
     public class Select : ICommand
     {
         private Game1 currentGame;

@@ -14,7 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
     {
         public enum State
         {
-            Attack, Item1, Item2, Item3, Item4, Item5, MoveRight, MoveLeft, Crouch, Jump, Idle, Damage, Dead
+            Attack, MoveRight, MoveLeft, Crouch, Jump, Idle, Damage, Dead
         }
 
         public enum HealthState
@@ -34,7 +34,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool dead = false;
         public int currentHealth = 100;
         public int maxHealth = 100;
-        public int newHealth; //Used for animating the damage change
 
         public State currentState;
         public Vector2 Location { get; set; }
@@ -97,7 +96,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             damaged_leftIdle = texture.ElementAt(8);
             healthBar = texture.ElementAt(9);
             healthFont = font.ElementAt(0);
-            //currentFont = healthFont;
             currentText = rightIdle;
             pixelSize = currentText.Height;
             lowerBound = 480 - pixelSize;
@@ -122,16 +120,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Attack: // Attack
                     idleFrames = newFrame;
                     break;
-                /*case State.Item1: // Item1 - PowerBeam
-                    break;
-                case State.Item2: // Item2 - WaveBeam
-                    break;
-                case State.Item3: // Item3 - IceBeam
-                    break;
-                case State.Item4: // Item4 - MissleRocket
-                    break;
-                case State.Item5: // Item5 - Bomb
-                    break;*/
                 case State.MoveRight: // Move Right
                     moveRightFrames = newFrame;
                     break;
@@ -160,7 +148,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         }
         public void UpdateHealth(int currentHealth, int maxHealth)
         {
-            newHealth = currentHealth;
             this.maxHealth = maxHealth;
         }
 
@@ -186,16 +173,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                         idleFrames = 0;
                     }
                     break;
-                /*case State.Item1: // Item1 - PowerBeam
-                    break;
-                case State.Item2: // Item2 - WaveBeam
-                    break;
-                case State.Item3: // Item3 - IceBeam
-                    break;
-                case State.Item4: // Item4 - MissleRocket
-                    break;
-                case State.Item5: // Item5 - Bomb
-                    break;*/
                 case State.MoveRight: // Move Right
                     if (timeSinceLastFrame > rTime){
                         timeSinceLastFrame -= rTime;
@@ -229,6 +206,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                         if (Location.Y < 0){
                             Location = new Vector2(Location.X, 0);
                         }
+                        if (Location.X < 0){
+                            Location = new Vector2(0, Location.Y);
+                        }
+                        if (Location.X > rightBound){
+                            Location = new Vector2(rightBound, Location.Y);
+                        }
                     }
                     break;
                 case State.Crouch: // Crouch: Nothing needs to be updated.
@@ -257,21 +240,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case State.Attack: // Attack
                     AttackAnimation(spriteBatch);
                     break;
-                /*case State.Item1: // Item1 - PowerBeam
-                    PowerBeamAnimation(spriteBatch);
-                    break;
-                case State.Item2: // Item2 - WaveBeam
-                    WaveBeamAnimation(spriteBatch);
-                    break;
-                case State.Item3: // Item3 - IceBeam
-                    IceBeamAnimation(spriteBatch);
-                    break;
-                case State.Item4: // Item4 - MissleRocket
-                    MissleRocketAnimation(spriteBatch);
-                    break;
-                case State.Item5: // Item5 - Bomb
-                    BombAnimation(spriteBatch);
-                    break;*/
                 case State.MoveRight: // Move Right
                     MoveRightAnimation(spriteBatch);
                     break;
@@ -294,8 +262,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             }
 
             DamageAnimation(spriteBatch);
-            //currentFont = healthFont;
-            //spriteBatch.DrawString(currentFont, "health", new Vector2(200, 300), Color.Black);
         }
 
         public void IdleAnimation(SpriteBatch spriteBatch)
@@ -322,30 +288,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             currentState = State.Idle;
             IdleAnimation(spriteBatch);
         }
-
-        /*
-        public void PowerBeamAnimation(SpriteBatch spriteBatch)
-        {
-            //Put Code for animation
-        }
-
-        public void WaveBeamAnimation(SpriteBatch spriteBatch)
-        {
-            //Put Code for animation
-        }
-        public void IceBeamAnimation(SpriteBatch spriteBatch)
-        {
-            //Put Code for animation
-        }
-        public void MissleRocketAnimation(SpriteBatch spriteBatch)
-        {
-            //Put Code for animation
-        }
-        public void BombAnimation(SpriteBatch spriteBatch)
-        {
-            //Put Code for animation
-        }
-        */
 
         public void MoveLeftAnimation(SpriteBatch spriteBatch)
         {
