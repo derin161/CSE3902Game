@@ -30,5 +30,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         //Items
         public List<ISprite> CreateItemSpriteList(Vector2 location);
 
+		//Map
+		public ISprite CreateMapSprite();
+
 	}
 }

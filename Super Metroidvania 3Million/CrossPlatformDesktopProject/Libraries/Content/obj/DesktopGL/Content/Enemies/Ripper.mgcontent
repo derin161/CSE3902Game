@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Ripper.png</SourceFile>
-  <SourceTime>2020-10-01T16:23:36.2658716-04:00</SourceTime>
-  <DestFile>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/Enemies/Ripper.xnb</DestFile>
-  <DestTime>2020-10-05T15:20:03.4533544-04:00</DestTime>
+  <SourceFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Ripper.png</SourceFile>
+  <SourceTime>2020-10-05T15:47:41.6419652-04:00</SourceTime>
+  <DestFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/Enemies/Ripper.xnb</DestFile>
+  <DestTime>2020-10-05T15:52:20.3679932-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
