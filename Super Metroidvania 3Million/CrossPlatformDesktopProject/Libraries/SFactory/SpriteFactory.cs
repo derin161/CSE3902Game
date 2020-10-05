@@ -162,6 +162,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			enemyList.Add(new Ripper(ripper, location));
 			enemyList.Add(new Memu(memu, location));
 			enemyList.Add(new Geega(geega, location));
+			enemyList.Add(new VerticalZeela(zeela, location));
 			enemyList.Add(new Kraid(kraid, location, game));
 
 			return enemyList;

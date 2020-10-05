@@ -65,6 +65,7 @@
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Kraid.cs" />
+    <Compile Include="Libraries\Sprite\Enemy Sprites\VerticalZeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Zeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Skree.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\SideHopper.cs" />
