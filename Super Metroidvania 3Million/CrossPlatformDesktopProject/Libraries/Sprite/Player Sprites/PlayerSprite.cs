@@ -45,8 +45,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         private int pixelSize;
         private int lowerBound = 480;
         private int rightBound = 800;
-        private int xIncrease = 10;
-        private int yIncrease = 15;
+        public int xIncrease = 10;
+        public int yIncrease = 15;
 
         private Texture2D rightIdle;
         private Texture2D leftIdle;
@@ -522,7 +522,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             }else if (currentHealthState == HealthState.Critical){
                 tmp = 2;
             }
-            Rectangle srcRec = new Rectangle(0, 3 * tmp, 1, 3);
+            Rectangle srcRec = new Rectangle(0, tmp, 1, 3);
             Rectangle destRec;
             if (currentHealth > maxHealth * 9 / 10) //Draw 10 bars
             {
