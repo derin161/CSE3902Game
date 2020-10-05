@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             Critical
         };
 
+        public enum UpgradeType{
+            Icebeam, Wavebeam, Longbeam, Bomb, EnergyTank, MorphBall, MissileTank, HiJump, Varia, Screw
+        }
         public HealthState currentHealthState;
 
         public Vector2 HealthPosition = new Vector2(20, 20);
@@ -741,6 +745,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         }
 
         private void deadAnimation(SpriteBatch spriteBatch){
+        }
+
+        public void Upgrade(UpgradeType up){
+            switch (up){
+                case UpgradeType.Icebeam:
+                    ice = !ice;
+                    break;
+                case UpgradeType.Wavebeam:
+                    wave = !wave;
+                    break;
+                case UpgradeType.Longbeam:
+                    elong = !elong;
+                    break;
+                default:
+                    break;
+
+            }
         }
 
     }
