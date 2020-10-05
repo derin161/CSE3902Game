@@ -17,7 +17,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y;
+        private float x, y, initialX;
+        private int direction;
 
         public Ripper(Texture2D texture, Vector2 location)
         {
@@ -27,7 +28,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
+            initialX = location.X;
             y = location.Y;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
@@ -35,6 +38,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame++;
             if (currentFrame == 1)
                 currentFrame = 0;
+
+            x += direction;
+            if (Math.Abs(x - initialX) > 100)
+            {
+                direction *= -1;
+            }
         }
 
         

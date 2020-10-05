@@ -65,12 +65,14 @@
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Kraid.cs" />
+    <Compile Include="Libraries\Sprite\Enemy Sprites\VerticalZeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Zeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Skree.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\SideHopper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Memu.cs" />
     <Compile Include="Libraries\Sprite\Items\BombItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\EnergyDropItem.cs" />
     <Compile Include="Libraries\Sprite\Items\EnergyTankItem.cs" />
     <Compile Include="Libraries\Sprite\Items\HighJumpItem.cs" />
     <Compile Include="Libraries\Sprite\Items\IceBeamItem.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Libraries\Sprite\Items\LongBeamItem.cs" />
     <Compile Include="Libraries\Sprite\Items\MissleRocketItem.cs" />
     <Compile Include="Libraries\Sprite\Items\MorphBallItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\RocketDropItem.cs" />
     <Compile Include="Libraries\Sprite\Items\ScrewAttackItem.cs" />
     <Compile Include="Libraries\Sprite\Items\VariaItem.cs" />
     <Compile Include="Libraries\Sprite\Items\WaveBeamItem.cs" />
