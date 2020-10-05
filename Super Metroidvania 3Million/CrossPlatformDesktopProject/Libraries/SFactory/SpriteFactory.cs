@@ -191,10 +191,10 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new Bomb(bombTex, location);
 		}
 
-		public ISprite CreateMissileRocket(Vector2 location)
+		public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)
 		{
 
-			return new Bomb(bombTex, location);
+			return new MissleRocket(missileRocketTex, location, direction);
 		}
 
 		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
