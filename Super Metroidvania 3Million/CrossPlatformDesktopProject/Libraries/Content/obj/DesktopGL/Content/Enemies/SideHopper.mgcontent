@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/derin/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/SideHopper.png</SourceFile>
+  <SourceFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/SideHopper.png</SourceFile>
   <SourceTime>2020-10-01T23:38:43.9330296-04:00</SourceTime>
-  <DestFile>C:/Users/derin/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/Enemies/SideHopper.xnb</DestFile>
-  <DestTime>2020-10-05T01:12:02.6493169-04:00</DestTime>
+  <DestFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/Enemies/SideHopper.xnb</DestFile>
+  <DestTime>2020-10-05T11:33:26.7124724-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

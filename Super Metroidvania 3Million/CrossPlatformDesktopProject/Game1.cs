@@ -65,7 +65,7 @@ namespace CrossPlatformDesktopProject
             Factory.LoadAllTextures(Content);
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
-            enemySprites = Factory.CreateEnemySpriteList(new Vector2(700, 250));
+            enemySprites = Factory.CreateEnemySpriteList(new Vector2(700, 250), this);
             itemSprites = Factory.CreateItemSpriteList(new Vector2(700, 325));
             
             // TODO: use this.Content to load your game content here

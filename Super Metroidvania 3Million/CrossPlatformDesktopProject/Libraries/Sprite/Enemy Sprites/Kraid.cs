@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int totalFrames;
         private float x, y;
         private int counter;
+        private int msBetweenAttack = 500;
+        private int msUntilAttack = 500;
+        private Game1 game;
+        private bool isMovingRight = false;
 
-        public Kraid(Texture2D texture, Vector2 location)
+        public Kraid(Texture2D texture, Vector2 location, Game1 game)
         {
             Texture = texture;
             Rows = 2;
@@ -30,10 +35,25 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             x = location.X;
             y = location.Y;
             counter = 0;
+            this.game = game;
+            
         }
 
         public void Update(GameTime gameTime)
         {
+            msUntilAttack -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+
+            if (msUntilAttack < 0) {
+                if (new Random().Next(0, 2) == 0)
+                {
+                    throwHorns();
+                }
+                else {
+                    shootMissiles();
+                }
+                msUntilAttack = msBetweenAttack;
+            }
+
             if (counter == 10)
             {
                 counter = 0;
@@ -57,9 +77,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
+
         public Boolean IsDead()
         {
             return false;
+        }
+
+        private void throwHorns() {
+            game.AddSprite(game.Factory.CreateKraidHorn(new Vector2(x,y), isMovingRight));
+        }
+
+        private void shootMissiles() {
+            int speed = 7;
+            game.AddSprite(game.Factory.CreateKraidMissile(new Vector2(x, y), new Vector2(-speed,0)));
         }
 
     }
