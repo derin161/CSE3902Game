@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using CrossPlatformDesktopProject.Libraries.Sprite.Map;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -65,6 +66,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D screwAttackItem;
 		private Texture2D variaItem;
 		private Texture2D waveBeamItem;
+
+		//Map
+		private Texture2D map;
 
 		// More private Texture2Ds follow
 		// ...
@@ -144,6 +148,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			variaItem = content.Load<Texture2D>("Items/Varia");
 			waveBeamItem = content.Load<Texture2D>("Items/WaveBeam");
 
+			//Map
+			map = content.Load<Texture2D>("ProjSprites/Map");
+
 		// More Content.Load calls follow
 		//...
 	}
@@ -191,6 +198,11 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 			return itemList;
 		}
+
+		public ISprite CreateMapSprite()
+        {
+			return new MapSprite(map);
+        }
 
 		public ISprite CreateBomb(Vector2 location)
 		{

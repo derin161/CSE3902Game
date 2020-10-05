@@ -64,7 +64,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         private void makeDict()     // If else of possible actions that updates choice
         {
-            PlayerSprite player = (PlayerSprite)gameState.SpriteList.ElementAt(0); // The player sprite
+            PlayerSprite player = (PlayerSprite)gameState.SpriteList.ElementAt(1); // The player sprite
 
             ICommand up = new Jump(gameState, player);
             ICommand down = new Crouch(gameState, player);
