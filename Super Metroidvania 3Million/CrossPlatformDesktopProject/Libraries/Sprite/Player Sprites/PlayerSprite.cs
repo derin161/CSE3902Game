@@ -441,7 +441,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 }
                 srcRec = new Rectangle((width * adjFrame), 0, width, height);
                 destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
-                spriteBatch.Draw(currentText, destRec, srcRec, Color.Blue);
+                spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
             }
         }
 
