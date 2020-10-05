@@ -59,7 +59,11 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             //ICommand special = new Special(gameState);
             ICommand start = new Start(gameState);
             ICommand select = new Select(gameState);
-            //ICommand damage = new Damage(gameState);
+            ICommand damage = new Damage(gameState, (PlayerSprite)gameState.SpriteList.ElementAt(0));
+
+            //enemies
+            ICommand nextEnemy = new NextEnemy(gameState);
+            ICommand previousEnemy = new PreviousEnemy(gameState);
 
             RegisterCommand(Keys.W, up);
             RegisterCommand(Keys.Up, up);
@@ -76,6 +80,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.Z, attack);
             RegisterCommand(Keys.N, attack);
 
+            RegisterCommand(Keys.O, previousEnemy);
+            RegisterCommand(Keys.P, nextEnemy);
+
             //RegisterCommand(Keys.X, special);
             //RegisterCommand(Keys.M, special);
 
@@ -83,7 +90,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             RegisterCommand(Keys.R, select);
 
-            //RegisterCommand(Keys.E, damage);
+            RegisterCommand(Keys.E, damage);
 
         }
     }

@@ -97,6 +97,18 @@
 /processorParam:TextureFormat=Color
 /build:Enemies/Zeela.png
 
+#begin HealthBar.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:HealthBar.png
+
 #begin NES - Metroid - Enemies & Bosses.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -164,6 +176,18 @@
 /processorParam:TextureFormat=Color
 /build:PlayerSprites/RightMorph.png
 
+#begin PlayerSprites/SamusDamaged.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:PlayerSprites/SamusDamaged.png;PlayerSprites/SamusRightIdleDamaged.png
+
 #begin PlayerSprites/SamusLeftIdle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -175,6 +199,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:PlayerSprites/SamusLeftIdle.png
+
+#begin PlayerSprites/SamusLeftIdleDamaged.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:PlayerSprites/SamusLeftIdleDamaged.png
 
 #begin PlayerSprites/SamusLeftWalk.png
 /importer:TextureImporter

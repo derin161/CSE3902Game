@@ -18,6 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int totalFrames;
         private float x, y;
+        private int counter;
 
         public Kraid(Texture2D texture, Vector2 location)
         {
@@ -28,13 +29,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             totalFrames = Rows * Columns;
             x = location.X;
             y = location.Y;
+            counter = 0;
         }
 
         public void Update(GameTime gameTime)
         {
-            currentFrame++;
-            if (currentFrame == totalFrames)
-                currentFrame = 0;
+            if (counter == 10)
+            {
+                counter = 0;
+                currentFrame++;
+                if (currentFrame == 2)
+                    currentFrame = 0;
+            }
+            counter++;
         }
 
         
@@ -46,11 +53,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
 
-            spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
         public Boolean IsDead()
         {
