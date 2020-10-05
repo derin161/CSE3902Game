@@ -23,9 +23,9 @@ namespace CrossPlatformDesktopProject
 
         public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
         public List<ISprite> DeadSprites = new List<ISprite>();
-        public List<ISprite> enemySprites;
-        public List<ISprite> itemSprites;
+        public List<ISprite> enemySprites = new List<ISprite>();
         public int enemyIndex = 0;
+        public List<ISprite> itemSprites = new List<ISprite>();
         public int itemIndex = 0;
 
         private GraphicsDeviceManager graphics;
@@ -66,7 +66,6 @@ namespace CrossPlatformDesktopProject
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemySprites = Factory.CreateEnemySpriteList(new Vector2(700, 250));
-            itemSprites = Factory.CreateItemSpriteList(new Vector2(700, 300));
             
             // TODO: use this.Content to load your game content here
         }
@@ -105,8 +104,6 @@ namespace CrossPlatformDesktopProject
 
             enemySprites[enemyIndex].Update(gameTime);
 
-            itemSprites[itemIndex].Update(gameTime);
-
             foreach (ISprite dead in DeadSprites){
                 SpriteList.Remove(dead);
             }
@@ -131,8 +128,6 @@ namespace CrossPlatformDesktopProject
 
             enemySprites[enemyIndex].Draw(spriteBatch);
 
-            itemSprites[itemIndex].Update(gameTime);
-
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -150,7 +145,6 @@ namespace CrossPlatformDesktopProject
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemyIndex = 0;
-            itemIndex = 0;
         }
     }
 }

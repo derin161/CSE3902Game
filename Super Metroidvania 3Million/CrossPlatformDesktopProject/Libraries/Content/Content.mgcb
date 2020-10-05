@@ -97,6 +97,13 @@
 /processorParam:TextureFormat=Color
 /build:Enemies/Zeela.png
 
+#begin File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:File.spritefont;PlayerHealth.spritefont
+
 #begin HealthBar.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -132,13 +139,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:NES - Metroid - Samus Aran Power Suit.png
-
-#begin PlayerHealth.spritefont
-/importer:FontDescriptionImporter
-/processor:LocalizedFontProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:PlayerHealth.spritefont
 
 #begin PlayerSprites/Jump.png
 /importer:TextureImporter
