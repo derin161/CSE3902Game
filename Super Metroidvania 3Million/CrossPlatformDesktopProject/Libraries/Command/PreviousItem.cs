@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-    class PreviousItem
+    class PreviousItem : ICommand
     {
 		private Game1 game;
 		public PreviousItem(Game1 game)

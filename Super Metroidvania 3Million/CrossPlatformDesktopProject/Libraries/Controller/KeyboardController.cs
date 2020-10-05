@@ -81,6 +81,10 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand up2 = new UpgradeToggle(PlayerSprite.UpgradeType.Wavebeam, (PlayerSprite)gameState.SpriteList.ElementAt(0));
             ICommand up3 = new UpgradeToggle(PlayerSprite.UpgradeType.Longbeam, (PlayerSprite)gameState.SpriteList.ElementAt(0));
 
+            //Items
+            ICommand nextItem = new NextItem(gameState);
+            ICommand previousItem = new PreviousItem(gameState);
+
             //Item select
             RegisterCommand(Keys.D1, up1);
             RegisterCommand(Keys.NumPad1, up1);
@@ -106,6 +110,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             RegisterCommand(Keys.O, previousEnemy);
             RegisterCommand(Keys.P, nextEnemy);
+
+            RegisterCommand(Keys.K, previousItem);
+            RegisterCommand(Keys.L, nextItem);
 
             //RegisterCommand(Keys.X, special);
             //RegisterCommand(Keys.M, special);
