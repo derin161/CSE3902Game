@@ -25,28 +25,32 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
-            Vector2 direction = new Vector2(speed, 0);
-            samus.currentState = PlayerSprite.State.Attack;
-            samus.idleFrames = 0;
-            Vector2 location = new Vector2(samus.Location.X + 46, samus.Location.Y + 18);
+            if (samus.currentState != PlayerSprite.State.Crouch && samus.currentState != PlayerSprite.State.Jump)
+            {
+                Vector2 direction = new Vector2(speed, 0);
+                samus.currentState = PlayerSprite.State.Attack;
+                samus.idleFrames = 0;
+                Vector2 location = new Vector2(samus.Location.X + 46, samus.Location.Y + 18);
 
-            if (!samus.facingRight)
-            {
-                direction = new Vector2(-speed, 0);
-                location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
+                if (!samus.facingRight)
+                {
+                    direction = new Vector2(-speed, 0);
+                    location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
+                }
+
+                if (samus.wave)
+                {
+                    game.AddSprite(factory.CreateWaveBeam(location, direction, samus.elong, samus.ice));
+                }
+                else if (samus.ice)
+                {
+                    game.AddSprite(factory.CreateIceBeam(location, direction, samus.elong));
+                }
+                else
+                { //Power beam
+                    game.AddSprite(factory.CreatePowerBeam(location, direction, samus.elong));
+                }
             }
-            
-            if (samus.wave)
-            {
-                game.AddSprite(factory.CreateWaveBeam(location, direction, samus.elong, samus.ice));
-            }
-            else if (samus.ice)
-            {
-                game.AddSprite(factory.CreateIceBeam(location, direction, samus.elong));
-            }
-            else { //Power beam
-                game.AddSprite(factory.CreatePowerBeam(location, direction, samus.elong));
-            } 
         }
     }
 }
