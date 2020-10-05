@@ -646,7 +646,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 destRec = new Rectangle((int)HealthPosition.X + (9 + 2) * 6, (int)HealthPosition.Y, width, height);
                 spriteBatch.Draw(healthBar, destRec, srcRec, Color.White);
 
-                spriteBatch.DrawString(healthFont, text, new Vector2((int)HealthPosition.X + (9 + 2) * 7, (int)HealthPosition.Y), Color.Green);
+                spriteBatch.DrawString(healthFont, text, new Vector2((int)HealthPosition.X + (9 + 2) * 7, (int)HealthPosition.Y), Color.Yellow);
             }
             else if (currentHealth > maxHealth * 5 / 10)
             {

@@ -13,7 +13,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
         private PlayerSprite.UpgradeType type;
         private PlayerSprite samus;
-        public UpgradeToggle(UpgradeType type, PlayerSprite samus) {
+        public UpgradeToggle(PlayerSprite.UpgradeType type, PlayerSprite samus) {
             this.type = type;
             this.samus = samus;
         }
