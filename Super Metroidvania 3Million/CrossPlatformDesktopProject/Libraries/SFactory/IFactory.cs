@@ -19,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
         //Projectiles
 		public ISprite CreateBomb(Vector2 location);
-		public ISprite CreateMissileRocket(Vector2 location);
+		public ISprite CreateMissileRocket(Vector2 location, Vector2 direction);
 		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam);
 		public ISprite CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam);
 		public ISprite CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam);
@@ -27,6 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction);
 		public ISprite CreatePlayerSprite();
 
+        //Items
+        public List<ISprite> CreateItemSpriteList(Vector2 location);
 
 	}
 }

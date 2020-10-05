@@ -44,6 +44,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Command\PlayerItemCommands\MissleOrBomb.cs" />
     <Compile Include="Libraries\Command\UpgradeToggle.cs" />
     <Compile Include="Libraries\Command\Crouch.cs" />
     <Compile Include="Libraries\Command\Damage.cs" />
@@ -69,17 +70,17 @@
     <Compile Include="Libraries\Sprite\Enemy Sprites\SideHopper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Memu.cs" />
-    <Compile Include="Libraries\Sprite\Items\Bomb.cs" />
-    <Compile Include="Libraries\Sprite\Items\EnergyTank.cs" />
-    <Compile Include="Libraries\Sprite\Items\HighJump.cs" />
-    <Compile Include="Libraries\Sprite\Items\IceBeam.cs" />
+    <Compile Include="Libraries\Sprite\Items\BombItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\EnergyTankItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\HighJumpItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\IceBeamItem.cs" />
     <Compile Include="Libraries\Sprite\Items\IItems.cs" />
-    <Compile Include="Libraries\Sprite\Items\LongBeam.cs" />
-    <Compile Include="Libraries\Sprite\Items\MissleRocket.cs" />
-    <Compile Include="Libraries\Sprite\Items\MorphBall.cs" />
-    <Compile Include="Libraries\Sprite\Items\ScrewAttack.cs" />
-    <Compile Include="Libraries\Sprite\Items\Varia.cs" />
-    <Compile Include="Libraries\Sprite\Items\WaveBeam.cs" />
+    <Compile Include="Libraries\Sprite\Items\LongBeamItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\MissleRocketItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\MorphBallItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\ScrewAttackItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\VariaItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\WaveBeamItem.cs" />
     <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
     <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />

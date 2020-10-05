@@ -66,6 +66,7 @@ namespace CrossPlatformDesktopProject
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemySprites = Factory.CreateEnemySpriteList(new Vector2(700, 250));
+            itemSprites = Factory.CreateItemSpriteList(new Vector2(700, 325));
             
             // TODO: use this.Content to load your game content here
         }
@@ -103,6 +104,7 @@ namespace CrossPlatformDesktopProject
             }
 
             enemySprites[enemyIndex].Update(gameTime);
+            itemSprites[itemIndex].Update(gameTime);
 
             foreach (ISprite dead in DeadSprites){
                 SpriteList.Remove(dead);
@@ -127,6 +129,7 @@ namespace CrossPlatformDesktopProject
             }
 
             enemySprites[enemyIndex].Draw(spriteBatch);
+            itemSprites[itemIndex].Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
@@ -145,6 +148,7 @@ namespace CrossPlatformDesktopProject
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemyIndex = 0;
+            itemIndex = 0;
         }
     }
 }

@@ -8,18 +8,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class MorphBall : IItems
+    class MissleRocketItem : IItems
     {
         private Texture2D texture;
         private int xLoc = 0;
         private int yLoc = 0;
         private bool isDead = false;
 
-        public MorphBall(Texture2D texture, int x, int y)
+        public MissleRocketItem(Texture2D texture, Vector2 initialLocation)
         {
             this.texture = texture;
-            this.xLoc = x;
-            this.yLoc = y;
+            this.xLoc = (int)initialLocation.X;
+            this.yLoc = (int)initialLocation.Y;
         }
 
         public void Update(GameTime gameTime)

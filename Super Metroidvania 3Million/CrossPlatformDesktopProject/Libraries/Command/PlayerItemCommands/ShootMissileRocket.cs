@@ -15,29 +15,32 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
         private PlayerSprite samus;
         private IFactory factory;
-        private float speed = 1;
+        private float speed = 7;
         Game1 game;
 
-        public ShootMissileRocket(Game1 game, PlayerSprite player, IFactory factory) {
+        public ShootMissileRocket(Game1 game, PlayerSprite player) {
             this.game = game;
             samus = player;
-            this.factory = factory;
+            this.factory = game.Factory;
         }
         public void Execute()
         {
-            Vector2 direction = new Vector2(speed, 0);
-            Vector2 location = new Vector2(samus.Location.X + 46, samus.Location.Y + 18);
-
-            if (!samus.facingRight)
+            if (samus.TotalRockets > 0) //If she got rockets
             {
-                direction = new Vector2(-speed, 0);
-                location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
+                Vector2 direction = new Vector2(speed, 0);
+                Vector2 location = new Vector2(samus.Location.X + 46, samus.Location.Y + 18);
+
+                if (!samus.facingRight)
+                {
+                    direction = new Vector2(-speed, 0);
+                    location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
+                }
+
+
+                //if(samus.TotalRockets > 0)
+                game.AddSprite(factory.CreateMissileRocket(location, direction));
+                samus.TotalRockets--;
             }
-            
-
-            //if(samus.TotalRockets > 0)
-            game.AddSprite(factory.CreateMissileRocket(location));
-
         }
     }
 }
