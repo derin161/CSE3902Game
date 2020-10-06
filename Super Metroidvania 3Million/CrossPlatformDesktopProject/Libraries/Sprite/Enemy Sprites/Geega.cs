@@ -36,6 +36,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //change the frame after 10 counts
             if (counter == 10)
             {
                 counter = 0;
@@ -45,6 +46,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             counter++;
 
+            //Fly horizontally across the screen and reset to initial positoin
             x -= 3;
             if (initialX - x > 300)
             {
