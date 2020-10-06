@@ -375,3 +375,15 @@ C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CopyComplete
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\EnergyDropItem.xnb
 C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\RocketDropItem.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\Bomb.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\EnergyDropItem.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\EnergyTank.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\HighJump.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\IceBeam.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\LongBeam.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\MissleRocket.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\MorphBall.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\RocketDropItem.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\ScrewAttack.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\Varia.xnb
+C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\WaveBeam.xnb

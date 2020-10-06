@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         }
         public HealthState currentHealthState;
 
-        public Vector2 HealthPosition = new Vector2(20, 20);
+        public Vector2 HealthPosition = new Vector2(20, 90);
 
         public bool dead = false;
         public int currentHealth = 100;
@@ -150,7 +150,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         {
             this.maxHealth = maxHealth;
         }
-
         public void UpdateHealthState()
         {
             float percent = (float)currentHealth / (float)maxHealth;
