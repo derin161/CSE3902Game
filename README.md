@@ -47,7 +47,7 @@ ___
 * Some textures need to be cleaned up.
 
 ___
-**DETAILS ON CURRENT ERRORS/WARNINGS**
+**DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
 
 Severity	Code	Description	Project	File	Line	Suppression State
 Warning	CS0108	'MapInterface.Update(GameTime)' hides inherited member 'ISprite.Update(GameTime)'. Use the new keyword if hiding was intended.	Super Metroidvania 5Million	C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\Libraries\Sprite\Map\MapInterface.cs	13	Active
