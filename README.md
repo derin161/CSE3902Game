@@ -1,14 +1,14 @@
-# CSE3902Game
 # Super Metroidvania 5Million
+### Developed By Group 2
 
 **PROGRAM DESCRIPTION**
 
-This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight. At the moment, the program essentially showcases all enemies, items, blocks, the player, and all non-collision related behaviors.
+This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight. At the moment, the program showcases all enemies, items, blocks, the player, and all non-collision related behaviors.
 
 ___
 **PROGRAM CONTROLS**
 
-* UpArrow, W : Player Jump and enter briefly morph form.
+* UpArrow, W : Player jump and enter briefly morph form.
 * RightArrow, D : Player face and move right.
 * LeftArrow, A : Player face and move left.
 * DownArrow, S : Player crouch and briefly enter morph form.
@@ -29,21 +29,26 @@ ___
   * D3, NUM3 : Toggles the long beam upgrade.
 
 ___
-**PLANNED FEATURES**
+**PLANNED CHANGES**
 
-* Currently, the player does not "die" when health drops below 0.
-* Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capactity), and the energy shields.
+* Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
+* Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capacity), and the energy shields.
 * At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
 * Plans to make the wave beam and ice beam mutually exclusive.
-* Make the wave beam more sinusoidal
+* Make the wave beam more sinusoidal.
+* Give the player the ability to shoot upwards.
+* Resize some sprites for better balance/collision handling.
+* Cause the player to toggle morph form.
 
 ___
 **KNOWN BUGS**
 
 * Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
+* Kraid's Horn attack has a very shallow arc.
+* Some textures need to be cleaned up.
 
 ___
-**DETAILS ON CURRENT ERRORS/WARNINGS**
+**DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
 
 Severity	Code	Description	Project	File	Line	Suppression State
 Warning	CS0108	'MapInterface.Update(GameTime)' hides inherited member 'ISprite.Update(GameTime)'. Use the new keyword if hiding was intended.	Super Metroidvania 5Million	C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\Libraries\Sprite\Map\MapInterface.cs	13	Active
@@ -59,6 +64,13 @@ Warning	CS0649	Field 'MissileRocketExplosion.explosionAnimationPairs' is never a
 * This should be resolved as collisions are implemented - this variable is just a NULL variable for the time being.
 
 ___
-**DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**
+**OTHER TOOLS/PROCESSES**
 
 * GIMP2.0: Used for texture editing. 
+
+___
+**CREDITS**  
+Developed By: Nyigel Spann, Shyamal Shah, Tristan Roman, Alex Nyugen, Will Wloyd, Danny Attia  
+Spritesheets taken from: https://www.spriters-resource.com/nes/metroid/  
+*Metroid NES* Manual: http://www.digitpress.com/library/manuals/nes/Metroid%20v1.pdf  
+
