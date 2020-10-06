@@ -29,13 +29,14 @@ This program is a clone of the original *Metroid NES* first mini-boss hideout. T
 
 **KNOWN BUGS**
 
-
+* Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to with the supression after a key is pressed.
 
 
 
 **DETAILS OF ANY FEATURES THAT AREN'T IMPLEMENTED**
 
 * Currently, the player does not "die" when health drops below 0.
+* Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capactity), and the energy shields.
 
 
 **DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**

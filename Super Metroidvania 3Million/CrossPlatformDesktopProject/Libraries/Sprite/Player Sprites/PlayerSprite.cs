@@ -79,7 +79,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool jumpDisabled = false;
         public bool crouchDisabled = false;
         public bool damageDisabled = false;
-        public bool varia = false;
+        public bool screw = false;
 
         public PlayerSprite(List<Texture2D> texture, List<SpriteFont> font)
         {
@@ -104,7 +104,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             ice = false;
             wave = false;
             elong = false;
-            varia = false;
+            screw = false;
             rTime = 80;
             jTime = (rTime*7)/8;
             TotalRockets = 10;
@@ -522,8 +522,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case UpgradeType.Longbeam:
                     elong = !elong;
                     break;
-                case UpgradeType.Varia:
-                    varia = !varia;
+                case UpgradeType.Screw:
+                    screw = !screw;
                     break;
                 default:
                     break;
