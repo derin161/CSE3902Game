@@ -31,7 +31,7 @@ ___
 ___
 **PLANNED FEATURES**
 
-* Currently, the player does not "die" when health drops below 0.
+* Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
 * Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capactity), and the energy shields.
 * At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
 * Plans to make the wave beam and ice beam mutually exclusive.
@@ -62,3 +62,10 @@ ___
 **DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**
 
 * GIMP2.0: Used for texture editing. 
+
+___
+**CREDITS**
+Developed By: Nyigel Spann, Shyamal Shah, Tristan Roman, Alex Nyugen, Will Wloyd, Danny Attia
+Spritesheets taken from: https://www.spriters-resource.com/nes/metroid/
+*Metroid NES* Manual: http://www.digitpress.com/library/manuals/nes/Metroid%20v1.pdf
+
