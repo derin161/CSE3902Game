@@ -81,9 +81,7 @@ namespace CrossPlatformDesktopProject
             blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
             blockX += 32;
             blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
-            
 
-            
             
             // TODO: use this.Content to load your game content here
         }
@@ -181,6 +179,21 @@ namespace CrossPlatformDesktopProject
             keyboard = new KeyboardController(this);
             enemyIndex = 0;
             itemIndex = 0;
+
+            // Assign itemSprites list to new sprite list 
+            itemSprites = Factory.CreateItemSpriteList(new Vector2(700, 325));
+
+            // Clear block map and re-add blocks
+            blockSpriteListIndexes.Clear();
+            int blockX = 672;
+            int blockY = 256;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
+            blockX += 32;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            blockX += 32;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            blockX += 32;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
         }
     }
 }
