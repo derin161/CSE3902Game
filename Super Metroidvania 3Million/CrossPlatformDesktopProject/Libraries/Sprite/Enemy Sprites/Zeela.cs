@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Zeela : IEnemy
     {
-        //Author: Will Floyd
         public Texture2D Texture { get; set; }
         private int Rows;
         private int Columns;

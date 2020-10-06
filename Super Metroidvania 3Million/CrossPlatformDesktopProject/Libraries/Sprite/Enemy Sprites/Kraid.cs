@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Kraid : IEnemy
     {
 

@@ -8,6 +8,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
+	//Author: Will Floyd
 	class NextEnemy : ICommand
 	{
 		private Game1 game;

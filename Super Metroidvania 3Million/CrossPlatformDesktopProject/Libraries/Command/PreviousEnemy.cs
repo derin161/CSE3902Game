@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
+	//Author: Will Floyd
 	class PreviousEnemy : ICommand
 	{
 		private Game1 game;
