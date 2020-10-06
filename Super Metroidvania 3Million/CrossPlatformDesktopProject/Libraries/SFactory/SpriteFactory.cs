@@ -166,6 +166,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			enemyList.Add(new Zeela(zeela, location));
 			enemyList.Add(new Skree(skree, location));
 			enemyList.Add(new SideHopper(sideHopper, location));
+			enemyList.Add(new ReverseSideHopper(sideHopper, location));
 			enemyList.Add(new Ripper(ripper, location));
 			enemyList.Add(new Memu(memu, location));
 			enemyList.Add(new Geega(geega, location));
