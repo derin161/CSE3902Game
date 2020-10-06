@@ -20,6 +20,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
 		public void Execute()
 		{
+			//Move to next element in array or back to beginning if at the end
 			if (game.enemyIndex == game.enemySprites.Count() - 1)
 			{
 				game.enemyIndex = 0;

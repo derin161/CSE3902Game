@@ -36,6 +36,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //change the frame after 10 counts
             if (count == 10)
             {
                 count = 0;
@@ -47,6 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             count++;
 
+            //Move to the ground (410) and then reset
             y += 2;
             if (y > 410-Texture.Height)
             {

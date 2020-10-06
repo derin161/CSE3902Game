@@ -40,6 +40,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //change the frame after 20 counts
             if (count == 20)
             {
                 count = 0;
@@ -51,6 +52,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
             }
 
+            //Jump while on frame 2
             if (currentFrame == 2)
             {
                 y = (count * count) - 20 * count + initialY;
