@@ -1,4 +1,5 @@
 # CSE3902Game
+# Group 2
 # Super Metroidvania 5Million
 
 **PROGRAM DESCRIPTION**
@@ -60,7 +61,7 @@ Warning	CS0649	Field 'MissileRocketExplosion.explosionAnimationPairs' is never a
 * This should be resolved as collisions are implemented - this variable is just a NULL variable for the time being.
 
 ___
-**DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**
+**OTHER TOOLS/PROCESSES**
 
 * GIMP2.0: Used for texture editing. 
 
