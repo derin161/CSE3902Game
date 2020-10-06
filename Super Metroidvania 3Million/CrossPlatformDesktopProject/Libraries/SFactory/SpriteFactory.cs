@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.Map;
-using CrossPlatformDesktopProject.Libraries.Sprite.Block;
+using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -224,14 +224,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public List<ISprite> CreateBlockSpriteList(Vector2 location)
 		{
 			List<ISprite> blockList = new List<ISprite>();
-			blockList.Add(new BlockSprite(stockBlockBlue));
-			blockList.Add(new BlockSprite(bushBlockBlue));
-			blockList.Add(new BlockSprite(tubeBlockBlue));
-			blockList.Add(new BlockSprite(swirlBlockBlue));
-			blockList.Add(new BlockSprite(stockBlockOrange));
-			blockList.Add(new BlockSprite(bushBlockOrange));
-			blockList.Add(new BlockSprite(tubeBlockOrange));
-			blockList.Add(new BlockSprite(swirlBlockOrange));
+			blockList.Add(new BlockSprite(stockBlockBlue, location));
+			blockList.Add(new BlockSprite(bushBlockBlue, location));
+			blockList.Add(new BlockSprite(swirlBlockBlue, location));
+			blockList.Add(new BlockSprite(tubeBlockBlue, location));
+			blockList.Add(new BlockSprite(stockBlockOrange, location));
+			blockList.Add(new BlockSprite(bushBlockOrange, location));
+			blockList.Add(new BlockSprite(swirlBlockOrange, location));
+			blockList.Add(new BlockSprite(tubeBlockOrange, location));
 
 			return blockList;
 		}

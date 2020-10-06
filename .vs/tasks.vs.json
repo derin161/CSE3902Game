@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Super Metroidvania 3Million",
+      "appliesTo": "Super Metroidvania 3Million/",
+      "type": "launch"
+    }
+  ]
+}

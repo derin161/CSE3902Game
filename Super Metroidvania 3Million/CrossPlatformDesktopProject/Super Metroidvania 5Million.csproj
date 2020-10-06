@@ -44,7 +44,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Command\NextBlock.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\MissileOrBomb.cs" />
+    <Compile Include="Libraries\Command\PreviousBlock.cs" />
     <Compile Include="Libraries\Command\UpgradeToggle.cs" />
     <Compile Include="Libraries\Command\Crouch.cs" />
     <Compile Include="Libraries\Command\Damage.cs" />
@@ -64,6 +66,8 @@
     <Compile Include="Libraries\Command\Start.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\BlockInteface.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\BlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Kraid.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\VerticalZeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Zeela.cs" />

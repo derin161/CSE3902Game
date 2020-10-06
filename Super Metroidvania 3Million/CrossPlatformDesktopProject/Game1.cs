@@ -29,13 +29,7 @@ namespace CrossPlatformDesktopProject
         public List<ISprite> itemSprites = new List<ISprite>();
         public int itemIndex = 0;
 
-        //Four different block sprite lists so can have for different block sprites on the screen at once
-        public List<ISprite> leftBlockSprites = new List<ISprite>();
-        public List<ISprite> midLeftBlockSprites = new List<ISprite>();
-        public List<ISprite> midRightBlockSprites = new List<ISprite>();
-        public List<ISprite> rightBlockSprites = new List<ISprite>();
-
-        //Map that maps sprite list to block types
+        //Map that allows for multiple block sprite lists with mappings to their types so can have multiple different block sprites on screen at once
         public Dictionary<List<ISprite>, int> blockSpriteListIndexes = new Dictionary<List<ISprite>, int>();
 
         private GraphicsDeviceManager graphics;
@@ -57,12 +51,6 @@ namespace CrossPlatformDesktopProject
         /// </summary>
         protected override void Initialize()
         {
-            //Add block sprite lists to map with mappings to initial block types
-            blockSpriteListIndexes.Add(leftBlockSprites, 0);
-            blockSpriteListIndexes.Add(midLeftBlockSprites, 1);
-            blockSpriteListIndexes.Add(midRightBlockSprites, 1);
-            blockSpriteListIndexes.Add(rightBlockSprites, 0);
-
             base.Initialize();
         }
 
@@ -85,12 +73,15 @@ namespace CrossPlatformDesktopProject
 
             // Create block sprite list for four different blocks in different locations
             int blockX = 672;
-            int blockY = 288;
-            foreach (List<ISprite> entry in blockSpriteListIndexes)
-            {
-                entry = Factory.CreateBlockSpriteList(new Vector2(blockX, blockY));
-                blockX+=32;
-            }
+            int blockY = 256;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
+            blockX += 32;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            blockX += 32;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            blockX += 32;
+            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
+            
 
             
             
@@ -130,10 +121,10 @@ namespace CrossPlatformDesktopProject
             }
 
             int result;
-            foreach (List<ISprite> entry in blockSpriteListIndexes)
+            foreach (List<ISprite> entry in blockSpriteListIndexes.Keys.ToList())
             {
-                result = blockSpriteListIndexes.TryGetValue(entry, out result);
-                entry[result].Update(SpriteBatch);
+                blockSpriteListIndexes.TryGetValue(entry, out result);
+                entry[result].Update(gameTime);
             }
 
             enemySprites[enemyIndex].Update(gameTime);
@@ -162,10 +153,10 @@ namespace CrossPlatformDesktopProject
             }
 
             int result;
-            foreach (List<ISprite> entry in blockSpriteListIndexes)
+            foreach (List<ISprite> entry in blockSpriteListIndexes.Keys.ToList())
             {
-                result = blockSpriteListIndexes.TryGetValue(entry, out result);
-                entry[result].Draw(SpriteBatch);
+                blockSpriteListIndexes.TryGetValue(entry, out result);
+                entry[result].Draw(spriteBatch);
             }
 
             enemySprites[enemyIndex].Draw(spriteBatch);

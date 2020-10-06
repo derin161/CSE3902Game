@@ -17,20 +17,20 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 		public void Execute()
 		{
 			int result;
-			foreach (List<ISprite> entry in game.blockSpriteListIndexes)
+			foreach (List<ISprite> entry in game.blockSpriteListIndexes.Keys.ToList())
 			{
-				result = blockSpriteListIndexes.TryGetValue(entry, out result);
+				game.blockSpriteListIndexes.TryGetValue(entry, out result);
 				if (result == 1)
 				{
-					blockSpriteListIndexes[entry] = entry.Count() - 2;
+					game.blockSpriteListIndexes[entry] = entry.Count() - 1;
 				}
 				else if (result == 0)
 				{
-					blockSpriteListIndexes[entry] = entry.Count() - 1;
+					game.blockSpriteListIndexes[entry] = entry.Count() - 2;
 				}
 				else
 				{
-					blockSpriteListIndexes[entry] -= 2;
+					game.blockSpriteListIndexes[entry] -= 2;
 				}
 			}
 		}
