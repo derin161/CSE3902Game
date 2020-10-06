@@ -38,6 +38,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //change the frame after 10 counts
             if (count == 10)
             {
                 count = 0;
@@ -49,6 +50,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             count++;
 
+            //Move up and down
             y += direction;
             if (Math.Abs(y - initialY) > 100)
             {

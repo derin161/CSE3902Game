@@ -21,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
 		public void Execute()
 		{
-
+			//Move to previous enemy or last enemy if at the beginning
 			if (game.enemyIndex == 0)
             {
 				game.enemyIndex = game.enemySprites.Count() - 1;
