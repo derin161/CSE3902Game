@@ -46,12 +46,12 @@ Warning	CS0108	'MapInterface.Update(GameTime)' hides inherited member 'ISprite.U
 Severity	Code	Description	Project	File	Line	Suppression State
 Warning	CS0108	'MapInterface.Draw(SpriteBatch)' hides inherited member 'ISprite.Draw(SpriteBatch)'. Use the new keyword if hiding was intended.	Super Metroidvania 5Million	C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\Libraries\Sprite\Map\MapInterface.cs	15	Active
 
-Both of these are in the new class MapInterface.cs and has not been fully implemented. These errors should be neglegable for the next Sprint.
+* Both of these are in the new class MapInterface.cs and has not been fully implemented. These errors should be neglegable for the next Sprint.
 
 Severity	Code	Description	Project	File	Line	Suppression State
 Warning	CS0649	Field 'MissileRocketExplosion.explosionAnimationPairs' is never assigned to, and will always have its default value null	Super Metroidvania 5Million	C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\Libraries\Sprite\Projectiles\MissileRocketExplosion.cs	20	Active
 
-This should be resolved as collisions are implemented - this variable is just a NULL variable for the time being.
+* This should be resolved as collisions are implemented - this variable is just a NULL variable for the time being.
 
 **DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**
 
