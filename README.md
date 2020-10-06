@@ -39,6 +39,7 @@ ___
 * Give the player the ability to shoot upwards.
 * Resize some sprites for better balance/collision handling.
 * Cause the player to toggle morph form.
+* Add the Hi-Jump Boots and Screw Attack upgrades.
 
 ___
 **KNOWN BUGS**
