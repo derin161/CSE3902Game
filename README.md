@@ -1,6 +1,5 @@
-# CSE3902Game
-# Group 2
 # Super Metroidvania 5Million
+### Developed By Group 2
 
 **PROGRAM DESCRIPTION**
 
