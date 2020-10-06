@@ -32,14 +32,13 @@ ___
 **PLANNED CHANGES**
 
 * Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
-* Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capactity), and the energy shields.
+* Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capacity), and the energy shields.
 * At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
 * Plans to make the wave beam and ice beam mutually exclusive.
 * Make the wave beam more sinusoidal.
 * Give the player the ability to shoot upwards.
 * Resize some sprites for better balance/collision handling.
 * Cause the player to toggle morph form.
-* Add the Hi-Jump Boots and Screw Attack upgrades.
 
 ___
 **KNOWN BUGS**
