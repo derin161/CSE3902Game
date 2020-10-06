@@ -29,18 +29,19 @@ ___
   * D3, NUM3 : Toggles the long beam upgrade.
 
 ___
-**PLANNED FEATURES**
+**PLANNED CHANGES**
 
 * Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
 * Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capactity), and the energy shields.
 * At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
 * Plans to make the wave beam and ice beam mutually exclusive.
-* Make the wave beam more sinusoidal
+* Make the wave beam more sinusoidal.
 
 ___
 **KNOWN BUGS**
 
 * Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
+* Kraid's Horn attack has a very shallow arc.
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS**
