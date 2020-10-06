@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
+namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 {
-    interface MapInterface : ISprite
+    interface BlockInterface : ISprite
     {
-       
+
     }
 }

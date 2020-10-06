@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.Map;
+using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -69,6 +70,17 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 		//Map
 		private Texture2D map;
+
+		//Blocks
+		private Texture2D stockBlockBlue;
+		private Texture2D bushBlockBlue;
+		private Texture2D tubeBlockBlue;
+		private Texture2D swirlBlockBlue;
+		private Texture2D stockBlockOrange;
+		private Texture2D bushBlockOrange;
+		private Texture2D tubeBlockOrange;
+		private Texture2D swirlBlockOrange;
+
 
 		// More private Texture2Ds follow
 		// ...
@@ -151,6 +163,16 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			//Map
 			map = content.Load<Texture2D>("ProjSprites/Map");
 
+			//Blocks
+			stockBlockBlue = content.Load<Texture2D>("BlockSprites/StockBlueBlock");
+			bushBlockBlue = content.Load<Texture2D>("BlockSprites/BushBlueBlock");
+			tubeBlockBlue = content.Load<Texture2D>("BlockSprites/TubeBlueBlock");
+			swirlBlockBlue = content.Load<Texture2D>("BlockSprites/SwirlBlueBlock");
+			stockBlockOrange = content.Load<Texture2D>("BlockSprites/StockOrangeBlock");
+			bushBlockOrange = content.Load<Texture2D>("BlockSprites/BushOrangeBlock");
+			tubeBlockOrange = content.Load<Texture2D>("BlockSprites/TubeOrangeBlock");
+			swirlBlockOrange = content.Load<Texture2D>("BlockSprites/SwirlOrangeBlock");
+
 		// More Content.Load calls follow
 		//...
 	}
@@ -198,6 +220,21 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			itemList.Add(new WaveBeamItem(waveBeamItem, location));
 
 			return itemList;
+		}
+
+		public List<ISprite> CreateBlockSpriteList(Vector2 location)
+		{
+			List<ISprite> blockList = new List<ISprite>();
+			blockList.Add(new BlockSprite(stockBlockBlue, location));
+			blockList.Add(new BlockSprite(bushBlockBlue, location));
+			blockList.Add(new BlockSprite(swirlBlockBlue, location));
+			blockList.Add(new BlockSprite(tubeBlockBlue, location));
+			blockList.Add(new BlockSprite(stockBlockOrange, location));
+			blockList.Add(new BlockSprite(bushBlockOrange, location));
+			blockList.Add(new BlockSprite(swirlBlockOrange, location));
+			blockList.Add(new BlockSprite(tubeBlockOrange, location));
+
+			return blockList;
 		}
 
 		public ISprite CreateMapSprite()

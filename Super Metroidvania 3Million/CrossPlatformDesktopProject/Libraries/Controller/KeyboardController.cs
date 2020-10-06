@@ -5,6 +5,7 @@ using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
+using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
@@ -90,6 +91,10 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand nextItem = new NextItem(gameState);
             ICommand previousItem = new PreviousItem(gameState);
 
+            //Blocks
+            ICommand nextBlock = new NextBlock(gameState);
+            ICommand previousBlock = new PreviousBlock(gameState);
+
             //Upgrade Toggles
             RegisterCommand(Keys.D1, iceToggle);
             RegisterCommand(Keys.NumPad1, iceToggle);
@@ -131,6 +136,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.R, select);
 
             RegisterCommand(Keys.E, damage);
+
+            RegisterCommand(Keys.T, previousBlock);
+            RegisterCommand(Keys.Y, nextBlock);
 
 
         }
