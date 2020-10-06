@@ -8,7 +8,7 @@ This program is a clone of the original *Metroid NES* first mini-boss hideout. T
 ___
 **PROGRAM CONTROLS**
 
-* UpArrow, W : Player Jump and enter briefly morph form.
+* UpArrow, W : Player jump and enter briefly morph form.
 * RightArrow, D : Player face and move right.
 * LeftArrow, A : Player face and move left.
 * DownArrow, S : Player crouch and briefly enter morph form.
