@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Skree : IEnemy
     {
 
@@ -47,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             count++;
 
             y += 2;
-            if (y > 500)
+            if (y > 410-Texture.Height)
             {
                 y = initialY;
             }
