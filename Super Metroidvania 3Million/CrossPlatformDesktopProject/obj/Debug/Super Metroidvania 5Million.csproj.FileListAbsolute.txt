@@ -392,14 +392,14 @@ C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million
 C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.pdb
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.CodeAnalysisLog.xml
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.lastcodeanalysissucceeded
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\PipeOrangeBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\BushBlueBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\BushOrangeBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\StockBlueBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\StockOrangeBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\SwirlBlueBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\SwirlOrangeBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeBlueBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeOrangeBlock.xnb
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.CodeAnalysisLog.xml
-C:\Users\shyam\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.lastcodeanalysissucceeded
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\BushBlueBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\BushOrangeBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\PipeOrangeBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\StockBlueBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\StockOrangeBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\SwirlBlueBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\SwirlOrangeBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeBlueBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeOrangeBlock.xnb
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.CodeAnalysisLog.xml
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.lastcodeanalysissucceeded

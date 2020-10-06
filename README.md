@@ -5,6 +5,7 @@
 
 This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight. At the moment, the program essentially showcases all enemies, items, blocks, the player, and all non-collision related behaviors.
 
+___
 **PROGRAM CONTROLS**
 
 * UpArrow, W : Player Jump and enter briefly morph form.
@@ -27,18 +28,21 @@ This program is a clone of the original *Metroid NES* first mini-boss hideout. T
   * D2,NUM2: Toggles the wave beam upgrade.
   * D3, NUM3 : Toggles the long beam upgrade.
 
-**KNOWN BUGS**
-
-* Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to with the supression after a key is pressed.
-
-
-
-**DETAILS OF ANY FEATURES THAT AREN'T IMPLEMENTED**
+___
+**PLANNED FEATURES**
 
 * Currently, the player does not "die" when health drops below 0.
 * Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capactity), and the energy shields.
 * At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
+* Plans to make the wave beam and ice beam mutually exclusive.
+* Make the wave beam more sinusoidal
 
+___
+**KNOWN BUGS**
+
+* Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
+
+___
 **DETAILS ON CURRENT ERRORS/WARNINGS**
 
 Severity	Code	Description	Project	File	Line	Suppression State
@@ -54,6 +58,7 @@ Warning	CS0649	Field 'MissileRocketExplosion.explosionAnimationPairs' is never a
 
 * This should be resolved as collisions are implemented - this variable is just a NULL variable for the time being.
 
+___
 **DETAILS OF ANY TOOLS/PROCESSES YOUR TEAM USED THAT AREN'T EXPLICITLY REQUIRED**
 
 * GIMP2.0: Used for texture editing. 
