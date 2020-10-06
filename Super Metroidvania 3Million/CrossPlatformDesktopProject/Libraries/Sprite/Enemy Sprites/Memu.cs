@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Memu : IEnemy
     {
 
@@ -36,6 +37,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //change the frame after 10 counts
             if (counter == 10)
             {
                 counter = 0;
@@ -45,6 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             counter++;
 
+            //move back and forth in x direction
             x += direction;
             if (Math.Abs(x - initialX) > 100)
             {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Ripper : IEnemy
     {
 
@@ -35,10 +36,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            currentFrame++;
-            if (currentFrame == 1)
-                currentFrame = 0;
+            //Stay on frame 0 (Frame 1 left for color change)
+            currentFrame = 0;
 
+            //move back and forth in x direction
             x += direction;
             if (Math.Abs(x - initialX) > 100)
             {

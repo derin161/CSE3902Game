@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class ReverseSideHopper : IEnemy
     {
 
@@ -39,6 +40,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //change the frame after 20 counts
             if (count == 20)
             {
                 count = 0;
@@ -50,6 +52,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
             }
 
+            //Jump while on frame 5
             if (currentFrame == 5)
             {
                 y = -(count * count) + 20 * count + initialY;

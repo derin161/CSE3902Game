@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
+	//Author: Will Floyd
 	class PreviousEnemy : ICommand
 	{
 		private Game1 game;
@@ -20,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
 		public void Execute()
 		{
-
+			//Move to previous enemy or last enemy if at the beginning
 			if (game.enemyIndex == 0)
             {
 				game.enemyIndex = game.enemySprites.Count() - 1;
