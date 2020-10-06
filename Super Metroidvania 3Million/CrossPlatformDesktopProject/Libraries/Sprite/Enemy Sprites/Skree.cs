@@ -47,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             count++;
 
             y += 2;
-            if (y > 500)
+            if (y > 410-Texture.Height)
             {
                 y = initialY;
             }
