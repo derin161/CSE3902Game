@@ -1,0 +1,13 @@
+Review Author: Nyigel Spann
+Review Date: 10/05/2020
+Sprint No: 2
+Name of the .cs file being reviewed: Jump.cs
+Author of the .cs file being reviewed: Shyamal Shah
+Number of minutes taken to complete the review: 5
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) The instance variables are self explanatory/named intiutively.
+2) The constructor is simple as it just assigns instance variables.
+3) The Execute method has some vagueness as to why there is a different call to UpdateState if samus.jumpFrames == 10.

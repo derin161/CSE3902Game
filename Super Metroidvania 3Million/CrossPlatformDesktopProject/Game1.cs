@@ -23,8 +23,10 @@ namespace CrossPlatformDesktopProject
 
         public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
         public List<ISprite> DeadSprites = new List<ISprite>();
-        public List<ISprite> enemySprites;
+        public List<ISprite> enemySprites = new List<ISprite>();
         public int enemyIndex = 0;
+        public List<ISprite> itemSprites = new List<ISprite>();
+        public int itemIndex = 0;
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -61,9 +63,11 @@ namespace CrossPlatformDesktopProject
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
+            AddSprite(Factory.CreateMapSprite());
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
-            enemySprites = Factory.CreateEnemySpriteList(new Vector2(700, 250));
+            enemySprites = Factory.CreateEnemySpriteList(new Vector2(400, 250), this);
+            itemSprites = Factory.CreateItemSpriteList(new Vector2(700, 325));
             
             // TODO: use this.Content to load your game content here
         }
@@ -87,7 +91,7 @@ namespace CrossPlatformDesktopProject
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            keyboard.Update();
+            keyboard.Update(gameTime);
             foreach (ISprite entry in SpriteList)
             {
                 entry.Update(gameTime);
@@ -101,6 +105,7 @@ namespace CrossPlatformDesktopProject
             }
 
             enemySprites[enemyIndex].Update(gameTime);
+            itemSprites[itemIndex].Update(gameTime);
 
             foreach (ISprite dead in DeadSprites){
                 SpriteList.Remove(dead);
@@ -125,6 +130,7 @@ namespace CrossPlatformDesktopProject
             }
 
             enemySprites[enemyIndex].Draw(spriteBatch);
+            itemSprites[itemIndex].Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
@@ -140,9 +146,11 @@ namespace CrossPlatformDesktopProject
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
+            AddSprite(Factory.CreateMapSprite());
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemyIndex = 0;
+            itemIndex = 0;
         }
     }
 }

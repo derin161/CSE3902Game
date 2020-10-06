@@ -11,14 +11,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     class Zeela : IEnemy
     {
-
+        //Author: Will Floyd
         public Texture2D Texture { get; set; }
         private int Rows;
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y;
+        private float x, y, initialX;
         private int count;
+        private int direction;
 
         public Zeela(Texture2D texture, Vector2 location)
         {
@@ -28,8 +29,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
+            initialX = location.X;
             y = location.Y;
             count = 0;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
@@ -44,6 +47,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
             }
             count++;
+
+            x += direction;
+            if (Math.Abs(x - initialX) > 100)
+            {
+                direction *= -1;
+            }
         }
 
         

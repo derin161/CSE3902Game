@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     class MouseController : IController
     { 
-        public void Update() { }
+        public void Update(GameTime gameTime) { }
     }
 }

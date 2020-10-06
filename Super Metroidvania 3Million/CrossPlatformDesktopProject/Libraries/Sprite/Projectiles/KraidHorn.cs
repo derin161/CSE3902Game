@@ -48,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             //Create source and destination and draw the sprite
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)Location.X, (int)Location.Y, width*2, height*2);
 
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
 
@@ -56,16 +56,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Update(GameTime gameTime)
         {
-            bool collision = false; //temp var til collisions are added
-            if(collision){
-                isDead = true;
-            }
 
             Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
             float x = (float) relativePos.X + 1;
             float y = (float)(0.2 * x * x - 10 * x); // 1/5x^2 - 10x. Gives projectile parabolic path to the right.
-            
-
             
             if (!isMovingRight) {
                 x = (float) relativePos.X - 1;
@@ -87,6 +81,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 if (currentFrame == rows * columns)
                     currentFrame = 0;
             }
+
+            bool collision = false; //temp var til collisions are added
+
+            //Die if a collision occurs or the projectile leaves the screen
+            isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
 
         }
 

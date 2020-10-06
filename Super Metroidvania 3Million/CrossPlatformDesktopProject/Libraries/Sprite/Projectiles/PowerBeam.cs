@@ -60,9 +60,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         {
             //Using temporary var til collisions are added
             bool collision = false;
-            if (collision) {
-                isDead = true;
-            }
 
 
             //Update position
@@ -77,9 +74,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 int boundX = 100;
                 int boundY = 100;
 
-                if (relativeX > boundX || relativeX < -boundX || relativeY > boundY || relativeY < -boundY) {
-                    isDead = true;
-                }
+                isDead = collision || relativeX > boundX || relativeX < -boundX || relativeY > boundY || relativeY < -boundY;
+
+            } else {
+
+                //Die if a collision occurs or the projectile leaves the screen
+                isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
             
         }

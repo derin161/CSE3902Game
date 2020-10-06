@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Albatro5s/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerHealth.spritefont</SourceFile>
-  <SourceTime>2018-12-08T11:35:46-05:00</SourceTime>
-  <DestFile>C:/Users/Albatro5s/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/PlayerHealth.xnb</DestFile>
-  <DestTime>2020-10-04T16:21:26.8966961-04:00</DestTime>
+  <SourceFile>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/File.spritefont</SourceFile>
+  <SourceTime>2020-10-05T00:03:46.6347478-04:00</SourceTime>
+  <DestFile>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/PlayerHealth.xnb</DestFile>
+  <DestTime>2020-10-05T19:50:21.8997865-04:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
-  <Processor>LocalizedFontProcessor</Processor>
+  <Processor>FontDescriptionProcessor</Processor>
   <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
   <Parameters>
     <Key>PremultiplyAlpha</Key>

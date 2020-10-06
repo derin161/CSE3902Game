@@ -17,7 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y;
+        private float x, y, initialY;
         private int count;
 
         public Skree(Texture2D texture, Vector2 location)
@@ -29,6 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             totalFrames = Rows * Columns;
             x = location.X;
             y = location.Y;
+            initialY = location.Y;
             count = 0;
         }
 
@@ -44,6 +45,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
             }
             count++;
+
+            y += 2;
+            if (y > 500)
+            {
+                y = initialY;
+            }
         }
 
         

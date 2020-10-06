@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Nyigel Spann
+    //Author: Shyamal Shah
     class Damage : ICommand
     {
         private PlayerSprite samus;
@@ -22,15 +22,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            if (samus.damageFrames == -1)
-            {
+            if (!samus.damageDisabled){
                 samus.UpdateHealth(samus.currentHealth - 10, samus.maxHealth);
                 samus.HealthBar(samus.currentHealth - 10, samus.maxHealth);
                 samus.UpdateHealthState();
-                
-                samus.UpdateState(PlayerSprite.State.Damage, samus.damageFrames, samus.facingRight);
-                
+
+                samus.UpdateState(PlayerSprite.State.Damage, samus.damageFrames++, samus.facingRight);
             }
+
         }
     }
 }

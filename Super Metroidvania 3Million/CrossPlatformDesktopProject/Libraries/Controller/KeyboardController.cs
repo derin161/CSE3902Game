@@ -4,6 +4,7 @@ using System.Linq;
 using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
+using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
@@ -12,8 +13,12 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         //Written by Tristan Roman and Shyamal Shah
         private Dictionary<Keys, ICommand> controllerMappings = new Dictionary<Keys, ICommand>();
 
+        //The suppressedKeyTimer keeps track of all the keys and, if mapped to a positive number, how long they are suppressed for.
+        private Dictionary<Keys, int> suppressedKeyTimer = new Dictionary<Keys, int>();
+
+        private int msSuppressTimer = 100;
         private KeyboardState oldState;
-        private KeyboardState newState; // ***
+        private KeyboardState newState;
         private Keys[] pressedKeys;
         private Game1 gameState;
 
@@ -21,27 +26,31 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             oldState = Keyboard.GetState();
             gameState = game;
+            makeDict();
         }
         public void RegisterCommand(Keys key, ICommand command)
         {
             if (!controllerMappings.ContainsKey(key))
             {
                 controllerMappings.Add(key, command);
+                suppressedKeyTimer.Add(key, 0);
             }
             else {
                 controllerMappings[key] = command;
             }
         }
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            makeDict();
             pressedKeys = Keyboard.GetState().GetPressedKeys();
             newState = Keyboard.GetState();
 
             foreach (Keys key in pressedKeys)
             {
-                if (controllerMappings.ContainsKey(key)){
+                if (controllerMappings.ContainsKey(key) && suppressedKeyTimer[key] < 0) {
                     controllerMappings[key].Execute();
+                    suppressedKeyTimer[key] = msSuppressTimer;
+                } else if (controllerMappings.ContainsKey(key)) {
+                    suppressedKeyTimer[key] -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
                 }
             }
 
@@ -49,21 +58,46 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         }
 
-        public void makeDict()     // If else of possible actions that updates choice
+        public void GameOver(bool gameOver) { 
+            //update the controller however necessary for a game over
+        }
+
+        private void makeDict()     // If else of possible actions that updates choice
         {
-            ICommand up = new Jump(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand down = new Crouch(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand left = new MoveLeft(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand right = new MoveRight(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            ICommand attack = new Command.ShootBeam(gameState, (PlayerSprite) gameState.SpriteList.ElementAt(0));
-            //ICommand special = new Special(gameState);
+            PlayerSprite player = (PlayerSprite)gameState.SpriteList.ElementAt(1); // The player sprite
+
+            ICommand up = new Jump(gameState, player);
+            ICommand down = new Crouch(gameState, player);
+            ICommand left = new MoveLeft(gameState, player);
+            ICommand right = new MoveRight(gameState, player);
+            ICommand attack = new ShootBeam(gameState, player);
+            ICommand missleOrBomb = new MissileOrBomb(gameState, player);
             ICommand start = new Start(gameState);
             ICommand select = new Select(gameState);
-            ICommand damage = new Damage(gameState, (PlayerSprite)gameState.SpriteList.ElementAt(0));
+            ICommand damage = new Damage(gameState, player);
 
             //enemies
             ICommand nextEnemy = new NextEnemy(gameState);
             ICommand previousEnemy = new PreviousEnemy(gameState);
+
+            //Upgrade Toggles
+            ICommand iceToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Icebeam, player);
+            ICommand waveToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Wavebeam, player);
+            ICommand longToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Longbeam, player);
+
+            //Items
+            ICommand nextItem = new NextItem(gameState);
+            ICommand previousItem = new PreviousItem(gameState);
+
+            //Upgrade Toggles
+            RegisterCommand(Keys.D1, iceToggle);
+            RegisterCommand(Keys.NumPad1, iceToggle);
+            RegisterCommand(Keys.D2, waveToggle);
+            RegisterCommand(Keys.NumPad2, waveToggle);
+            RegisterCommand(Keys.D3, longToggle);
+            RegisterCommand(Keys.NumPad3, longToggle);
+
+            RegisterCommand(Keys.C, missleOrBomb);
 
             RegisterCommand(Keys.W, up);
             RegisterCommand(Keys.Up, up);
@@ -83,6 +117,9 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.O, previousEnemy);
             RegisterCommand(Keys.P, nextEnemy);
 
+            RegisterCommand(Keys.U, previousItem);
+            RegisterCommand(Keys.I, nextItem);
+
             //RegisterCommand(Keys.X, special);
             //RegisterCommand(Keys.M, special);
 
@@ -91,6 +128,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.R, select);
 
             RegisterCommand(Keys.E, damage);
+
 
         }
     }
