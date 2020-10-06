@@ -19,7 +19,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int totalFrames;
         private float x, y, initialX;
         private int counter;
-        private int direction;
 
         public Geega(Texture2D texture, Vector2 location)
         {
@@ -32,7 +31,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             initialX = location.X;
             y = location.Y;
             counter = 0;
-            direction = 1;
         }
 
         public void Update(GameTime gameTime)
@@ -46,10 +44,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             counter++;
 
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
+            x -= 3;
+            if (initialX - x > 300)
             {
-                direction *= -1;
+                x = initialX;
             }
             
 
