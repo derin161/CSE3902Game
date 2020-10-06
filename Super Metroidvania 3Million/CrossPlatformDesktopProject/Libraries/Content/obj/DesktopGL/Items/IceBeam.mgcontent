@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Items/IceBeam.png</SourceFile>
-  <SourceTime>2020-10-05T00:24:51.8457663-04:00</SourceTime>
+  <SourceTime>2020-10-05T22:20:46.7253892-04:00</SourceTime>
   <DestFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Items/IceBeam.xnb</DestFile>
-  <DestTime>2020-10-05T14:40:04.0915372-04:00</DestTime>
+  <DestTime>2020-10-05T22:27:16.2864247-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

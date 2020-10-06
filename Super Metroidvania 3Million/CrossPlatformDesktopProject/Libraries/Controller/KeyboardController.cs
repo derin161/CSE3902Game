@@ -85,6 +85,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand iceToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Icebeam, player);
             ICommand waveToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Wavebeam, player);
             ICommand longToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Longbeam, player);
+            ICommand screwToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Screw, player);
 
             //Items
             ICommand nextItem = new NextItem(gameState);
@@ -101,6 +102,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.NumPad2, waveToggle);
             RegisterCommand(Keys.D3, longToggle);
             RegisterCommand(Keys.NumPad3, longToggle);
+            RegisterCommand(Keys.D4, longToggle); //Not fully implemented yet.
+            RegisterCommand(Keys.NumPad4, longToggle);
 
             RegisterCommand(Keys.C, missleOrBomb);
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Geega : IEnemy
     {
 
@@ -19,7 +20,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int totalFrames;
         private float x, y, initialX;
         private int counter;
-        private int direction;
 
         public Geega(Texture2D texture, Vector2 location)
         {
@@ -32,11 +32,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             initialX = location.X;
             y = location.Y;
             counter = 0;
-            direction = 1;
         }
 
         public void Update(GameTime gameTime)
         {
+            //change the frame after 10 counts
             if (counter == 10)
             {
                 counter = 0;
@@ -46,10 +46,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             counter++;
 
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
+            //Fly horizontally across the screen and reset to initial positoin
+            x -= 3;
+            if (initialX - x > 300)
             {
-                direction *= -1;
+                x = initialX;
             }
             
 

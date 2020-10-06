@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Kraid : IEnemy
     {
 
@@ -41,8 +42,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //Wait between attacks
             msUntilAttack -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            //Perform attacks
             if (msUntilAttack < 0) {
                 if (new Random().Next(0, 2) == 0)
                 {
@@ -54,6 +57,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 msUntilAttack = msBetweenAttack;
             }
 
+            //change the frame after 10 counts
             if (counter == 10)
             {
                 counter = 0;

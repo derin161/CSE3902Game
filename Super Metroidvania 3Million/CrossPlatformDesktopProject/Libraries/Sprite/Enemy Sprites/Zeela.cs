@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
+    //Author: Will Floyd
     class Zeela : IEnemy
     {
-        //Author: Will Floyd
         public Texture2D Texture { get; set; }
         private int Rows;
         private int Columns;
@@ -37,6 +37,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+            //Move to the next frame after 10 counts
             if (count == 10)
             {
                 count = 0;
@@ -48,6 +49,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             count++;
 
+            //Move horizontally back and forth across the screen
             x += direction;
             if (Math.Abs(x - initialX) > 100)
             {

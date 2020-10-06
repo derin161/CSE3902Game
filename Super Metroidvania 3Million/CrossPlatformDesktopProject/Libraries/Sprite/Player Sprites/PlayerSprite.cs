@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         }
         public HealthState currentHealthState;
 
-        public Vector2 HealthPosition = new Vector2(20, 20);
+        public Vector2 HealthPosition = new Vector2(20, 90);
 
         public bool dead = false;
         public int currentHealth = 100;
@@ -79,7 +79,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool jumpDisabled = false;
         public bool crouchDisabled = false;
         public bool damageDisabled = false;
-        public bool varia = false;
+        public bool screw = false;
 
         public PlayerSprite(List<Texture2D> texture, List<SpriteFont> font)
         {
@@ -98,13 +98,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
             healthFont = font.ElementAt(0);
             currentText = rightIdle;
             pixelSize = currentText.Height;
-            lowerBound = 480 - pixelSize;
+            lowerBound = 410 - pixelSize;
             rightBound = 800 - pixelSize;
             Location = new Vector2(0, lowerBound);
             ice = false;
             wave = false;
             elong = false;
-            varia = false;
+            screw = false;
             rTime = 80;
             jTime = (rTime*7)/8;
             TotalRockets = 10;
@@ -150,7 +150,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         {
             this.maxHealth = maxHealth;
         }
-
         public void UpdateHealthState()
         {
             float percent = (float)currentHealth / (float)maxHealth;
@@ -441,7 +440,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 }
                 srcRec = new Rectangle((width * adjFrame), 0, width, height);
                 destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
-                spriteBatch.Draw(currentText, destRec, srcRec, Color.Blue);
+                spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
             }
         }
 
@@ -523,8 +522,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 case UpgradeType.Longbeam:
                     elong = !elong;
                     break;
-                case UpgradeType.Varia:
-                    varia = !varia;
+                case UpgradeType.Screw:
+                    screw = !screw;
                     break;
                 default:
                     break;

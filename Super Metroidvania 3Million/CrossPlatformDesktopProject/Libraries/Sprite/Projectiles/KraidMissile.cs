@@ -31,7 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Draw(SpriteBatch spriteBatch)
         {
             
-            Rectangle destinationRec = new Rectangle((int)Location.X, (int)Location.Y, texture.Width, texture.Height);
+            Rectangle destinationRec = new Rectangle((int)Location.X, (int)Location.Y, texture.Width*2, texture.Height*2);
             Rectangle sourceRec = new Rectangle(0, 0, texture.Width, texture.Height);
             spriteBatch.Draw(texture, destinationRec,sourceRec, Color.White);
             

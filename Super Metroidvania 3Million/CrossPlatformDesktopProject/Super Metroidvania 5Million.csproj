@@ -25,6 +25,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
@@ -69,6 +70,7 @@
     <Compile Include="Libraries\Sprite\Blocks\BlockInteface.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Kraid.cs" />
+    <Compile Include="Libraries\Sprite\Enemy Sprites\ReverseSideHopper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\VerticalZeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Zeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Skree.cs" />
@@ -169,7 +171,16 @@
     </None>
     <None Include="app.manifest" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Code Reviews\Sprint2\Code Quality\AlexQualityReviewWill.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Quality\NyigelQualityReviewShyamal.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Quality\TristanQualityReviewAlex.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Quality\WillQualityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\AlexReadabilityReviewWill.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\NyigelReadabilityReviewShyamal.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\TristanReadabilityReviewAlex.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\WillReadabilityReviewDanny.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
