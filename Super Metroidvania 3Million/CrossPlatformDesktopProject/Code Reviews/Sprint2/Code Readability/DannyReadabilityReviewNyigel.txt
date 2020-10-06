@@ -1,0 +1,13 @@
+Review Author: Danny
+Review Date: 10/05/2020
+Sprint No: 2
+Name of the .cs file being reviewed: Bomb.cs
+Author of the .cs file being reviewed: Nyigel Spann
+Number of minutes taken to complete the review: 10
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) Variable names are relevant and easy to understand 
+2) Change texture block is could be documented a bit more
+3) If else structure is logical and how time is being used makes sense
