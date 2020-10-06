@@ -37,6 +37,7 @@ This program is a clone of the original *Metroid NES* first mini-boss hideout. T
 
 * Currently, the player does not "die" when health drops below 0.
 * Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capactity), and the energy shields.
+* At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
 
 **DETAILS ON CURRENT ERRORS/WARNINGS**
 
