@@ -1,9 +1,0 @@
-Sprint Reflection:
-
-Overall we performed well on this Sprint. All of the features that were required to be included 
-in the game were added. We started by coding each individual class and interface such as the
-game class, the sprite interface, the player interface, etc... We quickly realized that this
-was not a good strategy because all of these needed to be continuously updated as the project
-was developed. As a result, for the next Sprint, we will work on the code in different portions
-as opposed to trying to spread out the coding. Also, we were a little lax with our preset
-deadlines and for the next Sprint we will follow them more closely.
