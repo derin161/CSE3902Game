@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         }
         public HealthState currentHealthState;
 
-        public Vector2 HealthPosition = new Vector2(20, 20);
+        public Vector2 HealthPosition = new Vector2(20, 90);
 
         public bool dead = false;
         public int currentHealth = 100;
@@ -441,7 +441,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                 }
                 srcRec = new Rectangle((width * adjFrame), 0, width, height);
                 destRec = new Rectangle((int)Location.X, (int)Location.Y, width, height);
-                spriteBatch.Draw(currentText, destRec, srcRec, Color.Blue);
+                spriteBatch.Draw(currentText, destRec, srcRec, Color.White);
             }
         }
 
