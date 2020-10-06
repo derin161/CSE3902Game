@@ -11,6 +11,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using CrossPlatformDesktopProject.Libraries.Controller;
 using System.Net;
+using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject
 {
@@ -27,6 +28,15 @@ namespace CrossPlatformDesktopProject
         public int enemyIndex = 0;
         public List<ISprite> itemSprites = new List<ISprite>();
         public int itemIndex = 0;
+
+        //Four different block sprite lists so can have for different block sprites on the screen at once
+        public List<ISprite> leftBlockSprites = new List<ISprite>();
+        public List<ISprite> midLeftBlockSprites = new List<ISprite>();
+        public List<ISprite> midRightBlockSprites = new List<ISprite>();
+        public List<ISprite> rightBlockSprites = new List<ISprite>();
+
+        //Map that maps sprite list to block types
+        public Dictionary<List<ISprite>, int> blockSpriteListIndexes = new Dictionary<List<ISprite>, int>();
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -47,7 +57,11 @@ namespace CrossPlatformDesktopProject
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            //Add block sprite lists to map with mappings to initial block types
+            blockSpriteListIndexes.Add(leftBlockSprites, 0);
+            blockSpriteListIndexes.Add(midLeftBlockSprites, 1);
+            blockSpriteListIndexes.Add(midRightBlockSprites, 1);
+            blockSpriteListIndexes.Add(rightBlockSprites, 0);
 
             base.Initialize();
         }
@@ -68,6 +82,17 @@ namespace CrossPlatformDesktopProject
             keyboard = new KeyboardController(this);
             enemySprites = Factory.CreateEnemySpriteList(new Vector2(400, 250), this);
             itemSprites = Factory.CreateItemSpriteList(new Vector2(700, 325));
+
+            // Create block sprite list for four different blocks in different locations
+            int blockX = 672;
+            int blockY = 288;
+            foreach (List<ISprite> entry in blockSpriteListIndexes)
+            {
+                entry = Factory.CreateBlockSpriteList(new Vector2(blockX, blockY));
+                blockX+=32;
+            }
+
+            
             
             // TODO: use this.Content to load your game content here
         }
@@ -104,6 +129,13 @@ namespace CrossPlatformDesktopProject
 
             }
 
+            int result;
+            foreach (List<ISprite> entry in blockSpriteListIndexes)
+            {
+                result = blockSpriteListIndexes.TryGetValue(entry, out result);
+                entry[result].Update(SpriteBatch);
+            }
+
             enemySprites[enemyIndex].Update(gameTime);
             itemSprites[itemIndex].Update(gameTime);
 
@@ -127,6 +159,13 @@ namespace CrossPlatformDesktopProject
 
             foreach (ISprite entry in SpriteList) {
                 entry.Draw(spriteBatch);
+            }
+
+            int result;
+            foreach (List<ISprite> entry in blockSpriteListIndexes)
+            {
+                result = blockSpriteListIndexes.TryGetValue(entry, out result);
+                entry[result].Draw(SpriteBatch);
             }
 
             enemySprites[enemyIndex].Draw(spriteBatch);

@@ -2,11 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Super Metroidvania 3Million",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite"
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\SFactory",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Block",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Enemy Sprites",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Items",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Map"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Game1.cs",
+  "SelectedNode": "\\Super Metroidvania 3Million\\Super Metroidvania 5Million.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -311,7 +311,6 @@ C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\Cro
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\ScrewAttack.xnb
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\Varia.xnb
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\Items\WaveBeam.xnb
-C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csprojAssemblyReference.cache
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CoreCompileInputs.cache
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.exe
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.pdb
@@ -373,3 +372,4 @@ C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.pdb
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
 C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CopyComplete
+C:\Users\danny\Documents\CSE 3902 - Proj\Projects\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csprojAssemblyReference.cache
