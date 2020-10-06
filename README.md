@@ -65,7 +65,7 @@ ___
 
 ___
 **CREDITS**
-Developed By: Nyigel Spann, Shyamal Shah, Tristan Roman, Alex Nyugen, Will Wloyd, Danny Attia
-Spritesheets taken from: https://www.spriters-resource.com/nes/metroid/
-*Metroid NES* Manual: http://www.digitpress.com/library/manuals/nes/Metroid%20v1.pdf
+Developed By: Nyigel Spann, Shyamal Shah, Tristan Roman, Alex Nyugen, Will Wloyd, Danny Attia  
+Spritesheets taken from: https://www.spriters-resource.com/nes/metroid/  
+*Metroid NES* Manual: http://www.digitpress.com/library/manuals/nes/Metroid%20v1.pdf  
 
