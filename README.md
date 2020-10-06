@@ -38,6 +38,7 @@ ___
 * Make the wave beam more sinusoidal.
 * Give the player the ability to shoot upwards.
 * Resize some sprites for better balance/collision handling.
+* Cause the player to toggle morph form.
 
 ___
 **KNOWN BUGS**
