@@ -37,12 +37,15 @@ ___
 * At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
 * Plans to make the wave beam and ice beam mutually exclusive.
 * Make the wave beam more sinusoidal.
+* Give the player the ability to shoot upwards.
+* Resize some sprites for better balance/collision handling.
 
 ___
 **KNOWN BUGS**
 
 * Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
 * Kraid's Horn attack has a very shallow arc.
+* Some textures need to be cleaned up.
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS**
