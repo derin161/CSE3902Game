@@ -33,6 +33,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);;
         }
 
+        public bool IsDead() {
+            return false;
+        }
+
         
     }
 }

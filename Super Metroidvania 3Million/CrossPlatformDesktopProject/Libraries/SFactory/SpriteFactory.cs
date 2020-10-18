@@ -1,25 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.IProjectile;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.Bomb;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.KraidHorn;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.KraidMissile;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.MissileRocket;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.MissileRocketExplosion;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.PowerBeam;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles.WaveBeam;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprites.IPlayer;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprites.PlayerSprite;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.IEnemy;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Geega;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Kraid;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Memu;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Ripper;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.SideHopper;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Skree;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites.Zeela;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items.ItemsInterface;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items.ItemsClass;
-using CrossPlatformDesktopProject.Libraries.Sprite.Map.MapInterface;
-using CrossPlatformDesktopProject.Libraries.Sprite.Map.MapSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+using CrossPlatformDesktopProject.Libraries.Sprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -28,10 +10,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using CrossPlatformDesktopProject.Libraries.Sprite.Map;
+using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
-namespace CrossPlatformDesktopProject.SFactory
+namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-	class SpriteFactory : IFactory
+	public class SpriteFactory : IFactory
 	{
 		//Enemies
 		private Texture2D geega;
@@ -41,6 +26,7 @@ namespace CrossPlatformDesktopProject.SFactory
 		private Texture2D sideHopper;
 		private Texture2D skree;
 		private Texture2D zeela;
+
 
 		//Projectiles
 		private Texture2D bombTex;
@@ -52,7 +38,7 @@ namespace CrossPlatformDesktopProject.SFactory
 		private Texture2D iceBeamTex;
 
         //Player
-        private List<Texture2D> playerTextures;
+        private List<Texture2D> playerTextures = new List<Texture2D>();
         private Texture2D rightIdle;
         private Texture2D leftIdle;
         private Texture2D rightWalk;
@@ -61,12 +47,45 @@ namespace CrossPlatformDesktopProject.SFactory
         private Texture2D leftCrouch;
         private Texture2D jump;
 
+		private Texture2D damaged_rightIdle;
+		private Texture2D damaged_leftIdle;
+		private Texture2D healthBar;
+		//Fonts
+		private List<SpriteFont> playerFonts = new List<SpriteFont>();
+		private SpriteFont healthFont;
+
+		//Items
+		private Texture2D bombItem;
+		private Texture2D energyDropItem;
+		private Texture2D energyTankItem;
+		private Texture2D highJumpItem;
+		private Texture2D iceBeamItem;
+		private Texture2D longBeamItem;
+		private Texture2D missleRocketItem;
+		private Texture2D morphBallItem;
+		private Texture2D rocketDropItem;
+		private Texture2D screwAttackItem;
+		private Texture2D variaItem;
+		private Texture2D waveBeamItem;
+
+		//Map
+		private Texture2D map;
+
+		//Blocks
+		private Texture2D stockBlockBlue;
+		private Texture2D bushBlockBlue;
+		private Texture2D tubeBlockBlue;
+		private Texture2D swirlBlockBlue;
+		private Texture2D stockBlockOrange;
+		private Texture2D bushBlockOrange;
+		private Texture2D tubeBlockOrange;
+		private Texture2D swirlBlockOrange;
 
 
-        // More private Texture2Ds follow
-        // ...
+		// More private Texture2Ds follow
+		// ...
 
-        private static SpriteFactory instance = new SpriteFactory();
+		private static SpriteFactory instance = new SpriteFactory();
 
 		public static SpriteFactory Instance
 		{
@@ -111,34 +130,117 @@ namespace CrossPlatformDesktopProject.SFactory
             playerTextures.Add(leftWalk);
             rightCrouch = content.Load<Texture2D>("PlayerSprites/RightMorph");
             playerTextures.Add(rightCrouch);
-            lefttCrouch = content.Load<Texture2D>("PlayerSprites/LeftMorph");
+            leftCrouch = content.Load<Texture2D>("PlayerSprites/LeftMorph");
             playerTextures.Add(leftCrouch);
             jump = content.Load<Texture2D>("PlayerSprites/Jump");
             playerTextures.Add(jump);
 
-            // More Content.Load calls follow
-            //...
-        }
+			damaged_rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdleDamaged");
+			playerTextures.Add(damaged_rightIdle);
+			damaged_leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdleDamaged");
+			playerTextures.Add(damaged_leftIdle);
+			healthBar = content.Load<Texture2D>("HealthBar");
+            playerTextures.Add(healthBar);
+
+			//Fonts
+			healthFont = content.Load<SpriteFont>("PlayerHealth");
+			playerFonts.Add(healthFont);
+
+			//Items
+			bombItem = content.Load<Texture2D>("Items/Bomb");
+			energyDropItem = content.Load<Texture2D>("Items/EnergyDropItem");
+			energyTankItem = content.Load<Texture2D>("Items/EnergyTank");
+			highJumpItem = content.Load<Texture2D>("Items/HighJump");
+			iceBeamItem = content.Load<Texture2D>("Items/IceBeam");
+			longBeamItem = content.Load<Texture2D>("Items/LongBeam");
+			missleRocketItem = content.Load<Texture2D>("Items/MissleRocket");
+			morphBallItem = content.Load<Texture2D>("Items/MorphBall");
+			rocketDropItem = content.Load<Texture2D>("Items/RocketDropItem");
+			screwAttackItem = content.Load<Texture2D>("Items/ScrewAttack");
+			variaItem = content.Load<Texture2D>("Items/Varia");
+			waveBeamItem = content.Load<Texture2D>("Items/WaveBeam");
+
+			//Map
+			map = content.Load<Texture2D>("ProjSprites/Map");
+
+			//Blocks
+			stockBlockBlue = content.Load<Texture2D>("BlockSprites/StockBlueBlock");
+			bushBlockBlue = content.Load<Texture2D>("BlockSprites/BushBlueBlock");
+			tubeBlockBlue = content.Load<Texture2D>("BlockSprites/TubeBlueBlock");
+			swirlBlockBlue = content.Load<Texture2D>("BlockSprites/SwirlBlueBlock");
+			stockBlockOrange = content.Load<Texture2D>("BlockSprites/StockOrangeBlock");
+			bushBlockOrange = content.Load<Texture2D>("BlockSprites/BushOrangeBlock");
+			tubeBlockOrange = content.Load<Texture2D>("BlockSprites/TubeOrangeBlock");
+			swirlBlockOrange = content.Load<Texture2D>("BlockSprites/SwirlOrangeBlock");
+
+		// More Content.Load calls follow
+		//...
+	}
 
 		public ISprite CreatePlayerSprite()
 		{
-			return new PlayerSprite(playerTextures);
+			return (ISprite) new PlayerSprite(playerTextures, playerFonts);
 		}
 
-		public ISprite CreateEnemySprite()
+		public List<ISprite> CreateEnemySpriteList(Vector2 location, Game1 game)
 		{
-			//return new EnemySprite(enemySpritesheet, 64, 64);
+			List<ISprite> enemyList = new List<ISprite>();
+			enemyList.Add(new Zeela(zeela, location));
+			enemyList.Add(new Skree(skree, location));
+			enemyList.Add(new SideHopper(sideHopper, location));
+			enemyList.Add(new ReverseSideHopper(sideHopper, location));
+			enemyList.Add(new Ripper(ripper, location));
+			enemyList.Add(new Memu(memu, location));
+			enemyList.Add(new Geega(geega, location));
+			enemyList.Add(new VerticalZeela(zeela, location));
+			enemyList.Add(new Kraid(kraid, location, game));
+
+			return enemyList;
 		}
 
-		public ISprite CreateBlockSprite(ILevel level)
+		/*public ISprite CreateBlockSprite(ILevel level)
 		{
 			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
+		} */
+
+		public List<ISprite> CreateItemSpriteList(Vector2 location)
+		{
+			List<ISprite> itemList = new List<ISprite>();
+			itemList.Add(new BombItem(bombItem, location));
+			itemList.Add(new EnergyDropItem(energyDropItem, location));
+			itemList.Add(new EnergyTankItem(energyTankItem, location));
+			itemList.Add(new HighJumpItem(highJumpItem, location));
+			itemList.Add(new IceBeamItem(iceBeamItem, location));
+			itemList.Add(new LongBeamItem(longBeamItem, location));
+			itemList.Add(new MissleRocketItem(missleRocketItem, location));
+			itemList.Add(new MorphBallItem(morphBallItem, location));
+			itemList.Add(new RocketDropItem(rocketDropItem, location));
+			itemList.Add(new ScrewAttackItem(screwAttackItem, location));
+			itemList.Add(new VariaItem(variaItem, location));
+			itemList.Add(new WaveBeamItem(waveBeamItem, location));
+
+			return itemList;
 		}
 
-		public ISprite CreateItemSprite(ILevel level)
+		public List<ISprite> CreateBlockSpriteList(Vector2 location)
 		{
-			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
+			List<ISprite> blockList = new List<ISprite>();
+			blockList.Add(new BlockSprite(stockBlockBlue, location));
+			blockList.Add(new BlockSprite(bushBlockBlue, location));
+			blockList.Add(new BlockSprite(swirlBlockBlue, location));
+			blockList.Add(new BlockSprite(tubeBlockBlue, location));
+			blockList.Add(new BlockSprite(stockBlockOrange, location));
+			blockList.Add(new BlockSprite(bushBlockOrange, location));
+			blockList.Add(new BlockSprite(swirlBlockOrange, location));
+			blockList.Add(new BlockSprite(tubeBlockOrange, location));
+
+			return blockList;
 		}
+
+		public ISprite CreateMapSprite()
+        {
+			return new MapSprite(map);
+        }
 
 		public ISprite CreateBomb(Vector2 location)
 		{
@@ -146,10 +248,10 @@ namespace CrossPlatformDesktopProject.SFactory
 			return new Bomb(bombTex, location);
 		}
 
-		public ISprite CreateMissileRocket(Vector2 location)
+		public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)
 		{
 
-			return new Bomb(bombTex, location);
+			return new MissleRocket(missileRocketTex, location, direction);
 		}
 
 		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)

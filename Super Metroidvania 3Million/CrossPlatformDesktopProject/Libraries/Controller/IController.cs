@@ -11,6 +11,6 @@ namespace CrossPlatformDesktopProject
 {
     public interface IController
     {
-        public int Update(int current);
+        public void Update(GameTime gameTime);
     }
 }

@@ -1,0 +1,23 @@
+Review Author: Danny Attia
+Review Date: 10/05/2020
+Sprint No: 2
+Name of the .cs file being reviewed: DropBomb.cs
+Author of the .cs file being reviewed: Nyigel Spann
+Number of minutes taken to complete the review: 10
+
+============================================================
+
+Coupling: Low
+Comments: The class doesn't rely on too much information from other classes, other than game, factory, and player but this is necessary to a create the bomb
+
+Cohesion: High
+Comments: This class is used to execute the creation of a bomb sprite in factory based on a key that was pressed
+
+Maintainability: Good
+Comments: Class is very simple and methods are short an easy to use, will be easy to reuse in the future
+
+List any "code smells":
+1) Seems a bit odd that a call to a factory method is present
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+A method to create a bomb sprite could be included in the game class and called by Execute, but this would sort of be repetitive

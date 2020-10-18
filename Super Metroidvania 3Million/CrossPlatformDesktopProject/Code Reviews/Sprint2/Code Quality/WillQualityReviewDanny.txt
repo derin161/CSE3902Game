@@ -1,0 +1,23 @@
+Review Author: Will Floyd
+Review Date: ##/##/####
+Sprint No: #
+Name of the .cs file being reviewed: MapSprite.cs
+Author of the .cs file being reviewed: Danny Attia
+Number of minutes taken to complete the review: 10
+
+============================================================
+
+Coupling: Low
+Comments: Depends on 
+
+Cohesion: High
+Comments: The class is used to update the map and draw it on the screen based on a single texture that it was passed.
+
+Maintainability: Medium
+Comments: Could be hard to modify or extend due to magic numbers, but methods are short and well written otherwise.
+
+List any "code smells":
+1) magic numbers in the Draw method
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+Changing the size of the screen that the game is played on would be slightly difficult to implement. There are magic numbers that are used for the height and width of the screen and in order to adapt to the new screen size, the magic numbers would have to be adjusted.

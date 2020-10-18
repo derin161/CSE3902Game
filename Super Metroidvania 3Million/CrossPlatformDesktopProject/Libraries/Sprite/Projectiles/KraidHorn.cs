@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Sprite.Projectiles;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -23,6 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private int timeSinceLastFrame = 0;
         private int millisecondsPerFrame = 50;
         private Vector2 initialLocation;
+        private bool isDead = false;
 
 
         public KraidHorn(Texture2D texture, Vector2 initialLocation, bool isMovingRight)
@@ -33,6 +34,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             this.isMovingRight = isMovingRight;
             this.texture = texture;
             Location = initialLocation;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -46,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             //Create source and destination and draw the sprite
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)Location.X, (int)Location.Y, width*2, height*2);
 
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
 
@@ -54,11 +56,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Update(GameTime gameTime)
         {
+
             Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
             float x = (float) relativePos.X + 1;
             float y = (float)(0.2 * x * x - 10 * x); // 1/5x^2 - 10x. Gives projectile parabolic path to the right.
-            
-
             
             if (!isMovingRight) {
                 x = (float) relativePos.X - 1;
@@ -81,6 +82,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                     currentFrame = 0;
             }
 
+            bool collision = false; //temp var til collisions are added
+
+            //Die if a collision occurs or the projectile leaves the screen
+            isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
+
+        }
+
+        public bool IsDead() {
+            return isDead;
         }
     }
 }

@@ -25,6 +25,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
@@ -44,6 +45,16 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Command\NextBlock.cs" />
+    <Compile Include="Libraries\Command\PlayerItemCommands\MissileOrBomb.cs" />
+    <Compile Include="Libraries\Command\PreviousBlock.cs" />
+    <Compile Include="Libraries\Command\UpgradeToggle.cs" />
+    <Compile Include="Libraries\Command\Crouch.cs" />
+    <Compile Include="Libraries\Command\Damage.cs" />
+    <Compile Include="Libraries\Command\Jump.cs" />
+    <Compile Include="Libraries\Command\MoveLeft.cs" />
+    <Compile Include="Libraries\Command\MoveRight.cs" />
+    <Compile Include="Libraries\Command\NextItem.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\DropBomb.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootMissileRocket.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootBeam.cs" />
@@ -51,16 +62,34 @@
     <Compile Include="Libraries\Command\NextEnemy.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Libraries\Command\PreviousItem.cs" />
+    <Compile Include="Libraries\Command\Select.cs" />
+    <Compile Include="Libraries\Command\Start.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\BlockInteface.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\BlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Kraid.cs" />
+    <Compile Include="Libraries\Sprite\Enemy Sprites\ReverseSideHopper.cs" />
+    <Compile Include="Libraries\Sprite\Enemy Sprites\VerticalZeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Zeela.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Skree.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\SideHopper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Memu.cs" />
-    <Compile Include="Libraries\Sprite\Items\ItemsClass.cs" />
-    <Compile Include="Libraries\Sprite\Items\ItemsInterface.cs" />
+    <Compile Include="Libraries\Sprite\Items\BombItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\EnergyDropItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\EnergyTankItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\HighJumpItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\IceBeamItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\IItems.cs" />
+    <Compile Include="Libraries\Sprite\Items\LongBeamItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\MissleRocketItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\MorphBallItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\RocketDropItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\ScrewAttackItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\VariaItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\WaveBeamItem.cs" />
     <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
     <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
@@ -87,6 +116,7 @@
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -141,7 +171,18 @@
     </None>
     <None Include="app.manifest" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Code Reviews\Sprint2\Code Quality\AlexQualityReviewWill.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Quality\DannyQualityReviewNyigel.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Quality\NyigelQualityReviewShyamal.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Quality\TristanQualityReviewAlex.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Quality\WillQualityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\AlexReadabilityReviewWill.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\DannyReadabilityReviewNyigel.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\NyigelReadabilityReviewShyamal.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\TristanReadabilityReviewAlex.txt" />
+    <Content Include="Code Reviews\Sprint2\Code Readability\WillReadabilityReviewDanny.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

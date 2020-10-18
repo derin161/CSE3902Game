@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Sprite.Projectiles;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -12,10 +12,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
     //Author: Nyigel Spann
     public class Bomb : IProjectile
     {
+
         public Vector2 Location { get; set; }
         public int Damage { get; set; }
-        public bool IsDead { get; set; }
 
+        private bool isDead = false;
         private Texture2D texture;
         private int time = 0;
         private int boomTimer = 1000;
@@ -24,7 +25,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         {
             
             Damage = 0;
-            IsDead = false;
             this.texture = texture;
             Location = location;
         }
@@ -62,6 +62,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 }
                 if (boomFrame < 3) {
                     spriteBatch.Draw(texture, destRec, srcRec, Color.White);
+                } else {
+                    isDead = true;
                 }
             }
 
@@ -70,6 +72,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Update(GameTime gameTime)
         {
             time += gameTime.ElapsedGameTime.Milliseconds;
+        }
+
+        public bool IsDead() {
+            return isDead;
         }
     }
 }
