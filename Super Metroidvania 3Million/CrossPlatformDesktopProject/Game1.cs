@@ -12,11 +12,11 @@ namespace CrossPlatformDesktopProject
     public class Game1 : Game
     {
 
-        public List<ISprite> SpriteList = new List<ISprite>(); //public for now. Maybe a class to hold sprites.
-        public List<ISprite> DeadSprites = new List<ISprite>();
-        public List<ISprite> enemySprites = new List<ISprite>();
+        public List<IGameObject> SpriteList = new List<IGameObject>(); //public for now. Maybe a class to hold sprites.
+        public List<IGameObject> DeadSprites = new List<IGameObject>();
+        public List<IGameObject> enemySprites = new List<IGameObject>();
         public int enemyIndex = 0;
-        public List<ISprite> itemSprites = new List<ISprite>();
+        public List<IGameObject> itemSprites = new List<IGameObject>();
         public int itemIndex = 0;
 
         //Map that allows for multiple block sprite lists with mappings to their types so can have multiple different block sprites on screen at once
@@ -77,7 +77,7 @@ namespace CrossPlatformDesktopProject
                 Exit();
 
             keyboard.Update(gameTime);
-            foreach (ISprite entry in SpriteList)
+            foreach (IGameObject entry in SpriteList)
             {
                 entry.Update(gameTime);
 
@@ -90,7 +90,7 @@ namespace CrossPlatformDesktopProject
             }
 
             int result;
-            foreach (List<ISprite> entry in blockSpriteListIndexes.Keys.ToList())
+            foreach (List<IGameObject> entry in blockSpriteListIndexes.Keys.ToList())
             {
                 blockSpriteListIndexes.TryGetValue(entry, out result);
                 entry[result].Update(gameTime);
@@ -99,7 +99,7 @@ namespace CrossPlatformDesktopProject
             enemySprites[enemyIndex].Update(gameTime);
             itemSprites[itemIndex].Update(gameTime);
 
-            foreach (ISprite dead in DeadSprites){
+            foreach (IGameObject dead in DeadSprites){
                 SpriteList.Remove(dead);
             }
             DeadSprites.Clear();
@@ -131,13 +131,13 @@ namespace CrossPlatformDesktopProject
             base.Draw(gameTime);
         }
 
-        public void AddSprite(ISprite s) {
+        public void AddSprite(IGameObject s) {
             SpriteList.Add(s);
         }
 
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
-            SpriteList = new List<ISprite>();
+            SpriteList = new List<IGameObject>();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);

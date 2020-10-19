@@ -44,9 +44,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			swirlBlockOrange = content.Load<Texture2D>("BlockSprites/SwirlOrangeBlock");
 		}
 
-		public List<ISprite> CreateBlockSpriteList(Vector2 location)
+		public List<IGameObject> CreateBlockSpriteList(Vector2 location)
 		{
-			List<ISprite> blockList = new List<ISprite>();
+			List<IGameObject> blockList = new List<IGameObject>();
 			blockList.Add(new BlockSprite(stockBlockBlue, location));
 			blockList.Add(new BlockSprite(bushBlockBlue, location));
 			blockList.Add(new BlockSprite(swirlBlockBlue, location));

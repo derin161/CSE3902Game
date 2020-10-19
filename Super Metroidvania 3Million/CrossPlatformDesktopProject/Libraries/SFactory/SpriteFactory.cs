@@ -11,7 +11,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    public class SpriteFactory : IFactory
+    public class SpriteFactory
 	{
 		//Enemies
 		private Texture2D geega;
@@ -172,14 +172,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		//...
 	}
 
-		public ISprite CreatePlayerSprite()
+		public IGameObject CreatePlayerSprite()
 		{
-			return (ISprite) new PlayerSprite(playerTextures, playerFonts);
+			return (IGameObject) new PlayerSprite(playerTextures, playerFonts);
 		}
 
-		public List<ISprite> CreateEnemySpriteList(Vector2 location, Game1 game)
+		public List<IGameObject> CreateEnemySpriteList(Vector2 location, Game1 game)
 		{
-			List<ISprite> enemyList = new List<ISprite>();
+			List<IGameObject> enemyList = new List<IGameObject>();
 			enemyList.Add(new Zeela(zeela, location));
 			enemyList.Add(new Skree(skree, location));
 			enemyList.Add(new SideHopper(sideHopper, location));
@@ -198,9 +198,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
 		} */
 
-		public List<ISprite> CreateItemSpriteList(Vector2 location)
+		public List<IGameObject> CreateItemSpriteList(Vector2 location)
 		{
-			List<ISprite> itemList = new List<ISprite>();
+			List<IGameObject> itemList = new List<IGameObject>();
 			itemList.Add(new BombItem(bombItem, location));
 			itemList.Add(new EnergyDropItem(energyDropItem, location));
 			itemList.Add(new EnergyTankItem(energyTankItem, location));
@@ -217,9 +217,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return itemList;
 		}
 
-		public List<ISprite> CreateBlockSpriteList(Vector2 location)
+		public List<IGameObject> CreateBlockSpriteList(Vector2 location)
 		{
-			List<ISprite> blockList = new List<ISprite>();
+			List<IGameObject> blockList = new List<IGameObject>();
 			blockList.Add(new BlockSprite(stockBlockBlue, location));
 			blockList.Add(new BlockSprite(bushBlockBlue, location));
 			blockList.Add(new BlockSprite(swirlBlockBlue, location));
@@ -232,44 +232,44 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return blockList;
 		}
 
-		public ISprite CreateMapSprite()
+		public IGameObject CreateMapSprite()
         {
 			return new MapSprite(map);
         }
 
-		public ISprite CreateBomb(Vector2 location)
+		public IGameObject CreateBomb(Vector2 location)
 		{
 
-			return new Bomb(bombTex, location);
+			return new Bomb(location);
 		}
 
-		public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)
+		public IGameObject CreateMissileRocket(Vector2 location, Vector2 direction)
 		{
 
 			return new MissleRocket(missileRocketTex, location, direction);
 		}
 
-		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public IGameObject CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(powerBeamTex, location, direction, isLongBeam, false);
 		}
 
-		public ISprite CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public IGameObject CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(iceBeamTex, location, direction, isLongBeam, true);
 		}
 
-		public ISprite CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
+		public IGameObject CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);
 		}
 
-		public ISprite CreateKraidHorn(Vector2 location, bool isMovingRight)
+		public IGameObject CreateKraidHorn(Vector2 location, bool isMovingRight)
 		{
 			return new KraidHorn(kraidHornTex, location, isMovingRight);
 		}
 
-		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction)
+		public IGameObject CreateKraidMissile(Vector2 location, Vector2 direction)
 		{
 			return new KraidMissile(kraidMissileTex, location, direction);
 		}

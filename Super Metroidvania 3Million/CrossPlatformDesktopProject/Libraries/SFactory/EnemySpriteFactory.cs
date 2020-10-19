@@ -42,9 +42,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			zeela = content.Load<Texture2D>("enemies/Zeela");
 		}
 
-		public List<ISprite> CreateEnemySpriteList(Vector2 location, Game1 game)
+		public List<IGameObject> CreateEnemySpriteList(Vector2 location, Game1 game)
 		{
-			List<ISprite> enemyList = new List<ISprite>();
+			List<IGameObject> enemyList = new List<IGameObject>();
 			enemyList.Add(new Zeela(zeela, location));
 			enemyList.Add(new Skree(skree, location));
 			enemyList.Add(new SideHopper(sideHopper, location));

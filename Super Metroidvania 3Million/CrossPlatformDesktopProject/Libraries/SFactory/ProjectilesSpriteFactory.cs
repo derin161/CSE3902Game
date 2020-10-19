@@ -53,33 +53,33 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new PostBoomBombSprite(bombTex, b);
 		}
 
-		public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)
+		public IGameObject CreateMissileRocket(Vector2 location, Vector2 direction)
 		{
 
 			return new MissleRocket(missileRocketTex, location, direction);
 		}
 
-		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public IGameObject CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(powerBeamTex, location, direction, isLongBeam, false);
 		}
 
-		public ISprite CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public IGameObject CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(iceBeamTex, location, direction, isLongBeam, true);
 		}
 
-		public ISprite CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
+		public IGameObject CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);
 		}
 
-		public ISprite CreateKraidHorn(Vector2 location, bool isMovingRight)
+		public IGameObject CreateKraidHorn(Vector2 location, bool isMovingRight)
 		{
 			return new KraidHorn(kraidHornTex, location, isMovingRight);
 		}
 
-		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction)
+		public IGameObject CreateKraidMissile(Vector2 location, Vector2 direction)
 		{
 			return new KraidMissile(kraidMissileTex, location, direction);
 		}

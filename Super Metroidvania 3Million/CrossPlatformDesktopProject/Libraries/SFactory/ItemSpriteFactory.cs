@@ -52,9 +52,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			waveBeamItem = content.Load<Texture2D>("Items/WaveBeam");
 		}
 
-		public List<ISprite> CreateItemSpriteList(Vector2 location)
+		public List<IGameObject> CreateItemSpriteList(Vector2 location)
 		{
-			List<ISprite> itemList = new List<ISprite>();
+			List<IGameObject> itemList = new List<IGameObject>();
 			itemList.Add(new BombItem(bombItem, location));
 			itemList.Add(new EnergyDropItem(energyDropItem, location));
 			itemList.Add(new EnergyTankItem(energyTankItem, location));
