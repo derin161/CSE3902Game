@@ -58,12 +58,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         {
 
             Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
-            float x = (float) relativePos.X + 2;
-            float y = (float)(0.013 * x * x - 2 * x); // 1/5x^2 - 10x. Gives projectile parabolic path to the right.
+            float x = (float) relativePos.X + 3;
+            float y = (float)(0.01 * x * x - 2 * x); // 1/5x^2 - 10x. Gives projectile parabolic path to the right.
             
             if (!isMovingRight) {
-                x = (float) relativePos.X - 2;
-                y = (float)(0.013 * x * x + 2 * x); // 1/5x^2 + 10x. Gives projectile parabolic path to the right.
+                x = (float) relativePos.X - 3;
+                y = (float)(0.01 * x * x + 2 * x); // 1/5x^2 + 10x. Gives projectile parabolic path to the right.
             }
 
             //Update position
