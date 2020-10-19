@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    interface IEnemy : ISprite
+    interface IEnemy : IGameObject
     {
 
     }

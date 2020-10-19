@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 {
-    public interface IPlayer : ISprite
+    public interface IPlayer : IGameObject
     {
         public void JumpAnimation(SpriteBatch spriteBatch);
         public void CrouchAnimation(SpriteBatch spriteBatch);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
 {
-    interface MapInterface : ISprite
+    interface MapInterface : IGameObject
     {
        
     }

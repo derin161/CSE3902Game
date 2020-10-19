@@ -33,7 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         {
             int frame = 0;
 
-            //Change texture if projectile has collided or run out
+            //Change texture if projectile has run out
             if (time < boomTimer ) {
                 Rectangle srcRec = new Rectangle(0, 12, 8, 8); //Texture1 before boom
                 if (frame % 2 != 0) {

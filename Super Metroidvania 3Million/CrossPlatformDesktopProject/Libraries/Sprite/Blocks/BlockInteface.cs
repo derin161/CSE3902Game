@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 {
-    interface BlockInterface : ISprite
+    interface BlockInterface : IGameObject
     {
 
     }

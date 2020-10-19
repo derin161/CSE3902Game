@@ -16,8 +16,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private ICommand missile;
         private ICommand bomb;
         private PlayerSprite samus;
-        private List<PlayerSprite.State> bombStates = new List<PlayerSprite.State> { PlayerSprite.State.Crouch, PlayerSprite.State.Jump };
-        private List<PlayerSprite.State> missileStates = new List<PlayerSprite.State> { PlayerSprite.State.Idle, PlayerSprite.State.MoveLeft, PlayerSprite.State.MoveRight };
 
         //This should probably be changed at some point, but this class essentially just redirects to ShootMissleRocket or DropBomb depending on the player's state.
         public MissileOrBomb(Game1 game, PlayerSprite player) {

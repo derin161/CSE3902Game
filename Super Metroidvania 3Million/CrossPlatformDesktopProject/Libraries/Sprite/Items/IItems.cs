@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    interface IItems : ISprite
+    interface IItems : IGameObject
     {
 
     }
