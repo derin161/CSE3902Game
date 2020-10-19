@@ -8,7 +8,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     class DropBomb : ICommand
     {
         private PlayerSprite samus;
-        private IFactory factory;
+        private SpriteFactory factory = SpriteFactory.Instance;
         Game1 game;
 
         public DropBomb(Game1 game, PlayerSprite player) {

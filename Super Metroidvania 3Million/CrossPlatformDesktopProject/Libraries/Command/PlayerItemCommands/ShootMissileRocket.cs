@@ -8,14 +8,13 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     class ShootMissileRocket : ICommand
     {
         private PlayerSprite samus;
-        private IFactory factory;
+        private SpriteFactory factory = SpriteFactory.Instance;
         private float speed = 7;
         Game1 game;
 
         public ShootMissileRocket(Game1 game, PlayerSprite player) {
             this.game = game;
             samus = player;
-            this.factory = game.Factory;
         }
         public void Execute()
         {
@@ -32,7 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
 
                 //if(samus.TotalRockets > 0)
-                game.AddSprite(factory.CreateMissileRocket(location, direction));
+                //game.AddSprite(factory.CreateMissileRocket(location, direction));
                 samus.TotalRockets--;
             }
         }

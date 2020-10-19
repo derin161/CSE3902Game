@@ -53,35 +53,36 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new PostBoomBombSprite(bombTex, b);
 		}
 
-		public IGameObject CreateMissileRocket(Vector2 location, Vector2 direction)
+		//These methods need to be fixed once the separation of game objects and sprites is finished.
+		/*public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)
 		{
 
 			return new MissleRocket(missileRocketTex, location, direction);
 		}
 
-		public IGameObject CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(powerBeamTex, location, direction, isLongBeam, false);
 		}
 
-		public IGameObject CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public ISprite CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(iceBeamTex, location, direction, isLongBeam, true);
 		}
 
-		public IGameObject CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
+		public ISprite CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);
 		}
 
-		public IGameObject CreateKraidHorn(Vector2 location, bool isMovingRight)
+		public ISprite CreateKraidHorn(Vector2 location, bool isMovingRight)
 		{
 			return new KraidHorn(kraidHornTex, location, isMovingRight);
 		}
 
-		public IGameObject CreateKraidMissile(Vector2 location, Vector2 direction)
+		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction)
 		{
 			return new KraidMissile(kraidMissileTex, location, direction);
-		}
+		}*/
 	}
 }

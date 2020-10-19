@@ -174,7 +174,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 		public IGameObject CreatePlayerSprite()
 		{
-			return (IGameObject) new PlayerSprite(playerTextures, playerFonts);
+			return new PlayerSprite(playerTextures, playerFonts);
 		}
 
 		public List<IGameObject> CreateEnemySpriteList(Vector2 location, Game1 game)
@@ -232,7 +232,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return blockList;
 		}
 
-		public IGameObject CreateMapSprite()
+
+		public ISprite CreateMapSprite()
         {
 			return new MapSprite(map);
         }

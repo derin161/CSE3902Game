@@ -12,7 +12,7 @@ namespace CrossPlatformDesktopProject
     public class Game1 : Game
     {
 
-        public List<IGameObject> SpriteList = new List<IGameObject>(); //public for now. Maybe a class to hold sprites.
+        public List<IGameObject> SpriteList = new List<IGameObject>(); //These need to be discarded and changed to containers
         public List<IGameObject> DeadSprites = new List<IGameObject>();
         public List<IGameObject> enemySprites = new List<IGameObject>();
         public int enemyIndex = 0;
@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        public IFactory Factory { get; set;}
+        public SpriteFactory Factory { get; set;}
         private KeyboardController keyboard;
         
         public Game1()
@@ -41,11 +41,11 @@ namespace CrossPlatformDesktopProject
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            SpriteList = new List<ISprite>();
+            SpriteList = new List<IGameObject>();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
-            AddSprite(Factory.CreateMapSprite());
+            //AddSprite(Factory.CreateMapSprite());
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemySprites = Factory.CreateEnemySpriteList(new Vector2(400, 250), this);
@@ -54,13 +54,13 @@ namespace CrossPlatformDesktopProject
             // Create block sprite list for four different blocks in different locations
             int blockX = 672;
             int blockY = 256;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
             blockX += 32;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
             blockX += 32;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
             blockX += 32;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
 
             
             // TODO: use this.Content to load your game content here
@@ -90,11 +90,11 @@ namespace CrossPlatformDesktopProject
             }
 
             int result;
-            foreach (List<IGameObject> entry in blockSpriteListIndexes.Keys.ToList())
+            /*foreach (List<IGameObject> entry in blockSpriteListIndexes.Keys.ToList())
             {
                 blockSpriteListIndexes.TryGetValue(entry, out result);
                 entry[result].Update(gameTime);
-            }
+            }*/
 
             enemySprites[enemyIndex].Update(gameTime);
             itemSprites[itemIndex].Update(gameTime);
@@ -113,7 +113,7 @@ namespace CrossPlatformDesktopProject
 
             spriteBatch.Begin();
 
-            foreach (ISprite entry in SpriteList) {
+            foreach (IGameObject entry in SpriteList) {
                 entry.Draw(spriteBatch);
             }
 
@@ -141,7 +141,7 @@ namespace CrossPlatformDesktopProject
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Factory = SpriteFactory.Instance;
             Factory.LoadAllTextures(Content);
-            AddSprite(Factory.CreateMapSprite());
+            //AddSprite(Factory.CreateMapSprite());
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
             enemyIndex = 0;
@@ -154,13 +154,13 @@ namespace CrossPlatformDesktopProject
             blockSpriteListIndexes.Clear();
             int blockX = 672;
             int blockY = 256;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
             blockX += 32;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
             blockX += 32;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 1);
             blockX += 32;
-            blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
+            //blockSpriteListIndexes.Add(Factory.CreateBlockSpriteList(new Vector2(blockX, blockY)), 0);
         }
     }
 }

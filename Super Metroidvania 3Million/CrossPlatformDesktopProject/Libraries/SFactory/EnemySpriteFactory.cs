@@ -42,10 +42,11 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			zeela = content.Load<Texture2D>("enemies/Zeela");
 		}
 
-		public List<IGameObject> CreateEnemySpriteList(Vector2 location, Game1 game)
+		//This method will probably be dropped and replaced by many more methods when the sprites and game objects are separated.
+		public List<ISprite> CreateEnemySpriteList(Vector2 location, Game1 game)
 		{
-			List<IGameObject> enemyList = new List<IGameObject>();
-			enemyList.Add(new Zeela(zeela, location));
+			List<ISprite> enemyList = new List<ISprite>();
+			/*enemyList.Add(new Zeela(zeela, location));
 			enemyList.Add(new Skree(skree, location));
 			enemyList.Add(new SideHopper(sideHopper, location));
 			enemyList.Add(new ReverseSideHopper(sideHopper, location));
@@ -53,7 +54,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			enemyList.Add(new Memu(memu, location));
 			enemyList.Add(new Geega(geega, location));
 			enemyList.Add(new VerticalZeela(zeela, location));
-			enemyList.Add(new Kraid(kraid, location, game));
+			enemyList.Add(new Kraid(kraid, location, game));*/
 
 			return enemyList;
 		}
