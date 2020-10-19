@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using System.Linq;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-	//Author: Will Floyd
-	class NextEnemy : ICommand
+    //Author: Will Floyd
+    class NextEnemy : ICommand
 	{
 		private Game1 game;
 

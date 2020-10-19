@@ -1,12 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {

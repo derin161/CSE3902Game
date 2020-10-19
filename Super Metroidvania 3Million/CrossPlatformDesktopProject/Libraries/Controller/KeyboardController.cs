@@ -5,7 +5,6 @@ using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {

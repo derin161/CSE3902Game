@@ -65,6 +65,8 @@
     <Compile Include="Libraries\Command\PreviousItem.cs" />
     <Compile Include="Libraries\Command\Select.cs" />
     <Compile Include="Libraries\Command\Start.cs" />
+    <Compile Include="Libraries\Container\GameObjectContainer.cs" />
+    <Compile Include="Libraries\Container\IContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
     <Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Libraries\Sprite\Enemy Sprites\SideHopper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemy Sprites\Memu.cs" />
+    <Compile Include="Libraries\Sprite\IGameObject.cs" />
     <Compile Include="Libraries\Sprite\Items\BombItem.cs" />
     <Compile Include="Libraries\Sprite\Items\EnergyDropItem.cs" />
     <Compile Include="Libraries\Sprite\Items\EnergyTankItem.cs" />

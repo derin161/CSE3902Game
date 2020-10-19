@@ -1,22 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Sprite;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.Map;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
 {
-	public class GameObjectContainer : IContainer
+    public class GameObjectContainer : IContainer
 	{
         private List<IGameObject> objList = new List<IGameObject>();
 
@@ -54,7 +41,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         }
         public List<IGameObject> DetectCollisions(IGameObject obj)
         {
-            List<KeyValuePair<IGameObject, IGameObject>> collidingObjects = new List<KeyValuePair<IGameObject, IGameObject>>();
+            List<IGameObject> collidingObjects = new List<IGameObject>();
             foreach (IGameObject e in objList)
             {
                 bool collision = false; //temporary var til collision detection actually possible.

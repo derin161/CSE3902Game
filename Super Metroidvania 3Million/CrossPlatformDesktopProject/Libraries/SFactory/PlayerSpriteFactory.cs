@@ -1,13 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
-using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
