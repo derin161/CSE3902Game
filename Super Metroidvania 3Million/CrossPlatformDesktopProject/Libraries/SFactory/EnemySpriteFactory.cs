@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    class EnemySpriteFactory : IFactory
+    class EnemySpriteFactory
     {
 		//Enemies
 		private Texture2D geega;

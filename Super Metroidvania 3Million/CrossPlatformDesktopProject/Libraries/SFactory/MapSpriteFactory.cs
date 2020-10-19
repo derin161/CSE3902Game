@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using CrossPlatformDesktopProject.Libraries.Sprite.Map;
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    class MapSpriteFactory : IFactory
+    class MapSpriteFactory
     {
         //Map
         private Texture2D map;

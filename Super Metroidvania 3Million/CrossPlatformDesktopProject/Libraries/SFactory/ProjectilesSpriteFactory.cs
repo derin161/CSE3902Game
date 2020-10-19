@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    class ProjectilesSpriteFactory : IFactory
+    class ProjectilesSpriteFactory
     {
 		//Projectiles
 		private Texture2D bombTex;
@@ -41,10 +41,16 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			iceBeamTex = content.Load<Texture2D>("ProjSprites/IceBeamProj");
 		}
 
-		public ISprite CreateBomb(Vector2 location)
+		public ISprite CreatePreBoomBombSprite(Bomb b)
 		{
 
-			return new Bomb(bombTex, location);
+			return new PreBoomBombSprite(bombTex, b);
+		}
+
+		public ISprite CreatePostBoomBombSprite(Bomb b)
+		{
+
+			return new PostBoomBombSprite(bombTex, b);
 		}
 
 		public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)

@@ -412,3 +412,7 @@ C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\Cro
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\SwirlOrangeBlock.xnb
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeBlueBlock.xnb
 C:\Users\wrflo\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeOrangeBlock.xnb
+C:\Users\Nyigel\Source\Repos\CSE3902Game6\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csprojAssemblyReference.cache
+C:\Users\Nyigel\Source\Repos\CSE3902Game6\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csproj.CoreCompileInputs.cache
+C:\Users\Nyigel\Source\Repos\CSE3902Game6\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.exe
+C:\Users\Nyigel\Source\Repos\CSE3902Game6\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\CrossPlatformDesktopProject.pdb

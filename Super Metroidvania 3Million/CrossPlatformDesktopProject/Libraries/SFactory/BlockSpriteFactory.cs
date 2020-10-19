@@ -6,7 +6,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    class BlockSpriteFactory : IFactory
+    class BlockSpriteFactory
     {
 		//Blocks
 		private Texture2D stockBlockBlue;

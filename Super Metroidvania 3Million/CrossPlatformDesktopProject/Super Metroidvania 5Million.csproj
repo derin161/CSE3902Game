@@ -107,6 +107,8 @@
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocket.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\Bomb.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\PowerBeam.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PostBoomBombSprite.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PreBoomBombSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\WaveBeam.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,6 +194,7 @@
     <Content Include="Code Reviews\Sprint2\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint2\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

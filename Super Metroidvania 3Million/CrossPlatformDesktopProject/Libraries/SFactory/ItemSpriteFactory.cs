@@ -6,7 +6,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    class ItemSpriteFactory : IFactory
+    class ItemSpriteFactory
     {
 		//Items
 		private Texture2D bombItem;

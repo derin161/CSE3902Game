@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    class PlayerSpriteFactory : IFactory
+    class PlayerSpriteFactory
     {
         //Player
         private List<Texture2D> playerTextures = new List<Texture2D>();

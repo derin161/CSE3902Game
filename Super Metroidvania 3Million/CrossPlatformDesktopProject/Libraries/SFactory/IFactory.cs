@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
+	//we might wanna get rid of this
     public interface IFactory
     {
         //Constructor
