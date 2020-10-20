@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
@@ -17,6 +18,14 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public void Update(GameTime gametime) {
             foreach (IGameObject e in objList) {
                 e.Update(gametime);
+            }
+        }
+
+        public void Draw(SpriteBatch sb)
+        {
+            foreach (IGameObject e in objList)
+            {
+                e.Draw(sb);
             }
         }
 

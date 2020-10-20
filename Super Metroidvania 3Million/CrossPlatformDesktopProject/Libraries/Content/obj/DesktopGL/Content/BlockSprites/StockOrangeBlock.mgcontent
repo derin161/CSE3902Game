@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockOrangeBlock.png</SourceFile>
-  <SourceTime>2020-10-14T22:02:40.2418133-04:00</SourceTime>
-  <DestFile>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/BlockSprites/StockOrangeBlock.xnb</DestFile>
-  <DestTime>2020-10-19T20:49:08.4461174-04:00</DestTime>
+  <SourceFile>C:/Users/Nyigel/Source/Repos/CSE3902Game6/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockOrangeBlock.png</SourceFile>
+  <SourceTime>2020-10-19T17:24:33.5996691-04:00</SourceTime>
+  <DestFile>C:/Users/Nyigel/Source/Repos/CSE3902Game6/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/BlockSprites/StockOrangeBlock.xnb</DestFile>
+  <DestTime>2020-10-20T12:42:23.016367-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

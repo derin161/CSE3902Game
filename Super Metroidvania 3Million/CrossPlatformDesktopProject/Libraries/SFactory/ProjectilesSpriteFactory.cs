@@ -54,12 +54,12 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		}
 
 		//These methods need to be fixed once the separation of game objects and sprites is finished.
-		/*public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)
+		public ISprite CreateMissileRocket(MissileRocket mr, bool isHorizontal)
 		{
 
-			return new MissleRocket(missileRocketTex, location, direction);
+			return new MissileRocketSprite(missileRocketTex, mr, isHorizontal);
 		}
-
+		/*
 		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(powerBeamTex, location, direction, isLongBeam, false);
@@ -73,16 +73,16 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public ISprite CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);
-		}
-
-		public ISprite CreateKraidHorn(Vector2 location, bool isMovingRight)
-		{
-			return new KraidHorn(kraidHornTex, location, isMovingRight);
-		}
-
-		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction)
-		{
-			return new KraidMissile(kraidMissileTex, location, direction);
 		}*/
+
+		public ISprite CreateKraidHornSprite(KraidHorn kh)
+		{
+			return new KraidHornSprite(kraidHornTex, kh);
+		}
+
+		public ISprite CreateKraidMissileSprite(KraidMissile km)
+		{
+			return new KraidMissileSprite(kraidMissileTex, km);
+		}
 	}
 }

@@ -112,10 +112,13 @@
     <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
-    <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketExplosionSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocket.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\Bomb.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\PowerBeam.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\KraidHornSprite.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\KraidMissileSprite.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PostBoomBombSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PreBoomBombSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\WaveBeam.cs" />

@@ -83,15 +83,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             return false;
         }
 
+        //Will need to create a new factory for game objects.
         private void throwHorns()
         {
-            game.AddSprite(game.Factory.CreateKraidHorn(new Vector2(x, y), !isMovingRight));
+            //game.AddSprite(game.Factory.CreateKraidHorn(new Vector2(x, y), !isMovingRight));
         }
 
         private void shootMissiles()
         {
             int speed = 7;
-            game.AddSprite(game.Factory.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
+            //game.AddSprite(game.Factory.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
         }
 
     }

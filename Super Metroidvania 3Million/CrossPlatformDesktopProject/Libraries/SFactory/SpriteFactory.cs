@@ -244,11 +244,11 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new Bomb(location);
 		}
 
-		public IGameObject CreateMissileRocket(Vector2 location, Vector2 direction)
+		/*public IGameObject CreateMissileRocket(Vector2 location, Vector2 direction)
 		{
 
 			return new MissleRocket(missileRocketTex, location, direction);
-		}
+		}*/
 
 		public IGameObject CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
@@ -264,7 +264,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);
 		}
-
+		/*
 		public IGameObject CreateKraidHorn(Vector2 location, bool isMovingRight)
 		{
 			return new KraidHorn(kraidHornTex, location, isMovingRight);
@@ -273,7 +273,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public IGameObject CreateKraidMissile(Vector2 location, Vector2 direction)
 		{
 			return new KraidMissile(kraidMissileTex, location, direction);
-		}
+		}*/
 
 		// More public ISprite returning methods follow
 		// ...
