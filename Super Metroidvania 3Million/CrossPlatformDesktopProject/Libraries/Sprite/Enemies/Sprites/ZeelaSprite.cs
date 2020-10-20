@@ -5,49 +5,50 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Skree : IEnemy
+    class ZeelaSprite : ISprite
     {
-
         public Texture2D Texture { get; set; }
         private int Rows;
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialY;
+        private float x, y, initialX;
         private int count;
+        private int direction;
 
-        public Skree(Texture2D texture, Vector2 location)
+        public ZeelaSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
-            Columns = 3;
+            Columns = 4;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
+            initialX = location.X;
             y = location.Y;
-            initialY = location.Y;
             count = 0;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 10 counts
+            //Move to the next frame after 10 counts
             if (count == 10)
             {
                 count = 0;
                 currentFrame++;
-                if (currentFrame == 3)
+                if (currentFrame == 2)
                 {
                     currentFrame = 0;
                 }
             }
             count++;
 
-            //Move to the ground (410) and then reset
-            y += 2;
-            if (y > 410-Texture.Height)
+            //Move horizontally back and forth across the screen
+            x += direction;
+            if (Math.Abs(x - initialX) > 100)
             {
-                y = initialY;
+                direction *= -1;
             }
         }
 
@@ -64,10 +65,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
+
         public Boolean IsDead()
         {
             return false;
         }
-
+        
     }
 }

@@ -5,26 +5,27 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Zeela : IEnemy
+    class VerticalZeelaSprite : ISprite
     {
+        //Author: Will Floyd
         public Texture2D Texture { get; set; }
         private int Rows;
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialX;
+        private float x, y, initialY;
         private int count;
         private int direction;
 
-        public Zeela(Texture2D texture, Vector2 location)
+        public VerticalZeelaSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
             Columns = 4;
-            currentFrame = 0;
+            currentFrame = 2;
             totalFrames = Rows * Columns;
             x = location.X;
-            initialX = location.X;
+            initialY = location.Y;
             y = location.Y;
             count = 0;
             direction = 1;
@@ -32,21 +33,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //Move to the next frame after 10 counts
+            //change the frame after 10 counts
             if (count == 10)
             {
                 count = 0;
                 currentFrame++;
-                if (currentFrame == 2)
+                if (currentFrame == 4)
                 {
-                    currentFrame = 0;
+                    currentFrame = 2;
                 }
             }
             count++;
 
-            //Move horizontally back and forth across the screen
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
+            //Move up and down
+            y += direction;
+            if (Math.Abs(y - initialY) > 100)
             {
                 direction *= -1;
             }

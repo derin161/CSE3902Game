@@ -180,14 +180,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public List<IGameObject> CreateEnemySpriteList(Vector2 location, Game1 game)
 		{
 			List<IGameObject> enemyList = new List<IGameObject>();
-			enemyList.Add(new Zeela(zeela, location));
-			enemyList.Add(new Skree(skree, location));
-			enemyList.Add(new SideHopper(sideHopper, location));
-			enemyList.Add(new ReverseSideHopper(sideHopper, location));
-			enemyList.Add(new Ripper(ripper, location));
-			enemyList.Add(new Memu(memu, location));
+			enemyList.Add(new Zeela(location));
+			enemyList.Add(new Skree(location));
+			enemyList.Add(new SideHopper(location));
+			enemyList.Add(new ReverseSideHopper(location));
+			enemyList.Add(new Ripper(location));
+			enemyList.Add(new Memu(location));
 			enemyList.Add(new Geega(location));
-			enemyList.Add(new VerticalZeela(zeela, location));
+			enemyList.Add(new VerticalZeela(location));
 			enemyList.Add(new Kraid(location, game));
 
 			return enemyList;

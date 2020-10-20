@@ -5,7 +5,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class SideHopper : IEnemy
+    class ReverseSideHopperSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -17,12 +17,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int count;
         private int direction;
 
-        public SideHopper(Texture2D texture, Vector2 location)
+        public ReverseSideHopperSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
             Columns = 6;
-            currentFrame = 0;
+            currentFrame = 3;
             totalFrames = Rows * Columns;
             x = location.X;
             y = location.Y;
@@ -38,16 +38,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 count = 0;
                 direction *= -1;
                 currentFrame++;
-                if (currentFrame == 3)
+                if (currentFrame == 6)
                 {
-                    currentFrame = 0;
+                    currentFrame = 3;
                 }
             }
 
-            //Jump while on frame 2
-            if (currentFrame == 2)
+            //Jump while on frame 5
+            if (currentFrame == 5)
             {
-                y = (count * count) - 20 * count + initialY;
+                y = -(count * count) + 20 * count + initialY;
                 x += direction;
             }
             count++;

@@ -51,5 +51,35 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new KraidSprite(kraid, location, game);
 		}
+
+		public ISprite MemuSprite(Vector2 location)
+		{
+			return new MemuSprite(memu, location);
+		}
+		public ISprite SideHopperSprite(Vector2 location)
+		{
+			return new SideHopperSprite(sideHopper, location);
+		}
+		public ISprite SkreeSprite(Vector2 location)
+		{
+			return new SkreeSprite(skree, location);
+		}
+		public ISprite VerticalZeelaSprite(Vector2 location)
+		{
+			return new VerticalZeelaSprite(zeela, location);
+		}
+		public ISprite ZeelaSprite(Vector2 location)
+		{
+			return new ZeelaSprite(zeela, location);
+		}
+		public ISprite ReverseSideHopperSprite(Vector2 location)
+		{
+			return new ReverseSideHopperSprite(sideHopper, location);
+		}
+		public ISprite RipperSprite(Vector2 location)
+		{
+			return new RipperSprite(ripper, location);
+		}
 	}
 }
+

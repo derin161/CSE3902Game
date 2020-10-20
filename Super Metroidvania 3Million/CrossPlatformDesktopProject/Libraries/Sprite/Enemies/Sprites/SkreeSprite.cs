@@ -5,7 +5,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Ripper : IEnemy
+    class SkreeSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -13,32 +13,41 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialX;
-        private int direction;
+        private float x, y, initialY;
+        private int count;
 
-        public Ripper(Texture2D texture, Vector2 location)
+        public SkreeSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
-            Columns = 1;
+            Columns = 3;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
-            initialX = location.X;
             y = location.Y;
-            direction = 1;
+            initialY = location.Y;
+            count = 0;
         }
 
         public void Update(GameTime gameTime)
         {
-            //Stay on frame 0 (Frame 1 left for color change)
-            currentFrame = 0;
-
-            //move back and forth in x direction
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
+            //change the frame after 10 counts
+            if (count == 10)
             {
-                direction *= -1;
+                count = 0;
+                currentFrame++;
+                if (currentFrame == 3)
+                {
+                    currentFrame = 0;
+                }
+            }
+            count++;
+
+            //Move to the ground (410) and then reset
+            y += 2;
+            if (y > 410-Texture.Height)
+            {
+                y = initialY;
             }
         }
 

@@ -5,7 +5,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class ReverseSideHopper : IEnemy
+    class MemuSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -13,48 +13,44 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialY;
-        private int count;
+        private float x, y, initialX;
+        private int counter;
         private int direction;
 
-        public ReverseSideHopper(Texture2D texture, Vector2 location)
+        public MemuSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 6;
-            currentFrame = 3;
+            Rows = 1;
+            Columns = 2;
+            currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
+            initialX = location.X;
             y = location.Y;
-            initialY = location.Y;
-            direction = 3;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 20 counts
-            if (count == 20)
+            //change the frame after 10 counts
+            if (counter == 10)
             {
-                count = 0;
-                direction *= -1;
+                counter = 0;
                 currentFrame++;
-                if (currentFrame == 6)
-                {
-                    currentFrame = 3;
-                }
+                if (currentFrame == 2)
+                    currentFrame = 0;
             }
+            counter++;
 
-            //Jump while on frame 5
-            if (currentFrame == 5)
+            //move back and forth in x direction
+            x += direction;
+            if (Math.Abs(x - initialX) > 100)
             {
-                y = -(count * count) + 20 * count + initialY;
-                x += direction;
+                direction *= -1;
             }
-            count++;
-
         }
 
-
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
@@ -63,18 +59,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width * 2, height * 2);
+            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
         public Boolean IsDead()
         {
             return false;
-        }
-
-        private void Jump()
-        {
-
         }
 
     }

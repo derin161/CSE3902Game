@@ -5,9 +5,9 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class VerticalZeela : IEnemy
+    class SideHopperSprite : ISprite
     {
-        //Author: Will Floyd
+
         public Texture2D Texture { get; set; }
         private int Rows;
         private int Columns;
@@ -17,43 +17,44 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int count;
         private int direction;
 
-        public VerticalZeela(Texture2D texture, Vector2 location)
+        public SideHopperSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
-            Columns = 4;
-            currentFrame = 2;
+            Columns = 6;
+            currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
-            initialY = location.Y;
             y = location.Y;
-            count = 0;
-            direction = 1;
+            initialY = location.Y;
+            direction = 3;
         }
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 10 counts
-            if (count == 10)
+            //change the frame after 20 counts
+            if (count == 20)
             {
                 count = 0;
+                direction *= -1;
                 currentFrame++;
-                if (currentFrame == 4)
+                if (currentFrame == 3)
                 {
-                    currentFrame = 2;
+                    currentFrame = 0;
                 }
+            }
+
+            //Jump while on frame 2
+            if (currentFrame == 2)
+            {
+                y = (count * count) - 20 * count + initialY;
+                x += direction;
             }
             count++;
 
-            //Move up and down
-            y += direction;
-            if (Math.Abs(y - initialY) > 100)
-            {
-                direction *= -1;
-            }
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
@@ -62,15 +63,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
+            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width * 2, height * 2);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
-
         public Boolean IsDead()
         {
             return false;
         }
-        
+
+        private void Jump()
+        {
+
+        }
+
     }
 }

@@ -5,7 +5,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Memu : IEnemy
+    class RipperSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -14,14 +14,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int totalFrames;
         private float x, y, initialX;
-        private int counter;
         private int direction;
 
-        public Memu(Texture2D texture, Vector2 location)
+        public RipperSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
-            Rows = 1;
-            Columns = 2;
+            Rows = 2;
+            Columns = 1;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
@@ -32,15 +31,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 10 counts
-            if (counter == 10)
-            {
-                counter = 0;
-                currentFrame++;
-                if (currentFrame == 2)
-                    currentFrame = 0;
-            }
-            counter++;
+            //Stay on frame 0 (Frame 1 left for color change)
+            currentFrame = 0;
 
             //move back and forth in x direction
             x += direction;
