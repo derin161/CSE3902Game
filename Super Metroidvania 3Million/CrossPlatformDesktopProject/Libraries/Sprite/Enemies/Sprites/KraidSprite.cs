@@ -5,7 +5,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Geega : IEnemy
+    class KraidSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -15,8 +15,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int totalFrames;
         private float x, y, initialX;
         private int counter;
-
-        public Geega(Texture2D texture, Vector2 location)
+        private Game1 Game;
+        public KraidSprite(Texture2D texture, Vector2 location, Game1 game)
         {
             Texture = texture;
             Rows = 2;
@@ -27,6 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             initialX = location.X;
             y = location.Y;
             counter = 0;
+            Game = game;
         }
 
         public void Update(GameTime gameTime)
@@ -41,7 +42,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             counter++;
 
-            //Fly horizontally across the screen and reset to initial positoin
+            //Fly horizontally across the screen and reset to initial position
             x -= 3;
             if (initialX - x > 300)
             {
@@ -68,6 +69,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public Boolean IsDead()
         {
             return false;
+        }
+
+        private void throwHorns()
+        {
+            Game.AddSprite(Game.Factory.CreateKraidHorn(new Vector2(x, y), false));
+        }
+
+        private void shootMissiles()
+        {
+            int speed = 7;
+            Game.AddSprite(Game.Factory.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
         }
     }
 }

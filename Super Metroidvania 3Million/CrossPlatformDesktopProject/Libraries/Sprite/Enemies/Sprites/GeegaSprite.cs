@@ -5,7 +5,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Kraid : IEnemy
+    class GeegaSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -13,14 +13,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y;
+        private float x, y, initialX;
         private int counter;
-        private int msBetweenAttack = 500;
-        private int msUntilAttack = 500;
-        private Game1 game;
-        private bool isMovingRight = false;
 
-        public Kraid(Texture2D texture, Vector2 location, Game1 game)
+        public GeegaSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
@@ -28,29 +24,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
+            initialX = location.X;
             y = location.Y;
             counter = 0;
-            this.game = game;
-            
         }
 
         public void Update(GameTime gameTime)
         {
-            //Wait between attacks
-            msUntilAttack -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
-
-            //Perform attacks
-            if (msUntilAttack < 0) {
-                if (new Random().Next(0, 2) == 0)
-                {
-                    throwHorns();
-                }
-                else {
-                    shootMissiles();
-                }
-                msUntilAttack = msBetweenAttack;
-            }
-
             //change the frame after 10 counts
             if (counter == 10)
             {
@@ -60,6 +40,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                     currentFrame = 0;
             }
             counter++;
+
+            //Fly horizontally across the screen and reset to initial positoin
+            x -= 3;
+            if (initialX - x > 300)
+            {
+                x = initialX;
+            }
+            
+
+            
         }
 
         
@@ -75,20 +65,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
-
         public Boolean IsDead()
         {
             return false;
         }
-
-        private void throwHorns() {
-            game.AddSprite(game.Factory.CreateKraidHorn(new Vector2(x,y), !isMovingRight));
-        }
-
-        private void shootMissiles() {
-            int speed = 7;
-            game.AddSprite(game.Factory.CreateKraidMissile(new Vector2(x+23, y+38), new Vector2(speed,0)));
-        }
-
     }
 }
