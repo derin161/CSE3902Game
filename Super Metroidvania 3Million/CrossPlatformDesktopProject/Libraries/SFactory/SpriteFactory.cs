@@ -248,7 +248,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 
 			return new MissleRocket(missileRocketTex, location, direction);
-		}*/
+		}
 
 		public IGameObject CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
@@ -260,7 +260,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new PowerBeam(iceBeamTex, location, direction, isLongBeam, true);
 		}
 
-		/*
+		
 		public IGameObject CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);

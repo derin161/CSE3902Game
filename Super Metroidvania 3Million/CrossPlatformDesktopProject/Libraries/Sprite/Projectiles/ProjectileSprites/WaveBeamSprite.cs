@@ -31,7 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             }
 
             spriteBatch.Draw(texture, beam.Space, sourceRec, Color.White);
-            if (time > 100) {
+            if (time > 150) {
                 spriteBatch.Draw(texture, waveSpaceSequence.Dequeue(), sourceRec, Color.White);
             }
         }

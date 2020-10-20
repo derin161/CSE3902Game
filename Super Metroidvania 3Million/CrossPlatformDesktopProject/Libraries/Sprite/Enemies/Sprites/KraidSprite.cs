@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
@@ -86,13 +87,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         //Will need to create a new factory for game objects.
         private void throwHorns()
         {
-            //game.AddSprite(game.Factory.CreateKraidHorn(new Vector2(x, y), !isMovingRight));
+            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidHorn(new Vector2(x, y), !isMovingRight));
         }
 
         private void shootMissiles()
         {
             int speed = 7;
-            //game.AddSprite(game.Factory.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
+            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
         }
 
     }

@@ -33,14 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             }
 
             isHorizontal = (int) direction.Y == 0;
-            if (isHorizontal)
-            { //Make the wave oscillate up and down if horizontal
-                Direction = Vector2.Add(direction, new Vector2(0, 1));
-            }
-            else { //Oscillate left to right
-                Direction = Vector2.Add(direction, new Vector2(1, 0));
-            }
-
+            Direction = direction;
             isDead = false;
             this.isLongBeam = isLongBeam;
             Location = initialLocation;
@@ -72,17 +65,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 {
                     x -= 6;
                 }
-                y = (float)Math.Sin(Math.Abs(x)) * -1; // Give projectile sinusiodal path
+                y = (float)Math.Sin(Math.Abs(x)) * -20; // Give projectile sinusiodal path
             }
             else
             {
                 y -= 3;
-                x = (float)Math.Sin(Math.Abs(y)); // Give projectile sinusiodal path
+                x = (float)Math.Sin(Math.Abs(y)) * 20; // Give projectile sinusiodal path
             }
 
             //Update position and Space
             relativePos = new Vector2(x, y);
-            Location = Vector2.Add(Location, relativePos);
+            Location = Vector2.Add(initialLocation, relativePos);
             Space = new Rectangle((int) Location.X, (int) Location.Y, Space.Width, Space.Height);
 
 
@@ -97,7 +90,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 //Die if a collision occurs or the projectile leaves the screen
                 isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
-
+            sprite.Update(gameTime);
         }
 
         public bool IsDead() {

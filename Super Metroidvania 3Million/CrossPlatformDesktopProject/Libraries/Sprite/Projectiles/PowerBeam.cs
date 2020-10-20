@@ -18,7 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private bool isLongBeam;
         private ISprite sprite;
 
-        public PowerBeam(Texture2D texture, Vector2 initialLocation, Vector2 direction, bool isLongBeam, bool isIceBeam)
+        public PowerBeam(Vector2 initialLocation, Vector2 direction, bool isLongBeam, bool isIceBeam)
         {
             // Need to set actual damage values at some point
             if (isLongBeam)
@@ -35,7 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Location = initialLocation;
             this.initialLocation = initialLocation;
             Direction = direction;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, texture.Width / 2, texture.Height / 2);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
             if (isIceBeam)
             {
                 sprite = ProjectilesSpriteFactory.Instance.CreateIceBeamSprite(this);

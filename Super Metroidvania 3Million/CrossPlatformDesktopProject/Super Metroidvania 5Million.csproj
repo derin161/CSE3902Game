@@ -70,6 +70,7 @@
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
     <Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
+    <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
     <Compile Include="Libraries\SFactory\MapSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ItemSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\PlayerSpriteFactory.cs" />

@@ -53,7 +53,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new PostBoomBombSprite(bombTex, b);
 		}
 
-		//These methods need to be fixed once the separation of game objects and sprites is finished.
 		public ISprite CreateMissileRocketSprite(MissileRocket mr, bool isHorizontal)
 		{
 

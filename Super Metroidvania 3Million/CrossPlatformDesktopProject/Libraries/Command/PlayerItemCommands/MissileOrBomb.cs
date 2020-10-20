@@ -1,6 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
