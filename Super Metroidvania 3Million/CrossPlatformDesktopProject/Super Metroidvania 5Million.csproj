@@ -120,7 +120,9 @@
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\KraidMissileSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PostBoomBombSprite.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PowerBeamSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PreBoomBombSprite.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\WaveBeamSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\WaveBeam.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

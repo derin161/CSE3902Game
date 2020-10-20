@@ -260,11 +260,12 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new PowerBeam(iceBeamTex, location, direction, isLongBeam, true);
 		}
 
+		/*
 		public IGameObject CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);
 		}
-		/*
+		
 		public IGameObject CreateKraidHorn(Vector2 location, bool isMovingRight)
 		{
 			return new KraidHorn(kraidHornTex, location, isMovingRight);

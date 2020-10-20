@@ -1,6 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
+using System;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 {
@@ -10,18 +11,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public Vector2 Direction { get; set; }
         public int Damage { get; set; }
-        public bool IsIceBeam { get; set; }
+        public Rectangle Space { get; set; }
 
         private bool isDead = false;
-        private Texture2D texture;
         private Vector2 initialLocation;
         private bool isLongBeam;
         private bool isHorizontal;
-        private Queue<Vector2> wavePosSequence = new Queue<Vector2>();
-        private int time = 0;
+        private ISprite sprite;
 
 
-        public WaveBeam(Texture2D texture, Vector2 initialLocation, Vector2 direction, bool isLongBeam, bool isIceBeam)
+        public WaveBeam(Vector2 initialLocation, Vector2 direction, bool isLongBeam)
         {
             // Need to set actual damage values at some point
             if (isLongBeam)
@@ -42,79 +41,57 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 Direction = Vector2.Add(direction, new Vector2(1, 0));
             }
 
-            IsIceBeam = isIceBeam;
             isDead = false;
             this.isLongBeam = isLongBeam;
-            this.texture = texture;
             Location = initialLocation;
             this.initialLocation = initialLocation;
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+            sprite = ProjectilesSpriteFactory.Instance.CreateWaveBeamSprite(this);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-
-            Rectangle destinationRec1 = new Rectangle((int)Location.X, (int)Location.Y, texture.Width / 2, texture.Height / 2);
-            Rectangle destinationRec2 = new Rectangle((int)Location.X, (int)Location.Y, texture.Width / 2, texture.Height / 2); //this value means nothing but can't be null
-            wavePosSequence.Enqueue(Location);
-
-            if (time > 100) //delay the second orb from appearing for a bit
-            {
-
-                Vector2 orb2Pos = wavePosSequence.Dequeue();
-                destinationRec2 = new Rectangle((int)orb2Pos.X, (int)orb2Pos.Y, texture.Width / 2, texture.Height / 2);
-            }
-
-            Rectangle sourceRec = new Rectangle(0, 0, texture.Width / 2, texture.Height / 2); //Texture before collision
-
-            //Change texture if projectile has collided or run out
-            if (isDead)
-            {
-                sourceRec = new Rectangle(texture.Width / 2, texture.Height / 2, texture.Width / 2, texture.Height / 2); //Texture after collision
-            }
-
-            spriteBatch.Draw(texture, destinationRec1, sourceRec, Color.White);
-            if (time > 100) {
-                spriteBatch.Draw(texture, destinationRec2, sourceRec, Color.White);
-            }
+            sprite.Draw(spriteBatch);
         }
 
         public void Update(GameTime gameTime)
         {
-            time += gameTime.ElapsedGameTime.Milliseconds;
 
             //Using temporary var til collisions are added
             bool collision = false;
 
+            Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
 
-            //Update position
-            Location = Vector2.Add(Location, Direction);
+            float x = relativePos.X;
+            float y = relativePos.Y;
 
-            //Determine relative position and the bounds
-            int relativeX = (int)(Location.X - initialLocation.X);
-            int relativeY = (int)(Location.Y - initialLocation.Y);
-            int boundX = 100;
-            int boundY = 100;
-
-            if (isHorizontal) //Check if oscillation direction needs reversed.
+            if (isHorizontal)
             {
-                boundY = 30;
-                if (relativeY > boundY || relativeY < -boundY) {
-                    Direction = Vector2.Multiply(Direction, new Vector2(1, -1));
+                x += 3;
+                if (Direction.X < 0) //If its moving to the left, then subtract 6 (to account for +3 done earlier).
+                {
+                    x -= 6;
                 }
+                y = (float)Math.Sin(Math.Abs(x)) * -1; // Give projectile sinusiodal path
             }
             else
             {
-                boundX = 30;
-                if (relativeX > boundX || relativeX < -boundX)
-                {
-                    Direction = Vector2.Multiply(Direction, new Vector2(-1, 1));
-                }
+                y -= 3;
+                x = (float)Math.Sin(Math.Abs(y)); // Give projectile sinusiodal path
             }
+
+            //Update position and Space
+            relativePos = new Vector2(x, y);
+            Location = Vector2.Add(Location, relativePos);
+            Space = new Rectangle((int) Location.X, (int) Location.Y, Space.Width, Space.Height);
+
 
             //If the Projectile is not a Long Beam, it dies after moving a set distance.
             if (!isLongBeam)
             {
-                isDead = collision || isHorizontal && (relativeX > boundX || relativeX < -boundX) || !isHorizontal && (relativeY > boundY || relativeY < -boundY);
+                int boundX = 100;
+                int boundY = 100;
+                isDead = collision || isHorizontal && (relativePos.X > boundX || relativePos.X < -boundX) || !isHorizontal && (relativePos.Y > boundY || relativePos.Y < -boundY);
             }
             else {
                 //Die if a collision occurs or the projectile leaves the screen

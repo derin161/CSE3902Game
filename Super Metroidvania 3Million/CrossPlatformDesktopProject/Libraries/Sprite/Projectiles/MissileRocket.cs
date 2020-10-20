@@ -28,7 +28,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 16);
             }
-            sprite = ProjectilesSpriteFactory.Instance.CreateMissileRocket(this, isHorizontal);
+            sprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketSprite(this, isHorizontal);
         }
 
         public void Draw(SpriteBatch spriteBatch)
