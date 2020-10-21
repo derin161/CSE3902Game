@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame = 0;
             totalFrames = Rows * Columns;
             sideHopper = sh;
-            direction = 1;
+            direction = 2;
         }
 
         public void Update(GameTime gameTime)

@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame = 3;
             totalFrames = Rows * Columns;
             reverseSideHopper = rsh;
-            direction = 1;
+            direction = 2;
         }
 
         public void Update(GameTime gameTime)
