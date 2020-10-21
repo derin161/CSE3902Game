@@ -13,7 +13,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialY;
         private int count;
         private int direction;
         private ReverseSideHopper reverseSideHopper;

@@ -56,9 +56,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new MemuSprite(memu, m);
 		}
-		public ISprite SideHopperSprite(Vector2 location)
+		public ISprite SideHopperSprite(SideHopper sh)
 		{
-			return new SideHopperSprite(sideHopper, location);
+			return new SideHopperSprite(sideHopper, sh);
 		}
 		public ISprite SkreeSprite(Vector2 location)
 		{

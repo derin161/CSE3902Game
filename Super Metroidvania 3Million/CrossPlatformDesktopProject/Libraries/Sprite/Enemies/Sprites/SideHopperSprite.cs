@@ -13,21 +13,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialY;
         private int count;
         private int direction;
-
-        public SideHopperSprite(Texture2D texture, Vector2 location)
+        private SideHopper sideHopper;
+        public SideHopperSprite(Texture2D texture, SideHopper sh)
         {
             Texture = texture;
             Rows = 2;
             Columns = 6;
             currentFrame = 0;
             totalFrames = Rows * Columns;
-            x = location.X;
-            y = location.Y;
-            initialY = location.Y;
-            direction = 3;
+            sideHopper = sh;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
@@ -44,11 +41,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
             }
 
-            //Jump while on frame 2
+            //Jump while on frame 5
             if (currentFrame == 2)
             {
-                y = (count * count) - 20 * count + initialY;
-                x += direction;
+                sideHopper.Jump(count, direction);
             }
             count++;
 
@@ -63,19 +59,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width * 2, height * 2);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, sideHopper.Space, sourceRectangle, Color.White);
         }
         public Boolean IsDead()
         {
             return false;
         }
 
-        private void Jump()
-        {
-
-        }
 
     }
 }

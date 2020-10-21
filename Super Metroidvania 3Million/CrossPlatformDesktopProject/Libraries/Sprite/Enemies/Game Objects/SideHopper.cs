@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -10,13 +12,20 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
 
         private ISprite sprite;
+        public Rectangle Space;
+        private float x, y, initialX, initialY;
         public SideHopper(Vector2 location)
         {
-            sprite = EnemySpriteFactory.Instance.SideHopperSprite(location);
+            sprite = EnemySpriteFactory.Instance.SideHopperSprite(this);
+            x = location.X;
+            y = location.Y;
+            initialX = location.X;
+            initialY = location.Y;
         }
 
         public void Update(GameTime gameTime)
         {
+            Space = new Rectangle((int)x, (int)y, 48, 52);
             sprite.Update(gameTime);
         }
 
@@ -31,7 +40,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             return false;
         }
 
-
+        public void Jump(int count, int direction)
+        {
+            y = (count * count) - 20 * count + initialY;
+            x += direction;
+        }
 
     }
 }
