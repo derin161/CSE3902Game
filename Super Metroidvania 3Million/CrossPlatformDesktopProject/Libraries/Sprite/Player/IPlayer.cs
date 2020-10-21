@@ -4,6 +4,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 {
     public interface IPlayer : IGameObject
     {
+
         public void JumpAnimation(SpriteBatch spriteBatch);
         public void CrouchAnimation(SpriteBatch spriteBatch);
         public void MoveLeftAnimation(SpriteBatch spriteBatch);

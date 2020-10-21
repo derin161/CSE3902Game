@@ -10,7 +10,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
     {
         public enum State
         {
-            Attack, MoveRight, MoveLeft, Crouch, Jump, Idle, Damage, Dead
+            Attack, 
+            MoveRight, 
+            MoveLeft, 
+            Crouch, 
+            Jump, 
+            Idle, 
+            Damage, 
+            Dead
         }
 
         public enum HealthState
@@ -21,8 +28,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         };
 
         public enum UpgradeType{
-            Icebeam, Wavebeam, Longbeam, Bomb, EnergyTank, MorphBall, MissileTank, HiJump, Varia, Screw
+            Icebeam, 
+            Wavebeam, 
+            Longbeam, 
+            Bomb, 
+            EnergyTank, 
+            MorphBall, 
+            MissileTank, 
+            HiJump, 
+            Varia, 
+            Screw
         }
+
         public HealthState currentHealthState;
 
         public Vector2 HealthPosition = new Vector2(20, 90);
@@ -38,6 +55,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool elong { get; set; } //long beam
         public bool facingRight { get; set; }
         public int TotalRockets { get; set; }
+
+        //Health should probably be a get/set
 
         private int timeSinceLastFrame = 0;
         private int rTime;
