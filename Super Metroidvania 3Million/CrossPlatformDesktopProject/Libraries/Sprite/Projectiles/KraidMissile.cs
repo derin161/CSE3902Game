@@ -21,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Damage = 0;
             Location = initialLocation;
             Direction = direction;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
             sprite = ProjectilesSpriteFactory.Instance.CreateKraidMissileSprite(this);
         }
 

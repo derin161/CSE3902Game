@@ -42,14 +42,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			zeela = content.Load<Texture2D>("enemies/Zeela");
 		}
 
-		public ISprite GeegaSprite(Vector2 location)
+		public ISprite GeegaSprite(Geega g)
         {
-			return new GeegaSprite(geega, location);
+			return new GeegaSprite(geega, g);
 		}
 
-		public ISprite KraidSprite(Vector2 location, Game1 game)
+		public ISprite KraidSprite(Kraid k, Game1 game)
 		{
-			return new KraidSprite(kraid, location, game);
+			return new KraidSprite(kraid, k);
 		}
 
 		public ISprite MemuSprite(Vector2 location)

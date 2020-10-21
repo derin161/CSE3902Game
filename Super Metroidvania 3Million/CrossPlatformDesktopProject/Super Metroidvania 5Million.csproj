@@ -45,6 +45,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Collision\CollisionDetector\CollisionDetector.cs" />
     <Compile Include="Libraries\Command\NextBlock.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\MissileOrBomb.cs" />
     <Compile Include="Libraries\Command\PreviousBlock.cs" />
