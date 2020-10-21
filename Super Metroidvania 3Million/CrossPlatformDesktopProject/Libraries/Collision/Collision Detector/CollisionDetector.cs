@@ -2,7 +2,7 @@
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision.CollisionDetector
+namespace CrossPlatformDesktopProject.Libraries.Collision
 {
     class CollisionDetector
     {
@@ -11,6 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision.CollisionDetector
         List<IGameObject> blockList;
         List<IGameObject> projectileList;
         bool collision;
+        CollisionHandler handler;
 
         public CollisionDetector(IPlayer Player, IContainer enemyContainer, IContainer blockContainer, IContainer projectileContainer)
         {
@@ -19,6 +20,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision.CollisionDetector
             enemyList = enemyContainer.GetList();
             blockList = blockContainer.GetList();
             projectileList = projectileContainer.GetList();
+            handler = new CollisionHandler();
             
         }
 
@@ -30,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision.CollisionDetector
                 collision = CheckCollisions(player, enemy);
                 if (collision)
                 {
-                    //Handle player-enemy collision
+                    handler.PlayerEnemyCollision(player, enemy);
                 }
             }
 
@@ -40,7 +42,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision.CollisionDetector
                 collision = CheckCollisions(player, block);
                 if (collision)
                 {
-                    //Handle player-block collision
+                    handler.PlayerBlockCollision(player, block);
                 }
             }
 
@@ -50,7 +52,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision.CollisionDetector
                 collision = CheckCollisions(player, projectile);
                 if (collision)
                 {
-                    //Handle player-projectile collision
+                    handler.PlayerProjectileCollision(player, projectile);
                 }
             }
 

@@ -1,9 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision.Collision_Handler
+namespace CrossPlatformDesktopProject.Libraries.Collision
 {
     class CollisionHandler
     {
@@ -22,7 +20,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision.Collision_Handler
 
         }
 
-        public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
+        public void PlayerProjectileCollision(IPlayer player, IGameObject projectile)
         {
 
         }
