@@ -1,16 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Skree : IEnemy
+    class MemuSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -18,41 +13,40 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialY;
-        private int count;
+        private float x, y, initialX;
+        private int counter;
+        private int direction;
 
-        public Skree(Texture2D texture, Vector2 location)
+        public MemuSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 3;
+            Rows = 1;
+            Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
+            initialX = location.X;
             y = location.Y;
-            initialY = location.Y;
-            count = 0;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
         {
             //change the frame after 10 counts
-            if (count == 10)
+            if (counter == 10)
             {
-                count = 0;
+                counter = 0;
                 currentFrame++;
-                if (currentFrame == 3)
-                {
+                if (currentFrame == 2)
                     currentFrame = 0;
-                }
             }
-            count++;
+            counter++;
 
-            //Move to the ground (410) and then reset
-            y += 2;
-            if (y > 410-Texture.Height)
+            //move back and forth in x direction
+            x += direction;
+            if (Math.Abs(x - initialX) > 100)
             {
-                y = initialY;
+                direction *= -1;
             }
         }
 

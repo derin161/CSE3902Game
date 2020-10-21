@@ -2,16 +2,11 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Kraid : IEnemy
+    class KraidSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -26,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private Game1 game;
         private bool isMovingRight = false;
 
-        public Kraid(Texture2D texture, Vector2 location, Game1 game)
+        public KraidSprite(Texture2D texture, Vector2 location, Game1 game)
         {
             Texture = texture;
             Rows = 2;
@@ -37,21 +32,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             y = location.Y;
             counter = 0;
             this.game = game;
-            
+
         }
 
         public void Update(GameTime gameTime)
         {
             //Wait between attacks
-            msUntilAttack -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+            msUntilAttack -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
 
             //Perform attacks
-            if (msUntilAttack < 0) {
+            if (msUntilAttack < 0)
+            {
                 if (new Random().Next(0, 2) == 0)
                 {
                     throwHorns();
                 }
-                else {
+                else
+                {
                     shootMissiles();
                 }
                 msUntilAttack = msBetweenAttack;
@@ -68,7 +65,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             counter++;
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
@@ -77,7 +74,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
+            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width * 2, height * 2);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
@@ -87,13 +84,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             return false;
         }
 
-        private void throwHorns() {
-            game.AddSprite(game.Factory.CreateKraidHorn(new Vector2(x,y), !isMovingRight));
+        //Will need to create a new factory for game objects.
+        private void throwHorns()
+        {
+            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidHorn(new Vector2(x, y), !isMovingRight));
         }
 
-        private void shootMissiles() {
+        private void shootMissiles()
+        {
             int speed = 7;
-            game.AddSprite(game.Factory.CreateKraidMissile(new Vector2(x+23, y+38), new Vector2(speed,0)));
+            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
         }
 
     }

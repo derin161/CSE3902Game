@@ -1,12 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
@@ -14,7 +9,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     class ShootBeam : ICommand
     {
         private PlayerSprite samus;
-        private IFactory factory;
         private Game1 game;
         private float speed = 7;
         private List<PlayerSprite.State> bannedStates = new List<PlayerSprite.State> { PlayerSprite.State.Crouch, PlayerSprite.State.Jump};
@@ -22,7 +16,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         public ShootBeam(Game1 game, PlayerSprite player) {
             samus = player;
             this.game = game;
-            this.factory = game.Factory;
         }
         public void Execute()
         {
@@ -38,18 +31,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command
                     direction = new Vector2(-speed, 0);
                     location = new Vector2(samus.Location.X + 12, samus.Location.Y + 18);
                 }
-
+                
                 if (samus.wave)
                 {
-                    game.AddSprite(factory.CreateWaveBeam(location, direction, samus.elong, samus.ice));
+                    game.AddSprite(ProjectilesGOFactory.Instance.CreateWaveBeam(location, direction, samus.elong));
                 }
-                else if (samus.ice)
+                else //Power beam or ice beam
                 {
-                    game.AddSprite(factory.CreateIceBeam(location, direction, samus.elong));
-                }
-                else
-                { //Power beam
-                    game.AddSprite(factory.CreatePowerBeam(location, direction, samus.elong));
+                    game.AddSprite(ProjectilesGOFactory.Instance.CreatePowerBeam(location, direction, samus.elong, samus.ice));
                 }
             }
         }

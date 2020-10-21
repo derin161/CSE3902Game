@@ -1,11 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+﻿using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 {
@@ -13,16 +8,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
     public class PowerBeam : IProjectile
     {
         public Vector2 Location { get; set; }
+        public Rectangle Space { get; set; }
         public Vector2 Direction { get; set; }
         public int Damage { get; set; }
         public bool IsIceBeam { get; set; }
 
         private bool isDead = false;
-        private Texture2D texture;
         private Vector2 initialLocation;
         private bool isLongBeam;
+        private ISprite sprite;
 
-        public PowerBeam(Texture2D texture, Vector2 initialLocation, Vector2 direction, bool isLongBeam, bool isIceBeam)
+        public PowerBeam(Vector2 initialLocation, Vector2 direction, bool isLongBeam, bool isIceBeam)
         {
             // Need to set actual damage values at some point
             if (isLongBeam)
@@ -36,24 +32,24 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             IsIceBeam = isIceBeam;
             this.isLongBeam = isLongBeam;
-            this.texture = texture;
             Location = initialLocation;
             this.initialLocation = initialLocation;
             Direction = direction;
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+            if (isIceBeam)
+            {
+                sprite = ProjectilesSpriteFactory.Instance.CreateIceBeamSprite(this);
+            }
+            else {
+                sprite = ProjectilesSpriteFactory.Instance.CreatePowerBeamSprite(this);
+            }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            sprite.Draw(spriteBatch);
             
-            Rectangle destinationRec = new Rectangle((int)Location.X, (int)Location.Y, texture.Width / 2, texture.Height / 2);
-            Rectangle sourceRec = new Rectangle(0, 0, texture.Width / 2, texture.Height / 2); //Texture before collision
-
-            //Change texture if projectile has collided or run out
-            if (isDead) {
-                sourceRec = new Rectangle(texture.Width / 2, texture.Height / 2, texture.Width / 2, texture.Height / 2); //Texture after collision
-            }
-
-            spriteBatch.Draw(texture, destinationRec, sourceRec, Color.White);
         }
 
         public void Update(GameTime gameTime)
@@ -62,8 +58,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             bool collision = false;
 
 
-            //Update position
+            //Update position and space rectangle
             Location = Vector2.Add(Location, Direction);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, Space.Width, Space.Height);
 
             //If the Projectile is not a Long Beam, it dies after moving a set distance.
             if (!isLongBeam) {
@@ -81,7 +78,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 //Die if a collision occurs or the projectile leaves the screen
                 isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
-            
+
+            sprite.Update(gameTime);
         }
 
         public bool IsDead() {

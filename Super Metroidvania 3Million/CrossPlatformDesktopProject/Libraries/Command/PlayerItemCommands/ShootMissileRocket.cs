@@ -1,12 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
@@ -14,14 +8,12 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     class ShootMissileRocket : ICommand
     {
         private PlayerSprite samus;
-        private IFactory factory;
         private float speed = 7;
         Game1 game;
 
         public ShootMissileRocket(Game1 game, PlayerSprite player) {
             this.game = game;
             samus = player;
-            this.factory = game.Factory;
         }
         public void Execute()
         {
@@ -37,9 +29,10 @@ namespace CrossPlatformDesktopProject.Libraries.Command
                 }
 
 
-                //if(samus.TotalRockets > 0)
-                game.AddSprite(factory.CreateMissileRocket(location, direction));
-                samus.TotalRockets--;
+                if (samus.TotalRockets > 0) {
+                    game.AddSprite(ProjectilesGOFactory.Instance.CreateMissileRocket(location, direction));
+                    samus.TotalRockets--;
+                }
             }
         }
     }

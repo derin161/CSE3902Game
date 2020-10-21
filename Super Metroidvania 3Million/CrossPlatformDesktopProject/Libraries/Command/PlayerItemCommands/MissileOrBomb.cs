@@ -1,12 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using Microsoft.Xna.Framework;
-using System;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
@@ -17,7 +10,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private ICommand bomb;
         private PlayerSprite samus;
         private List<PlayerSprite.State> bombStates = new List<PlayerSprite.State> { PlayerSprite.State.Crouch, PlayerSprite.State.Jump };
-        private List<PlayerSprite.State> missileStates = new List<PlayerSprite.State> { PlayerSprite.State.Idle, PlayerSprite.State.MoveLeft, PlayerSprite.State.MoveRight };
+        private List<PlayerSprite.State> missileStates = new List<PlayerSprite.State> { PlayerSprite.State.MoveLeft, PlayerSprite.State.MoveRight, PlayerSprite.State.Idle };
 
         //This should probably be changed at some point, but this class essentially just redirects to ShootMissleRocket or DropBomb depending on the player's state.
         public MissileOrBomb(Game1 game, PlayerSprite player) {

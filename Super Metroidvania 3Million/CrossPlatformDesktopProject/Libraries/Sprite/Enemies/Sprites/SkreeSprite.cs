@@ -1,18 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class VerticalZeela : IEnemy
+    class SkreeSprite : ISprite
     {
-        //Author: Will Floyd
+
         public Texture2D Texture { get; set; }
         private int Rows;
         private int Columns;
@@ -20,20 +15,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int totalFrames;
         private float x, y, initialY;
         private int count;
-        private int direction;
 
-        public VerticalZeela(Texture2D texture, Vector2 location)
+        public SkreeSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
-            Columns = 4;
-            currentFrame = 2;
+            Columns = 3;
+            currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
-            initialY = location.Y;
             y = location.Y;
+            initialY = location.Y;
             count = 0;
-            direction = 1;
         }
 
         public void Update(GameTime gameTime)
@@ -43,18 +36,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 count = 0;
                 currentFrame++;
-                if (currentFrame == 4)
+                if (currentFrame == 3)
                 {
-                    currentFrame = 2;
+                    currentFrame = 0;
                 }
             }
             count++;
 
-            //Move up and down
-            y += direction;
-            if (Math.Abs(y - initialY) > 100)
+            //Move to the ground (410) and then reset
+            y += 2;
+            if (y > 410-Texture.Height)
             {
-                direction *= -1;
+                y = initialY;
             }
         }
 
@@ -71,11 +64,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
-
         public Boolean IsDead()
         {
             return false;
         }
-        
+
     }
 }

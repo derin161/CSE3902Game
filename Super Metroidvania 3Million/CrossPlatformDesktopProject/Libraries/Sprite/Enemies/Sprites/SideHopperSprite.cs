@@ -1,16 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Geega : IEnemy
+    class SideHopperSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -18,46 +13,48 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialX;
-        private int counter;
+        private float x, y, initialY;
+        private int count;
+        private int direction;
 
-        public Geega(Texture2D texture, Vector2 location)
+        public SideHopperSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
-            Columns = 2;
+            Columns = 6;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
-            initialX = location.X;
             y = location.Y;
-            counter = 0;
+            initialY = location.Y;
+            direction = 3;
         }
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 10 counts
-            if (counter == 10)
+            //change the frame after 20 counts
+            if (count == 20)
             {
-                counter = 0;
+                count = 0;
+                direction *= -1;
                 currentFrame++;
-                if (currentFrame == 2)
+                if (currentFrame == 3)
+                {
                     currentFrame = 0;
+                }
             }
-            counter++;
 
-            //Fly horizontally across the screen and reset to initial positoin
-            x -= 3;
-            if (initialX - x > 300)
+            //Jump while on frame 2
+            if (currentFrame == 2)
             {
-                x = initialX;
+                y = (count * count) - 20 * count + initialY;
+                x += direction;
             }
-            
+            count++;
 
-            
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
@@ -66,7 +63,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
+            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width * 2, height * 2);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
@@ -74,5 +71,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             return false;
         }
+
+        private void Jump()
+        {
+
+        }
+
     }
 }

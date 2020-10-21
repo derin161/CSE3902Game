@@ -1,16 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Ripper : IEnemy
+    class GeegaSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -19,32 +14,42 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int totalFrames;
         private float x, y, initialX;
-        private int direction;
+        private int counter;
 
-        public Ripper(Texture2D texture, Vector2 location)
+        public GeegaSprite(Texture2D texture, Vector2 location)
         {
             Texture = texture;
             Rows = 2;
-            Columns = 1;
+            Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             x = location.X;
             initialX = location.X;
             y = location.Y;
-            direction = 1;
+            counter = 0;
         }
 
         public void Update(GameTime gameTime)
         {
-            //Stay on frame 0 (Frame 1 left for color change)
-            currentFrame = 0;
-
-            //move back and forth in x direction
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
+            //change the frame after 10 counts
+            if (counter == 10)
             {
-                direction *= -1;
+                counter = 0;
+                currentFrame++;
+                if (currentFrame == 2)
+                    currentFrame = 0;
             }
+            counter++;
+
+            //Fly horizontally across the screen and reset to initial positoin
+            x -= 3;
+            if (initialX - x > 300)
+            {
+                x = initialX;
+            }
+            
+
+            
         }
 
         
@@ -64,6 +69,5 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             return false;
         }
-
     }
 }
