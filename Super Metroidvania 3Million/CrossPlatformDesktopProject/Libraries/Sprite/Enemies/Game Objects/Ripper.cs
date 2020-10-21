@@ -10,13 +10,28 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
 
         private ISprite sprite;
+        private float x, y, initialX;
+        private int direction;
+        public Rectangle Space;
         public Ripper(Vector2 location)
         {
-            sprite = EnemySpriteFactory.Instance.RipperSprite(location);
+            sprite = EnemySpriteFactory.Instance.RipperSprite(this);
+            x = location.X;
+            initialX = location.X;
+            y = location.Y;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
         {
+            //move back and forth in x direction
+            x += direction;
+            if (Math.Abs(x - initialX) > 100)
+            {
+                direction *= -1;
+            }
+
+            Space = new Rectangle((int)x, (int)y, 32, 16);
             sprite.Update(gameTime);
         }
 

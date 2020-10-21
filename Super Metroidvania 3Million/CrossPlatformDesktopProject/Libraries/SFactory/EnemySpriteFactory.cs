@@ -60,25 +60,25 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new SideHopperSprite(sideHopper, sh);
 		}
-		public ISprite SkreeSprite(Vector2 location)
+		public ISprite SkreeSprite(Skree s)
 		{
-			return new SkreeSprite(skree, location);
+			return new SkreeSprite(skree, s);
 		}
-		public ISprite VerticalZeelaSprite(Vector2 location)
+		public ISprite VerticalZeelaSprite(VerticalZeela vz)
 		{
-			return new VerticalZeelaSprite(zeela, location);
+			return new VerticalZeelaSprite(zeela, vz);
 		}
-		public ISprite ZeelaSprite(Vector2 location)
+		public ISprite ZeelaSprite(Zeela z)
 		{
-			return new ZeelaSprite(zeela, location);
+			return new ZeelaSprite(zeela, z);
 		}
 		public ISprite ReverseSideHopperSprite(ReverseSideHopper rsh)
 		{
 			return new ReverseSideHopperSprite(sideHopper, rsh);
 		}
-		public ISprite RipperSprite(Vector2 location)
+		public ISprite RipperSprite(Ripper r)
 		{
-			return new RipperSprite(ripper, location);
+			return new RipperSprite(ripper, r);
 		}
 	}
 }

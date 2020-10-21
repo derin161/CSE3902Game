@@ -12,22 +12,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialX;
         private int count;
-        private int direction;
+        private Zeela zeela;
 
-        public ZeelaSprite(Texture2D texture, Vector2 location)
+        public ZeelaSprite(Texture2D texture, Zeela z)
         {
             Texture = texture;
             Rows = 2;
             Columns = 4;
             currentFrame = 0;
             totalFrames = Rows * Columns;
-            x = location.X;
-            initialX = location.X;
-            y = location.Y;
             count = 0;
-            direction = 1;
+            zeela = z;            
         }
 
         public void Update(GameTime gameTime)
@@ -44,12 +40,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             count++;
 
-            //Move horizontally back and forth across the screen
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
-            {
-                direction *= -1;
-            }
+            
         }
 
         
@@ -61,9 +52,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.White);
         }
 
         public Boolean IsDead()

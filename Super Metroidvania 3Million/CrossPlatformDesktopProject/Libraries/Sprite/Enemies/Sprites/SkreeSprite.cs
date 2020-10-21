@@ -13,20 +13,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialY;
         private int count;
+        private Skree skree;
 
-        public SkreeSprite(Texture2D texture, Vector2 location)
+        public SkreeSprite(Texture2D texture, Skree s)
         {
             Texture = texture;
             Rows = 2;
             Columns = 3;
             currentFrame = 0;
             totalFrames = Rows * Columns;
-            x = location.X;
-            y = location.Y;
-            initialY = location.Y;
             count = 0;
+            skree = s;
         }
 
         public void Update(GameTime gameTime)
@@ -43,12 +41,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             count++;
 
-            //Move to the ground (410) and then reset
-            y += 2;
-            if (y > 410-Texture.Height)
-            {
-                y = initialY;
-            }
+            
         }
 
         
@@ -60,9 +53,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.White);
         }
         public Boolean IsDead()
         {
