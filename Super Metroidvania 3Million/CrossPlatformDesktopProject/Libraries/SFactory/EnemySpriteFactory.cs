@@ -72,9 +72,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new ZeelaSprite(zeela, location);
 		}
-		public ISprite ReverseSideHopperSprite(Vector2 location)
+		public ISprite ReverseSideHopperSprite(ReverseSideHopper rsh)
 		{
-			return new ReverseSideHopperSprite(sideHopper, location);
+			return new ReverseSideHopperSprite(sideHopper, rsh);
 		}
 		public ISprite RipperSprite(Vector2 location)
 		{

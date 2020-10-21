@@ -16,18 +16,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private float x, y, initialY;
         private int count;
         private int direction;
-
-        public ReverseSideHopperSprite(Texture2D texture, Vector2 location)
+        private ReverseSideHopper reverseSideHopper;
+        public ReverseSideHopperSprite(Texture2D texture, ReverseSideHopper rsh)
         {
             Texture = texture;
             Rows = 2;
             Columns = 6;
             currentFrame = 3;
             totalFrames = Rows * Columns;
-            x = location.X;
-            y = location.Y;
-            initialY = location.Y;
-            direction = 3;
+            reverseSideHopper = rsh;
+            direction = 1;
         }
 
         public void Update(GameTime gameTime)
@@ -47,8 +45,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //Jump while on frame 5
             if (currentFrame == 5)
             {
-                y = -(count * count) + 20 * count + initialY;
-                x += direction;
+                reverseSideHopper.Jump(count, direction);
             }
             count++;
 
@@ -63,9 +60,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width * 2, height * 2);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, reverseSideHopper.Space, sourceRectangle, Color.White);
         }
         public Boolean IsDead()
         {
