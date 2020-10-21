@@ -9,14 +9,27 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     class Geega : IGameObject
     {
         private ISprite sprite;
+        private float x, y;
+        private float initialX;
+        public Rectangle Space { get; set; }
         public Geega(Vector2 location)
         {
-            sprite = EnemySpriteFactory.Instance.GeegaSprite(location);
+            sprite = EnemySpriteFactory.Instance.GeegaSprite(this);
+            x = location.X;
+            y = location.Y;
+            initialX = location.X;
         }
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            //Update the position of the sprite
+            x -= 3;
+            if (initialX - x > 300)
+            {
+                x = initialX;
+            }
+
+            Space = new Rectangle((int)x, (int)y, 32,32);
         }
 
         

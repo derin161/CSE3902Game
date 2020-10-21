@@ -9,24 +9,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
 
         public Texture2D Texture { get; set; }
+        private Geega geega;
         private int Rows;
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialX;
         private int counter;
 
-        public GeegaSprite(Texture2D texture, Vector2 location)
+        public GeegaSprite(Texture2D texture, Geega g)
         {
             Texture = texture;
             Rows = 2;
             Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
-            x = location.X;
-            initialX = location.X;
-            y = location.Y;
             counter = 0;
+            geega = g;
+
         }
 
         public void Update(GameTime gameTime)
@@ -40,30 +39,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                     currentFrame = 0;
             }
             counter++;
-
-            //Fly horizontally across the screen and reset to initial positoin
-            x -= 3;
-            if (initialX - x > 300)
-            {
-                x = initialX;
-            }
-            
-
-            
         }
 
         
         public void Draw(SpriteBatch spriteBatch)
         {
+            //Draw the sprite
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
-
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.White);
         }
         public Boolean IsDead()
         {

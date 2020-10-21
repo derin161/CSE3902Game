@@ -13,46 +13,22 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Rows;
         private int Columns;
         private int currentFrame;
-        private int totalFrames;
-        private float x, y;
         private int counter;
-        private int msBetweenAttack = 500;
-        private int msUntilAttack = 500;
-        private Game1 game;
-        private bool isMovingRight = false;
+        private Kraid Kraid;
 
-        public KraidSprite(Texture2D texture, Vector2 location, Game1 game)
+        public KraidSprite(Texture2D texture, Kraid k)
         {
             Texture = texture;
             Rows = 2;
             Columns = 2;
             currentFrame = 0;
-            totalFrames = Rows * Columns;
-            x = location.X;
-            y = location.Y;
             counter = 0;
-            this.game = game;
+            Kraid = k;
 
         }
 
         public void Update(GameTime gameTime)
         {
-            //Wait between attacks
-            msUntilAttack -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-            //Perform attacks
-            if (msUntilAttack < 0)
-            {
-                if (new Random().Next(0, 2) == 0)
-                {
-                    throwHorns();
-                }
-                else
-                {
-                    shootMissiles();
-                }
-                msUntilAttack = msBetweenAttack;
-            }
 
             //change the frame after 10 counts
             if (counter == 10)
@@ -74,9 +50,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width * 2, height * 2);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, Kraid.Space, sourceRectangle, Color.White);
         }
 
         public Boolean IsDead()
@@ -85,16 +60,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
 
         //Will need to create a new factory for game objects.
-        private void throwHorns()
-        {
-            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidHorn(new Vector2(x, y), !isMovingRight));
-        }
 
-        private void shootMissiles()
-        {
-            int speed = 7;
-            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
-        }
 
     }
 }
