@@ -52,9 +52,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new KraidSprite(kraid, k);
 		}
 
-		public ISprite MemuSprite(Vector2 location)
+		public ISprite MemuSprite(Memu m)
 		{
-			return new MemuSprite(memu, location);
+			return new MemuSprite(memu, m);
 		}
 		public ISprite SideHopperSprite(Vector2 location)
 		{

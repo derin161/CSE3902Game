@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -30,9 +31,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
 
             Space = new Rectangle((int)x, (int)y, 32,32);
+            sprite.Update(gameTime);
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             sprite.Draw(spriteBatch);

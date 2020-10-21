@@ -13,21 +13,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int Columns;
         private int currentFrame;
         private int totalFrames;
-        private float x, y, initialX;
         private int counter;
-        private int direction;
+        private Memu memu;
 
-        public MemuSprite(Texture2D texture, Vector2 location)
+        public MemuSprite(Texture2D texture, Memu m)
         {
             Texture = texture;
             Rows = 1;
             Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
-            x = location.X;
-            initialX = location.X;
-            y = location.Y;
-            direction = 1;
+            memu = m;
         }
 
         public void Update(GameTime gameTime)
@@ -42,12 +38,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             counter++;
 
-            //move back and forth in x direction
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
-            {
-                direction *= -1;
-            }
         }
 
         
@@ -59,9 +49,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)x, (int)y, width*2, height*2);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, memu.Space, sourceRectangle, Color.White);
         }
         public Boolean IsDead()
         {
