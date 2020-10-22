@@ -59,12 +59,13 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             /*Collisions that we DO NOT need to check for:
             - block - block (Static, will never collide)
             - enemy - enemy (fine if they pass through each other)
-            - projectile - enemy (fine if enemies get hit by projectile)
             */
 
             /*Collisions that we MIGHT need to check for:
             - enemy - block
             - projectile - block
+            - projectile - enemy
+
              */
 
 
