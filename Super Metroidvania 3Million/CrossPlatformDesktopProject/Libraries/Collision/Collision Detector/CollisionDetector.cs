@@ -119,8 +119,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         private bool CheckCollisions(IGameObject obj1, IGameObject obj2)
         {
-            //return obj1.Space.Intersects(obj2.Space);
-            return false;
+            return obj1.SpaceRectangle().Intersects(obj2.SpaceRectangle());
         }
     }
 }
