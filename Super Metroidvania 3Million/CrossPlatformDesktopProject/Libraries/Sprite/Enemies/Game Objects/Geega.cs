@@ -34,6 +34,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             sprite.Update(gameTime);
         }
 
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
+        }
+
 
         public void Draw(SpriteBatch spriteBatch)
         {

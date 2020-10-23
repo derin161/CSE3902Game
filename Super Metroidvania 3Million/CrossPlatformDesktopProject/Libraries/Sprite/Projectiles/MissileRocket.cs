@@ -50,6 +50,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             sprite.Update(gameTime);
         }
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
+        }
 
         public bool IsDead() {
             return isDead;

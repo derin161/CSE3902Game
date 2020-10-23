@@ -52,6 +52,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite.Draw(spriteBatch);
         }
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
+        }
 
         public Boolean IsDead()
         {

@@ -46,6 +46,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             sprite.Update(gameTime);
         }
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
+        }
 
         public bool IsDead() {
             return isDead;

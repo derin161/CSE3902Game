@@ -33,6 +33,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Space = new Rectangle((int)x, (int)y, 32, 32);
             sprite.Update(gameTime);
         }
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
+        }
 
 
         public void Draw(SpriteBatch spriteBatch)

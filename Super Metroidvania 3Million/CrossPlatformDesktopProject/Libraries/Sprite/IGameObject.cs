@@ -8,5 +8,6 @@ namespace CrossPlatformDesktopProject
         public bool IsDead();
         public void Draw(SpriteBatch spriteBatch);
         public void Update(GameTime gameTime);
+        public Rectangle SpaceRectangle();
     }
 }
