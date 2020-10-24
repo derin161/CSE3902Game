@@ -201,18 +201,18 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public List<IGameObject> CreateItemSpriteList(Vector2 location)
 		{
 			List<IGameObject> itemList = new List<IGameObject>();
-			itemList.Add(new BombItem(bombItem, location));
-			itemList.Add(new EnergyDropItem(energyDropItem, location));
-			itemList.Add(new EnergyTankItem(energyTankItem, location));
-			itemList.Add(new HighJumpItem(highJumpItem, location));
-			itemList.Add(new IceBeamItem(iceBeamItem, location));
-			itemList.Add(new LongBeamItem(longBeamItem, location));
-			itemList.Add(new MissleRocketItem(missleRocketItem, location));
-			itemList.Add(new MorphBallItem(morphBallItem, location));
-			itemList.Add(new RocketDropItem(rocketDropItem, location));
-			itemList.Add(new ScrewAttackItem(screwAttackItem, location));
-			itemList.Add(new VariaItem(variaItem, location));
-			itemList.Add(new WaveBeamItem(waveBeamItem, location));
+			itemList.Add(new BombItem(location));
+			itemList.Add(new EnergyDropItem(location));
+			itemList.Add(new EnergyTankItem(location));
+			itemList.Add(new HighJumpItem(location));
+			itemList.Add(new IceBeamItem(location));
+			itemList.Add(new LongBeamItem(location));
+			itemList.Add(new MissleRocketItem(location));
+			itemList.Add(new MorphBallItem(location));
+			itemList.Add(new RocketDropItem(location));
+			itemList.Add(new ScrewAttackItem(location));
+			itemList.Add(new VariaItem(location));
+			itemList.Add(new WaveBeamItem(location));
 
 			return itemList;
 		}

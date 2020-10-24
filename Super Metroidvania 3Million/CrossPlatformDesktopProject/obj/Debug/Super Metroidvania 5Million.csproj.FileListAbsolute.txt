@@ -495,3 +495,14 @@ C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million
 C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeBlueBlock.xnb
 C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeOrangeBlock.xnb
 C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\obj\Debug\Super Metroidvania 5Million.csprojAssemblyReference.cache
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\PipeOrangeBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\BushBlueBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\BushOrangeBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\StockBlueBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\StockOrangeBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\SwirlBlueBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\SwirlOrangeBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeBlueBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\Content\BlockSprites\TubeOrangeBlock.xnb
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.CodeAnalysisLog.xml
+C:\Users\Alex Nguyen\Desktop\Desktop\School\AU20\CSE 3902\Game1\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\bin\DesktopGL\AnyCPU\Debug\CrossPlatformDesktopProject.exe.lastcodeanalysissucceeded

@@ -47,6 +47,7 @@ namespace CrossPlatformDesktopProject
             Factory.LoadAllTextures(Content);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
+            ItemSpriteFactory.Instance.LoadAllTextures(Content);
             //AddSprite(Factory.CreateMapSprite());
             AddSprite(Factory.CreatePlayerSprite());
             keyboard = new KeyboardController(this);

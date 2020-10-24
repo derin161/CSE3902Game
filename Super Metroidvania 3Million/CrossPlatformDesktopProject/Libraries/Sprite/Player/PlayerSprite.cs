@@ -49,6 +49,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public int maxHealth = 100;
 
         public State currentState;
+        public Rectangle Space { get; set; }
         public Vector2 Location { get; set; }
         public bool ice { get; set; } //ice beam
         public bool wave { get; set; } //wave beam
@@ -544,6 +545,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
                     break;
 
             }
+        }
+
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
         }
 
     }

@@ -53,23 +53,74 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		}
 
 		//This method needs to be fixed once the separation of game objects and sprites is finished.
-		public List<ISprite> CreateItemSpriteList(Vector2 location)
+		public List<IGameObject> CreateItemSpriteList(Vector2 location)
 		{
-			List<ISprite> itemList = new List<ISprite>();
-			/*itemList.Add(new BombItem(bombItem, location));
-			itemList.Add(new EnergyDropItem(energyDropItem, location));
-			itemList.Add(new EnergyTankItem(energyTankItem, location));
-			itemList.Add(new HighJumpItem(highJumpItem, location));
-			itemList.Add(new IceBeamItem(iceBeamItem, location));
-			itemList.Add(new LongBeamItem(longBeamItem, location));
-			itemList.Add(new MissleRocketItem(missleRocketItem, location));
-			itemList.Add(new MorphBallItem(morphBallItem, location));
-			itemList.Add(new RocketDropItem(rocketDropItem, location));
-			itemList.Add(new ScrewAttackItem(screwAttackItem, location));
-			itemList.Add(new VariaItem(variaItem, location));
-			itemList.Add(new WaveBeamItem(waveBeamItem, location));*/
+			List<IGameObject> itemList = new List<IGameObject>();
+			itemList.Add(new BombItem(location));
+			itemList.Add(new EnergyDropItem(location));
+			itemList.Add(new EnergyTankItem(location));
+			itemList.Add(new HighJumpItem(location));
+			itemList.Add(new IceBeamItem(location));
+			itemList.Add(new LongBeamItem(location));
+			itemList.Add(new MissleRocketItem(location));
+			itemList.Add(new MorphBallItem(location));
+			itemList.Add(new RocketDropItem(location));
+			itemList.Add(new ScrewAttackItem(location));
+			itemList.Add(new VariaItem(location));
+			itemList.Add(new WaveBeamItem(location));
 
 			return itemList;
+		}
+
+		public ISprite BombItemSprite(BombItem b)
+		{
+			return new BombItemSprite(bombItem, b);
+		}
+
+		public ISprite EnergyDropItemSprite(EnergyDropItem ed)
+		{
+			return new EnergyDropItemSprite(energyDropItem, ed);
+		}
+
+		public ISprite EnergyTankItemSprite(EnergyTankItem et)
+		{
+			return new EnergyTankItemSprite(energyTankItem, et);
+		}
+		public ISprite HighJumpItemSprite(HighJumpItem h)
+		{
+			return new HighJumpItemSprite(highJumpItem, h);
+		}
+		public ISprite IceBeamItemSprite(IceBeamItem i)
+		{
+			return new IceBeamItemSprite(iceBeamItem, i);
+		}
+		public ISprite LongBeamItemSprite(LongBeamItem l)
+		{
+			return new LongBeamItemSprite(longBeamItem, l);
+		}
+		public ISprite MissleRocketItemSprite(MissleRocketItem mr)
+		{
+			return new MissleRocketItemSprite(missleRocketItem, mr);
+		}
+		public ISprite MorphBallItemSprite(MorphBallItem mb)
+		{
+			return new MorphBallItemSprite(morphBallItem, mb);
+		}
+		public ISprite RocketDropItemSprite(RocketDropItem r)
+		{
+			return new RocketDropItemSprite(rocketDropItem, r);
+		}
+		public ISprite ScrewAttackItemSprite(ScrewAttackItem s)
+		{
+			return new ScrewAttackItemSprite(screwAttackItem, s);
+		}
+		public ISprite VariaItemSprite(VariaItem v)
+		{
+			return new VariaItemSprite(variaItem, v);
+		}
+		public ISprite WaveBeamItemSprite(WaveBeamItem w)
+		{
+			return new WaveBeamItemSprite(waveBeamItem, w);
 		}
 	}
 }
