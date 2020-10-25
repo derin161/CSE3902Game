@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 {
-    class BlockSprite : BlockInterface
+    class BlockSprite : IBlock
     {
         private Texture2D Texture;
         private int xPos = 0;
