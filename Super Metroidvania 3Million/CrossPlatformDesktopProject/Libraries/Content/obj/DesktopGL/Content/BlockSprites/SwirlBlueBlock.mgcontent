@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/SwirlBlueBlock.png</SourceFile>
-  <SourceTime>2020-10-05T18:25:19.5142581-04:00</SourceTime>
-  <DestFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/BlockSprites/SwirlBlueBlock.xnb</DestFile>
-  <DestTime>2020-10-05T23:46:46.7266423-04:00</DestTime>
+  <SourceFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/SwirlBlueBlock.png</SourceFile>
+  <SourceTime>2020-10-19T10:54:37.0920528-04:00</SourceTime>
+  <DestFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/BlockSprites/SwirlBlueBlock.xnb</DestFile>
+  <DestTime>2020-10-23T18:08:31.749427-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -5,7 +5,6 @@ using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
@@ -65,35 +64,35 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         private void makeDict()     // If else of possible actions that updates choice
         {
-            PlayerSprite player = (PlayerSprite)gameState.SpriteList.ElementAt(1); // The player sprite
+            Player player = (Player)gameState.SpriteList.ElementAt(0); // The player sprite
 
-            ICommand up = new Jump(gameState, player);
-            ICommand down = new Crouch(gameState, player);
-            ICommand left = new MoveLeft(gameState, player);
-            ICommand right = new MoveRight(gameState, player);
-            ICommand attack = new ShootBeam(gameState, player);
-            ICommand missleOrBomb = new MissileOrBomb(gameState, player);
-            ICommand start = new Start(gameState);
-            ICommand select = new Select(gameState);
-            ICommand damage = new Damage(gameState, player);
+            ICommand up = new PlayerJumpCommand(gameState, player);
+            ICommand down = new CrouchCommand(gameState, player);
+            ICommand left = new PlayerMoveLeftCommand(gameState, player);
+            ICommand right = new PlayeroveRightCommand(gameState, player);
+            ICommand attack = new ShootBeamCommand(gameState, player);
+            ICommand missleOrBomb = new MissileOrBombCommand(gameState, player);
+            ICommand start = new StartCommand(gameState);
+            ICommand select = new SelectCommand(gameState);
+            ICommand damage = new PlayerDamageCommand(gameState, player);
 
             //enemies
-            ICommand nextEnemy = new NextEnemy(gameState);
-            ICommand previousEnemy = new PreviousEnemy(gameState);
+            ICommand nextEnemy = new NextEnemyCommand(gameState);
+            ICommand previousEnemy = new PreviousEnemyCommand(gameState);
 
             //Upgrade Toggles
-            ICommand iceToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Icebeam, player);
-            ICommand waveToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Wavebeam, player);
-            ICommand longToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Longbeam, player);
-            ICommand screwToggle = new UpgradeToggle(PlayerSprite.UpgradeType.Screw, player);
+            ICommand iceToggle = new UpgradeToggleCommand(Player.UpgradeType.Icebeam, player);
+            ICommand waveToggle = new UpgradeToggleCommand(Player.UpgradeType.Wavebeam, player);
+            ICommand longToggle = new UpgradeToggleCommand(Player.UpgradeType.Longbeam, player);
+            ICommand screwToggle = new UpgradeToggleCommand(Player.UpgradeType.Screw, player);
 
             //Items
-            ICommand nextItem = new NextItem(gameState);
-            ICommand previousItem = new PreviousItem(gameState);
+            ICommand nextItem = new NextItemCommand(gameState);
+            ICommand previousItem = new PreviousItemCommand(gameState);
 
             //Blocks
-            ICommand nextBlock = new NextBlock(gameState);
-            ICommand previousBlock = new PreviousBlock(gameState);
+            ICommand nextBlock = new NextBlockCommand(gameState);
+            ICommand previousBlock = new PreviousBlockCommand(gameState);
 
             //Upgrade Toggles
             RegisterCommand(Keys.D1, iceToggle);

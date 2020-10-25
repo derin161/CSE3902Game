@@ -1,10 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 {
@@ -13,7 +8,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         private Texture2D Texture;
         private int xPos = 0;
         private int yPos = 0;
-        private bool isDead = false;
+        public Rectangle Space { get; set; }
 
         public BlockSprite(Texture2D Texture, Vector2 location)
         {
@@ -42,6 +37,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
             return false;
         }
 
-        
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
+        }
     }
 }
