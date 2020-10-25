@@ -1,22 +1,17 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Sprite;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.Map;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-	public class SpriteFactory : IFactory
+    public class SpriteFactory
 	{
 		//Enemies
 		private Texture2D geega;
@@ -177,23 +172,23 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		//...
 	}
 
-		public ISprite CreatePlayerSprite()
+		public IGameObject CreatePlayerSprite()
 		{
-			return (ISprite) new PlayerSprite(playerTextures, playerFonts);
+			return new Player(playerTextures, playerFonts);
 		}
 
-		public List<ISprite> CreateEnemySpriteList(Vector2 location, Game1 game)
+		public List<IGameObject> CreateEnemySpriteList(Vector2 location, Game1 game)
 		{
-			List<ISprite> enemyList = new List<ISprite>();
-			enemyList.Add(new Zeela(zeela, location));
-			enemyList.Add(new Skree(skree, location));
-			enemyList.Add(new SideHopper(sideHopper, location));
-			enemyList.Add(new ReverseSideHopper(sideHopper, location));
-			enemyList.Add(new Ripper(ripper, location));
-			enemyList.Add(new Memu(memu, location));
-			enemyList.Add(new Geega(geega, location));
-			enemyList.Add(new VerticalZeela(zeela, location));
-			enemyList.Add(new Kraid(kraid, location, game));
+			List<IGameObject> enemyList = new List<IGameObject>();
+			enemyList.Add(new Zeela(location));
+			enemyList.Add(new Skree(location));
+			enemyList.Add(new SideHopper(location));
+			enemyList.Add(new ReverseSideHopper(location));
+			enemyList.Add(new Ripper(location));
+			enemyList.Add(new Memu(location));
+			enemyList.Add(new Geega(location));
+			enemyList.Add(new VerticalZeela(location));
+			enemyList.Add(new Kraid(location, game));
 
 			return enemyList;
 		}
@@ -203,28 +198,28 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			//return new EnemySprite(enemySpritesheet, level.ColorTheme);
 		} */
 
-		public List<ISprite> CreateItemSpriteList(Vector2 location)
+		public List<IGameObject> CreateItemSpriteList(Vector2 location)
 		{
-			List<ISprite> itemList = new List<ISprite>();
-			itemList.Add(new BombItem(bombItem, location));
-			itemList.Add(new EnergyDropItem(energyDropItem, location));
-			itemList.Add(new EnergyTankItem(energyTankItem, location));
-			itemList.Add(new HighJumpItem(highJumpItem, location));
-			itemList.Add(new IceBeamItem(iceBeamItem, location));
-			itemList.Add(new LongBeamItem(longBeamItem, location));
-			itemList.Add(new MissleRocketItem(missleRocketItem, location));
-			itemList.Add(new MorphBallItem(morphBallItem, location));
-			itemList.Add(new RocketDropItem(rocketDropItem, location));
-			itemList.Add(new ScrewAttackItem(screwAttackItem, location));
-			itemList.Add(new VariaItem(variaItem, location));
-			itemList.Add(new WaveBeamItem(waveBeamItem, location));
+			List<IGameObject> itemList = new List<IGameObject>();
+			itemList.Add(new BombItem(location));
+			itemList.Add(new EnergyDropItem(location));
+			itemList.Add(new EnergyTankItem(location));
+			itemList.Add(new HighJumpItem(location));
+			itemList.Add(new IceBeamItem(location));
+			itemList.Add(new LongBeamItem(location));
+			itemList.Add(new MissleRocketItem(location));
+			itemList.Add(new MorphBallItem(location));
+			itemList.Add(new RocketDropItem(location));
+			itemList.Add(new ScrewAttackItem(location));
+			itemList.Add(new VariaItem(location));
+			itemList.Add(new WaveBeamItem(location));
 
 			return itemList;
 		}
 
-		public List<ISprite> CreateBlockSpriteList(Vector2 location)
+		public List<IGameObject> CreateBlockSpriteList(Vector2 location)
 		{
-			List<ISprite> blockList = new List<ISprite>();
+			List<IGameObject> blockList = new List<IGameObject>();
 			blockList.Add(new BlockSprite(stockBlockBlue, location));
 			blockList.Add(new BlockSprite(bushBlockBlue, location));
 			blockList.Add(new BlockSprite(swirlBlockBlue, location));
@@ -237,47 +232,49 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return blockList;
 		}
 
+
 		public ISprite CreateMapSprite()
         {
 			return new MapSprite(map);
         }
 
-		public ISprite CreateBomb(Vector2 location)
+		public IGameObject CreateBomb(Vector2 location)
 		{
 
-			return new Bomb(bombTex, location);
+			return new Bomb(location);
 		}
 
-		public ISprite CreateMissileRocket(Vector2 location, Vector2 direction)
+		/*public IGameObject CreateMissileRocket(Vector2 location, Vector2 direction)
 		{
 
 			return new MissleRocket(missileRocketTex, location, direction);
 		}
 
-		public ISprite CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public IGameObject CreatePowerBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(powerBeamTex, location, direction, isLongBeam, false);
 		}
 
-		public ISprite CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
+		public IGameObject CreateIceBeam(Vector2 location, Vector2 direction, bool isLongBeam)
 		{
 			return new PowerBeam(iceBeamTex, location, direction, isLongBeam, true);
 		}
 
-		public ISprite CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
+		
+		public IGameObject CreateWaveBeam(Vector2 location, Vector2 direction, bool isLongBeam, bool isIceBeam)
 		{
 			return new WaveBeam(waveBeamTex, location, direction, isLongBeam, isIceBeam);
 		}
-
-		public ISprite CreateKraidHorn(Vector2 location, bool isMovingRight)
+		
+		public IGameObject CreateKraidHorn(Vector2 location, bool isMovingRight)
 		{
 			return new KraidHorn(kraidHornTex, location, isMovingRight);
 		}
 
-		public ISprite CreateKraidMissile(Vector2 location, Vector2 direction)
+		public IGameObject CreateKraidMissile(Vector2 location, Vector2 direction)
 		{
 			return new KraidMissile(kraidMissileTex, location, direction);
-		}
+		}*/
 
 		// More public ISprite returning methods follow
 		// ...

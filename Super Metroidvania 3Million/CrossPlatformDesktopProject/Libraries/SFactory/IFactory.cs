@@ -1,14 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrossPlatformDesktopProject.Libraries.Sprite;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
+	//we might wanna get rid of this
     public interface IFactory
     {
         //Constructor
