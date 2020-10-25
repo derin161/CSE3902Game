@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Nyigel Spann
-    interface IEnemy : IGameObject
+    public interface IEnemy : IGameObject
     {
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 {
-    interface IBlock : IGameObject
+    public interface IBlock : IGameObject
     {
 
     }

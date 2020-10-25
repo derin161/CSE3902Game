@@ -15,7 +15,6 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         private List<IEnemy> enemyList = new List<IEnemy>();
         private List<IBlock> blockList = new List<IBlock>();
         private List<IItem> itemList = new List<IItem>();
-        private List<IGameObject> deadList = new List<IGameObject>(); //List for keeping dead objects that need to be removed.
         private Player player;
 
         private static GameObjectContainer instance = new GameObjectContainer();
@@ -28,7 +27,25 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             }
         }
 
-        private GameObjectContainer()
+        public List<IProjectile> ProjectileList
+        {
+            get{ return projectileList; }
+        }
+        public List<IBlock> BlockList
+        {
+            get{ return blockList; }
+        }
+        public List<IItem> ItemList
+        {
+            get { return itemList; }
+            
+        }
+        public List<IEnemy> EnemyList
+        {
+            get { return enemyList; }
+        }
+
+        private GameObjectContainer() //private constructor for singleton
         {
         }
 
@@ -39,22 +56,67 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public void Add(IProjectile projectile) {
             projectileList.Add(projectile);
         }
+
+        public void Add(IEnemy enemy)
+        {
+            enemyList.Add(enemy);
+        }
+
+        public void Add(IBlock block)
+        {
+            blockList.Add(block);
+        }
+
+        public void Add(IItem item)
+        {
+            itemList.Add(item);
+        }
+
         public void Update(GameTime gametime) {
-            foreach (IGameObject e in objList) {
-                e.Update(gametime);
-            }
+            player.Update(gametime);
+
+            /* Casting the lists to objects then to IGameObject lists to make them IGameObject lists for the updateList method. 
+             * Taken from: https://stackoverflow.com/questions/1917844/how-to-cast-listobject-to-listmyclass/1920865 */
+            updateList((List<IGameObject>) (object) projectileList, gametime);
+            updateList((List<IGameObject>) (object) enemyList, gametime);
+            updateList((List<IGameObject>) (object) blockList, gametime);
+            updateList((List<IGameObject>) (object) itemList, gametime);
         }
 
         public void Draw(SpriteBatch sb)
         {
-            foreach (IGameObject e in objList)
+            player.Draw(sb);
+            foreach (IProjectile p in projectileList)
+            {
+                p.Draw(sb);
+            }
+            foreach (IEnemy e in enemyList)
             {
                 e.Draw(sb);
             }
+            foreach (IItem i in itemList)
+            {
+                i.Draw(sb);
+            }
+            foreach (IBlock b in blockList)
+            {
+                b.Draw(sb);
+            }
         }
 
-        public List<IGameObject> GetList() {
-            return objList;
+        private void updateList(List<IGameObject> goList, GameTime gt)
+        {
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < goList.Count; i++)
+            {
+                goList[i].Update(gt);
+                if (goList[i].IsDead())
+                {
+                    goList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
         }
+
     }
 }
