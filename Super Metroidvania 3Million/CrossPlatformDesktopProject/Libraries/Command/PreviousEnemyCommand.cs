@@ -3,11 +3,11 @@
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Will Floyd
-    class PreviousEnemy : ICommand
+    class PreviousEnemyCommand : ICommand
 	{
 		private Game1 game;
 
-		public PreviousEnemy(Game1 game)
+		public PreviousEnemyCommand(Game1 game)
 		{
 			this.game = game;
 		}

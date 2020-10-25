@@ -70,7 +70,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
         public ISprite CreatePlayerSprite()
         {
-            return (ISprite)new PlayerSprite(playerTextures, playerFonts);
+            return (ISprite)new Player(playerTextures, playerFonts);
         }
 
 

@@ -3,12 +3,12 @@
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Shyamal Shah
-    public class Jump : ICommand
+    public class PlayerJumpCommand : ICommand
     {
-        private PlayerSprite samus;
+        private Player samus;
         private Game1 game;
 
-        public Jump(Game1 game, PlayerSprite player)
+        public PlayerJumpCommand(Game1 game, Player player)
         {
             samus = player;
             this.game = game;
@@ -17,9 +17,9 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         {
             if (!samus.jumpDisabled){
                 if (samus.jumpFrames == 10){
-                    samus.UpdateState(PlayerSprite.State.Jump, 0, samus.facingRight);
+                    samus.UpdateState(Player.State.Jump, 0, samus.facingRight);
                 }else {
-                    samus.UpdateState(PlayerSprite.State.Jump, samus.jumpFrames, samus.facingRight);
+                    samus.UpdateState(Player.State.Jump, samus.jumpFrames, samus.facingRight);
                 }
             }
 

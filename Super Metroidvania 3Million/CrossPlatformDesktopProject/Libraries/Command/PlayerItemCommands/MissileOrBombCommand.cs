@@ -4,18 +4,18 @@ using System.Collections.Generic;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class MissileOrBomb : ICommand
+    class MissileOrBombCommand : ICommand
     {
         private ICommand missile;
         private ICommand bomb;
-        private PlayerSprite samus;
-        private List<PlayerSprite.State> bombStates = new List<PlayerSprite.State> { PlayerSprite.State.Crouch, PlayerSprite.State.Jump };
-        private List<PlayerSprite.State> missileStates = new List<PlayerSprite.State> { PlayerSprite.State.MoveLeft, PlayerSprite.State.MoveRight, PlayerSprite.State.Idle };
+        private Player samus;
+        private List<Player.State> bombStates = new List<Player.State> { Player.State.Crouch, Player.State.Jump };
+        private List<Player.State> missileStates = new List<Player.State> { Player.State.MoveLeft, Player.State.MoveRight, Player.State.Idle };
 
         //This should probably be changed at some point, but this class essentially just redirects to ShootMissleRocket or DropBomb depending on the player's state.
-        public MissileOrBomb(Game1 game, PlayerSprite player) {
-            missile = new ShootMissileRocket(game, player);
-            bomb = new DropBomb(game, player);
+        public MissileOrBombCommand(Game1 game, Player player) {
+            missile = new ShootMissileRocketCommand(game, player);
+            bomb = new DropBombCommand(game, player);
             samus = player;
         }
         public void Execute()

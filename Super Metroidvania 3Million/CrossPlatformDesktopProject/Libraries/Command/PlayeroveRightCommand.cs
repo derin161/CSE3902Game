@@ -4,12 +4,12 @@ using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Shyamal Shah
-    class MoveRight : ICommand
+    class PlayeroveRightCommand : ICommand
     {
-        private PlayerSprite samus;
+        private Player samus;
         private Game1 game;
 
-        public MoveRight(Game1 game, PlayerSprite player)
+        public PlayeroveRightCommand(Game1 game, Player player)
         {
             samus = player;
             this.game = game;
@@ -17,12 +17,12 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         public void Execute()
         {
             if (!samus.moveDisabled){
-                if (samus.currentState == PlayerSprite.State.Jump){
+                if (samus.currentState == Player.State.Jump){
                     samus.Location = new Vector2(samus.Location.X + 20, samus.Location.Y);
                 }else if (samus.moveRightFrames == 7){
-                    samus.UpdateState(PlayerSprite.State.MoveRight, -1, true);
+                    samus.UpdateState(Player.State.MoveRight, -1, true);
                 }else {
-                    samus.UpdateState(PlayerSprite.State.MoveRight, samus.moveRightFrames, true);
+                    samus.UpdateState(Player.State.MoveRight, samus.moveRightFrames, true);
                 }
             }
         }

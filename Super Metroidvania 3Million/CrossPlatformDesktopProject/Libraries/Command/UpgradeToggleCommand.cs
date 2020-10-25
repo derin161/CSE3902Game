@@ -2,12 +2,12 @@
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-    class UpgradeToggle : ICommand
+    class UpgradeToggleCommand : ICommand
     {
 
-        private PlayerSprite.UpgradeType type;
-        private PlayerSprite samus;
-        public UpgradeToggle(PlayerSprite.UpgradeType type, PlayerSprite samus) {
+        private Player.UpgradeType type;
+        private Player samus;
+        public UpgradeToggleCommand(Player.UpgradeType type, Player samus) {
             this.type = type;
             this.samus = samus;
         }

@@ -5,13 +5,13 @@ using Microsoft.Xna.Framework;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class ShootMissileRocket : ICommand
+    class ShootMissileRocketCommand : ICommand
     {
-        private PlayerSprite samus;
+        private Player samus;
         private float speed = 7;
         Game1 game;
 
-        public ShootMissileRocket(Game1 game, PlayerSprite player) {
+        public ShootMissileRocketCommand(Game1 game, Player player) {
             this.game = game;
             samus = player;
         }

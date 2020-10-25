@@ -3,12 +3,12 @@
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Shyamal Shah
-    public class Crouch : ICommand
+    public class CrouchCommand : ICommand
     {
-        private PlayerSprite samus;
+        private Player samus;
         private Game1 game;
 
-        public Crouch(Game1 game, PlayerSprite player)
+        public CrouchCommand(Game1 game, Player player)
         {
             samus = player;
             this.game = game;
@@ -17,9 +17,9 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         {
             if (!samus.crouchDisabled){
                 if (samus.crouchFrames == 4){
-                    samus.UpdateState(PlayerSprite.State.Crouch, -1, samus.facingRight);
+                    samus.UpdateState(Player.State.Crouch, -1, samus.facingRight);
                 }else {
-                    samus.UpdateState(PlayerSprite.State.Crouch, samus.crouchFrames, samus.facingRight);
+                    samus.UpdateState(Player.State.Crouch, samus.crouchFrames, samus.facingRight);
                 }
             }
 

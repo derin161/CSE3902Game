@@ -3,10 +3,11 @@ using System.Linq;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-    class PreviousBlock : ICommand
+    public class NextBlockCommand : ICommand
     {
 		private Game1 game;
-		public PreviousBlock(Game1 game)
+
+		public NextBlockCommand(Game1 game)
 		{
 			this.game = game;
 		}
@@ -17,19 +18,20 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 			foreach (List<ISprite> entry in game.blockSpriteListIndexes.Keys.ToList())
 			{
 				game.blockSpriteListIndexes.TryGetValue(entry, out result);
-				if (result == 1)
-				{
-					game.blockSpriteListIndexes[entry] = entry.Count() - 1;
+				if (result == entry.Count() - 2)
+                {
+					game.blockSpriteListIndexes[entry] = 0;
 				}
-				else if (result == 0)
-				{
-					game.blockSpriteListIndexes[entry] = entry.Count() - 2;
+				else if (result == entry.Count() - 1)
+                {
+					game.blockSpriteListIndexes[entry] = 1;
 				}
-				else
-				{
-					game.blockSpriteListIndexes[entry] -= 2;
+                else
+                {
+					game.blockSpriteListIndexes[entry] += 2;
 				}
 			}
+
 		}
 	}
 }

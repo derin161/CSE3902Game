@@ -5,12 +5,12 @@ using Microsoft.Xna.Framework;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class DropBomb : ICommand
+    class DropBombCommand : ICommand
     {
-        private PlayerSprite samus;
+        private Player samus;
         Game1 game;
 
-        public DropBomb(Game1 game, PlayerSprite player) {
+        public DropBombCommand(Game1 game, Player player) {
             this.game = game;
             samus = player;
         }

@@ -6,14 +6,14 @@ using System.Collections.Generic;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class ShootBeam : ICommand
+    class ShootBeamCommand : ICommand
     {
-        private PlayerSprite samus;
+        private Player samus;
         private Game1 game;
         private float speed = 7;
-        private List<PlayerSprite.State> bannedStates = new List<PlayerSprite.State> { PlayerSprite.State.Crouch, PlayerSprite.State.Jump};
+        private List<Player.State> bannedStates = new List<Player.State> { Player.State.Crouch, Player.State.Jump};
 
-        public ShootBeam(Game1 game, PlayerSprite player) {
+        public ShootBeamCommand(Game1 game, Player player) {
             samus = player;
             this.game = game;
         }
@@ -22,7 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
             if (!bannedStates.Contains(samus.currentState))
             {
                 Vector2 direction = new Vector2(speed, 0);
-                samus.currentState = PlayerSprite.State.Attack;
+                samus.currentState = Player.State.Attack;
                 samus.idleFrames = 0;
                 Vector2 location = new Vector2(samus.Location.X + 46, samus.Location.Y + 18);
 

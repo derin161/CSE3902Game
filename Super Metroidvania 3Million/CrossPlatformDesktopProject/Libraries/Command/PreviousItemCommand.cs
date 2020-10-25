@@ -2,10 +2,10 @@
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-    class PreviousItem : ICommand
+    class PreviousItemCommand : ICommand
     {
 		private Game1 game;
-		public PreviousItem(Game1 game)
+		public PreviousItemCommand(Game1 game)
 		{
 			this.game = game;
 		}

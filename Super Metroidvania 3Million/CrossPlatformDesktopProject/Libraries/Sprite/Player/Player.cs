@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 {
-    public class PlayerSprite : IPlayer
+    public class Player : IPlayer
     {
         public enum State
         {
@@ -97,7 +97,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public bool damageDisabled = false;
         public bool screw = false;
 
-        public PlayerSprite(List<Texture2D> texture, List<SpriteFont> font)
+        public Player(List<Texture2D> texture, List<SpriteFont> font)
         {
             currentState = State.Idle;
             facingRight = true;
