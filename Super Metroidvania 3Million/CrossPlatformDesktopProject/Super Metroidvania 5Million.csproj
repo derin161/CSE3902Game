@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
+    <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamageEnemyCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAimUpCommand.cs" />
@@ -54,7 +55,7 @@
     <Compile Include="Libraries\Command\PlayerInputCommands\CycleBeamMissileCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAttackCommand.cs" />
     <Compile Include="Libraries\Command\UnusedCommands\PreviousBlockCommand.cs" />
-    <Compile Include="Libraries\Command\UpgradeToggleCommand.cs" />
+    <Compile Include="Libraries\Command\PlayerGiveItemCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerCurlUpCommand.cs" />
     <Compile Include="Libraries\Command\EnemyDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerJumpCommand.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Libraries\Sprite\Blocks\TubeBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Blocks\VerticalTubeStoneBlock.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Geega.cs" />
+    <Compile Include="Libraries\Sprite\Enemies\Game Objects\EnemyStateMachine.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\ReverseSideHopper.cs" />

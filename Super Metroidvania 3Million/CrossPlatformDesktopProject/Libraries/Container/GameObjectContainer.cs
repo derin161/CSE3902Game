@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         private List<IEnemy> enemyList = new List<IEnemy>();
         private List<IBlock> blockList = new List<IBlock>();
         private List<IItem> itemList = new List<IItem>();
-        private Player player;
+        private IPlayer player;
 
         private static GameObjectContainer instance = new GameObjectContainer();
 

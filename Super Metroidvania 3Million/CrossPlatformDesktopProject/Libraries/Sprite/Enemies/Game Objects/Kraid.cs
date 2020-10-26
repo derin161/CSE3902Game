@@ -1,4 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -15,6 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private Game1 game;
         private float x, y;
         public Rectangle Space;
+        private bool isDead;
 
         public Kraid(Vector2 l, Game1 g)
         {
@@ -59,18 +62,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public Boolean IsDead()
         {
-            return false;
+            return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
         }
 
         private void throwHorns()
         {
-            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidHorn(new Vector2(x, y), true));
+            GameObjectContainer.Instance.Add(new KraidHorn(new Vector2(x, y), true));
         }
 
         private void shootMissiles()
         {
             int speed = 7;
-            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
+            GameObjectContainer.Instance.Add(new KraidMissile(new Vector2(x+23, y+38), new Vector2(speed, 0)));
         }
 
 

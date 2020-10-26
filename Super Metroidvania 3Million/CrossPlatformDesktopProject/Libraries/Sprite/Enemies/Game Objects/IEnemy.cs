@@ -6,5 +6,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     //Author: Nyigel Spann
     public interface IEnemy : IGameObject
     {
+        //public void Freeze();
     }
 }
