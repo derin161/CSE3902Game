@@ -14,10 +14,10 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
 		public void Execute() 
 		{
-			int result;
+			/*int result;
 			foreach (List<ISprite> entry in game.blockSpriteListIndexes.Keys.ToList())
 			{
-				/*game.blockSpriteListIndexes.TryGetValue(entry, out result);
+				game.blockSpriteListIndexes.TryGetValue(entry, out result);
 				if (result == entry.Count() - 2)
                 {
 					game.blockSpriteListIndexes[entry] = 0;

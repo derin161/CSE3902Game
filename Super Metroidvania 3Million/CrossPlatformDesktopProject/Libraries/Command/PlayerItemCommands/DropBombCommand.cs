@@ -18,7 +18,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         {
             Vector2 location = new Vector2(samus.Location.X + 30, samus.Location.Y + 50);
 
-            //if(samus is in morph form)
             game.AddSprite(ProjectilesGOFactory.Instance.CreateBomb(location));
 
         }

@@ -13,7 +13,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private float speed = 7;
         private List<Player.State> bannedStates = new List<Player.State> { Player.State.Crouch, Player.State.Jump};
 
-        public ShootBeamCommand(Game1 game, Player player) {
+        public ShootBeamCommand(Game1 game, IPlayer player) {
             samus = player;
             this.game = game;
         }
