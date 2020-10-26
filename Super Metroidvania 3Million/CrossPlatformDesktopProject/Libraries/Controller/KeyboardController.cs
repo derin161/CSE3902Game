@@ -74,7 +74,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand missleOrBomb = new CycleBeamMissileCommand(player);
             ICommand start = new StartCommand(gameState);
             ICommand select = new SelectCommand(gameState);
-            ICommand damage = new PlayerDamageCommand(gameState, player);
+            ICommand damage = new EnemyDamagePlayerCommand(gameState, player);
 
             //Upgrade Toggles
             ICommand iceToggle = new UpgradeToggleCommand(Player.UpgradeType.Icebeam, player);
