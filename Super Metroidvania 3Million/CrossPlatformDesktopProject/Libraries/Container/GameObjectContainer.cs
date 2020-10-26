@@ -44,6 +44,10 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         {
             get { return enemyList; }
         }
+        public Player Player
+        {
+            get { return player; }
+        }
 
         private GameObjectContainer() //private constructor for singleton
         {
