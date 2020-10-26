@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 
 namespace CrossPlatformDesktopProject.Libraries.Command

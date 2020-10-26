@@ -67,5 +67,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             stateMachine.MoveDown();
         }
+        public void ToggleFrozen()
+        {
+            stateMachine.ToggleFrozen();
+        }
     }
 }

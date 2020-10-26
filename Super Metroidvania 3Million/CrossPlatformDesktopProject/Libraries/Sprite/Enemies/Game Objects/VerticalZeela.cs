@@ -20,8 +20,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite = EnemySpriteFactory.Instance.VerticalZeelaSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 3;
-            vertSpeed = 0;
+            horizSpeed = 0;
+            vertSpeed = 3;
         }
 
         public void Update(GameTime gameTime)
@@ -66,6 +66,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void MoveDown()
         {
             stateMachine.MoveDown();
+        }
+        public void ToggleFrozen()
+        {
+            stateMachine.ToggleFrozen();
         }
     }
 }
