@@ -9,7 +9,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
 	/*Author: Shyamal Shah*/
-	public class LeftIdleStateSamus : IPlayerState 
+	public class LeftIdleSamusState : IPlayerState 
 	{
 		private Samus samus;
 		private ISprite sprite;
