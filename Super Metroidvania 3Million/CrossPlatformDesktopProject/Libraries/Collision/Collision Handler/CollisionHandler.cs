@@ -4,6 +4,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
+using CrossPlatformDesktopProject.Libraries.Command;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
@@ -14,9 +15,9 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         }
 
-        public void PlayerEnemyCollision(IPlayer player, IGameObject enemy)
+        public void PlayerEnemyCollision(IPlayer player, IEnemy enemy)
         {
-            //Do amount of damage spcified by enemy to player
+            new EnemyDamagePlayerCommand(player, enemy).Execute();
         }
 
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
@@ -28,8 +29,9 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
         {
-            //Do damage specifiied by the projectile to the player
-            //This method should only be called for Kraid's projectiles, no other enemies have any
+            if (projectile is KraidHorn || projectile is KraidMissile) { //Only kraid projectiles deal damage to the player.
+                new ProjectileDamagePlayerCommand(player, projectile).Execute();
+            }
         }
 
         public void EnemyBlockCollision(IEnemy enemy, IBlock block, Rectangle collisionZone)
@@ -47,7 +49,11 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void ProjectileEnemyCollision(IProjectile projectile, IEnemy enemy)
         {
-            //Do amount of damage to enemies specified by the projectile 
+            //Cast so we can then determine is it's an ice beam or not, casting will succeed if the first statement is true.
+            if (projectile is PowerBeam && ((PowerBeam)projectile).IsIceBeam) { 
+                    new EnemyFreezeCommand(enemy).Execute();
+            }
+            new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
         }
 
         public void PlayerItemCollision(IPlayer player, IItem item)
