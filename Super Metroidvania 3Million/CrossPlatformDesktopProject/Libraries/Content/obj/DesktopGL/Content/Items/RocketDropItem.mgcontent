@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Items/RocketDropItem.png</SourceFile>
-  <SourceTime>2020-10-05T22:58:59.6118662-04:00</SourceTime>
-  <DestFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/Items/RocketDropItem.xnb</DestFile>
-  <DestTime>2020-10-26T02:39:54.008447-04:00</DestTime>
+  <SourceFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Items/RocketDropItem.png</SourceFile>
+  <SourceTime>2020-10-05T22:25:58.8849583-04:00</SourceTime>
+  <DestFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/Items/RocketDropItem.xnb</DestFile>
+  <DestTime>2020-10-26T14:10:10.5889238-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
