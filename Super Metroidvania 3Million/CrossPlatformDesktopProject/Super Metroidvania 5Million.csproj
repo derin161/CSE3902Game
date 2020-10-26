@@ -229,6 +229,7 @@
     <Compile Include="Libraries\States\IState.cs" />
     <Compile Include="Libraries\States\PlayerStates\IPlayerState.cs" />
     <Compile Include="Libraries\States\PlayerStates\PlayerState.cs" />
+    <Compile Include="Libraries\XML\XmlManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Libraries\Controller\IController.cs" />
