@@ -2,36 +2,32 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class Zeela : IEnemy
     {
-
+        public Rectangle Space { get; set; }
         private ISprite sprite;
-        private float x, y, initialX;
-        private int direction;
         private bool isDead;
-        public Rectangle Space;
+        private EnemyStateMachine stateMachine;
+        private int horizSpeed, vertSpeed;
+
+
         public Zeela(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.ZeelaSprite(this);
-            x = location.X;
-            initialX = location.X;
-            y = location.Y;
-            direction = 1;
+            stateMachine = new EnemyStateMachine(location);
+            horizSpeed = 3;
+            vertSpeed = 0;
         }
 
         public void Update(GameTime gameTime)
         {
-            //Move horizontally back and forth across the screen
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
-            {
-                direction *= -1;
-            }
-            Space = new Rectangle((int)x, (int)y, 32, 32);
+            stateMachine.Update(horizSpeed, vertSpeed);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
             sprite.Update(gameTime);
         }
 
@@ -55,7 +51,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             isDead = true;
         }
 
-
-
+        public void MoveLeft()
+        {
+            stateMachine.MoveLeft();
+        }
+        public void MoveRight()
+        {
+            stateMachine.MoveRight();
+        }
+        public void MoveUp()
+        {
+            stateMachine.MoveUp();
+        }
+        public void MoveDown()
+        {
+            stateMachine.MoveDown();
+        }
     }
 }

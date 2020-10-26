@@ -3,41 +3,42 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Diagnostics;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class SideHopper : IEnemy
     {
-
+        public Rectangle Space { get; set; }
         private ISprite sprite;
-        public Rectangle Space;
-        private float x, y, initialX, initialY;
         private bool isDead;
+        private EnemyStateMachine stateMachine;
+        private int horizSpeed, vertSpeed;
+
+
         public SideHopper(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.SideHopperSprite(this);
-            x = location.X;
-            y = location.Y;
-            initialX = location.X;
-            initialY = location.Y;
+            stateMachine = new EnemyStateMachine(location);
+            horizSpeed = 3;
+            vertSpeed = 0;
         }
 
         public void Update(GameTime gameTime)
         {
-            Space = new Rectangle((int)x, (int)y, 48, 52);
+            stateMachine.Update(horizSpeed, vertSpeed);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
             sprite.Update(gameTime);
         }
 
+        public Rectangle SpaceRectangle()
+        {
+            return Space;
+        }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             sprite.Draw(spriteBatch);
-        }
-        public Rectangle SpaceRectangle()
-        {
-            return Space;
         }
 
         public Boolean IsDead()
@@ -50,11 +51,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             isDead = true;
         }
 
-        public void Jump(int count, int direction)
+        public void MoveLeft()
         {
-            y = (count * count) - 20 * count + initialY;
-            x += direction;
+            stateMachine.MoveLeft();
         }
-
+        public void MoveRight()
+        {
+            stateMachine.MoveRight();
+        }
+        public void MoveUp()
+        {
+            stateMachine.MoveUp();
+        }
+        public void MoveDown()
+        {
+            stateMachine.MoveDown();
+        }
     }
 }

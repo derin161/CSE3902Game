@@ -6,9 +6,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
     class MissleRocketItemSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        private MissleRocketItem missleRocketItem;
+        private MissileRocketItem missleRocketItem;
 
-        public MissleRocketItemSprite(Texture2D texture, MissleRocketItem m)
+        public MissleRocketItemSprite(Texture2D texture, MissileRocketItem m)
         {
             Texture = texture;
             missleRocketItem = m;
