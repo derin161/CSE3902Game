@@ -61,5 +61,12 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 			return blockList;
 		}
+
+		public ISprite CreateStockBlockBlueSprite(StockBlockBlue block)
+        {
+			return new StockBlockBlueSprite(stockBlockBlue, block);
+        }
+
+
 	}
 }

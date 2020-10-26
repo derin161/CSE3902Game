@@ -8,7 +8,7 @@ using System.Diagnostics;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Memu : IGameObject
+    class Memu : IEnemy
     {
 
         private ISprite sprite;

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class EnergyDropItem : IGameObject
+    class EnergyDropItem : IItem
     {
         private ISprite sprite;
         private float xLoc = 0;

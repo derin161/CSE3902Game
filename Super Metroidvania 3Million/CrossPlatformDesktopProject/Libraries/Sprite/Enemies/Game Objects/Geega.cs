@@ -7,7 +7,7 @@ using System.Diagnostics;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Geega : IGameObject
+    class Geega : IEnemy
     {
         private ISprite sprite;
         private float x, y;

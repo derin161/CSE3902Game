@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class ReverseSideHopper : IGameObject
+    class ReverseSideHopper : IEnemy
     {
 
         private ISprite sprite;

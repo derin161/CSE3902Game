@@ -6,7 +6,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Ripper : IGameObject
+    class Ripper : IEnemy
     {
 
         private ISprite sprite;

@@ -18,7 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public KraidMissile(Vector2 initialLocation, Vector2 direction)
         {
             // Need to set actual damage values at some point
-            Damage = 0;
+            Damage = 20;
             Location = initialLocation;
             Direction = direction;
             Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
@@ -49,6 +49,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Rectangle SpaceRectangle()
         {
             return Space;
+        }
+
+        public int GetDamage()
+        {
+            return Damage;
         }
 
         public bool IsDead() {
