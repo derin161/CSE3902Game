@@ -69,7 +69,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand up = new PlayerJumpCommand(gameState, player);
             ICommand down = new CrouchCommand(gameState, player);
             ICommand left = new PlayerMoveLeftCommand(gameState, player);
-            ICommand right = new PlayeroveRightCommand(gameState, player);
+            ICommand right = new PlayerMoveRightCommand(gameState, player);
             ICommand attack = new ShootBeamCommand(gameState, player);
             ICommand missleOrBomb = new MissileOrBombCommand(gameState, player);
             ICommand start = new StartCommand(gameState);

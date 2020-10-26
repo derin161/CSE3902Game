@@ -7,17 +7,17 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
 		private Game1 game;
 
-		public NextBlockCommand(Game1 game)
+		public NextBlockCommand(Game1 game)//Unused
 		{
 			this.game = game;
 		}
 
-		public void Execute()
+		public void Execute() 
 		{
 			int result;
 			foreach (List<ISprite> entry in game.blockSpriteListIndexes.Keys.ToList())
 			{
-				game.blockSpriteListIndexes.TryGetValue(entry, out result);
+				/*game.blockSpriteListIndexes.TryGetValue(entry, out result);
 				if (result == entry.Count() - 2)
                 {
 					game.blockSpriteListIndexes[entry] = 0;
@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
                 else
                 {
 					game.blockSpriteListIndexes[entry] += 2;
-				}
+				}*/
 			}
 
 		}

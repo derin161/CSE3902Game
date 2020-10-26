@@ -6,14 +6,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     class PreviousBlockCommand : ICommand
     {
 		private Game1 game;
-		public PreviousBlockCommand(Game1 game)
+		public PreviousBlockCommand(Game1 game) //Unused
 		{
 			this.game = game;
 		}
 
 		public void Execute()
 		{
-			int result;
+			/*int result;
 			foreach (List<ISprite> entry in game.blockSpriteListIndexes.Keys.ToList())
 			{
 				game.blockSpriteListIndexes.TryGetValue(entry, out result);
@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 				{
 					game.blockSpriteListIndexes[entry] -= 2;
 				}
-			}
+			}*/
 		}
 	}
 }

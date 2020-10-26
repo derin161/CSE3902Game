@@ -4,12 +4,12 @@ using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Shyamal Shah
-    class PlayeroveRightCommand : ICommand
+    class PlayerMoveRightCommand : ICommand
     {
         private Player samus;
         private Game1 game;
 
-        public PlayeroveRightCommand(Game1 game, Player player)
+        public PlayerMoveRightCommand(Game1 game, Player player)
         {
             samus = player;
             this.game = game;
