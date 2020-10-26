@@ -17,6 +17,9 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerEnemyCollision(IPlayer player, IGameObject enemy)
         {
             //Do amount of damage spcified by enemy to player
+
+
+            //player.TakeDamage(enemy.GetDamage());
         }
 
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
@@ -30,6 +33,9 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         {
             //Do damage specifiied by the projectile to the player
             //This method should only be called for Kraid's projectiles, no other enemies have any
+
+
+            //player.TakeDamage(projectile.GetDamage());
         }
 
         public void EnemyBlockCollision(IEnemy enemy, IBlock block, Rectangle collisionZone)
@@ -43,16 +49,26 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void ProjectileBlockCollision(IProjectile projectile, IBlock block)
         {
             //Kill the projectile
+
+
+            //projectile.Kill();
         }
 
         public void ProjectileEnemyCollision(IProjectile projectile, IEnemy enemy)
         {
-            //Do amount of damage to enemies specified by the projectile 
+            //Do amount of damage to enemies specified by the projectile
+            //kill the projectile
+
+
+            //enemy.TakeDamage(projectile.GetDamage());
+            //projectile.Kill();
         }
 
         public void PlayerItemCollision(IPlayer player, IItem item)
         {
             //Give player the corresponding upgrade or give them more energy or missiles
+
+
         }
     }
 }
