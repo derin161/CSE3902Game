@@ -4,13 +4,14 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class MissleRocketItem : IItem
+    class MissileRocketItem : IItem
     {
+        private bool isDead = false;
         private ISprite sprite;
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
 
-        public MissleRocketItem(Vector2 initialLocation)
+        public MissileRocketItem(Vector2 initialLocation)
         {
             sprite = ItemSpriteFactory.Instance.MissleRocketItemSprite(this);
             Location = initialLocation;
@@ -30,7 +31,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         public bool IsDead()
         {
-            return false;
+            return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
         }
 
         public Rectangle SpaceRectangle()

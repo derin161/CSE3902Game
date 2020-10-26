@@ -14,7 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            this.player.CurlUp();
+            this.player.Morph();
         }
     }
 }

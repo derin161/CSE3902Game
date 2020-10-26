@@ -2,43 +2,39 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class VerticalZeela : IEnemy
     {
-
+        public Rectangle Space { get; set; }
         private ISprite sprite;
-        private float x, y, initialY;
-        private int direction;
         private bool isDead;
-        public Rectangle Space;
+        private EnemyStateMachine stateMachine;
+        private int horizSpeed, vertSpeed;
+
+
         public VerticalZeela(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.VerticalZeelaSprite(this);
-            x = location.X;
-            initialY = location.Y;
-            y = location.Y;
-            direction = 1;
+            stateMachine = new EnemyStateMachine(location);
+            horizSpeed = 0;
+            vertSpeed = 3;
         }
 
         public void Update(GameTime gameTime)
         {
-            //Move up and down
-            y += direction;
-            if (Math.Abs(y - initialY) > 100)
-            {
-                direction *= -1;
-            }
-            Space = new Rectangle((int)x, (int)y, 32, 32);
+            stateMachine.Update(horizSpeed, vertSpeed);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
             sprite.Update(gameTime);
         }
+
         public Rectangle SpaceRectangle()
         {
             return Space;
         }
-
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -55,7 +51,25 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             isDead = true;
         }
 
-
-
+        public void MoveLeft()
+        {
+            stateMachine.MoveLeft();
+        }
+        public void MoveRight()
+        {
+            stateMachine.MoveRight();
+        }
+        public void MoveUp()
+        {
+            stateMachine.MoveUp();
+        }
+        public void MoveDown()
+        {
+            stateMachine.MoveDown();
+        }
+        public void ToggleFrozen()
+        {
+            stateMachine.ToggleFrozen();
+        }
     }
 }

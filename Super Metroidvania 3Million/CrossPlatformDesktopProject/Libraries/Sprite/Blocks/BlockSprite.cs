@@ -37,6 +37,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
             return false;
         }
 
+        public void Kill()
+        {
+            isDead = true;
+        }
+
         public Rectangle SpaceRectangle()
         {
             return Space;

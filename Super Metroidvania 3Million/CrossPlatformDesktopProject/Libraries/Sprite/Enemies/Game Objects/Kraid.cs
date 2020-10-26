@@ -14,17 +14,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private ISprite sprite;
         private int msBetweenAttack = 500;
         private int msUntilAttack = 500;
-        private Game1 game;
         private float x, y;
         public Rectangle Space;
         private bool isDead;
+        private EnemyStateMachine stateMachine;
+        private int horizSpeed, vertSpeed;
 
-        public Kraid(Vector2 l, Game1 g)
+        public Kraid(Vector2 location)
         {
-            sprite = EnemySpriteFactory.Instance.KraidSprite(this, game);
-            game = g;
-            x = l.X;
-            y = l.Y;
+            sprite = EnemySpriteFactory.Instance.KraidSprite(this);
+            stateMachine = new EnemyStateMachine(location);
+            horizSpeed = 1;
+            vertSpeed = 0;
         }
 
         public void Update(GameTime gameTime)
@@ -68,6 +69,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
+        }
+
+        public void MoveLeft()
+        {
+            stateMachine.MoveLeft();
+        }
+        public void MoveRight()
+        {
+            stateMachine.MoveRight();
+        }
+        public void MoveUp()
+        {
+            stateMachine.MoveUp();
+        }
+        public void MoveDown()
+        {
+            stateMachine.MoveDown();
         }
 
         private void throwHorns()

@@ -78,7 +78,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new LongBeamItemSprite(longBeamItem, l);
 		}
-		public ISprite MissleRocketItemSprite(MissleRocketItem mr)
+		public ISprite MissleRocketItemSprite(MissileRocketItem mr)
 		{
 			return new MissleRocketItemSprite(missleRocketItem, mr);
 		}

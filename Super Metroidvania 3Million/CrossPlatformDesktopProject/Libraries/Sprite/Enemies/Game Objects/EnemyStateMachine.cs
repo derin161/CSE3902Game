@@ -34,9 +34,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             movingUp = false;
         }
-        public void Frozen()
+        public void changeDirection()
         {
-            frozen = true;
+            //All enemies go only horiz or vert so changing both in one method should be fine
+            movingLeft = !movingLeft;
+            movingUp = !movingUp;
+        }
+        public void ToggleFrozen()
+        {
+            frozen = !frozen;
         }
         public void Update(int horizSpeed, int vertSpeed)
         {
