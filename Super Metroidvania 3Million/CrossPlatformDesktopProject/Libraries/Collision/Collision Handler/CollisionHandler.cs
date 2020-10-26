@@ -45,8 +45,6 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void ProjectileBlockCollision(IProjectile projectile, IBlock block)
         {
             //Kill the projectile
-
-
             projectile.Kill();
         }
 
@@ -62,9 +60,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void PlayerItemCollision(IPlayer player, IItem item)
         {
-            //Give player the corresponding upgrade or give them more energy or missiles
-
-            //player.upgrade(item)
+            switch (item.)
         }
     }
 }
