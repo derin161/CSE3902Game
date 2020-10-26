@@ -29,8 +29,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
                 else
                 {
 					game.blockSpriteListIndexes[entry] += 2;
-				}*/
-			}
+				}
+			}*/
 
 		}
 	}

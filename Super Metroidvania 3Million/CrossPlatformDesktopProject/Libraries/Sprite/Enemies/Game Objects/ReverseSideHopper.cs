@@ -14,6 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private ISprite sprite;
         public Rectangle Space;
         private float x, y, initialX, initialY;
+        private bool isDead;
         public ReverseSideHopper(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.ReverseSideHopperSprite(this);
@@ -42,7 +43,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public Boolean IsDead()
         {
-            return false;
+            return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
         }
 
         public void Jump(int count, int direction)
