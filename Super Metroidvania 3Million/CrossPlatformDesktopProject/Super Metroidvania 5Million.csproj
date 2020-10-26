@@ -300,6 +300,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="Libraries\Levels\StartingLevel.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Code Reviews\Sprint2\Code Quality\AlexQualityReviewWill.txt" />
