@@ -77,8 +77,10 @@
     <Compile Include="Libraries\SFactory\PlayerSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ProjectilesSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\EnemySpriteFactory.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\BlockSprites\StockBlockBlueSprite.cs" />
     <Compile Include="Libraries\Sprite\Blocks\IBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprite.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\StockBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Geega.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Ripper.cs" />
