@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/Map.png</SourceFile>
-  <SourceTime>2020-10-19T10:54:37.0950449-04:00</SourceTime>
-  <DestFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/ProjSprites/Map.xnb</DestFile>
-  <DestTime>2020-10-25T20:21:54.4472095-04:00</DestTime>
+  <SourceFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/Map.png</SourceFile>
+  <SourceTime>2020-10-05T18:15:47.4451568-04:00</SourceTime>
+  <DestFile>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/ProjSprites/Map.xnb</DestFile>
+  <DestTime>2020-10-25T22:25:24.8521839-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
