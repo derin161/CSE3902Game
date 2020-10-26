@@ -229,9 +229,6 @@
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PreBoomBombSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\WaveBeamSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\WaveBeam.cs" />
-    <Compile Include="Libraries\States\IState.cs" />
-    <Compile Include="Libraries\States\PlayerStates\IPlayerState.cs" />
-    <Compile Include="Libraries\States\PlayerStates\PlayerState.cs" />
     <Compile Include="Libraries\XML\XmlManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,7 +237,6 @@
     <Compile Include="Libraries\SFactory\IFactory.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Sprites\GeegaSprite.cs" />
     <Compile Include="Libraries\Sprite\ISprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\Player.cs" />
     <Compile Include="Libraries\Sprite\Player\IPlayer.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\IProjectile.cs" />
   </ItemGroup>
@@ -325,6 +321,7 @@
     <Folder Include="Libraries\Sprite\Player\PlayerSprites\" />
     <Folder Include="Libraries\States\EnemyStates\" />
     <Folder Include="Libraries\States\ObjectStates\" />
+    <Folder Include="Libraries\States\PlayerStates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

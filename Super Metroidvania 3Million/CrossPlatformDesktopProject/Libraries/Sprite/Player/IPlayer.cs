@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using CrossPlatformDesktopProject.Libraries.Sprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
