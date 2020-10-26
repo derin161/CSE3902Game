@@ -28,6 +28,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void Draw(SpriteBatch spriteBatch);
         public void Upgrade(IItem item);
         public void TakeDamage(int damage);
+        public void CycleBeamMissile();
 
     }
 }
