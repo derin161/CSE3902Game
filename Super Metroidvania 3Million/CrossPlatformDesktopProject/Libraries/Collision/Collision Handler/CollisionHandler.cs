@@ -60,7 +60,8 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void PlayerItemCollision(IPlayer player, IItem item)
         {
-            switch (item.)
+            new PlayerGiveItemCommand(item, player).Execute();
+            item.Kill();
         }
     }
 }
