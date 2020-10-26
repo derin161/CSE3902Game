@@ -47,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new GeegaSprite(geega, g);
 		}
 
-		public ISprite KraidSprite(Kraid k, Game1 game)
+		public ISprite KraidSprite(Kraid k)
 		{
 			return new KraidSprite(kraid, k);
 		}
