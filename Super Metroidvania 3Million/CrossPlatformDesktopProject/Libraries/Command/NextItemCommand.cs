@@ -6,13 +6,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
 		private Game1 game;
 
-		public NextItemCommand(Game1 game)
+		public NextItemCommand(Game1 game)//Unused
 		{
 			this.game = game;
 		}
 
 		public void Execute()
 		{
+			/*
 			if (game.itemIndex == game.itemSprites.Count() - 1)
 			{
 				game.itemIndex = 0;
@@ -20,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 			else
 			{
 				game.itemIndex += 1;
-			}
+			}*/
 		}
 	}
 }

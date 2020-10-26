@@ -55,7 +55,7 @@
     <Compile Include="Libraries\Command\PlayerDamageCommand.cs" />
     <Compile Include="Libraries\Command\PlayerJumpCommand.cs" />
     <Compile Include="Libraries\Command\PlayerMoveLeftCommand.cs" />
-    <Compile Include="Libraries\Command\PlayeroveRightCommand.cs" />
+    <Compile Include="Libraries\Command\PlayerMoveRightCommand.cs" />
     <Compile Include="Libraries\Command\NextItemCommand.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\DropBombCommand.cs" />
     <Compile Include="Libraries\Command\PlayerItemCommands\ShootMissileRocketCommand.cs" />

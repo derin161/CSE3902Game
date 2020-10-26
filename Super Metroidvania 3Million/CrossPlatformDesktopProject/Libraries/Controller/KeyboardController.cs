@@ -5,6 +5,7 @@ using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
+using CrossPlatformDesktopProject.Libraries.Container;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
@@ -64,12 +65,12 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         private void makeDict()     // If else of possible actions that updates choice
         {
-            Player player = (Player)gameState.SpriteList.ElementAt(0); // The player sprite
+            IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
             ICommand up = new PlayerJumpCommand(gameState, player);
             ICommand down = new CrouchCommand(gameState, player);
             ICommand left = new PlayerMoveLeftCommand(gameState, player);
-            ICommand right = new PlayeroveRightCommand(gameState, player);
+            ICommand right = new PlayerMoveRightCommand(gameState, player);
             ICommand attack = new ShootBeamCommand(gameState, player);
             ICommand missleOrBomb = new MissileOrBombCommand(gameState, player);
             ICommand start = new StartCommand(gameState);
