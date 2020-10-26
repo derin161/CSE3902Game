@@ -3,19 +3,20 @@ using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Shyamal Shah
+    //Author: Nyigel Spann
     class PlayerMoveLeftCommand : ICommand
     {
-        private Player samus;
-        private Game1 game;
+        private IPlayer player;
 
-        public PlayerMoveLeftCommand(Game1 game, Player player)
+        public PlayerMoveLeftCommand(IPlayer player)
         {
-            samus = player;
-            this.game = game;
+            /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
+            this.player = player; 
         }
         public void Execute()
         {
+            player.MoveLeft();
+            /* This logic needs to moved into the player.
             if (!samus.moveDisabled){
                 if (samus.currentState == Player.State.Jump){
                     samus.Location = new Vector2(samus.Location.X - 20, samus.Location.Y);
@@ -24,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
                 }else {
                     samus.UpdateState(Player.State.MoveLeft, samus.moveLeftFrames, false);
                 }
-            }
+            }*/
 
         }
     }

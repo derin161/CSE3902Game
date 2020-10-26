@@ -14,16 +14,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 
         public void DamageAnimation(SpriteBatch spriteBatch);
         public void IdleAnimation(SpriteBatch spriteBatch);*/
-
-        public void SpecialAttack(); //Shoot beam or set bomb.
-        public void ShootBeamMissile(); //Shoots active beam missile device.
+        public void Attack(); //Shoots active beam missile device or places bomb.
         public void CycleBeamMissile(); //Cycles between ice/power beam, wave beam, or missile rocket.
         public void Jump();
         public void CurlUp();
         public void MoveRight();
         public void MoveLeft();
         public void AimUp();
-        public void TakeDamage();
+        public void TakeDamage(int damage);
+        public void Upgrade(Player.UpgradeType type);
 
     }
 }
