@@ -20,7 +20,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 srcRec = new Rectangle(9, 12, 8, 8); //Texture2 before boom
             }
-            spriteBatch.Draw(texture, bomb.Space, srcRec, Color.White);
+            //The bomb before exploding has an empty space, so cannot use it's space for destination rectangle.
+            spriteBatch.Draw(texture, new Rectangle((int) bomb.Location.X, (int) bomb.Location.Y, 8, 8), srcRec, Color.White);
         }
         public void Update(GameTime gameTime)
         {

@@ -53,7 +53,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         {
         }
 
-        public void RegisterPlayer(Player p) {
+        public void RegisterPlayer(IPlayer p) {
             player = p;
         }
 
@@ -106,6 +106,14 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             {
                 b.Draw(sb);
             }
+        }
+
+        public void Clear() {
+            player = null;
+            projectileList = new List<IProjectile>();
+            enemyList = new List<IEnemy>();
+            itemList = new List<IItem>();
+            blockList = new List<IBlock>();
         }
 
         private void updateList(List<IGameObject> goList, GameTime gt)

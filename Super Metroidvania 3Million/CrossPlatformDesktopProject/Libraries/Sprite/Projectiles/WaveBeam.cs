@@ -25,11 +25,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             // Need to set actual damage values at some point
             if (isLongBeam)
             {
-                Damage = 1;
+                Damage = 40;
             }
             else
             {
-                Damage = 0;
+                Damage = 30;
             }
 
             isHorizontal = (int) direction.Y == 0;
@@ -91,6 +91,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
             sprite.Update(gameTime);
+        }
+
+        public int GetDamage() {
+            return Damage;
         }
 
         public Rectangle SpaceRectangle()
