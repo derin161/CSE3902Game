@@ -55,5 +55,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         {
             return isDead;
         }
+
+        public void Kill()
+        {
+            isDead = true;
+        }
     }
 }

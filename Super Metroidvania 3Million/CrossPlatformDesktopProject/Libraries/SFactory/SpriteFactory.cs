@@ -207,7 +207,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			itemList.Add(new HighJumpItem(location));
 			itemList.Add(new IceBeamItem(location));
 			itemList.Add(new LongBeamItem(location));
-			itemList.Add(new MissleRocketItem(location));
+			itemList.Add(new MissileRocketItem(location));
 			itemList.Add(new MorphBallItem(location));
 			itemList.Add(new RocketDropItem(location));
 			itemList.Add(new ScrewAttackItem(location));

@@ -6,6 +6,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
     class ScrewAttackItem : IItem
     {
+        private bool isDead = false;
         private ISprite sprite;
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
@@ -30,7 +31,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         public bool IsDead()
         {
-            return false;
+            return isDead;
+        }
+        public void Kill()
+        {
+            isDead = true;
         }
 
         public Rectangle SpaceRectangle()
