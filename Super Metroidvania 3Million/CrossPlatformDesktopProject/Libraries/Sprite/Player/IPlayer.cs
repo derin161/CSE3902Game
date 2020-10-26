@@ -1,10 +1,11 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+using CrossPlatformDesktopProject.Libraries.Sprite;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
+namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
     public interface IPlayer : IGameObject
     {
+        /*Author: Shyamal Shah*/
         /* I don't think we need any of these -Nyigel
         public void JumpAnimation(SpriteBatch spriteBatch);
         public void CrouchAnimation(SpriteBatch spriteBatch);
@@ -16,14 +17,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public void DamageAnimation(SpriteBatch spriteBatch);
         public void IdleAnimation(SpriteBatch spriteBatch);*/
         public void Attack(); //Shoots active beam missile device or places bomb.
-        public void CycleBeamMissile(); //Cycles between ice/power beam, wave beam, or missile rocket.
         public void Jump();
-        public void CurlUp();
+        public void Morph();
         public void MoveRight();
         public void MoveLeft();
         public void AimUp();
-        public void TakeDamage(int damage);
+        public void Update(GameTime gameTime);
+        public void Draw(SpriteBatch spriteBatch);
         public void Upgrade(IItem item);
+        public void TakeDamage(int damage);
 
     }
 }

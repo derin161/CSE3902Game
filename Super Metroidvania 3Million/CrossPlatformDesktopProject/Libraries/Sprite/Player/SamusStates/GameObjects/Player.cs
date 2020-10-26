@@ -4,8 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
+namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
+    /*Author: Shyamal Shah*/
     public class Player : IPlayer
     {
         public enum State

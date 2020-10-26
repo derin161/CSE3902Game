@@ -37,6 +37,7 @@ namespace CrossPlatformDesktopProject
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
+            PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             GameObjectContainer.Instance.RegisterPlayer((IPlayer) SpriteFactory.Instance.CreatePlayerSprite());
             keyboard = new KeyboardController(this);
         }
