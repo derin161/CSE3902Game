@@ -6,7 +6,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Kraid : IGameObject
+    class Kraid : IEnemy
     {
 
         private ISprite sprite;

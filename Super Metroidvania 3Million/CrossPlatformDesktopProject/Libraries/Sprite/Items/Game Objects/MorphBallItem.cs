@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class MorphBallItem : IGameObject
+    class MorphBallItem : IItem
     {
         private ISprite sprite;
         private float xLoc = 0;

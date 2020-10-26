@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class IceBeamItem : IGameObject
+    class IceBeamItem : IItem
     {
         private ISprite sprite;
         private float xLoc = 0;

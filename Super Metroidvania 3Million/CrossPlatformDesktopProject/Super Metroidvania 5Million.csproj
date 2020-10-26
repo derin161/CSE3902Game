@@ -68,7 +68,6 @@
     <Compile Include="Libraries\Command\SelectCommand.cs" />
     <Compile Include="Libraries\Command\StartCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
-    <Compile Include="Libraries\Container\IContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\Controller\MouseController.cs" />
     <Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
@@ -78,11 +77,10 @@
     <Compile Include="Libraries\SFactory\PlayerSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ProjectilesSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\EnemySpriteFactory.cs" />
-    <Compile Include="Libraries\Sprite\Blocks\BlockSprites\StockBlockBlueSprite.cs" />
-    <Compile Include="Libraries\Sprite\Blocks\StockBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Blocks\IBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Geega.cs" />
+    <Compile Include="Libraries\Sprite\Enemies\Game Objects\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\ReverseSideHopper.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Zeela.cs" />
@@ -100,6 +98,7 @@
     <Compile Include="Libraries\Sprite\Enemies\Sprites\RipperSprite.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Sprites\MemuSprite.cs" />
     <Compile Include="Libraries\Sprite\IGameObject.cs" />
+    <Compile Include="Libraries\Sprite\Items\Game Objects\IItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\BombItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\EnergyDropItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\EnergyTankItemSprite.cs" />

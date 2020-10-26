@@ -11,7 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public int Damage { get; set; }
         public Rectangle Space { get; set; }
 
-        ISprite sprite;
+        private ISprite sprite;
         private bool isMovingRight;
         private Vector2 initialLocation;
         private bool isDead = false;

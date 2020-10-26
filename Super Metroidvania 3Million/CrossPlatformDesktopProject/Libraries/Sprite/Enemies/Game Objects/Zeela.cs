@@ -6,7 +6,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class Zeela : IGameObject
+    class Zeela : IEnemy
     {
 
         private ISprite sprite;
