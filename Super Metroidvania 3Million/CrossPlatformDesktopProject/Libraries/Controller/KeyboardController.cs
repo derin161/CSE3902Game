@@ -67,19 +67,14 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
-            ICommand up = new PlayerJumpCommand(gameState, player);
-            ICommand down = new CrouchCommand(gameState, player);
-            ICommand left = new PlayerMoveLeftCommand(gameState, player);
-            ICommand right = new PlayerMoveRightCommand(gameState, player);
-            ICommand attack = new ShootBeamCommand(gameState, player);
-            ICommand missleOrBomb = new MissileOrBombCommand(gameState, player);
+            ICommand up = new PlayerJumpCommand(player);
+            ICommand down = new PlayerAimUpCommand(player);
+            ICommand left = new PlayerMoveLeftCommand(player);
+            ICommand right = new PlayerMoveRightCommand(player);
+            ICommand missleOrBomb = new CycleBeamMissileCommand(player);
             ICommand start = new StartCommand(gameState);
             ICommand select = new SelectCommand(gameState);
             ICommand damage = new PlayerDamageCommand(gameState, player);
-
-            //enemies
-            ICommand nextEnemy = new NextEnemyCommand(gameState);
-            ICommand previousEnemy = new PreviousEnemyCommand(gameState);
 
             //Upgrade Toggles
             ICommand iceToggle = new UpgradeToggleCommand(Player.UpgradeType.Icebeam, player);
@@ -87,13 +82,6 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand longToggle = new UpgradeToggleCommand(Player.UpgradeType.Longbeam, player);
             ICommand screwToggle = new UpgradeToggleCommand(Player.UpgradeType.Screw, player);
 
-            //Items
-            ICommand nextItem = new NextItemCommand(gameState);
-            ICommand previousItem = new PreviousItemCommand(gameState);
-
-            //Blocks
-            ICommand nextBlock = new NextBlockCommand(gameState);
-            ICommand previousBlock = new PreviousBlockCommand(gameState);
 
             //Upgrade Toggles
             RegisterCommand(Keys.D1, iceToggle);
@@ -118,27 +106,12 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             RegisterCommand(Keys.D, right);
             RegisterCommand(Keys.Right, right);
- 
-            RegisterCommand(Keys.Z, attack);
-            RegisterCommand(Keys.N, attack);
-
-            RegisterCommand(Keys.O, previousEnemy);
-            RegisterCommand(Keys.P, nextEnemy);
-
-            RegisterCommand(Keys.U, previousItem);
-            RegisterCommand(Keys.I, nextItem);
-
-            //RegisterCommand(Keys.X, special);
-            //RegisterCommand(Keys.M, special);
 
             RegisterCommand(Keys.Q, start);
 
             RegisterCommand(Keys.R, select);
 
             RegisterCommand(Keys.E, damage);
-
-            RegisterCommand(Keys.T, previousBlock);
-            RegisterCommand(Keys.Y, nextBlock);
 
 
         }

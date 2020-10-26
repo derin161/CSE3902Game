@@ -3,19 +3,20 @@ using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
-    //Author: Shyamal Shah
+    //Author: Nyigel Spann
     class PlayerMoveRightCommand : ICommand
     {
-        private Player samus;
-        private Game1 game;
+        private IPlayer player;
 
-        public PlayerMoveRightCommand(Game1 game, Player player)
+        public PlayerMoveRightCommand(IPlayer player)
         {
-            samus = player;
-            this.game = game;
+            /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
+            this.player = player;
         }
         public void Execute()
         {
+            player.MoveRight();
+            /* This logic needs to be moved into the player class
             if (!samus.moveDisabled){
                 if (samus.currentState == Player.State.Jump){
                     samus.Location = new Vector2(samus.Location.X + 20, samus.Location.Y);
@@ -24,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
                 }else {
                     samus.UpdateState(Player.State.MoveRight, samus.moveRightFrames, true);
                 }
-            }
+            }*/
         }
     }
 }
