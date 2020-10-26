@@ -25,7 +25,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
             Location = initialLocation;
             Space = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
             sprite = BlockSpriteFactory.Instance.CreateStockBlockBlueSprite(this);
-
         }
 
         public void Draw(SpriteBatch spriteBatch)

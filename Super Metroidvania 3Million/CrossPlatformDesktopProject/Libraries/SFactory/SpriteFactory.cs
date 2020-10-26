@@ -67,7 +67,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D map;
 
 		//Blocks
-		private Texture2D stockBlockBlue;
+		private Texture2D BushBlockBlue;
 		private Texture2D bushBlockBlue;
 		private Texture2D tubeBlockBlue;
 		private Texture2D swirlBlockBlue;
@@ -159,7 +159,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			map = content.Load<Texture2D>("ProjSprites/Map");
 
 			//Blocks
-			stockBlockBlue = content.Load<Texture2D>("BlockSprites/StockBlueBlock");
+			BushBlockBlue = content.Load<Texture2D>("BlockSprites/StockBlueBlock");
 			bushBlockBlue = content.Load<Texture2D>("BlockSprites/BushBlueBlock");
 			tubeBlockBlue = content.Load<Texture2D>("BlockSprites/TubeBlueBlock");
 			swirlBlockBlue = content.Load<Texture2D>("BlockSprites/SwirlBlueBlock");
@@ -220,7 +220,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public List<IGameObject> CreateBlockSpriteList(Vector2 location)
 		{
 			List<IGameObject> blockList = new List<IGameObject>();
-			blockList.Add(new BlockSprite(stockBlockBlue, location));
+			blockList.Add(new BlockSprite(BushBlockBlue, location));
 			blockList.Add(new BlockSprite(bushBlockBlue, location));
 			blockList.Add(new BlockSprite(swirlBlockBlue, location));
 			blockList.Add(new BlockSprite(tubeBlockBlue, location));
