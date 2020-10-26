@@ -64,5 +64,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public bool IsDead() {
             return isDead;
         }
+
+        public void Kill()
+        {
+            isDead = true;
+        }
     }
 }
