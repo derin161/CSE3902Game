@@ -1,27 +1,26 @@
 ﻿using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Threading;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
     class MorphBallItem : IItem
     {
+        private bool isDead = false;
         private ISprite sprite;
-        private float xLoc = 0;
-        private float yLoc = 0;
+        public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
 
         public MorphBallItem(Vector2 initialLocation)
         {
             sprite = ItemSpriteFactory.Instance.MorphBallItemSprite(this);
-            xLoc = initialLocation.X;
-            yLoc = initialLocation.Y;
+            Location = initialLocation;
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
         }
 
         public void Update(GameTime gameTime)
         {
-            Space = new Rectangle((int)xLoc, (int)yLoc, 16, 16);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, Space.Width, Space.Height);
             sprite.Update(gameTime);
         }
 
@@ -32,7 +31,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         public bool IsDead()
         {
-            return false;
+            return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
         }
 
         public Rectangle SpaceRectangle()

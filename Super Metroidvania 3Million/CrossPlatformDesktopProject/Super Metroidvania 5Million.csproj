@@ -47,23 +47,26 @@
   <ItemGroup>
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
+    <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
+    <Compile Include="Libraries\Command\ProjectileDamageEnemyCommand.cs" />
+    <Compile Include="Libraries\Command\ProjectileDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAimUpCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerInputCommands\UnusedCommands\NextBlockCommand.cs" />
+    <Compile Include="Libraries\Command\UnusedCommands\NextBlockCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\CycleBeamMissileCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAttackCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerInputCommands\UnusedCommands\PreviousBlockCommand.cs" />
-    <Compile Include="Libraries\Command\UpgradeToggleCommand.cs" />
+    <Compile Include="Libraries\Command\UnusedCommands\PreviousBlockCommand.cs" />
+    <Compile Include="Libraries\Command\PlayerGiveItemCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerCurlUpCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerDamageCommand.cs" />
+    <Compile Include="Libraries\Command\EnemyDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerJumpCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveLeftCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveRightCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerInputCommands\UnusedCommands\NextItemCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerInputCommands\UnusedCommands\PreviousEnemyCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerInputCommands\UnusedCommands\NextEnemyCommand.cs" />
+    <Compile Include="Libraries\Command\UnusedCommands\NextItemCommand.cs" />
+    <Compile Include="Libraries\Command\UnusedCommands\PreviousEnemyCommand.cs" />
+    <Compile Include="Libraries\Command\UnusedCommands\NextEnemyCommand.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Libraries\Command\PlayerInputCommands\UnusedCommands\PreviousItemCommand.cs" />
+    <Compile Include="Libraries\Command\UnusedCommands\PreviousItemCommand.cs" />
     <Compile Include="Libraries\Command\SelectCommand.cs" />
     <Compile Include="Libraries\Command\StartCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
@@ -165,6 +168,7 @@
     <Compile Include="Libraries\Sprite\Blocks\TubeBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Blocks\VerticalTubeStoneBlock.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Geega.cs" />
+    <Compile Include="Libraries\Sprite\Enemies\Game Objects\EnemyStateMachine.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\ReverseSideHopper.cs" />
@@ -193,7 +197,7 @@
     <Compile Include="Libraries\Sprite\Items\Game Objects\HighJumpItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\IceBeamItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\LongBeamItem.cs" />
-    <Compile Include="Libraries\Sprite\Items\Game Objects\MissleRocketItem.cs" />
+    <Compile Include="Libraries\Sprite\Items\Game Objects\MissileRocketItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\MorphBallItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\RocketDropItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\ScrewAttackItem.cs" />
@@ -210,7 +214,7 @@
     <Compile Include="Libraries\Sprite\Items\Sprites\WaveBeamItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
     <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\Samus.cs" />
+    <Compile Include="Libraries\Sprite\Player\PlayerInventory.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketExplosionSprite.cs" />
@@ -228,6 +232,7 @@
     <Compile Include="Libraries\States\IState.cs" />
     <Compile Include="Libraries\States\PlayerStates\IPlayerState.cs" />
     <Compile Include="Libraries\States\PlayerStates\PlayerState.cs" />
+    <Compile Include="Libraries\XML\XmlManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Libraries\Controller\IController.cs" />
@@ -298,6 +303,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="Libraries\Levels\StartingLevel.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Code Reviews\Sprint2\Code Quality\AlexQualityReviewWill.txt" />

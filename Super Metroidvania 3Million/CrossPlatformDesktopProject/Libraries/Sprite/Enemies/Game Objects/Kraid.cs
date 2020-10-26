@@ -1,4 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -12,16 +14,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private ISprite sprite;
         private int msBetweenAttack = 500;
         private int msUntilAttack = 500;
-        private Game1 game;
         private float x, y;
         public Rectangle Space;
+        private bool isDead;
+        private EnemyStateMachine stateMachine;
+        private int horizSpeed, vertSpeed;
 
-        public Kraid(Vector2 l, Game1 g)
+        public Kraid(Vector2 location)
         {
-            sprite = EnemySpriteFactory.Instance.KraidSprite(this, game);
-            game = g;
-            x = l.X;
-            y = l.Y;
+            sprite = EnemySpriteFactory.Instance.KraidSprite(this);
+            stateMachine = new EnemyStateMachine(location);
+            horizSpeed = 1;
+            vertSpeed = 0;
         }
 
         public void Update(GameTime gameTime)
@@ -59,18 +63,40 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public Boolean IsDead()
         {
-            return false;
+            return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
+        }
+
+        public void MoveLeft()
+        {
+            stateMachine.MoveLeft();
+        }
+        public void MoveRight()
+        {
+            stateMachine.MoveRight();
+        }
+        public void MoveUp()
+        {
+            stateMachine.MoveUp();
+        }
+        public void MoveDown()
+        {
+            stateMachine.MoveDown();
         }
 
         private void throwHorns()
         {
-            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidHorn(new Vector2(x, y), true));
+            GameObjectContainer.Instance.Add(new KraidHorn(new Vector2(x, y), true));
         }
 
         private void shootMissiles()
         {
             int speed = 7;
-            game.AddSprite(ProjectilesGOFactory.Instance.CreateKraidMissile(new Vector2(x + 23, y + 38), new Vector2(speed, 0)));
+            GameObjectContainer.Instance.Add(new KraidMissile(new Vector2(x+23, y+38), new Vector2(speed, 0)));
         }
 
 

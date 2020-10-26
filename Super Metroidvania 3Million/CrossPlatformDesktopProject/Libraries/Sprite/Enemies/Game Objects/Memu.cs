@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Configuration;
 using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
@@ -10,37 +9,26 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     //Author: Will Floyd
     class Memu : IEnemy
     {
-
+        public Rectangle Space { get; set; }
         private ISprite sprite;
-        private float x, y, initialX;
-        private int direction;
-        public Rectangle Space;
+        private bool isDead;
+        private EnemyStateMachine stateMachine;
+        private int horizSpeed, vertSpeed;
+
+
         public Memu(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.MemuSprite(this);
-            x = location.X;
-            y = location.Y;
-            initialX = location.X;
-            direction = 1;
+            stateMachine = new EnemyStateMachine(location);
+            horizSpeed = 3;
+            vertSpeed = 0;
         }
 
         public void Update(GameTime gameTime)
         {
-            //move back and forth in x direction
-            x += direction;
-            if (Math.Abs(x - initialX) > 100)
-            {
-                direction *= -1;
-            }
-
-            Space = new Rectangle((int)x, (int)y, 32, 16);
+            stateMachine.Update(horizSpeed, vertSpeed);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
             sprite.Update(gameTime);
-        }
-
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            sprite.Draw(spriteBatch);
         }
 
         public Rectangle SpaceRectangle()
@@ -48,12 +36,36 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             return Space;
         }
 
-        public Boolean IsDead()
+        public void Draw(SpriteBatch spriteBatch)
         {
-            return false;
+            sprite.Draw(spriteBatch);
         }
 
+        public Boolean IsDead()
+        {
+            return isDead;
+        }
 
+        public void Kill()
+        {
+            isDead = true;
+        }
 
+        public void MoveLeft()
+        {
+            stateMachine.MoveLeft();
+        }
+        public void MoveRight()
+        {
+            stateMachine.MoveRight();
+        }
+        public void MoveUp()
+        {
+            stateMachine.MoveUp();
+        }
+        public void MoveDown()
+        {
+            stateMachine.MoveDown();
+        }
     }
 }
