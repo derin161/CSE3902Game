@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;

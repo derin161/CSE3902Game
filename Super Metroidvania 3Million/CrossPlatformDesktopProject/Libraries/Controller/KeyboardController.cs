@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;

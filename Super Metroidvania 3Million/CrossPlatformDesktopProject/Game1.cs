@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject
 {

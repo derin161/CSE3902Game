@@ -1,7 +1,7 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
