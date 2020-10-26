@@ -68,7 +68,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         {
             //Give player the corresponding upgrade or give them more energy or missiles
 
-
+            //player.upgrade(item)
         }
     }
 }
