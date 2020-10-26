@@ -3,7 +3,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
-    public interface IPlayer : IGameObject
+    public interface IPlayerState
     {
         /*Author: Shyamal Shah*/
         /* I don't think we need any of these -Nyigel
@@ -24,8 +24,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void AimUp();
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
-        public void Upgrade(IItem item);
-        public void TakeDamage(int damage);
 
     }
 }
