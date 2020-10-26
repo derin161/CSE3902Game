@@ -21,7 +21,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         public void Update(GameTime gameTime)
         {
-
+            Space = new Rectangle((int)xLoc, (int)yLoc, 16, 16);
+            sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
