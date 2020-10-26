@@ -23,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
             int height = Texture.Height;
 
             Rectangle sourceRectangle = new Rectangle(0, 0, width, height);
-            Rectangle destinationRectangle = new Rectangle(400 - Texture.Width/2, 240-Texture.Height/2, width, height);
+            Rectangle destinationRectangle = new Rectangle(400 - Texture.Width/2, 400 - Texture.Height/2, width, height);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);;
         }

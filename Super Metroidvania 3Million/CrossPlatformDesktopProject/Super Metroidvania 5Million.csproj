@@ -126,6 +126,7 @@
     <Compile Include="Libraries\Sprite\Items\Sprites\WaveBeamItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
     <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\Samus.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketExplosionSprite.cs" />
@@ -231,6 +232,7 @@
     <Folder Include="Code Reviews\Sprint4\" />
     <Folder Include="Code Reviews\Sprint5\" />
     <Folder Include="Libraries\Camera\" />
+    <Folder Include="Libraries\Sprite\Player\PlayerSprites\" />
     <Folder Include="Libraries\States\EnemyStates\" />
     <Folder Include="Libraries\States\ObjectStates\" />
   </ItemGroup>
