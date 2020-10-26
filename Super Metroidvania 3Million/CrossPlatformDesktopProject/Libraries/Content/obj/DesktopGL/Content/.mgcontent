@@ -4,8 +4,33 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueBrickBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueCircleBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorBottomLeft.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorBottomRight.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorMiddleLeft.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorMiddleRight.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopLeft.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopRight.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueFenceBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueMetalBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BluePipesBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueSquareBlock.png</File>
     <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BushBlueBlock.png</File>
     <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BushOrangeBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/GreenBrickBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/GreenFenceBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/GreenPipeBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/GreenSquareBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/LavaBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/LavaTop.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/LightBlueBrickBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/OrangeDoorBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/RedCircleBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/RedCrackedBlock.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/RedPipeLeft.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/RedPipeRight.png</File>
+    <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/RoofSpikeBlock.png</File>
     <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockBlueBlock.png</File>
     <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockOrangeBlock.png</File>
     <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/SwirlBlueBlock.png</File>
@@ -54,6 +79,31 @@
     <File>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/WaveBeamProj.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
