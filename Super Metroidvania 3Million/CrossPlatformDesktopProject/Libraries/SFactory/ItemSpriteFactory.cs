@@ -52,26 +52,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			waveBeamItem = content.Load<Texture2D>("Items/WaveBeam");
 		}
 
-		//This method needs to be fixed once the separation of game objects and sprites is finished.
-		public List<IGameObject> CreateItemSpriteList(Vector2 location)
-		{
-			List<IGameObject> itemList = new List<IGameObject>();
-			itemList.Add(new BombItem(location));
-			itemList.Add(new EnergyDropItem(location));
-			itemList.Add(new EnergyTankItem(location));
-			itemList.Add(new HighJumpItem(location));
-			itemList.Add(new IceBeamItem(location));
-			itemList.Add(new LongBeamItem(location));
-			itemList.Add(new MissleRocketItem(location));
-			itemList.Add(new MorphBallItem(location));
-			itemList.Add(new RocketDropItem(location));
-			itemList.Add(new ScrewAttackItem(location));
-			itemList.Add(new VariaItem(location));
-			itemList.Add(new WaveBeamItem(location));
-
-			return itemList;
-		}
-
 		public ISprite BombItemSprite(BombItem b)
 		{
 			return new BombItemSprite(bombItem, b);
