@@ -55,7 +55,7 @@
     <Compile Include="Libraries\Command\PlayerInputCommands\CycleBeamMissileCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAttackCommand.cs" />
     <Compile Include="Libraries\Command\UnusedCommands\PreviousBlockCommand.cs" />
-    <Compile Include="Libraries\Command\UpgradeToggleCommand.cs" />
+    <Compile Include="Libraries\Command\PlayerGiveItemCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerCurlUpCommand.cs" />
     <Compile Include="Libraries\Command\EnemyDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerJumpCommand.cs" />

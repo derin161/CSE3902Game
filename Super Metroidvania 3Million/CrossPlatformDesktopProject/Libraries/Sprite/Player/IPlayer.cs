@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
 {
@@ -22,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite
         public void MoveLeft();
         public void AimUp();
         public void TakeDamage(int damage);
-        public void Upgrade(Player.UpgradeType type);
+        public void Upgrade(IItem item);
 
     }
 }
