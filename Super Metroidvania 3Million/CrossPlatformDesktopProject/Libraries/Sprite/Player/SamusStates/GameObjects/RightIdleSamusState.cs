@@ -42,7 +42,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		}
 		public void Jump()
         {
-			samus.state = new JumpRightSamusState(samus);
+			samus.state = new JumpRightSamusState(samus, false, 0, samus.y);
         }
 
 		public void Morph()

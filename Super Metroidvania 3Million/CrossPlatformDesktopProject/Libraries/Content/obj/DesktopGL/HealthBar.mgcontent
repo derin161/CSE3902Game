@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/HealthBar.png</SourceFile>
-  <SourceTime>2020-10-05T00:24:51.8437711-04:00</SourceTime>
-  <DestFile>C:/Users/Alex Nguyen/Desktop/Desktop/School/AU20/CSE 3902/Game1/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/HealthBar.xnb</DestFile>
-  <DestTime>2020-10-05T22:27:16.2305735-04:00</DestTime>
+  <SourceFile>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/HealthBar.png</SourceFile>
+  <SourceTime>2020-10-04T22:13:13.1326402-04:00</SourceTime>
+  <DestFile>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/HealthBar.xnb</DestFile>
+  <DestTime>2020-10-26T17:57:56.2127742-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
