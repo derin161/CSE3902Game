@@ -12,6 +12,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private ISprite sprite;
         private float x, y, initialY;
         private int direction;
+        private bool isDead;
         public Rectangle Space;
         public VerticalZeela(Vector2 location)
         {
@@ -46,7 +47,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public Boolean IsDead()
         {
-            return false;
+            return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
         }
 
 

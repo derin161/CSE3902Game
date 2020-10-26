@@ -13,6 +13,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private float x, y, initialX;
         private int direction;
         public Rectangle Space;
+        private bool isDead;
         public Ripper(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.RipperSprite(this);
@@ -47,9 +48,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public Boolean IsDead()
         {
-            return false;
+            return isDead;
         }
 
+        public void Kill()
+        {
+            isDead = true;
+        }
 
 
     }
