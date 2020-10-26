@@ -30,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
             Rectangle sourceRectangle = new Rectangle(0, 0, width, height);
             Rectangle destinationRectangle = new Rectangle(xPos, yPos, width, height);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);;
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
 
         public bool IsDead() {

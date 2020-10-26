@@ -7,14 +7,14 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 	{
 		private Game1 game;
 
-		public NextEnemyCommand(Game1 game)
+		public NextEnemyCommand(Game1 game) //Unused
 		{
 			this.game = game;
 		}
 
 		public void Execute()
 		{
-			//Move to next element in array or back to beginning if at the end
+			/*Move to next element in array or back to beginning if at the end
 			if (game.enemyIndex == game.enemySprites.Count() - 1)
 			{
 				game.enemyIndex = 0;
@@ -22,7 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 			else
 			{
 				game.enemyIndex += 1;
-			}
+			}*/
 		}
 	}
 }

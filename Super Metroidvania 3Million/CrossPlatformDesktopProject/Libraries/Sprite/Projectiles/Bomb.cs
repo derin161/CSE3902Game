@@ -22,9 +22,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Bomb(Vector2 location)
         {
             
-            Damage = 0;
+            Damage = 100;
             Location = location;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0); //Space rectangle initially empty to prevent collisions until explosion.
             sprite = ProjectilesSpriteFactory.Instance.CreatePreBoomBombSprite(this);
         }
 
@@ -43,13 +43,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 boomFlag = true;
             }
             else if (!boomFlag){
-                Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+                Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0);
             }
             sprite.Update(gameTime);
         }
         public Rectangle SpaceRectangle()
         {
             return Space;
+        }
+
+        public int GetDamage()
+        {
+            return Damage;
         }
 
         public bool IsDead() {

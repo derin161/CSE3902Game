@@ -1,93 +1,85 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
     class CollisionDetector
     {
-        IPlayer player;
-        List<IGameObject> enemyList;
-        List<IGameObject> blockList;
-        List<IGameObject> projectileList;
-        List<IGameObject> itemList;
-        bool collision;
-        CollisionHandler handler;
+        private CollisionHandler handler = new CollisionHandler();
+        private CollisionDetector instance = new CollisionDetector();
 
-        public CollisionDetector(IPlayer Player, IContainer enemyContainer, IContainer blockContainer, IContainer projectileContainer, IContainer itemContainer)
+        public CollisionDetector Instance {
+            get { return instance; }
+        }
+
+        private CollisionDetector() //Private constructor for singleton
         {
-
-            player = Player;
-            enemyList = enemyContainer.GetList();
-            blockList = blockContainer.GetList();
-            projectileList = projectileContainer.GetList();
-            itemList = itemContainer.GetList();
-            handler = new CollisionHandler();
             
         }
 
         public void Update()
         {
+            Player player = GameObjectContainer.Instance.Player;
             //Check if the player is colliding with any enemies
-            foreach (IGameObject enemy in enemyList) 
+            foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList) 
             {
-                collision = CheckCollisions(player, enemy);
-                if (collision)
+                if (CheckCollisions(player, enemy))
                 {
                     handler.PlayerEnemyCollision(player, enemy);
                 }
             }
 
             //Check if the player is colliding with any blocks
-            foreach (IGameObject block in blockList)
+            foreach (IBlock block in GameObjectContainer.Instance.BlockList)
             {
-                collision = CheckCollisions(player, block);
-                if (collision)
+                if (CheckCollisions(player, block))
                 {
-                    handler.PlayerBlockCollision(player, block);
+                    handler.PlayerBlockCollision(player, block, Rectangle.Intersect(player.SpaceRectangle(), block.SpaceRectangle()));
                 }
             }
 
             //check if the player is colliding with any projectiles
-            foreach (IGameObject projectile in projectileList)
+            foreach (IProjectile projectile in GameObjectContainer.Instance.ProjectileList)
             {
-                collision = CheckCollisions(player, projectile);
-                if (collision)
+                if (CheckCollisions(player, projectile))
                 {
                     handler.PlayerProjectileCollision(player, projectile);
                 }
             }
 
             //Check if the player is colliding with any items
-            foreach (IGameObject item in itemList)
+            foreach (IItem item in GameObjectContainer.Instance.ItemList)
             {
-                collision = CheckCollisions(player, item);
-                if (collision)
+                if (CheckCollisions(player, item))
                 {
                     handler.PlayerItemCollision(player, item);
                 }
             }
 
             //check if the enemies are colliding with any blocks
-            foreach (IGameObject enemy in enemyList)
+            foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList)
             {
-                foreach(IGameObject block in blockList)
+                foreach(IBlock block in GameObjectContainer.Instance.BlockList)
                 {
-                    collision = CheckCollisions(enemy, block);
-                    if (collision)
+                    if (CheckCollisions(enemy, block))
                     {
-                        handler.EnemyBlockCollision(enemy, block);
+                        handler.EnemyBlockCollision(enemy, block, Rectangle.Intersect(enemy.SpaceRectangle(), block.SpaceRectangle()));
                     }
                 }
             }
 
             //check if the enemies are colliding with any blocks
-            foreach (IGameObject projectile in projectileList)
+            foreach (IProjectile projectile in GameObjectContainer.Instance.ProjectileList)
             {
-                foreach (IGameObject block in blockList)
+                foreach (IBlock block in GameObjectContainer.Instance.BlockList)
                 {
-                    collision = CheckCollisions(projectile, block);
-                    if (collision)
+                    if (CheckCollisions(projectile, block))
                     {
                         handler.ProjectileBlockCollision(projectile, block);
                     }
@@ -95,12 +87,11 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             }
 
             //check if the enemies are colliding with any blocks
-            foreach (IGameObject projectile in projectileList)
+            foreach (IProjectile projectile in GameObjectContainer.Instance.ProjectileList)
             {
-                foreach (IGameObject enemy in enemyList)
+                foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList)
                 {
-                    collision = CheckCollisions(projectile, enemy);
-                    if (collision)
+                    if (CheckCollisions(projectile, enemy))
                     {
                         handler.ProjectileEnemyCollision(projectile, enemy);
                     }

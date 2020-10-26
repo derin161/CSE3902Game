@@ -1,5 +1,9 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
 using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
@@ -15,36 +19,40 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             //Do amount of damage spcified by enemy to player
         }
 
-        public void PlayerBlockCollision(IPlayer player, IGameObject block)
+        public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             //Determine the direction that the player came from and push the player back out of the block
+            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
+            //If collisionZone is more tall than wide, then it's TOP/BOTTOM, else, LEFT/RIGHT.
         }
 
-        public void PlayerProjectileCollision(IPlayer player, IGameObject projectile)
+        public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
         {
             //Do damage specifiied by the projectile to the player
             //This method should only be called for Kraid's projectiles, no other enemies have any
         }
 
-        public void EnemyBlockCollision(IGameObject enemy, IGameObject block)
+        public void EnemyBlockCollision(IEnemy enemy, IBlock block, Rectangle collisionZone)
         {
             //Same as player block collisions
-            //Determine direction that enemy came from and push them back out of the block
+            //Player should become temporarily invulnerable and blink. Logic likely in Player class accessed through TakeDamage command.
+            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
+            //If collisionZone is more tall than wide, then it's TOP/BOTTOM, else, LEFT/RIGHT.
         }
 
-        public void ProjectileBlockCollision(IGameObject projectile, IGameObject block)
+        public void ProjectileBlockCollision(IProjectile projectile, IBlock block)
         {
             //Kill the projectile
         }
 
-        public void ProjectileEnemyCollision(IGameObject projectile, IGameObject enemy)
+        public void ProjectileEnemyCollision(IProjectile projectile, IEnemy enemy)
         {
             //Do amount of damage to enemies specified by the projectile 
         }
 
-        public void PlayerItemCollision(IPlayer player, IGameObject item)
+        public void PlayerItemCollision(IPlayer player, IItem item)
         {
-            //Do amount of damage to enemies specified by the projectile 
+            //Give player the corresponding upgrade or give them more energy or missiles
         }
     }
 }

@@ -24,6 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Location = initialLocation;
             Direction = direction;
             Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 8);
+            Damage = 100;
             if (!isHorizontal)
             {
                 Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 16);
@@ -53,6 +54,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Rectangle SpaceRectangle()
         {
             return Space;
+        }
+
+        public int GetDamage()
+        {
+            return Damage;
         }
 
         public bool IsDead() {

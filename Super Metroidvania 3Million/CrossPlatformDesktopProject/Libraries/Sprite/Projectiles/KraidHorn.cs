@@ -20,7 +20,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public KraidHorn(Vector2 initialLocation, bool isMovingRight)
         {
             // Need to set actual damage values at some point
-            Damage = 0;
+            Damage = 20;
             this.initialLocation = initialLocation;
             this.isMovingRight = isMovingRight;
             Location = initialLocation;
@@ -63,6 +63,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Rectangle SpaceRectangle()
         {
             return Space;
+        }
+
+        public int GetDamage()
+        {
+            return Damage;
         }
 
         public bool IsDead() {
