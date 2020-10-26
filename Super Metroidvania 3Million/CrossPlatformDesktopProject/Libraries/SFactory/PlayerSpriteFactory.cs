@@ -45,8 +45,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             rightWalk = content.Load<Texture2D>("PlayerSprites/SamusRightWalk");
             leftWalk = content.Load<Texture2D>("PlayerSprites/SamusLeftWalk");
             morph = content.Load<Texture2D>("PlayerSprites/RightMorph");
-            jumpRight = content.Load<Texture2D>("PlayerSprites/Jump");
-            jumpLeft = content.Load<Texture2D>("PlayerSprites/Jump");
+            jumpRight = content.Load<Texture2D>("PlayerSprites/JumpRightSamusSprite");
+            jumpLeft = content.Load<Texture2D>("PlayerSprites/JumpLeftSamusSprite");
             damaged_rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdleDamaged");
             damaged_leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdleDamaged");
             healthBar = content.Load<Texture2D>("HealthBar");
@@ -80,14 +80,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return MorphSamusSprite(morph, s);
         }
 
-        public ISprite JumpRightSprite(Samus s)
+        public ISprite JumpRightSprite(Samus s, bool right, int frame, int y)
         {
-            return JumpRightSamusSprite(rightWalk, s);
+            return JumpRightSamusSprite(jumpRight, s, right, frame, y);
         }
 
-        public ISprite JumpLeftSprite(Samus s)
+        public ISprite JumpLeftSprite(Samus s, bool left, int frame, int y)
         {
-            return JumpLeftSamusSprite(leftWalk, s);
+            return JumpLeftSamusSprite(jumpLeft, s, left, frame, y);
         }
     }
 }
