@@ -54,7 +54,7 @@
     <Compile Include="Libraries\Command\PlayerInputCommands\UnusedCommands\PreviousBlockCommand.cs" />
     <Compile Include="Libraries\Command\UpgradeToggleCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerCurlUpCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerDamageCommand.cs" />
+    <Compile Include="Libraries\Command\EnemyDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerJumpCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveLeftCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveRightCommand.cs" />
