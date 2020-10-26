@@ -5,6 +5,7 @@ namespace CrossPlatformDesktopProject
 {
     public interface IGameObject
     {
+        public void Kill();
         public bool IsDead();
         public void Draw(SpriteBatch spriteBatch);
         public void Update(GameTime gameTime);
