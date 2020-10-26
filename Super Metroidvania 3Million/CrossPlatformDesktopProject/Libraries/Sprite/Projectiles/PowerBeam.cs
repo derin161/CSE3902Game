@@ -23,11 +23,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             // Need to set actual damage values at some point
             if (isLongBeam)
             {
-                Damage = 1;
+                Damage = 30;
             }
             else
             {
-                Damage = 0;
+                Damage = 20;
             }
 
             IsIceBeam = isIceBeam;
@@ -84,6 +84,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Rectangle SpaceRectangle()
         {
             return Space;
+        }
+
+        public int GetDamage()
+        {
+            return Damage;
         }
 
         public bool IsDead() {
