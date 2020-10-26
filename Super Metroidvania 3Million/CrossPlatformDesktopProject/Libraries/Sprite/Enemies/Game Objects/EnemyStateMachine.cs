@@ -40,9 +40,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             movingLeft = !movingLeft;
             movingUp = !movingUp;
         }
-        public void Frozen()
+        public void ToggleFrozen()
         {
-            frozen = true;
+            frozen = !frozen;
         }
         public void Update(int horizSpeed, int vertSpeed)
         {
