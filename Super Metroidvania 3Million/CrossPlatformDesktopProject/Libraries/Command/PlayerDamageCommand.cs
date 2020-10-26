@@ -5,23 +5,16 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
     //Author: Shyamal Shah
     class PlayerDamageCommand : ICommand
     {
-        private Player samus;
-        private Game1 game;
+        private IPlayer player;
 
-        public PlayerDamageCommand(Game1 game, Player player) {
-            samus = player;
-            this.game = game;
+        public PlayerDamageCommand(Game1 game, IPlayer player) {
+            this.player = player;
         }
         public void Execute()
         {
-            if (!samus.damageDisabled){
-                samus.UpdateHealth(samus.currentHealth - 10, samus.maxHealth);
-                samus.HealthBar(samus.currentHealth - 10, samus.maxHealth);
-                samus.UpdateHealthState();
-
-                samus.UpdateState(Player.State.Damage, samus.damageFrames++, samus.facingRight);
-            }
-
+            /* Not really sure how we're going to get the actual damage values we need right here... -Nyigel */
+            int damage = 10;
+            player.TakeDamage(damage);
         }
     }
 }

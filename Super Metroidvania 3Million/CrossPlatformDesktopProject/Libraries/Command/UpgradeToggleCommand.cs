@@ -6,8 +6,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
 
         private Player.UpgradeType type;
-        private Player samus;
-        public UpgradeToggleCommand(Player.UpgradeType type, Player samus) {
+        private IPlayer samus;
+        public UpgradeToggleCommand(Player.UpgradeType type, IPlayer samus) {
             this.type = type;
             this.samus = samus;
         }

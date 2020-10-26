@@ -22,6 +22,8 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             //Determine the direction that the player came from and push the player back out of the block
+            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
+            //If collisionZone is more tall than wide, then it's TOP/BOTTOM, else, LEFT/RIGHT.
         }
 
         public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
@@ -33,7 +35,9 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void EnemyBlockCollision(IEnemy enemy, IBlock block, Rectangle collisionZone)
         {
             //Same as player block collisions
-            //Determine direction that enemy came from and push them back out of the block
+            //Player should become temporarily invulnerable and blink. Logic likely in Player class accessed through TakeDamage command.
+            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
+            //If collisionZone is more tall than wide, then it's TOP/BOTTOM, else, LEFT/RIGHT.
         }
 
         public void ProjectileBlockCollision(IProjectile projectile, IBlock block)
@@ -48,7 +52,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void PlayerItemCollision(IPlayer player, IItem item)
         {
-            //Do amount of damage to enemies specified by the projectile 
+            //Give player the corresponding upgrade or give them more energy or missiles
         }
     }
 }
