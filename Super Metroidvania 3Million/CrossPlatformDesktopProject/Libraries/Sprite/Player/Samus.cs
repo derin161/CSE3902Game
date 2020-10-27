@@ -14,9 +14,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
     public class Samus : IPlayer
     {
         public IPlayerState state;
-        public PlayerInventory inventory;
+        public PlayerInventory inventory {get; set; }
         public int health;
-        public Rectangle space;
+        public Rectangle space {get; set; }
         private Game1 game;
         public float x { get; set; }
         public float y { get; set; }

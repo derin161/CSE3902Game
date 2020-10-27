@@ -1,0 +1,24 @@
+Review Author: Nyigel Spann
+Review Date: 10/26/2020
+Sprint No: 3
+Name of the .cs file being reviewed: JumpLeftSamusState.cs
+Author of the .cs file being reviewed: Shyamal Shah
+Number of minutes taken to complete the review: 10
+
+============================================================
+
+Coupling: Medium
+Comments: All private fields. Coupled a lot with the Samus class accessing its public variables directly. 
+
+Cohesion: High
+Comments: Pretty much only the logic associated with this state and transferring to other states. 
+
+Maintainability: High
+Comments: Using the state pattern makes this state specifically easy to change.
+
+List any "code smells":
+1) Accesses samus public vars directly
+2) samus.missile is not too descriptive and compared to a magic number
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+Add another beam weapon. Add another if-case in the Attack() method.

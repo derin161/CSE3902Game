@@ -9,7 +9,6 @@ using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.CSV;
-using System;
 
 namespace CrossPlatformDesktopProject
 {
@@ -21,14 +20,12 @@ namespace CrossPlatformDesktopProject
         private SpriteBatch spriteBatch;
         private KeyboardController keyboard;
         private GameTime gameTime;
-        private String levelName;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             gameTime = new GameTime();
-            levelName = "StartingLevel.csv";
         }
 
         protected override void Initialize()
@@ -45,7 +42,7 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            LoadCsv.Instance.Load(levelName);
+            LoadCsv.Instance.Load();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
             keyboard = new KeyboardController(this);
         }
@@ -79,13 +76,13 @@ namespace CrossPlatformDesktopProject
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
 
+            spriteBatch = new SpriteBatch(GraphicsDevice);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            LoadCsv.Instance.Load(levelName);
-            GameObjectContainer.Instance.Clear();
+            LoadCsv.Instance.Load();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
             keyboard = new KeyboardController(this);
 
