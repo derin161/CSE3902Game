@@ -11,14 +11,14 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
 	/*Author: Shyamal Shah*/
-	public class RightIdleSamusState : IPlayerState 
+	public class AimUpSamusState : IPlayerState 
 	{
 		private Samus samus;
 		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
 
-		public RightIdleSamusState(Samus sam)
+		public AimUpSamusState(Samus sam)
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
@@ -64,7 +64,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void AimUp()
         {
-			samus.state = new AimUpSamusState(samus);
+			//Nothing for right now
 		}
 
 		public void Update(GameTime gameTime)

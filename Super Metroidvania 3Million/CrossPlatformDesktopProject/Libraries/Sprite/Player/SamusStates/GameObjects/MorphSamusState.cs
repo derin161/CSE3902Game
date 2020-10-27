@@ -11,14 +11,14 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
 	/*Author: Shyamal Shah*/
-	public class RightIdleSamusState : IPlayerState 
+	public class MorphSamusState : IPlayerState 
 	{
 		private Samus samus;
 		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
 
-		public RightIdleSamusState(Samus sam)
+		public MorphSamusState(Samus sam)
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
@@ -49,7 +49,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Morph()
         {
-			samus.state = new MorphSamusState(samus);
+			//Nothing right now
 		}
 
 		public void MoveRight()

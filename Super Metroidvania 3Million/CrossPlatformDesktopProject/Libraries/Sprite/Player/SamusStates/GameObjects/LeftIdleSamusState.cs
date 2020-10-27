@@ -23,29 +23,29 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.LeftIdleSprite(samus);
 			missileLoc = new Vector2(samus.x + 19, samus.y + 32);
-			direction = new Vector2(-4.0, 0.0);
+			direction = new Vector2(-4.0f, 0.0f);
 		}
 
 		public void Attack()
         {
 			if (samus.missile == 0)
             {
-				GameObjectContainer.Instance.Add(new Missilerocket(missileLoc, direction));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
 			}
 			else if (samus.missile == 0)
             {
-				GameObjectContainer.Instance.Add(new PowerBeam(missileLoc, direction, samus.isLong, samus.isIce));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
 			}
 			else
             {
-				GameObjectContainer.Instance.Add(new WaveBeam(missileLoc, direction, samus.isLong));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateWaveBeam(missileLoc, direction, samus.inventory.HasLongBeam));
 			}
 
 		}
 		public void Jump()
         {
-			samus.state = new JumpLeftSamusState(samus);
-        }
+			samus.state = new JumpLeftSamusState(samus, false, 0, samus.y);
+		}
 
 		public void Morph()
         {
