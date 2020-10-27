@@ -77,7 +77,7 @@
     <Compile Include="Libraries\SFactory\PlayerSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ProjectilesSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\EnemySpriteFactory.cs" />
-	<Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
+    <Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprites\BlueBrickBlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprites\BlueCircleBlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprites\BlueDoorBottomLeftSprite.cs" />
@@ -330,7 +330,9 @@
     <Content Include="Code Reviews\Sprint2\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint2\Code Readability\WillReadabilityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint3\Code Quality\AlexQualityReviewWill.txt" />
+    <Content Include="Code Reviews\Sprint3\Code Quality\WillQualityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\AlexReadabilityReviewWill.txt" />
+    <Content Include="Code Reviews\Sprint3\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code Reviews\Sprint4\" />
