@@ -1,10 +1,10 @@
 ﻿namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Shyamal Shah
-    public class SelectCommand : ICommand
+    public class RestartCommand : ICommand
     {
         private Game1 currentGame;
-        public SelectCommand(Game1 game)
+        public RestartCommand(Game1 game)
         {
             currentGame = game;
         }
