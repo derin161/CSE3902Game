@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player.SamusStates
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -79,7 +79,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void Upgrade(IItem item)
         {
-            inventory.Upgrade(item);
+            inventory.GiveItem(item);
         }
 
         public void Update(GameTime gameTime)

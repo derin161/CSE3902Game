@@ -17,11 +17,15 @@ namespace CrossPlatformDesktopProject
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private KeyboardController keyboard;
+        private GameTime gameTime;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            keyboard = new KeyboardController(this);
+            gameTime = new GameTime();
         }
 
         protected override void Initialize()
@@ -32,14 +36,12 @@ namespace CrossPlatformDesktopProject
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAllTextures(Content);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
-            GameObjectContainer.Instance.RegisterPlayer((IPlayer) SpriteFactory.Instance.CreatePlayerSprite());
-            keyboard = new KeyboardController(this);
+            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
         }
 
         protected override void UnloadContent()
@@ -72,11 +74,20 @@ namespace CrossPlatformDesktopProject
 
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            GameObjectContainer.Instance.Clear();
-            GameObjectContainer.Instance.RegisterPlayer((IPlayer) SpriteFactory.Instance.CreatePlayerSprite());
-            
             keyboard = new KeyboardController(this);
+            gameTime = new GameTime();
+
+            SpriteFactory.Instance.LoadAllTextures(Content);
+            ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
+            EnemySpriteFactory.Instance.LoadAllTextures(Content);
+            ItemSpriteFactory.Instance.LoadAllTextures(Content);
+            PlayerSpriteFactory.Instance.LoadAllTextures(Content);
+            GameObjectContainer.Instance.Clear();
+            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
+
         }
     }
 }

@@ -44,7 +44,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         {
             get { return enemyList; }
         }
-        public Player Player
+        public IPlayer Player
         {
             get { return player; }
         }

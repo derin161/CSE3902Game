@@ -1,7 +1,13 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
+using Microsoft.Xna.Framework.Input;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -55,39 +61,44 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             healthFont = content.Load<SpriteFont>("PlayerHealth");
         }
 
-        public ISprite RightIdleSprite(Samus s)
+        public ISprite RightIdleSprite(IPlayer s)
         {
-            return RightIdleSamusSprite(rightIdle, s);
+            return new RightIdleSamusSprite(rightIdle, s);
         }
 
-        public ISprite LeftIdleSprite(Samus s)
+        public ISprite LeftIdleSprite(IPlayer s)
         {
-            return LeftIdleSamusSprite(leftIdle, s);
+            return new LeftIdleSamusSprite(leftIdle, s);
         }
 
-        public ISprite RightWalkSprite(Samus s)
+        public ISprite RightWalkSprite(IPlayer s)
         {
-            return RightWalkSamusSprite(rightWalk, s);
+            return new RightWalkSamusSprite(rightWalk, s);
         }
 
-        public ISprite LeftWalkSprite(Samus s)
+        public ISprite LeftWalkSprite(IPlayer s)
         {
-            return LeftWalkSamusSprite(leftWalk, s);
+            return new LeftWalkSamusSprite(leftWalk, s);
         }
 
-        public ISprite MorphSprite(Samus s)
+        public ISprite MorphSprite(IPlayer s)
         {
-            return MorphSamusSprite(morph, s);
+            return new MorphSamusSprite(morph, s);
         }
 
-        public ISprite JumpRightSprite(Samus s, bool right, int frame, int y)
+        public ISprite JumpRightSprite(IPlayer s, bool right, int frame, int y)
         {
-            return JumpRightSamusSprite(jumpRight, s, right, frame, y);
+            return new JumpRightSamusSprite(jumpRight, s, right, frame, y);
         }
 
-        public ISprite JumpLeftSprite(Samus s, bool left, int frame, int y)
+        public ISprite JumpLeftSprite(IPlayer s, bool left, int frame, int y)
         {
-            return JumpLeftSamusSprite(jumpLeft, s, left, frame, y);
+            return new JumpLeftSamusSprite(jumpLeft, s, left, frame, y);
+        }
+
+        public IPlayer CreatePlayerSprite(Vector2 l, Game1 g, GameTime g2)
+        {
+            return new Samus(l, g, g2);
         }
     }
 }

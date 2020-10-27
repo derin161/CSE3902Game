@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void Update()
         {
-            Player player = GameObjectContainer.Instance.Player;
+            IPlayer player = GameObjectContainer.Instance.Player;
             //Check if the player is colliding with any enemies
             foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList) 
             {

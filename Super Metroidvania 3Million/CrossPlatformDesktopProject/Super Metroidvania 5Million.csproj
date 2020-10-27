@@ -56,7 +56,7 @@
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAttackCommand.cs" />
     <Compile Include="Libraries\Command\UnusedCommands\PreviousBlockCommand.cs" />
     <Compile Include="Libraries\Command\PlayerGiveItemCommand.cs" />
-    <Compile Include="Libraries\Command\PlayerInputCommands\PlayerCurlUpCommand.cs" />
+    <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMorphCommand.cs" />
     <Compile Include="Libraries\Command\EnemyDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerJumpCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveLeftCommand.cs" />
@@ -71,7 +71,6 @@
     <Compile Include="Libraries\Command\StartCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
-    <Compile Include="Libraries\Controller\MouseController.cs" />
     <Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
     <Compile Include="Libraries\SFactory\MapSpriteFactory.cs" />
@@ -229,9 +228,13 @@
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\PreBoomBombSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\WaveBeamSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\WaveBeam.cs" />
-    <Compile Include="Libraries\States\IState.cs" />
-    <Compile Include="Libraries\States\PlayerStates\IPlayerState.cs" />
-    <Compile Include="Libraries\States\PlayerStates\PlayerState.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\IPlayerState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\JumpLeftSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\JumpRightSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\LeftIdleSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightIdleSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\LeftWalkSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightWalkSamusState.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,7 +243,6 @@
     <Compile Include="Libraries\SFactory\IFactory.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Sprites\GeegaSprite.cs" />
     <Compile Include="Libraries\Sprite\ISprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\Player.cs" />
     <Compile Include="Libraries\Sprite\Player\IPlayer.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\IProjectile.cs" />
   </ItemGroup>
