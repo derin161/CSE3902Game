@@ -116,7 +116,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			pipeBlockGreen = content.Load<Texture2D>("BlockSprites/GreenPipeBlock");
 			squareBlockGreen = content.Load<Texture2D>("BlockSprites/GreenSquareBlock");
 			lavaBlock = content.Load<Texture2D>("BlockSprites/LavaBlock");
-			lavaBlockTop = content.Load<Texture2D>("BlockSprites/LavaBlockTop");
+			lavaBlockTop = content.Load<Texture2D>("BlockSprites/LavaTop");
 			brickBlockLightBlue = content.Load<Texture2D>("BlockSprites/LightBlueBrickBlock");
 			doorBlockOrange = content.Load<Texture2D>("BlockSprites/OrangeDoorBlock");
 			circleBlockRed = content.Load<Texture2D>("BlockSprites/RedCircleBlock");
