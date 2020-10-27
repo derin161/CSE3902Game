@@ -1,0 +1,24 @@
+Review Author: Alex Nguyen
+Review Date: 10/26/2020
+Sprint No: 3
+Name of the .cs file being reviewed: Memu.cs
+Author of the .cs file being reviewed: Will Floyd
+Number of minutes taken to complete the review: ~15mins
+
+============================================================
+
+Coupling: Medium
+Comments: Most methods in class are done locally but a few of them rely on another class for movement.
+
+Cohesion: Medium
+Comments: Most methods are are passed variable locally and are completed within this class.
+
+Maintainability: Good
+Comments: Methods are simple to edit and have the potential to be refactored easily if need be.
+
+List any "code smells":
+N/A
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+There could be a new movement style that is mor dynamic like moving diagonally or something similar. This could be  implementented bying adding another method 
+the state machine could make.

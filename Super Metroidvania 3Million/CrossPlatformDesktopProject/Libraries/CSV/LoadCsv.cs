@@ -53,6 +53,90 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 block = new TubeBlockBlue(location);
                                 GameObjectContainer.Instance.Add(block);
                                 break;
+                                
+                            case "VerticalTubeStoneBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new VerticalTubeStoneBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "StoneBlockWithEyes":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new StoneBlockWithEyes(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueDoorTopRight":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueDoorTopRight(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueDoorMiddleRight":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueDoorMiddleRight(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueDoorBottomRight":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueDoorBottomRight(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedPipeLeft":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedPipeLeft(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedPipeRight":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedPipeRight(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedCircleBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedCircleBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedCrackedBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedCrackedBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RoofSpikeBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RoofSpikeBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "GreenBrickBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new GreenBrickBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "GreenFenceBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new GreenFenceBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "GreenPipeBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new GreenPipeBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "GreenSquareBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new GreenSquareBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
 
                             case "BlueDoorTopLeft":
                                 location = new Vector2(row * 32, column * 32);
