@@ -78,10 +78,10 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             ICommand damage = new EnemyDamagePlayerCommand(gameState, player);
 
             //Upgrade Toggles
-            ICommand iceToggle = new PlayerGiveItemCommand(Player.UpgradeType.Icebeam, player);
-            ICommand waveToggle = new PlayerGiveItemCommand(Player.UpgradeType.Wavebeam, player);
-            ICommand longToggle = new PlayerGiveItemCommand(Player.UpgradeType.Longbeam, player);
-            ICommand screwToggle = new PlayerGiveItemCommand(Player.UpgradeType.Screw, player);
+            ICommand iceToggle = new PlayerGiveItemCommand(IPlayer.UpgradeType.Icebeam, player);
+            ICommand waveToggle = new PlayerGiveItemCommand(IPlayer.UpgradeType.Wavebeam, player);
+            ICommand longToggle = new PlayerGiveItemCommand(IPlayer.UpgradeType.Longbeam, player);
+            ICommand screwToggle = new PlayerGiveItemCommand(IPlayer.UpgradeType.Screw, player);
 
 
             //Upgrade Toggles

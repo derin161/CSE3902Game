@@ -235,11 +235,16 @@
 	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightIdleSamusState.cs" />
 	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\LeftWalkSamusState.cs" />
 	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightWalkSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpLeftSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpRightSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftIdleSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightIdleSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftWalkSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Libraries\Controller\IController.cs" />
-    <Compile Include="Libraries\SFactory\SpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\IFactory.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Sprites\GeegaSprite.cs" />
     <Compile Include="Libraries\Sprite\ISprite.cs" />

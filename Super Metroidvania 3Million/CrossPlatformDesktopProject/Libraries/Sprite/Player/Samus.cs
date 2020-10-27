@@ -15,7 +15,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public int health;
         public Rectangle space;
         private Game1 game;
-        public float x, y;
+        public float x { get; set; }
+        public float y = { get; set; }
         private bool isDead;
         public int missile;
         public GameTime gameTime;

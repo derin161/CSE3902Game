@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using CrossPlatformDesktopProject.Libraries.SFactory;
@@ -36,7 +37,6 @@ namespace CrossPlatformDesktopProject
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            SpriteFactory.Instance.LoadAllTextures(Content);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
@@ -80,7 +80,6 @@ namespace CrossPlatformDesktopProject
             keyboard = new KeyboardController(this);
             gameTime = new GameTime();
 
-            SpriteFactory.Instance.LoadAllTextures(Content);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
