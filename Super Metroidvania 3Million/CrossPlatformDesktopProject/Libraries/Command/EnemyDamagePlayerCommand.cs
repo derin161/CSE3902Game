@@ -12,7 +12,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         public EnemyDamagePlayerCommand(IPlayer player, IEnemy enemy) {
             this.player = player;
             this.enemy = enemy;
-            damage = 10;
         }
         public void Execute()
         {

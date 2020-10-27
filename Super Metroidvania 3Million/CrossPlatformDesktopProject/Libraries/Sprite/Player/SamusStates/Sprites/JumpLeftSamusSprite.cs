@@ -18,15 +18,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public float xChange;
 		private int rows;
 		private int columns;
-		private IPlayer samus;
+		private Samus samus;
 		public int currentFrame { get; set; }
 		private int totalFrames;
 		private float yChange;
 		private int interval;
 		private int timer;
-		private float origY { get; set; }
+		public float origY { get; set; }
 
-		public JumpLeftSamusSprite(Texture2D text, IPlayer sus, bool left, int frame, float y)
+		public JumpLeftSamusSprite(Texture2D text, Samus sus, bool left, int frame, float y)
         {
 			texture = text;
 			samus = sus;
@@ -53,7 +53,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Update(GameTime gameTime)
         {
-			timer += gameTime.ElapsedGameTime.TotalMilliseconds;
+			timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			if (timer > interval)
             {
 				if (currentFrame == 1 || currentFrame == 2)
@@ -71,8 +71,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 					samus.y = origY;
 					samus.state = new RightIdleSamusState(samus);
 				}
-				samus.space = new Rectangle((int)x, (int)y, 64, 64);
-				timer -= gameTime.ElapsedGameTime.TotalMilliseconds;
+				samus.space = new Rectangle((int)samus.x, (int)samus.y, 64, 64);
+				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 
 		}

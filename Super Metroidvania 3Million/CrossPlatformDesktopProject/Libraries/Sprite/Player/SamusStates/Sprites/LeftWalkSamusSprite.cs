@@ -17,14 +17,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public Texture2D texture { get; set; }
 		private int rows;
 		private int columns;
-		private IPlayer samus;
+		private Samus samus;
 		private int currentFrame;
 		private int totalFrames;
 		private float xChange;
 		private int interval;
 		private int timer;
 
-		public LeftWalkSamusSprite(Texture2D text, IPlayer sus)
+		public LeftWalkSamusSprite(Texture2D text, Samus sus)
         {
 			texture = text;
 			samus = sus;
@@ -40,7 +40,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Update(GameTime gameTime)
         {
-			timer += gameTime.ElapsedGameTime.TotalMilliseconds;
+			timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			if (timer > interval)
             {
 				if (currentFrame == 3)
@@ -52,7 +52,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
                 }
 				samus.x -= xChange;
 				samus.space = new Rectangle((int)samus.x, (int)samus.y, 64, 64);
-				timer -= gameTime.ElapsedGameTime.TotalMilliseconds;
+				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 
 		}

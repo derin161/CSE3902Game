@@ -78,6 +78,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             stateMachine.MoveDown();
         }
+        public void ChangeDirection()
+        {
+            stateMachine.changeDirection();
+        }
         public void Freeze()
         {
             stateMachine.Freeze();

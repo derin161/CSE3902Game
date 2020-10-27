@@ -51,6 +51,8 @@
     <Compile Include="Libraries\Command\ProjectileDamageEnemyCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAimUpCommand.cs" />
+    <Compile Include="Libraries\Command\QuitCommand.cs" />
+    <Compile Include="Libraries\Command\RestartCommand.cs" />
     <Compile Include="Libraries\Command\UnusedCommands\NextBlockCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\CycleBeamMissileCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAttackCommand.cs" />
@@ -67,8 +69,6 @@
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Libraries\Command\UnusedCommands\PreviousItemCommand.cs" />
-    <Compile Include="Libraries\Command\SelectCommand.cs" />
-    <Compile Include="Libraries\Command\StartCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
@@ -214,6 +214,7 @@
     <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
     <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\PlayerInventory.cs" />
+    <Compile Include="Libraries\Sprite\Player\Samus.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketExplosionSprite.cs" />
@@ -229,18 +230,22 @@
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\WaveBeamSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\WaveBeam.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\IPlayerState.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\JumpLeftSamusState.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\JumpRightSamusState.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\LeftIdleSamusState.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightIdleSamusState.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\LeftWalkSamusState.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightWalkSamusState.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpLeftSamusSprite.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpRightSamusSprite.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftIdleSamusSprite.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightIdleSamusSprite.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftWalkSamusSprite.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\JumpLeftSamusState.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\JumpRightSamusState.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\LeftIdleSamusState.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightIdleSamusState.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\LeftWalkSamusState.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightWalkSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\MorphSamusState.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\AimUpSamusState.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpLeftSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpRightSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftIdleSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightIdleSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftWalkSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\MorphSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\AimUpSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -325,10 +330,10 @@
     <Content Include="Code Reviews\Sprint2\Code Readability\NyigelReadabilityReviewShyamal.txt" />
     <Content Include="Code Reviews\Sprint2\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint2\Code Readability\WillReadabilityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint3\Code Quality\AlexQualityReviewWill.txt" />
+    <Content Include="Code Reviews\Sprint3\Code Readability\AlexReadabilityReviewWill.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code Reviews\Sprint3\Code Quality\" />
-    <Folder Include="Code Reviews\Sprint3\Code Readability\" />
     <Folder Include="Code Reviews\Sprint4\" />
     <Folder Include="Code Reviews\Sprint5\" />
     <Folder Include="Libraries\Camera\" />

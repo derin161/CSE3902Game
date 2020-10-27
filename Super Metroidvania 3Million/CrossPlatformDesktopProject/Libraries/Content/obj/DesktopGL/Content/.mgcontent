@@ -4,33 +4,30 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-      <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueBrickBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueCircleBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorBottomLeft.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorBottomRight.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorMiddleLeft.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorMiddleRight.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopLeft.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopRight.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueFenceBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueMetalBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BluePipesBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueSquareBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BushBlueBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BushOrangeBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockBlueBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockOrangeBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockStoneBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StoneBlockWithEyes.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/SwirlBlueBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/SwirlOrangeBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/TubeBlueBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/TubeOrangeBlock.png</File>
-    <File>C:/Users/danny/Documents/CSE 3902 - Proj/Projects/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/VerticalTubeStoneBlock.png</File>
-
-
-
-<File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/geega.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueBrickBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueCircleBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorBottomLeft.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorBottomRight.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorMiddleLeft.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorMiddleRight.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopLeft.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopRight.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueFenceBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueMetalBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BluePipesBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueSquareBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BushBlueBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BushOrangeBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockBlueBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockOrangeBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StockStoneBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/StoneBlockWithEyes.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/SwirlBlueBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/SwirlOrangeBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/TubeBlueBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/TubeOrangeBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/VerticalTubeStoneBlock.png</File>
+    <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/geega.png</File>
     <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Kraid.png</File>
     <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Memu.png</File>
     <File>C:/Users/wrflo/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Enemies/Ripper.png</File>

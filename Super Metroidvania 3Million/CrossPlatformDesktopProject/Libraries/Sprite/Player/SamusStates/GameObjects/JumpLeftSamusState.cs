@@ -13,32 +13,32 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	/*Author: Shyamal Shah*/
 	public class JumpLeftSamusState : IPlayerState 
 	{
-		private IPlayer samus;
-		private ISprite sprite;
+		private Samus samus;
+		private JumpLeftSamusSprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
 
-		public JumpLeftSamusState(IPlayer sam, bool xShift, int frame, int y)
+		public JumpLeftSamusState(Samus sam, bool xShift, int frame, float y)
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.JumpLeftSprite(samus, xShift, frame, y);
 			missileLoc = new Vector2(samus.x + 19, samus.y + 32);
-			direction = new Vector2(-4.0, 0.0);
+			direction = new Vector2(-4.0f, 0.0f);
 		}
 
 		public void Attack()
 		{
 			if (samus.missile == 0)
 			{
-				GameObjectContainer.Instance.Add(new Missilerocket(missileLoc, direction));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
 			}
 			else if (samus.missile == 0)
 			{
-				GameObjectContainer.Instance.Add(new PowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
 			}
 			else
 			{
-				GameObjectContainer.Instance.Add(new WaveBeam(missileLoc, direction, samus.inventory.HasLongBeam));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateWaveBeam(missileLoc, direction, samus.inventory.HasLongBeam));
 			}
 
 		}
@@ -60,7 +60,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveLeft()
         {
-			sprite.xChange = 10;
+			sprite.xChange = 10f;
 			this.Update(samus.gameTime);
 		}
 

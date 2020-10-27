@@ -12,59 +12,35 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
 	/*Author: Shyamal Shah*/
-	public class RightWalkSamusSprite : ISprite
+	public class MorphSamusSprite : ISprite
 	{
 		public Texture2D texture { get; set; }
 		private int rows;
 		private int columns;
 		private Samus samus;
-		private int currentFrame;
-		private int totalFrames;
-		private float xChange;
-		private int interval;
-		private int timer;
 
-		public RightWalkSamusSprite(Texture2D text, Samus sus)
+		public MorphSamusSprite(Texture2D text, Samus sus)
         {
 			texture = text;
 			samus = sus;
 			rows = 1;
-			columns = 4;
-			currentFrame = 0;
-			totalFrames = 3;
-			xChange = 8f;
-			interval = 100;
-			timer = 0;
+			columns = 1;
 
         }
 
 		public void Update(GameTime gameTime)
         {
-			timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
-			if (timer > interval)
-            {
-				if (currentFrame == 3)
-                {
-					currentFrame = 0;
-                }else
-                {
-					currentFrame++;
-                }
-				samus.x += xChange;
-				samus.space = new Rectangle((int)samus.x, (int)samus.y, 64, 64);
-				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
-			}
-
-		}
+			//Nothing needs to be updated
+        }
 
 		public void Draw(SpriteBatch spriteBatch)
         {
 			int width = texture.Width / columns;
 			int height = texture.Height / rows;
 			int row = 0;
-			int column = currentFrame * width;
+			int column = 0;
 
-			Rectangle sourceRectangle = new Rectangle(column, row, width, height);
+			Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
 
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
 		}

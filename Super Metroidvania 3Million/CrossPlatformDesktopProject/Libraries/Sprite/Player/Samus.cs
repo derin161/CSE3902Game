@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -16,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public Rectangle space;
         private Game1 game;
         public float x { get; set; }
-        public float y = { get; set; }
+        public float y { get; set; }
         private bool isDead;
         public int missile;
         public GameTime gameTime;
@@ -96,6 +99,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool IsDead()
         {
             return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
         }
 
         public Rectangle SpaceRectangle()
