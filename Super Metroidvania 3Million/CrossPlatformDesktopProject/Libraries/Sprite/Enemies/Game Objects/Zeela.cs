@@ -14,6 +14,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private bool isDead;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
+        private int health;
+
 
 
         public Zeela(Vector2 location)
@@ -22,6 +24,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = 3;
             vertSpeed = 0;
+            health = 100;
+
         }
 
         public void Update(GameTime gameTime)
@@ -67,9 +71,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             stateMachine.MoveDown();
         }
-        public void ToggleFrozen()
+        public void Freeze()
         {
-            stateMachine.ToggleFrozen();
+            stateMachine.Freeze();
+        }
+        public int GetDamage()
+        {
+            return 25;
+        }
+        public void TakeDamage(int damage)
+        {
+            health = health - damage;
+            if (health <= 0)
+            {
+                this.Kill();
+            }
         }
     }
 }
