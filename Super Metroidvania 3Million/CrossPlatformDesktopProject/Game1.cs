@@ -72,7 +72,6 @@ namespace CrossPlatformDesktopProject
 
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
-            graphics = new GraphicsDeviceManager(this);
             gameTime = new GameTime();
 
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
