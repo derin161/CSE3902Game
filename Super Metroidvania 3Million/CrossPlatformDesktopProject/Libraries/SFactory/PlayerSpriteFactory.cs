@@ -98,7 +98,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
         public IPlayer CreatePlayerSprite(Vector2 l, Game1 g, GameTime g2)
         {
-            return new Samus(l, g, g2);
+            return new IPlayer(l, g, g2);
         }
     }
 }
