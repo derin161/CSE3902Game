@@ -23,14 +23,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.JumpLeftSprite(samus, xShift, frame, y);
 			missileLoc = new Vector2(samus.x + 19, samus.y + 32);
-			direction = new Vector2(-4.0, 0.0);
+			direction = new Vector2(-4.0f, 0.0f);
 		}
 
 		public void Attack()
 		{
 			if (samus.missile == 0)
 			{
-				GameObjectContainer.Instance.Add(new Missilerocket(missileLoc, direction));
+				GameObjectContainer.Instance.Add(new MissileRocket(missileLoc, direction));
 			}
 			else if (samus.missile == 0)
 			{
