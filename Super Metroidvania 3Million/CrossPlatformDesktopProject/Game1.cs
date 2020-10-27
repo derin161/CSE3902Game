@@ -9,6 +9,7 @@ using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.CSV;
+using System;
 
 namespace CrossPlatformDesktopProject
 {
@@ -20,12 +21,14 @@ namespace CrossPlatformDesktopProject
         private SpriteBatch spriteBatch;
         private KeyboardController keyboard;
         private GameTime gameTime;
+        private String levelName;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             gameTime = new GameTime();
+            levelName = "StartingLevel.csv";
         }
 
         protected override void Initialize()
@@ -42,7 +45,7 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            LoadCsv.Instance.Load();
+            LoadCsv.Instance.Load(levelName);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
             keyboard = new KeyboardController(this);
         }
@@ -81,7 +84,7 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            LoadCsv.Instance.Load();
+            LoadCsv.Instance.Load(levelName);
             GameObjectContainer.Instance.Clear();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
             keyboard = new KeyboardController(this);

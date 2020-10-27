@@ -26,11 +26,11 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             }
         }
 
-        public void Load()
+        public void Load(string levelName)
         {
-            
+            string levelPath = @"..\..\..\..\Libraries\Levels\" + levelName;
 
-            using (TextFieldParser parser = new TextFieldParser(@"C:..\..\..\..\Libraries\Levels\StartingLevel.csv"))
+            using (TextFieldParser parser = new TextFieldParser(levelPath))
             {
                 int column = 0;
                 int row;
