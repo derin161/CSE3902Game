@@ -31,15 +31,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			if (samus.missile == 0)
 			{
-				GameObjectContainer.Instance.Add(new Missilerocket(missileLoc, direction));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
 			}
 			else if (samus.missile == 0)
 			{
-				GameObjectContainer.Instance.Add(new PowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
 			}
 			else
 			{
-				GameObjectContainer.Instance.Add(new WaveBeam(missileLoc, direction, samus.inventory.HasLongBeam));
+				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateWaveBeam(missileLoc, direction, samus.inventory.HasLongBeam));
 			}
 
 		}
