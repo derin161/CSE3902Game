@@ -8,6 +8,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
         public void Freeze();
         public void TakeDamage(int damage);
-        public void GetDamage();
+        public int GetDamage();
     }
 }

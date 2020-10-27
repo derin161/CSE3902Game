@@ -1,8 +1,13 @@
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using CrossPlatformDesktopProject.Libraries.Sprite;
+using Microsoft.Xna.Framework.Input;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -12,9 +17,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public Texture2D texture { get; set; }
 		private int rows;
 		private int columns;
-		private Samus samus;
+		private IPlayer samus;
 
-		public RightIdleSamusSprite(Texture2D text, Samus sus)
+		public RightIdleSamusSprite(Texture2D text, IPlayer sus)
         {
 			texture = text;
 			samus = sus;
