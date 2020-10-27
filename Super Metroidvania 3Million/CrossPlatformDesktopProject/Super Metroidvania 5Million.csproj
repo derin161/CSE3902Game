@@ -71,13 +71,13 @@
     <Compile Include="Libraries\Command\UnusedCommands\PreviousItemCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
-    <Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
     <Compile Include="Libraries\SFactory\MapSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ItemSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\PlayerSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ProjectilesSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\EnemySpriteFactory.cs" />
+	<Compile Include="Libraries\SFactory\BlockSpriteFactory.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprites\BlueBrickBlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprites\BlueCircleBlockSprite.cs" />
     <Compile Include="Libraries\Sprite\Blocks\BlockSprites\BlueDoorBottomLeftSprite.cs" />

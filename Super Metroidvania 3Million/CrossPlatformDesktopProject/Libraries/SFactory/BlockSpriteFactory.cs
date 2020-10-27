@@ -156,7 +156,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new BlueCircleBlockSprite(circleBlockBlue, block);
 		}
-		public ISprite CreateBlueDoorBottomLeftSprite(OrangeDoorBlock block)
+		public ISprite CreateBlueDoorBottomLeftSprite(BlueDoorBottomLeft block)
 		{
 			return new BlueDoorBottomLeftSprite(doorBottomLeftBlue, block);
 		}
