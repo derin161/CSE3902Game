@@ -8,14 +8,13 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
         private IPlayer player;
         private IEnemy enemy;
-        private int damage;
         public EnemyDamagePlayerCommand(IPlayer player, IEnemy enemy) {
             this.player = player;
             this.enemy = enemy;
         }
         public void Execute()
         {
-            player.TakeDamage(damage);
+            player.TakeDamage(enemy.GetDamage());
         }
     }
 }
