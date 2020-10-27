@@ -76,13 +76,13 @@ namespace CrossPlatformDesktopProject
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
 
+            spriteBatch = new SpriteBatch(GraphicsDevice);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             LoadCsv.Instance.Load();
-            GameObjectContainer.Instance.Clear();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
             keyboard = new KeyboardController(this);
 
