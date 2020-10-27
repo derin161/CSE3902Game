@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Controller;
-using CrossPlatformDesktopProject.Libraries.Container;
+using System.Text;
+using System.Threading.Tasks;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -19,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public Rectangle space;
         private Game1 game;
         public float x { get; set; }
-        public float y = { get; set; }
+        public float y { get; set; }
         private bool isDead;
         public int missile;
         public GameTime gameTime;
@@ -99,6 +99,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool IsDead()
         {
             return isDead;
+        }
+
+        public void Kill()
+        {
+            isDead = true;
         }
 
         public Rectangle SpaceRectangle()
