@@ -13,11 +13,24 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
-    public class LoadCSV
+    public class LoadCsv
     {
+
+        private static LoadCsv instance = new LoadCsv();
+
+        public static LoadCsv Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
         public void Load()
         {
-            using (TextFieldParser parser = new TextFieldParser(@"~\Levels\StartingLevel.csv"))
+            
+
+            using (TextFieldParser parser = new TextFieldParser(@"C:..\..\..\..\Libraries\Levels\StartingLevel.csv"))
             {
                 int column = 0;
                 int row;
@@ -162,7 +175,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 GameObjectContainer.Instance.Add(block);
                                 break;
 
-                            case "StockBlockBlue":
+                            case "StockBlueBlock":
                                 location = new Vector2(row * 32, column * 32);
                                 block = new StockBlockBlue(location);
                                 GameObjectContainer.Instance.Add(block);
