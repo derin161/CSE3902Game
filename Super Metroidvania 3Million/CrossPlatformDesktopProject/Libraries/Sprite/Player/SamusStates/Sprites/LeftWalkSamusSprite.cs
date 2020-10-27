@@ -1,8 +1,13 @@
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using CrossPlatformDesktopProject.Libraries.Sprite;
+using Microsoft.Xna.Framework.Input;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -15,7 +20,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private Samus samus;
 		private int currentFrame;
 		private int totalFrames;
-		private int xChange;
+		private float xChange;
 		private int interval;
 		private int timer;
 
@@ -27,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			columns = 4;
 			currentFrame = 0;
 			totalFrames = 3;
-			xChange = 8;
+			xChange = 8f;
 			interval = 100;
 			timer = 0;
 
@@ -46,7 +51,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 					currentFrame++;
                 }
 				samus.x -= xChange;
-				samus.space = new Rectangle((int)x, (int)y, 64, 64);
+				samus.space = new Rectangle((int)samus.x, (int)samus.y, 64, 64);
 				timer -= gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 

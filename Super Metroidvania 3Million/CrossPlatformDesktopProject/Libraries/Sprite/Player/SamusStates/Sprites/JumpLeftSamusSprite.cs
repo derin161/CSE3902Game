@@ -1,8 +1,13 @@
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using CrossPlatformDesktopProject.Libraries.Sprite;
+using Microsoft.Xna.Framework.Input;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -10,18 +15,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	public class JumpLeftSamusSprite : ISprite
 	{
 		public Texture2D texture { get; set; }
-		public int xChange;
+		public float xChange;
 		private int rows;
 		private int columns;
 		private Samus samus;
-		public int currentFrame { get; private set; }
+		public int currentFrame { get; set; }
 		private int totalFrames;
-		private int yChange;
+		private float yChange;
 		private int interval;
 		private int timer;
-		private int origY { get; private set; }
+		private float origY { get; set; }
 
-		public JumpLeftSamusSprite(Texture2D text, Samus sus, bool left, int frame, int y)
+		public JumpLeftSamusSprite(Texture2D text, Samus sus, bool left, int frame, float y)
         {
 			texture = text;
 			samus = sus;
@@ -29,11 +34,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			columns = 1;
 			currentFrame = frame;
 			totalFrames = 5;
-			yChange = 10;
-			xChange = 0;
+			yChange = 10f;
+			xChange = 0f;
 			if (left)
             {
-				xChange = 10;
+				xChange = 10.0f;
             }
 			interval = 50;
 			timer = 0;

@@ -11,7 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     public class KeyboardController : IController
     {
-        //Written by Tristan Roman and Shyamal Shah
+        //Written by Tristan Roman and Shyamal Shah and Nyigel Spann
         private Dictionary<Keys, ICommand> controllerMappings = new Dictionary<Keys, ICommand>();
 
         //The suppressedKeyTimer keeps track of all the keys and, if mapped to a positive number, how long they are suppressed for.
@@ -67,54 +67,28 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
-            ICommand up = new PlayerAimUpCommand(player);
-            ICommand down = new PlayerMorphCommand(player);
-            ICommand left = new PlayerMoveLeftCommand(player);
-            ICommand right = new PlayerMoveRightCommand(player);
-            ICommand space = new PlayerJumpCommand(player);
-            ICommand missleOrBomb = new CycleBeamMissileCommand(player);
-            ICommand start = new StartCommand(gameState);
-            ICommand select = new SelectCommand(gameState);
-            ICommand damage = new EnemyDamagePlayerCommand(gameState, player);
+            RegisterCommand(Keys.Space, new PlayerJumpCommand(player));
 
-            //Upgrade Toggles
-            ICommand iceToggle = new PlayerGiveItemCommand(Player.UpgradeType.Icebeam, player);
-            ICommand waveToggle = new PlayerGiveItemCommand(Player.UpgradeType.Wavebeam, player);
-            ICommand longToggle = new PlayerGiveItemCommand(Player.UpgradeType.Longbeam, player);
-            ICommand screwToggle = new PlayerGiveItemCommand(Player.UpgradeType.Screw, player);
+            RegisterCommand(Keys.W, new PlayerAimUpCommand(player));
+            RegisterCommand(Keys.Up, new PlayerAimUpCommand(player));
 
+            RegisterCommand(Keys.S, new PlayerMorphCommand(player));
+            RegisterCommand(Keys.Down, new PlayerMorphCommand(player));
 
-            //Upgrade Toggles
-            RegisterCommand(Keys.D1, iceToggle);
-            RegisterCommand(Keys.NumPad1, iceToggle);
-            RegisterCommand(Keys.D2, waveToggle);
-            RegisterCommand(Keys.NumPad2, waveToggle);
-            RegisterCommand(Keys.D3, longToggle);
-            RegisterCommand(Keys.NumPad3, longToggle);
-            RegisterCommand(Keys.D4, longToggle); //Not fully implemented yet.
-            RegisterCommand(Keys.NumPad4, longToggle);
+            RegisterCommand(Keys.A, new PlayerMoveLeftCommand(player));
+            RegisterCommand(Keys.Left, new PlayerMoveLeftCommand(player));
 
-            RegisterCommand(Keys.C, missleOrBomb);
+            RegisterCommand(Keys.D, new PlayerMoveRightCommand(player));
+            RegisterCommand(Keys.Right, new PlayerMoveRightCommand(player));
 
-            RegisterCommand(Keys.Space, space);
+            RegisterCommand(Keys.Z, new PlayerAttackCommand(player));
+            RegisterCommand(Keys.N, new PlayerAttackCommand(player));
 
-            RegisterCommand(Keys.W, up);
-            RegisterCommand(Keys.Up, up);
+            RegisterCommand(Keys.C, new CycleBeamMissileCommand(player));
 
-            RegisterCommand(Keys.S, down);
-            RegisterCommand(Keys.Down, down);
+            RegisterCommand(Keys.Q, new QuitCommand(gameState));
 
-            RegisterCommand(Keys.A, left);
-            RegisterCommand(Keys.Left, left);
-
-            RegisterCommand(Keys.D, right);
-            RegisterCommand(Keys.Right, right);
-
-            RegisterCommand(Keys.Q, start);
-
-            RegisterCommand(Keys.R, select);
-
-            RegisterCommand(Keys.E, damage);
+            RegisterCommand(Keys.R, new RestartCommand(gameState));
 
 
         }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using CrossPlatformDesktopProject.Libraries.SFactory;
@@ -13,17 +14,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	/*Author: Shyamal Shah*/
 	public class RightWalkSamusState : IPlayerState 
 	{
-		private IPlayer samus;
+		private Samus samus;
 		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
 
-		public RightWalkSamusState(IPlayer sam)
+		public RightWalkSamusState(Samus sam)
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightWalkSprite(samus);
 			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
-			direction = new Vector2(4.0, 0.0);
+			direction = new Vector2(4.0f, 0.0f);
 		}
 
 		public void Attack()
