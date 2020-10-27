@@ -24,7 +24,26 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         {
             //Determine the direction that the player came from and push the player back out of the block
             //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
-            //If collisionZone is more tall than wide, then it's TOP/BOTTOM, else, LEFT/RIGHT.
+            if (collisionZone.Height > collisionZone.Width)
+            { //LEFT/RIGHT collision
+                if (player.SpaceRectangle().X < block.SpaceRectangle().X)
+                { //LEFT Collision
+
+                }
+                else
+                { //RIGHT Collision 
+
+                }
+            }
+            else { //TOP/BOTTOM collision 
+                if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
+                { //TOP Collision
+
+                }
+                else { //BOTTOM Collision 
+                
+                }
+            }
         }
 
         public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
@@ -39,7 +58,28 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             //Same as player block collisions
             //Player should become temporarily invulnerable and blink. Logic likely in Player class accessed through TakeDamage command.
             //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
-            //If collisionZone is more tall than wide, then it's TOP/BOTTOM, else, LEFT/RIGHT.
+            if (collisionZone.Height > collisionZone.Width)
+            { //LEFT/RIGHT collision
+                if (enemy.SpaceRectangle().X < block.SpaceRectangle().X)
+                { //LEFT Collision
+
+                }
+                else
+                { //RIGHT Collision 
+
+                }
+            }
+            else
+            { //TOP/BOTTOM collision 
+                if (enemy.SpaceRectangle().Y < block.SpaceRectangle().Y)
+                { //TOP Collision
+
+                }
+                else
+                { //BOTTOM Collision 
+
+                }
+            }
         }
 
         public void ProjectileBlockCollision(IProjectile projectile, IBlock block)
