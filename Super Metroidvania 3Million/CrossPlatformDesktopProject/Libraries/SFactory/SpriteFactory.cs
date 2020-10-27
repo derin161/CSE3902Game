@@ -188,7 +188,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			enemyList.Add(new Memu(location));
 			enemyList.Add(new Geega(location));
 			enemyList.Add(new VerticalZeela(location));
-			enemyList.Add(new Kraid(location, game));
+			enemyList.Add(new Kraid(location));
 
 			return enemyList;
 		}
