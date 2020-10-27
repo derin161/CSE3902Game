@@ -24,7 +24,6 @@ namespace CrossPlatformDesktopProject
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            keyboard = new KeyboardController(this);
             gameTime = new GameTime();
         }
 
@@ -43,6 +42,7 @@ namespace CrossPlatformDesktopProject
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
+            keyboard = new KeyboardController(this);
         }
 
         protected override void UnloadContent()
@@ -72,8 +72,6 @@ namespace CrossPlatformDesktopProject
 
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
-            graphics = new GraphicsDeviceManager(this);
-            keyboard = new KeyboardController(this);
             gameTime = new GameTime();
 
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
@@ -83,6 +81,7 @@ namespace CrossPlatformDesktopProject
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             GameObjectContainer.Instance.Clear();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
+            keyboard = new KeyboardController(this);
 
         }
     }
