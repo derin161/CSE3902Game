@@ -1,13 +1,13 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Nyigel Spann
-    public class PlayerCurlUpCommand : ICommand
+    public class PlayerMorphCommand : ICommand
     {
         private IPlayer player;
 
-        public PlayerCurlUpCommand(IPlayer player)
+        public PlayerMorphCommand(IPlayer player)
         {
             /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
             this.player = player;

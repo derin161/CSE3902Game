@@ -1,5 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
@@ -8,13 +8,15 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
         private IPlayer player;
         private IEnemy enemy;
+        private int damage;
         public EnemyDamagePlayerCommand(IPlayer player, IEnemy enemy) {
             this.player = player;
             this.enemy = enemy;
+            damage = 10;
         }
         public void Execute()
         {
-            player.TakeDamage(enemy.GetDamage());
+            player.TakeDamage(damage);
         }
     }
 }

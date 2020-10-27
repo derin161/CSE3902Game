@@ -1,5 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void Update()
         {
-            Player player = GameObjectContainer.Instance.Player;
+            IPlayer player = GameObjectContainer.Instance.Player;
             //Check if the player is colliding with any enemies
             foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList) 
             {

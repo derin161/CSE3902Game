@@ -1,9 +1,11 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
@@ -11,20 +13,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	/*Author: Shyamal Shah*/
 	public class JumpRightSamusState : IPlayerState 
 	{
-		private Samus samus;
+		private IPlayer samus;
 		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
-		private Vector2
 
-		public JumpRightSamusState(Samus sam, bool xShift)
+		public JumpRightSamusState(IPlayer sam, bool xShift, int frame, int y)
 		{
 			samus = sam;
-			sprite = PlayerSpriteFactory.Instance.RightWalkSprite(samus);
+			sprite = PlayerSpriteFactory.Instance.JumpRightSprite(samus, xShift, frame, y);
 			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
 			direction = new Vector2(4.0, 0.0);
-			xChange = xShift;
-
 		}
 
 		public void Attack()
@@ -56,13 +55,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveRight()
         {
-			xChange = true;
+			sprite.xChange = 10;
 			this.Update(samus.gameTime);
 		}
 
 		public void MoveLeft()
         {
-			samus.state = new JumpLeftSamusState(samus);
+			samus.state = new JumpLeftSamusState(samus, true, sprite.currentFrame, sprite.origY);
 		}
 
 		public void AimUp()

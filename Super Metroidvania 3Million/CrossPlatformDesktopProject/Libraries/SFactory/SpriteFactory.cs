@@ -1,6 +1,6 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -188,7 +188,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			enemyList.Add(new Memu(location));
 			enemyList.Add(new Geega(location));
 			enemyList.Add(new VerticalZeela(location));
-			enemyList.Add(new Kraid(location, game));
+			enemyList.Add(new Kraid(location));
 
 			return enemyList;
 		}

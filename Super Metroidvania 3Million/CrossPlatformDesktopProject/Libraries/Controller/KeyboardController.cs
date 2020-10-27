@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
@@ -67,10 +67,11 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
-            ICommand up = new PlayerJumpCommand(player);
-            ICommand down = new PlayerAimUpCommand(player);
+            ICommand up = new PlayerAimUpCommand(player);
+            ICommand down = new PlayerMorphCommand(player);
             ICommand left = new PlayerMoveLeftCommand(player);
             ICommand right = new PlayerMoveRightCommand(player);
+            ICommand space = new PlayerJumpCommand(player);
             ICommand missleOrBomb = new CycleBeamMissileCommand(player);
             ICommand start = new StartCommand(gameState);
             ICommand select = new SelectCommand(gameState);
@@ -94,6 +95,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.NumPad4, longToggle);
 
             RegisterCommand(Keys.C, missleOrBomb);
+
+            RegisterCommand(Keys.Space, space);
 
             RegisterCommand(Keys.W, up);
             RegisterCommand(Keys.Up, up);

@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
@@ -16,17 +16,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         public void Execute()
         {
             player.MoveLeft();
-            /* This logic needs to moved into the player.
-            if (!samus.moveDisabled){
-                if (samus.currentState == Player.State.Jump){
-                    samus.Location = new Vector2(samus.Location.X - 20, samus.Location.Y);
-                }else if (samus.moveLeftFrames == 7){
-                    samus.UpdateState(Player.State.MoveLeft, -1, false);
-                }else {
-                    samus.UpdateState(Player.State.MoveLeft, samus.moveLeftFrames, false);
-                }
-            }*/
-
         }
     }
 }
