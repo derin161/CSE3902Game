@@ -1,15 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Super Metroidvania 3Million",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command\\PlayerItemCommands",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Container",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\SFactory",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Projectiles"
+    "\\CSE3902Game",
+    "\\CSE3902Game\\Super Metroidvania 3Million",
+    "\\CSE3902Game\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
+    "\\CSE3902Game\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
+    "\\Super Metroidvania 3Million"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Container\\ProjectileContainer.cs",
+  "SelectedNode": "\\CSE3902Game\\Super Metroidvania 3Million\\Super Metroidvania 5Million.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -14,7 +14,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int totalFrames;
         private int count;
-        private int direction;
         private VerticalZeela verticalZeela;
 
         public VerticalZeelaSprite(Texture2D texture, VerticalZeela vz)

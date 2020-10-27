@@ -14,11 +14,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private ISprite sprite;
         private int msBetweenAttack = 500;
         private int msUntilAttack = 500;
-        private float x, y;
         public Rectangle Space;
         private bool isDead;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
+        private int health;
+
 
         public Kraid(Vector2 location)
         {
@@ -26,6 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = 1;
             vertSpeed = 0;
+            health = 100;
+
         }
 
         public void Update(GameTime gameTime)
@@ -48,7 +51,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
 
             //Update location
-            Space = new Rectangle((int)x, (int)y, 48, 64);
+            stateMachine.Update(horizSpeed, vertSpeed);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 48, 64);
         }
 
 
@@ -90,15 +94,31 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         private void throwHorns()
         {
-            GameObjectContainer.Instance.Add(new KraidHorn(new Vector2(x, y), true));
+            GameObjectContainer.Instance.Add(new KraidHorn(new Vector2(stateMachine.x, stateMachine.y), true));
         }
 
         private void shootMissiles()
         {
             int speed = 7;
-            GameObjectContainer.Instance.Add(new KraidMissile(new Vector2(x+23, y+38), new Vector2(speed, 0)));
+            GameObjectContainer.Instance.Add(new KraidMissile(new Vector2(stateMachine.x+23, stateMachine.y+38), new Vector2(speed, 0)));
         }
 
+        public void Freeze()
+        {
+            stateMachine.Freeze();
+        }
+        public int GetDamage()
+        {
+            return 25;
+        }
+        public void TakeDamage(int damage)
+        {
+            health = health - damage;
+            if (health <= 0)
+            {
+                this.Kill();
+            }
+        }
 
     }
 }
