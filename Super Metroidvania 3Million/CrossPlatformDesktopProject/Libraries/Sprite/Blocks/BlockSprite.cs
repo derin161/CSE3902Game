@@ -9,6 +9,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         private int xPos = 0;
         private int yPos = 0;
         public Rectangle Space { get; set; }
+        private bool isDead = false;
 
         public BlockSprite(Texture2D Texture, Vector2 location)
         {
@@ -34,7 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         }
 
         public bool IsDead() {
-            return false;
+            return isDead;
         }
 
         public void Kill()
