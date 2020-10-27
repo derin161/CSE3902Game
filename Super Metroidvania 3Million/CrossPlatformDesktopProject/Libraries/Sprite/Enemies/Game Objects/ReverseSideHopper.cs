@@ -30,7 +30,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
             sprite.Update(gameTime);
         }
-
+        public void Jump(int count, int direction)
+        {
+            stateMachine.y = -(count * count) + 20 * count + initialY;
+            stateMachine.x += direction;
+        }
         public Rectangle SpaceRectangle()
         {
             return Space;

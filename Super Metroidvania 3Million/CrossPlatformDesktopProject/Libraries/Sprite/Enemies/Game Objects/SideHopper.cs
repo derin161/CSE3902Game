@@ -14,6 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private bool isDead;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
+        private float initialY;
 
 
         public SideHopper(Vector2 location)
@@ -22,6 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = 3;
             vertSpeed = 0;
+            initialY = location.Y;
         }
 
         public void Update(GameTime gameTime)
@@ -29,6 +31,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine.Update(horizSpeed, vertSpeed);
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
             sprite.Update(gameTime);
+        }
+        public void Jump(int count, int direction)
+        {
+            stateMachine.y = (count * count) - 20 * count + initialY;
+            stateMachine.x += direction;
         }
 
         public Rectangle SpaceRectangle()
