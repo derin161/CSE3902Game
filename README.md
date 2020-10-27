@@ -43,11 +43,16 @@ ___
 
 * Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
 * Some textures need to be cleaned up.
+* Player currently unable to jump. This should be fixed when a new physics engine is implemented.
+* Player states have some minor issues with inputs. Movement to be updated for next Sprint.
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
 
-* This should be resolved as collisions are implemented - this variable is just a NULL variable for the time being.
+* (No Current Errors)
+
+* Warning		Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.	
+    - Unused and/or unrecognized variable/function calls; should be resolved with further feature implementations and clean-up.
 
 ___
 **OTHER TOOLS/PROCESSES**
