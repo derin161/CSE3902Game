@@ -78,13 +78,47 @@ namespace CrossPlatformDesktopProject.Libraries.Container
 
         public void Update(GameTime gametime) {
             player.Update(gametime);
-
-            /* Casting the lists to objects then to IGameObject lists to make them IGameObject lists for the updateList method. 
-             * Taken from: https://stackoverflow.com/questions/1917844/how-to-cast-listobject-to-listmyclass/1920865 */
-            updateList((List<IGameObject>) (object) projectileList, gametime);
-            updateList((List<IGameObject>) (object) enemyList, gametime);
-            updateList((List<IGameObject>) (object) blockList, gametime);
-            updateList((List<IGameObject>) (object) itemList, gametime);
+            
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < projectileList.Count; i++)
+            {
+                projectileList[i].Update(gametime);
+                if (projectileList[i].IsDead())
+                {
+                    projectileList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < blockList.Count; i++)
+            {
+                blockList[i].Update(gametime);
+                if (blockList[i].IsDead())
+                {
+                    blockList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < enemyList.Count; i++)
+            {
+                enemyList[i].Update(gametime);
+                if (enemyList[i].IsDead())
+                {
+                    enemyList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                itemList[i].Update(gametime);
+                if (itemList[i].IsDead())
+                {
+                    itemList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
         }
 
         public void Draw(SpriteBatch sb)
