@@ -28,7 +28,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             { //LEFT/RIGHT collision
                 if (player.SpaceRectangle().X < block.SpaceRectangle().X)
                 { //LEFT Collision
-
+                    
                 }
                 else
                 { //RIGHT Collision 
@@ -62,22 +62,22 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             { //LEFT/RIGHT collision
                 if (enemy.SpaceRectangle().X < block.SpaceRectangle().X)
                 { //LEFT Collision
-
+                    enemy.MoveRight();
                 }
                 else
                 { //RIGHT Collision 
-
+                    enemy.MoveRight();
                 }
             }
             else
             { //TOP/BOTTOM collision 
                 if (enemy.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-
+                    enemy.MoveDown();
                 }
                 else
                 { //BOTTOM Collision 
-
+                    enemy.MoveUp();
                 }
             }
         }
