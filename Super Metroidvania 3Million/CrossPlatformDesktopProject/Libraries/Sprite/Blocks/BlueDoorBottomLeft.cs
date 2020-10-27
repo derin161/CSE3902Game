@@ -19,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         private bool isDead = false;
 
 
-        public BlueDoorBottomLeft(Vector2 initialLocation, bool isMovingRight)
+        public BlueDoorBottomLeft(Vector2 initialLocation)
         {
             this.initialLocation = initialLocation;
             Location = initialLocation;
@@ -39,7 +39,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         {
 
             //Update position and space
-            Location = new Vector2(); //Until we implement the map and figure out how location is being updated
             Space = new Rectangle((int)Location.X, (int)Location.Y, Space.Width, Space.Height);
 
             bool collision = false; //temp var til collisions are added
