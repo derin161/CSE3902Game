@@ -150,19 +150,5 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             blockList = new List<IBlock>();
         }
 
-        private void updateList(List<IGameObject> goList, GameTime gt)
-        {
-            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
-            for (int i = 0; i < goList.Count; i++)
-            {
-                goList[i].Update(gt);
-                if (goList[i].IsDead())
-                {
-                    goList.RemoveAt(i);
-                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
-                }
-            }
-        }
-
     }
 }
