@@ -8,6 +8,7 @@ using CrossPlatformDesktopProject.Libraries.SFactory;
 using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+using System;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -30,7 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sus;
 			rows = 1;
 			columns = 4;
-			currentFrame = 0;
+			currentFrame = 1;
 			totalFrames = 3;
 			xChange = 8f;
 			interval = 100;
@@ -46,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 				if (currentFrame == 3)
                 {
 					currentFrame = 0;
-                }else
+				}else
                 {
 					currentFrame++;
                 }
