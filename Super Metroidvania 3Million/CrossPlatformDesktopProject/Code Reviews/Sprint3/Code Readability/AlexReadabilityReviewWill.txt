@@ -1,0 +1,12 @@
+Review Author: _Alex Nguyen___
+Review Date: 10/26/2020
+Sprint No: 3
+Name of the .cs file being reviewed: EnemyStateMachine.cs
+Author of the .cs file being reviewed: __Will Floyd__
+Number of minutes taken to complete the review: ~10mins
+======================================================
+
+Specific comments on what is readable and what is not:
+1) A lot of the methods names are very self explanatory.
+2) The spacing between the methods make readability easier.
+3) Method and variable names are easily straightforward on what they do.
