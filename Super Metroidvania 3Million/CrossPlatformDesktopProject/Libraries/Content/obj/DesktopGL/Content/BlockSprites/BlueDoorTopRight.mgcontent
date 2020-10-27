@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/shyam/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopRight.png</SourceFile>
-  <SourceTime>2020-10-26T00:25:35.1929984-04:00</SourceTime>
-  <DestFile>C:/Users/shyam/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/BlockSprites/BlueDoorTopRight.xnb</DestFile>
-  <DestTime>2020-10-26T18:43:18.3315879-04:00</DestTime>
+  <SourceFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorTopRight.png</SourceFile>
+  <SourceTime>2020-10-26T00:15:48.9422167-04:00</SourceTime>
+  <DestFile>C:/Users/derin/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/BlockSprites/BlueDoorTopRight.xnb</DestFile>
+  <DestTime>2020-10-26T20:23:18.0130057-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

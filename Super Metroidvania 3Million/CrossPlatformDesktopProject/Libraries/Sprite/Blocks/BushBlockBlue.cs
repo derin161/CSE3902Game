@@ -39,9 +39,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 
             //Update position and space
             Space = new Rectangle((int)Location.X, (int)Location.Y, Space.Width, Space.Height);
-
-            bool collision = false; //temp var til collisions are added
-
             sprite.Update(gameTime);
         }
 
