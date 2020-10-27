@@ -304,6 +304,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="Libraries\Levels\LevelOne.csv" />
     <None Include="Libraries\Levels\StartingLevel.csv" />
   </ItemGroup>
   <ItemGroup>
