@@ -15,6 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
+        private float initialY;
 
         public ReverseSideHopper(Vector2 location)
         {
@@ -23,6 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             horizSpeed = 3;
             vertSpeed = 0;
             health = 100;
+            initialY = location.Y;
         }
 
         public void Update(GameTime gameTime)
