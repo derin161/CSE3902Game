@@ -20,7 +20,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private IPlayer samus;
 		private int currentFrame;
 		private int totalFrames;
-		private int xChange;
+		private float xChange;
 		private int interval;
 		private int timer;
 
@@ -32,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			columns = 4;
 			currentFrame = 0;
 			totalFrames = 3;
-			xChange = 8;
+			xChange = 8f;
 			interval = 100;
 			timer = 0;
 
