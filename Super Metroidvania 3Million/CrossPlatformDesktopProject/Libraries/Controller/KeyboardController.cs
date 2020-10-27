@@ -84,6 +84,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.Z, new PlayerAttackCommand(player));
             RegisterCommand(Keys.N, new PlayerAttackCommand(player));
 
+            RegisterCommand(Keys.C, new CycleBeamMissileCommand(player));
+
             RegisterCommand(Keys.Q, new QuitCommand(gameState));
 
             RegisterCommand(Keys.R, new RestartCommand(gameState));
