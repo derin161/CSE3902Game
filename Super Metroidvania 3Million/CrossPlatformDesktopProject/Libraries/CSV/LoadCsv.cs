@@ -78,6 +78,131 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 GameObjectContainer.Instance.Add(block);
                                 break;
 
+                            case "StockBlockBlue":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new StockBlockBlue(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueCircleBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueCircleBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueFenceBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueFenceBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedDoorTopRightBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedDoorTopRightBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedDoorMiddleRightBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedDoorMiddleRightBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedDoorBottomRightBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedDoorBottomRightBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedDoorTopLeftBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedDoorTopLeftBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedDoorMiddleLeftBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedDoorMiddleLeftBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RedDoorBottomLeftBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RedDoorBottomLeftBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "LavaBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new LavaBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "LavaBlockTop":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new LavaBlockTop(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "LightBlueBrickBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new LightBlueBrickBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueSquareBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueSquareBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "LeftStartingPlatformBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new LeftStartingPlatformBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "RightStartingPlatformBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new RightStartingPlatformBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "StockBlockStone":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new StockBlockStone(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "SwirlBlockBlue":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new SwirlBlockBlue(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "DualHorizontalBlockStone":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new DualHorizontalBlockStone(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BushBlockSilver":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BushBlockSilver(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BluePipesBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BluePipesBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueMetalBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueMetalBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
 
 
                             default:
