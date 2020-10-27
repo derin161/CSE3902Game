@@ -319,7 +319,8 @@
     <Content Include="Code Reviews\Sprint2\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code Reviews\Sprint3\" />
+    <Folder Include="Code Reviews\Sprint3\Code Quality\" />
+    <Folder Include="Code Reviews\Sprint3\Code Readability\" />
     <Folder Include="Code Reviews\Sprint4\" />
     <Folder Include="Code Reviews\Sprint5\" />
     <Folder Include="Libraries\Camera\" />
