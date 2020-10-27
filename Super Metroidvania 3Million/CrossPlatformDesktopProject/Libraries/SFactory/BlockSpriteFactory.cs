@@ -293,7 +293,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			return new RedDoorMiddleBlockSprite(redDoorMiddleBlock, block);
 		}
 
-		public ISprite CreateRedDoorMiddleLeftBlockSprite(RedDoorMiddeLeftBlock block)
+		public ISprite CreateRedDoorMiddleLeftBlockSprite(RedDoorMiddleLeftBlock block)
 		{
 			return new RedDoorMiddeLeftBlockSprite(redDoorMiddleLeftBlock, block);
 		}

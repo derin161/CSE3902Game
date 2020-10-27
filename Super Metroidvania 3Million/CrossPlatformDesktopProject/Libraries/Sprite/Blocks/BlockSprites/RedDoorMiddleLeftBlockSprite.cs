@@ -11,9 +11,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
     class RedDoorMiddeLeftBlockSprite : ISprite
     {
         private Texture2D texture;
-        private RedDoorMiddeLeftBlock block;
+        private RedDoorMiddleLeftBlock block;
 
-        public RedDoorMiddeLeftBlockSprite(Texture2D texture, RedDoorMiddeLeftBlock block)
+        public RedDoorMiddeLeftBlockSprite(Texture2D texture, RedDoorMiddleLeftBlock block)
         {
             this.block = block;
             this.texture = texture;
