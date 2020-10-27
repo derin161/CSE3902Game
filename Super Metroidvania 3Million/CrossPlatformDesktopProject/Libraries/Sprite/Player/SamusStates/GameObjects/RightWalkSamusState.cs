@@ -14,12 +14,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	/*Author: Shyamal Shah*/
 	public class RightWalkSamusState : IPlayerState 
 	{
-		private IPlayer samus;
+		private Samus samus;
 		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
 
-		public RightWalkSamusState(IPlayer sam)
+		public RightWalkSamusState(Samus sam)
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightWalkSprite(samus);

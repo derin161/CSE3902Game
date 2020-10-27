@@ -18,7 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public float xChange;
 		private int rows;
 		private int columns;
-		private IPlayer samus;
+		private Samus samus;
 		public int currentFrame { get; set; }
 		private int totalFrames;
 		private float yChange;
@@ -26,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private int timer;
 		private float origY { get; set; }
 
-		public JumpLeftSamusSprite(Texture2D text, IPlayer sus, bool left, int frame, float y)
+		public JumpLeftSamusSprite(Texture2D text, Samus sus, bool left, int frame, float y)
         {
 			texture = text;
 			samus = sus;
