@@ -11,9 +11,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
     class BlueDoorBottomLeftSprite : ISprite
     {
         private Texture2D texture;
-        private BlueDoorBottomLeft block;
+        private OrangeDoorBlock block;
 
-        public BlueDoorBottomLeftSprite(Texture2D texture, BlueDoorBottomLeft block)
+        public BlueDoorBottomLeftSprite(Texture2D texture, OrangeDoorBlock block)
         {
             this.block = block;
             this.texture = texture;

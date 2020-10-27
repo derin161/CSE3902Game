@@ -1,10 +1,10 @@
 ﻿namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Shyamal Shah
-    class StartCommand : ICommand
+    class QuitCommand : ICommand
     {
         private Game1 currentGame;
-        public StartCommand(Game1 game)
+        public QuitCommand(Game1 game)
         {
             currentGame = game;
         }

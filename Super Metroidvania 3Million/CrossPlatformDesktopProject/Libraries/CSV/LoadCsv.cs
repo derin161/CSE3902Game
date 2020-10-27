@@ -54,6 +54,32 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 GameObjectContainer.Instance.Add(block);
                                 break;
 
+                            case "BlueDoorTopLeft":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueDoorTopLeft(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueDoorMiddleLeft":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueDoorMiddleLeft(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "BlueDoorBottomLeft":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new BlueDoorBottomLeft(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+                            case "OrangeDoorBlock":
+                                location = new Vector2(row * 32, column * 32);
+                                block = new OrangeDoorBlock(location);
+                                GameObjectContainer.Instance.Add(block);
+                                break;
+
+
+
                             default:
                                 break;
                         }
