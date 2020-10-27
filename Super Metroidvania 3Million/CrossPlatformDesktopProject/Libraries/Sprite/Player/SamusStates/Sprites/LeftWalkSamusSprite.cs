@@ -17,14 +17,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public Texture2D texture { get; set; }
 		private int rows;
 		private int columns;
-		private IPlayer samus;
+		private Samus samus;
 		private int currentFrame;
 		private int totalFrames;
 		private float xChange;
 		private int interval;
 		private int timer;
 
-		public LeftWalkSamusSprite(Texture2D text, IPlayer sus)
+		public LeftWalkSamusSprite(Texture2D text, Samus sus)
         {
 			texture = text;
 			samus = sus;

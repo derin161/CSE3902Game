@@ -13,12 +13,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	/*Author: Shyamal Shah*/
 	public class LeftIdleSamusState : IPlayerState 
 	{
-		private IPlayer samus;
+		private Samus samus;
 		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
 
-		public LeftIdleSamusState(IPlayer sam)
+		public LeftIdleSamusState(Samus sam)
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.LeftIdleSprite(samus);
