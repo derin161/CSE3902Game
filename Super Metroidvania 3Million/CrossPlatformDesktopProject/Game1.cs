@@ -41,6 +41,7 @@ namespace CrossPlatformDesktopProject
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
+            BlockSpriteFactory.Instance.LoadAllTextures(Content);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
         }
 
@@ -81,6 +82,7 @@ namespace CrossPlatformDesktopProject
             EnemySpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
+            BlockSpriteFactory.Instance.LoadAllTextures(Content);
             GameObjectContainer.Instance.Clear();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
 
