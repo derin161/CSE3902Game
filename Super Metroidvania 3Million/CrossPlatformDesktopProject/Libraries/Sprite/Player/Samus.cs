@@ -100,7 +100,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
 
         public void Idle() { 
-            
+            state.Idle();
         }
 
         public void Kill()

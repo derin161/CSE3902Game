@@ -77,5 +77,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			sprite.Draw(spriteBatch);
 		}
+
+		public void Idle () 
+		{
+			samus.state = new LeftIdleSamusState(samus);
+		}
 	}
 }
