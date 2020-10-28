@@ -46,7 +46,7 @@ namespace CrossPlatformDesktopProject
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             LoadCsv.Instance.Load(levelName);
-            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 300), this, gameTime));
+            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 200), this, gameTime));
             keyboard = new KeyboardController(this);
         }
 
