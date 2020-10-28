@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         }
         public void RegisterCommand(Keys key, ICommand releaseCommand)
         {
-            if (!controllerPressMappings.ContainsKey(key))
+            if (!controllerReleaseMappings.ContainsKey(key))
             {
                 controllerReleaseMappings.Add(key, releaseCommand);
             }
@@ -85,11 +85,11 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.S, new PlayerMorphCommand(player));
             RegisterCommand(Keys.Down, new PlayerMorphCommand(player));
 
-            RegisterCommand(Keys.A, new PlayerMoveLeftCommand(player));
-            RegisterCommand(Keys.Left, new PlayerMoveLeftCommand(player));
+            RegisterCommand(Keys.A, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
+            RegisterCommand(Keys.Left, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
 
-            RegisterCommand(Keys.D, new PlayerMoveRightCommand(player));
-            RegisterCommand(Keys.Right, new PlayerMoveRightCommand(player));
+            RegisterCommand(Keys.D, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
+            RegisterCommand(Keys.Right, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
 
             RegisterCommand(Keys.Z, new PlayerAttackCommand(player));
             RegisterCommand(Keys.N, new PlayerAttackCommand(player));

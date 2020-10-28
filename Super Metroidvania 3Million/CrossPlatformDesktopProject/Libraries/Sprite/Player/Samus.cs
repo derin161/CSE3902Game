@@ -99,6 +99,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             return isDead;
         }
 
+        public void Idle() { 
+            
+        }
+
         public void Kill()
         {
             isDead = true;
