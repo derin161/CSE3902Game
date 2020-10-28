@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             gameTime = new GameTime();
-            levelName = "StartingLevel.csv";
+            levelName = "LevelOne.csv";
         }
 
         protected override void Initialize()

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/shyam/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusLeftIdle.png</SourceFile>
-  <SourceTime>2020-10-01T03:03:54.0372139-04:00</SourceTime>
-  <DestFile>C:/Users/shyam/Source/Repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/PlayerSprites/SamusLeftIdle.xnb</DestFile>
-  <DestTime>2020-10-26T23:43:28.2714922-04:00</DestTime>
+  <SourceFile>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusLeftIdle.png</SourceFile>
+  <SourceTime>2020-10-05T22:22:17.5871398-04:00</SourceTime>
+  <DestFile>C:/Users/Albatro5s/Documents/GitHub/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/bin/DesktopGL/Content/PlayerSprites/SamusLeftIdle.xnb</DestFile>
+  <DestTime>2020-10-27T01:46:02.3168393-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
