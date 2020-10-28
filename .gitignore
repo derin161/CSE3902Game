@@ -13,5 +13,6 @@
 *.exe
 *.pdb
 *.txt
+*.cache
 [Dd]ebug/
 [Bb]in/
