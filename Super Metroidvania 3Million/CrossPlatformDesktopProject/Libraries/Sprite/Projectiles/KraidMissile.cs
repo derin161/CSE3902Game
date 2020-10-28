@@ -39,10 +39,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Location = Vector2.Add(Location, Direction);
             Space = new Rectangle((int)Location.X, (int)Location.Y, Space.Width, Space.Height);
 
-            bool collision = false; //temp var til collisions are added
-
             //Die if a collision occurs or the projectile leaves the screen
-            isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
+            isDead = isDead || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
 
             sprite.Update(gameTime);
         }

@@ -84,11 +84,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 int boundX = 100;
                 int boundY = 100;
-                isDead = collision || isHorizontal && (relativePos.X > boundX || relativePos.X < -boundX) || !isHorizontal && (relativePos.Y > boundY || relativePos.Y < -boundY);
+                isDead = isDead || isHorizontal && (relativePos.X > boundX || relativePos.X < -boundX) || !isHorizontal && (relativePos.Y > boundY || relativePos.Y < -boundY);
             }
             else {
                 //Die if a collision occurs or the projectile leaves the screen
-                isDead = collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
+                isDead = isDead || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
             sprite.Update(gameTime);
         }

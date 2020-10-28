@@ -71,7 +71,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 int boundX = 100;
                 int boundY = 100;
 
-                isDead = collision || relativeX > boundX || relativeX < -boundX || relativeY > boundY || relativeY < -boundY;
+                isDead = isDead || relativeX > boundX || relativeX < -boundX || relativeY > boundY || relativeY < -boundY;
 
             } else {
 
