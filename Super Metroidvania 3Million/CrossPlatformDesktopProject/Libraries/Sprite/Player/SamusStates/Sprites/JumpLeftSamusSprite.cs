@@ -15,7 +15,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	public class JumpLeftSamusSprite : ISprite
 	{
 		public Texture2D texture { get; set; }
-		public float xChange;
 		private int rows;
 		private int columns;
 		private Samus samus;
@@ -26,38 +25,22 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private int timer;
 		public float origY { get; set; }
 
-		public JumpLeftSamusSprite(Texture2D text, Samus sus, bool left, int frame, float y)
+		public JumpLeftSamusSprite(Texture2D text, Samus sus)
         {
 			texture = text;
 			samus = sus;
 			rows = 1;
 			columns = 1;
-			currentFrame = frame;
-			yChange = 10.0f;
-			xChange = 0.0f;
-			if (left)
-            {
-				xChange = 10.0f;
-            }
+			currentFrame = 0;
 			interval = 50;
 			timer = 0;
-			origY = y;
-			if (currentFrame == 0)
-            {
-				samus.position = new Vector2(samus.position.X - xChange, samus.position.Y + yChange);
-			}
+
 
         }
 
 		public void Update(GameTime gameTime)
         {
-			timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
-			if (timer > interval)
-            {
-				currentFrame++;
-				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
-			}
-
+			//Nothing Happens
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

@@ -86,14 +86,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return new MorphSamusSprite(morph, s);
         }
 
-        public JumpRightSamusSprite JumpRightSprite(Samus s, bool right, int frame, float y)
+        public JumpRightSamusSprite JumpRightSprite(Samus s)
         {
-            return new JumpRightSamusSprite(jumpRight, s, right, frame, y);
+            return new JumpRightSamusSprite(jumpRight, s);
         }
 
-        public JumpLeftSamusSprite JumpLeftSprite(Samus s, bool left, int frame, float y)
+        public JumpLeftSamusSprite JumpLeftSprite(Samus s)
         {
-            return new JumpLeftSamusSprite(jumpLeft, s, left, frame, y);
+            return new JumpLeftSamusSprite(jumpLeft, s);
         }
 
         public Samus CreatePlayerSprite(Vector2 l, Game1 g, GameTime g2)

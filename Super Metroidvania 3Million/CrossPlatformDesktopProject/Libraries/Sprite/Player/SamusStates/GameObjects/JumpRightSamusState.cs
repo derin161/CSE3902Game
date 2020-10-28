@@ -17,13 +17,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private JumpRightSamusSprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
+		private Vector2 currentVelocity;
 
-		public JumpRightSamusState(Samus sam, bool xShift, int frame, float y)
+		public JumpRightSamusState(Samus sam)
 		{
 			samus = sam;
-			sprite = PlayerSpriteFactory.Instance.JumpRightSprite(samus, xShift, frame, y);
+			sprite = PlayerSpriteFactory.Instance.JumpRightSprite(samus);
 			missileLoc = new Vector2(samus.position.X + 45, samus.position.Y + 32);
 			direction = new Vector2(10.0f, 0.0f);
+			samus.Physics.Jump();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 		}
 
 		public void Attack()
@@ -56,13 +59,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveRight()
         {
-			sprite.xChange = 10.0f;
-			this.Update(samus.gameTime);
+			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+			samus.Physics.MoveRight();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+
 		}
 
 		public void MoveLeft()
         {
-			samus.state = new JumpLeftSamusState(samus, true, sprite.currentFrame, sprite.origY);
+			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+			samus.Physics.MoveLeft();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+			samus.state = new JumpLeftSamusState(samus);
 		}
 
 		public void AimUp()
@@ -72,11 +80,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Update(GameTime gameTime)
 		{
+			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+			samus.Physics.Update();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 			sprite.Update(gameTime);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
+			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 			sprite.Draw(spriteBatch);
 		}
 

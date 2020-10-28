@@ -18,10 +18,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private Vector2 missileLoc;
 		private Vector2 direction;
 
-		public JumpLeftSamusState(Samus sam, bool xShift, int frame, float y)
+		public JumpLeftSamusState(Samus sam)
 		{
 			samus = sam;
-			sprite = PlayerSpriteFactory.Instance.JumpLeftSprite(samus, xShift, frame, y);
+			sprite = PlayerSpriteFactory.Instance.JumpLeftSprite(samus);
 			missileLoc = new Vector2(samus.position.X + 19, samus.position.Y + 32);
 			direction = new Vector2(10.0f, 0.0f);
 			samus.Physics.Jump();
@@ -56,13 +56,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveRight()
         {
-			samus.state = new JumpRightSamusState(samus, true, sprite.currentFrame, sprite.origY);
+			samus.state = new JumpRightSamusState(samus);
 		}
 
 		public void MoveLeft()
         {
 			samus.Physics.MoveLeft();
-			this.Update(samus.gameTime);
 		}
 
 		public void AimUp()
