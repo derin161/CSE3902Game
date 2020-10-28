@@ -33,7 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			columns = 4;
 			currentFrame = 1;
 			totalFrames = 3;
-			xChange = 8f;
+			xChange = 8.0f;
 			interval = 100;
 			timer = 0;
 
@@ -51,8 +51,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
                 {
 					currentFrame++;
                 }
-				samus.x += xChange;
-				samus.space = new Rectangle((int)samus.x, (int)samus.y, 64, 64);
+				samus.position = new Vector2(samus.position.X + xChange, samus.position.Y);
+				samus.space = new Rectangle((int)samus.position.X, (int)samus.position.Y, 64, 64);
 				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 
