@@ -19,6 +19,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void Update() {
             player.position = Vector2.Add(player.position, velocity);
+            player.space = new Rectangle((int) player.position.X, (int) player.position.Y, player.space.Width, player.space.Height);
+
             velocity = Vector2.Add(velocity, acceleration);
             if (velocity.Y > maxFallVelocity) {
                 velocity = new Vector2(velocity.X, maxFallVelocity);

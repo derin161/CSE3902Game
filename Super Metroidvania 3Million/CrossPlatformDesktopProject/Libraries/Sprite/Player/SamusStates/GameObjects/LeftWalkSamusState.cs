@@ -60,6 +60,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveLeft()
         {
+			samus.Physics.MoveLeft();
 			this.Update(samus.gameTime);
 		}
 
