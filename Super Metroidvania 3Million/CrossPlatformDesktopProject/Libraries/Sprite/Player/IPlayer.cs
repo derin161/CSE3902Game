@@ -34,5 +34,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void TakeDamage(int damage);
         public void CycleBeamMissile();
 
+        public void Idle();
+
     }
 }

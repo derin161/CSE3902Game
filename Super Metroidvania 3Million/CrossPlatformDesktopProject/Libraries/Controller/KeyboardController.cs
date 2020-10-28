@@ -12,15 +12,11 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
     public class KeyboardController : IController
     {
         //Written by Tristan Roman and Shyamal Shah and Nyigel Spann
-        private Dictionary<Keys, ICommand> controllerMappings = new Dictionary<Keys, ICommand>();
+        private Dictionary<Keys, ICommand> controllerPressMappings = new Dictionary<Keys, ICommand>();
+        private Dictionary<Keys, ICommand> controllerReleaseMappings = new Dictionary<Keys, ICommand>();
 
-        //The suppressedKeyTimer keeps track of all the keys and, if mapped to a positive number, how long they are suppressed for.
-        private Dictionary<Keys, int> suppressedKeyTimer = new Dictionary<Keys, int>();
-
-        private int msSuppressTimer = 100;
         private KeyboardState oldState;
         private KeyboardState newState;
-        private Keys[] pressedKeys;
         private Game1 gameState;
 
         public KeyboardController(Game1 game)
@@ -29,30 +25,44 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             gameState = game;
             makeDict();
         }
-        public void RegisterCommand(Keys key, ICommand command)
+        public void RegisterCommand(Keys key, ICommand releaseCommand)
         {
-            if (!controllerMappings.ContainsKey(key))
+            if (!controllerReleaseMappings.ContainsKey(key))
             {
-                controllerMappings.Add(key, command);
-                suppressedKeyTimer.Add(key, 0);
+                controllerReleaseMappings.Add(key, releaseCommand);
             }
             else {
-                controllerMappings[key] = command;
+                controllerReleaseMappings[key] = releaseCommand;
             }
         }
+
+        public void RegisterCommand(Keys key, ICommand pressCommand, ICommand releaseCommand)
+        {
+            if (!controllerPressMappings.ContainsKey(key))
+            {
+                controllerPressMappings.Add(key, pressCommand);
+                controllerReleaseMappings.Add(key, releaseCommand);
+            }
+            else
+            {
+                controllerPressMappings[key] = pressCommand;
+            }
+        }
+
         public void Update(GameTime gameTime)
         {
-            pressedKeys = Keyboard.GetState().GetPressedKeys();
             newState = Keyboard.GetState();
 
-            foreach (Keys key in pressedKeys)
+            foreach (Keys key in oldState.GetPressedKeys())
             {
-                if (controllerMappings.ContainsKey(key) && suppressedKeyTimer[key] < 0) {
-                    controllerMappings[key].Execute();
-                    suppressedKeyTimer[key] = msSuppressTimer;
-                } else if (controllerMappings.ContainsKey(key)) {
-                    suppressedKeyTimer[key] -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+                if (controllerPressMappings.ContainsKey(key) && newState.IsKeyDown(key))
+                {
+                    controllerPressMappings[key].Execute();
                 }
+                else if (controllerReleaseMappings.ContainsKey(key) && !newState.IsKeyDown(key)) {
+                    controllerReleaseMappings[key].Execute();
+                }
+                
             }
 
             oldState = newState;
@@ -75,11 +85,11 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.S, new PlayerMorphCommand(player));
             RegisterCommand(Keys.Down, new PlayerMorphCommand(player));
 
-            RegisterCommand(Keys.A, new PlayerMoveLeftCommand(player));
-            RegisterCommand(Keys.Left, new PlayerMoveLeftCommand(player));
+            RegisterCommand(Keys.A, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
+            RegisterCommand(Keys.Left, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
 
-            RegisterCommand(Keys.D, new PlayerMoveRightCommand(player));
-            RegisterCommand(Keys.Right, new PlayerMoveRightCommand(player));
+            RegisterCommand(Keys.D, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
+            RegisterCommand(Keys.Right, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
 
             RegisterCommand(Keys.Z, new PlayerAttackCommand(player));
             RegisterCommand(Keys.N, new PlayerAttackCommand(player));
