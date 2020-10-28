@@ -34,8 +34,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			columns = 1;
 			currentFrame = frame;
 			totalFrames = 5;
-			yChange = 10f;
-			xChange = 0f;
+			yChange = 10.0f;
+			xChange = 0.0f;
 			if (left)
             {
 				xChange = 10.0f;
@@ -45,8 +45,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			origY = y;
 			if (currentFrame == 0)
             {
-				samus.y += yChange;
-				samus.x += xChange;
+				samus.position = new Vector2(samus.position.X - xChange, samus.position.Y + yChange);
 			}
 
         }
@@ -58,21 +57,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             {
 				if (currentFrame == 1 || currentFrame == 2)
                 {
-					samus.x -= xChange;
-					samus.y += yChange;
+					samus.position = new Vector2(samus.position.X - xChange, samus.position.Y + yChange);
                 }else if (currentFrame == 3 || currentFrame == 4)
 				{
-					samus.x -= xChange;
-					samus.y -= yChange;
+					samus.position = new Vector2(samus.position.X - xChange, samus.position.Y - yChange);
 				}
 				else if (currentFrame == 5)
 				{
-					samus.x -= xChange;
-					samus.y = origY;
+					samus.position = new Vector2(samus.position.X - xChange, origY);
 					samus.state = new RightIdleSamusState(samus);
 				}
-				samus.space = new Rectangle((int)samus.x, (int)samus.y, 64, 64);
+				samus.space = new Rectangle((int)samus.position.X, (int)samus.position.Y, 64, 64);
 				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+				currentFrame++;
 			}
 
 		}
@@ -87,7 +84,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			Rectangle sourceRectangle = new Rectangle(column, row, width, height);
 
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
-			currentFrame++;
 		}
 	}
 }

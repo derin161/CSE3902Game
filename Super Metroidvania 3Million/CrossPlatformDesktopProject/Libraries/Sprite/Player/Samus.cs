@@ -18,8 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public int health;
         public Rectangle space {get; set; }
         private Game1 game;
-        public float x { get; set; }
-        public float y { get; set; }
+        public Vector2 position {get; set; }
         private bool isDead;
         public int missile;
         public GameTime gameTime;
@@ -28,12 +27,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
             gameTime = g2;
             game = g;
-            x = l.X;
-            y = l.Y;
+            position = new Vector2(l.X, l.Y);
 			state = new RightIdleSamusState(this);
             health = 100;
             isDead = false;
-            space = new Rectangle((int) x, (int) y, 64, 64);
+            space = new Rectangle((int) position.X, (int) position.Y, 64, 64);
             missile = 0;
             inventory = new PlayerInventory(30);
         }
