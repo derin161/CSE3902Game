@@ -11,6 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private Vector2 velocity = new Vector2(0, 0);
         private float maxFallVelocity = 5;
         private float horizontalRunSpeed = 7;
+        private float jumpSpeed = -10.0f;
         private Samus player;
 
         public PlayerPhysics(Samus player) {
@@ -42,6 +43,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void MoveLeft() {
             this.velocity = new Vector2(horizontalRunSpeed * -1, this.velocity.Y);
+        }
+
+        public void Jump() {
+            this.velocity = new Vector2(this.velocity.X, jumpSpeed);
         }
 
 
