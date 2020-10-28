@@ -10,5 +10,8 @@
 *.suo
 *.mgcontent
 *.mgstats
-[Dd]ebug/*
-[Bb]in/*
+*.exe
+*.pdb
+*.txt
+[Dd]ebug/
+[Bb]in/
