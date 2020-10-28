@@ -33,8 +33,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             }
         }
 
-        public void Break() {
-            this.velocity = Vector2.Zero;
+        public void VerticalBreak() {
+            this.velocity = new Vector2(this.velocity.X, 0);
+        }
+
+        public void HortizontalBreak()
+        {
+            this.velocity = new Vector2(0, this.velocity.Y);
         }
 
         public void MoveRight() {
