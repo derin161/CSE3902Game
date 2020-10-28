@@ -12,9 +12,9 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
     class CollisionDetector
     {
         private CollisionHandler handler = new CollisionHandler();
-        private CollisionDetector instance = new CollisionDetector();
+        private static CollisionDetector instance = new CollisionDetector();
 
-        public CollisionDetector Instance {
+        public static CollisionDetector Instance {
             get { return instance; }
         }
 

@@ -46,7 +46,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             else
             {
                 controllerPressMappings[key] = pressCommand;
-                controllerReleaseMappings[key] = pressCommand;
+                controllerReleaseMappings[key] = releaseCommand;
             }
         }
 
