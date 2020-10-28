@@ -10,5 +10,5 @@
 *.suo
 *.mgcontent
 *.mgstats
-[Dd]ebug/
-[Bb]in/
+[Dd]ebug/*
+[Bb]in/*
