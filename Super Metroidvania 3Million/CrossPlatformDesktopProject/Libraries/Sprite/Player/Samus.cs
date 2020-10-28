@@ -89,6 +89,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void Update(GameTime gameTime)
         {
+            space = new Rectangle((int) position.X, (int) position.Y, 64, 64);
             state.Update(gameTime);
             Physics.Update();
         }

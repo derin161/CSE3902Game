@@ -17,6 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private JumpLeftSamusSprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
+		private Vector2 currentVelocity;
 
 		public JumpLeftSamusState(Samus sam)
 		{
@@ -25,6 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			missileLoc = new Vector2(samus.position.X + 19, samus.position.Y + 32);
 			direction = new Vector2(10.0f, 0.0f);
 			samus.Physics.Jump();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 		}
 
 		public void Attack()
@@ -56,12 +58,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveRight()
         {
-			samus.state = new JumpRightSamusState(samus);
+			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+			samus.Physics.MoveRight();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+			samus.state = new JumpLeftSamusState(samus);
 		}
 
 		public void MoveLeft()
         {
+			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
 			samus.Physics.MoveLeft();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 		}
 
 		public void AimUp()
@@ -71,6 +78,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Update(GameTime gameTime)
 		{
+			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+			samus.Physics.Update();
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 			sprite.Update(gameTime);
 		}
 
