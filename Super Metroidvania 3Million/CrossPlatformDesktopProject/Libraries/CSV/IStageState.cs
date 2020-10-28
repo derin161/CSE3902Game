@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
-    interface IStageState
+    public interface IStageState
     {
+        void Door1();
+        void Door2();
+        void Door3();
+        void Door4();
+        void Door5();
+        void Door6();
     }
 }
