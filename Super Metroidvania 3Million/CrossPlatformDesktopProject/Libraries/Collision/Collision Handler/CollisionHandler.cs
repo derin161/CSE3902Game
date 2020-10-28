@@ -38,7 +38,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             else { //TOP/BOTTOM collision 
                 if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-
+                    ((Samus)player).Physics.Break();
                 }
                 else { //BOTTOM Collision 
                 

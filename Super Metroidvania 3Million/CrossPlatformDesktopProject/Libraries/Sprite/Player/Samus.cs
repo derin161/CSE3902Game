@@ -22,6 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private bool isDead;
         public int missile;
         public GameTime gameTime;
+        public PlayerPhysics Physics { get; private set; }
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
@@ -34,6 +35,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             space = new Rectangle((int) position.X, (int) position.Y, 64, 64);
             missile = 0;
             inventory = new PlayerInventory(30);
+            Physics = new PlayerPhysics(this);
+            
         }
 
         public void Attack()
@@ -87,6 +90,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void Update(GameTime gameTime)
         {
             state.Update(gameTime);
+            Physics.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)

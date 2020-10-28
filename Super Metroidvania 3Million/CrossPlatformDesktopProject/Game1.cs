@@ -9,6 +9,7 @@ using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.CSV;
+using CrossPlatformDesktopProject.Libraries.Collision;
 
 namespace CrossPlatformDesktopProject
 {
@@ -45,7 +46,7 @@ namespace CrossPlatformDesktopProject
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             LoadCsv.Instance.Load(levelName);
-            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 352), this, gameTime));
+            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(0, 300), this, gameTime));
             keyboard = new KeyboardController(this);
         }
 
@@ -58,6 +59,7 @@ namespace CrossPlatformDesktopProject
         {
             keyboard.Update(gameTime);
             GameObjectContainer.Instance.Update(gameTime);
+            CollisionDetector.Instance.Update();
 
             base.Update(gameTime);
         }
