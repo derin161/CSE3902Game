@@ -32,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			rows = 1;
 			columns = 4;
 			currentFrame = 1;
-			totalFrames = 3;
+			totalFrames = 4;
 			xChange = 8.0f;
 			interval = 100;
 			timer = 0;
