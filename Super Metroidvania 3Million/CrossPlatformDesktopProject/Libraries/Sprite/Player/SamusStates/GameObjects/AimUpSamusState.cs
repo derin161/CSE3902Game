@@ -23,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
 			missileLoc = new Vector2(samus.position.X + 32, samus.position.Y);
-			direction = new Vector2(0.0f, 4.0f);
+			direction = new Vector2(0.0f, -4.0f);
 		}
 
 		public void Attack()

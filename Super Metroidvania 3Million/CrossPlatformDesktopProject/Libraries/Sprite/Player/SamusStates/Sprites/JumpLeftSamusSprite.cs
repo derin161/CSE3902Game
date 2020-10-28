@@ -33,7 +33,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			rows = 1;
 			columns = 1;
 			currentFrame = frame;
-			totalFrames = 5;
 			yChange = 10.0f;
 			xChange = 0.0f;
 			if (left)
@@ -55,21 +54,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			if (timer > interval)
             {
-				if (currentFrame == 1 || currentFrame == 2)
-                {
-					samus.position = new Vector2(samus.position.X - xChange, samus.position.Y + yChange);
-                }else if (currentFrame == 3 || currentFrame == 4)
-				{
-					samus.position = new Vector2(samus.position.X - xChange, samus.position.Y - yChange);
-				}
-				else if (currentFrame == 5)
-				{
-					samus.position = new Vector2(samus.position.X - xChange, origY);
-					samus.state = new RightIdleSamusState(samus);
-				}
-				samus.space = new Rectangle((int)samus.position.X, (int)samus.position.Y, 64, 64);
-				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 				currentFrame++;
+				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 
 		}
