@@ -50,8 +50,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
                 {
 					currentFrame++;
                 }
-				samus.position = new Vector2(samus.position.X - xChange, samus.position.Y);
-				samus.space = new Rectangle((int)samus.position.X, (int)samus.position.Y, 64, 64);
+				samus.Physics.Update();
 				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 

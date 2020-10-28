@@ -91,7 +91,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         {
             state.Update(gameTime);
             Physics.Update();
-            this.space = new Rectangle((int) this.position.X, (int) this.position.Y, this.space.Width, this.space.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
