@@ -37,11 +37,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
 
         public void MoveRight() {
-            this.velocity = new Vector2(horizontalRunSpeed, 0);
+            this.velocity = new Vector2(horizontalRunSpeed, this.velocity.Y);
         }
 
         public void MoveLeft() {
-            this.velocity = new Vector2(horizontalRunSpeed * -1, 0);
+            this.velocity = new Vector2(horizontalRunSpeed * -1, this.velocity.Y);
         }
 
 

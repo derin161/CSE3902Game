@@ -44,15 +44,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			if (timer > interval)
             {
-				if (currentFrame == 3)
-                {
-					currentFrame = 0;
-				}else
-                {
-					currentFrame++;
-                }
-				samus.position = new Vector2(samus.position.X + xChange, samus.position.Y);
-				samus.space = new Rectangle((int)samus.position.X, (int)samus.position.Y, 64, 64);
+				currentFrame = (currentFrame + 1) % totalFrames;
 				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 

@@ -19,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private int columns;
 		private Samus samus;
 		private int currentFrame;
-		private int totalFrames = 3;
+		private int totalFrames = 4;
 		private int interval;
 		private int timer;
 
