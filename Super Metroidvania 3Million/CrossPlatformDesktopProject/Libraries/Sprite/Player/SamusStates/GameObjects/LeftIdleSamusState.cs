@@ -24,6 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			sprite = PlayerSpriteFactory.Instance.LeftIdleSprite(samus);
 			missileLoc = new Vector2(samus.position.X, samus.position.Y + 16);
 			direction = new Vector2(-4.0f, 0.0f);
+			samus.Physics.HortizontalBreak();
 		}
 
 		public void Attack()

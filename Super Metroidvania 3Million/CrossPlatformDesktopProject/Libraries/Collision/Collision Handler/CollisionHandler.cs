@@ -30,21 +30,21 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 sam.Physics.HortizontalBreak();
                 if (player.SpaceRectangle().X < block.SpaceRectangle().X)
                 { //LEFT Collision
-                    sam.space = new Rectangle(sam.space.X + collisionZone.X, sam.space.Y, sam.space.Width, sam.space.Height);
+                    sam.space = new Rectangle(sam.space.X - collisionZone.X, sam.space.Y, sam.space.Width, sam.space.Height);
                 }
                 else
                 { //RIGHT Collision 
-                    sam.space = new Rectangle(sam.space.X - collisionZone.X, sam.space.Y, sam.space.Width, sam.space.Height);
+                    sam.space = new Rectangle(sam.space.X + collisionZone.X, sam.space.Y, sam.space.Width, sam.space.Height);
                 }
             }
             else { //TOP/BOTTOM collision
                 sam.Physics.VerticalBreak();
                 if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Y, sam.space.Width, sam.space.Height);
+                    sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Y, sam.space.Width, sam.space.Height);
                 }
                 else { //BOTTOM Collision 
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Y, sam.space.Width, sam.space.Height);
+                    sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Y, sam.space.Width, sam.space.Height);
                 }
             }
         }

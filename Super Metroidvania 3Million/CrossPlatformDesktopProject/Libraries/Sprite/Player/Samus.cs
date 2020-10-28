@@ -29,13 +29,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             gameTime = g2;
             game = g;
             position = new Vector2(l.X, l.Y);
-			state = new RightIdleSamusState(this);
             health = 100;
             isDead = false;
             space = new Rectangle((int) position.X, (int) position.Y, 64, 64);
             missile = 0;
             inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
+			state = new RightIdleSamusState(this);
             
         }
 
