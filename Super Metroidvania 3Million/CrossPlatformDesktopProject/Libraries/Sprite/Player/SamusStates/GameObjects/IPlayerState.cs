@@ -31,6 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void AimUp();
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
+        public void Idle();
 
     }
 }

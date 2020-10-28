@@ -19,8 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private int columns;
 		private Samus samus;
 		private int currentFrame;
-		private int totalFrames;
-		private float xChange;
+		private int totalFrames = 3;
 		private int interval;
 		private int timer;
 
@@ -31,8 +30,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			rows = 1;
 			columns = 4;
 			currentFrame = 0;
-			totalFrames = 3;
-			xChange = 8f;
 			interval = 100;
 			timer = 0;
 
@@ -43,15 +40,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			if (timer > interval)
             {
-				if (currentFrame == 3)
-                {
-					currentFrame = 0;
-                }else
-                {
-					currentFrame++;
-                }
-				samus.x -= xChange;
-				samus.space = new Rectangle((int)samus.x, (int)samus.y, 64, 64);
+				currentFrame = (currentFrame + 1) % totalFrames;
 				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
 			}
 

@@ -22,26 +22,29 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
+            Samus sam = ((Samus)player);
             //Determine the direction that the player came from and push the player back out of the block
             //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
             if (collisionZone.Height > collisionZone.Width)
             { //LEFT/RIGHT collision
+                sam.Physics.HortizontalBreak();
                 if (player.SpaceRectangle().X < block.SpaceRectangle().X)
                 { //LEFT Collision
-                    
+                    sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
                 }
                 else
                 { //RIGHT Collision 
-
+                    sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
                 }
             }
-            else { //TOP/BOTTOM collision 
+            else { //TOP/BOTTOM collision
+                sam.Physics.VerticalBreak();
                 if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-
+                    sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
                 }
                 else { //BOTTOM Collision 
-                
+                    sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
                 }
             }
         }

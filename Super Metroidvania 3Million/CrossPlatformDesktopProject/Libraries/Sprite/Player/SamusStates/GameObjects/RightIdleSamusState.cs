@@ -22,12 +22,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
-			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
+			missileLoc = new Vector2(samus.position.X + 45, samus.position.Y + 32);
 			direction = new Vector2(4.0f, 0.0f);
+			samus.Physics.HortizontalBreak();
 		}
 
 		public void Attack()
         {
+			missileLoc = new Vector2(samus.position.X + 60, samus.position.Y + 16);
 			if (samus.missile == 0)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
@@ -44,7 +46,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		}
 		public void Jump()
         {
-			samus.state = new JumpRightSamusState(samus, false, 0, samus.y);
+			samus.state = new JumpRightSamusState(samus, false, 0, samus.position.Y);
         }
 
 		public void Morph()
@@ -75,6 +77,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			sprite.Draw(spriteBatch);
+		}
+
+		public void Idle () 
+		{
+			//Nothing Happens
 		}
 	}
 }

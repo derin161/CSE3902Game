@@ -22,8 +22,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
-			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
-			direction = new Vector2(4.0f, 0.0f);
+			missileLoc = new Vector2(samus.position.X + 32, samus.position.Y);
+			direction = new Vector2(0.0f, 4.0f);
 		}
 
 		public void Attack()
@@ -44,7 +44,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		}
 		public void Jump()
         {
-			samus.state = new JumpRightSamusState(samus, false, 0, samus.y);
+			samus.state = new JumpRightSamusState(samus, false, 0, samus.position.Y);
         }
 
 		public void Morph()
@@ -75,6 +75,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			sprite.Draw(spriteBatch);
+		}
+
+		public void Idle()
+		{
+			//Nothing happens
 		}
 	}
 }
