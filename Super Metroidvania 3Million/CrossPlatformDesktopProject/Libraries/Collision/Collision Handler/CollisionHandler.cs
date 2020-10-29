@@ -24,8 +24,6 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             Samus sam = ((Samus)player);
-            System.Console.WriteLine();
-            //Determine the direction that the player came from and push the player back out of the block
             //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
             if (collisionZone.Height > collisionZone.Width)
             { //LEFT/RIGHT collision
@@ -35,14 +33,12 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
                     sam.x -= collisionZone.Width;
                     sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block left collision. Space: " + sam.space);
                 }
                 else
                 { //RIGHT Collision 
                     //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
                     sam.x += collisionZone.Width;
                     sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block right collision. Space: " + sam.space);
                 }
             }
             else
@@ -53,14 +49,12 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
                     sam.y -= collisionZone.Height;
                     sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block top collision. Space: " + sam.space);
                 }
                 else
                 { //BOTTOM Collision 
                     //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
                     sam.y += collisionZone.Height;
                     sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block bottom collision. Space: " + sam.space);
                 }
             }
         }

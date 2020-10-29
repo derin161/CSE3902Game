@@ -30,6 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
+
             stateMachine.Update(horizSpeed, vertSpeed);
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
             sprite.Update(gameTime);

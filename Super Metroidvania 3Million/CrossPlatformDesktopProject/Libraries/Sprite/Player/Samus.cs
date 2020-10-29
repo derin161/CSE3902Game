@@ -95,7 +95,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         {
             state.Update(gameTime);
             Physics.Update();
-            Console.WriteLine("X = " + this.x + "Y = " + this.y);
         }
 
         public void Draw(SpriteBatch spriteBatch)
