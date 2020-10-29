@@ -10,19 +10,21 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
     {
         // public int [InsertItemPickupNameHere] { get; private set; }
-        public IStageState state;
 
-        private StartingLevel startingLevel;
-        private LevelOne levelOne;
-        private LevelTwo levelTwo;
+        private static StartingLevel startingLevel = new StartingLevel();
+        private static LevelOne levelOne = new LevelOne();
+        private static LevelTwo levelTwo = new LevelTwo();
 
-        public LevelStatePattern()
+        public IStageState state { get; set; } = startingLevel;
+
+        private static LevelStatePattern instance = new LevelStatePattern();
+       
+        public static LevelStatePattern Instance
         {
-            startingLevel = new StartingLevel(this);
-            levelOne = new LevelOne(this);
-            levelTwo = new LevelTwo(this);
-
-            state = startingLevel;
+            get
+            {
+                return instance;
+            }
         }
 
         public void Restart()

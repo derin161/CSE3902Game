@@ -5,6 +5,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Command;
+using CrossPlatformDesktopProject.Libraries.CSV;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
@@ -23,37 +24,54 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             Samus sam = ((Samus)player);
-            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
-            if (collisionZone.Height > collisionZone.Width)
-            { //LEFT/RIGHT collision
-                sam.Physics.HortizontalBreak();
-                if (player.SpaceRectangle().X < block.SpaceRectangle().X)
-                { //LEFT Collision
-                    //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
-                    sam.x -= collisionZone.Width;
-                    sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+            if (block is IDoorBlock && ((IDoorBlock)block).isOpen())
+            {
+                if (collisionZone.X >= 240)
+                {
+                    LevelStatePattern.Instance.state.Door2();
                 }
                 else
-                { //RIGHT Collision 
-                    //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
-                    sam.x += collisionZone.Width;
-                    sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                {
+                    LevelStatePattern.Instance.state.Door1();
                 }
+
+                
             }
+
             else
-            { //TOP/BOTTOM collision
-                sam.Physics.VerticalBreak();
-                if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
-                { //TOP Collision
-                    //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
-                    sam.y -= collisionZone.Height;
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
+            {
+                //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
+                if (collisionZone.Height > collisionZone.Width)
+                { //LEFT/RIGHT collision
+                    sam.Physics.HortizontalBreak();
+                    if (player.SpaceRectangle().X < block.SpaceRectangle().X)
+                    { //LEFT Collision
+                      //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
+                        sam.x -= collisionZone.Width;
+                        sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                    }
+                    else
+                    { //RIGHT Collision 
+                      //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
+                        sam.x += collisionZone.Width;
+                        sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                    }
                 }
                 else
-                { //BOTTOM Collision 
-                    //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
-                    sam.y += collisionZone.Height;
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
+                { //TOP/BOTTOM collision
+                    sam.Physics.VerticalBreak();
+                    if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
+                    { //TOP Collision
+                      //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
+                        sam.y -= collisionZone.Height;
+                        sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
+                    }
+                    else
+                    { //BOTTOM Collision 
+                      //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
+                        sam.y += collisionZone.Height;
+                        sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
+                    }
                 }
             }
         }

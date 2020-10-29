@@ -8,11 +8,9 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 {
     public class StartingLevel : IStageState
     {
-        private LevelStatePattern level;
-
-        public StartingLevel(LevelStatePattern level)
+        public StartingLevel()
         {
-            this.level = level;
+
         }
 
         public void Door1()
