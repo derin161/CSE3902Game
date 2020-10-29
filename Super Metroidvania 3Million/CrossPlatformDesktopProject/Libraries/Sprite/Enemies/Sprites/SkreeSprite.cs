@@ -30,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             //change the frame after 10 counts while skree is falling
-            if (skree.fallen && count == 4)
+            if (skree.fallen && !skree.collision && count == 4)
             {
                 count = 0;
                 currentFrame++;

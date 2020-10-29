@@ -13,9 +13,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public Rectangle Space { get; set; }
         private ISprite sprite;
         private bool isDead;
-        public bool fallen;
+        public bool fallen, collision;
         private EnemyStateMachine stateMachine;
-        private int health, vertSpeed, horizSpeed;
+        private int health, vertSpeed, horizSpeed, maxAccel, timer;
         private float x, y;
 
 
@@ -28,21 +28,31 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             x = location.X;
             y = location.Y;
             fallen = false;
+            collision = false;
             vertSpeed = 0;
             horizSpeed = 0;
+            maxAccel = 8;
+            timer = 0;
 
         }
 
         private void Attack()
         {
+            //Move Skree down if player walks within certain x distance
             int playerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
-            if (playerX < x + 40 && playerX > x - 40 && (stateMachine.vertSpeed > 0 || !fallen))
+            if (playerX < x + 30 && playerX > x - 30 && (stateMachine.vertSpeed > 0 || !fallen))
             {
                 fallen = true;
-                vertSpeed = 4;
-                horizSpeed = 1;
+
+                //Move skree vertically
+                if (vertSpeed < maxAccel)
+                {
+                    vertSpeed = vertSpeed + 1;
+                }
                 MoveDown();
 
+                //Move skree horizontally
+                horizSpeed = 1;
                 if (playerX < x)
                 {
                     MoveLeft();
@@ -54,11 +64,26 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
 
             }
+
+            //Set a timer to kill the sprite if it has fallen
+            if (stateMachine.vertSpeed == 0 && fallen)
+            {
+                collision = true;
+                if (timer > 1500)
+                {
+                    Kill();
+                }
+            }
+
         }
         public void Update(GameTime gameTime)
         {
 
             Attack();
+            if (collision)
+            {
+                timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
             stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 56);
             sprite.Update(gameTime);
