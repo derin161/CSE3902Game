@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private bool isDead, isRight;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
-        private int health;
+        private int health, respawnTimer;
         private float x, y;
         private int initialPlayerX;
 
@@ -32,13 +32,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             initialPlayerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
             isRight = false;
             currentSprite = spriteLeft;
+            respawnTimer = 0;
 
 
         }
         private void Attack()
         {
             //Move Geega up until they reach the height of the player. Then move over
-            int playerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
             int playerY = GameObjectContainer.Instance.Player.SpaceRectangle().Y;
 
             //Determine the direction of the sprite
@@ -69,6 +69,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                     MoveRight();
                 }
             }
+
             if (stateMachine.x < 0 || stateMachine.x > 800)
             {
                 Kill();
@@ -81,6 +82,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32,32);
             currentSprite.Update(gameTime);
+            if (isDead)
+            {
+                respawnTimer += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+                if (respawnTimer > 1000)
+                {
+                    respawnTimer = 0;
+                    isDead = false;
+                    vertSpeed = 4;
+                }
+            }
         }
 
         public Rectangle SpaceRectangle()
@@ -95,14 +106,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public Boolean IsDead()
         {
-            return isDead;
+            return false; //Should never die because they always respawn
         }
 
         public void Kill()
         {
             isDead = true;
-            Geega next = new Geega(new Vector2(x, y));
-            GameObjectContainer.Instance.Add(next);
+
+            //set back to initial position
+            horizSpeed = 0;
+            vertSpeed = 0;
+            MoveLeft();
+            MoveUp();
+            stateMachine.x = x;
+            stateMachine.y = y;
+            initialPlayerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
+            health = 100;
+
         }
 
         public void MoveLeft()
@@ -142,7 +162,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             health = health - damage;
             if (health <= 0)
             {
-                this.Kill();
+                Kill();
             }
         }
     }
