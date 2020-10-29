@@ -11,11 +11,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     class Kraid : IEnemy
     {
 
-        private ISprite sprite;
+        private ISprite spriteRight, spriteLeft, currentSprite;
         private int msBetweenAttack = 500;
         private int msUntilAttack = 500;
         public Rectangle Space;
-        private bool isDead;
+        private bool isDead, facingRight;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
@@ -23,19 +23,30 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public Kraid(Vector2 location)
         {
-            sprite = EnemySpriteFactory.Instance.KraidSprite(this);
+            spriteRight = EnemySpriteFactory.Instance.KraidSprite(this);
+            spriteLeft = EnemySpriteFactory.Instance.KraidSpriteLeft(this);
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = 1;
             vertSpeed = 0;
             health = 100;
-
         }
 
-        public void Update(GameTime gameTime)
+        private void Attack()
         {
-            //Wait between attacks
-            msUntilAttack -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
-
+            //Move toward player
+            Rectangle playerSpace = GameObjectContainer.Instance.Player.SpaceRectangle();
+            if (playerSpace.X < stateMachine.x)
+            {
+                MoveLeft();
+                currentSprite = spriteLeft;
+                facingRight = false;
+            }
+            else
+            {
+                MoveRight();
+                currentSprite = spriteRight;
+                facingRight = true;
+            }
             //Perform attacks
             if (msUntilAttack < 0)
             {
@@ -49,16 +60,20 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
                 msUntilAttack = msBetweenAttack;
             }
-
-            //Update location
+        }
+        public void Update(GameTime gameTime)
+        {
+            msUntilAttack -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+            Attack();
             stateMachine.Update();
+            currentSprite.Update(gameTime);
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 48, 64);
         }
 
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch);
+            currentSprite.Draw(spriteBatch);
         }
         public Rectangle SpaceRectangle()
         {
@@ -101,12 +116,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         private void throwHorns()
         {
-            GameObjectContainer.Instance.Add(new KraidHorn(new Vector2(stateMachine.x, stateMachine.y), true));
+            GameObjectContainer.Instance.Add(new KraidHorn(new Vector2(stateMachine.x, stateMachine.y), facingRight));
         }
 
         private void shootMissiles()
         {
             int speed = 7;
+            if (!facingRight)
+            {
+                speed *= -1;
+            }
             GameObjectContainer.Instance.Add(new KraidMissile(new Vector2(stateMachine.x+23, stateMachine.y+38), new Vector2(speed, 0)));
         }
 

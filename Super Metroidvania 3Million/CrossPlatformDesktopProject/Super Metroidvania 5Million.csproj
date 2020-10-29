@@ -184,6 +184,7 @@
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\SideHopper.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Memu.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Kraid.cs" />
+    <Compile Include="Libraries\Sprite\Enemies\Sprites\KraidSpriteLeft.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Sprites\ReverseSideHopperSprite.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Sprites\KraidSprite.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Sprites\VerticalZeelaSprite.cs" />

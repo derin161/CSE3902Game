@@ -6,7 +6,7 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
-    class KraidSprite : ISprite
+    class KraidSpriteLeft : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -16,7 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int counter;
         private Kraid Kraid;
 
-        public KraidSprite(Texture2D texture, Kraid k)
+        public KraidSpriteLeft(Texture2D texture, Kraid k)
         {
             Texture = texture;
             Rows = 2;

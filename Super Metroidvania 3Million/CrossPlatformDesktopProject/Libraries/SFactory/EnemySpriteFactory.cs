@@ -16,6 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D sideHopper;
 		private Texture2D skree;
 		private Texture2D zeela;
+		private Texture2D kraidLeft;
 
 		private static EnemySpriteFactory instance = new EnemySpriteFactory();
 		public static EnemySpriteFactory Instance
@@ -40,6 +41,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			sideHopper = content.Load<Texture2D>("enemies/SideHopper");
 			skree = content.Load<Texture2D>("enemies/Skree");
 			zeela = content.Load<Texture2D>("enemies/Zeela");
+			kraidLeft = content.Load<Texture2D>("enemies/KraidLeft");
 		}
 
 		public ISprite GeegaSprite(Geega g)
@@ -50,6 +52,11 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public ISprite KraidSprite(Kraid k)
 		{
 			return new KraidSprite(kraid, k);
+		}
+
+		public ISprite KraidSpriteLeft(Kraid k)
+		{
+			return new KraidSpriteLeft(kraidLeft, k);
 		}
 
 		public ISprite MemuSprite(Memu m)

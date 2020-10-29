@@ -305,6 +305,9 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 block = new BlueMetalBlock(location);
                                 GameObjectContainer.Instance.Add(block);
                                 break;
+
+
+                            //Enemies
                             case "SideHopper":
                                 location = new Vector2(row * 32, column * 32);
                                 GameObjectContainer.Instance.Add(new SideHopper(location));
@@ -317,7 +320,10 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 location = new Vector2(row * 32, column * 32);
                                 GameObjectContainer.Instance.Add(new Geega(location));
                                 break;
-
+                            case "Kraid":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new Kraid(location));
+                                break;
 
                             default:
                                 break;

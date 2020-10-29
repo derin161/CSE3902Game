@@ -131,8 +131,11 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             {
                 new EnemyFreezeCommand(enemy).Execute();
             }
-            new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
-            projectile.Kill();
+            if (!(projectile is KraidHorn) && !(projectile is KraidMissile))
+            {
+                new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
+                projectile.Kill();
+            }
         }
 
         public void PlayerItemCollision(IPlayer player, IItem item)
