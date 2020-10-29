@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
@@ -324,6 +325,58 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 location = new Vector2(row * 32, column * 32);
                                 GameObjectContainer.Instance.Add(new Kraid(location));
                                 break;
+
+                            //Items
+                            case "BombItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new BombItem(location));
+                                break;
+                            case "EnergyDropItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new EnergyDropItem(location));
+                                break;
+                            case "EnergyTankItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new EnergyTankItem(location));
+                                break;
+                            case "HighJumpItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new HighJumpItem(location));
+                                break;
+                            case "IceBeamItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new IceBeamItem(location));
+                                break;
+                            case "LongBeamItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new LongBeamItem(location));
+                                break;
+                            case "MissleRocketItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new MissileRocketItem(location));
+                                break;
+
+                            case "MorphBallItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new MorphBallItem(location));
+                                break;
+                            case "RocketDropItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new RocketDropItem(location));
+                                break;
+                            case "ScrewAttackItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new ScrewAttackItem(location));
+                                break;
+                            case "VariaItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new VariaItem(location));
+                                break;
+                            case "WaveBeamItem":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new WaveBeamItem(location));
+                                break;
+
 
                             default:
                                 break;

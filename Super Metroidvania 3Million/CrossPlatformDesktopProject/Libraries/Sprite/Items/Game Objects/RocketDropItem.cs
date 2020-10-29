@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         {
             sprite = ItemSpriteFactory.Instance.RocketDropItemSprite(this);
             Location = initialLocation;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 16);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 32);
         }
 
         public void Update(GameTime gameTime)
