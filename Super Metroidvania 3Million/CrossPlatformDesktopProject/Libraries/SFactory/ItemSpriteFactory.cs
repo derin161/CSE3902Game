@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D highJumpItem;
 		private Texture2D iceBeamItem;
 		private Texture2D longBeamItem;
-		private Texture2D missleRocketItem;
+		private Texture2D missileRocketItem;
 		private Texture2D morphBallItem;
 		private Texture2D rocketDropItem;
 		private Texture2D screwAttackItem;
@@ -44,7 +44,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			highJumpItem = content.Load<Texture2D>("Items/HighJump");
 			iceBeamItem = content.Load<Texture2D>("Items/IceBeam");
 			longBeamItem = content.Load<Texture2D>("Items/LongBeam");
-			missleRocketItem = content.Load<Texture2D>("Items/MissleRocket");
+			missileRocketItem = content.Load<Texture2D>("Items/MissleRocket");
 			morphBallItem = content.Load<Texture2D>("Items/MorphBall");
 			rocketDropItem = content.Load<Texture2D>("Items/RocketDropItem");
 			screwAttackItem = content.Load<Texture2D>("Items/ScrewAttack");
@@ -80,7 +80,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		}
 		public ISprite MissleRocketItemSprite(MissileRocketItem mr)
 		{
-			return new MissleRocketItemSprite(missleRocketItem, mr);
+			return new MissleRocketItemSprite(missileRocketItem, mr);
 		}
 		public ISprite MorphBallItemSprite(MorphBallItem mb)
 		{

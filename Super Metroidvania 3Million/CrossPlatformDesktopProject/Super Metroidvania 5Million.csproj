@@ -213,7 +213,7 @@
     <Compile Include="Libraries\Sprite\Items\Sprites\HighJumpItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\IceBeamItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\LongBeamItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\MissleRocketItemSprite.cs" />
+    <Compile Include="Libraries\Sprite\Items\Sprites\MissileRocketItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\MorphBallItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\RocketDropItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Sprites\ScrewAttackItemSprite.cs" />
