@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,34 +9,40 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 {
     public class StartingLevel : IStageState
     {
-        private LevelStatePattern level;
-
-        public StartingLevel(LevelStatePattern level)
+        public StartingLevel()
         {
-            this.level = level;
+
         }
 
-        public void Door1()
+        public void LeftDoor()
         {
             // Do nothing - door does not exist
         }
-        public void Door2()
+        public void RightDoor()
         {
-            LoadCsv.Instance.Load("LevelOne");
+            LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 64));
         }
-        public void Door3()
-        {
-            // Do nothing - door does not exist
-        }
-        public void Door4()
+        public void TopLeftDoor()
         {
             // Do nothing - door does not exist
         }
-        public void Door5()
+        public void TopRightDoor()
         {
             // Do nothing - door does not exist
         }
-        public void Door6()
+        public void BottomLeftDoor()
+        {
+            // Do nothing - door does not exist
+        }
+        public void BottomRightDoor()
+        {
+            // Do nothing - door does not exist
+        }
+        public void FarBottomLeftDoor()
+        {
+            // Do nothing - door does not exist
+        }
+        public void FarBottomRightDoor()
         {
             // Do nothing - door does not exist
         }

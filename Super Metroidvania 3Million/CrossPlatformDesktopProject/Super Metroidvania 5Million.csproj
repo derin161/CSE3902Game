@@ -146,6 +146,8 @@
     <Compile Include="Libraries\Sprite\Blocks\GreenFenceBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\GreenPipeBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\GreenSquareBlock.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\ILavaBlock.cs" />
+    <Compile Include="Libraries\Sprite\Blocks\IDoorBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\LavaBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\LavaBlockTop.cs" />
     <Compile Include="Libraries\Sprite\Blocks\LeftStartingPlatformBlock.cs" />

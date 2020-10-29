@@ -143,7 +143,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         }
 
         public void Clear() {
-            player = null;
+            // player = null;
             projectileList = new List<IProjectile>();
             enemyList = new List<IEnemy>();
             itemList = new List<IItem>();

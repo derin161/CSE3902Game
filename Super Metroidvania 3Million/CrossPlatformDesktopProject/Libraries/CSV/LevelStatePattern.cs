@@ -1,4 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +11,26 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
     {
         // public int [InsertItemPickupNameHere] { get; private set; }
-        public IStageState state;
 
-        private StartingLevel startingLevel;
-        private LevelOne levelOne;
-        private LevelTwo levelTwo;
+        private static StartingLevel startingLevel = new StartingLevel();
+        private static LevelOne levelOne = new LevelOne();
+        private static LevelTwo levelTwo = new LevelTwo();
 
-        public LevelStatePattern()
+        public IStageState state { get; set; } = startingLevel;
+
+        private static LevelStatePattern instance = new LevelStatePattern();
+       
+        public static LevelStatePattern Instance
         {
-            startingLevel = new StartingLevel(this);
-            levelOne = new LevelOne(this);
-            levelTwo = new LevelTwo(this);
-
-            state = startingLevel;
+            get
+            {
+                return instance;
+            }
         }
 
-        public void Restart()
+        public void Initialize()
         {
-            LoadCsv.Instance.Load("levelOne.csv");
+            LoadCsv.Instance.Load("StartingLevel.csv", new Vector2(64, 64));
         }
 
         public IStageState GetState(string stateID)
@@ -41,29 +44,38 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             };
         }
 
-        public void Door1() // Top left door
+        public void LeftDoor() 
         {
-            state.Door1();
+            state.LeftDoor();
         }
-        public void Door2() // Top right door
+        public void RightDoor() 
         {
-            state.Door2();
+            state.RightDoor();
         }
-        public void Door3() // Middle left door
+        public void TopLeftDoor() 
         {
-            state.Door3();
+            state.TopLeftDoor();
         }
-        public void Door4() // Middle right door
+        public void TopRightDoor() 
         {
-            state.Door4();
+            state.TopRightDoor();
         }
-        public void Door5() // Top left door
+        public void BottomLeftDoor() 
         {
-            state.Door5();
+            state.BottomLeftDoor();
         }
-        public void Door6() // Top right door
+        public void BottomRightDoor() 
         {
-            state.Door6();
+            state.BottomRightDoor();
+        }
+
+        public void FarBottomLeftDoor()
+        {
+            state.FarBottomLeftDoor();
+        }
+        public void FarBottomRightDoor()
+        {
+            state.FarBottomRightDoor();
         }
     }
 }
