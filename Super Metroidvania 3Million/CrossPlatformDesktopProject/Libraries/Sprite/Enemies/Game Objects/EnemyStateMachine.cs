@@ -9,7 +9,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
 
         public bool frozen;
-        private int horizSpeed, vertSpeed;
+        public int horizSpeed, vertSpeed;
         public float x, y;
         public EnemyStateMachine(Vector2 location)
         {
@@ -38,6 +38,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //All enemies go only horizontal or vertical so changing both in one method should be fine
             horizSpeed = horizSpeed * -1;
             vertSpeed = vertSpeed * -1;
+        }
+        public void StopMoving()
+        {
+            vertSpeed = 0;
+            horizSpeed = 0;
         }
         public void Freeze()
         {

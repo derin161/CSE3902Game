@@ -10,7 +10,6 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 {
     class CollisionHandler
     {
-        int i = 0;
         public CollisionHandler()
         {
 
@@ -87,7 +86,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             { //TOP/BOTTOM collision 
                 if (enemy.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-                    enemy.MoveUp();
+                    enemy.StopMoving();
                 }
                 else
                 { //BOTTOM Collision 

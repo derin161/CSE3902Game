@@ -86,6 +86,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             stateMachine.Freeze();
         }
+        public void StopMoving()
+        {
+            stateMachine.StopMoving();
+        }
         public int GetDamage()
         {
             return 25;

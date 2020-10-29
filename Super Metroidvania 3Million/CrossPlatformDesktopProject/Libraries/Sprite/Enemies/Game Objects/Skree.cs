@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -12,9 +13,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public Rectangle Space { get; set; }
         private ISprite sprite;
         private bool isDead;
+        public bool fallen;
         private EnemyStateMachine stateMachine;
-        private int horizSpeed, vertSpeed;
-        private int health;
+        private int health, vertSpeed, horizSpeed;
+        private float x, y;
 
 
 
@@ -22,17 +24,43 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite = EnemySpriteFactory.Instance.SkreeSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 0;
-            vertSpeed = 4;
             health = 100;
+            x = location.X;
+            y = location.Y;
+            fallen = false;
+            vertSpeed = 0;
+            horizSpeed = 0;
 
         }
 
+        private void Attack()
+        {
+            int playerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
+            if (playerX < x + 40 && playerX > x - 40 && (stateMachine.vertSpeed > 0 || !fallen))
+            {
+                fallen = true;
+                vertSpeed = 4;
+                horizSpeed = 1;
+                MoveDown();
+
+                if (playerX < x)
+                {
+                    MoveLeft();
+                }
+                else
+                {
+                    MoveRight();
+                }
+
+
+            }
+        }
         public void Update(GameTime gameTime)
         {
 
+            Attack();
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 56);
             sprite.Update(gameTime);
         }
 
@@ -71,6 +99,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void MoveDown()
         {
             stateMachine.MoveDown(vertSpeed);
+        }
+        public void StopMoving()
+        {
+            stateMachine.StopMoving();
         }
         public void ChangeDirection()
         {

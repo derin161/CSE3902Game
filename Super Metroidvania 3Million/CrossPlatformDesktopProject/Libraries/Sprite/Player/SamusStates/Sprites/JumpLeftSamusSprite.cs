@@ -19,10 +19,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private int columns;
 		private Samus samus;
 		public int currentFrame { get; set; }
-		private int totalFrames;
-		private float yChange;
-		private int interval;
-		private int timer;
 		public float origY { get; set; }
 
 		public JumpLeftSamusSprite(Texture2D text, Samus sus)
@@ -32,8 +28,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			rows = 1;
 			columns = 1;
 			currentFrame = 0;
-			interval = 50;
-			timer = 0;
 
 
         }

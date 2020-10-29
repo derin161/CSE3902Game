@@ -19,7 +19,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private Vector2 missileLoc;
 		private Vector2 direction;
 		private Vector2 currentVelocity;
-		private bool falling = false;
 
 		public JumpRightSamusState(Samus sam)
 		{

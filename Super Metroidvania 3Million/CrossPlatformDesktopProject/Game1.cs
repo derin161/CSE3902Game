@@ -50,7 +50,7 @@ namespace CrossPlatformDesktopProject
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
 
-            Skree s = new Skree(new Vector2(200, 200));
+            Skree s = new Skree(new Vector2(320, 64));
             GameObjectContainer.Instance.Add(s);
         }
 

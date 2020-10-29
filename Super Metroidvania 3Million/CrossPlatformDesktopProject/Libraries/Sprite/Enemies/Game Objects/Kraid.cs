@@ -95,6 +95,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             stateMachine.changeDirection();
         }
+        public void StopMoving()
+        {
+            stateMachine.StopMoving();
+        }
         private void throwHorns()
         {
             GameObjectContainer.Instance.Add(new KraidHorn(new Vector2(stateMachine.x, stateMachine.y), true));
