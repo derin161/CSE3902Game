@@ -11,38 +11,64 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     class Geega : IEnemy
     {
         public Rectangle Space { get; set; }
-        private ISprite sprite;
-        private bool isDead;
+        private ISprite spriteLeft, spriteRight, currentSprite;
+        private bool isDead, isRight;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
         private float x, y;
-
+        private int initialPlayerX;
 
         public Geega(Vector2 location)
         {
-            sprite = EnemySpriteFactory.Instance.GeegaSprite(this);
+            spriteLeft = EnemySpriteFactory.Instance.GeegaSprite(this);
+            spriteRight = EnemySpriteFactory.Instance.GeegaSpriteRight(this);
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = 0;
             vertSpeed = 4;
             health = 100;
             x = location.X;
             y = location.Y;
+            initialPlayerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
+            isRight = false;
+            currentSprite = spriteLeft;
+
+
         }
         private void Attack()
         {
             //Move Geega up until they reach the height of the player. Then move over
             int playerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
             int playerY = GameObjectContainer.Instance.Player.SpaceRectangle().Y;
-            
+
+            //Determine the direction of the sprite
+            if (initialPlayerX < x)
+            {
+                currentSprite = spriteLeft;
+                isRight = false;
+            }
+            else
+            {
+                currentSprite = spriteRight;
+                isRight = true;
+            }
+
             MoveUp();
+
             if (stateMachine.y <= playerY)
             {
                 vertSpeed = 0;
                 horizSpeed = 3;
-                MoveLeft();
+                if (!isRight)
+                {
+                    MoveLeft();
+                }
+                else
+                {
+                    MoveRight();
+                }
             }
-            if (stateMachine.x < 0)
+            if (stateMachine.x < 0 || stateMachine.x > 800)
             {
                 Kill();
             }
@@ -56,7 +82,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Attack();
             stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32,32);
-            sprite.Update(gameTime);
+            currentSprite.Update(gameTime);
         }
 
         public Rectangle SpaceRectangle()
@@ -66,7 +92,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch);
+            currentSprite.Draw(spriteBatch);
         }
 
         public Boolean IsDead()
