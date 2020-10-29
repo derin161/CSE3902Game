@@ -29,29 +29,28 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             {
                 sam.space = new Rectangle((int)sam.x - collisionZone.Width, (int)sam.y, sam.space.Width, sam.space.Height);
                 sam.Physics.HortizontalBreak();
-
+                System.Console.WriteLine("left collision");
             }
             //Right collision happens when samus is moving left and player.y-block.y < player.height
             if (sam.Physics.velocity.X < 0 && System.Math.Abs(sam.space.Y - block.SpaceRectangle().Y) < sam.space.Height)
             {
                 sam.space = new Rectangle((int)sam.x + collisionZone.Width, (int)sam.y, sam.space.Width, sam.space.Height);
                 sam.Physics.HortizontalBreak();
-
+                System.Console.WriteLine("right collision");
             }
             //Top collision happens when samus is moving down and abs(player.x - block.x) < player.width
             if (sam.Physics.velocity.Y > 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
             {
                 sam.space = new Rectangle((int)sam.x, (int)sam.y - collisionZone.Height, sam.space.Width, sam.space.Height);
                 sam.Physics.VerticalBreak();
-
+                System.Console.WriteLine("top collision");
             }
             //Bottom collision happens when samus is moving up and abs(player.x - block.x) < player.width
             if (sam.Physics.velocity.Y < 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
             {
                 sam.space = new Rectangle((int)sam.x, (int)sam.y + collisionZone.Height, sam.space.Width, sam.space.Height);
                 sam.Physics.VerticalBreak();
-
-
+                System.Console.WriteLine("bottom collision");
             }
         }
 
