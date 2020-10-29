@@ -50,14 +50,6 @@ namespace CrossPlatformDesktopProject
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
 
-            Skree s = new Skree(new Vector2(256, 128));
-            GameObjectContainer.Instance.Add(s);
-
-            Geega g = new Geega(new Vector2(368, 400));
-            GameObjectContainer.Instance.Add(g);
-
-            SideHopper sh = new SideHopper(new Vector2(128, 352));
-            GameObjectContainer.Instance.Add(sh);
         }
 
         protected override void UnloadContent()

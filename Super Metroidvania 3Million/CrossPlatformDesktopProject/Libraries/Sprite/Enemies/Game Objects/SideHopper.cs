@@ -11,7 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
         public Rectangle Space { get; set; }
         private ISprite sprite;
-        private bool isDead, isJumping;
+        private bool isDead;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private float initialY;

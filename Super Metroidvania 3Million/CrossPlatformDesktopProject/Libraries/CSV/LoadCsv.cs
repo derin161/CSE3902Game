@@ -10,6 +10,7 @@ using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
@@ -303,6 +304,18 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 location = new Vector2(row * 32, column * 32);
                                 block = new BlueMetalBlock(location);
                                 GameObjectContainer.Instance.Add(block);
+                                break;
+                            case "SideHopper":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new SideHopper(location));
+                                break;
+                            case "Skree":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new Skree(location));
+                                break;
+                            case "Geega":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new Geega(location));
                                 break;
 
 
