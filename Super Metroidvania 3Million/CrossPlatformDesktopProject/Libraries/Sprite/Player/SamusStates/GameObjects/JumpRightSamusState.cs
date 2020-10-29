@@ -95,6 +95,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Idle()
 		{
+			samus.Physics.velocity = new Vector2(currentVelocity.X, 0);
+			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 			samus.state = new RightIdleSamusState(samus);
 		}
 	}
