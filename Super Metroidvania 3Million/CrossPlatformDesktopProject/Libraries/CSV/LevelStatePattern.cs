@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void Restart()
         {
-            LoadCsv.Instance.Load("startingLevel.csv");
+            LoadCsv.Instance.Load("levelOne.csv");
         }
 
         public IStageState GetState(string stateID)

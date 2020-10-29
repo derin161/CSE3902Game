@@ -11,7 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
         public Rectangle Space { get; set; }
         private ISprite sprite;
-        private bool isDead;
+        private bool isDead, isJumping;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private float initialY;
@@ -33,12 +33,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 64, 64);
             sprite.Update(gameTime);
         }
-        public void Jump(int count, int direction)
+        public void Jump(float count, int direction)
         {
-            stateMachine.y = (count * count) - 20 * count + initialY;
+            stateMachine.y = (1.0f/48.0f)*(count * count) - 1.5f * count + initialY+5;
+            System.Console.WriteLine("value is " + (1.0f/48.0f)*(count * count));
             stateMachine.x += direction;
         }
 

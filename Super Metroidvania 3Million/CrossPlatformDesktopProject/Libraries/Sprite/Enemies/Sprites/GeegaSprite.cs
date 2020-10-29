@@ -31,7 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             //change the frame after 10 counts
-            if (counter == 10)
+            if (counter == 3)
             {
                 counter = 0;
                 currentFrame++;

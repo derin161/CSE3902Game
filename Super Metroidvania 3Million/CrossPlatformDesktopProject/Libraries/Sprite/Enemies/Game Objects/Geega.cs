@@ -36,7 +36,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int playerY = GameObjectContainer.Instance.Player.SpaceRectangle().Y;
             
             MoveUp();
-            System.Console.WriteLine("x is " + stateMachine.x + " and y is " + stateMachine.y);
             if (stateMachine.y <= playerY)
             {
                 vertSpeed = 0;

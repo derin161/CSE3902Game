@@ -85,7 +85,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
             }
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 56);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 48);
             sprite.Update(gameTime);
         }
 

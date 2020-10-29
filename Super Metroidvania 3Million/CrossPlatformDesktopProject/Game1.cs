@@ -50,11 +50,14 @@ namespace CrossPlatformDesktopProject
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
 
-            Skree s = new Skree(new Vector2(320, 64));
+            Skree s = new Skree(new Vector2(256, 128));
             GameObjectContainer.Instance.Add(s);
 
-            Geega g = new Geega(new Vector2(400, 400));
+            Geega g = new Geega(new Vector2(368, 400));
             GameObjectContainer.Instance.Add(g);
+
+            SideHopper sh = new SideHopper(new Vector2(128, 352));
+            GameObjectContainer.Instance.Add(sh);
         }
 
         protected override void UnloadContent()
