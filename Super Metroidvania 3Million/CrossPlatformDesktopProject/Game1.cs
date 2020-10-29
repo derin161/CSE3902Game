@@ -46,12 +46,15 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            currentLevel.Restart();
+            currentLevel.Initialize();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
 
             Skree s = new Skree(new Vector2(320, 64));
             GameObjectContainer.Instance.Add(s);
+
+            Geega g = new Geega(new Vector2(400, 400));
+            GameObjectContainer.Instance.Add(g);
         }
 
         protected override void UnloadContent()
@@ -90,7 +93,7 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            currentLevel.Restart();
+            currentLevel.Initialize();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
 
