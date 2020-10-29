@@ -7,6 +7,7 @@ using CrossPlatformDesktopProject.Libraries.SFactory;
 using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -18,6 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private Vector2 missileLoc;
 		private Vector2 direction;
 		private Vector2 currentVelocity;
+		private bool falling = false;
 
 		public JumpRightSamusState(Samus sam)
 		{
@@ -83,6 +85,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
 			samus.Physics.Update();
+			if (samus.Physics.velocity.Y > 0){
+				this.Idle();
+			} 
 			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 			sprite.Update(gameTime);
 		}

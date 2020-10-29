@@ -82,6 +82,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
 			samus.Physics.Update();
+			if ( (int) samus.Physics.velocity.Y == 0){
+				this.Idle();
+			}
 			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
 			sprite.Update(gameTime);
 		}
