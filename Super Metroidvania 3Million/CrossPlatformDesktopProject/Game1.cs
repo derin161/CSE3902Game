@@ -45,7 +45,7 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            currentLevel.Restart();
+            currentLevel.Initialize();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
         }
@@ -86,7 +86,7 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            currentLevel.Restart();
+            currentLevel.Initialize();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
 

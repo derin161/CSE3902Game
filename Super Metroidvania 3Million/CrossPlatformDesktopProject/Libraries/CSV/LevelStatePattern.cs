@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             state = startingLevel;
         }
 
-        public void Restart()
+        public void Initialize()
         {
             LoadCsv.Instance.Load("startingLevel.csv");
         }
