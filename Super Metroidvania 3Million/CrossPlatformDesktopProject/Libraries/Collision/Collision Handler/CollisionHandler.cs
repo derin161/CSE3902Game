@@ -10,6 +10,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 {
     class CollisionHandler
     {
+        int i = 0;
         public CollisionHandler()
         {
 
@@ -23,40 +24,51 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             Samus sam = ((Samus)player);
-            
-            //Left collision happens when samus is moving right and abs(player.y-block.y) < player.height
-            if (sam.Physics.velocity.X > 0 && System.Math.Abs(sam.space.Y - block.SpaceRectangle().Y) < sam.space.Height)
-            {
-                sam.space = new Rectangle((int)sam.x - collisionZone.Width, (int)sam.y, sam.space.Width, sam.space.Height);
+            System.Console.WriteLine();
+            //Determine the direction that the player came from and push the player back out of the block
+            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
+            if (collisionZone.Height > collisionZone.Width)
+            { //LEFT/RIGHT collision
                 sam.Physics.HortizontalBreak();
-                System.Console.WriteLine("left collision");
+                if (player.SpaceRectangle().X < block.SpaceRectangle().X)
+                { //LEFT Collision
+                    //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
+                    sam.x -= collisionZone.Width;
+                    sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block left collision. Space: " + sam.space);
+                }
+                else
+                { //RIGHT Collision 
+                    //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
+                    sam.x += collisionZone.Width;
+                    sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block right collision. Space: " + sam.space);
+                }
             }
-            //Right collision happens when samus is moving left and player.y-block.y < player.height
-            if (sam.Physics.velocity.X < 0 && System.Math.Abs(sam.space.Y - block.SpaceRectangle().Y) < sam.space.Height)
-            {
-                sam.space = new Rectangle((int)sam.x + collisionZone.Width, (int)sam.y, sam.space.Width, sam.space.Height);
-                sam.Physics.HortizontalBreak();
-                System.Console.WriteLine("right collision");
-            }
-            //Top collision happens when samus is moving down and abs(player.x - block.x) < player.width
-            if (sam.Physics.velocity.Y > 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
-            {
-                sam.space = new Rectangle((int)sam.x, (int)sam.y - collisionZone.Height, sam.space.Width, sam.space.Height);
+            else
+            { //TOP/BOTTOM collision
                 sam.Physics.VerticalBreak();
-                System.Console.WriteLine("top collision");
-            }
-            //Bottom collision happens when samus is moving up and abs(player.x - block.x) < player.width
-            if (sam.Physics.velocity.Y < 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
-            {
-                sam.space = new Rectangle((int)sam.x, (int)sam.y + collisionZone.Height, sam.space.Width, sam.space.Height);
-                sam.Physics.VerticalBreak();
-                System.Console.WriteLine("bottom collision");
+                if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
+                { //TOP Collision
+                    //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
+                    sam.y -= collisionZone.Height;
+                    sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block top collision. Space: " + sam.space);
+                }
+                else
+                { //BOTTOM Collision 
+                    //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
+                    sam.y += collisionZone.Height;
+                    sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block bottom collision. Space: " + sam.space);
+                }
             }
         }
 
         public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
         {
-            if (projectile is KraidHorn || projectile is KraidMissile) { //Only kraid projectiles deal damage to the player.
+            if (projectile is KraidHorn || projectile is KraidMissile)
+            { //Only kraid projectiles deal damage to the player.
                 new ProjectileDamagePlayerCommand(player, projectile).Execute();
             }
         }
@@ -99,8 +111,9 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void ProjectileEnemyCollision(IProjectile projectile, IEnemy enemy)
         {
             //Cast so we can then determine is it's an ice beam or not, casting will succeed if the first statement is true.
-            if (projectile is PowerBeam && ((PowerBeam)projectile).IsIceBeam) { 
-                    new EnemyFreezeCommand(enemy).Execute();
+            if (projectile is PowerBeam && ((PowerBeam)projectile).IsIceBeam)
+            {
+                new EnemyFreezeCommand(enemy).Execute();
             }
             new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
             projectile.Kill();
