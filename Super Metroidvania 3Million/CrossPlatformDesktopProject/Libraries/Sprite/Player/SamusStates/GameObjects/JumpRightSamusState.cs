@@ -27,6 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			direction = new Vector2(10.0f, 0.0f);
 			samus.Physics.Jump();
 			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+			samus.Jumping = true;
 		}
 
 		public void Attack()
