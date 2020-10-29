@@ -23,35 +23,37 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             Samus sam = ((Samus)player);
-            
-            //Left collision happens when samus is moving right and abs(player.y-block.y) < player.height
-            if (sam.Physics.velocity.X > 0 && System.Math.Abs(sam.space.Y - block.SpaceRectangle().Y) < sam.space.Height)
+
+            //Left collision happens when samus is moving right
+            if (sam.Physics.velocity.X > 0 && collisionZone.Width < collisionZone.Height)
             {
-                sam.space = new Rectangle((int)sam.x - collisionZone.Width, (int)sam.y, sam.space.Width, sam.space.Height);
                 sam.Physics.HortizontalBreak();
-                System.Console.WriteLine("left collision");
+                sam.x -= collisionZone.Width;
             }
-            //Right collision happens when samus is moving left and player.y-block.y < player.height
-            if (sam.Physics.velocity.X < 0 && System.Math.Abs(sam.space.Y - block.SpaceRectangle().Y) < sam.space.Height)
+            //Right collision happens when samus is moving left
+            if (sam.Physics.velocity.X < 0 && collisionZone.Width < collisionZone.Height)
             {
-                sam.space = new Rectangle((int)sam.x + collisionZone.Width, (int)sam.y, sam.space.Width, sam.space.Height);
                 sam.Physics.HortizontalBreak();
-                System.Console.WriteLine("right collision");
+                sam.x += collisionZone.Width;
+                System.Console.WriteLine("right collision, velocity is " + sam.Physics.velocity);
             }
-            //Top collision happens when samus is moving down and abs(player.x - block.x) < player.width
-            if (sam.Physics.velocity.Y > 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
+            //Bottom collision happens when samus is moving up
+            if (sam.Physics.velocity.Y < 0 && collisionZone.Width > collisionZone.Height)
             {
-                sam.space = new Rectangle((int)sam.x, (int)sam.y - collisionZone.Height, sam.space.Width, sam.space.Height);
                 sam.Physics.VerticalBreak();
-                System.Console.WriteLine("top collision");
-            }
-            //Bottom collision happens when samus is moving up and abs(player.x - block.x) < player.width
-            if (sam.Physics.velocity.Y < 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
-            {
                 sam.space = new Rectangle((int)sam.x, (int)sam.y + collisionZone.Height, sam.space.Width, sam.space.Height);
-                sam.Physics.VerticalBreak();
                 System.Console.WriteLine("bottom collision");
             }
+            //Top collision happens when samus is moving down
+            if (sam.Physics.velocity.Y >= 0 && collisionZone.Width > collisionZone.Height)
+            {
+                sam.Physics.VerticalBreak();
+                sam.space = new Rectangle((int)sam.x, (int)sam.y - collisionZone.Height, sam.space.Width, sam.space.Height);
+                System.Console.WriteLine("top collision");
+            }
+            
+
+
         }
 
         public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
