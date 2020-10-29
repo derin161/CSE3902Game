@@ -22,13 +22,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
-			missileLoc = new Vector2(samus.position.X + 45, samus.position.Y + 32);
+			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
 			direction = new Vector2(4.0f, 0.0f);
 		}
 
 		public void Attack()
         {
-			missileLoc = new Vector2(samus.position.X + 45, samus.position.Y + 32);
+			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
 			if (samus.missile == 0)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));

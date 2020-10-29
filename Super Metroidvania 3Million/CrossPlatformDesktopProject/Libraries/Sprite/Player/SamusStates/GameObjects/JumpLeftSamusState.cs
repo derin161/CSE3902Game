@@ -23,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.JumpLeftSprite(samus);
-			missileLoc = new Vector2(samus.position.X + 19, samus.position.Y + 32);
+			missileLoc = new Vector2(samus.x + 19, samus.y + 32);
 			direction = new Vector2(-10.0f, 0.0f);
 			samus.Physics.Jump();
 			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
@@ -32,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Attack()
 		{
-			missileLoc = new Vector2(samus.position.X + 45, samus.position.Y + 32);
+			missileLoc = new Vector2(samus.x + 19, samus.y + 32);
 			if (samus.missile == 0)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
