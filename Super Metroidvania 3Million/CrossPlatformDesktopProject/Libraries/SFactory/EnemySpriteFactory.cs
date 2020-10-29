@@ -10,6 +10,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
     {
 		//Enemies
 		private Texture2D geega;
+		private Texture2D geegaRight;
 		private Texture2D kraid;
 		private Texture2D memu;
 		private Texture2D ripper;
@@ -35,6 +36,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			//Enemies
 			geega = content.Load<Texture2D>("enemies/geega");
+			geegaRight = content.Load<Texture2D>("enemies/geegaRight");
 			kraid = content.Load<Texture2D>("enemies/Kraid");
 			memu = content.Load<Texture2D>("enemies/Memu");
 			ripper = content.Load<Texture2D>("enemies/Ripper");
@@ -45,8 +47,12 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		}
 
 		public ISprite GeegaSprite(Geega g)
-        {
+		{
 			return new GeegaSprite(geega, g);
+		}
+		public ISprite GeegaSpriteRight(Geega g)
+		{
+			return new GeegaSprite(geegaRight, g);
 		}
 
 		public ISprite KraidSprite(Kraid k)
