@@ -86,7 +86,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 }
             }
 
-            //check if the enemies are colliding with any blocks
+            //check if the enemies are colliding with any projectiles
             foreach (IProjectile projectile in GameObjectContainer.Instance.ProjectileList)
             {
                 foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList)

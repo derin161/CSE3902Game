@@ -52,6 +52,9 @@ namespace CrossPlatformDesktopProject
 
             Skree s = new Skree(new Vector2(320, 64));
             GameObjectContainer.Instance.Add(s);
+
+            Geega g = new Geega(new Vector2(400, 400));
+            GameObjectContainer.Instance.Add(g);
         }
 
         protected override void UnloadContent()

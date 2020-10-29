@@ -5,6 +5,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Command;
+using System.Collections;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
@@ -75,22 +76,26 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             { //LEFT/RIGHT collision
                 if (enemy.SpaceRectangle().X < block.SpaceRectangle().X)
                 { //LEFT Collision
-                    enemy.MoveRight();
+                    //enemy.MoveRight();
                 }
                 else
                 { //RIGHT Collision 
-                    enemy.MoveRight();
+                    //enemy.MoveRight();
                 }
             }
             else
             { //TOP/BOTTOM collision 
                 if (enemy.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-                    enemy.StopMoving();
+                    if (enemy is Skree)
+                    {
+                        enemy.StopMoving();
+                    }
+                        
                 }
                 else
                 { //BOTTOM Collision 
-                    enemy.MoveDown();
+                    //enemy.MoveDown();
                 }
             }
         }
