@@ -95,7 +95,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Idle()
 		{
-			//Nothing Happens
+			samus.state = new RightIdleSamusState(samus);
 		}
 	}
 }
