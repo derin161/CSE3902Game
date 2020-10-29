@@ -55,6 +55,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
             MoveUp();
 
+            //Fly sideways when attacking the player
             if (stateMachine.y <= playerY)
             {
                 vertSpeed = 0;
@@ -73,9 +74,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 Kill();
             }
             
-
-            
-
         }
         public void Update(GameTime gameTime)
         {
