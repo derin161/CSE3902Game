@@ -23,6 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public int missile;
         public GameTime gameTime;
         public PlayerPhysics Physics { get; private set; }
+        public bool Jumping {get; set; }
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
@@ -36,6 +37,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
 			state = new RightIdleSamusState(this);
+            Jumping = false;
             
         }
 
@@ -89,7 +91,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void Update(GameTime gameTime)
         {
-            space = new Rectangle((int) position.X, (int) position.Y, 64, 64);
             state.Update(gameTime);
             Physics.Update();
         }
