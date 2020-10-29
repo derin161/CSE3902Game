@@ -1,4 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void Initialize()
         {
-            LoadCsv.Instance.Load("StartingLevel.csv");
+            LoadCsv.Instance.Load("StartingLevel.csv", new Vector2(64, 64));
         }
 
         public IStageState GetState(string stateID)

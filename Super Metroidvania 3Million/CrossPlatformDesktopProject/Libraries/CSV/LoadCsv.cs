@@ -26,9 +26,11 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             }
         }
 
-        public void Load(string levelName)
+            public void Load(string levelName, Vector2 playerSpawn)
         {
             GameObjectContainer.Instance.Clear();
+
+            GameObjectContainer.Instance.Player.UpdateLocation(playerSpawn);
 
             string levelPath = @"..\..\..\..\Libraries\Levels\" + levelName;
             
@@ -313,5 +315,6 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                 }
             }
         }
+
     }
 }

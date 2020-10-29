@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,11 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void LeftDoor()
         {
-            LoadCsv.Instance.Load("StartingLevel.csv");
+            LoadCsv.Instance.Load("StartingLevel.csv", new Vector2(384, 64));
         }
         public void RightDoor()
         {
-            LoadCsv.Instance.Load("LevelOne.csv");
+            LoadCsv.Instance.Load("LevelTwo.csv", new Vector2(64, 64));
         }
         public void TopLeftDoor()
         {

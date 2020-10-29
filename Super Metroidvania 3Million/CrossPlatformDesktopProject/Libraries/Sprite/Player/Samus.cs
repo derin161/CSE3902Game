@@ -120,5 +120,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         {
             return space;
         }
+
+        public void UpdateLocation(Vector2 l)
+        {
+            x = l.X;
+            y = l.Y;
+            space = new Rectangle((int)x, (int)y, 64, 64);
+        }
     }
 }
