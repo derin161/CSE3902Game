@@ -33,13 +33,13 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 { //LEFT Collision
                     //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
                     sam.space  = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block left collision");
+                    System.Console.WriteLine("Player block left collision. Space: "+ sam.space );
                 }
                 else
                 { //RIGHT Collision 
                     //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
                     sam.space = new Rectangle(sam.space.X + collisionZone.Width , sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block right collision");
+                    System.Console.WriteLine("Player block right collision. Space: " + sam.space);
                 }
             }
             else { //TOP/BOTTOM collision
@@ -49,10 +49,12 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
                     sam.Idle();
                     sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block top collision. Space: " + sam.space);
                 }
                 else { //BOTTOM Collision 
                     //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
                     sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block bottom collision. Space: " + sam.space);
                 }
             }
         }
