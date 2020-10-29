@@ -87,11 +87,11 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             { //TOP/BOTTOM collision 
                 if (enemy.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-                    enemy.MoveDown();
+                    enemy.MoveUp();
                 }
                 else
                 { //BOTTOM Collision 
-                    enemy.MoveUp();
+                    enemy.MoveDown();
                 }
             }
         }

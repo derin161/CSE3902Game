@@ -8,64 +8,47 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     public class EnemyStateMachine
     {
 
-        public bool movingLeft, movingUp, frozen;
+        public bool frozen;
+        private int horizSpeed, vertSpeed;
         public float x, y;
         public EnemyStateMachine(Vector2 location)
         {
             x = location.X;
             y = location.Y;
-            movingLeft = true;
-            movingUp = true;
             frozen = false;
         }
-        public void MoveLeft()
+        public void MoveLeft(int speed)
         {
-            movingLeft = true;
+            horizSpeed = -speed;
         }
-        public void MoveRight()
+        public void MoveRight(int speed)
         {
-            movingLeft = false;
+            horizSpeed = speed;
         }
-        public void MoveUp()
+        public void MoveUp(int speed)
         {
-            movingUp = true;
+            vertSpeed = -speed;
         }
-        public void MoveDown()
+        public void MoveDown(int speed)
         {
-            movingUp = false;
+            vertSpeed = speed;
         }
         public void changeDirection()
         {
             //All enemies go only horizontal or vertical so changing both in one method should be fine
-            movingLeft = !movingLeft;
-            movingUp = !movingUp;
+            horizSpeed = horizSpeed * -1;
+            vertSpeed = vertSpeed * -1;
         }
         public void Freeze()
         {
             frozen = true;
         }
-        public void Update(int horizSpeed, int vertSpeed)
+        public void Update()
         {
             if (!frozen)
             {
-                if (movingLeft)
-                {
-                    x -= horizSpeed;
-                }
-                else
-                {
-                    x += horizSpeed;
-                }
-
-                if (movingUp)
-                {
-                    y -= vertSpeed;
-                }
-                else
-                {
-                    y += vertSpeed;
-                }
-
+                x += horizSpeed;
+                y += vertSpeed;
             }
 
         }

@@ -10,6 +10,7 @@ using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.CSV;
 using CrossPlatformDesktopProject.Libraries.Collision;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 
 namespace CrossPlatformDesktopProject
 {
@@ -48,6 +49,9 @@ namespace CrossPlatformDesktopProject
             currentLevel.Restart();
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
+
+            Skree s = new Skree(new Vector2(200, 200));
+            GameObjectContainer.Instance.Add(s);
         }
 
         protected override void UnloadContent()

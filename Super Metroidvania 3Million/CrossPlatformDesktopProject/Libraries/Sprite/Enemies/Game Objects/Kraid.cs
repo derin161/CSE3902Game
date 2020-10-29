@@ -51,7 +51,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
 
             //Update location
-            stateMachine.Update(horizSpeed, vertSpeed);
+            stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 48, 64);
         }
 
@@ -77,19 +77,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void MoveLeft()
         {
-            stateMachine.MoveLeft();
+            stateMachine.MoveLeft(horizSpeed);
         }
         public void MoveRight()
         {
-            stateMachine.MoveRight();
+            stateMachine.MoveRight(horizSpeed);
         }
         public void MoveUp()
         {
-            stateMachine.MoveUp();
+            stateMachine.MoveUp(vertSpeed);
         }
         public void MoveDown()
         {
-            stateMachine.MoveDown();
+            stateMachine.MoveDown(vertSpeed);
         }
         public void ChangeDirection()
         {
