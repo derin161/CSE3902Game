@@ -8,11 +8,13 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 {
     public interface IStageState
     {
-        void Door1();
-        void Door2();
-        void Door3();
-        void Door4();
-        void Door5();
-        void Door6();
+        void LeftDoor();
+        void RightDoor();
+        void TopLeftDoor();
+        void TopRightDoor();
+        void BottomLeftDoor();
+        void BottomRightDoor();
+        void FarBottomLeftDoor();
+        void FarBottomRightDoor();
     }
 }

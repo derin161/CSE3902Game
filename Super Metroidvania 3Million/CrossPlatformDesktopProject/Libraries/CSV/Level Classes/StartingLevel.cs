@@ -13,27 +13,35 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         }
 
-        public void Door1()
+        public void LeftDoor()
         {
             // Do nothing - door does not exist
         }
-        public void Door2()
+        public void RightDoor()
         {
             LoadCsv.Instance.Load("LevelOne");
         }
-        public void Door3()
+        public void TopLeftDoor()
         {
             // Do nothing - door does not exist
         }
-        public void Door4()
+        public void TopRightDoor()
         {
             // Do nothing - door does not exist
         }
-        public void Door5()
+        public void BottomLeftDoor()
         {
             // Do nothing - door does not exist
         }
-        public void Door6()
+        public void BottomRightDoor()
+        {
+            // Do nothing - door does not exist
+        }
+        public void FarBottomLeftDoor()
+        {
+            // Do nothing - door does not exist
+        }
+        public void FarBottomRightDoor()
         {
             // Do nothing - door does not exist
         }
