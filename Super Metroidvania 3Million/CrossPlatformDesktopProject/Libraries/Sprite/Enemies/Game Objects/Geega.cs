@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -15,19 +16,46 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
+        private float x, y;
 
 
         public Geega(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.GeegaSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 3;
-            vertSpeed = 0;
+            horizSpeed = 0;
+            vertSpeed = 4;
+            health = 100;
+            x = location.X;
+            y = location.Y;
         }
+        private void Attack()
+        {
+            //Move Geega up until they reach the height of the player. Then move over
+            int playerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
+            int playerY = GameObjectContainer.Instance.Player.SpaceRectangle().Y;
+            
+            MoveUp();
+            System.Console.WriteLine("x is " + stateMachine.x + " and y is " + stateMachine.y);
+            if (stateMachine.y <= playerY)
+            {
+                vertSpeed = 0;
+                horizSpeed = 3;
+                MoveLeft();
+            }
+            if (stateMachine.x < 0)
+            {
+                Kill();
+            }
+            
 
+            
+
+        }
         public void Update(GameTime gameTime)
         {
-            stateMachine.Update(horizSpeed, vertSpeed);
+            Attack();
+            stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32,32);
             sprite.Update(gameTime);
         }
@@ -50,27 +78,33 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
+            Geega next = new Geega(new Vector2(x, y));
+            GameObjectContainer.Instance.Add(next);
         }
 
         public void MoveLeft()
         {
-            stateMachine.MoveLeft();
+            stateMachine.MoveLeft(horizSpeed);
         }
         public void MoveRight()
         {
-            stateMachine.MoveRight();
+            stateMachine.MoveRight(horizSpeed);
         }
         public void MoveUp()
         {
-            stateMachine.MoveUp();
+            stateMachine.MoveUp(vertSpeed);
         }
         public void MoveDown()
         {
-            stateMachine.MoveDown();
+            stateMachine.MoveDown(vertSpeed);
         }
         public void ChangeDirection()
         {
             stateMachine.changeDirection();
+        }
+        public void StopMoving()
+        {
+            stateMachine.StopMoving();
         }
         public void Freeze()
         {

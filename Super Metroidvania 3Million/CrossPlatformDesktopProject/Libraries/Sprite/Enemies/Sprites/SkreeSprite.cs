@@ -21,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Texture = texture;
             Rows = 2;
             Columns = 3;
-            currentFrame = 0;
+            currentFrame = 1;
             totalFrames = Rows * Columns;
             count = 0;
             skree = s;
@@ -29,8 +29,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 10 counts
-            if (count == 10)
+            //change the frame after 10 counts while skree is falling
+            if (skree.fallen && !skree.collision && count == 4)
             {
                 count = 0;
                 currentFrame++;
@@ -39,7 +39,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                     currentFrame = 0;
                 }
             }
-            count++;
+            count = (count + 1) % 5;
 
             
         }
