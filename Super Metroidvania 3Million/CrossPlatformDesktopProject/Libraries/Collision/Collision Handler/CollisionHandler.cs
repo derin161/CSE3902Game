@@ -33,11 +33,13 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 { //LEFT Collision
                     //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
                     sam.space  = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block left collision");
                 }
                 else
                 { //RIGHT Collision 
                     //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
                     sam.space = new Rectangle(sam.space.X + collisionZone.Width , sam.space.Y, sam.space.Width, sam.space.Height);
+                    System.Console.WriteLine("Player block right collision");
                 }
             }
             else { //TOP/BOTTOM collision
