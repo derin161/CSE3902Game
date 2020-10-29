@@ -43,29 +43,38 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             };
         }
 
-        public void Door1() // Top left door
+        public void LeftDoor() 
         {
-            state.Door1();
+            state.LeftDoor();
         }
-        public void Door2() // Top right door
+        public void RightDoor() 
         {
-            state.Door2();
+            state.RightDoor();
         }
-        public void Door3() // Middle left door
+        public void TopLeftDoor() 
         {
-            state.Door3();
+            state.TopLeftDoor();
         }
-        public void Door4() // Middle right door
+        public void TopRightDoor() 
         {
-            state.Door4();
+            state.TopRightDoor();
         }
-        public void Door5() // Top left door
+        public void BottomLeftDoor() 
         {
-            state.Door5();
+            state.BottomLeftDoor();
         }
-        public void Door6() // Top right door
+        public void BottomRightDoor() 
         {
-            state.Door6();
+            state.BottomRightDoor();
+        }
+
+        public void FarBottomLeftDoor()
+        {
+            state.FarBottomLeftDoor();
+        }
+        public void FarBottomRightDoor()
+        {
+            state.FarBottomRightDoor();
         }
     }
 }
