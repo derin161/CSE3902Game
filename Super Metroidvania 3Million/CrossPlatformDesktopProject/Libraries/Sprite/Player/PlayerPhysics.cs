@@ -10,7 +10,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private Vector2 acceleration = new Vector2(0, 0.5f);
         public Vector2 velocity {get; set;}
         private float maxFallVelocity = 5;
-        private float horizontalRunSpeed = 7;
+        private float horizontalRunSpeed = 1;
         private float jumpSpeed = -10.0f;
         private Samus player;
 
@@ -20,9 +20,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
 
         public void Update() {
-            player.position = Vector2.Add(player.position, velocity);
-            player.space = new Rectangle((int) player.position.X, (int) player.position.Y, player.space.Width, player.space.Height);
+            player.x += velocity.X;
+            player.y += velocity.Y;
+            player.space = new Rectangle((int) player.x, (int) player.y, player.space.Width, player.space.Height);
 
+            //Set velocity to max velocity if it goes over
             velocity = Vector2.Add(velocity, acceleration);
             if (velocity.Y > maxFallVelocity) {
                 velocity = new Vector2(velocity.X, maxFallVelocity);

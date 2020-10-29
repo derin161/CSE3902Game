@@ -24,41 +24,34 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         {
             Samus sam = ((Samus)player);
             
-            //Determine the direction that the player came from and push the player back out of the block
-            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
-            if (collisionZone.Height > collisionZone.Width)
-            { //LEFT/RIGHT collision
+            //Left collision happens when samus is moving right and abs(player.y-block.y) < player.height
+            if (sam.Physics.velocity.X > 0 && System.Math.Abs(sam.space.Y - block.SpaceRectangle().Y) < sam.space.Height)
+            {
+                sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
                 sam.Physics.HortizontalBreak();
-                if (player.SpaceRectangle().X < block.SpaceRectangle().X)
-                { //LEFT Collision
-                    //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
-                    sam.space  = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block left collision. Space: "+ sam.space );
-                }
-                else
-                { //RIGHT Collision 
-                    //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
-                    sam.space = new Rectangle(sam.space.X + collisionZone.Width , sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block right collision. Space: " + sam.space);
-                }
+
             }
-            else { //TOP/BOTTOM collision
+            //Right collision happens when samus is moving left and player.y-block.y < player.height
+            if (sam.Physics.velocity.X < 0 && System.Math.Abs(sam.space.Y - block.SpaceRectangle().Y) < sam.space.Height)
+            {
+                sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                sam.Physics.HortizontalBreak();
+
+            }
+            //Top collision happens when samus is moving down and abs(player.x - block.x) < player.width
+            if (sam.Physics.velocity.Y > 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
+            {
+                sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
                 sam.Physics.VerticalBreak();
-                if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
-                { //TOP Collision
-                    //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
-                    if (sam.Jumping){
-                        sam.Idle();
-                        sam.Jumping = false;
-                    }
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block top collision. Space: " + sam.space);
-                }
-                else { //BOTTOM Collision 
-                    //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block bottom collision. Space: " + sam.space);
-                }
+
+            }
+            //Bottom collision happens when samus is moving up and abs(player.x - block.x) < player.width
+            if (sam.Physics.velocity.Y < 0 && System.Math.Abs(sam.space.X - block.SpaceRectangle().X) < sam.space.Width)
+            {
+                sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
+                sam.Physics.VerticalBreak();
+
+
             }
         }
 

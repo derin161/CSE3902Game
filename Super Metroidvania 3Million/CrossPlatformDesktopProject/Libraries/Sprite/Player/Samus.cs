@@ -14,25 +14,27 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
     public class Samus : IPlayer
     {
         public IPlayerState state;
-        public PlayerInventory inventory {get; set; }
+        public PlayerInventory inventory { get; set; }
         public int health;
-        public Rectangle space {get; set; }
+        public Rectangle space { get; set; }
         private Game1 game;
-        public Vector2 position {get; set; }
         private bool isDead;
         public int missile;
         public GameTime gameTime;
         public PlayerPhysics Physics { get; private set; }
-        public bool Jumping {get; set; }
+        public bool Jumping { get; set; }
+        public float x { get; set; }
+        public float y { get; set; }
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
             gameTime = g2;
             game = g;
-            position = new Vector2(l.X, l.Y);
             health = 100;
             isDead = false;
-            space = new Rectangle((int) position.X, (int) position.Y, 64, 64);
+            x = l.X;
+            y = l.Y;
+            space = new Rectangle((int) x, (int) y, 64, 64);
             missile = 0;
             inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
