@@ -87,6 +87,7 @@ namespace CrossPlatformDesktopProject
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
 
+            GameObjectContainer.Instance.Clear();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
             EnemySpriteFactory.Instance.LoadAllTextures(Content);

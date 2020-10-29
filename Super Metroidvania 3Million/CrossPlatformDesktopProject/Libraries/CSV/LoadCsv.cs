@@ -28,8 +28,10 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void Load(string levelName)
         {
-            string levelPath = @"..\..\..\..\Libraries\Levels\" + levelName;
+            GameObjectContainer.Instance.Clear();
 
+            string levelPath = @"..\..\..\..\Libraries\Levels\" + levelName;
+            
             using (TextFieldParser parser = new TextFieldParser(levelPath))
             {
                 int column = 0;
