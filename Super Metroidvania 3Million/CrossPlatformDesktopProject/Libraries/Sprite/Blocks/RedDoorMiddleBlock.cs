@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 {
-    class RedDoorMiddleBlock : IBlock
+    class RedDoorMiddleBlock : IDoorBlock
     {
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
@@ -56,6 +56,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         public void Kill()
         {
             isDead = true;
+        }
+        public bool IsOpen()
+        {
+            return isDead;
         }
     }
 }
