@@ -30,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			rows = 1;
 			columns = 4;
 			currentFrame = 0;
-			interval = 100;
+			interval = 50;
 			timer = 0;
 
         }
@@ -41,7 +41,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			if (timer > interval)
             {
 				currentFrame = (currentFrame + 1) % totalFrames;
-				timer -= (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+				timer = 0;			
 			}
 
 		}
