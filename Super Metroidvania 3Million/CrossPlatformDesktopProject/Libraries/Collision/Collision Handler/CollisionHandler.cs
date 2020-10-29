@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             Samus sam = ((Samus)player);
-            if (block is IDoorBlock && ((IDoorBlock)block).isOpen())
+            if (block is IDoorBlock) //&& ((IDoorBlock)block).isOpen())
             {
                 if (collisionZone.X >= 240)
                 {

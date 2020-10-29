@@ -57,5 +57,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
         {
             isDead = true;
         }
+
     }
 }

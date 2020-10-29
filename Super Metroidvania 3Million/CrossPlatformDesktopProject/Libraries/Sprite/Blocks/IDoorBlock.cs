@@ -9,6 +9,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
 {
     interface IDoorBlock : IBlock
     {
-        public bool isOpen();
+        public bool IsOpen();
     }
 }

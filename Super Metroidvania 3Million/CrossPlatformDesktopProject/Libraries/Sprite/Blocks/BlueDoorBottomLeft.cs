@@ -58,7 +58,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
             isDead = true;
         }
 
-        public bool isOpen()
+        public bool IsOpen()
         {
             return isDead;
         }
