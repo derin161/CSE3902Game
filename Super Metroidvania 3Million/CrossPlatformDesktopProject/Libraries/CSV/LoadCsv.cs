@@ -17,7 +17,6 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 {
     public class LoadCsv
     {
-
         private static LoadCsv instance = new LoadCsv();
 
         public static LoadCsv Instance
@@ -28,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             }
         }
 
-            public void Load(string levelName, Vector2 playerSpawn)
+        public void Load(string levelName, Vector2 playerSpawn)
         {
             GameObjectContainer.Instance.Clear();
 
@@ -312,6 +311,10 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                             case "SideHopper":
                                 location = new Vector2(row * 32, column * 32);
                                 GameObjectContainer.Instance.Add(new SideHopper(location));
+                                break;
+                            case "ReverseSideHopper":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new ReverseSideHopper(location));
                                 break;
                             case "Skree":
                                 location = new Vector2(row * 32, column * 32);

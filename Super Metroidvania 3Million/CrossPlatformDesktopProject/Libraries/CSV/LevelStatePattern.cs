@@ -11,6 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
     {
         // public int [InsertItemPickupNameHere] { get; private set; }
+        int levelIndex = 1, numLevels = 3;
 
         private static StartingLevel startingLevel = new StartingLevel();
         private static LevelOne levelOne = new LevelOne();
@@ -62,6 +63,27 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                 LeftDoor();
                 state = levelOne;
                 
+            }
+        }
+
+        public void LoadNext()
+        {
+            switch (levelIndex)
+            {
+                case 0:
+                    LoadCsv.Instance.Load("StartingLevel.csv", new Vector2(64, 64));
+                    break;
+                case 1:
+                    LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 64));
+                    break;
+                case 2:
+                    LoadCsv.Instance.Load("LevelTwo.csv", new Vector2(64, 64));
+                    break;
+            }
+            levelIndex++;
+            if (levelIndex >= numLevels)
+            {
+                levelIndex = 0;
             }
         }
 

@@ -1,6 +1,6 @@
 BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes
 BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes
-BlueCircleBlock,BlueCircleBlock,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
+BlueCircleBlock,BlueCircleBlock,__,__,__,ReverseSideHopper,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
 BlueCircleBlock,BlueCircleBlock,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
 BlueCircleBlock,BlueCircleBlock,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
 OrangeDoorBlock,RedDoorTopRightBlock,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
