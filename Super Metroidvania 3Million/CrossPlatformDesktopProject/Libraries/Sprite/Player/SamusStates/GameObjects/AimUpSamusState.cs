@@ -22,7 +22,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public AimUpSamusState(Samus sam, bool facingRight)
 		{
 			samus = sam;
-			missileLoc = new Vector2(samus.x + 32, samus.y);
 			direction = new Vector2(0.0f, -4.0f);
 			samus.Jumping = false;
 			rightFacing = facingRight;
@@ -36,6 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Attack()
         {
+			missileLoc = new Vector2(samus.x + 12, samus.y);
 			if (samus.missile == 0)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
