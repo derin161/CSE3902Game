@@ -39,7 +39,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
 			}
-			else if (samus.missile == 0)
+			else if (samus.missile == 1)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
 			}
