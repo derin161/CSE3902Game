@@ -30,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             //change the frame after 20 counts
-            if (count == 20)
+            if (count == 64)
             {
                 count = 0;
                 direction *= -1;
@@ -46,7 +46,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 reverseSideHopper.Jump(count, direction);
             }
-            count++;
+            count+=2;
 
         }
 

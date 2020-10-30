@@ -313,6 +313,10 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 location = new Vector2(row * 32, column * 32);
                                 GameObjectContainer.Instance.Add(new SideHopper(location));
                                 break;
+                            case "ReverseSideHopper":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new ReverseSideHopper(location));
+                                break;
                             case "Skree":
                                 location = new Vector2(row * 32, column * 32);
                                 GameObjectContainer.Instance.Add(new Skree(location));

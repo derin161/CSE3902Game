@@ -39,7 +39,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Jump(float count, int direction)
         {
             stateMachine.y = (1.0f/48.0f)*(count * count) - 1.5f * count + initialY+5;
-            System.Console.WriteLine("value is " + (1.0f/48.0f)*(count * count));
             stateMachine.x += direction;
         }
 
