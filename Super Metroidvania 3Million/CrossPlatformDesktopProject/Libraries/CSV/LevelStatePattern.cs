@@ -35,7 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             LoadCsv.Instance.Load("StartingLevel.csv", new Vector2(64, 64));
         }
 
-        public void switchLevel(Door door)
+        public void SwitchLevel(Door door)
         {
   
             if (state == startingLevel)

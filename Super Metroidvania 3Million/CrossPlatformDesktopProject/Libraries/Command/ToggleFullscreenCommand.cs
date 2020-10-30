@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.CSV;
+﻿using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-    public class CycleLevel : ICommand
+    class ToggleFullscreenCommand : ICommand
     {
         private Game1 game;
-        public CycleLevel(Game1 game)
+        public ToggleFullscreenCommand(Game1 game)
         {
             this.game = game;
         }
         public void Execute()
         {
-            LevelStatePattern.Instance.LoadNext();
+            game.Fullscreen();
         }
     }
 }
+

@@ -34,7 +34,13 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             GameObjectContainer.Instance.Player.UpdateLocation(playerSpawn);
 
             string levelPath = @"..\..\..\..\Libraries\Levels\" + levelName;
-            
+
+            string[] lines = File.ReadAllLines(levelPath);
+            int rows = lines.Count();
+            int columns = lines[0].Split(',').Length;
+
+            //Game1.ChangeResolution(rows, columns);
+
             using (TextFieldParser parser = new TextFieldParser(levelPath))
             {
                 int column = 0;
