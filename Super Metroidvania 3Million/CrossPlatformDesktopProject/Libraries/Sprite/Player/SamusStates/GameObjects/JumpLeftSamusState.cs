@@ -57,7 +57,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Morph()
         {
-			samus.state = new MorphSamusState(samus);
+			samus.State = new MorphSamusState(samus);
 		}
 
 		public void MoveRight()
@@ -65,7 +65,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
 			samus.Physics.MoveRight();
 			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-			samus.state = new JumpRightSamusState(samus);
+			samus.State = new JumpRightSamusState(samus);
 		}
 
 		public void MoveLeft()
@@ -77,7 +77,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void AimUp()
         {
-			samus.state = new AimUpSamusState(samus, false);
+			samus.State = new AimUpSamusState(samus, false);
 		}
 
 		public void Update(GameTime gameTime)
@@ -101,7 +101,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			if (!samus.Jumping){
 				samus.Physics.velocity = new Vector2(currentVelocity.X, 0);
 				currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-				samus.state = new LeftIdleSamusState(samus);
+				samus.State = new LeftIdleSamusState(samus);
 			}else {
 				samus.Physics.velocity = new Vector2(currentVelocity.X, 0);
 				samus.Physics.HortizontalBreak();

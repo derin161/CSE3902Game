@@ -13,7 +13,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
     public class Samus : IPlayer
     {
-        public IPlayerState state;
+        public IPlayerState State;
         public PlayerInventory inventory { get; set; }
         public int health;
         public Rectangle space { get; set; }
@@ -25,6 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool Jumping { get; set; }
         public float x { get; set; }
         public float y { get; set; }
+        public float missileSpeed {get; private set;}
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
@@ -38,14 +39,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             missile = 0;
             inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
-			state = new RightIdleSamusState(this);
+			State = new RightIdleSamusState(this);
             Jumping = false;
-            
         }
 
         public void Attack()
         {
-            state.Attack();
+            State.Attack();
         }
         public void CycleBeamMissile()
         {
@@ -59,23 +59,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void Jump()
         {
-            state.Jump();
+            State.Jump();
         }
         public void Morph()
         {
-            state.Morph();
+            State.Morph();
         }
         public void MoveRight()
         {
-            state.MoveRight();
+            State.MoveRight();
         }
         public void MoveLeft()
         {
-            state.MoveLeft();
+            State.MoveLeft();
         }
         public void AimUp()
         {
-            state.AimUp();
+            State.AimUp();
         }
         public void TakeDamage(int damage)
         {
@@ -93,13 +93,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void Update(GameTime gameTime)
         {
-            state.Update(gameTime);
+            State.Update(gameTime);
             Physics.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            state.Draw(spriteBatch);
+            State.Draw(spriteBatch);
         }
 
         public bool IsDead()
@@ -108,7 +108,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
 
         public void Idle() { 
-            state.Idle();
+            State.Idle();
         }
 
         public void Kill()

@@ -48,12 +48,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Jump()
         {
-			samus.state = new JumpRightSamusState(samus);
+			samus.State = new JumpRightSamusState(samus);
         }
 
 		public void Morph()
         {
-			samus.state = new MorphSamusState(samus);
+			samus.State = new MorphSamusState(samus);
 		}
 
 		public void MoveRight()
@@ -63,12 +63,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveLeft()
         {
-			samus.state = new LeftIdleSamusState(samus);
+			samus.State = new LeftIdleSamusState(samus);
 		}
 
 		public void AimUp()
         {
-			samus.state = new AimUpSamusState(samus, true);
+			samus.State = new AimUpSamusState(samus, true);
 		}
 
 		public void Update(GameTime gameTime)
@@ -84,7 +84,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Idle () 
 		{
-			samus.state = new RightIdleSamusState(samus);
+			samus.State = new RightIdleSamusState(samus);
 		}
 	}
 }
