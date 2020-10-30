@@ -328,6 +328,10 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                                 location = new Vector2(row * 32, column * 32);
                                 GameObjectContainer.Instance.Add(new Kraid(location));
                                 break;
+                            case "Zeela":
+                                location = new Vector2(row * 32, column * 32);
+                                GameObjectContainer.Instance.Add(new Zeela(location));
+                                break;
 
                             //Items
                             case "BombItem":

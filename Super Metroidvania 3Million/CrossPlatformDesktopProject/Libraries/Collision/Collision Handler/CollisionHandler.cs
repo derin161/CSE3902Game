@@ -92,11 +92,11 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             { //LEFT/RIGHT collision
                 if (enemy.SpaceRectangle().X < block.SpaceRectangle().X)
                 { //LEFT Collision
-                    //enemy.MoveRight();
+                    
                 }
                 else
                 { //RIGHT Collision 
-                    //enemy.MoveRight();
+                    
                 }
             }
             else
@@ -107,11 +107,12 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     {
                         enemy.StopMoving();
                     }
-                        
+                    
+
                 }
                 else
                 { //BOTTOM Collision 
-                    //enemy.MoveDown();
+                    
                 }
             }
         }
