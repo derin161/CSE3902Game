@@ -349,6 +349,18 @@
 /processorParam:TextureFormat=Color
 /build:Enemies/geega.png
 
+#begin Enemies/geegaRight.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Enemies/geegaRight.png
+
 #begin Enemies/Kraid.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -360,6 +372,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Enemies/Kraid.png
+
+#begin Enemies/KraidLeft.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Enemies/KraidLeft.png
 
 #begin Enemies/Memu.png
 /importer:TextureImporter
@@ -786,7 +810,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:ProjSprites/MissleRocketProj.png
+/build:ProjSprites/MissleRocketProj.png;ProjSprites/MissileRocketProj.png
 
 #begin ProjSprites/PowerBeamProj.png
 /importer:TextureImporter

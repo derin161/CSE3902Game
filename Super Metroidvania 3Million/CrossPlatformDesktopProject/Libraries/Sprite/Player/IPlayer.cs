@@ -33,8 +33,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void Upgrade(IItem item);
         public void TakeDamage(int damage);
         public void CycleBeamMissile();
-
         public void Idle();
+        public void UpdateLocation(Vector2 l);
 
     }
 }

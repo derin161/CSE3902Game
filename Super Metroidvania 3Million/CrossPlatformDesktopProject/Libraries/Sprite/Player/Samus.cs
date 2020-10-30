@@ -95,7 +95,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         {
             state.Update(gameTime);
             Physics.Update();
-            Console.WriteLine("X = " + this.x + "Y = " + this.y);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -120,6 +119,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public Rectangle SpaceRectangle()
         {
             return space;
+        }
+
+        public void UpdateLocation(Vector2 l)
+        {
+            x = l.X;
+            y = l.Y;
+            space = new Rectangle((int)x, (int)y, 64, 64);
         }
     }
 }

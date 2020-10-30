@@ -14,6 +14,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
+            //Should be a timer to avoid getting damaged multiple times by one collision
+
             player.TakeDamage(enemy.GetDamage());
         }
     }

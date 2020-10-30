@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         {
             sprite = ItemSpriteFactory.Instance.EnergyDropItemSprite(this);
             Location = initialLocation;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
         }
 
         public void Update(GameTime gameTime)

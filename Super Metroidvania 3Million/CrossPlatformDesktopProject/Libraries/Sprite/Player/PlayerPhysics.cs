@@ -7,11 +7,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
     public class PlayerPhysics
     {
-        private Vector2 acceleration = new Vector2(0, 1.0f);
+        private Vector2 acceleration = new Vector2(0, 0.3f);
         public Vector2 velocity {get; set;}
-        private float maxFallVelocity = 5;
-        private float horizontalRunSpeed = 5;
-        private float jumpSpeed = -10.0f;
+        private float maxFallVelocity = 8;
+        private float horizontalRunSpeed = 3;
+        private float jumpSpeed = -8f;
         private Samus player;
 
         public PlayerPhysics(Samus player) {

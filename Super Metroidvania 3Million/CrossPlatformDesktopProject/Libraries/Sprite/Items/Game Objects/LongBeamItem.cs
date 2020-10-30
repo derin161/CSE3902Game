@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         {
             sprite = ItemSpriteFactory.Instance.LongBeamItemSprite(this);
             Location = initialLocation;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
         }
 
         public void Update(GameTime gameTime)

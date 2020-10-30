@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Runtime.InteropServices;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -30,7 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             //change the frame after 20 counts
-            if (count == 20)
+            if (count == 64)
             {
                 count = 0;
                 direction *= -1;
@@ -40,13 +41,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                     currentFrame = 0;
                 }
             }
-
-            //Jump while on frame 5
+            
             if (currentFrame == 2)
             {
                 sideHopper.Jump(count, direction);
             }
-            count++;
+            count+=2;
 
         }
 

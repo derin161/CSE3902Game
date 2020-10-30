@@ -5,12 +5,13 @@ using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Command;
+using System.Collections;
+using CrossPlatformDesktopProject.Libraries.CSV;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
     class CollisionHandler
     {
-        int i = 0;
         public CollisionHandler()
         {
 
@@ -24,43 +25,52 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         public void PlayerBlockCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             Samus sam = ((Samus)player);
-            System.Console.WriteLine();
-            //Determine the direction that the player came from and push the player back out of the block
-            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
-            if (collisionZone.Height > collisionZone.Width)
-            { //LEFT/RIGHT collision
-                sam.Physics.HortizontalBreak();
-                if (player.SpaceRectangle().X < block.SpaceRectangle().X)
-                { //LEFT Collision
-                    //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
-                    sam.x -= collisionZone.Width;
-                    sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block left collision. Space: " + sam.space);
+            if (block is IDoorBlock) //&& ((IDoorBlock)block).isOpen())
+            {
+                if (collisionZone.X >= 240)
+                {
+                    LevelStatePattern.Instance.switchLevel(LevelStatePattern.Door.right);
                 }
                 else
-                { //RIGHT Collision 
-                    //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
-                    sam.x += collisionZone.Width;
-                    sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block right collision. Space: " + sam.space);
+                {
+                    LevelStatePattern.Instance.switchLevel(LevelStatePattern.Door.left);
                 }
             }
+
             else
-            { //TOP/BOTTOM collision
-                sam.Physics.VerticalBreak();
-                if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
-                { //TOP Collision
-                    //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
-                    sam.y -= collisionZone.Height;
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block top collision. Space: " + sam.space);
+            {
+                //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
+                if (collisionZone.Height > collisionZone.Width)
+                { //LEFT/RIGHT collision
+                    sam.Physics.HortizontalBreak();
+                    if (player.SpaceRectangle().X < block.SpaceRectangle().X)
+                    { //LEFT Collision
+                      //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
+                        sam.x -= collisionZone.Width;
+                        sam.space = new Rectangle(sam.space.X - collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                    }
+                    else
+                    { //RIGHT Collision 
+                      //sam.position = new Vector2(sam.position.X + collisionZone.Width, sam.position.Y);
+                        sam.x += collisionZone.Width;
+                        sam.space = new Rectangle(sam.space.X + collisionZone.Width, sam.space.Y, sam.space.Width, sam.space.Height);
+                    }
                 }
                 else
-                { //BOTTOM Collision 
-                    //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
-                    sam.y += collisionZone.Height;
-                    sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
-                    System.Console.WriteLine("Player block bottom collision. Space: " + sam.space);
+                { //TOP/BOTTOM collision
+                    sam.Physics.VerticalBreak();
+                    if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
+                    { //TOP Collision
+                      //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
+                        sam.y -= collisionZone.Height;
+                        sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
+                    }
+                    else
+                    { //BOTTOM Collision 
+                      //sam.position = new Vector2(sam.position.X, sam.position.Y + collisionZone.Height);
+                        sam.y += collisionZone.Height;
+                        sam.space = new Rectangle(sam.space.X, sam.space.Y + collisionZone.Height, sam.space.Width, sam.space.Height);
+                    }
                 }
             }
         }
@@ -82,22 +92,27 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             { //LEFT/RIGHT collision
                 if (enemy.SpaceRectangle().X < block.SpaceRectangle().X)
                 { //LEFT Collision
-                    enemy.MoveRight();
+                    
                 }
                 else
                 { //RIGHT Collision 
-                    enemy.MoveRight();
+                    
                 }
             }
             else
             { //TOP/BOTTOM collision 
                 if (enemy.SpaceRectangle().Y < block.SpaceRectangle().Y)
                 { //TOP Collision
-                    enemy.MoveDown();
+                    if (enemy is Skree)
+                    {
+                        enemy.StopMoving();
+                    }
+                    
+
                 }
                 else
                 { //BOTTOM Collision 
-                    enemy.MoveUp();
+                    
                 }
             }
         }
@@ -115,8 +130,11 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             {
                 new EnemyFreezeCommand(enemy).Execute();
             }
-            new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
-            projectile.Kill();
+            if (!(projectile is KraidHorn) && !(projectile is KraidMissile))
+            {
+                new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
+                projectile.Kill();
+            }
         }
 
         public void PlayerItemCollision(IPlayer player, IItem item)

@@ -32,13 +32,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            stateMachine.Update(horizSpeed, vertSpeed);
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
+            stateMachine.Update();
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 64, 64);
             sprite.Update(gameTime);
         }
-        public void Jump(int count, int direction)
+        public void Jump(float count, int direction)
         {
-            stateMachine.y = (count * count) - 20 * count + initialY;
+            stateMachine.y = (1.0f/48.0f)*(count * count) - 1.5f * count + initialY+5;
             stateMachine.x += direction;
         }
 
@@ -64,19 +64,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void MoveLeft()
         {
-            stateMachine.MoveLeft();
+            stateMachine.MoveLeft(horizSpeed);
         }
         public void MoveRight()
         {
-            stateMachine.MoveRight();
+            stateMachine.MoveRight(horizSpeed);
         }
         public void MoveUp()
         {
-            stateMachine.MoveUp();
+            stateMachine.MoveUp(vertSpeed);
         }
         public void MoveDown()
         {
-            stateMachine.MoveDown();
+            stateMachine.MoveDown(vertSpeed);
         }
         public void ChangeDirection()
         {
@@ -85,6 +85,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Freeze()
         {
             stateMachine.Freeze();
+        }
+        public void StopMoving()
+        {
+            stateMachine.StopMoving();
         }
         public int GetDamage()
         {
