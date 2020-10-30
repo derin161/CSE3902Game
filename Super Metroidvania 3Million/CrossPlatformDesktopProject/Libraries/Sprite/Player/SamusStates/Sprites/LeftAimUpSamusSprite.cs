@@ -12,36 +12,25 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
 	/*Author: Shyamal Shah*/
-	public class JumpRightSamusSprite : ISprite
+	public class LeftAimUpSamusSprite : ISprite
 	{
 		public Texture2D texture { get; set; }
-		public float xChange { get; set; }
 		private int rows;
 		private int columns;
 		private Samus samus;
-		public int currentFrame { get; set; }
-		private int totalFrames;
-		private float yChange;
-		private int interval;
-		private int timer;
-		public float origY { get; set; }
 
-		public JumpRightSamusSprite(Texture2D text, Samus sus)
+		public LeftAimUpSamusSprite(Texture2D text, Samus sus)
         {
 			texture = text;
 			samus = sus;
 			rows = 1;
 			columns = 1;
-			currentFrame = 0;
-			interval = 50;
-			timer = 0;
-
         }
 
 		public void Update(GameTime gameTime)
         {
-			//Nothing to Update
-		}
+			//Nothing needs to be updated
+        }
 
 		public void Draw(SpriteBatch spriteBatch)
         {
@@ -50,11 +39,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			int row = 0;
 			int column = 0;
 
-			Rectangle sourceRectangle = new Rectangle(column, row, width, height);
+			Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
 			samus.space = new Rectangle(samus.space.X, samus.space.Y, width, height);
-
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
-			currentFrame++;
 		}
 	}
 }

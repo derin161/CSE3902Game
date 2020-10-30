@@ -75,7 +75,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void AimUp()
         {
-			samus.state = new AimUpSamusState(samus);
+			samus.state = new AimUpSamusState(samus, false);
 		}
 
 		public void Update(GameTime gameTime)

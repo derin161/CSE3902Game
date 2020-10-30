@@ -251,7 +251,8 @@
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\MorphSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\AimUpSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightAimUpSamusSprite.cs" />
+	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftAimUpSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

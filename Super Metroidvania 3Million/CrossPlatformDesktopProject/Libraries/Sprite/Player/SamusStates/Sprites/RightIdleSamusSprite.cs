@@ -41,7 +41,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			int column = 0;
 
 			Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-
+			samus.space = new Rectangle(samus.space.X, samus.space.Y, width, height);
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
 		}
 	}
