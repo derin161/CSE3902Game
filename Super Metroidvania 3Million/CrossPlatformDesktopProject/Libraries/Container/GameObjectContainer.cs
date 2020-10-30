@@ -43,6 +43,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public List<IEnemy> EnemyList
         {
             get { return enemyList; }
+            
         }
         public IPlayer Player
         {
@@ -147,6 +148,11 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             projectileList = new List<IProjectile>();
             enemyList = new List<IEnemy>();
             itemList = new List<IItem>();
+            blockList = new List<IBlock>();
+        }
+
+        public void clearMap()
+        {
             blockList = new List<IBlock>();
         }
 

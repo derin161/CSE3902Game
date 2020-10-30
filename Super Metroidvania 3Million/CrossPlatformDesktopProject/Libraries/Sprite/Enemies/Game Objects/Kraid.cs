@@ -25,6 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             spriteRight = EnemySpriteFactory.Instance.KraidSprite(this);
             spriteLeft = EnemySpriteFactory.Instance.KraidSpriteLeft(this);
+            currentSprite = spriteLeft;
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = 1;
             vertSpeed = 0;
