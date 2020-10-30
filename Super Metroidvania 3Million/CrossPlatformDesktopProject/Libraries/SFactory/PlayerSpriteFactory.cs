@@ -22,6 +22,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         private Texture2D morph;
         private Texture2D jumpRight;
         private Texture2D jumpLeft;
+        private Texture2D rightAim;
+        private Texture2D leftAim;
 
         private Texture2D damaged_rightIdle;
         private Texture2D damaged_leftIdle;
@@ -56,6 +58,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             damaged_rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdleDamaged");
             damaged_leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdleDamaged");
             healthBar = content.Load<Texture2D>("HealthBar");
+            rightAim = content.Load<Texture2D>("PlayerSprites/SamusRightAim");
+            leftAim = content.Load<Texture2D>("PlayerSprites/SamusLeftAim");
 
             //Fonts
             healthFont = content.Load<SpriteFont>("PlayerHealth");
@@ -94,6 +98,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         public JumpLeftSamusSprite JumpLeftSprite(Samus s)
         {
             return new JumpLeftSamusSprite(jumpLeft, s);
+        }
+
+        public RightAimUpSamusSprite RightAimUpSprite(Samus s){
+            return new RightAimUpSamusSprite(rightAim, s);
+        }
+
+        public LeftAimUpSamusSprite LeftAimUpSprite(Samus s){
+            return new LeftAimUpSamusSprite(leftAim, s);
         }
 
         public Samus CreatePlayerSprite(Vector2 l, Game1 g, GameTime g2)

@@ -12,20 +12,19 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
 	/*Author: Shyamal Shah*/
-	public class MorphSamusSprite : ISprite
+	public class LeftAimUpSamusSprite : ISprite
 	{
 		public Texture2D texture { get; set; }
 		private int rows;
 		private int columns;
 		private Samus samus;
 
-		public MorphSamusSprite(Texture2D text, Samus sus)
+		public LeftAimUpSamusSprite(Texture2D text, Samus sus)
         {
 			texture = text;
 			samus = sus;
 			rows = 1;
 			columns = 1;
-
         }
 
 		public void Update(GameTime gameTime)
@@ -41,7 +40,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			int column = 0;
 
 			Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
+			samus.space = new Rectangle(samus.space.X, samus.space.Y, width, height);
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
+			samus.space = new Rectangle(samus.space.X, samus.space.Y, 64, 64);
 		}
 	}
 }

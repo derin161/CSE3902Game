@@ -4,6 +4,10 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/../../../../../../../../OneDrive/Pictures/JumpLeftSamusSprite.png</File>
+    <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/../../../../../../../../OneDrive/Pictures/JumpRightSamusSprite.png</File>
+    <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/../../../../../../../../OneDrive/Pictures/SamusLeftAim.png</File>
+    <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/../../../../../../../../OneDrive/Pictures/SamusRightAim.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueBrickBlock.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueCircleBlock.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/BlockSprites/BlueDoorBottomLeft.png</File>
@@ -51,8 +55,6 @@
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Enemies &amp; Bosses.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/NES - Metroid - Samus Aran Power Suit.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/Jump.png</File>
-    <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/JumpLeftSamusSprite.png</File>
-    <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/JumpRightSamusSprite.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/LeftMorph.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/RightMorph.png</File>
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/PlayerSprites/SamusDamaged.png</File>
@@ -71,6 +73,10 @@
     <File>C:/Users/shyam/source/repos/derin161/CSE3902Game/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/WaveBeamProj.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>PlayerSprites/JumpLeftSamusSprite.png</File>
+    <File>PlayerSprites/JumpRightSamusSprite.png</File>
+    <File>PlayerSprites/SamusLeftAim.png</File>
+    <File>PlayerSprites/SamusRightAim.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
@@ -102,8 +108,6 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>PlayerHealth.spritefont</File>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

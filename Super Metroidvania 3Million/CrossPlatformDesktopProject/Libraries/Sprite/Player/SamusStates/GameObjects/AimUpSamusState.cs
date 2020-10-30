@@ -17,23 +17,30 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
+		private bool rightFacing;
 
-		public AimUpSamusState(Samus sam)
+		public AimUpSamusState(Samus sam, bool facingRight)
 		{
 			samus = sam;
-			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
-			missileLoc = new Vector2(samus.x + 32, samus.y);
 			direction = new Vector2(0.0f, -4.0f);
 			samus.Jumping = false;
+			rightFacing = facingRight;
+			if (rightFacing) {
+				sprite = PlayerSpriteFactory.Instance.RightAimUpSprite(samus);
+			}else {
+				sprite = PlayerSpriteFactory.Instance.LeftAimUpSprite(samus);
+			}
+
 		}
 
 		public void Attack()
         {
+			missileLoc = new Vector2(samus.x + 12, samus.y);
 			if (samus.missile == 0)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
 			}
-			else if (samus.missile == 0)
+			else if (samus.missile == 1)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
 			}
@@ -65,7 +72,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void AimUp()
         {
-			//Nothing for right now
+			//Nothing
 		}
 
 		public void Update(GameTime gameTime)
@@ -80,7 +87,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Idle()
 		{
-			//Nothing happens
+			//Nothing
 		}
 	}
 }

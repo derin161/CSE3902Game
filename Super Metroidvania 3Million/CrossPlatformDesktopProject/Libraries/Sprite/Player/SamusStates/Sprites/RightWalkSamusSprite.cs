@@ -56,7 +56,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			int column = currentFrame * width;
 
 			Rectangle sourceRectangle = new Rectangle(column, row, width, height);
-
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
 		}
 	}
