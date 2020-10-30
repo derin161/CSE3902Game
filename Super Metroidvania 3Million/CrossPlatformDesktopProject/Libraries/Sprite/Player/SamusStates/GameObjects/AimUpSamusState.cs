@@ -24,6 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sam;
 			missileLoc = new Vector2(samus.x + 32, samus.y);
 			direction = new Vector2(0.0f, -4.0f);
+			samus.Jumping = false;
 			rightFacing = facingRight;
 			if (rightFacing) {
 				sprite = PlayerSpriteFactory.Instance.RightAimUpSprite(samus);

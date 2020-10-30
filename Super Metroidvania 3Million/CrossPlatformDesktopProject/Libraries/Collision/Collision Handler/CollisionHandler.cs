@@ -62,6 +62,10 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
                     { //TOP Collision
                       //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
+                        if (sam.Jumping){
+                            sam.Jumping = false;
+                            sam.Idle();
+                        }
                         sam.y -= collisionZone.Height;
                         sam.space = new Rectangle(sam.space.X, sam.space.Y - collisionZone.Height, sam.space.Width, sam.space.Height);
                     }

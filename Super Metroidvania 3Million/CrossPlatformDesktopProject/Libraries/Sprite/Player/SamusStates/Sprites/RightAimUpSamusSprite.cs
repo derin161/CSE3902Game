@@ -43,6 +43,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
 			samus.space = new Rectangle(samus.space.X, samus.space.Y, width, height);
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
+			samus.space = new Rectangle(samus.space.X, samus.space.Y, 64, 64);
 		}
 	}
 }
