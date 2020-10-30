@@ -151,7 +151,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             blockList = new List<IBlock>();
         }
 
-        public void clearMap()
+        public void ClearMap()
         {
             blockList = new List<IBlock>();
         }

@@ -30,6 +30,10 @@ namespace CrossPlatformDesktopProject
             Content.RootDirectory = "Content";
             gameTime = new GameTime();
             currentLevel = new LevelStatePattern();
+            graphics.IsFullScreen = false;
+
+            //graphics.PreferredBackBufferWidth = 256*2;        // standard NES resolution
+            // graphics.PreferredBackBufferHeight = 240*2;
         }
 
         protected override void Initialize()
@@ -92,6 +96,17 @@ namespace CrossPlatformDesktopProject
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
+        }
+
+        public void Fullscreen()
+        {
+            graphics.ToggleFullScreen();
+        }
+        public void ChangeResolution(int width, int height)
+        {
+            graphics.PreferredBackBufferHeight = height;
+            graphics.PreferredBackBufferWidth = width;
+            graphics.ApplyChanges();
         }
     }
 }

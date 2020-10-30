@@ -29,11 +29,11 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             {
                 if (collisionZone.X >= 240)
                 {
-                    LevelStatePattern.Instance.switchLevel(LevelStatePattern.Door.right);
+                    LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.right);
                 }
                 else
                 {
-                    LevelStatePattern.Instance.switchLevel(LevelStatePattern.Door.left);
+                    LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.left);
                 }
             }
 

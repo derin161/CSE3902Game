@@ -3,13 +3,13 @@ __,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,__
 __,__,__,StockBlueBlock,__,__,__,__,__,__,__,StockBlueBlock,__,__,__,__,__,__,__,__,__,__,__,__,__
 __,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
 __,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
-__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,BlueDoorTopLeft,OrangeDoorBlock
-__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,BlueDoorMiddleLeft,OrangeDoorBlock
+__,__,__,__,__,__,__,LongBeamItem,__,IceBeamItem,__,MissleRocketItem,__,MorphBallItem,__,RocketDropItem,__,__,__,__,__,__,__,BlueDoorTopLeft,OrangeDoorBlock
+__,__,__,__,__,__,__,__,ScrewAttackItem,__,VariaItem,__,WaveBeamItem,__,__,__,__,__,__,__,__,__,__,BlueDoorMiddleLeft,OrangeDoorBlock
 __,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,BlueDoorBottomLeft,OrangeDoorBlock
 __,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,StockBlueBlock,TubeBlockBlue,TubeBlockBlue,StockBlueBlock
 __,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
 __,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
-__,__,__,__,__,__,__,__,__,__,__,__,__,__,Kraid,__,__,__,__,__,__,__,__,__,__
+__,__,__,__,__,__,__,__,__,__,__,__,__,__,Kraid,__,BombItem,__,EnergyDropItem,__,EnergyTankItem,__,HighJumpItem,__,__
 __,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__
 StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock,StockBlueBlock
 StockBlueBlock,BushBlockBlue,StockBlueBlock,StockBlueBlock,StockBlueBlock,BushBlockBlue,BushBlockBlue,StockBlueBlock,StockBlueBlock,BushBlockBlue,BushBlockBlue,StockBlueBlock,StockBlueBlock,StockBlueBlock,BushBlockBlue,BushBlockBlue,StockBlueBlock,StockBlueBlock,BushBlockBlue,StockBlueBlock,StockBlueBlock,StockBlueBlock,BushBlockBlue,BushBlockBlue,StockBlueBlock
