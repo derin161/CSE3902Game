@@ -608,30 +608,6 @@
 /processorParam:TextureFormat=Color
 /build:PlayerSprites/JumpLeftSamusSprite.png
 
-#begin PlayerSprites/JumpLeftSamusSprite.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:PlayerSprites/JumpLeftSamusSprite.png
-
-#begin PlayerSprites/JumpRightSamusSprite.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:PlayerSprites/JumpRightSamusSprite.png
-
 #begin PlayerSprites/JumpRightSamusSprite.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -810,7 +786,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:ProjSprites/MissleRocketProj.png
+/build:ProjSprites/MissleRocketProj.png;ProjSprites/MissileRocketProj.png
 
 #begin ProjSprites/PowerBeamProj.png
 /importer:TextureImporter
