@@ -17,7 +17,6 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 {
     public class LoadCsv
     {
-
         private static LoadCsv instance = new LoadCsv();
 
         public static LoadCsv Instance
@@ -28,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             }
         }
 
-            public void Load(string levelName, Vector2 playerSpawn)
+        public void Load(string levelName, Vector2 playerSpawn)
         {
             GameObjectContainer.Instance.Clear();
 
