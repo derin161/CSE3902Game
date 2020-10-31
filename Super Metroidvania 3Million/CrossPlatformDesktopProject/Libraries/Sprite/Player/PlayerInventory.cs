@@ -122,5 +122,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             }
         }
 
+        public int getHealth() { return energyCapacityPerTank; }
     } 
 }

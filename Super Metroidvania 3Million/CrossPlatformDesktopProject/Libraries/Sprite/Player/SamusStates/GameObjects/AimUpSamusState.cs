@@ -22,7 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public AimUpSamusState(Samus sam, bool facingRight)
 		{
 			samus = sam;
-			direction = new Vector2(0.0f, -4.0f);
+			direction = new Vector2(0.0f, -10.0f);
 			samus.Jumping = false;
 			rightFacing = facingRight;
 			if (rightFacing) {

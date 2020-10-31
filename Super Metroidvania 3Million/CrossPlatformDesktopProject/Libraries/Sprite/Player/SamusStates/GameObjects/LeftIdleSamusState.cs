@@ -23,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.LeftIdleSprite(samus);
 			missileLoc = new Vector2(samus.x, samus.y + 16);
-			direction = new Vector2(-4.0f, 0.0f);
+			direction = new Vector2(-10.0f, 0.0f);
 			samus.Physics.HortizontalBreak();
 			samus.Jumping = false;
 		}
