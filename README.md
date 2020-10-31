@@ -37,14 +37,23 @@ ___
 * Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
 * Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capacity), and the energy shields.
 * Resize some sprites for better balance/collision handling.
+*Missile Rocket Explosion Animation
+*Fix Missile Animation
+*Add HUD
+*Add Item Functionality
+*GameOver Screen
+*Change Player Inventory to use the visitor design pattern
+*Player Upgrades are not implemented
+*Implement Rest of First boss Dungeon
+*Implement Game State Transitions
+*Make doors have health/take damage
 
 ___
 **KNOWN BUGS**
 
 * Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
 * Some textures need to be cleaned up.
-* Player currently unable to jump. This should be fixed when a new physics engine is implemented.
-* Player states have some minor issues with inputs. Movement to be updated for next Sprint.
+* Health gets printed over
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
