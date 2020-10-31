@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -26,6 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public float x { get; set; }
         public float y { get; set; }
         public float missileSpeed {get; private set;}
+        public Vector2 HealthPosition {get; private set;}
+        private SpriteFont healthFont;
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
@@ -41,6 +44,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             Physics = new PlayerPhysics(this);
 			State = new RightIdleSamusState(this);
             Jumping = false;
+            HealthPosition = new Vector2(32.0f, 64.0f);
+			healthFont = PlayerSpriteFactory.Instance.HealthFont();
         }
 
         public void Attack()
@@ -100,6 +105,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void Draw(SpriteBatch spriteBatch)
         {
             State.Draw(spriteBatch);
+			spriteBatch.DrawString(healthFont, inventory.getHealth().ToString(), HealthPosition, Color.White);
         }
 
         public bool IsDead()
