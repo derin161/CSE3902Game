@@ -25,7 +25,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sus;
 			rows = 1;
 			columns = 1;
-
         }
 
 		public void Update(GameTime gameTime)
@@ -42,6 +41,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 			Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
 			spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
+
 		}
 	}
 }

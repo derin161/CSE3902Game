@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sam;
 			sprite = PlayerSpriteFactory.Instance.RightWalkSprite(samus);
 			missileLoc = new Vector2(samus.x + 60, samus.y + 32);
-			direction = new Vector2(4.0f, 0.0f);
+			direction = new Vector2(10.0f, 0.0f);
 			samus.Jumping = false;
 		}
 
@@ -35,7 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
 			}
-			else if (samus.missile == 0)
+			else if (samus.missile == 1)
 			{
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.inventory.HasLongBeam, samus.inventory.HasIceBeam));
 			}
@@ -48,12 +48,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Jump()
         {
-			samus.state = new JumpRightSamusState(samus);
+			samus.State = new JumpRightSamusState(samus);
         }
 
 		public void Morph()
         {
-			samus.state = new MorphSamusState(samus);
+			samus.State = new MorphSamusState(samus);
 		}
 
 		public void MoveRight()
@@ -63,12 +63,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void MoveLeft()
         {
-			samus.state = new LeftIdleSamusState(samus);
+			samus.State = new LeftIdleSamusState(samus);
 		}
 
 		public void AimUp()
         {
-			samus.state = new AimUpSamusState(samus, true);
+			samus.State = new AimUpSamusState(samus, true);
 		}
 
 		public void Update(GameTime gameTime)
@@ -84,7 +84,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Idle () 
 		{
-			samus.state = new RightIdleSamusState(samus);
+			samus.State = new RightIdleSamusState(samus);
 		}
 	}
 }
