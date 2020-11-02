@@ -51,7 +51,6 @@ ___
 ___
 **KNOWN BUGS**
 
-* Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
 * Some textures need to be cleaned up.
 * Health gets printed over
 
