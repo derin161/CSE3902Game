@@ -54,7 +54,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
 
-            spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.White);
+            if (skree.damaged)
+            {
+                spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.Transparent);
+                skree.damaged = false;
+            }
+            else
+            {
+                spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.White);
+            }
         }
         public Boolean IsDead()
         {

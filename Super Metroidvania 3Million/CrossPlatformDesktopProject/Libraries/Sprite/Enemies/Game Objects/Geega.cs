@@ -18,6 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int health, respawnTimer;
         private float x, y;
         private int initialPlayerX;
+        public bool damaged;
 
         public Geega(Vector2 location)
         {
@@ -33,6 +34,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             isRight = false;
             currentSprite = spriteLeft;
             respawnTimer = 0;
+            damaged = false;
 
 
         }
@@ -160,6 +162,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void TakeDamage(int damage)
         {
             health = health - damage;
+            damaged = true;
             if (health <= 0)
             {
                 Kill();

@@ -17,6 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int health, vertSpeed, horizSpeed, maxAccel, timer;
         private float x, y;
+        public bool damaged;
 
 
 
@@ -33,6 +34,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             horizSpeed = 0;
             maxAccel = 8;
             timer = 0;
+            damaged = false;
 
         }
 
@@ -144,6 +146,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void TakeDamage(int damage)
         {
             health = health - damage;
+            damaged = true;
             if (health <= 0)
             {
                 this.Kill();

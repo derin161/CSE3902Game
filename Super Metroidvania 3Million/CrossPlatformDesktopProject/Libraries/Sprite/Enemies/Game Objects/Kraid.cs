@@ -19,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
-
+        public bool damaged;
 
         public Kraid(Vector2 location)
         {
@@ -30,6 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             horizSpeed = 1;
             vertSpeed = 0;
             health = 100;
+            damaged = false;
         }
 
         private void Attack()
@@ -141,6 +142,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void TakeDamage(int damage)
         {
             health = health - damage;
+            damaged = true;
             if (health <= 0)
             {
                 this.Kill();
