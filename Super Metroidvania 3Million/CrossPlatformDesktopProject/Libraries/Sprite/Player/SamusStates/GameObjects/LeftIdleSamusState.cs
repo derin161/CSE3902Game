@@ -30,6 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Attack()
         {
+			missileLoc = new Vector2(samus.x, samus.y + 16);
 			if (samus.missile == 0)
             {
 				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
