@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items.Sprites;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -52,55 +53,55 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			waveBeamItem = content.Load<Texture2D>("Items/WaveBeam");
 		}
 
-		public ISprite BombItemSprite(BombItem b)
+		public ISprite BombItemSprite(IItem b)
 		{
-			return new BombItemSprite(bombItem, b);
+			return new UpgradeItemSprite(bombItem, b);
 		}
 
-		public ISprite EnergyDropItemSprite(EnergyDropItem ed)
+		public ISprite EnergyDropItemSprite(IItem ed)
 		{
-			return new EnergyDropItemSprite(energyDropItem, ed);
+			return new UpgradeItemSprite(energyDropItem, ed);
 		}
 
-		public ISprite EnergyTankItemSprite(EnergyTankItem et)
+		public ISprite EnergyTankItemSprite(IItem et)
 		{
-			return new EnergyTankItemSprite(energyTankItem, et);
+			return new UpgradeItemSprite(energyTankItem, et);
 		}
-		public ISprite HighJumpItemSprite(HighJumpItem h)
+		public ISprite HighJumpItemSprite(IItem h)
 		{
-			return new HighJumpItemSprite(highJumpItem, h);
+			return new UpgradeItemSprite(highJumpItem, h);
 		}
-		public ISprite IceBeamItemSprite(IceBeamItem i)
+		public ISprite IceBeamItemSprite(IItem i)
 		{
-			return new IceBeamItemSprite(iceBeamItem, i);
+			return new UpgradeItemSprite(iceBeamItem, i);
 		}
-		public ISprite LongBeamItemSprite(LongBeamItem l)
+		public ISprite LongBeamItemSprite(IItem l)
 		{
-			return new LongBeamItemSprite(longBeamItem, l);
+			return new UpgradeItemSprite(longBeamItem, l);
 		}
-		public ISprite MissleRocketItemSprite(MissileRocketItem mr)
+		public ISprite MissleRocketItemSprite(IItem mr)
 		{
-			return new MissleRocketItemSprite(missileRocketItem, mr);
+			return new UpgradeItemSprite(missileRocketItem, mr);
 		}
-		public ISprite MorphBallItemSprite(MorphBallItem mb)
+		public ISprite MorphBallItemSprite(IItem mb)
 		{
-			return new MorphBallItemSprite(morphBallItem, mb);
+			return new UpgradeItemSprite(morphBallItem, mb);
 		}
-		public ISprite RocketDropItemSprite(RocketDropItem r)
+		public ISprite RocketDropItemSprite(IItem r)
 		{
-			return new RocketDropItemSprite(rocketDropItem, r);
+			return new UpgradeItemSprite(rocketDropItem, r);
 		}
-		public ISprite ScrewAttackItemSprite(ScrewAttackItem s)
+		public ISprite ScrewAttackItemSprite(IItem s)
 		{
-			return new ScrewAttackItemSprite(screwAttackItem, s);
+			return new UpgradeItemSprite(screwAttackItem, s);
 		}
-		public ISprite VariaItemSprite(VariaItem v)
+		public ISprite VariaItemSprite(IItem v)
 		{
-			return new VariaItemSprite(variaItem, v);
+			return new UpgradeItemSprite(variaItem, v);
 		}
-		public ISprite WaveBeamItemSprite(WaveBeamItem w)
+		public ISprite WaveBeamItemSprite(IItem w)
 		{
-			return new WaveBeamItemSprite(waveBeamItem, w);
+			return new UpgradeItemSprite(waveBeamItem, w);
 		}
 	}
 }

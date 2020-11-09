@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -15,6 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private ISprite sprite;
         private bool isHorizontal;
         private bool isDead = false;
+        private MissileRocketExplosion explosion;
         
 
 
@@ -24,12 +26,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Location = initialLocation;
             Direction = direction;
             Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 8);
-            Damage = 25;
+            Damage = 50;
             if (!isHorizontal)
             {
                 Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 16);
             }
             sprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketSprite(this, isHorizontal);
+            explosion = (MissileRocketExplosion) ProjectilesGOFactory.Instance.CreateMissileRocketExplosion();
+            GameObjectContainer.Instance.Add(explosion);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -64,6 +68,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Kill()
         {
+            explosion.Activate(Location);
             isDead = true;
         }
     }

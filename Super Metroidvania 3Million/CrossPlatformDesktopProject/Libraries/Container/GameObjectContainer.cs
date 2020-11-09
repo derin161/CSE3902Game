@@ -80,16 +80,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public void Update(GameTime gametime) {
             player.Update(gametime);
             
-            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
-            for (int i = 0; i < projectileList.Count; i++)
-            {
-                projectileList[i].Update(gametime);
-                if (projectileList[i].IsDead())
-                {
-                    projectileList.RemoveAt(i);
-                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
-                }
-            }
+            
             /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
             for (int i = 0; i < blockList.Count; i++)
             {
@@ -117,6 +108,16 @@ namespace CrossPlatformDesktopProject.Libraries.Container
                 if (itemList[i].IsDead())
                 {
                     itemList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < projectileList.Count; i++)
+            {
+                projectileList[i].Update(gametime);
+                if (projectileList[i].IsDead())
+                {
+                    projectileList.RemoveAt(i);
                     i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
                 }
             }

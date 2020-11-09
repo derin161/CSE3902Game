@@ -46,6 +46,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\ProjectileBlockCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\ProjectileEnemyCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerItemCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerProjectileCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
@@ -198,9 +205,6 @@
     <Compile Include="Libraries\Sprite\Enemies\Sprites\MemuSprite.cs" />
     <Compile Include="Libraries\Sprite\IGameObject.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\IItem.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\BombItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\EnergyDropItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\EnergyTankItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\BombItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\EnergyDropItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\EnergyTankItem.cs" />
@@ -213,15 +217,7 @@
     <Compile Include="Libraries\Sprite\Items\Game Objects\ScrewAttackItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\VariaItem.cs" />
     <Compile Include="Libraries\Sprite\Items\Game Objects\WaveBeamItem.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\HighJumpItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\IceBeamItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\LongBeamItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\MissileRocketItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\MorphBallItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\RocketDropItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\ScrewAttackItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\VariaItemSprite.cs" />
-    <Compile Include="Libraries\Sprite\Items\Sprites\WaveBeamItemSprite.cs" />
+    <Compile Include="Libraries\Sprite\Items\Sprites\UpgradeItemSprite.cs" />
     <Compile Include="Libraries\Sprite\Map\MapInterface.cs" />
     <Compile Include="Libraries\Sprite\Map\MapSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\PlayerPhysics.cs" />
@@ -229,6 +225,7 @@
     <Compile Include="Libraries\Sprite\Player\Samus.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketExplosionSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocket.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\Bomb.cs" />

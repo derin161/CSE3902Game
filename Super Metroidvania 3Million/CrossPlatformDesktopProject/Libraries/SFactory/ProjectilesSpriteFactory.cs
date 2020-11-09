@@ -58,7 +58,13 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 			return new MissileRocketSprite(missileRocketTex, mr, isHorizontal);
 		}
-		
+
+		public ISprite CreateMissileRocketExplosionSprite(MissileRocketExplosion explosion)
+		{
+
+			return new MissileRocketExplosionSprite(missileRocketTex, explosion);
+		}
+
 		public ISprite CreatePowerBeamSprite(PowerBeam pb)
 		{
 			return new PowerBeamSprite(powerBeamTex, pb);

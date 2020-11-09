@@ -37,18 +37,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             //Move toward player
             Rectangle playerSpace = GameObjectContainer.Instance.Player.SpaceRectangle();
-            if (playerSpace.X < stateMachine.x)
+            if (playerSpace.X + 3 < stateMachine.x)
             {
                 MoveLeft();
                 currentSprite = spriteLeft;
                 facingRight = false;
             }
-            else
+            else if (playerSpace.X - 3 > stateMachine.x)
             {
                 MoveRight();
                 currentSprite = spriteRight;
                 facingRight = true;
             }
+            else
+            {
+                StopMoving();
+            }
+
             //Perform attacks
             if (msUntilAttack < 0)
             {
@@ -60,6 +65,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 {
                     shootMissiles();
                 }
+                ChangeDirection();
                 msUntilAttack = msBetweenAttack;
             }
         }

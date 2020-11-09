@@ -16,6 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int horizSpeed, vertSpeed;
         private int health;
         private float initialY;
+        public bool damaged;
 
         public ReverseSideHopper(Vector2 location)
         {
@@ -25,6 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             vertSpeed = 0;
             health = 100;
             initialY = location.Y;
+            damaged = false;
         }
 
         public void Update(GameTime gameTime)
@@ -93,6 +95,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void TakeDamage(int damage)
         {
             health = health - damage;
+            damaged = true;
             if (health <= 0)
             {
                 this.Kill();

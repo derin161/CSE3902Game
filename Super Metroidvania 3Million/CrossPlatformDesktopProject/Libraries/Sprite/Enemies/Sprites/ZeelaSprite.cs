@@ -53,7 +53,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
 
-            spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.White);
+            if (zeela.damaged)
+            {
+                spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.Transparent);
+                zeela.damaged = false;
+            }
+            else
+            {
+                spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.White);
+            }
         }
 
         public Boolean IsDead()
