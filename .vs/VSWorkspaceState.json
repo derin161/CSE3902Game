@@ -4,13 +4,14 @@
     "\\Super Metroidvania 3Million",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Collision",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Collision\\Collision Detector",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Collision\\Collision Handler",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command\\PlayerInputCommands",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Content",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Content\\PlayerSprites"
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\SFactory",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates\\Sprites",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Projectiles",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Projectiles\\ProjectileSprites"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates\\GameObjects\\AimUpSamusState.cs",
+  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates\\GameObjects\\LeftIdleSamusState.cs",
   "PreviewInSolutionExplorer": false
 }
