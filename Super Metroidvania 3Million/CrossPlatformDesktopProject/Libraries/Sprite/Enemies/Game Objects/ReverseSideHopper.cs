@@ -17,6 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int health;
         private float initialY;
         public bool damaged;
+        public bool frozen;
 
         public ReverseSideHopper(Vector2 location)
         {
@@ -27,6 +28,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             health = 100;
             initialY = location.Y;
             damaged = false;
+            frozen = false;
         }
 
         public void Update(GameTime gameTime)
@@ -82,6 +84,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public void Freeze()
         {
+            frozen = true;
             stateMachine.Freeze();
         }
         public void StopMoving()
