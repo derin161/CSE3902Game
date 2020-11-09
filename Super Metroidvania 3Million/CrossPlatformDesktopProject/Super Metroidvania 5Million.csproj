@@ -46,6 +46,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerProjectileCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />

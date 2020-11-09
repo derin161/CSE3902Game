@@ -29,44 +29,12 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void PlayerProjectileCollision(IPlayer player, IProjectile projectile)
         {
-            if (projectile is KraidHorn || projectile is KraidMissile)
-            { //Only kraid projectiles deal damage to the player.
-                new ProjectileDamagePlayerCommand(player, projectile).Execute();
-            }
+            new PlayerProjectileCollision().HandleCollision(player, projectile);
         }
 
         public void EnemyBlockCollision(IEnemy enemy, IBlock block, Rectangle collisionZone)
         {
-            //Same as player block collisions
-            //Player should become temporarily invulnerable and blink. Logic likely in Player class accessed through TakeDamage command.
-            //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
-            if (collisionZone.Height > collisionZone.Width)
-            { //LEFT/RIGHT collision
-                if (enemy.SpaceRectangle().X < block.SpaceRectangle().X)
-                { //LEFT Collision
-                    
-                }
-                else
-                { //RIGHT Collision 
-                    
-                }
-            }
-            else
-            { //TOP/BOTTOM collision 
-                if (enemy.SpaceRectangle().Y < block.SpaceRectangle().Y)
-                { //TOP Collision
-                    if (enemy is Skree)
-                    {
-                        enemy.StopMoving();
-                    }
-                    
-
-                }
-                else
-                { //BOTTOM Collision 
-                    
-                }
-            }
+            new EnemyBlockCollision().HandleCollision(enemy, block, collisionZone);
         }
 
         public void ProjectileBlockCollision(IProjectile projectile, IBlock block)
