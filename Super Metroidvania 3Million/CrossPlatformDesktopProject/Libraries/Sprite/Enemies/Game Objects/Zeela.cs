@@ -16,6 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int horizSpeed, vertSpeed;
         private int health;
         private float initialX, initialY;
+        public bool damaged;
 
 
 
@@ -30,6 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             initialX = location.X;
             initialY = location.Y;
             movingRight = false;
+            damaged = false;
             
 
         }
@@ -124,6 +126,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void TakeDamage(int damage)
         {
             health = health - damage;
+            damaged = true;
             if (health <= 0)
             {
                 this.Kill();
