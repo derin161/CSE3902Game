@@ -46,6 +46,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\ProjectileBlockCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\ProjectileEnemyCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerItemCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerProjectileCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
+    <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
@@ -228,6 +235,7 @@
     <Compile Include="Libraries\Sprite\Player\Samus.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
+    <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\ProjectileSprites\MissileRocketExplosionSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocket.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\Bomb.cs" />
@@ -257,7 +265,7 @@
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\MorphSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightAimUpSamusSprite.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftAimUpSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftAimUpSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

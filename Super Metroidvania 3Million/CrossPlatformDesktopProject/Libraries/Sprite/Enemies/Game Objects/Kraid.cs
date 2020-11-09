@@ -19,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
-
+        public bool damaged;
 
         public Kraid(Vector2 location)
         {
@@ -30,24 +30,30 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             horizSpeed = 1;
             vertSpeed = 0;
             health = 100;
+            damaged = false;
         }
 
         private void Attack()
         {
             //Move toward player
             Rectangle playerSpace = GameObjectContainer.Instance.Player.SpaceRectangle();
-            if (playerSpace.X < stateMachine.x)
+            if (playerSpace.X + 3 < stateMachine.x)
             {
                 MoveLeft();
                 currentSprite = spriteLeft;
                 facingRight = false;
             }
-            else
+            else if (playerSpace.X - 3 > stateMachine.x)
             {
                 MoveRight();
                 currentSprite = spriteRight;
                 facingRight = true;
             }
+            else
+            {
+                StopMoving();
+            }
+
             //Perform attacks
             if (msUntilAttack < 0)
             {
@@ -59,6 +65,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 {
                     shootMissiles();
                 }
+                ChangeDirection();
                 msUntilAttack = msBetweenAttack;
             }
         }
@@ -141,6 +148,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void TakeDamage(int damage)
         {
             health = health - damage;
+            damaged = true;
             if (health <= 0)
             {
                 this.Kill();

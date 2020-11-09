@@ -32,7 +32,13 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 			return new MissileRocket(loc, dir);
 		}
-		
+
+		public IProjectile CreateMissileRocketExplosion()
+		{
+
+			return new MissileRocketExplosion();
+		}
+
 		public IProjectile CreatePowerBeam(Vector2 loc, Vector2 dir, bool isLongBeam, bool isIceBeam)
 		{
 			return new PowerBeam(loc, dir, isLongBeam, isIceBeam);
@@ -52,5 +58,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new KraidMissile(loc, dir);
 		}
+
+
 	}
 }

@@ -18,12 +18,22 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             if (!isHorizontal)
             {
                 srcRect = new Rectangle(17, 0, 8, 16);
+            } else if (missileRocket.Direction.X < 0) {
+                
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, missileRocket.Space, srcRect, Color.White); 
+            Vector2 center = new Vector2(srcRect.Width / 2, srcRect.Height / 2);
+            if (missileRocket.Direction.X >= 0)
+            {
+                spriteBatch.Draw(texture, missileRocket.Space, srcRect, Color.White, 0, center, SpriteEffects.FlipHorizontally, 0);
+            }
+            else {
+                spriteBatch.Draw(texture, missileRocket.Space, srcRect, Color.White);
+            }
+                 
             
         }
 
