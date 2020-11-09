@@ -836,3 +836,75 @@
 /processorParam:TextureFormat=Color
 /build:ProjSprites/WaveBeamProj.png
 
+#begin Sounds/BeamCollideSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/BeamCollideSound.wav
+
+#begin Sounds/BrinstarThemeSong.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/BrinstarThemeSong.mp3
+
+#begin Sounds/GameOverSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/GameOverSound.wav
+
+#begin Sounds/IceBeamSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/IceBeamSound.wav
+
+#begin Sounds/ItemAcquisitionSong.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/ItemAcquisitionSong.mp3
+
+#begin Sounds/JumpSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/JumpSound.wav
+
+#begin Sounds/MissileRocketCollideSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/MissileRocketCollideSound.wav
+
+#begin Sounds/MissileRocketSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/MissileRocketSound.wav
+
+#begin Sounds/PlaceBombSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/PlaceBombSound.wav
+
+#begin Sounds/PlayerDamageSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/PlayerDamageSound.wav
+
+#begin Sounds/PowerBeamSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/PowerBeamSound.wav
+
+#begin Sounds/WaveBeamSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/WaveBeamSound.wav
+
