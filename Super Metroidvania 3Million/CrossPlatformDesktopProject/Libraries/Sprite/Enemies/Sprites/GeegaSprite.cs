@@ -30,15 +30,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 10 counts
-            if (counter == 3)
+            //change the frame after 10 counts if not frozen
+            if (!geega.frozen)
             {
-                counter = 0;
-                currentFrame++;
-                if (currentFrame == 2)
-                    currentFrame = 0;
+                if (counter == 3)
+                {
+                    counter = 0;
+                    currentFrame++;
+                    if (currentFrame == 2)
+                        currentFrame = 0;
+                }
+                counter++;
             }
-            counter++;
         }
 
         
@@ -56,6 +59,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.Transparent);
                 geega.damaged = false;
+            }
+            if (geega.frozen)
+            {
+                spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.DodgerBlue);
             }
             else
             {

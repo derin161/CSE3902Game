@@ -11,6 +11,8 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.CSV;
 using CrossPlatformDesktopProject.Libraries.Collision;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+using Microsoft.Xna.Framework.Media;
+using CrossPlatformDesktopProject.Libraries.Audio;
 
 namespace CrossPlatformDesktopProject
 {
@@ -51,6 +53,7 @@ namespace CrossPlatformDesktopProject
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
+            SoundManager.Instance.LoadAllSounds(Content);
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
 
@@ -66,7 +69,6 @@ namespace CrossPlatformDesktopProject
             keyboard.Update(gameTime);
             GameObjectContainer.Instance.Update(gameTime);
             CollisionDetector.Instance.Update();
-
             base.Update(gameTime);
         }
 
@@ -85,7 +87,7 @@ namespace CrossPlatformDesktopProject
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
-
+            SoundManager.Instance.Songs.BrinstarTheme.PlaySound();
             GameObjectContainer.Instance.Clear();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);

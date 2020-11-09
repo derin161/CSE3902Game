@@ -139,7 +139,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Freeze()
         {
-            stateMachine.Freeze();
+            //Do nothing, Kraid cannot be frozen
         }
         public int GetDamage()
         {

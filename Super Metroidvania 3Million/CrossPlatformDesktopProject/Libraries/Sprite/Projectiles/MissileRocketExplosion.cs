@@ -20,6 +20,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public MissileRocketExplosion()
         {
             sprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketExplosionSprite(this);
+            Damage = 0;
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -37,7 +39,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 //Update space rectangle to allow for collisions
                 time += gameTime.ElapsedGameTime.Milliseconds;
                 isDead = time > endTime;
-                Space = new Rectangle((int)Location.X, (int)Location.Y, 40, 40);
                 sprite.Update(gameTime);
             }
         }
