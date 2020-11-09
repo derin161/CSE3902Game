@@ -75,7 +75,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                     pos = Vector2.Add(pos, up);
                 }
                 explosionAnimationPairs[key] = pos;
-                Console.WriteLine(explosionAnimationPairs + " = " + pos);
             }
 
         }
