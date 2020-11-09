@@ -29,19 +29,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 10 counts while skree is falling
-            if (skree.fallen && !skree.collision && count == 4)
+            if (!skree.frozen)
             {
-                count = 0;
-                currentFrame++;
-                if (currentFrame == 3)
+                //change the frame after 10 counts while skree is falling
+                if (skree.fallen && !skree.collision && count == 4)
                 {
-                    currentFrame = 0;
+                    count = 0;
+                    currentFrame++;
+                    if (currentFrame == 3)
+                    {
+                        currentFrame = 0;
+                    }
                 }
-            }
-            count = (count + 1) % 5;
+                count = (count + 1) % 5;
 
-            
+            }
         }
 
         
@@ -58,6 +60,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.Transparent);
                 skree.damaged = false;
+            }
+            if (skree.frozen)
+            {
+                spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.DodgerBlue);
             }
             else
             {

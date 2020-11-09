@@ -18,7 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int health, respawnTimer;
         private float x, y;
         private int initialPlayerX;
-        public bool damaged;
+        public bool damaged, frozen;
 
         public Geega(Vector2 location)
         {
@@ -35,6 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentSprite = spriteLeft;
             respawnTimer = 0;
             damaged = false;
+            frozen = false;
 
 
         }
@@ -119,6 +120,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             horizSpeed = 0;
             vertSpeed = 0;
             stateMachine.frozen = false;
+            frozen = false;
             MoveLeft();
             MoveUp();
             stateMachine.x = x;
@@ -154,6 +156,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public void Freeze()
         {
+            frozen = true;
             stateMachine.Freeze();
         }
         public int GetDamage()
