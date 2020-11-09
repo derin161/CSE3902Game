@@ -118,6 +118,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //set back to initial position
             horizSpeed = 0;
             vertSpeed = 0;
+            stateMachine.frozen = false;
             MoveLeft();
             MoveUp();
             stateMachine.x = x;
