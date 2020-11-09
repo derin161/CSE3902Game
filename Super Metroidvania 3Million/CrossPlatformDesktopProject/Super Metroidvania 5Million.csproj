@@ -74,6 +74,7 @@
     <Compile Include="Libraries\Command\UnusedCommands\PreviousItemCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
+    <Compile Include="Libraries\CSV\BlockObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Level Classes\LevelTwo.cs" />
     <Compile Include="Libraries\CSV\Level Classes\LevelOne.cs" />
     <Compile Include="Libraries\CSV\LevelStatePattern.cs" />
@@ -257,7 +258,7 @@
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\MorphSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightAimUpSamusSprite.cs" />
-	<Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftAimUpSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftAimUpSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
