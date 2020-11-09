@@ -1,17 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
+
+namespace CrossPlatformDesktopProject.Libraries.Sprite.Items.Sprites
 {
-    class WaveBeamItemSprite : ISprite
+    class UpgradeItemSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        private WaveBeamItem waveBeamItem;
+        private IItem upgradeItem;
 
-        public WaveBeamItemSprite(Texture2D texture, WaveBeamItem w)
+        public UpgradeItemSprite(Texture2D texture, IItem u)
         {
             Texture = texture;
-            waveBeamItem = w;
+            upgradeItem = u;
         }
 
 
@@ -22,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, waveBeamItem.Space, Color.White);
+            spriteBatch.Draw(Texture, upgradeItem.SpaceRectangle(), Color.White);
         }
 
         public bool IsDead()
