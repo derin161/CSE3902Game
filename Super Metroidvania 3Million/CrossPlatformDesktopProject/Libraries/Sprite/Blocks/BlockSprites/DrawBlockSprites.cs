@@ -1,19 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
+namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks.BlockSprites
 {
-    class LeftStartingPlatformBlockSprite : ISprite
+    class DrawBlockSprites : ISprite
     {
         private Texture2D texture;
-        private LeftStartingPlatformBlock block;
+        private IBlock block;
 
-        public LeftStartingPlatformBlockSprite(Texture2D texture, LeftStartingPlatformBlock block)
+        public DrawBlockSprites(Texture2D texture, IBlock block)
         {
             this.block = block;
             this.texture = texture;
@@ -26,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
             int height = texture.Height;
 
             Rectangle sourceRectangle = new Rectangle(0, 0, width, height);
-            Rectangle destinationRectangle = block.Space;
+            Rectangle destinationRectangle = block.SpaceRectangle();
 
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
 
