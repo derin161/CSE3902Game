@@ -45,6 +45,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Audio\ISound.cs" />
+    <Compile Include="Libraries\Audio\Sound.cs" />
+    <Compile Include="Libraries\Audio\ProjectileSounds.cs" />
+    <Compile Include="Libraries\Audio\SoundManager.cs" />
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\ProjectileBlockCollision.cs" />
