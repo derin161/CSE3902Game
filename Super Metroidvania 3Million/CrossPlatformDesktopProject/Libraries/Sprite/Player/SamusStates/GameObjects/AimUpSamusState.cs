@@ -22,7 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		public AimUpSamusState(Samus sam, bool facingRight)
 		{
 			samus = sam;
-			direction = new Vector2(0.0f, -4.0f);
+			direction = new Vector2(0.0f, -10.0f);
 			samus.Jumping = false;
 			rightFacing = facingRight;
 			if (rightFacing) {
@@ -30,7 +30,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			}else {
 				sprite = PlayerSpriteFactory.Instance.LeftAimUpSprite(samus);
 			}
-
 		}
 
 		public void Attack()
@@ -52,22 +51,22 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		}
 		public void Jump()
         {
-			samus.state = new JumpRightSamusState(samus);
+			samus.State = new JumpRightSamusState(samus);
         }
 
 		public void Morph()
         {
-			samus.state = new MorphSamusState(samus);
+			samus.State = new MorphSamusState(samus);
 		}
 
 		public void MoveRight()
         {
-			samus.state = new RightWalkSamusState(samus);
+			samus.State = new RightWalkSamusState(samus);
 		}
 
 		public void MoveLeft()
         {
-			samus.state = new LeftIdleSamusState(samus);
+			samus.State = new LeftIdleSamusState(samus);
 		}
 
 		public void AimUp()

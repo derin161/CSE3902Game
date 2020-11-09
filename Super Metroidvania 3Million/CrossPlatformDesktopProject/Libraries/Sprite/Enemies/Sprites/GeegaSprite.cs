@@ -51,7 +51,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.White);
+
+            if (geega.damaged)
+            {
+                spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.Transparent);
+                geega.damaged = false;
+            }
+            else
+            {
+                spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.White);
+            }
         }
         public Boolean IsDead()
         {

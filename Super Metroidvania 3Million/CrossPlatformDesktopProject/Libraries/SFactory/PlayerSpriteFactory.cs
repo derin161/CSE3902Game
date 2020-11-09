@@ -112,5 +112,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         {
             return new Samus(l, g, g2);
         }
+
+        public SpriteFont HealthFont(){
+            return healthFont;
+        }
     }
 }

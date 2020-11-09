@@ -16,7 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void LeftDoor()
         {
-            LoadCsv.Instance.Load("LevelOne.csv", new Vector2(384, 64));
+            LoadCsv.Instance.Load("LevelOne.csv", new Vector2(672, 352));
         }
         public void RightDoor()
         {
