@@ -14,8 +14,15 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             this.song = s;
         }
 
+        public double Duration()
+        {
+            return song.Duration.TotalMilliseconds;
+        }
+
         public void PlaySound() {
             MediaPlayer.Play(song);
         }
+
+
     }
 }

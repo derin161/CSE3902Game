@@ -8,11 +8,17 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
-    public class SoundInstance : ISound
+    public class EffectInstance : ISound
     {
+        
         private SoundEffect sound;
-        public SoundInstance(SoundEffect s) {
+        public EffectInstance(SoundEffect s) {
             this.sound = s;
+        }
+
+        public double Duration()
+        {
+            return sound.Duration.TotalMilliseconds;
         }
 
         public void PlaySound() {

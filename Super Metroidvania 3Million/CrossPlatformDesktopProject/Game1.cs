@@ -69,6 +69,7 @@ namespace CrossPlatformDesktopProject
             keyboard.Update(gameTime);
             GameObjectContainer.Instance.Update(gameTime);
             CollisionDetector.Instance.Update();
+            SoundManager.Instance.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -87,7 +88,7 @@ namespace CrossPlatformDesktopProject
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
-            SoundManager.Instance.Songs.BrinstarTheme.PlaySound();
+            SoundManager.Instance.Songs.PlayBrinstarTheme();
             GameObjectContainer.Instance.Clear();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
