@@ -53,53 +53,53 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			waveBeamItem = content.Load<Texture2D>("Items/WaveBeam");
 		}
 
-		public ISprite BombItemSprite(IItem b)
+		public ISprite BombItemSprite(BombItem b)
 		{
 			return new UpgradeItemSprite(bombItem, b);
 		}
 
-		public ISprite EnergyDropItemSprite(IItem ed)
+		public ISprite EnergyDropItemSprite(EnergyDropItem ed)
 		{
 			return new UpgradeItemSprite(energyDropItem, ed);
 		}
 
-		public ISprite EnergyTankItemSprite(IItem et)
+		public ISprite EnergyTankItemSprite(EnergyTankItem et)
 		{
 			return new UpgradeItemSprite(energyTankItem, et);
 		}
-		public ISprite HighJumpItemSprite(IItem h)
+		public ISprite HighJumpItemSprite(HighJumpItem h)
 		{
 			return new UpgradeItemSprite(highJumpItem, h);
 		}
-		public ISprite IceBeamItemSprite(IItem i)
+		public ISprite IceBeamItemSprite(IceBeamItem i)
 		{
 			return new UpgradeItemSprite(iceBeamItem, i);
 		}
-		public ISprite LongBeamItemSprite(IItem l)
+		public ISprite LongBeamItemSprite(LongBeamItem l)
 		{
 			return new UpgradeItemSprite(longBeamItem, l);
 		}
-		public ISprite MissleRocketItemSprite(IItem mr)
+		public ISprite MissleRocketItemSprite(MissileRocketItem mr)
 		{
 			return new UpgradeItemSprite(missileRocketItem, mr);
 		}
-		public ISprite MorphBallItemSprite(IItem mb)
+		public ISprite MorphBallItemSprite(MorphBallItem mb)
 		{
 			return new UpgradeItemSprite(morphBallItem, mb);
 		}
-		public ISprite RocketDropItemSprite(IItem r)
+		public ISprite RocketDropItemSprite(RocketDropItem r)
 		{
 			return new UpgradeItemSprite(rocketDropItem, r);
 		}
-		public ISprite ScrewAttackItemSprite(IItem s)
+		public ISprite ScrewAttackItemSprite(ScrewAttackItem s)
 		{
 			return new UpgradeItemSprite(screwAttackItem, s);
 		}
-		public ISprite VariaItemSprite(IItem v)
+		public ISprite VariaItemSprite(VariaItem v)
 		{
 			return new UpgradeItemSprite(variaItem, v);
 		}
-		public ISprite WaveBeamItemSprite(IItem w)
+		public ISprite WaveBeamItemSprite(WaveBeamItem w)
 		{
 			return new UpgradeItemSprite(waveBeamItem, w);
 		}
