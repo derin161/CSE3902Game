@@ -87,7 +87,7 @@ namespace CrossPlatformDesktopProject
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
-
+            SoundManager.Instance.Songs.BrinstarTheme.PlaySound();
             GameObjectContainer.Instance.Clear();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
