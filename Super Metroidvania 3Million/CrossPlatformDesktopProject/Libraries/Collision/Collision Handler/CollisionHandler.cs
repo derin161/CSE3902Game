@@ -39,28 +39,17 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
 
         public void ProjectileBlockCollision(IProjectile projectile, IBlock block)
         {
-            //Kill the projectile
-            projectile.Kill();
+            new ProjectileBlockCollision().HandleCollision(projectile, block);
         }
 
         public void ProjectileEnemyCollision(IProjectile projectile, IEnemy enemy)
         {
-            //Cast so we can then determine is it's an ice beam or not, casting will succeed if the first statement is true.
-            if (projectile is PowerBeam && ((PowerBeam)projectile).IsIceBeam)
-            {
-                new EnemyFreezeCommand(enemy).Execute();
-            }
-            if (!(projectile is KraidHorn) && !(projectile is KraidMissile))
-            {
-                new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
-                projectile.Kill();
-            }
+            new ProjectileEnemyCollision().HandleCollision(projectile, enemy);
         }
 
         public void PlayerItemCollision(IPlayer player, IItem item)
         {
-            new PlayerGiveItemCommand(item, player).Execute();
-            item.Kill();
+            new PlayerItemCollision().HandleCollision(player, item);
         }
     }
 }
