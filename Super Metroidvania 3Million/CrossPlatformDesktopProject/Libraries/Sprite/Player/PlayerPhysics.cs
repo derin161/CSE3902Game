@@ -1,5 +1,6 @@
 ﻿
 
+using CrossPlatformDesktopProject.Libraries.Audio;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 
@@ -50,6 +51,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void Jump() {
             velocity = new Vector2(velocity.X, jumpSpeed);
+            SoundManager.Instance.Player.JumpSound.PlaySound();
         }
 
 

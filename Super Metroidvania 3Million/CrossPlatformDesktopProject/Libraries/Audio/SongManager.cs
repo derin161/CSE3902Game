@@ -11,13 +11,14 @@ using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
+    //Author: Nyigel Spann
     public class SongManager
     {
         private ISound brinTheme;
         private ISound getItemSong;
-        private ISound loopSong;
+        private ISound loopSong;    //Song that loops
         private ISound activeSong; //Song currently being played
-        private int mstimer = 0;
+        private int mstimer = 0; //Timer used for looping or returning to loop song
 
 
         public SongManager()

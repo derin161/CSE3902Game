@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
+    //Author: Nyigel Spann
     public class SongInstance : ISound
     {
         private Song song;
@@ -20,7 +21,9 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         }
 
         public void PlaySound() {
+            
             MediaPlayer.Play(song);
+            
         }
 
 
