@@ -842,12 +842,6 @@
 /processorParam:Quality=Best
 /build:Sounds/BeamCollideSound.wav
 
-#begin Sounds/BeamCollideSound.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Sounds/BeamCollideSound.wav
-
 #begin Sounds/BrinstarThemeSong.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -860,6 +854,18 @@
 /processorParam:Quality=Best
 /build:Sounds/DarudeSandstormSong.mp3
 
+#begin Sounds/EndingTheme.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/EndingTheme.mp3
+
+#begin Sounds/EscapeTheme.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/EscapeTheme.mp3
+
 #begin Sounds/ExplosionSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -871,6 +877,12 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/GameOverSound.wav
+
+#begin Sounds/GameStart.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/GameStart.mp3
 
 #begin Sounds/IceBeamSound.wav
 /importer:WavImporter
@@ -896,6 +908,18 @@
 /processorParam:Quality=Best
 /build:Sounds/MissileRocketFireSound.wav
 
+#begin Sounds/MotherBrainBattle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/MotherBrainBattle.mp3
+
+#begin Sounds/NorfairTheme.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/NorfairTheme.mp3
+
 #begin Sounds/PlaceBombSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -913,6 +937,30 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/PowerBeamSound.wav
+
+#begin Sounds/RidleysHideout.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/RidleysHideout.mp3
+
+#begin Sounds/SecretArea.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/SecretArea.mp3
+
+#begin Sounds/TitleTheme.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/TitleTheme.mp3
+
+#begin Sounds/TourianTheme.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/TourianTheme.mp3
 
 #begin Sounds/WaveBeamSound.wav
 /importer:WavImporter

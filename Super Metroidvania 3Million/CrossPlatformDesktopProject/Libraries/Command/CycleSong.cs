@@ -10,7 +10,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
-            SoundManager.Instance.Songs.PlayNextSong();
+            SoundManager.Instance.Songs.PlayNextTheme();
         }
     }
 }
