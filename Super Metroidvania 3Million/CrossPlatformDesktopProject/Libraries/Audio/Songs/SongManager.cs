@@ -10,6 +10,16 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
     public class SongManager
     {
         public SongController Controls { get; private set; }
+        public bool IsMuted
+        {
+            get
+            {
+                return MediaPlayer.IsMuted;
+            }
+        }
+        public bool LoopMode { get; private set; }
+        public bool ShuffleMode { get; private set; }
+        public bool IsPaused { get; private set; }
 
         private static SongManager instance = new SongManager();
         private ISound tourianTheme;
@@ -83,18 +93,18 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
         public void Update(GameTime gtime)
         {
-            if (!Controls.IsPaused)
+            if (!IsPaused)
             {
                 mstimer -= (int)gtime.ElapsedGameTime.TotalMilliseconds;
                 if (mstimer < 0)
                 {
-                    if (Controls.LoopMode)
+                    if (LoopMode)
                     {
                         play();
                     }
                     else
                     {
-                        PlayNextTheme();
+                        Controls.PlayNextTheme();
                     }
                 }
             }
@@ -174,47 +184,6 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             activeSong.PlaySound();
         }
 
-        /*These are the problem methods that caused me to nest SongController in SongManager*/
-        private void Shuffle()
-        {
-                Random rng = new Random();
-                int n = shuffledThemes.Count;
-                while (n > 1)
-                {
-                    n--;
-                    int k = rng.Next(n + 1);
-                    ISound theme = shuffledThemes[k];
-                    shuffledThemes[k] = shuffledThemes[n];
-                    shuffledThemes[n] = theme;
-                }
-                activeThemes = shuffledThemes;
-                songIndex = 0;
-                mstimer = 0;
-        }
-
-        private void UnShuffle()
-        {
-            
-             activeThemes = themeSongs;
-             songIndex = 0;
-             mstimer = 0;
-        }
-
-        private void PlayPreviousTheme()
-        {
-            songIndex = (((songIndex - 1) % activeThemes.Count) + activeThemes.Count) % activeThemes.Count; //Mod that works for negative numbers
-
-            activeSong = activeThemes[songIndex];
-            play();
-        }
-
-        private void PlayNextTheme()
-        {
-            songIndex = (songIndex + 1) % activeThemes.Count;
-            activeSong = activeThemes[songIndex];
-            play();
-        }
-
         //Author: Nyigel Spann
         /*I originally had this class in its own file, 
          * but getting The SoundManager and SoundController methods to have the correct accessibility I wanted and 
@@ -222,18 +191,6 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             As such, I decided nesting the SongController in the SongManager was the best solution. */
         public class SongController
         {
-            public bool LoopMode { get; private set; }
-            public bool ShuffleMode { get; private set; }
-            public bool IsMuted
-            {
-                get
-                {
-                    return MediaPlayer.IsMuted;
-                }
-            }
-
-            public bool IsPaused { get; private set; }
-
 
             private float maxVolume = 1f;
             private float minVolume = 0f;
@@ -249,12 +206,19 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
             public void PlayPreviousTheme()
             {
-                SongManager.PlayPreviousTheme();
+                SongManager.songIndex = (((SongManager.songIndex - 1) % SongManager.activeThemes.Count) + SongManager.activeThemes.Count) % SongManager.activeThemes.Count; //Mod that works for negative numbers
+
+                SongManager.activeSong = SongManager.activeThemes[SongManager.songIndex];
+                SongManager.play();
             }
 
             public void PlayNextTheme()
             {
-                SongManager.PlayNextTheme();
+
+                SongManager.songIndex = (SongManager.songIndex + 1) % SongManager.activeThemes.Count;
+                SongManager.activeSong = SongManager.activeThemes[SongManager.songIndex];
+                SongManager.play();
+                
             }
 
             public void RaiseVolume()
@@ -280,25 +244,39 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             public void Pause()
             {
                 MediaPlayer.Pause();
-                IsPaused = true;
+                SongManager.IsPaused = true;
             }
 
             public void Resume()
             {
                 MediaPlayer.Resume();
-                IsPaused = false;
+                SongManager.IsPaused = false;
             }
 
             public void Shuffle()
             {
-                ShuffleMode = true;
-                SongManager.Shuffle();
+                SongManager.ShuffleMode = true;
+                Random rng = new Random();
+                int n = SongManager.shuffledThemes.Count;
+                while (n > 1)
+                {
+                    n--;
+                    int k = rng.Next(n + 1);
+                    ISound theme = SongManager.shuffledThemes[k];
+                    SongManager.shuffledThemes[k] = SongManager.shuffledThemes[n];
+                    SongManager.shuffledThemes[n] = theme;
+                }
+                SongManager.activeThemes = SongManager.shuffledThemes;
+                SongManager.songIndex = 0;
+                SongManager.mstimer = 0;
             }
 
             public void UnShuffle()
             {
-                ShuffleMode = false;
-                SongManager.UnShuffle();
+                SongManager.ShuffleMode = false;
+                SongManager.activeThemes = SongManager.themeSongs;
+                SongManager.songIndex = 0;
+                SongManager.mstimer = 0;
             }
 
             public void Mute()
@@ -313,12 +291,12 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
             public void Loop()
             {
-                LoopMode = true;
+                SongManager.LoopMode = true;
             }
 
             public void UnLoop()
             {
-                LoopMode = false;
+                SongManager.LoopMode = false;
             }
 
         }
