@@ -854,11 +854,23 @@
 /processorParam:Quality=Best
 /build:Sounds/DarudeSandstormSong.mp3
 
+#begin Sounds/DoorSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/DoorSound.wav
+
 #begin Sounds/EndingTheme.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:Sounds/EndingTheme.mp3
+
+#begin Sounds/EnergyPickupSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/EnergyPickupSound.wav
 
 #begin Sounds/EscapeTheme.mp3
 /importer:Mp3Importer
@@ -871,6 +883,12 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/ExplosionSound.wav
+
+#begin Sounds/GameOverSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/GameOverSound.wav
 
 #begin Sounds/GameOverSound.wav
 /importer:WavImporter

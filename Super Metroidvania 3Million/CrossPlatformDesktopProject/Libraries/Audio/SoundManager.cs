@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 using System;
@@ -15,6 +16,10 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         private static SoundManager instance = new SoundManager();
         public ProjectileEffects Projectiles { get; private set; }
         public PlayerEffects Player { get; private set; }
+        public ItemEffects Items { get; private set; }
+        public MiscEffects Misc { get; private set; }
+        public BlockEffects Blocks { get; private set; }
+        public EnemyEffects Enemies { get; private set; }
         public SongManager Songs { get; private set; }
         private float volume;
         private float maxVolume = 1f;
@@ -31,14 +36,22 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
         //private contructor for singleton
         private SoundManager() {
-            Projectiles = new ProjectileEffects();
-            Player = new PlayerEffects();
-            Songs = new SongManager();
+            Projectiles = ProjectileEffects.Instance;
+            Player = PlayerEffects.Instance;
+            Enemies = EnemyEffects.Instance;
+            Misc = MiscEffects.Instance;
+            Blocks = BlockEffects.Instance;
+            Items = ItemEffects.Instance;
+            Songs = SongManager.Instance;
             volume = maxVolume;
         }
         public void LoadAllSounds(ContentManager content) {
             Projectiles.LoadAllSounds(content);
             Songs.LoadAllSounds(content);
+            Enemies.LoadAllSounds(content);
+            Misc.LoadAllSounds(content);
+            Blocks.LoadAllSounds(content);
+            Items.LoadAllSounds(content);
             Player.LoadAllSounds(content);
         }
 

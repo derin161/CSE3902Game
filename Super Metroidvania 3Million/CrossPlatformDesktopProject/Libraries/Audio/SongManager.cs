@@ -14,6 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
     //Author: Nyigel Spann
     public class SongManager
     {
+        private static SongManager instance = new SongManager();
         private ISound tourianTheme;
         private ISound endingTheme;
         private ISound escapeTheme;
@@ -24,19 +25,28 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         private ISound motherBrainBattleTheme;
         private ISound gameStartSong;
         private ISound brinTheme;
-        private ISound getItemSong; 
+        private ISound getItemSong;
         private ISound darudeSand;
         private ISound activeSong; //Song currently being played
 
         private List<ISound> ThemeSongs = new List<ISound>();
-        private int mstimer = 0; //Timer used for looping or returning to loop song
+        private int mstimer = 0; //Timer used for looping or playing next song
         private int songIndex = 0;
         private bool loopMode = false;
 
+        public static SongManager Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
 
-        public SongManager()
+        //private constructor for singleton
+        private SongManager()
         {
         }
+
         public void LoadAllSounds(ContentManager content)
         {
             brinTheme = new SongInstance(content.Load<Song>("Sounds/BrinstarThemeSong"));
@@ -61,6 +71,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             ThemeSongs.Add(ridleysHideoutTheme);
             ThemeSongs.Add(secretAreaTheme);
             ThemeSongs.Add(motherBrainBattleTheme);
+            ThemeSongs.Add(titleTheme);
             ThemeSongs.Add(darudeSand);
         }
 
@@ -91,6 +102,60 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
         public void PlayDarudeSandstorm() {
             activeSong = darudeSand;
+            play();
+        }
+
+        public void PlayTourianTheme()
+        {
+            activeSong = tourianTheme;
+            play();
+        }
+
+        public void PlayEscapeTheme()
+        {
+            activeSong = escapeTheme;
+            play();
+        }
+
+        public void PlayRidleysHidoutTheme()
+        {
+            activeSong = ridleysHideoutTheme;
+            play();
+        }
+
+        public void PlayNorfairTheme()
+        {
+            activeSong = norfairTheme;
+            play();
+        }
+
+        public void PlaySecretAreaTheme()
+        {
+            activeSong = secretAreaTheme;
+            play();
+        }
+
+        public void PlayMotherBrainBattleTheme()
+        {
+            activeSong = motherBrainBattleTheme;
+            play();
+        }
+
+        public void PlayTitleTheme()
+        {
+            activeSong = titleTheme;
+            play();
+        }
+
+        public void PlayEndingTheme()
+        {
+            activeSong = endingTheme;
+            play();
+        }
+
+        public void PlayGameStartSong()
+        {
+            activeSong = gameStartSong;
             play();
         }
 

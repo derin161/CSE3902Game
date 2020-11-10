@@ -11,13 +11,12 @@ using Microsoft.Xna.Framework.Audio;
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
     //Author: Nyigel Spann
-    public class PlayerEffects
+    public class MiscEffects
     {
-        public ISound JumpSound { get; private set; }
-        public ISound PlayerDamageSound { get; private set; }
+        public ISound GameOverSound { get; private set; }
 
-        private static PlayerEffects instance = new PlayerEffects();
-        public static PlayerEffects Instance
+        private static MiscEffects instance = new MiscEffects();
+        public static MiscEffects Instance
         {
             get
             {
@@ -26,14 +25,13 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         }
 
         //private contructor for singleton
-        private PlayerEffects()
+        private MiscEffects()
         {
             
         }
         public void LoadAllSounds(ContentManager content)
         {
-            JumpSound = new EffectInstance(content.Load<SoundEffect>("Sounds/JumpSound"));
-            PlayerDamageSound = new EffectInstance(content.Load<SoundEffect>("Sounds/PlayerDamageSound"));
+            GameOverSound = new EffectInstance(content.Load<SoundEffect>("Sounds/GameOverSound"));
         }
     }
 }

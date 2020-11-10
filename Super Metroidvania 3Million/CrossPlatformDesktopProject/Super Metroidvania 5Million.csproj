@@ -46,6 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Libraries\Audio\ISound.cs" />
+    <Compile Include="Libraries\Audio\EnemyEffects.cs" />
+    <Compile Include="Libraries\Audio\ItemEffects.cs" />
+    <Compile Include="Libraries\Audio\BlockEffects.cs" />
+    <Compile Include="Libraries\Audio\MiscEffects.cs" />
     <Compile Include="Libraries\Audio\PlayerEffects.cs" />
     <Compile Include="Libraries\Audio\SongManager.cs" />
     <Compile Include="Libraries\Audio\SongInstance.cs" />

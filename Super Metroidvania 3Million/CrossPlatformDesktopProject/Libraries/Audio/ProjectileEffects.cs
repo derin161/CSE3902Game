@@ -20,7 +20,19 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         public ISound ExplosionSound { get; private set; }
         public ISound PlaceBombSound { get; private set; }
         public ISound PowerBeamCollideSound { get; private set; }
-        public ProjectileEffects()
+
+
+        private static ProjectileEffects instance = new ProjectileEffects();
+        public static ProjectileEffects Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        //private contructor for singleton
+        private ProjectileEffects()
         {
             
         }
