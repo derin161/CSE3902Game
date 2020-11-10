@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,8 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
     public class SoundManager
     {
         private static SoundManager instance = new SoundManager();
-        public ProjectileSounds Projectiles { get; private set; }
+        public ProjectileEffects Projectiles { get; private set; }
+        public SongManager Songs { get; private set; }
         public static SoundManager Instance
         {
             get
@@ -21,10 +23,16 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
         //private contructor for singleton
         private SoundManager() {
-            Projectiles = new ProjectileSounds();
+            Projectiles = new ProjectileEffects();
+            Songs = new SongManager();
         }
         public void LoadAllSounds(ContentManager content) {
             Projectiles.LoadAllSounds(content);
+            Songs.LoadAllSounds(content);
+        }
+
+        public void Update(GameTime gtime) {
+            Songs.Update(gtime);
         }
     }
 }

@@ -10,16 +10,16 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
-    public class ProjectileSounds
+    public class ProjectileEffects
     {
-        public ISound BeamSound { get; private set; }
-        public ProjectileSounds()
+        public ISound PowerBeamFireSound { get; private set; }
+        public ProjectileEffects()
         {
             
         }
         public void LoadAllSounds(ContentManager content)
         {
-            BeamSound = new Sound(content.Load<SoundEffect>("Sounds/PowerBeamSound"));
+            PowerBeamFireSound = new EffectInstance(content.Load<SoundEffect>("Sounds/PowerBeamSound"));
         }
     }
 }

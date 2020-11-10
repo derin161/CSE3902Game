@@ -8,6 +8,8 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 {
     public interface ISound
     {
+
         public void PlaySound();
+        public double Duration();
     }
 }

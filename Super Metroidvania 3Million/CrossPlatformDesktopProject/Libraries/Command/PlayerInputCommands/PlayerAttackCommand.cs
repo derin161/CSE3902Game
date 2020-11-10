@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
-            SoundManager.Instance.Projectiles.BeamSound.PlaySound();
+            SoundManager.Instance.Projectiles.PowerBeamFireSound.PlaySound();
             player.Attack();
         }
     }

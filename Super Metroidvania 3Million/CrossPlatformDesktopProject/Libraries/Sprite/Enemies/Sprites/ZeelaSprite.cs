@@ -28,18 +28,20 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //Move to the next frame after 10 counts
-            if (count == 10)
+            if (!zeela.frozen)
             {
-                count = 0;
-                currentFrame++;
-                if (currentFrame == 2)
+                //Move to the next frame after 10 counts
+                if (count == 10)
                 {
-                    currentFrame = 0;
+                    count = 0;
+                    currentFrame++;
+                    if (currentFrame == 2)
+                    {
+                        currentFrame = 0;
+                    }
                 }
+                count++;
             }
-            count++;
-
             
         }
 
@@ -57,6 +59,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.Transparent);
                 zeela.damaged = false;
+            }
+            if (zeela.frozen)
+            {
+                spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.DodgerBlue);
             }
             else
             {

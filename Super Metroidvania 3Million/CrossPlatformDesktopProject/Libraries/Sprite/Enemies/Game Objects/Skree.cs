@@ -17,7 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int health, vertSpeed, horizSpeed, maxAccel, timer;
         private float x, y;
-        public bool damaged;
+        public bool damaged, frozen;
 
 
 
@@ -35,6 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             maxAccel = 8;
             timer = 0;
             damaged = false;
+            frozen = false;
 
         }
 
@@ -137,6 +138,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public void Freeze()
         {
+            frozen = true;
             stateMachine.Freeze();
         }
         public int GetDamage()

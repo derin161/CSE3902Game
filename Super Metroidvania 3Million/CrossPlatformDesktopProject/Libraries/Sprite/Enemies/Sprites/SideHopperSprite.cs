@@ -31,22 +31,25 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             //change the frame after 20 counts
-            if (count == 64)
+            if (!sideHopper.frozen)
             {
-                count = 0;
-                direction *= -1;
-                currentFrame++;
-                if (currentFrame == 3)
+                if (count == 64)
                 {
-                    currentFrame = 0;
+                    count = 0;
+                    direction *= -1;
+                    currentFrame++;
+                    if (currentFrame == 3)
+                    {
+                        currentFrame = 0;
+                    }
                 }
+
+                if (currentFrame == 2)
+                {
+                    sideHopper.Jump(count, direction);
+                }
+                count += 2;
             }
-            
-            if (currentFrame == 2)
-            {
-                sideHopper.Jump(count, direction);
-            }
-            count+=2;
 
         }
 
@@ -64,6 +67,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 spriteBatch.Draw(Texture, sideHopper.Space, sourceRectangle, Color.Transparent);
                 sideHopper.damaged = false;
+            }
+            if (sideHopper.frozen)
+            {
+                spriteBatch.Draw(Texture, sideHopper.Space, sourceRectangle, Color.DodgerBlue);
             }
             else
             {
