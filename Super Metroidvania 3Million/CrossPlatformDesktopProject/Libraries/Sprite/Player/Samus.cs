@@ -15,7 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
     public class Samus : IPlayer
     {
         public IPlayerState State;
-        public PlayerInventory inventory { get; set; }
+        public PlayerInventory Inventory { get; set; }
         public int health;
         public Rectangle space { get; set; }
         public Rectangle PlayerHitBox {get; set; }
@@ -45,7 +45,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             space = new Rectangle((int) x, (int) y, 64, 64);
             PlayerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, rightIdleWidth, spriteHeight);
             missile = 0;
-            inventory = new PlayerInventory(30);
+            Inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
 			State = new RightIdleSamusState(this);
             Jumping = false;
@@ -98,7 +98,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void Upgrade(IItem item)
         {
-            inventory.GiveItem(item);
+            item.GiveToPlayer(Inventory);
         }
 
         public void Update(GameTime gameTime)
@@ -110,7 +110,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void Draw(SpriteBatch spriteBatch)
         {
             State.Draw(spriteBatch);
-			spriteBatch.DrawString(healthFont, inventory.getHealth().ToString(), HealthPosition, Color.White);
+			spriteBatch.DrawString(healthFont, Inventory.getHealth().ToString(), HealthPosition, Color.White);
         }
 
         public bool IsDead()

@@ -1,10 +1,11 @@
 ﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    class ScrewAttackItem : IItem
+    public class ScrewAttackItem : IItem
     {
         private bool isDead = false;
         private ISprite sprite;
@@ -41,6 +42,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         public Rectangle SpaceRectangle()
         {
             return Space;
+        }
+
+        public void GiveToPlayer(PlayerInventory pInventory)
+        {
+            pInventory.GiveItem(this);
         }
     }
 }

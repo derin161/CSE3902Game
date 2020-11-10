@@ -15,7 +15,6 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
-            SoundManager.Instance.Songs.PlayItemAcquisitionSong();
             player.Upgrade(item);
         }
     }
