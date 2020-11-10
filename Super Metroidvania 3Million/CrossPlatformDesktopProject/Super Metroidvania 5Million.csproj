@@ -51,7 +51,6 @@
     <Compile Include="Libraries\Audio\Effects\BlockEffects.cs" />
     <Compile Include="Libraries\Audio\Effects\MiscEffects.cs" />
     <Compile Include="Libraries\Audio\Effects\PlayerEffects.cs" />
-    <Compile Include="Libraries\Audio\Songs\SongController.cs" />
     <Compile Include="Libraries\Audio\Songs\SongManager.cs" />
     <Compile Include="Libraries\Audio\Songs\SongInstance.cs" />
     <Compile Include="Libraries\Audio\Effects\EffectInstance.cs" />

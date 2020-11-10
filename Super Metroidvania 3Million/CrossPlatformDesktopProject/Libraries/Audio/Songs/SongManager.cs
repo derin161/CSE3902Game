@@ -174,16 +174,9 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             activeSong.PlaySound();
         }
 
-        /*I wanted to put these methods in the song controller, 
-         * but there really isn't a great way to pass and hide all of the necessary info, 
-         * so these methods will simply appear in both*/
-        public void Shuffle()
+        /*These are the problem methods that caused me to nest SongController in SongManager*/
+        private void Shuffle()
         {
-            if (!Controls.ShuffleMode) //Keeps the song controller and the song manager on the same page and prevents mutual recursion
-            {
-                Controls.Shuffle();
-            }
-            else {
                 Random rng = new Random();
                 int n = shuffledThemes.Count;
                 while (n > 1)
@@ -197,24 +190,17 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
                 activeThemes = shuffledThemes;
                 songIndex = 0;
                 mstimer = 0;
-            }
         }
 
-        public void UnShuffle()
+        private void UnShuffle()
         {
-            if (Controls.ShuffleMode) //Keeps the song controller and the song manager on the same page and prevents mutual recursion
-            {
-                Controls.UnShuffle();
-            }
-            else
-            {
-                activeThemes = themeSongs;
-                songIndex = 0;
-                mstimer = 0;
-            }
+            
+             activeThemes = themeSongs;
+             songIndex = 0;
+             mstimer = 0;
         }
 
-        public void PlayPreviousTheme()
+        private void PlayPreviousTheme()
         {
             songIndex = (((songIndex - 1) % activeThemes.Count) + activeThemes.Count) % activeThemes.Count; //Mod that works for negative numbers
 
@@ -222,12 +208,119 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             play();
         }
 
-        public void PlayNextTheme()
+        private void PlayNextTheme()
         {
             songIndex = (songIndex + 1) % activeThemes.Count;
             activeSong = activeThemes[songIndex];
             play();
         }
 
+        //Author: Nyigel Spann
+        /*I originally had this class in its own file, 
+         * but getting The SoundManager and SoundController methods to have the correct accessibility I wanted and 
+         * ensuring the best information hiding simply wasn't working out previously.
+            As such, I decided nesting the SongController in the SongManager was the best solution. */
+        public class SongController
+        {
+            public bool LoopMode { get; private set; }
+            public bool ShuffleMode { get; private set; }
+            public bool IsMuted
+            {
+                get
+                {
+                    return MediaPlayer.IsMuted;
+                }
+            }
+
+            public bool IsPaused { get; private set; }
+
+
+            private float maxVolume = 1f;
+            private float minVolume = 0f;
+            private float volumeChange = 0.1f;
+
+            private SongManager SongManager;
+
+
+            public SongController(SongManager sm)
+            {
+                SongManager = sm;
+            }
+
+            public void PlayPreviousTheme()
+            {
+                SongManager.PlayPreviousTheme();
+            }
+
+            public void PlayNextTheme()
+            {
+                SongManager.PlayNextTheme();
+            }
+
+            public void RaiseVolume()
+            {
+                float volume = MediaPlayer.Volume + volumeChange;
+                if (volume > maxVolume)
+                {
+                    volume = maxVolume;
+                }
+                MediaPlayer.Volume = maxVolume;
+            }
+
+            public void LowerVolume()
+            {
+                float volume = MediaPlayer.Volume - volumeChange;
+                if (volume < minVolume)
+                {
+                    volume = minVolume;
+                }
+                MediaPlayer.Volume = minVolume;
+            }
+
+            public void Pause()
+            {
+                MediaPlayer.Pause();
+                IsPaused = true;
+            }
+
+            public void Resume()
+            {
+                MediaPlayer.Resume();
+                IsPaused = false;
+            }
+
+            public void Shuffle()
+            {
+                ShuffleMode = true;
+                SongManager.Shuffle();
+            }
+
+            public void UnShuffle()
+            {
+                ShuffleMode = false;
+                SongManager.UnShuffle();
+            }
+
+            public void Mute()
+            {
+                MediaPlayer.IsMuted = true;
+            }
+
+            public void UnMute()
+            {
+                MediaPlayer.IsMuted = false;
+            }
+
+            public void Loop()
+            {
+                LoopMode = true;
+            }
+
+            public void UnLoop()
+            {
+                LoopMode = false;
+            }
+
+        }
     }
 }
