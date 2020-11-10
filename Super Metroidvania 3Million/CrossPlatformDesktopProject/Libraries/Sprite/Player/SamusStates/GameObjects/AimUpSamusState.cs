@@ -7,6 +7,7 @@ using CrossPlatformDesktopProject.Libraries.SFactory;
 using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+using CrossPlatformDesktopProject.Libraries.Audio;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {

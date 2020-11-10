@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
+    //Author: Nyigel Spann
     public class EffectInstance : ISound
     {
         
@@ -22,7 +23,9 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         }
 
         public void PlaySound() {
-            sound.Play();
+            
+             sound.Play();
+            
         }
     }
 }

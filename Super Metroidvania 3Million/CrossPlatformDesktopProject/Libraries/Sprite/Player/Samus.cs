@@ -9,6 +9,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using CrossPlatformDesktopProject.Libraries.Audio;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -89,6 +90,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void TakeDamage(int damage)
         {
+            //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
             health -= damage;
             if (health <= 0)
             {

@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Libraries\Audio\ISound.cs" />
+    <Compile Include="Libraries\Audio\PlayerEffects.cs" />
     <Compile Include="Libraries\Audio\SongManager.cs" />
     <Compile Include="Libraries\Audio\SongInstance.cs" />
     <Compile Include="Libraries\Audio\EffectInstance.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
+    <Compile Include="Libraries\Command\CycleSong.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerIdleCommand.cs" />
