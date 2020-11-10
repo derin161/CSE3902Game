@@ -75,6 +75,7 @@
     <File>C:/Users/derin/source/repos/CSE3902Game2/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/ProjSprites/WaveBeamProj.png</File>
     <File>C:/Users/derin/source/repos/CSE3902Game2/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Sounds/BeamCollideSound.wav</File>
     <File>C:/Users/derin/source/repos/CSE3902Game2/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Sounds/BrinstarThemeSong.mp3</File>
+    <File>C:/Users/derin/source/repos/CSE3902Game2/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Sounds/DarudeSandstormSong.mp3</File>
     <File>C:/Users/derin/source/repos/CSE3902Game2/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Sounds/ExplosionSound.wav</File>
     <File>C:/Users/derin/source/repos/CSE3902Game2/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Sounds/GameOverSound.wav</File>
     <File>C:/Users/derin/source/repos/CSE3902Game2/Super Metroidvania 3Million/CrossPlatformDesktopProject/Libraries/Content/Sounds/IceBeamSound.wav</File>
@@ -154,6 +155,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>ProjSprites/MissileRocketProj.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

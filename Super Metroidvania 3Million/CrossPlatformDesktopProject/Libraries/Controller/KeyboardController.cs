@@ -103,6 +103,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.T, new CycleLevelCommand(gameState));
 
             RegisterCommand(Keys.F, new ToggleFullscreenCommand(gameState));
+
+            RegisterCommand(Keys.K, new CycleSongCommand());
         }
     }
 }

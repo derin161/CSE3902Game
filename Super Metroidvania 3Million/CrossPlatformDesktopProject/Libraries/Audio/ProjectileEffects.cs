@@ -19,6 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         public ISound MissileRocketFireSound { get; private set; }
         public ISound ExplosionSound { get; private set; }
         public ISound PlaceBombSound { get; private set; }
+        public ISound PowerBeamCollideSound { get; private set; }
         public ProjectileEffects()
         {
             
@@ -31,6 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             MissileRocketFireSound = new EffectInstance(content.Load<SoundEffect>("Sounds/MissileRocketFireSound"));
             PlaceBombSound = new EffectInstance(content.Load<SoundEffect>("Sounds/PlaceBombSound"));
             ExplosionSound = new EffectInstance(content.Load<SoundEffect>("Sounds/ExplosionSound"));
+            PowerBeamCollideSound = new EffectInstance(content.Load<SoundEffect>("Sounds/BeamCollideSound"));
         }
     }
 }

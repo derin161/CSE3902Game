@@ -1,6 +1,7 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Command;
+using CrossPlatformDesktopProject.Libraries.Audio;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
@@ -21,6 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             if (!(projectile is KraidHorn) && !(projectile is KraidMissile))
             {
                 new ProjectileDamageEnemyCommand(projectile, enemy).Execute();
+                SoundManager.Instance.Projectiles.PowerBeamCollideSound.PlaySound();
                 projectile.Kill();
             }
         }
