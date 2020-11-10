@@ -12,7 +12,14 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
     {
         private Song song;
         public SongInstance(Song s) {
-            this.song = s;
+            song = s;
+        }
+
+        /*Constructor assumes si is of type SongInstance */
+        public SongInstance(ISound si)
+        {
+            SongInstance localSi = (SongInstance) si;
+            song = localSi.song;
         }
 
         public double Duration()

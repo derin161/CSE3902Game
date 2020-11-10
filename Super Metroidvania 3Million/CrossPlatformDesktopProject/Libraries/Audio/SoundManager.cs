@@ -21,10 +21,6 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         public BlockEffects Blocks { get; private set; }
         public EnemyEffects Enemies { get; private set; }
         public SongManager Songs { get; private set; }
-        private float volume;
-        private float maxVolume = 1f;
-        private float minVolume = 0f;
-        private float volumeChange = 0.1f;
 
         public static SoundManager Instance
         {
@@ -43,7 +39,6 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             Blocks = BlockEffects.Instance;
             Items = ItemEffects.Instance;
             Songs = SongManager.Instance;
-            volume = maxVolume;
         }
         public void LoadAllSounds(ContentManager content) {
             Projectiles.LoadAllSounds(content);
@@ -57,33 +52,6 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
         public void Update(GameTime gtime) {
             Songs.Update(gtime);
-            MediaPlayer.Volume = volume;
-        }
-
-        public void RaiseVolume() {
-            volume += volumeChange;
-            if (volume > maxVolume) {
-                volume = maxVolume;
-            }
-        }
-
-        public void LowerVolume()
-        {
-            volume -= volumeChange;
-            if (volume < minVolume)
-            {
-                volume = minVolume;
-            }
-        }
-
-        public void SilenceVolume()
-        {
-            volume = minVolume;
-        }
-
-        public void MaxVolume()
-        {
-            volume = maxVolume;
         }
 
     }

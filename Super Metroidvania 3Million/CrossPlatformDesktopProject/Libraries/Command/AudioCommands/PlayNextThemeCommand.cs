@@ -3,14 +3,14 @@ using CrossPlatformDesktopProject.Libraries.CSV;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
-    public class CycleSongCommand : ICommand
+    public class PlayNextThemeCommand : ICommand
     {
-        public CycleSongCommand()
+        public PlayNextThemeCommand()
         {
         }
         public void Execute()
         {
-            SoundManager.Instance.Songs.PlayNextTheme();
+            SoundManager.Instance.Songs.Controls.PlayNextTheme();
         }
     }
 }

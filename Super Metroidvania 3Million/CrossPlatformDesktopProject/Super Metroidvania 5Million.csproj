@@ -51,6 +51,7 @@
     <Compile Include="Libraries\Audio\Effects\BlockEffects.cs" />
     <Compile Include="Libraries\Audio\Effects\MiscEffects.cs" />
     <Compile Include="Libraries\Audio\Effects\PlayerEffects.cs" />
+    <Compile Include="Libraries\Audio\Songs\SongController.cs" />
     <Compile Include="Libraries\Audio\Songs\SongManager.cs" />
     <Compile Include="Libraries\Audio\Songs\SongInstance.cs" />
     <Compile Include="Libraries\Audio\Effects\EffectInstance.cs" />
@@ -65,7 +66,9 @@
     <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
-    <Compile Include="Libraries\Command\CycleSong.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\UnShuffleThemesCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerIdleCommand.cs" />

@@ -1,19 +1,16 @@
-﻿using Microsoft.Xna.Framework.Media;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
     //Author: Nyigel Spann
     public class SongManager
     {
+        public SongController Controls { get; private set; }
+
         private static SongManager instance = new SongManager();
         private ISound tourianTheme;
         private ISound endingTheme;
@@ -29,10 +26,14 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         private ISound darudeSand;
         private ISound activeSong; //Song currently being played
 
-        private List<ISound> ThemeSongs = new List<ISound>();
+        private List<ISound> themeSongs = new List<ISound>();
+        private List<ISound> shuffledThemes = new List<ISound>();
+        private List<ISound> activeThemes;
+
         private int mstimer = 0; //Timer used for looping or playing next song
         private int songIndex = 0;
-        private bool loopMode = false;
+
+
 
         public static SongManager Instance
         {
@@ -62,32 +63,41 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             motherBrainBattleTheme = new SongInstance(content.Load<Song>("Sounds/MotherBrainBattle"));
             gameStartSong = new SongInstance(content.Load<Song>("Sounds/GameStart"));
 
+            Controls = new SongController(this);
+
             /* Add the Theme Songs */
-            ThemeSongs.Add(brinTheme);
-            ThemeSongs.Add(tourianTheme);
-            ThemeSongs.Add(endingTheme);
-            ThemeSongs.Add(escapeTheme);
-            ThemeSongs.Add(norfairTheme);
-            ThemeSongs.Add(ridleysHideoutTheme);
-            ThemeSongs.Add(secretAreaTheme);
-            ThemeSongs.Add(motherBrainBattleTheme);
-            ThemeSongs.Add(titleTheme);
-            ThemeSongs.Add(darudeSand);
+            themeSongs.Add(brinTheme);
+            themeSongs.Add(tourianTheme);
+            themeSongs.Add(endingTheme);
+            themeSongs.Add(escapeTheme);
+            themeSongs.Add(norfairTheme);
+            themeSongs.Add(ridleysHideoutTheme);
+            themeSongs.Add(secretAreaTheme);
+            themeSongs.Add(motherBrainBattleTheme);
+            themeSongs.Add(titleTheme);
+            themeSongs.Add(darudeSand);
+            shuffledThemes = themeSongs.ConvertAll((s => (ISound) new SongInstance(s)));
+            activeThemes = themeSongs;
+
         }
 
         public void Update(GameTime gtime)
         {
-            mstimer -= gtime.ElapsedGameTime.Milliseconds;
-            if (mstimer < 0) {
-                if (loopMode) {
-                    play();
+            if (!Controls.IsPaused)
+            {
+                mstimer -= (int)gtime.ElapsedGameTime.TotalMilliseconds;
+                if (mstimer < 0)
+                {
+                    if (Controls.LoopMode)
+                    {
+                        play();
+                    }
+                    else
+                    {
+                        PlayNextTheme();
+                    }
                 }
-                else {
-                    PlayNextTheme();
-                }
-
             }
-
         }
 
         public void PlayBrinstarTheme() {
@@ -159,34 +169,65 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             play();
         }
 
-        public void PlayPreviousTheme()
-        {
-            songIndex = (((songIndex - 1) % ThemeSongs.Count) + ThemeSongs.Count) % ThemeSongs.Count; //Mod that works for negative numbers
-
-            activeSong = ThemeSongs[songIndex];
-            loopMode = false;
-            play();
-        }
-
-        public void PlayNextTheme() {
-            songIndex = (songIndex + 1) % ThemeSongs.Count;
-            activeSong = ThemeSongs[songIndex];
-            loopMode = false;
-            play();
-        }
-
         private void play() {
             mstimer = (int) activeSong.Duration() + 50;
             activeSong.PlaySound();
         }
 
-        /* Loops the currently active song. */
-        public void loop() {
-            loopMode = true;
+        /*I wanted to put these methods in the song controller, 
+         * but there really isn't a great way to pass and hide all of the necessary info, 
+         * so these methods will simply appear in both*/
+        public void Shuffle()
+        {
+            if (!Controls.ShuffleMode) //Keeps the song controller and the song manager on the same page and prevents mutual recursion
+            {
+                Controls.Shuffle();
+            }
+            else {
+                Random rng = new Random();
+                int n = shuffledThemes.Count;
+                while (n > 1)
+                {
+                    n--;
+                    int k = rng.Next(n + 1);
+                    ISound theme = shuffledThemes[k];
+                    shuffledThemes[k] = shuffledThemes[n];
+                    shuffledThemes[n] = theme;
+                }
+                activeThemes = shuffledThemes;
+                songIndex = 0;
+                mstimer = 0;
+            }
         }
 
+        public void UnShuffle()
+        {
+            if (Controls.ShuffleMode) //Keeps the song controller and the song manager on the same page and prevents mutual recursion
+            {
+                Controls.UnShuffle();
+            }
+            else
+            {
+                activeThemes = themeSongs;
+                songIndex = 0;
+                mstimer = 0;
+            }
+        }
 
+        public void PlayPreviousTheme()
+        {
+            songIndex = (((songIndex - 1) % activeThemes.Count) + activeThemes.Count) % activeThemes.Count; //Mod that works for negative numbers
 
+            activeSong = activeThemes[songIndex];
+            play();
+        }
+
+        public void PlayNextTheme()
+        {
+            songIndex = (songIndex + 1) % activeThemes.Count;
+            activeSong = activeThemes[songIndex];
+            play();
+        }
 
     }
 }
