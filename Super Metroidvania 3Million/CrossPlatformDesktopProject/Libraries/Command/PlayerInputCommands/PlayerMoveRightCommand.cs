@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {

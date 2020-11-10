@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using System.Linq;
 using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
