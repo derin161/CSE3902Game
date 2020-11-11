@@ -17,7 +17,11 @@ ___
 * C : Cycle currently active beam weapon.
 * Q : Quit.
 * R : Reset the program to initial state.
-
+* T : Cycle current level being loaded.
+* F : Toggle fullscreen.
+* K : Play next music theme.
+* L : Shuffle music themes.
+* O : Unshuffle music themes.
 ___
 **PLAYER UPGRADES**
 
