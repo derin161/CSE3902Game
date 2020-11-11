@@ -23,7 +23,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D leftStartingPlatformBlock;
 		private Texture2D redDoorBottomLeftBlock;
 		private Texture2D redDoorBottomRightBlock;
-		private Texture2D redDoorMiddleBlock;
 		private Texture2D redDoorMiddleLeftBlock;
 		private Texture2D redDoorMiddleRightBlock;
 		private Texture2D redDoorTopLeftBlock;
@@ -89,7 +88,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			leftStartingPlatformBlock = content.Load<Texture2D>("BlockSprites/LeftStartingPlatform");
 			redDoorBottomLeftBlock = content.Load<Texture2D>("BlockSprites/RedDoorBottomLeft");
 			redDoorBottomRightBlock = content.Load<Texture2D>("BlockSprites/RedDoorBottomRight");
-			redDoorMiddleBlock = content.Load<Texture2D>("BlockSprites/RedDoorMiddle");
 			redDoorMiddleLeftBlock = content.Load<Texture2D>("BlockSprites/RedDoorMiddleLeft");
 			redDoorMiddleRightBlock = content.Load<Texture2D>("BlockSprites/RedDoorMiddleRight");
 			redDoorTopLeftBlock = content.Load<Texture2D>("BlockSprites/RedDoorTopLeft");
@@ -270,10 +268,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public ISprite CreateRedDoorBottomRightBlockSprite(RedDoorBottomRightBlock block)
 		{
 			return new DrawBlockSprites(redDoorBottomRightBlock, block);
-		}
-		public ISprite CreateRedDoorMiddleBlockSprite(RedDoorMiddleBlock block)
-		{
-			return new DrawBlockSprites(redDoorMiddleBlock, block);
 		}
 
 		public ISprite CreateRedDoorMiddleLeftBlockSprite(RedDoorMiddleLeftBlock block)

@@ -150,7 +150,6 @@
     <Compile Include="Libraries\Sprite\Blocks\RedCrackedBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorBottomLeftBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorBottomRightBlock.cs" />
-    <Compile Include="Libraries\Sprite\Blocks\RedDoorMiddleBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorMiddleLeftBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorMiddleRightBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorTopLeftBlock.cs" />
