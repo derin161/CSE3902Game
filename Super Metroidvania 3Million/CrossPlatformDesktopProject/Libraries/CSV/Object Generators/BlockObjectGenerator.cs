@@ -1,17 +1,29 @@
-﻿using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Container;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV
+namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
 {
-    public class BlockObjectGenerator //Unused as of now ***
+    public class BlockObjectGenerator
     {
-        public void LoadLevel(string objName, string objectType)
+        private static BlockObjectGenerator instance = new BlockObjectGenerator();
+        public static BlockObjectGenerator Instance
         {
-            Vector2 location = new Vector2(/*row * */32, /*column **/ 32);
-            IBlock block;
+            get
+            {
+                return instance;
+            }
+        }
 
-            switch (objName)
+        public void createBlock(Vector2 location, String blockType)
+        {
+            IBlock block;
+            switch (blockType)
             {
                 case "BlueBrickBlock":
                     block = new BlueBrickBlock(location);
@@ -118,7 +130,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                     GameObjectContainer.Instance.Add(block);
                     break;
 
-                case "StockBlueBlock":
+                case "StockBlockBlue":
                     block = new StockBlockBlue(location);
                     GameObjectContainer.Instance.Add(block);
                     break;
@@ -223,6 +235,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                     GameObjectContainer.Instance.Add(block);
                     break;
             }
+
         }
     }
 }
