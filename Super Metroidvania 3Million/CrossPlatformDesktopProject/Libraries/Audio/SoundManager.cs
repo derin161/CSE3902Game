@@ -32,6 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
 
         //private contructor for singleton
         private SoundManager() {
+            MediaPlayer.Volume = 0.3f;  //Volume scales from 0.0f (silent) to 1.0f
             Projectiles = ProjectileEffects.Instance;
             Player = PlayerEffects.Instance;
             Enemies = EnemyEffects.Instance;
