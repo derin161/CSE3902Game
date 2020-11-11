@@ -13,6 +13,8 @@ using CrossPlatformDesktopProject.Libraries.Collision;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using Microsoft.Xna.Framework.Media;
 using CrossPlatformDesktopProject.Libraries.Audio;
+using CrossPlatformDesktopProject.Libraries;
+using CrossPlatformDesktopProject.Libraries.Camera;
 
 namespace CrossPlatformDesktopProject
 {
@@ -25,6 +27,7 @@ namespace CrossPlatformDesktopProject
         private KeyboardController keyboard;
         private GameTime gameTime;
         private LevelStatePattern currentLevel;
+        private Camera camera;
         
         public Game1()
         {
@@ -56,6 +59,7 @@ namespace CrossPlatformDesktopProject
             SoundManager.Instance.LoadAllSounds(Content);
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
+            camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
 
         }
 
@@ -110,6 +114,14 @@ namespace CrossPlatformDesktopProject
             graphics.PreferredBackBufferHeight = height;
             graphics.PreferredBackBufferWidth = width;
             graphics.ApplyChanges();
+        }
+        public Camera GetCamera()
+        {
+            return camera;
+        }
+        public void SetCamera(Camera newCamera)
+        {
+            camera = newCamera;
         }
     }
 }

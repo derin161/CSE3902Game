@@ -27,6 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             }
         }
 
+        public Rectangle BoundingBox { get; set; }
+
         public List<IProjectile> ProjectileList
         {
             get{ return projectileList; }

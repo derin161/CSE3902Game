@@ -56,6 +56,20 @@
     <Compile Include="Libraries\Audio\Effects\EffectInstance.cs" />
     <Compile Include="Libraries\Audio\Effects\ProjectileEffects.cs" />
     <Compile Include="Libraries\Audio\SoundManager.cs" />
+    <Compile Include="Libraries\Cameras\Camera.cs" />
+    <Compile Include="Libraries\Cameras\HorizontalCamera.cs" />
+    <Compile Include="Libraries\Cameras\ICamera.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraFocusSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockDownSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockDownSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockLeftSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockRightSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockRightSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockUpSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockUpSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockLeftSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\ISwitch.cs" />
+    <Compile Include="Libraries\Cameras\VerticalCamera.cs" />
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\ProjectileBlockCollision.cs" />
@@ -70,6 +84,7 @@
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
+    <Compile Include="Libraries\Command\ICameraCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerIdleCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamageEnemyCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamagePlayerCommand.cs" />
@@ -324,7 +339,6 @@
   <ItemGroup>
     <Folder Include="Code Reviews\Sprint4\" />
     <Folder Include="Code Reviews\Sprint5\" />
-    <Folder Include="Libraries\Camera\" />
     <Folder Include="Libraries\Sprite\Player\PlayerSprites\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -101,6 +101,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             return Space;
         }
+        public Rectangle BoundingBox()
+        {
+            return Space;
+        }
 
         public void Draw(SpriteBatch spriteBatch)
         {
