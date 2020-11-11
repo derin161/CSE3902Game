@@ -60,7 +60,8 @@ namespace CrossPlatformDesktopProject
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
             camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
-
+            camera.Focus = GameObjectContainer.Instance.Player;
+            camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
         }
 
         protected override void UnloadContent()
@@ -103,6 +104,9 @@ namespace CrossPlatformDesktopProject
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
+            camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
+            camera.Focus = GameObjectContainer.Instance.Player;
+            camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
         }
 
         public void Fullscreen()
