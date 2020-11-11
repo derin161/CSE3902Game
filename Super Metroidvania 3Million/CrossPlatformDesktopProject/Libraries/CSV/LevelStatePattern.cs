@@ -10,8 +10,9 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
         private static StartingLevel startingLevel = new StartingLevel();
         private static LevelOne levelOne = new LevelOne();
         private static LevelTwo levelTwo = new LevelTwo();
+
         public enum Door { left, right };
-        public IStageState state { get; set; } = startingLevel;
+        public IStageState state { get; set; } = levelOne;
 
         private static LevelStatePattern instance = new LevelStatePattern();
        
@@ -78,21 +79,6 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             {
                 levelIndex = 0;
             }
-        }
-
-        public IStageState GetState(string stateID)
-        {
-            return stateID switch
-            {
-                "startingLevel" => startingLevel,
-                "levelOne" => levelOne,
-                "levelTwo" => levelTwo,
-                _ => null,
-            };
-        }
-        public IStageState GetLevel()
-        {
-            return state;
         }
 
         public void LeftDoor() 

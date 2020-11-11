@@ -126,24 +126,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			pipeRightRed = content.Load<Texture2D>("BlockSprites/RedPipeRight");
 			roofSpikeBlock = content.Load<Texture2D>("BlockSprites/RoofSpikeBlock");
 	}
-		
-		//This method will probably be dropped and replaced by many more methods when the block sprites and game objects are separated.
-		public List<ISprite> CreateBlockSpriteList(Vector2 location)
-		{
-			List<ISprite> blockList = new List<ISprite>();
-
-
-			/*blockList.Add(new BlockSprite(BushBlockBlue, location));
-			blockList.Add(new BlockSprite(bushBlockBlue, location));
-			blockList.Add(new BlockSprite(swirlBlockBlue, location));
-			blockList.Add(new BlockSprite(tubeBlockBlue, location));
-			blockList.Add(new BlockSprite(stockBlockOrange, location));
-			blockList.Add(new BlockSprite(bushBlockOrange, location));
-			blockList.Add(new BlockSprite(swirlBlockOrange, location));
-			blockList.Add(new BlockSprite(tubeBlockOrange, location));*/
-
-			return blockList;
-		}
 
 		public ISprite CreateStockBlockBlueSprite(StockBlockBlue block)
         {
