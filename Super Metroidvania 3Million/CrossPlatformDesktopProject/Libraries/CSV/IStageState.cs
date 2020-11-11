@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CrossPlatformDesktopProject.Libraries.CSV
+﻿namespace CrossPlatformDesktopProject.Libraries.CSV
 {
     public interface IStageState
     {

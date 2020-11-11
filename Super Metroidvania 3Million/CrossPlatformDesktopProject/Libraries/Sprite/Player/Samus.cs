@@ -9,15 +9,17 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using CrossPlatformDesktopProject.Libraries.Audio;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
     public class Samus : IPlayer
     {
         public IPlayerState State;
-        public PlayerInventory inventory { get; set; }
+        public PlayerInventory Inventory { get; set; }
         public int health;
         public Rectangle space { get; set; }
+        public Rectangle PlayerHitBox {get; set; }
         private Game1 game;
         private bool isDead;
         public int missile;
@@ -29,6 +31,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public float missileSpeed {get; private set;}
         public Vector2 HealthPosition {get; private set;}
         private SpriteFont healthFont;
+        private int spriteHeight = 64;
+        private int rightIdleOffset = 13;
+        private int rightIdleWidth = 40;
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
@@ -39,8 +44,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             x = l.X;
             y = l.Y;
             space = new Rectangle((int) x, (int) y, 64, 64);
+            PlayerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, rightIdleWidth, spriteHeight);
             missile = 0;
-            inventory = new PlayerInventory(30);
+            Inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
 			State = new RightIdleSamusState(this);
             Jumping = false;
@@ -84,6 +90,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void TakeDamage(int damage)
         {
+            //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
             health -= damage;
             if (health <= 0)
             {
@@ -93,7 +100,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void Upgrade(IItem item)
         {
-            inventory.GiveItem(item);
+            item.GiveToPlayer(Inventory);
         }
 
         public void Update(GameTime gameTime)
@@ -105,7 +112,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void Draw(SpriteBatch spriteBatch)
         {
             State.Draw(spriteBatch);
-			spriteBatch.DrawString(healthFont, inventory.getHealth().ToString(), HealthPosition, Color.White);
+			spriteBatch.DrawString(healthFont, Inventory.getHealth().ToString(), HealthPosition, Color.White);
         }
 
         public bool IsDead()

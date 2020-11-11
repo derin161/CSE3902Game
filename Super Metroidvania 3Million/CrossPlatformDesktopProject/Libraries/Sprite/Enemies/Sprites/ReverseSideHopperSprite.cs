@@ -29,24 +29,27 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //change the frame after 20 counts
-            if (count == 64)
+            if (!reverseSideHopper.frozen)
             {
-                count = 0;
-                direction *= -1;
-                currentFrame++;
-                if (currentFrame == 6)
+                //change the frame after 20 counts
+                if (count == 64)
                 {
-                    currentFrame = 3;
+                    count = 0;
+                    direction *= -1;
+                    currentFrame++;
+                    if (currentFrame == 6)
+                    {
+                        currentFrame = 3;
+                    }
                 }
-            }
 
-            //Jump while on frame 5
-            if (currentFrame == 5)
-            {
-                reverseSideHopper.Jump(count, direction);
+                //Jump while on frame 5
+                if (currentFrame == 5)
+                {
+                    reverseSideHopper.Jump(count, direction);
+                }
+                count += 2;
             }
-            count+=2;
 
         }
 
@@ -65,7 +68,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 spriteBatch.Draw(Texture, reverseSideHopper.Space, sourceRectangle, Color.Transparent);
                 reverseSideHopper.damaged = false;
             }
-            else
+            if (reverseSideHopper.frozen)
+            {
+                spriteBatch.Draw(Texture, reverseSideHopper.Space, sourceRectangle, Color.DodgerBlue);
+            }
+            else 
             {
                 spriteBatch.Draw(Texture, reverseSideHopper.Space, sourceRectangle, Color.White);
             }

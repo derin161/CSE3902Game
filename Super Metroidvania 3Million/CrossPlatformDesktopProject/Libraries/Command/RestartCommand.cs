@@ -1,4 +1,6 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
+﻿using CrossPlatformDesktopProject.Libraries.Audio;
+
+namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
     //Author: Shyamal Shah
     public class RestartCommand : ICommand

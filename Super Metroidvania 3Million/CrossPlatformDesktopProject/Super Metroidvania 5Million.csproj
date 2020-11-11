@@ -46,8 +46,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Libraries\Audio\ISound.cs" />
-    <Compile Include="Libraries\Audio\Sound.cs" />
-    <Compile Include="Libraries\Audio\ProjectileSounds.cs" />
+    <Compile Include="Libraries\Audio\Effects\EnemyEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\ItemEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\BlockEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\MiscEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\PlayerEffects.cs" />
+    <Compile Include="Libraries\Audio\Songs\SongManager.cs" />
+    <Compile Include="Libraries\Audio\Songs\SongInstance.cs" />
+    <Compile Include="Libraries\Audio\Effects\EffectInstance.cs" />
+    <Compile Include="Libraries\Audio\Effects\ProjectileEffects.cs" />
     <Compile Include="Libraries\Audio\SoundManager.cs" />
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
@@ -58,6 +65,9 @@
     <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\UnShuffleThemesCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerIdleCommand.cs" />
@@ -67,22 +77,16 @@
     <Compile Include="Libraries\Command\QuitCommand.cs" />
     <Compile Include="Libraries\Command\RestartCommand.cs" />
     <Compile Include="Libraries\Command\ToggleFullscreenCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\NextBlockCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\CycleBeamMissileCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAttackCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\PreviousBlockCommand.cs" />
     <Compile Include="Libraries\Command\PlayerGiveItemCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMorphCommand.cs" />
     <Compile Include="Libraries\Command\EnemyDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerJumpCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveLeftCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveRightCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\NextItemCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\PreviousEnemyCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\NextEnemyCommand.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\PreviousItemCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\CSV\BlockObjectGenerator.cs" />
