@@ -60,7 +60,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.Transparent);
                 geega.damaged = false;
             }
-            if (geega.frozen)
+            else if (geega.frozen)
             {
                 spriteBatch.Draw(Texture, geega.Space, sourceRectangle, Color.DodgerBlue);
             }

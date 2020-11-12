@@ -68,7 +68,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 spriteBatch.Draw(Texture, sideHopper.Space, sourceRectangle, Color.Transparent);
                 sideHopper.damaged = false;
             }
-            if (sideHopper.frozen)
+            else if (sideHopper.frozen)
             {
                 spriteBatch.Draw(Texture, sideHopper.Space, sourceRectangle, Color.DodgerBlue);
             }
