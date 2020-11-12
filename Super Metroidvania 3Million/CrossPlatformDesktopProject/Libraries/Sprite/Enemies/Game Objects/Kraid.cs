@@ -103,6 +103,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
+            //Initiate game over sequence
         }
 
         public void MoveLeft()
@@ -158,7 +159,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             damaged = true;
             if (health <= 0)
             {
-                this.Kill();
+                Kill();
             }
         }
 
