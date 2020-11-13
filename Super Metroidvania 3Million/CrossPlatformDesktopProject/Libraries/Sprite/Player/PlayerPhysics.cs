@@ -1,7 +1,4 @@
-﻿
-
-using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+﻿using CrossPlatformDesktopProject.Libraries.Audio;
 using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player

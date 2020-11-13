@@ -1,9 +1,6 @@
 ﻿
 using CrossPlatformDesktopProject.Libraries.Audio;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using System;
-using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
