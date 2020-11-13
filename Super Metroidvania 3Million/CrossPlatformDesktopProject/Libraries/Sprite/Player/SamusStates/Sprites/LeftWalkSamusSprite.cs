@@ -1,13 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Controller;
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -19,7 +11,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private int columns;
 		private Samus samus;
 		private int currentFrame;
-		private int totalFrames = 4;
+		private int totalFrames;
 		private int interval;
 		private int timer;
 
@@ -30,6 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			rows = 1;
 			columns = 4;
 			currentFrame = 0;
+			totalFrames = 4;
 			interval = 50;
 			timer = 0;
 

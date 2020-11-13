@@ -1,6 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+﻿using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
