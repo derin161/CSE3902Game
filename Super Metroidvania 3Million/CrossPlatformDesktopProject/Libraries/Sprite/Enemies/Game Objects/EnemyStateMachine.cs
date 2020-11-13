@@ -56,7 +56,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //Drop an item where the enemy died
             if (new Random().Next(0, 2) == 0)
             {
-                GameObjectContainer.Instance.Add(new MissileRocketItem(new Vector2(x, y)));
+                GameObjectContainer.Instance.Add(new RocketDropItem(new Vector2(x, y)));
             }
             else
             {
