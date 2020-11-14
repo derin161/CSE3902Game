@@ -4,7 +4,6 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision

@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Runtime.InteropServices;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -68,7 +67,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 spriteBatch.Draw(Texture, sideHopper.Space, sourceRectangle, Color.Transparent);
                 sideHopper.damaged = false;
             }
-            if (sideHopper.frozen)
+            else if (sideHopper.frozen)
             {
                 spriteBatch.Draw(Texture, sideHopper.Space, sourceRectangle, Color.DodgerBlue);
             }

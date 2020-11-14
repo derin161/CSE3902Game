@@ -1,10 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
@@ -32,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void Initialize()
         {
-            LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 64));
+            LoadCsv.Instance.Load("TestStartingLevelLong.csv", new Vector2(64, 64));
         }
 
         public void SwitchLevel(Door door)
@@ -85,17 +79,6 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             {
                 levelIndex = 0;
             }
-        }
-
-        public IStageState GetState(string stateID)
-        {
-            return stateID switch
-            {
-                "startingLevel" => startingLevel,
-                "levelOne" => levelOne,
-                "levelTwo" => levelTwo,
-                _ => null,
-            };
         }
 
         public void LeftDoor() 

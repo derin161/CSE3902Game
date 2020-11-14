@@ -3,7 +3,6 @@ using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -110,6 +109,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
+            stateMachine.Kill();
         }
 
         public void MoveLeft()

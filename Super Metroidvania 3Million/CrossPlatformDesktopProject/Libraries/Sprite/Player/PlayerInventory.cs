@@ -1,8 +1,6 @@
 ﻿
+using CrossPlatformDesktopProject.Libraries.Audio;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using System;
-using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -28,24 +26,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool HasMaruMari { get; private set; }
         public bool HasBomb { get; private set; }
 
-        private enum ItemType { Bomb, EnergyDrop, EnergyTank, HighJump, IceBeam, LongBeam, MissileRocket, MaruMari, RocketDrop, ScrewAttack, Varia, WaveBeam }
-        private Dictionary<Type, ItemType> typeDict = new Dictionary<Type, ItemType> { //Used in GiveItem method below.
-
-            {typeof(BombItem), ItemType.Bomb },
-             {typeof(EnergyDropItem), ItemType.EnergyDrop },
-             {typeof(EnergyTankItem), ItemType.EnergyTank },
-             {typeof(HighJumpItem), ItemType.HighJump },
-             {typeof(IceBeamItem), ItemType.IceBeam },
-             {typeof(LongBeamItem), ItemType.LongBeam },
-             {typeof(MissileRocketItem), ItemType.MissileRocket },
-             {typeof(MorphBallItem), ItemType.MaruMari },
-             {typeof(RocketDropItem), ItemType.RocketDrop },
-             {typeof(ScrewAttackItem), ItemType.ScrewAttack },
-             {typeof(VariaItem), ItemType.Varia },
-             {typeof(WaveBeamItem), ItemType.WaveBeam }
-
-        };
-
 
         public PlayerInventory(int startingEnergyLevel) {
             CurrentEnergyTanksFilled = 0;
@@ -62,64 +42,91 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             HasBomb = false;
         }
 
-        /* Okay, this one is kind've a mess, but you can't directly do "case typeOf(class):" because a case needs a defined value at compile-time 
-         * (is my understanding) so we need a dictionary to map typeOf(class) to an enum to use with the switch-case. I prefered a switch case to doing many if-elseifs
-         * to use the "is" keyword. -Nyigel
-         * Idea from: https://stackoverflow.com/questions/708911/using-case-switch-and-gettype-to-determine-the-object */
-        public void GiveItem(IItem item) {
-            switch (typeDict[item.GetType()]) {
-                case ItemType.Bomb:
-                    HasBomb = true;
-                    break;
-                case ItemType.EnergyDrop:
-                    CurrentEnergyLevel += 5;
-                    if (CurrentEnergyLevel > energyCapacityPerTank && CurrentEnergyTanksFilled < CurrentEnergyTanks)
-                    {
-                        CurrentEnergyLevel -= energyCapacityPerTank;
-                        CurrentEnergyTanksFilled++;
-                    }
-                    else if (CurrentEnergyLevel > energyCapacityPerTank) {
-                        CurrentEnergyLevel = energyCapacityPerTank;
-                    }
-                    break;
-                case ItemType.EnergyTank:
-                    if (CurrentEnergyTanks < MaximumEnergyTanks) {
-                        CurrentEnergyTanks++;
-                    }
-                    break;
-                case ItemType.HighJump:
-                    HasHighJump = true;
-                    break;
-                case ItemType.IceBeam:
-                    HasIceBeam = true;
-                    break;
-                case ItemType.LongBeam:
-                    HasLongBeam = true;
-                    break;
-                case ItemType.MaruMari:
-                    HasMaruMari = true;
-                    break;
-                case ItemType.MissileRocket:
-                    CurrentMissileRocketCapacity += 5;
-                    if (CurrentMissileRocketCapacity > MaximumMissileRocketCapacity) {
-                        CurrentMissileRocketCapacity = MaximumMissileRocketCapacity;
-                    }
-                    break;
-                case ItemType.RocketDrop:
-                    if (CurrentMissileRocketCount < CurrentMissileRocketCapacity) {
-                        CurrentMissileRocketCount++;
-                    }
-                    break;
-                case ItemType.ScrewAttack:
-                    HasScrewAttack = true;
-                    break;
-                case ItemType.Varia:
-                    HasVaria = true;
-                    break;
-                case ItemType.WaveBeam:
-                    HasWaveBeam = true;
-                    break;
+        public void GiveItem(BombItem bomb) {
+            HasBomb = true;
+            upgradePickupSequence();
+        }
+
+        public void GiveItem(EnergyDropItem endrop)
+        {
+            CurrentEnergyLevel += 5;
+            if (CurrentEnergyLevel > energyCapacityPerTank && CurrentEnergyTanksFilled < CurrentEnergyTanks)
+            {
+                CurrentEnergyLevel -= energyCapacityPerTank;
+                CurrentEnergyTanksFilled++;
             }
+            else if (CurrentEnergyLevel > energyCapacityPerTank)
+            {
+                CurrentEnergyLevel = energyCapacityPerTank;
+            }
+        }
+
+        public void GiveItem(EnergyTankItem entank)
+        {
+            if (CurrentEnergyTanks < MaximumEnergyTanks)
+            {
+                CurrentEnergyTanks++;
+            }
+            upgradePickupSequence();
+        }
+
+        public void GiveItem(HighJumpItem hj) {
+            HasHighJump = true;
+            upgradePickupSequence();
+        }
+
+        public void GiveItem(IceBeamItem ib) {
+            HasIceBeam = true;
+            upgradePickupSequence();
+        }
+
+        public void GiveItem(LongBeamItem lb)
+        {
+            HasLongBeam = true;
+            upgradePickupSequence();
+        }
+        public void GiveItem(MorphBallItem mb)
+        {
+            HasMaruMari = true;
+            upgradePickupSequence();
+        }
+        public void GiveItem(MissileRocketItem mr)
+        {
+            CurrentMissileRocketCapacity += 5;
+            if (CurrentMissileRocketCapacity > MaximumMissileRocketCapacity)
+            {
+                CurrentMissileRocketCapacity = MaximumMissileRocketCapacity;
+            }
+
+            upgradePickupSequence();
+        }
+        public void GiveItem(RocketDropItem rd)
+        {
+            if (CurrentMissileRocketCount < CurrentMissileRocketCapacity)
+            {
+                CurrentMissileRocketCount++;
+            }
+        }
+
+        public void GiveItem(ScrewAttackItem sa)
+        {
+            HasScrewAttack = true;
+            upgradePickupSequence();
+        }
+        public void GiveItem(VariaItem v)
+        {
+            HasVaria = true;
+            upgradePickupSequence();
+        }
+        public void GiveItem(WaveBeamItem wb)
+        {
+            HasWaveBeam = true;
+            upgradePickupSequence();
+        }
+
+        private void upgradePickupSequence() {
+            SoundManager.Instance.Songs.PlayItemAcquisitionSong();
+            //pause not yet implemented
         }
 
         public int getHealth() { return energyCapacityPerTank; }

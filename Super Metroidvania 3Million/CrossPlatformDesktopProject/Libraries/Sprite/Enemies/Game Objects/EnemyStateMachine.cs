@@ -1,6 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System.Security.Cryptography.X509Certificates;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using Microsoft.Xna.Framework;
+using System;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -47,6 +48,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Freeze()
         {
             frozen = true;
+        }
+        public void Kill()
+        {
+            //Drop an item where the enemy died
+            if (new Random().Next(0, 2) == 0)
+            {
+                GameObjectContainer.Instance.Add(new RocketDropItem(new Vector2(x, y)));
+            }
+            else
+            {
+                GameObjectContainer.Instance.Add(new EnergyDropItem(new Vector2(x, y)));
+            }
         }
         public void Update()
         {

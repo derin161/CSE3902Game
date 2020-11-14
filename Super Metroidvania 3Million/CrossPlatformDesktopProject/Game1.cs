@@ -13,6 +13,8 @@ using CrossPlatformDesktopProject.Libraries.Collision;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using Microsoft.Xna.Framework.Media;
 using CrossPlatformDesktopProject.Libraries.Audio;
+using CrossPlatformDesktopProject.Libraries;
+using CrossPlatformDesktopProject.Libraries.Camera;
 
 namespace CrossPlatformDesktopProject
 {
@@ -25,6 +27,7 @@ namespace CrossPlatformDesktopProject
         private KeyboardController keyboard;
         private GameTime gameTime;
         private LevelStatePattern currentLevel;
+        private Camera camera;
         
         public Game1()
         {
@@ -56,7 +59,9 @@ namespace CrossPlatformDesktopProject
             SoundManager.Instance.LoadAllSounds(Content);
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
-
+            camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
+            camera.Focus = GameObjectContainer.Instance.Player;
+            camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
         }
 
         protected override void UnloadContent()
@@ -69,6 +74,7 @@ namespace CrossPlatformDesktopProject
             keyboard.Update(gameTime);
             GameObjectContainer.Instance.Update(gameTime);
             CollisionDetector.Instance.Update();
+            SoundManager.Instance.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -87,7 +93,7 @@ namespace CrossPlatformDesktopProject
         public void Restart(){
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
-            SoundManager.Instance.Songs.BrinstarTheme.PlaySound();
+            SoundManager.Instance.Songs.PlayBrinstarTheme();
             GameObjectContainer.Instance.Clear();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ProjectilesSpriteFactory.Instance.LoadAllTextures(Content);
@@ -98,6 +104,9 @@ namespace CrossPlatformDesktopProject
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
             keyboard = new KeyboardController(this);
             currentLevel.Initialize();
+            camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
+            camera.Focus = GameObjectContainer.Instance.Player;
+            camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
         }
 
         public void Fullscreen()
@@ -109,6 +118,14 @@ namespace CrossPlatformDesktopProject
             graphics.PreferredBackBufferHeight = height;
             graphics.PreferredBackBufferWidth = width;
             graphics.ApplyChanges();
+        }
+        public Camera GetCamera()
+        {
+            return camera;
+        }
+        public void SetCamera(Camera newCamera)
+        {
+            camera = newCamera;
         }
     }
 }

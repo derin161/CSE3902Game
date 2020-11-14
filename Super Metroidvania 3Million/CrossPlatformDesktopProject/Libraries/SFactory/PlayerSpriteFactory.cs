@@ -1,12 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Controller;
-using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
@@ -65,14 +59,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             healthFont = content.Load<SpriteFont>("PlayerHealth");
         }
 
-        public RightIdleSamusSprite RightIdleSprite(Samus s)
+        public ISprite RightIdleSprite(Samus s)
         {
-            return new RightIdleSamusSprite(rightIdle, s);
+            return new IdleSamusSprite(rightIdle, s);
         }
 
-        public LeftIdleSamusSprite LeftIdleSprite(Samus s)
+        public ISprite LeftIdleSprite(Samus s)
         {
-            return new LeftIdleSamusSprite(leftIdle, s);
+            return new IdleSamusSprite(leftIdle, s);
         }
 
         public RightWalkSamusSprite RightWalkSprite(Samus s)
@@ -90,22 +84,24 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return new MorphSamusSprite(morph, s);
         }
 
-        public JumpRightSamusSprite JumpRightSprite(Samus s)
+        public ISprite JumpRightSprite(Samus s)
         {
-            return new JumpRightSamusSprite(jumpRight, s);
+            return new JumpSamusSprite(jumpRight, s);
         }
 
-        public JumpLeftSamusSprite JumpLeftSprite(Samus s)
+        public ISprite JumpLeftSprite(Samus s)
         {
-            return new JumpLeftSamusSprite(jumpLeft, s);
+            return new JumpSamusSprite(jumpLeft, s);
         }
 
-        public RightAimUpSamusSprite RightAimUpSprite(Samus s){
-            return new RightAimUpSamusSprite(rightAim, s);
+        public ISprite RightAimUpSprite(Samus s)
+        {
+            return new AimUpSamusSprite(rightAim, s);
         }
 
-        public LeftAimUpSamusSprite LeftAimUpSprite(Samus s){
-            return new LeftAimUpSamusSprite(leftAim, s);
+        public ISprite LeftAimUpSprite(Samus s)
+        {
+            return new AimUpSamusSprite(leftAim, s);
         }
 
         public Samus CreatePlayerSprite(Vector2 l, Game1 g, GameTime g2)

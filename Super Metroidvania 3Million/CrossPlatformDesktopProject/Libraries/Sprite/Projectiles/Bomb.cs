@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Audio;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -35,16 +36,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public void Update(GameTime gameTime)
         {
+
+            isDead = boomFlag;
+
             time += gameTime.ElapsedGameTime.Milliseconds;
             if (!boomFlag && time > boomTimer)
             {
                 sprite = ProjectilesSpriteFactory.Instance.CreatePostBoomBombSprite(this);
                 Space = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
                 boomFlag = true;
+                SoundManager.Instance.Projectiles.ExplosionSound.PlaySound();
             }
             else if (!boomFlag){
                 Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0);
             }
+
             sprite.Update(gameTime);
         }
         public Rectangle SpaceRectangle()

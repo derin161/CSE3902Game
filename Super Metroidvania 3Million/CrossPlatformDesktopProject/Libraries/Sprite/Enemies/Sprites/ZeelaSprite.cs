@@ -60,7 +60,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.Transparent);
                 zeela.damaged = false;
             }
-            if (zeela.frozen)
+            else if (zeela.frozen)
             {
                 spriteBatch.Draw(Texture, zeela.Space, sourceRectangle, Color.DodgerBlue);
             }

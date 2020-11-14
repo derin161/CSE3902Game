@@ -37,23 +37,30 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             //Move toward player
             Rectangle playerSpace = GameObjectContainer.Instance.Player.SpaceRectangle();
-            if (playerSpace.X + 3 < stateMachine.x)
+            if (playerSpace.X + 72 < stateMachine.x)
             {
                 MoveLeft();
-                currentSprite = spriteLeft;
-                facingRight = false;
             }
-            else if (playerSpace.X - 3 > stateMachine.x)
+            else if (playerSpace.X - 72 > stateMachine.x)
             {
                 MoveRight();
-                currentSprite = spriteRight;
-                facingRight = true;
             }
             else
             {
-                StopMoving();
+                //Face the direction of the player and move away
+                if (playerSpace.X < stateMachine.x)
+                {
+                    currentSprite = spriteLeft;
+                    facingRight = false;
+                    MoveRight();
+                }
+                else if (playerSpace.X > stateMachine.x)
+                {
+                    facingRight = true;
+                    currentSprite = spriteRight;
+                    MoveLeft();
+                }
             }
-
             //Perform attacks
             if (msUntilAttack < 0)
             {
@@ -96,6 +103,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
+            //Initiate game over sequence
         }
 
         public void MoveLeft()
@@ -151,7 +159,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             damaged = true;
             if (health <= 0)
             {
-                this.Kill();
+                Kill();
             }
         }
 

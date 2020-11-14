@@ -46,11 +46,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Libraries\Audio\ISound.cs" />
-    <Compile Include="Libraries\Audio\SongManager.cs" />
-    <Compile Include="Libraries\Audio\SongInstance.cs" />
-    <Compile Include="Libraries\Audio\SoundInstance.cs" />
-    <Compile Include="Libraries\Audio\ProjectileSounds.cs" />
+    <Compile Include="Libraries\Audio\Effects\EnemyEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\ItemEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\BlockEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\MiscEffects.cs" />
+    <Compile Include="Libraries\Audio\Effects\PlayerEffects.cs" />
+    <Compile Include="Libraries\Audio\Songs\SongManager.cs" />
+    <Compile Include="Libraries\Audio\Songs\SongInstance.cs" />
+    <Compile Include="Libraries\Audio\Effects\EffectInstance.cs" />
+    <Compile Include="Libraries\Audio\Effects\ProjectileEffects.cs" />
     <Compile Include="Libraries\Audio\SoundManager.cs" />
+    <Compile Include="Libraries\Cameras\Camera.cs" />
+    <Compile Include="Libraries\Cameras\HorizontalCamera.cs" />
+    <Compile Include="Libraries\Cameras\ICamera.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraFocusSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockDownSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockDownSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockLeftSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockRightSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockRightSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraUnlockUpSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockUpSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\CameraLockLeftSwitch.cs" />
+    <Compile Include="Libraries\Cameras\Switches\ISwitch.cs" />
+    <Compile Include="Libraries\Cameras\VerticalCamera.cs" />
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\ProjectileBlockCollision.cs" />
@@ -60,8 +79,12 @@
     <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\UnShuffleThemesCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
+    <Compile Include="Libraries\Command\ICameraCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerIdleCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamageEnemyCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamagePlayerCommand.cs" />
@@ -69,30 +92,25 @@
     <Compile Include="Libraries\Command\QuitCommand.cs" />
     <Compile Include="Libraries\Command\RestartCommand.cs" />
     <Compile Include="Libraries\Command\ToggleFullscreenCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\NextBlockCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\CycleBeamMissileCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerAttackCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\PreviousBlockCommand.cs" />
     <Compile Include="Libraries\Command\PlayerGiveItemCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMorphCommand.cs" />
     <Compile Include="Libraries\Command\EnemyDamagePlayerCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerJumpCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveLeftCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveRightCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\NextItemCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\PreviousEnemyCommand.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\NextEnemyCommand.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Libraries\Command\UnusedCommands\PreviousItemCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
-    <Compile Include="Libraries\CSV\BlockObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Level Classes\LevelTwo.cs" />
     <Compile Include="Libraries\CSV\Level Classes\LevelOne.cs" />
     <Compile Include="Libraries\CSV\LevelStatePattern.cs" />
     <Compile Include="Libraries\CSV\IStageState.cs" />
     <Compile Include="Libraries\CSV\Level Classes\StartingLevel.cs" />
+    <Compile Include="Libraries\CSV\Object Generators\EnemyObjectGenerator.cs" />
+    <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
     <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
     <Compile Include="Libraries\SFactory\MapSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ItemSpriteFactory.cs" />
@@ -126,12 +144,12 @@
     <Compile Include="Libraries\Sprite\Blocks\LavaBlockTop.cs" />
     <Compile Include="Libraries\Sprite\Blocks\LeftStartingPlatformBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\LightBlueBrickBlock.cs" />
+    <Compile Include="Libraries\CSV\Object Generators\BlockObjectGenerator.cs" />
     <Compile Include="Libraries\Sprite\Blocks\OrangeDoorBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedCircleBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedCrackedBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorBottomLeftBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorBottomRightBlock.cs" />
-    <Compile Include="Libraries\Sprite\Blocks\RedDoorMiddleBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorMiddleLeftBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorMiddleRightBlock.cs" />
     <Compile Include="Libraries\Sprite\Blocks\RedDoorTopLeftBlock.cs" />
@@ -187,6 +205,9 @@
     <Compile Include="Libraries\Sprite\Player\PlayerPhysics.cs" />
     <Compile Include="Libraries\Sprite\Player\PlayerInventory.cs" />
     <Compile Include="Libraries\Sprite\Player\Samus.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\AimUpSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\IdleSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
@@ -211,15 +232,9 @@
     <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightWalkSamusState.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\MorphSamusState.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\AimUpSamusState.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpLeftSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpRightSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftIdleSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightIdleSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\MorphSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightAimUpSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftAimUpSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -290,6 +305,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="Libraries\Levels\KraidDungeon.csv" />
     <None Include="Libraries\Levels\LevelOne.csv" />
     <None Include="Libraries\Levels\LevelTwo.csv" />
     <None Include="Libraries\Levels\StartingLevel.csv" />
@@ -322,7 +338,6 @@
   <ItemGroup>
     <Folder Include="Code Reviews\Sprint4\" />
     <Folder Include="Code Reviews\Sprint5\" />
-    <Folder Include="Libraries\Camera\" />
     <Folder Include="Libraries\Sprite\Player\PlayerSprites\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -61,7 +61,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.Transparent);
                 skree.damaged = false;
             }
-            if (skree.frozen)
+            else if (skree.frozen)
             {
                 spriteBatch.Draw(Texture, skree.Space, sourceRectangle, Color.DodgerBlue);
             }

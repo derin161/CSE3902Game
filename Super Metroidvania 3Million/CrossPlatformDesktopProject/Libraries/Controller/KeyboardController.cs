@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using System.Linq;
 using CrossPlatformDesktopProject.Libraries.Command;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
@@ -104,6 +103,10 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.T, new CycleLevelCommand(gameState));
 
             RegisterCommand(Keys.F, new ToggleFullscreenCommand(gameState));
+
+            RegisterCommand(Keys.K, new PlayNextThemeCommand());
+            RegisterCommand(Keys.L, new ShuffleThemesCommand());
+            RegisterCommand(Keys.O, new UnShuffleThemesCommand());
         }
     }
 }
