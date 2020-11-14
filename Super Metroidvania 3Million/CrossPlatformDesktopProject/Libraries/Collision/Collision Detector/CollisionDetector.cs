@@ -40,7 +40,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             {
                 if (CheckCollisions(player, block))
                 {
-                    handler.PlayerBlockCollision(player, block, Rectangle.Intersect(player.SpaceRectangle(), block.SpaceRectangle()));
+                    handler.PlayerBlockCollision(player, block, Rectangle.Intersect(player.SpriteRectangle(), block.SpaceRectangle()));
                 }
             }
 

@@ -72,7 +72,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Update(GameTime gameTime)
 		{
-			//Nothing needs to be updated
+			/*Updating Player Hit Box*/
+			samus.UpdateRightIdleHitBox();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

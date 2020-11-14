@@ -38,7 +38,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 if (collisionZone.Height > collisionZone.Width)
                 { //LEFT/RIGHT collision
                     sam.Physics.HortizontalBreak();
-                    if (player.SpaceRectangle().X < block.SpaceRectangle().X)
+                    if (player.SpriteRectangle().X < block.SpaceRectangle().X)
                     { //LEFT Collision
                       //sam.position = new Vector2(sam.position.X - collisionZone.Width, sam.position.Y);
                         sam.x -= collisionZone.Width;
@@ -54,7 +54,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 else
                 { //TOP/BOTTOM collision
                     sam.Physics.VerticalBreak();
-                    if (player.SpaceRectangle().Y < block.SpaceRectangle().Y)
+                    if (player.SpriteRectangle().Y < block.SpaceRectangle().Y)
                     { //TOP Collision
                       //sam.position = new Vector2(sam.position.X, sam.position.Y - collisionZone.Height);
                         if (sam.Jumping)

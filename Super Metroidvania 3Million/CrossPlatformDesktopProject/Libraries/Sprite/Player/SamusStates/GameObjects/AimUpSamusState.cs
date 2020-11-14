@@ -18,6 +18,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		private Vector2 missileLoc;
 		private Vector2 direction;
 		private bool rightFacing;
+		private int width = 32;
+		private int height = 64;
 
 		public AimUpSamusState(Samus sam, bool facingRight)
 		{
@@ -76,7 +78,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Update(GameTime gameTime)
 		{
-			//Nothing needs to be updated
+			/*Updating Hit Box based on position*/
+			samus.space = new Rectangle(samus.space.X, samus.space.Y, width, height);
+			samus.UpdateAimHitBox();
+			samus.space = new Rectangle(samus.space.X, samus.space.Y, 64, 64);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

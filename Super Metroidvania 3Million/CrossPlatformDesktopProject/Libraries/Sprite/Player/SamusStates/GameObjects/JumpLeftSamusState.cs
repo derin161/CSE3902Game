@@ -84,6 +84,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
 			samus.Physics.Update();
+			samus.UpdateJumpLeftHitBox(); 
 			/*if ( (int) samus.Physics.velocity.Y == 0){
 				this.Idle();
 			}*/

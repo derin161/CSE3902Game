@@ -35,6 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void CycleBeamMissile();
         public void Idle();
         public void UpdateLocation(Vector2 l);
+        public Rectangle SpriteRectangle();
 
     }
 }

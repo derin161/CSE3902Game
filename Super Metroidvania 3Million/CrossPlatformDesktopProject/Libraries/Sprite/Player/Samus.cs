@@ -18,7 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public PlayerInventory inventory { get; set; }
         public int health;
         public Rectangle space { get; set; }
-        public Rectangle PlayerHitBox {get; set; }
+        private Rectangle playerHitBox;
         private Game1 game;
         private bool isDead;
         public int missile;
@@ -32,7 +32,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private SpriteFont healthFont;
         private int spriteHeight = 64;
         private int rightIdleOffset = 13;
-        private int rightIdleWidth = 40;
+        private int idleWidth = 40;
+        private int leftIdleOffset = 11;
+        private int rightWalkOffset = 14;
+        private int leftWalkOffset = 13;
+        private int walkWidth = 37;
+        private int jumpRightOffset = 9;
+        private int jumpLeftOffset = 8;
+        private int jumpWidth = 47;
+        private int jumpHeight = 52;
+        
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
@@ -43,7 +52,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             x = l.X;
             y = l.Y;
             space = new Rectangle((int) x, (int) y, 64, 64);
-            PlayerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, rightIdleWidth, spriteHeight);
+            playerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, idleWidth, spriteHeight);
             missile = 0;
             inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
@@ -132,11 +141,44 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             return space;
         }
 
+        public Rectangle SpriteRectangle(){
+            return space;
+        }
+
         public void UpdateLocation(Vector2 l)
         {
             x = l.X;
             y = l.Y;
             space = new Rectangle((int)x, (int)y, 64, 64);
         }
+
+        public void UpdateRightIdleHitBox(){
+            playerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, idleWidth, spriteHeight);
+        }
+
+        public void UpdateLeftIdleHitBox(){
+            playerHitBox = new Rectangle(space.X + leftIdleOffset, space.Y, idleWidth, spriteHeight);
+        }
+
+        public void UpdateRightWalkHitBox(){
+            playerHitBox = new Rectangle(space.X + rightWalkOffset, space.Y, walkWidth, spriteHeight);
+        }
+
+        public void UpdateLeftWalkHitBox(){
+            playerHitBox = new Rectangle(space.X + leftWalkOffset, space.Y, walkWidth, spriteHeight);
+        }
+
+        public void UpdateJumpRightHitBox(){
+            playerHitBox = new Rectangle(space.X + jumpRightOffset, space.Y, jumpWidth, jumpHeight);
+        }
+
+        public void UpdateJumpLeftHitBox(){
+            playerHitBox = new Rectangle(space.X + jumpLeftOffset, space.Y, jumpWidth, jumpHeight);
+        }
+
+        public void UpdateAimHitBox(){
+            playerHitBox = new Rectangle(space.X, space.Y, space.Width, space.Height);
+        }
+
     }
 }

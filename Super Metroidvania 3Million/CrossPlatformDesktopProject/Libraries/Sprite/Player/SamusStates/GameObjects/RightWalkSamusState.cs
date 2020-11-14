@@ -75,6 +75,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			sprite.Update(gameTime);
 			samus.Physics.MoveRight();
+			/*Updating Player Hit Box*/
+			samus.UpdateRightWalkHitBox();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
