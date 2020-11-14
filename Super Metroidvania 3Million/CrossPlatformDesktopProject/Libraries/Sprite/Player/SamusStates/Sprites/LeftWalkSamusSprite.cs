@@ -21,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 			samus = sus;
 			rows = 1;
 			columns = 4;
-			currentFrame = 0;
+			currentFrame = 1;
 			totalFrames = 4;
 			interval = 50;
 			timer = 0;
