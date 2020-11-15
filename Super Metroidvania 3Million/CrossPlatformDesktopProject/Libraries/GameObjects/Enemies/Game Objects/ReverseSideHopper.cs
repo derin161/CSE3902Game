@@ -33,7 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities, 64);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.sidehopperWidth, EnemyUtilities.sidehopperHeight);
             sprite.Update(gameTime);
         }
         public void Jump(float count, int direction)
