@@ -43,6 +43,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int kraidSpriteFrameSpeed = 4;
         public static int kraidSpriteFrameReset = 2;
 
+        //SideHopper and reverseSideHopper magic numbers
+        public static int sidehopperInitialVertSpeed = 0;
+        public static int sidehopperInitialHorizSpeed = 3;
+        public static int sidehopperHeight = 64;
+        public static int sidehopperWidth = 64;
+        public static float sidehopperJumpA = 1.0f / 48.0f;
+        public static float sidehopperJumpB = 1.5f;
+        public static float sidehopperJumpC = 5;
+        public static int sidehopperSpriteRows = 2;
+        public static int sidehopperSpriteColumns = 2;
+        public static int sidehopperSpriteFrameSpeed = 4;
+        public static int sidehopperSpriteFrameReset = 2;
+
         //Memu and memu sprite magic numbers
         public static int memuVertSpeed = 0;
         public static int memuHorizSpeed = 3;
