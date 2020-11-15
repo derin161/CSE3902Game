@@ -39,7 +39,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             Items = ItemUtilities.Instance;
             Misc = MiscUtilities.Instance;
             Blocks = BlockUtilities.Instance;
-            Enemies = new EnemyUtilities();
+            Enemies = EnemyUtilities.Instance;
             Sounds = SoundUtilities.Instance;
         }
     }
