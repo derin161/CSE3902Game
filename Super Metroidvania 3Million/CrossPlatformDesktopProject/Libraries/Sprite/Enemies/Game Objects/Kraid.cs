@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = EnemyUtilities.kraidInitialHorizSpeed;
             vertSpeed = EnemyUtilities.kraidInitialVertSpeed;
-            health = EnemyUtilities.kraidHealth;
+            health = EnemyUtilities.enemyHealth;
             damaged = false;
         }
 

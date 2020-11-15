@@ -19,8 +19,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public MemuSprite(Texture2D texture, Memu m)
         {
             Texture = texture;
-            Rows = 1;
-            Columns = 2;
+            Rows = EnemyUtilities.memuSpriteRows;
+            Columns = EnemyUtilities.memuSpriteColumns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             memu = m;
@@ -29,11 +29,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             //change the frame after 10 counts
-            if (counter == 10)
+            if (counter == EnemyUtilities.memuSpriteFrameSpeed)
             {
                 counter = 0;
                 currentFrame++;
-                if (currentFrame == 2)
+                if (currentFrame == EnemyUtilities.memuSpriteFrameReset)
                     currentFrame = 0;
             }
             counter++;

@@ -21,16 +21,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite = EnemySpriteFactory.Instance.MemuSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 3;
-            vertSpeed = 0;
-            health = 100;
+            horizSpeed = EnemyUtilities.memuHorizSpeed;
+            vertSpeed = EnemyUtilities.memuVertSpeed;
+            health = EnemyUtilities.enemyHealth;
 
         }
 
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.memuWidth, EnemyUtilities.memuHeight);
             sprite.Update(gameTime);
         }
 

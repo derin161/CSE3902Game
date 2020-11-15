@@ -26,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = EnemyUtilities.geegaInitialHorizSpeed;
             vertSpeed = EnemyUtilities.geegaInitialVertSpeed;
-            health = EnemyUtilities.geegaInitialHealth;
+            health = EnemyUtilities.enemyHealth;
             x = location.X;
             y = location.Y;
             initialPlayerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
@@ -130,7 +130,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine.x = x;
             stateMachine.y = y;
             initialPlayerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
-            health = EnemyUtilities.geegaInitialHealth;
+            health = EnemyUtilities.enemyHealth;
 
         }
 

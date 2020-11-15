@@ -12,9 +12,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int enemyDamage = 25;
         public static int offScreenLeft = 0;
         public static int offScreenRight = 800;
+        public static int enemyHealth = 100;
 
         //Geega and Geega Sprite magic numbers
-        public static int geegaInitialHealth = 100;
         public static int geegaInitialVertSpeed = 4;
         public static int geegaInitialHorizSpeed = 0;
         public static int geegaAttackVertSpeed = 0;
@@ -27,8 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int geegaSpriteFrameSpeed = 3;
         public static int geegaSpriteFrameReset = 2;
 
-        //Kraid and KraidSprite maagic numbers
-        public static int kraidHealth = 100;
+        //Kraid and KraidSprite magic numbers
         public static int kraidInitialVertSpeed = 0;
         public static int kraidInitialHorizSpeed = 1;
         public static int kraidDistanceBuffer = 72;
@@ -43,6 +42,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int kraidSpriteColumns = 2;
         public static int kraidSpriteFrameSpeed = 4;
         public static int kraidSpriteFrameReset = 2;
+
+        //Memu and memu sprite magic numbers
+        public static int memuVertSpeed = 0;
+        public static int memuHorizSpeed = 3;
+        public static int memuHeight = 32;
+        public static int memuWidth = 32;
+        public static int memuSpriteRows = 1;
+        public static int memuSpriteColumns = 2;
+        public static int memuSpriteFrameSpeed = 10;
+        public static int memuSpriteFrameReset = 2;
+
 
     }
 }
