@@ -103,6 +103,12 @@
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
+    <Compile Include="Libraries\Container\InfoContainer\BlockUtilities.cs" />
+    <Compile Include="Libraries\Container\InfoContainer\ItemUtilities.cs" />
+    <Compile Include="Libraries\Container\InfoContainer\PlayerUtilities.cs" />
+    <Compile Include="Libraries\Container\InfoContainer\ProjectileUtilities.cs" />
+    <Compile Include="Libraries\Container\InfoContainer\MiscUtilities.cs" />
+    <Compile Include="Libraries\Container\InfoContainer\SoundUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\InfoContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\CSV\Level Classes\LevelTwo.cs" />
@@ -166,7 +172,7 @@
     <Compile Include="Libraries\Sprite\Blocks\SwirlBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Blocks\TubeBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Blocks\VerticalTubeStoneBlock.cs" />
-    <Compile Include="Libraries\Sprite\Enemies\EnemyUtilities.cs" />
+    <Compile Include="Libraries\Container\InfoContainer\EnemyUtilities.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Geega.cs" />
     <Compile Include="Libraries\Sprite\Enemies\EnemyStateMachine.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\IEnemy.cs" />

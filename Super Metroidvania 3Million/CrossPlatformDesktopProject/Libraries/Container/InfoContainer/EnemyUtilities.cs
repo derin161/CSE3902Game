@@ -3,10 +3,10 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace CrossPlatformDesktopProject.Libraries.Container
 {
     //Author: Will Floyd
-    public static class EnemyUtilities
+    public class EnemyUtilities
     {
         //General enemy magic numbers
         public static int enemyDamage = 25;
@@ -75,6 +75,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int ripperSpriteRows = 2;
         public static int ripperSpriteColumns = 1;
 
+        private static EnemyUtilities instance = new EnemyUtilities();
 
+        public static EnemyUtilities Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        private EnemyUtilities() //private constructor for singleton
+        {
+
+        }
     }
 }
