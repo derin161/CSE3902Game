@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -14,12 +15,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private bool isActive = false;
         private bool isDead = false;
         private int time = 0;
-        private int endTime = 100;
-
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
         public MissileRocketExplosion()
         {
             sprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketExplosionSprite(this);
+
             Damage = 0;
             Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0);
         }
@@ -38,7 +39,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 //Update space rectangle to allow for collisions
                 time += gameTime.ElapsedGameTime.Milliseconds;
-                isDead = time > endTime;
+                isDead = time > projInfo.MissileRocketExplosionEndTime;
                 sprite.Update(gameTime);
             }
         }

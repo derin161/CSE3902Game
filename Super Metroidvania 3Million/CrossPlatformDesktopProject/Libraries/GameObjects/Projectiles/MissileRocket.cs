@@ -12,25 +12,22 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
         public Vector2 Direction { get; set; }
-        public int Damage { get; set; }
 
         private ISprite sprite;
         private bool isHorizontal;
         private bool isDead = false;
         private MissileRocketExplosion explosion;
-        
-
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
         public MissileRocket(Vector2 initialLocation, Vector2 direction)
         {
             isHorizontal = (int) direction.Y == 0;
             Location = initialLocation;
             Direction = direction;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 8);
-            Damage = 50;
+            Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.MissileRocketHorizontalSpaceWidth, projInfo.MissileRocketHorizontalSpaceHeight);
             if (!isHorizontal)
             {
-                Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 16);
+                Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.MissileRocketHorizontalSpaceHeight, projInfo.MissileRocketHorizontalSpaceWidth);
             }
             sprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketSprite(this, isHorizontal);
             explosion = (MissileRocketExplosion) ProjectilesGOFactory.Instance.CreateMissileRocketExplosion();
@@ -60,7 +57,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public int GetDamage()
         {
-            return Damage;
+            return projInfo.MissileRocketDamage;
         }
 
         public bool IsDead() {

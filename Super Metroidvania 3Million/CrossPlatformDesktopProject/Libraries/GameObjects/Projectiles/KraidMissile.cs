@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -10,18 +11,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
         public Vector2 Direction { get; set; }
-        public int Damage { get; set; }
 
         private ISprite sprite;
         private bool isDead = false;
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
         public KraidMissile(Vector2 initialLocation, Vector2 direction)
         {
-            // Need to set actual damage values at some point
-            Damage = 20;
             Location = initialLocation;
             Direction = direction;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.KraidMissileSpaceWidth, projInfo.KraidMissileSpaceHeight);
             sprite = ProjectilesSpriteFactory.Instance.CreateKraidMissileSprite(this);
         }
 
@@ -51,7 +50,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public int GetDamage()
         {
-            return Damage;
+            return projInfo.KraidMissileDamage;
         }
 
         public bool IsDead() {

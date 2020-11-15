@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,25 +9,21 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
     public class KraidHorn : IProjectile
     {
         public Vector2 Location { get; set; }
-        public int Damage { get; set; }
         public Rectangle Space { get; set; }
 
         private ISprite sprite;
         private bool isMovingRight;
         private Vector2 initialLocation;
         private bool isDead = false;
-
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
         public KraidHorn(Vector2 initialLocation, bool isMovingRight)
         {
-            // Need to set actual damage values at some point
-            Damage = 20;
             this.initialLocation = initialLocation;
             this.isMovingRight = isMovingRight;
             Location = initialLocation;
-            Space = new Rectangle( (int) Location.X, (int) Location.Y, 16, 16);
+            Space = new Rectangle( (int) Location.X, (int) Location.Y, projInfo.KraidHornSpaceWidth, projInfo.KraidHornSpaceHeight);
             sprite = ProjectilesSpriteFactory.Instance.CreateKraidHornSprite(this);
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -40,12 +37,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         {
 
             Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
-            float x = (float) relativePos.X + 3;
-            float y = (float)(0.01 * x * x - 2 * x); // 1/100x^2 - 2x. Gives projectile parabolic path to the right.
+            float x = (float) relativePos.X + projInfo.KraidHornDx;
+            float y = (float)(projInfo.KraidHornArcA * x * x - projInfo.KraidHornArcB * x); //Gives projectile parabolic path to the right.
             
             if (!isMovingRight) {
-                x = (float) relativePos.X - 3;
-                y = (float)(0.01 * x * x + 2 * x); // 1/100x^2 + 2x. Gives projectile parabolic path to the left.
+                x = (float) relativePos.X - projInfo.KraidHornDx;
+                y = (float)(projInfo.KraidHornArcA * x * x + projInfo.KraidHornArcB * x); //Gives projectile parabolic path to the left.
             }
 
             //Update position and space
@@ -65,7 +62,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public int GetDamage()
         {
-            return Damage;
+            return projInfo.KraidHornDamage;
         }
 
         public bool IsDead() {

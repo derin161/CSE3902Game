@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -10,32 +11,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
         public Vector2 Direction { get; set; }
-        public int Damage { get; set; }
         public bool IsIceBeam { get; set; }
 
         private bool isDead = false;
         private Vector2 initialLocation;
         private bool isLongBeam;
         private ISprite sprite;
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
         public PowerBeam(Vector2 initialLocation, Vector2 direction, bool isLongBeam, bool isIceBeam)
         {
-            // Need to set actual damage values at some point
-            if (isLongBeam)
-            {
-                Damage = 30;
-            }
-            else
-            {
-                Damage = 20;
-            }
 
             IsIceBeam = isIceBeam;
             this.isLongBeam = isLongBeam;
             Location = initialLocation;
             this.initialLocation = initialLocation;
             Direction = direction;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.PowerBeamSpaceWidth, projInfo.PowerBeamSpaceHeight);
             if (isIceBeam)
             {
                 sprite = ProjectilesSpriteFactory.Instance.CreateIceBeamSprite(this);
@@ -66,14 +58,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 //Determine relative position and the bounds
                 int relativeX = (int)(Location.X - initialLocation.X);
                 int relativeY = (int)(Location.Y - initialLocation.Y);
-                int boundX = 100;
-                int boundY = 100;
-
-                isDead = isDead || relativeX > boundX || relativeX < -boundX || relativeY > boundY || relativeY < -boundY;
+                int bound = projInfo.ShortBeamBound;
+                //Compare with isDead so the proj doesn't come back to life
+                isDead = isDead || relativeX > bound || relativeX < -bound || relativeY > bound || relativeY < -bound;
 
             } else {
 
                 //Die if a collision occurs or the projectile leaves the screen
+                //Compare with isDead so the proj doesn't come back to life
                 isDead = isDead || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
 
@@ -86,7 +78,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public int GetDamage()
         {
-            return Damage;
+            return projInfo.PowerBeamDamage;
         }
 
         public bool IsDead() {

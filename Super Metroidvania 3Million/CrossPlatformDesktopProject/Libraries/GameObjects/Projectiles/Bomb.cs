@@ -1,4 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Audio;
+using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,19 +12,15 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
-        public int Damage { get; set; }
 
         private ISprite sprite;
         private bool isDead = false;
         private int time = 0;
-        private int boomTimer = 1000;
         private bool boomFlag = false;
-
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
         public Bomb(Vector2 location)
         {
-            
-            Damage = 100;
             Location = location;
             Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0); //Space rectangle initially empty to prevent collisions until explosion.
             sprite = ProjectilesSpriteFactory.Instance.CreatePreBoomBombSprite(this);
@@ -40,10 +37,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             isDead = boomFlag;
 
             time += gameTime.ElapsedGameTime.Milliseconds;
-            if (!boomFlag && time > boomTimer)
+            if (!boomFlag && time > projInfo.BombTimer)
             {
                 sprite = ProjectilesSpriteFactory.Instance.CreatePostBoomBombSprite(this);
-                Space = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
+                Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.PostBombSpaceWidth, projInfo.PostBombSpaceHeight);
                 boomFlag = true;
                 SoundManager.Instance.Projectiles.ExplosionSound.PlaySound();
             }
@@ -60,7 +57,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public int GetDamage()
         {
-            return Damage;
+            return projInfo.BombDamage;
         }
 
         public bool IsDead() {

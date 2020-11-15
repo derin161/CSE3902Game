@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -10,7 +11,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
     {
         public Vector2 Location { get; set; }
         public Vector2 Direction { get; set; }
-        public int Damage { get; set; }
         public Rectangle Space { get; set; }
 
         private bool isDead = false;
@@ -18,19 +18,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private bool isLongBeam;
         private bool isHorizontal;
         private ISprite sprite;
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
 
         public WaveBeam(Vector2 initialLocation, Vector2 direction, bool isLongBeam)
         {
-            // Need to set actual damage values at some point
-            if (isLongBeam)
-            {
-                Damage = 40;
-            }
-            else
-            {
-                Damage = 30;
-            }
 
             isHorizontal = (int) direction.Y == 0;
             Direction = direction;
@@ -38,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             this.isLongBeam = isLongBeam;
             Location = initialLocation;
             this.initialLocation = initialLocation;
-            Space = new Rectangle((int)Location.X, (int)Location.Y, 8, 8);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.WaveBeamSpaceWidth, projInfo.WaveBeamSpaceHeight);
             sprite = ProjectilesSpriteFactory.Instance.CreateWaveBeamSprite(this);
         }
 
@@ -50,9 +42,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Update(GameTime gameTime)
         {
 
-            //Using temporary var til collisions are added
-            bool collision = false;
-
             Vector2 relativePos = Vector2.Subtract(Location, initialLocation);
 
             float x = relativePos.X;
@@ -60,17 +49,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             if (isHorizontal)
             {
-                x += 3;
-                if (Direction.X < 0) //If its moving to the left, then subtract 6 (to account for +3 done earlier).
+                x += projInfo.WaveBeamDpos;
+                if (Direction.X < 0) //If its moving to the left, then subtract 2x (to account for +x done earlier).
                 {
-                    x -= 6;
+                    x -= projInfo.WaveBeamDpos * 2;
                 }
-                y = (float)Math.Sin(Math.Abs(x)) * -20; // Give projectile sinusiodal path
+                y = (float)Math.Sin(Math.Abs(x)) * -projInfo.WaveBeamSinAmp; // Give projectile sinusiodal path
             }
             else
             {
-                y -= 3;
-                x = (float)Math.Sin(Math.Abs(y)) * 20; // Give projectile sinusiodal path
+                y -= projInfo.WaveBeamDpos;
+                x = (float)Math.Sin(Math.Abs(y)) * projInfo.WaveBeamSinAmp; // Give projectile sinusiodal path
             }
 
             //Update position and Space
@@ -82,19 +71,20 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             //If the Projectile is not a Long Beam, it dies after moving a set distance.
             if (!isLongBeam)
             {
-                int boundX = 100;
-                int boundY = 100;
-                isDead = isDead || collision || isHorizontal && (relativePos.X > boundX || relativePos.X < -boundX) || !isHorizontal && (relativePos.Y > boundY || relativePos.Y < -boundY);
+                int bound = projInfo.ShortBeamBound;
+                //Compare with isDead so the proj doesn't come back to life
+                isDead = isDead || isHorizontal && (relativePos.X > bound || relativePos.X < -bound) || !isHorizontal && (relativePos.Y > bound || relativePos.Y < -bound);
             }
             else {
                 //Die if a collision occurs or the projectile leaves the screen
-                isDead = isDead || collision || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
+                //Compare with isDead so the proj doesn't come back to life
+                isDead = isDead || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
             }
             sprite.Update(gameTime);
         }
 
         public int GetDamage() {
-            return Damage;
+            return projInfo.WaveBeamDamage;
         }
 
         public Rectangle SpaceRectangle()
