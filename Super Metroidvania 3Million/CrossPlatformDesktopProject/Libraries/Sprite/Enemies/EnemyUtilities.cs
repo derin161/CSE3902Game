@@ -52,9 +52,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static float sidehopperJumpB = 1.5f;
         public static float sidehopperJumpC = 5;
         public static int sidehopperSpriteRows = 2;
-        public static int sidehopperSpriteColumns = 2;
-        public static int sidehopperSpriteFrameSpeed = 4;
+        public static int sidehopperSpriteColumns = 6;
+        public static int sidehopperSpriteFrameSpeed = 64;
         public static int sidehopperSpriteFrameReset = 2;
+        public static int reverseSidehopperSpriteFrameReset = 6;
 
         //Memu and memu sprite magic numbers
         public static int memuVertSpeed = 0;

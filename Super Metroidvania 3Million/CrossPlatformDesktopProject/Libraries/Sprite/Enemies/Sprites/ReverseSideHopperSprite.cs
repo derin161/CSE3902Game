@@ -19,8 +19,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public ReverseSideHopperSprite(Texture2D texture, ReverseSideHopper rsh)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 6;
+            Rows = EnemyUtilities.sidehopperSpriteRows;
+            Columns = EnemyUtilities.sidehopperSpriteColumns;
             currentFrame = 3;
             totalFrames = Rows * Columns;
             reverseSideHopper = rsh;
@@ -32,12 +32,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             if (!reverseSideHopper.frozen)
             {
                 //change the frame after 20 counts
-                if (count == 64)
+                if (count == EnemyUtilities.sidehopperSpriteFrameSpeed)
                 {
                     count = 0;
                     direction *= -1;
                     currentFrame++;
-                    if (currentFrame == 6)
+                    if (currentFrame == EnemyUtilities.reverseSidehopperSpriteFrameReset)
                     {
                         currentFrame = 3;
                     }

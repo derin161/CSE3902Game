@@ -19,8 +19,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public SideHopperSprite(Texture2D texture, SideHopper sh)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 6;
+            Rows = EnemyUtilities.sidehopperSpriteRows;
+            Columns = EnemyUtilities.sidehopperSpriteColumns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             sideHopper = sh;
@@ -32,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //change the frame after 20 counts
             if (!sideHopper.frozen)
             {
-                if (count == 64)
+                if (count == EnemyUtilities.sidehopperSpriteFrameSpeed)
                 {
                     count = 0;
                     direction *= -1;

@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             horizSpeed = 3;
             vertSpeed = 0;
             initialY = location.Y;
-            health = 100;
+            health = EnemyUtilities.enemyHealth;
             damaged = false;
             frozen = false;
 
@@ -36,12 +36,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 64, 64);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.sidehopperWidth, EnemyUtilities.sidehopperHeight);
             sprite.Update(gameTime);
         }
         public void Jump(float count, int direction)
         {
-            stateMachine.y = (1.0f/48.0f)*(count * count) - 1.5f * count + initialY+5;
+            float a = EnemyUtilities.sidehopperJumpA;
+            float b = EnemyUtilities.sidehopperJumpB;
+            float c = EnemyUtilities.sidehopperJumpC;
+
+            stateMachine.y = a*(count * count) - b * count + initialY+c;
             stateMachine.x += direction;
         }
 
