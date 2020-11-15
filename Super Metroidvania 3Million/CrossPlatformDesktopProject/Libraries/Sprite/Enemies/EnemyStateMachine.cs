@@ -5,7 +5,7 @@ using System;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
-    //Author: Nyigel Spann
+    //Author: Will Floyd
     public class EnemyStateMachine
     {
 

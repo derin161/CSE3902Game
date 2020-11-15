@@ -24,9 +24,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             sprite = EnemySpriteFactory.Instance.ZeelaSprite(this);
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = 1;
-            vertSpeed = 1;
+            vertSpeed = 0;
             health = 100;
-            MoveDown();
             initialX = location.X;
             initialY = location.Y;
             movingRight = false;
@@ -86,26 +85,18 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void MoveLeft()
         {
-            stateMachine.vertSpeed = 0;
-            stateMachine.horizSpeed = 2;
             stateMachine.MoveLeft(horizSpeed);
         }
         public void MoveRight()
         {
-            stateMachine.vertSpeed = 0;
-            stateMachine.horizSpeed = 2;
             stateMachine.MoveRight(horizSpeed);
         }
         public void MoveUp()
         {
-            stateMachine.horizSpeed = 0;
-            stateMachine.vertSpeed = 2;
             stateMachine.MoveUp(vertSpeed);
         }
         public void MoveDown()
         {
-            stateMachine.horizSpeed = 0;
-            stateMachine.vertSpeed = 2;
             stateMachine.MoveDown(vertSpeed);
         }
         public void StopMoving()
@@ -123,7 +114,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public int GetDamage()
         {
-            return 25;
+            return EnemyUtilities.enemyDamage;
         }
         public void TakeDamage(int damage)
         {

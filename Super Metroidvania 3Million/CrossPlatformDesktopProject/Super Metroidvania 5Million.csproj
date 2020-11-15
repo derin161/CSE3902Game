@@ -165,8 +165,9 @@
     <Compile Include="Libraries\Sprite\Blocks\SwirlBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Blocks\TubeBlockBlue.cs" />
     <Compile Include="Libraries\Sprite\Blocks\VerticalTubeStoneBlock.cs" />
+    <Compile Include="Libraries\Sprite\Enemies\EnemyUtilities.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Geega.cs" />
-    <Compile Include="Libraries\Sprite\Enemies\Game Objects\EnemyStateMachine.cs" />
+    <Compile Include="Libraries\Sprite\Enemies\EnemyStateMachine.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\IEnemy.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\Ripper.cs" />
     <Compile Include="Libraries\Sprite\Enemies\Game Objects\ReverseSideHopper.cs" />
