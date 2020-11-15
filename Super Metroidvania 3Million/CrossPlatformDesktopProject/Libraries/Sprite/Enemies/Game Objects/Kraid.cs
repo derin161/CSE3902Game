@@ -12,8 +12,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
     {
 
         private ISprite spriteRight, spriteLeft, currentSprite;
-        private int msBetweenAttack = 500;
-        private int msUntilAttack = 500;
+        private int msBetweenAttack = EnemyUtilities.kraidAttackDelay;
+        private int msUntilAttack = EnemyUtilities.kraidAttackDelay;
         public Rectangle Space;
         private bool isDead, facingRight;
         private EnemyStateMachine stateMachine;
@@ -27,9 +27,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             spriteLeft = EnemySpriteFactory.Instance.KraidSpriteLeft(this);
             currentSprite = spriteLeft;
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 1;
-            vertSpeed = 0;
-            health = 100;
+            horizSpeed = EnemyUtilities.kraidInitialHorizSpeed;
+            vertSpeed = EnemyUtilities.kraidInitialVertSpeed;
+            health = EnemyUtilities.kraidHealth;
             damaged = false;
         }
 
@@ -37,11 +37,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             //Move toward player
             Rectangle playerSpace = GameObjectContainer.Instance.Player.SpaceRectangle();
-            if (playerSpace.X + 72 < stateMachine.x)
+            if (playerSpace.X + EnemyUtilities.kraidDistanceBuffer < stateMachine.x)
             {
                 MoveLeft();
             }
-            else if (playerSpace.X - 72 > stateMachine.x)
+            else if (playerSpace.X -EnemyUtilities.kraidDistanceBuffer > stateMachine.x)
             {
                 MoveRight();
             }
@@ -82,7 +82,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Attack();
             stateMachine.Update();
             currentSprite.Update(gameTime);
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 48, 64);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.kraidWidth, EnemyUtilities.kraidHeight);
         }
 
 
@@ -137,12 +137,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         private void shootMissiles()
         {
-            int speed = 7;
+            int speed = EnemyUtilities.kraidMissileSpeed;
+            float missileStartX = stateMachine.x + EnemyUtilities.kraidMissileXOffset;
+            float missileStartY = stateMachine.y + EnemyUtilities.kraidMissileYOffset;
             if (!facingRight)
             {
                 speed *= -1;
             }
-            GameObjectContainer.Instance.Add(new KraidMissile(new Vector2(stateMachine.x+23, stateMachine.y+38), new Vector2(speed, 0)));
+            GameObjectContainer.Instance.Add(new KraidMissile(new Vector2(missileStartX, missileStartY), new Vector2(speed, 0)));
         }
 
         public void Freeze()
@@ -151,7 +153,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public int GetDamage()
         {
-            return 25;
+            return EnemyUtilities.kraidDamage;
         }
         public void TakeDamage(int damage)
         {

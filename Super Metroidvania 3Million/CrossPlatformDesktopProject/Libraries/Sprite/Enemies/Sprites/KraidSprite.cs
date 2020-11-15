@@ -18,8 +18,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public KraidSprite(Texture2D texture, Kraid k)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 2;
+            Rows = EnemyUtilities.kraidSpriteRows;
+            Columns = EnemyUtilities.kraidSpriteColumns;
             currentFrame = 0;
             counter = 0;
             Kraid = k;
@@ -30,11 +30,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
 
             //change the frame after 10 counts
-            if (counter == 4)
+            if (counter == EnemyUtilities.kraidSpriteFrameSpeed)
             {
                 counter = 0;
                 currentFrame++;
-                if (currentFrame == 2)
+                if (currentFrame == EnemyUtilities.kraidSpriteFrameReset)
                     currentFrame = 0;
             }
             counter++;
@@ -66,7 +66,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             return false;
         }
 
-        //Will need to create a new factory for game objects.
 
 
     }
