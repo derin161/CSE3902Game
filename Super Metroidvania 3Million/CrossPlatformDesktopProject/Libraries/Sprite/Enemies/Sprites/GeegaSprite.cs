@@ -19,8 +19,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public GeegaSprite(Texture2D texture, Geega g)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 2;
+            Rows = EnemyUtilities.geegaSpriteRows;
+            Columns = EnemyUtilities.geegaSpriteColumns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             counter = 0;
@@ -33,11 +33,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //change the frame after 10 counts if not frozen
             if (!geega.frozen)
             {
-                if (counter == 3)
+                if (counter == EnemyUtilities.geegaSpriteFrameSpeed)
                 {
                     counter = 0;
                     currentFrame++;
-                    if (currentFrame == 2)
+                    if (currentFrame == EnemyUtilities.geegaSpriteFrameReset)
                         currentFrame = 0;
                 }
                 counter++;

@@ -14,7 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int offScreenRight = 800;
 
 
-        //Geega magic numbers
+        //Geega and Geega Sprite magic numbers
         public static int geegaInitialHealth = 100;
         public static int geegaInitialVertSpeed = 4;
         public static int geegaInitialHorizSpeed = 0;
@@ -23,7 +23,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int geegaWidth = 32;
         public static int geegaHeight = 32;
         public static int geegaRespawnDelay = 1000;
-
+        public static int geegaSpriteRows = 2;
+        public static int geegaSpriteColumns = 2;
+        public static int geegaSpriteFrameSpeed = 3;
+        public static int geegaSpriteFrameReset = 2;
 
     }
 }
