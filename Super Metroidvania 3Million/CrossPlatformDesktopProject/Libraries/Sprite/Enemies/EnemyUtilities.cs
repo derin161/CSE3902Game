@@ -53,6 +53,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public static int memuSpriteFrameSpeed = 10;
         public static int memuSpriteFrameReset = 2;
 
+        //Ripper and ripper sprite magic numbers
+        public static int ripperVertSpeed = 0;
+        public static int ripperHorizSpeed = 3;
+        public static int ripperHeight = 32;
+        public static int ripperWidth = 32;
+        public static int ripperSpriteRows = 2;
+        public static int ripperSpriteColumns = 1;
+
 
     }
 }

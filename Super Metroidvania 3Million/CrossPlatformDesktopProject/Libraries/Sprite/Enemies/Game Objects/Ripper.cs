@@ -20,16 +20,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite = EnemySpriteFactory.Instance.RipperSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 3;
-            vertSpeed = 0;
-            health = 100;
+            horizSpeed = EnemyUtilities.ripperHorizSpeed;
+            vertSpeed = EnemyUtilities.ripperVertSpeed;
+            health = EnemyUtilities.enemyHealth;
 
         }
 
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.ripperWidth, EnemyUtilities.ripperHeight);
             sprite.Update(gameTime);
         }
 

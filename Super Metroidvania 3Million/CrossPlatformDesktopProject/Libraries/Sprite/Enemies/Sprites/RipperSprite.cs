@@ -18,8 +18,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public RipperSprite(Texture2D texture, Ripper r)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 1;
+            Rows = EnemyUtilities.ripperSpriteRows;
+            Columns = EnemyUtilities.ripperSpriteColumns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             ripper = r;
@@ -28,10 +28,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 
         public void Update(GameTime gameTime)
         {
-            //Stay on frame 0 (Frame 1 left for color change)
-            currentFrame = 0;
-
-          
+            //Stay on frame 0
         }
 
         
