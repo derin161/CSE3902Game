@@ -205,6 +205,9 @@
     <Compile Include="Libraries\Sprite\Player\PlayerPhysics.cs" />
     <Compile Include="Libraries\Sprite\Player\PlayerInventory.cs" />
     <Compile Include="Libraries\Sprite\Player\Samus.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\AimUpSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\IdleSamusSprite.cs" />
+    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidHorn.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\KraidMissile.cs" />
     <Compile Include="Libraries\Sprite\Projectiles\MissileRocketExplosion.cs" />
@@ -229,15 +232,9 @@
     <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\RightWalkSamusState.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\MorphSamusState.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\GameObjects\AimUpSamusState.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpLeftSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\JumpRightSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftIdleSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightIdleSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
     <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\MorphSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\RightAimUpSamusSprite.cs" />
-    <Compile Include="Libraries\Sprite\Player\SamusStates\Sprites\LeftAimUpSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

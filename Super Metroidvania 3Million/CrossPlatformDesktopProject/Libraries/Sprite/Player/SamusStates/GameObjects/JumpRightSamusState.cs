@@ -1,13 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using System.Diagnostics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 {
@@ -15,7 +9,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	public class JumpRightSamusState : IPlayerState 
 	{
 		private Samus samus;
-		private JumpRightSamusSprite sprite;
+		private ISprite sprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
 		private Vector2 currentVelocity;
@@ -86,6 +80,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 		{
 			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
 			samus.Physics.Update();
+			samus.UpdateJumpRightHitBox(); 
 			/*if (samus.Physics.velocity.Y > 0){
 				this.Idle();
 			}*/ 
