@@ -12,21 +12,35 @@ using System.Threading.Tasks;
 namespace CrossPlatformDesktopProject.Libraries.Container
 {
     //Author: Nyigel Spann
-    public static class InfoContainer
+    public class InfoContainer
     {
-        public static ProjectileUtilities Projectiles { get; private set; }
-        public static PlayerUtilities Player { get; private set; }
-        public static ItemUtilities Items { get; private set; }
-        public static MiscUtilities Misc { get; private set; }
-        public static BlockUtilities Blocks { get; private set; }
-        private static EnemyUtilities enemies = new EnemyUtilities();
-        public static EnemyUtilities Enemies
+        public ProjectileUtilities Projectiles { get; private set; }
+        public PlayerUtilities Player { get; private set; }
+        public ItemUtilities Items { get; private set; }
+        public MiscUtilities Misc { get; private set; }
+        public BlockUtilities Blocks { get; private set; }
+        public EnemyUtilities Enemies { get; private set; }
+        public SoundUtilities Sounds { get; private set; }
+
+        private static InfoContainer instance = new InfoContainer();
+
+        public static InfoContainer Instance
         {
             get
             {
-                return enemies;
+                return instance;
             }
         }
-        public static SongUtilities Songs { get; private set; }
+
+        private InfoContainer() //private constructor for singleton
+        {
+            Projectiles = ProjectileUtilities.Instance;
+            Player = PlayerUtilities.Instance;
+            Items = ItemUtilities.Instance;
+            Misc = MiscUtilities.Instance;
+            Blocks = BlockUtilities.Instance;
+            Enemies = new EnemyUtilities();
+            Sounds = SoundUtilities.Instance;
+        }
     }
 }
