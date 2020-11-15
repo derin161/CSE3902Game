@@ -24,9 +24,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             spriteLeft = EnemySpriteFactory.Instance.GeegaSprite(this);
             spriteRight = EnemySpriteFactory.Instance.GeegaSpriteRight(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 0;
-            vertSpeed = 4;
-            health = 100;
+            horizSpeed = EnemyUtilities.geegaInitialHorizSpeed;
+            vertSpeed = EnemyUtilities.geegaInitialVertSpeed;
+            health = EnemyUtilities.geegaInitialHealth;
             x = location.X;
             y = location.Y;
             initialPlayerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
@@ -60,8 +60,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //Fly sideways when attacking the player
             if (stateMachine.y <= playerY)
             {
-                vertSpeed = 0;
-                horizSpeed = 3;
+                vertSpeed = EnemyUtilities.geegaAttackVertSpeed;
+                horizSpeed = EnemyUtilities.geegaAttackHorizSpeed;
                 if (!isRight)
                 {
                     MoveLeft();
@@ -72,7 +72,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
             }
 
-            if (stateMachine.x < 0 || stateMachine.x > 800)
+            if (stateMachine.x < EnemyUtilities.offScreenLeft || stateMachine.x > EnemyUtilities.offScreenRight)
             {
                 Kill();
             }
@@ -82,16 +82,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             Attack();
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32,32);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.geegaWidth,EnemyUtilities.geegaHeight);
             currentSprite.Update(gameTime);
             if (isDead)
             {
                 respawnTimer += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
-                if (respawnTimer > 1000)
+                if (respawnTimer > EnemyUtilities.geegaRespawnDelay)
                 {
                     respawnTimer = 0;
                     isDead = false;
-                    vertSpeed = 4;
+                    vertSpeed = EnemyUtilities.geegaInitialVertSpeed;
                 }
             }
         }
@@ -130,7 +130,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             stateMachine.x = x;
             stateMachine.y = y;
             initialPlayerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
-            health = 100;
+            health = EnemyUtilities.geegaInitialHealth;
 
         }
 
