@@ -228,7 +228,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
                 {
                     volume = maxVolume;
                 }
-                MediaPlayer.Volume = maxVolume;
+                MediaPlayer.Volume = volume;
             }
 
             public void LowerVolume()
@@ -238,7 +238,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
                 {
                     volume = minVolume;
                 }
-                MediaPlayer.Volume = minVolume;
+                MediaPlayer.Volume = volume;
             }
 
             public void Pause()
