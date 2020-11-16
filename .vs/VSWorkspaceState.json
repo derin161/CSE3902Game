@@ -4,13 +4,13 @@
     "\\Super Metroidvania 3Million",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Audio",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Content",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Content\\PlayerSprites",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates\\Sprites"
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates\\GameObjects"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\SamusStates\\Sprites\\LeftWalkSamusSprite.cs",
+  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Sprite\\Player\\Samus.cs",
   "PreviewInSolutionExplorer": false
 }
