@@ -17,9 +17,9 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
         override
         public void Update()
         {
-            while (Focus.SpaceRectangle().X <= CameraCenterPoint.X - DampingDistance && !LockedLeft)
+            while (Focus.SpaceRectangle().X <= CameraCenter.X && !LockedLeft)
                 Transform(-Vector2.UnitX);
-            while (Focus.SpaceRectangle().X >= CameraCenterPoint.X + DampingDistance && !LockedRight)
+            while (Focus.SpaceRectangle().X >= CameraCenter.X && !LockedRight)
                 Transform(Vector2.UnitX);
             base.Update();
         }

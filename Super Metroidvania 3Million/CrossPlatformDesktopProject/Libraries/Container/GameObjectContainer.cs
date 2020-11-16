@@ -146,6 +146,12 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             }
         }
 
+        public Vector2 PlayerPosition() 
+        {
+            Vector2 position = new Vector2(player.SpaceRectangle().X, player.SpaceRectangle().Y);
+            return position;
+        }
+
         public void Clear() {
             // player = null;
             projectileList = new List<IProjectile>();

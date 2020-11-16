@@ -17,19 +17,11 @@ namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
         {
             Position = pos;
             BoundingBox = new Rectangle((int)pos.X, (int)pos.Y, width, height);
-            //DoCollisions = true;
-            //NoOutwardCollisions = true;
             transitionRight = transitionRightInput;
             cameraType = cameraTypeInput;
         }
 
         public Rectangle BoundingBox { get; set; }
-
-        //public bool DoCollisions { get; set; }
-
-        //public bool NoOutwardCollisions { get; set; }
-
-        //public bool OnGround { get; set; }
 
         public Vector2 Position { get; set; }
 
@@ -38,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
         public void ActivateSwitch()
         {
             Camera oldCamera = GetCamera();
-            //if (oldCamera.Transitioning) return;
+            if (oldCamera.Transitioning) return;
             Camera newCamera;
             Vector2 newPosition;
             if (transitionRight)

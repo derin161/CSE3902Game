@@ -1,0 +1,23 @@
+﻿Review Author: Will Floyd
+Review Date: 11/16/2020
+Sprint No: 4
+Name of the .cs file being reviewed: BlockObjectGenerator.cs
+Author of the .cs file being reviewed: Danny Attia
+Number of minutes taken to complete the review: 10
+
+============================================================
+
+Coupling: Low
+Comments: Needs to know about GameObjectContainer singleton but nothing else 
+
+Cohesion: High
+Comments: The class is used only to generate block objects. It contains a switch case used to determine the appropriate block.
+
+Maintainability: high
+Comments: Only one switch-case to maintain, removing and adding blocks is easy and straightforard
+
+List any "code smells":
+1) very long switch-case statement
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+Adding a new block to the game can easily be implemented by adding another case to the switch-case structure with the name of the new block. Similarly, removing a block is as easy as deleting it's case from the swich-case.
