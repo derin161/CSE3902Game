@@ -25,13 +25,13 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             }
         }
 
-        public void Pause()
+        public IGameState Pause
         {
-            
+            get { return new PausedState(); }
         }
-        public void Play()
+        public IGameState Play
         {
-            
+            get { return new PlayingState(); }
         }
         public void GameOver()
         {
