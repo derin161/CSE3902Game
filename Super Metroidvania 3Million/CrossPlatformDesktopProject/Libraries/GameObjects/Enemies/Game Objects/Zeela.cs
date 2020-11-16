@@ -26,9 +26,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite = EnemySpriteFactory.Instance.ZeelaSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 1;
-            vertSpeed = 0;
-            health = 100;
+            horizSpeed = EnemyUtilities.ZeelaHorizSpeed;
+            vertSpeed = EnemyUtilities.ZeelaVertSpeed;
+            health = EnemyUtilities.EnemyHealth;
             initialX = location.X;
             initialY = location.Y;
             movingRight = false;
@@ -42,7 +42,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //Should move around the blocks CounterClockwise, temporarily making it move back and forth
             
             //Move left until it gets 2 blocks away
-            if (initialX - stateMachine.x < 32 && !movingRight)
+            if (initialX - stateMachine.x < EnemyUtilities.ZeelaHorizDistance && !movingRight)
             {
                 MoveLeft();
             }
@@ -61,7 +61,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             Attack();
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.ZeelaWidth, EnemyUtilities.ZeelaHeight);
             sprite.Update(gameTime);
         }
 

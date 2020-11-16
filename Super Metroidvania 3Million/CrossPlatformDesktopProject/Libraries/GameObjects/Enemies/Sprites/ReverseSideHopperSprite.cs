@@ -48,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
 
                 //Jump while on frame 5
-                if (currentFrame == 5)
+                if (currentFrame == EnemyUtilities.ReverseSidehopperSpriteFrameReset - 1)
                 {
                     reverseSideHopper.Jump(count, direction);
                 }

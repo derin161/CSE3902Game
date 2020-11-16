@@ -25,16 +25,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite = EnemySpriteFactory.Instance.VerticalZeelaSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = 0;
-            vertSpeed = 3;
-            health = 100;
+            horizSpeed = EnemyUtilities.VerticalZeelaVertSpeed;
+            vertSpeed = EnemyUtilities.VerticalZeelaHorizSpeed;
+            health = EnemyUtilities.EnemyHealth;
 
         }
 
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 32);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.ZeelaHeight, EnemyUtilities.ZeelaWidth);
             sprite.Update(gameTime);
         }
 

@@ -89,6 +89,18 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public static int RipperSpriteRows = 2;
         public static int RipperSpriteColumns = 1;
 
+        //Zeela magic numbers
+        public static int ZeelaHorizSpeed = 1;
+        public static int ZeelaVertSpeed = 0;
+        public static int VerticalZeelaHorizSpeed = 1;
+        public static int VerticalZeelaVertSpeed = 0;
+        public static int ZeelaHorizDistance = 32;
+        public static int ZeelaWidth = 32;
+        public static int ZeelaHeight = 32;
+
+
+
+
         private static EnemyUtilities instance = new EnemyUtilities();
 
         public static EnemyUtilities Instance

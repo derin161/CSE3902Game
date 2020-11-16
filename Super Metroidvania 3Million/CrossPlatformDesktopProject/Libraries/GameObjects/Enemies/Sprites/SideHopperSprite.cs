@@ -41,13 +41,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                     count = 0;
                     direction *= -1;
                     currentFrame++;
-                    if (currentFrame == 3)
+                    if (currentFrame == EnemyUtilities.SidehopperSpriteFrameReset)
                     {
                         currentFrame = 0;
                     }
                 }
 
-                if (currentFrame == 2)
+                if (currentFrame == EnemyUtilities.SidehopperSpriteFrameReset - 1)
                 {
                     sideHopper.Jump(count, direction);
                 }
