@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -14,12 +16,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int totalFrames;
         private Ripper ripper;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+
 
         public RipperSprite(Texture2D texture, Ripper r)
         {
             Texture = texture;
-            Rows = EnemyUtilities.ripperSpriteRows;
-            Columns = EnemyUtilities.ripperSpriteColumns;
+            Rows = EnemyUtilities.RipperSpriteRows;
+            Columns = EnemyUtilities.RipperSpriteColumns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             ripper = r;

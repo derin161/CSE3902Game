@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -16,11 +18,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int count;
         private int direction;
         private ReverseSideHopper reverseSideHopper;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+
         public ReverseSideHopperSprite(Texture2D texture, ReverseSideHopper rsh)
         {
             Texture = texture;
-            Rows = EnemyUtilities.sidehopperSpriteRows;
-            Columns = EnemyUtilities.sidehopperSpriteColumns;
+            Rows = EnemyUtilities.SidehopperSpriteRows;
+            Columns = EnemyUtilities.SidehopperSpriteColumns;
             currentFrame = 3;
             totalFrames = Rows * Columns;
             reverseSideHopper = rsh;
@@ -32,12 +36,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             if (!reverseSideHopper.frozen)
             {
                 //change the frame after 20 counts
-                if (count == EnemyUtilities.sidehopperSpriteFrameSpeed)
+                if (count == EnemyUtilities.SidehopperSpriteFrameSpeed)
                 {
                     count = 0;
                     direction *= -1;
                     currentFrame++;
-                    if (currentFrame == EnemyUtilities.reverseSidehopperSpriteFrameReset)
+                    if (currentFrame == EnemyUtilities.ReverseSidehopperSpriteFrameReset)
                     {
                         currentFrame = 3;
                     }

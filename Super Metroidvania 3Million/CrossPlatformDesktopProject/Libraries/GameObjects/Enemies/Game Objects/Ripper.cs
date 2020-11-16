@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -14,22 +16,24 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+
 
 
         public Ripper(Vector2 location)
         {
             sprite = EnemySpriteFactory.Instance.RipperSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = EnemyUtilities.ripperHorizSpeed;
-            vertSpeed = EnemyUtilities.ripperVertSpeed;
-            health = EnemyUtilities.enemyHealth;
+            horizSpeed = EnemyUtilities.RipperHorizSpeed;
+            vertSpeed = EnemyUtilities.RipperVertSpeed;
+            health = EnemyUtilities.EnemyHealth;
 
         }
 
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.ripperWidth, EnemyUtilities.ripperHeight);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.RipperWidth, EnemyUtilities.RipperHeight);
             sprite.Update(gameTime);
         }
 
@@ -84,7 +88,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public int GetDamage()
         {
-            return EnemyUtilities.enemyDamage;
+            return EnemyUtilities.EnemyDamage;
         }
         public void TakeDamage(int damage)
         {

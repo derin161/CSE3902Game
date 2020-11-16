@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -15,12 +17,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int totalFrames;
         private int counter;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+
 
         public GeegaSprite(Texture2D texture, Geega g)
         {
             Texture = texture;
-            Rows = EnemyUtilities.geegaSpriteRows;
-            Columns = EnemyUtilities.geegaSpriteColumns;
+            Rows = EnemyUtilities.GeegaSpriteRows;
+            Columns = EnemyUtilities.GeegaSpriteColumns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             counter = 0;
@@ -33,11 +37,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //change the frame after 10 counts if not frozen
             if (!geega.frozen)
             {
-                if (counter == EnemyUtilities.geegaSpriteFrameSpeed)
+                if (counter == EnemyUtilities.GeegaSpriteFrameSpeed)
                 {
                     counter = 0;
                     currentFrame++;
-                    if (currentFrame == EnemyUtilities.geegaSpriteFrameReset)
+                    if (currentFrame == EnemyUtilities.GeegaSpriteFrameReset)
                         currentFrame = 0;
                 }
                 counter++;

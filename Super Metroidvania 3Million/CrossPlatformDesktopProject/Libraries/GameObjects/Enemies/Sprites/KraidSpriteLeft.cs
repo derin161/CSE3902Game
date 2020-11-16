@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -14,12 +16,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int currentFrame;
         private int counter;
         private Kraid Kraid;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+
 
         public KraidSpriteLeft(Texture2D texture, Kraid k)
         {
             Texture = texture;
-            Rows = EnemyUtilities.kraidSpriteRows;
-            Columns = EnemyUtilities.kraidSpriteColumns;
+            Rows = EnemyUtilities.KraidSpriteRows;
+            Columns = EnemyUtilities.KraidSpriteColumns;
             currentFrame = 0;
             counter = 0;
             Kraid = k;
@@ -30,11 +34,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
 
             //change the frame after 10 counts
-            if (counter == EnemyUtilities.kraidSpriteFrameSpeed)
+            if (counter == EnemyUtilities.KraidSpriteFrameSpeed)
             {
                 counter = 0;
                 currentFrame++;
-                if (currentFrame == EnemyUtilities.kraidSpriteFrameReset)
+                if (currentFrame == EnemyUtilities.KraidSpriteFrameReset)
                     currentFrame = 0;
             }
             counter++;

@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -16,6 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int health;
         private float initialX, initialY;
         public bool damaged, frozen;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
 
 
 
@@ -114,7 +117,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public int GetDamage()
         {
-            return EnemyUtilities.enemyDamage;
+            return EnemyUtilities.EnemyDamage;
         }
         public void TakeDamage(int damage)
         {

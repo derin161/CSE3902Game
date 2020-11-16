@@ -143,7 +143,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public int GetDamage()
         {
-            return EnemyUtilities.enemyDamage;
+            return EnemyUtilities.EnemyDamage;
         }
         public void TakeDamage(int damage)
         {

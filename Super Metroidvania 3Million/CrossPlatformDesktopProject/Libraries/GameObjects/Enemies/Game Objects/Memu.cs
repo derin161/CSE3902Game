@@ -1,4 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+using CrossPlatformDesktopProject.Libraries.Container;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -14,6 +15,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+
 
 
 
@@ -21,16 +24,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             sprite = EnemySpriteFactory.Instance.MemuSprite(this);
             stateMachine = new EnemyStateMachine(location);
-            horizSpeed = EnemyUtilities.memuHorizSpeed;
-            vertSpeed = EnemyUtilities.memuVertSpeed;
-            health = EnemyUtilities.enemyHealth;
+            horizSpeed = EnemyUtilities.MemuHorizSpeed;
+            vertSpeed = EnemyUtilities.MemuVertSpeed;
+            health = EnemyUtilities.EnemyHealth;
 
         }
 
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.memuWidth, EnemyUtilities.memuHeight);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.MemuWidth, EnemyUtilities.MemuHeight);
             sprite.Update(gameTime);
         }
 
@@ -85,7 +88,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public int GetDamage()
         {
-            return EnemyUtilities.enemyDamage;
+            return EnemyUtilities.EnemyDamage;
         }
         public void TakeDamage(int damage)
         {

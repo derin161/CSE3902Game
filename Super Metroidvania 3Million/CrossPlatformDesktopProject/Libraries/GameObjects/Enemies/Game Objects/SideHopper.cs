@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -17,6 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int health;
         public bool damaged;
         public bool frozen;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
 
 
 
@@ -27,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             horizSpeed = 3;
             vertSpeed = 0;
             initialY = location.Y;
-            health = EnemyUtilities.enemyHealth;
+            health = EnemyUtilities.EnemyHealth;
             damaged = false;
             frozen = false;
 
@@ -36,14 +39,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.sidehopperWidth, EnemyUtilities.sidehopperHeight);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.SidehopperWidth, EnemyUtilities.SidehopperHeight);
             sprite.Update(gameTime);
         }
         public void Jump(float count, int direction)
         {
-            float a = EnemyUtilities.sidehopperJumpA;
-            float b = EnemyUtilities.sidehopperJumpB;
-            float c = EnemyUtilities.sidehopperJumpC;
+            float a = EnemyUtilities.SidehopperJumpA;
+            float b = EnemyUtilities.SidehopperJumpB;
+            float c = EnemyUtilities.SidehopperJumpC;
 
             stateMachine.y = a*(count * count) - b * count + initialY+c;
             stateMachine.x += direction;
@@ -101,7 +104,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         }
         public int GetDamage()
         {
-            return EnemyUtilities.enemyDamage;
+            return EnemyUtilities.EnemyDamage;
         }
         public void TakeDamage(int damage)
         {

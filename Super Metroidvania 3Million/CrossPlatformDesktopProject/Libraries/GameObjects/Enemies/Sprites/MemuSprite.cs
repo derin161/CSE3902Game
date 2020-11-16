@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -15,12 +17,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         private int totalFrames;
         private int counter;
         private Memu memu;
+        private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+
 
         public MemuSprite(Texture2D texture, Memu m)
         {
             Texture = texture;
-            Rows = EnemyUtilities.memuSpriteRows;
-            Columns = EnemyUtilities.memuSpriteColumns;
+            Rows = EnemyUtilities.MemuSpriteRows;
+            Columns = EnemyUtilities.MemuSpriteColumns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
             memu = m;
@@ -29,11 +33,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Update(GameTime gameTime)
         {
             //change the frame after 10 counts
-            if (counter == EnemyUtilities.memuSpriteFrameSpeed)
+            if (counter == EnemyUtilities.MemuSpriteFrameSpeed)
             {
                 counter = 0;
                 currentFrame++;
-                if (currentFrame == EnemyUtilities.memuSpriteFrameReset)
+                if (currentFrame == EnemyUtilities.MemuSpriteFrameReset)
                     currentFrame = 0;
             }
             counter++;
