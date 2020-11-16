@@ -29,9 +29,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             y = location.Y;
             fallen = false;
             collision = false;
-            vertSpeed = 0;
-            horizSpeed = 0;
-            maxAccel = 8;
+            vertSpeed = EnemyUtilities.SkreeInitialVertSpeed;
+            horizSpeed = EnemyUtilities.SkreeInitialHorizSpeed;
+            maxAccel = EnemyUtilities.SkreeMaxAccel;
             timer = 0;
             damaged = false;
             frozen = false;
@@ -42,7 +42,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             //Move Skree down if player walks within certain x distance
             int playerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
-            if (playerX < x + 30 && playerX > x - 30 && (stateMachine.vertSpeed > 0 || !fallen))
+            int range = EnemyUtilities.SkreeHorizRange;
+            if (playerX < x + range && playerX > x - range && (stateMachine.vertSpeed > 0 || !fallen))
             {
                 fallen = true;
 
@@ -71,7 +72,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             if (stateMachine.vertSpeed == 0 && fallen)
             {
                 collision = true;
-                if (timer > 1500)
+                if (timer > EnemyUtilities.SkreeDeathTimer)
                 {
                     Kill();
                 }
@@ -87,7 +88,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
             }
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, 32, 48);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.SkreeWidth, EnemyUtilities.SkreeHeight);
             sprite.Update(gameTime);
         }
 
