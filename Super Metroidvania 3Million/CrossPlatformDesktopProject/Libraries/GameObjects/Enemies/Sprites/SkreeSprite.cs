@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
@@ -19,8 +21,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public SkreeSprite(Texture2D texture, Skree s)
         {
             Texture = texture;
-            Rows = 2;
-            Columns = 3;
+            Rows = EnemyUtilities.SkreeSpriteRows;
+            Columns = EnemyUtilities.SkreeSpriteColumns;
             currentFrame = 1;
             totalFrames = Rows * Columns;
             count = 0;
@@ -32,16 +34,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             if (!skree.frozen)
             {
                 //change the frame after 10 counts while skree is falling
-                if (skree.fallen && !skree.collision && count == 4)
+                if (skree.fallen && !skree.collision && count == EnemyUtilities.SkreeSpriteFrameSpeed)
                 {
                     count = 0;
                     currentFrame++;
-                    if (currentFrame == 3)
+                    if (currentFrame == EnemyUtilities.SkreeSpriteFrameReset)
                     {
                         currentFrame = 0;
                     }
                 }
-                count = (count + 1) % 5;
+                count = (count + 1) % EnemyUtilities.SkreeSpriteFrameSpeed + 1;
 
             }
         }
