@@ -55,17 +55,17 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                         location = new Vector2(row * 32, column * 32);
 
                         //Blocks
-                        if (File.Exists(projectPath + @"Libraries\Sprite\Blocks\" + field + ".cs"))
+                        if (File.Exists(projectPath + @"Libraries\GameObjects\Blocks\" + field + ".cs"))
                         {
                             BlockObjectGenerator.Instance.createBlock(location, field);
                         }
                         //Items
-                        else if (File.Exists(projectPath + @"Libraries\Sprite\Items\Game Objects\" + field + ".cs"))
+                        else if (File.Exists(projectPath + @"Libraries\GameObjects\Items\Game Objects\" + field + ".cs"))
                         {
                             ItemObjectGenerator.Instance.createItem(location, field);
                         }
                         //Enemies
-                        else if (File.Exists(projectPath + @"Libraries\Sprite\Enemies\Game Objects\" + field + ".cs"))
+                        else if (File.Exists(projectPath + @"Libraries\GameObjects\Enemies\Game Objects\" + field + ".cs"))
                         {
                             EnemyObjectGenerator.Instance.createEnemy(location, field);
                         }
