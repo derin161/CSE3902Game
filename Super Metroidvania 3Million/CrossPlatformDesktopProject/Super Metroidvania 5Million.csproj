@@ -119,6 +119,10 @@
     <Compile Include="Libraries\CSV\Level Classes\StartingLevel.cs" />
     <Compile Include="Libraries\CSV\Object Generators\EnemyObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
+    <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
+    <Compile Include="Libraries\GameStates\IGameState.cs" />
+    <Compile Include="Libraries\GameStates\States\PlayingState.cs" />
+    <Compile Include="Libraries\GameStates\States\PausedState.cs" />
     <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
     <Compile Include="Libraries\SFactory\MapSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ItemSpriteFactory.cs" />
@@ -343,9 +347,10 @@
     <Content Include="Code Reviews\Sprint3\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\DannyReadabilityReviewNyigel.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\WillReadabilityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Quality\WillQualityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code Reviews\Sprint4\" />
     <Folder Include="Code Reviews\Sprint5\" />
     <Folder Include="Libraries\GameObjects\Player\PlayerSprites\" />
   </ItemGroup>
