@@ -57,6 +57,18 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public static int SidehopperSpriteFrameReset = 2;
         public static int ReverseSidehopperSpriteFrameReset = 6;
 
+        //Skree magic numbers
+        public static int SkreeInitialVertSpeed = 0;
+        public static int SkreeInitialHorizSpeed = 0;
+        public static int SkreeMaxAccel = 8;
+        public static int SkreeHorizRange = 30;
+        public static int SkreeFallingHorizSpeed = 1;
+        public static int SkreeDeathTimer = 1500;
+        public static int SkreeWidth = 32;
+        public static int SkreeHeight = 48;
+        public static int Skree = 0;
+
+
         //Memu and memu sprite magic numbers
         public static int MemuVertSpeed = 0;
         public static int MemuHorizSpeed = 3;
