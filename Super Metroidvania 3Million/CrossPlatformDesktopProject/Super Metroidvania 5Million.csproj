@@ -119,6 +119,9 @@
     <Compile Include="Libraries\CSV\Level Classes\StartingLevel.cs" />
     <Compile Include="Libraries\CSV\Object Generators\EnemyObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
+    <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
+    <Compile Include="Libraries\GameStates\IGameState.cs" />
+    <Compile Include="Libraries\GameStates\States\PausedState.cs" />
     <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
     <Compile Include="Libraries\SFactory\MapSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ItemSpriteFactory.cs" />
