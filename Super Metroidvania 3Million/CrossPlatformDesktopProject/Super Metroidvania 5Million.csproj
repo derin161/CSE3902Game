@@ -58,7 +58,8 @@
     <Compile Include="Libraries\Audio\SoundManager.cs" />
     <Compile Include="Libraries\Cameras\Camera.cs" />
     <Compile Include="Libraries\Cameras\HorizontalCamera.cs" />
-    <Compile Include="Libraries\Cameras\ICamera.cs" />
+    <Compile Include="Libraries\Cameras\ICamera2D.cs" />
+    <Compile Include="Libraries\Cameras\IFocusable.cs" />
     <Compile Include="Libraries\Cameras\Switches\CameraFocusSwitch.cs" />
     <Compile Include="Libraries\Cameras\Switches\CameraUnlockDownSwitch.cs" />
     <Compile Include="Libraries\Cameras\Switches\CameraLockDownSwitch.cs" />

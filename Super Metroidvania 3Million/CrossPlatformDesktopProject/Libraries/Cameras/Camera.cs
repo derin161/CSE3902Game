@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Camera
 {
-    public abstract class Camera
+    public class Camera
     {
+        private Vector2 focusVector = GameObjectContainer.Instance.PlayerPosition();
         private Vector2 currentPos;
         private Vector2 originalPos;
         private Vector2 destinationPos;
@@ -18,27 +21,21 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
         protected Camera(Viewport viewport)
         {
             Viewport = viewport;
-            DampingDistance = 50;
+            //DampingDistance = 64;
         }
 
+        protected Vector2 CameraCenter => new Vector2(currentPos.X + focusVector.X + Viewport.Width / (Zoom * 2), currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
+       
         public bool LockedRight { get; set; }
         public bool LockedLeft { get; set; }
         public bool LockedUp { get; set; }
         public bool LockedDown { get; set; }
 
-        protected Vector2 CameraCenterPoint => new Vector2(currentPos.X + Viewport.Width / (Zoom * 2), currentPos.Y + Viewport.Height / (Zoom * 2));
-
-        public int InitOffset { get; set; }
-
-        public Viewport Viewport { get; }
-
+        public Viewport Viewport { get; set; }
         public bool Transitioning { get; set; }
-
         public float Zoom { get; set; }
-
+        protected float DampingDistance { get; }   
         public IGameObject Focus { get; set; }
-
-        protected float DampingDistance { get; }
 
         public Vector2 CameraPosition
         {
@@ -53,14 +50,14 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
             }
         }
 
-        public Matrix GetViewMatrix()
+        /*public Matrix GetViewMatrix()
         {
             return
                 Matrix.CreateTranslation(new Vector3(-CameraPosition, 0.0f)) *
                 Matrix.CreateTranslation(new Vector3(-Vector2.Zero, 0.0f)) *
                 Matrix.CreateScale(Zoom, Zoom, 1) *
                 Matrix.CreateTranslation(new Vector3(Vector2.Zero, 0.0f));
-        }
+        }*/
 
         public virtual void Update()
         {
@@ -98,24 +95,24 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
             CameraPosition += change;
         }
 
-        /*public bool IsRendered(IGameObject gameObject)
+        public bool IsRendered(IGameObject gameObject)
         {
-            bool inFromLeft = gameObject.BoundingBox.Right > CameraPosition.X;
-            bool inFromRight = gameObject.BoundingBox.Left < CameraPosition.X + Viewport.Width / Zoom;
-            bool inFromTop = gameObject.BoundingBox.Bottom > CameraPosition.Y;
-            bool inFromBottom = gameObject.BoundingBox.Top < CameraPosition.Y + Viewport.Height / Zoom;
+            bool inFromLeft = gameObject.SpaceRectangle().Right > CameraPosition.X;
+            bool inFromRight = gameObject.SpaceRectangle().Left < CameraPosition.X + Viewport.Width / Zoom;
+            bool inFromTop = gameObject.SpaceRectangle().Bottom > CameraPosition.Y;
+            bool inFromBottom = gameObject.SpaceRectangle().Top < CameraPosition.Y + Viewport.Height / Zoom;
             return inFromBottom && inFromTop && inFromLeft && inFromRight;
         }
 
         public bool IsRendered(IGameObject gameObject, int leniance)
         {
-            bool inFromLeft = gameObject.BoundingBox.Right > CameraPosition.X - leniance;
-            bool inFromRight = gameObject.BoundingBox.Left < CameraPosition.X + leniance + Viewport.Width / Zoom;
-            bool inFromTop = gameObject.BoundingBox.Bottom > CameraPosition.Y - leniance;
-            bool inFromBottom = gameObject.BoundingBox.Top < CameraPosition.Y + leniance + Viewport.Height / Zoom;
+            bool inFromLeft = gameObject.SpaceRectangle().Right > CameraPosition.X - leniance;
+            bool inFromRight = gameObject.SpaceRectangle().Left < CameraPosition.X + leniance + Viewport.Width / Zoom;
+            bool inFromTop = gameObject.SpaceRectangle().Bottom > CameraPosition.Y - leniance;
+            bool inFromBottom = gameObject.SpaceRectangle().Top < CameraPosition.Y + leniance + Viewport.Height / Zoom;
             return inFromBottom && inFromTop && inFromLeft && inFromRight;
         }
-        */
+        
         public void DoTransition(Vector2 newPosition)
         {
             originalPos = CameraPosition;

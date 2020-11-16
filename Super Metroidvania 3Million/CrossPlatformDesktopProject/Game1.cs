@@ -27,6 +27,7 @@ namespace CrossPlatformDesktopProject
         private KeyboardController keyboard;
         private GameTime gameTime;
         private LevelStatePattern currentLevel;
+
         private Camera camera;
         
         public Game1()
@@ -37,8 +38,9 @@ namespace CrossPlatformDesktopProject
             currentLevel = new LevelStatePattern();
             graphics.IsFullScreen = false;
 
-            //graphics.PreferredBackBufferWidth = 256*2;        // standard NES resolution
-            // graphics.PreferredBackBufferHeight = 240*2;
+            //Standard NES resolution:
+            //graphics.PreferredBackBufferWidth = 256*2;        
+            //graphics.PreferredBackBufferHeight = 240*2;
         }
 
         protected override void Initialize()
@@ -55,13 +57,13 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
-            SoundManager.Instance.LoadAllSounds(Content);
-            keyboard = new KeyboardController(this);
-            currentLevel.Initialize();
+            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 400), this, gameTime));
             camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             camera.Focus = GameObjectContainer.Instance.Player;
             camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
+            SoundManager.Instance.LoadAllSounds(Content);
+            keyboard = new KeyboardController(this);
+            currentLevel.Initialize();
         }
 
         protected override void UnloadContent()
@@ -75,6 +77,8 @@ namespace CrossPlatformDesktopProject
             GameObjectContainer.Instance.Update(gameTime);
             CollisionDetector.Instance.Update();
             SoundManager.Instance.Update(gameTime);
+            camera.Update();
+            graphics.GraphicsDevice.Viewport = new Viewport(-(int)camera.CameraPosition.X, (int)camera.CameraPosition.Y, 800, 480);
             base.Update(gameTime);
         }
 
@@ -102,11 +106,11 @@ namespace CrossPlatformDesktopProject
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
-            keyboard = new KeyboardController(this);
-            currentLevel.Initialize();
             camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             camera.Focus = GameObjectContainer.Instance.Player;
             camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
+            keyboard = new KeyboardController(this);
+            currentLevel.Initialize();
         }
 
         public void Fullscreen()

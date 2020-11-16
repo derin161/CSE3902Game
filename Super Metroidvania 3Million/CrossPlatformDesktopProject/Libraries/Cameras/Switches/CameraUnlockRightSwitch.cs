@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
 {
-    class CameraUnlockRightSwitch
+    public class CameraUnlockRightSwitch
     {
+
     }
 }
