@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
             //DampingDistance = 64;
         }
 
-        protected Vector2 CameraCenter => new Vector2(currentPos.X + focusVector.X + Viewport.Width / (Zoom * 2), currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
+        protected Vector2 CameraCenter => new Vector2(currentPos.X + Viewport.Width / 2 - 16, currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
        
         public bool LockedRight { get; set; }
         public bool LockedLeft { get; set; }

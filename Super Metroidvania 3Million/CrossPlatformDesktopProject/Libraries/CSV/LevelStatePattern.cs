@@ -26,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void Initialize()
         {
-            LoadCsv.Instance.Load("TestStartingLevelLong.csv", new Vector2(64, 400));
+            LoadCsv.Instance.Load("TestStartingLevelLong.csv", new Vector2(250, 400));
         }
 
         public void SwitchLevel(Door door)
