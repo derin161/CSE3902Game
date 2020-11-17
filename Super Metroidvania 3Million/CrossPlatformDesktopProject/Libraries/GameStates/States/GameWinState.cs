@@ -1,6 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
+﻿using CrossPlatformDesktopProject.Libraries.Audio;
+using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
@@ -10,7 +12,12 @@ namespace CrossPlatformDesktopProject.Libraries.Container
     {
         public void Update(GameTime gameTime)
         {
-            //Nothing to do here, gameplay should resume as normal
+            SoundManager.Instance.Songs.PlayDarudeSandstorm();
+            SoundManager.Instance.Songs.Controls.Loop();
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+
         }
 
     }

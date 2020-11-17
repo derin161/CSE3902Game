@@ -20,7 +20,6 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public MiscUtilities Misc { get; private set; }
         public BlockUtilities Blocks { get; private set; }
         public EnemyUtilities Enemies { get; private set; }
-        public SoundUtilities Sounds { get; private set; }
 
         private static InfoContainer instance = new InfoContainer();
 
@@ -40,7 +39,6 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             Misc = MiscUtilities.Instance;
             Blocks = BlockUtilities.Instance;
             Enemies = EnemyUtilities.Instance;
-            Sounds = SoundUtilities.Instance;
         }
     }
 }

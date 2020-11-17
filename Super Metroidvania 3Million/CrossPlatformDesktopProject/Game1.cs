@@ -87,7 +87,7 @@ namespace CrossPlatformDesktopProject
 
             spriteBatch.Begin();
 
-            GameObjectContainer.Instance.Draw(spriteBatch);
+            GameStateMachine.Instance.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);

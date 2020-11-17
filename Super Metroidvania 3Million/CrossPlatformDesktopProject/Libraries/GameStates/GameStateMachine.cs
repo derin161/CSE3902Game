@@ -42,11 +42,11 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         }
         public void GameWin()
         {
-
+            state = new GameWinState();
         }
         public void RoomTransition()
         {
-
+                   
         }
         public void ItemUpgradeSelection()
         {
@@ -56,6 +56,10 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public void Update(GameTime gameTime)
         {
             state.Update(gameTime);
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            state.Draw(spriteBatch);
         }
 
     }
