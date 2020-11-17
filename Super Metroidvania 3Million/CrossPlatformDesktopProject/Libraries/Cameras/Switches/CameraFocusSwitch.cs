@@ -9,14 +9,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
 {
-    class CameraFocusSwitch : Game1, ISwitch
+    class CameraFocusSwitch : ISwitch
     {
+        private Game1 currentGame;
+        ISprite sprite;
         string cameraType;
         bool transitionRight;
-        public CameraFocusSwitch(int width, int height, Vector2 pos, string cameraTypeInput, bool transitionRightInput)
+        public CameraFocusSwitch(int width, int height, Vector2 initialLocation, string cameraTypeInput, bool transitionRightInput)
         {
-            Position = pos;
-            BoundingBox = new Rectangle((int)pos.X, (int)pos.Y, width, height);
+            Position = initialLocation;
+            BoundingBox = new Rectangle((int)initialLocation.X, (int)initialLocation.Y, width, height);
             transitionRight = transitionRightInput;
             cameraType = cameraTypeInput;
         }
@@ -29,7 +31,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
 
         public void ActivateSwitch()
         {
-            Camera oldCamera = GetCamera();
+            Camera oldCamera = currentGame.GetCamera();
             if (oldCamera.Transitioning) return;
             Camera newCamera;
             Vector2 newPosition;
@@ -52,9 +54,24 @@ namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
             newCamera.LockedLeft = true;
             newCamera.LockedRight = true;
             newCamera.DoTransition(newPosition);
-            SetCamera(newCamera);
+            currentGame.SetCamera(newCamera);
         }
 
-        public void Update() { }
+        public void Kill() { }
+        public bool IsDead()
+        {
+            return false;
+        }
+        public void Draw(SpriteBatch spriteBatch) { }
+
+        public void Update(GameTime gameTime)
+        {
+            BoundingBox = new Rectangle((int)Position.X, (int)Position.Y, BoundingBox.Width, BoundingBox.Height);
+        }
+
+        public Rectangle SpaceRectangle()
+        {
+            return BoundingBox;
+        }
     }
 }

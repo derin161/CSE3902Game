@@ -33,21 +33,21 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         {
             get { return new PlayingState(); }
         }
-        public void GameOver()
+        public IGameState GameOver
         {
-
+            get { return new GameOverState(); }
         }
-        public void GameWin()
+        public IGameState GameWin
         {
-
+            get { return new GameWinState(); }
         }
-        public void RoomTransition()
+        public IGameState RoomTransition
         {
-
+            get { return new RoomTransitionState(); }
         }
-        public void ItemUpgradeSelection()
+        public IGameState ItemUpgradeSelection
         {
-
+            get { return new ItemUpgradeSelectionState(); }
         }
 
     }
