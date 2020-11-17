@@ -54,14 +54,14 @@ ___
 
 * Some textures need to be cleaned up.
 * Health gets printed over
+* Some levels don't get printed completely (believe it's a camera visual glitch with the new camera implementation)
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
 
 * (No Current Errors)
 
-* Warning		Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.	
-    - Unused and/or unrecognized variable/function calls; should be resolved with further feature implementations and clean-up.
+* (No Current Warnings)
 
 ___
 **OTHER TOOLS/PROCESSES**
