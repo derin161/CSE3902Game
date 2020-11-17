@@ -113,11 +113,19 @@
     <Compile Include="Libraries\Container\InfoContainer\MiscUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\InfoContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
-    <Compile Include="Libraries\CSV\Level Classes\LevelTwo.cs" />
-    <Compile Include="Libraries\CSV\Level Classes\LevelOne.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon1.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon2.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon3.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon4.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon5.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon6.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon7.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon8.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\LevelTwo.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\LevelOne.cs" />
     <Compile Include="Libraries\CSV\LevelStatePattern.cs" />
     <Compile Include="Libraries\CSV\IStageState.cs" />
-    <Compile Include="Libraries\CSV\Level Classes\StartingLevel.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\StartingLevel.cs" />
     <Compile Include="Libraries\CSV\Object Generators\SwitchObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\EnemyObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
@@ -355,8 +363,10 @@
     <Content Include="Code Reviews\Sprint3\Code Readability\DannyReadabilityReviewNyigel.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\WillReadabilityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\AlexQualityReviewWillSPrint4.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Quality\DannyQualityReviewNyigel.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\WillQualityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\AlexReadabilityReviewWillSprint4.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Readability\DannyReadabiltyReviewNyigel.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <ItemGroup>
