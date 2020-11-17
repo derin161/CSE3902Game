@@ -127,7 +127,6 @@ namespace CrossPlatformDesktopProject.Libraries.Container
 
         public void Draw(SpriteBatch sb)
         {
-            player.Draw(sb);
             foreach (IProjectile p in projectileList)
             {
                 p.Draw(sb);
@@ -144,6 +143,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             {
                 b.Draw(sb);
             }
+            player.Draw(sb);
         }
 
         public Vector2 PlayerPosition() 

@@ -30,6 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             srcRect = new Rectangle(x, y, width, height);
         }
 
+
         public void Draw(SpriteBatch spriteBatch)
         {
             Vector2 center = new Vector2(srcRect.Width / 2, srcRect.Height / 2);

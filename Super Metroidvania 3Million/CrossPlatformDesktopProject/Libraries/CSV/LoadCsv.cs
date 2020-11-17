@@ -42,8 +42,8 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                 int column = 0;
                 int row;
                 Vector2 location;
-                float cameraX = game.GetCamera().CameraPosition.X;
-                float cameraY = game.GetCamera().CameraPosition.Y;
+                //float cameraX = game.GetCamera().CameraPosition.X;
+                //float cameraY = game.GetCamera().CameraPosition.Y;
 
 
                 parser.TextFieldType = FieldType.Delimited;
@@ -56,7 +56,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                     foreach (string field in fields)
                     {
 
-                        location = new Vector2(row * 32 - cameraX , column * 32 - cameraY );
+                        location = new Vector2(row * 32 /* - cameraX */, column * 32 /* - cameraY */);
 
                         //Blocks
                         if (File.Exists(projectPath + @"Libraries\GameObjects\Blocks\" + field + ".cs"))

@@ -121,6 +121,8 @@
     <Compile Include="Libraries\CSV\Object Generators\SwitchObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\EnemyObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
+    <Compile Include="Libraries\GameObjects\Player\PlayerHUD.cs" />
+    <Compile Include="Libraries\GameObjects\Player\EnergyTankSprite.cs" />
     <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
     <Compile Include="Libraries\GameStates\IGameState.cs" />
     <Compile Include="Libraries\GameStates\States\GameOverState.cs" />
@@ -253,7 +255,8 @@
     <Compile Include="Libraries\GameObjects\Player\SamusStates\GameObjects\AimUpSamusState.cs" />
     <Compile Include="Libraries\GameObjects\Player\SamusStates\Sprites\LeftWalkSamusSprite.cs" />
     <Compile Include="Libraries\GameObjects\Player\SamusStates\Sprites\RightWalkSamusSprite.cs" />
-    <Compile Include="Libraries\GameObjects\Player\SamusStates\Sprites\MorphSamusSprite.cs" />
+    <Compile Include="Libraries\GameObjects\Player\SamusStates\Sprites\MorphAnimationSamusSprite.cs" />
+	<Compile Include="Libraries\GameObjects\Player\SamusStates\Sprites\MorphDoneAnimationSamusSprite.cs" />
     <Compile Include="Libraries\CSV\LoadCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -324,6 +327,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="BurndownCharts\sprint4_burndown_chart.xlsx" />
     <None Include="Code Reviews\Sprint4\Sprint 4 Reflection.pdf" />
     <None Include="Libraries\Levels\KraidDungeon.csv" />
     <None Include="Libraries\Levels\KraidDungeonSample.csv" />
@@ -356,15 +360,14 @@
     <Content Include="Code Reviews\Sprint3\Code Readability\DannyReadabilityReviewNyigel.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\WillReadabilityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\AlexQualityReviewWillSPrint4.txt" />
-    <Content Include="Code Reviews\Sprint4\Code Quality\NyigelQualityReviewShyamal.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Quality\TristanQualityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\WillQualityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\AlexReadabilityReviewWillSprint4.txt" />
-    <Content Include="Code Reviews\Sprint4\Code Readability\NyigelReadabilityReviewShyamal.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code Reviews\Sprint5\" />
-    <Folder Include="Libraries\GameObjects\Player\PlayerSprites\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

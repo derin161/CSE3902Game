@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
 
-
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
@@ -13,8 +12,18 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
         private static LevelOne levelOne = new LevelOne();
         private static LevelTwo levelTwo = new LevelTwo();
 
+        private static KraidDungeon1 kraidDungeon1 = new KraidDungeon1();
+        private static KraidDungeon2 kraidDungeon2 = new KraidDungeon2();
+        private static KraidDungeon3 kraidDungeon3 = new KraidDungeon3();
+        private static KraidDungeon4 kraidDungeon4 = new KraidDungeon4();
+        private static KraidDungeon5 kraidDungeon5 = new KraidDungeon5();
+        private static KraidDungeon6 kraidDungeon6 = new KraidDungeon6();
+        private static KraidDungeon7 kraidDungeon7 = new KraidDungeon7();
+        private static KraidDungeon8 kraidDungeon8 = new KraidDungeon8();
+
+
         public enum Door { left, right };
-        public IStageState state { get; set; } = startingLevel;
+        public IStageState state { get; set; } = kraidDungeon1;
 
         private Game1 game;
 
@@ -37,6 +46,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void SwitchLevel(Door door)
         {
+            /*
             if (door == Door.left)
             {
                 //GameObjectContainer.Instance.Player.UpdateLocation();
@@ -45,33 +55,108 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             {
 
             }
+            */
 
-            /*if (state == startingLevel)
+            if (state == kraidDungeon1)
             {
                 RightDoor();
-                state = levelOne;
+                state = kraidDungeon2;
             }
-            else if (state == levelOne)
+            else if (state == kraidDungeon2)
             {
                 if (door == Door.left)
                 {
                     LeftDoor();
-                    state = startingLevel;
+                    state = kraidDungeon1;
                     
                 }
                 else
                 {
                     RightDoor();
-                    state = levelTwo;
+                    state = kraidDungeon3;
                     
                 }
             }
-            else if (state == levelTwo)
+            else if (state == kraidDungeon3)
+            {
+                if (door == Door.left)
+                {
+                    LeftDoor();
+                    state = kraidDungeon2;
+
+                }
+                else
+                {
+                    RightDoor();
+                    state = kraidDungeon4;
+
+                }
+            }
+            else if (state == kraidDungeon4)
+            {
+                if (door == Door.left)
+                {
+                    LeftDoor();
+                    state = kraidDungeon3;
+
+                }
+                else
+                {
+                    RightDoor();
+                    state = kraidDungeon5;
+
+                }
+            }
+            else if (state == kraidDungeon5)
+            {
+                if (door == Door.left)
+                {
+                    LeftDoor();
+                    state = kraidDungeon4;
+
+                }
+                else
+                {
+                    RightDoor();
+                    state = kraidDungeon6;
+
+                }
+            }
+            else if (state == kraidDungeon6)
+            {
+                if (door == Door.left)
+                {
+                    LeftDoor();
+                    state = kraidDungeon7;
+
+                }
+                else
+                {
+                    RightDoor();
+                    state = kraidDungeon5;
+
+                }
+            }
+            else if (state == kraidDungeon7)
+            {
+                if (door == Door.left)
+                {
+                    LeftDoor();
+                    state = kraidDungeon6;
+
+                }
+                else
+                {
+                    RightDoor();
+                    state = kraidDungeon8;
+
+                }
+            }
+            else if (state == kraidDungeon8)
             {
                 LeftDoor();
                 state = levelOne;
-                
-            }*/
+            }
         }
 
         public void LoadNext()

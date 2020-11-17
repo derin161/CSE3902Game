@@ -10,62 +10,85 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 	{
 		private Samus samus;
 		private ISprite sprite;
+		private MorphDoneAnimationSamusSprite movingSprite;
 		private Vector2 missileLoc;
 		private Vector2 direction;
+		private bool doneMorph;
+		private bool facingRight;
+		private bool spriteChange;
 
-		public MorphSamusState(Samus sam)
+		public MorphSamusState(Samus sam, bool facingRight)
 		{
 			samus = sam;
-			sprite = PlayerSpriteFactory.Instance.RightIdleSprite(samus);
-			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
-			direction = new Vector2(10.0f, 0.0f);
+			doneMorph = false;
+			spriteChange = false;
+			this.facingRight = facingRight;
+			movingSprite = PlayerSpriteFactory.Instance.MorphMovingAnimationSprite(sam, this.facingRight);
+			if (this.facingRight){
+				sprite = PlayerSpriteFactory.Instance.MorphRightAnimationSprite(samus, this);
+			}else {
+				sprite = PlayerSpriteFactory.Instance.MorphLeftAnimationSprite(samus, this);
+			}
 		}
 
 		public void Attack()
         {
-			missileLoc = new Vector2(samus.x + 45, samus.y + 32);
-			if (samus.missile == 0)
-			{
-				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
-			}
-			else if (samus.missile == 1)
-			{
-				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.Inventory.HasLongBeam, samus.Inventory.HasIceBeam));
-			}
-			else
-			{
-				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateWaveBeam(missileLoc, direction, samus.Inventory.HasLongBeam));
-			}
-
+			GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateBomb(new Vector2(samus.x, samus.y + 20)));
 		}
 		public void Jump()
         {
-			samus.State = new JumpRightSamusState(samus);
+			if (spriteChange && doneMorph && !samus.Jumping){
+				samus.Physics.Jump();
+				samus.Jumping = true;
+				sprite.Update(samus.gameTime);
+			}
         }
 
 		public void Morph()
         {
-			//Nothing right now
+			this.Update(samus.gameTime);
 		}
 
 		public void MoveRight()
         {
-			samus.State = new RightWalkSamusState(samus);
+			if (spriteChange && doneMorph){
+				facingRight = true;
+				samus.Physics.MoveRight();
+				movingSprite.setDirection(facingRight);
+				sprite.Update(samus.gameTime);
+			}
 		}
 
 		public void MoveLeft()
         {
-			samus.State = new LeftIdleSamusState(samus);
+			if (spriteChange && doneMorph){
+				facingRight = false;
+				samus.Physics.MoveLeft();
+				movingSprite.setDirection(facingRight);
+				sprite.Update(samus.gameTime);
+			}
 		}
 
 		public void AimUp()
         {
-			samus.State = new AimUpSamusState(samus, true);
+			//Aim up not allowed during morph
 		}
 
 		public void Update(GameTime gameTime)
 		{
-			//Nothing needs to be updated
+			if (!spriteChange && doneMorph)
+            {
+				sprite = movingSprite;
+				spriteChange = true;
+            }
+
+			if (samus.Physics.velocity.Y == 0){
+				samus.Jumping = false;
+			}
+			
+			sprite.Update(gameTime);
+			//Update player hitbox
+			samus.UpdateRightIdleHitBox();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -75,7 +98,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Idle () 
 		{
-			//Nothing Happens
+			if (samus.getMorph() && facingRight){
+				samus.State = new RightIdleSamusState(samus);
+			}else if (samus.getMorph()){
+				samus.State = new LeftIdleSamusState(samus);
+			}
 		}
+
+		public void setDoneMorph()
+        {
+			doneMorph = true;
+        }
+
 	}
 }
