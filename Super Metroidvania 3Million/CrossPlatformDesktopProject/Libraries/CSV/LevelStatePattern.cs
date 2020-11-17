@@ -32,7 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
         {
             this.game = game;
             //LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(3904, 400));
-            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(64, 200));
+            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(64, 200), game);
         }
 
         public void SwitchLevel(Door door)
