@@ -56,7 +56,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                     foreach (string field in fields)
                     {
 
-                        location = new Vector2(row * 32 - cameraX , column * 32 - cameraY);
+                        location = new Vector2(row * 32 - cameraX , column * 32 - cameraY );
 
                         //Blocks
                         if (File.Exists(projectPath + @"Libraries\GameObjects\Blocks\" + field + ".cs"))
