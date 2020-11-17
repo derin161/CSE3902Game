@@ -23,7 +23,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         private Texture2D damaged_leftIdle;
         private Texture2D healthBar;
         //Fonts
-        private SpriteFont healthFont;
+        public SpriteFont HealthFont { get; private set; }
+        private Texture2D tankIcon;
 
         private static PlayerSpriteFactory instance = new PlayerSpriteFactory();
         public static PlayerSpriteFactory Instance
@@ -54,9 +55,10 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             healthBar = content.Load<Texture2D>("HealthBar");
             rightAim = content.Load<Texture2D>("PlayerSprites/SamusRightAim");
             leftAim = content.Load<Texture2D>("PlayerSprites/SamusLeftAim");
+            tankIcon = content.Load<Texture2D>("TankIcon");
 
             //Fonts
-            healthFont = content.Load<SpriteFont>("PlayerHealth");
+            HealthFont = content.Load<SpriteFont>("PlayerHealth");
         }
 
         public ISprite RightIdleSprite(Samus s)
@@ -109,8 +111,13 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return new Samus(l, g, g2);
         }
 
-        public SpriteFont HealthFont(){
-            return healthFont;
+        public ISprite EmptyTankSprite(Vector2 pos) {
+            return new EnergyTankSprite(tankIcon, pos, new Rectangle(8,0,8,8));
+        }
+
+        public ISprite FullTankSprite(Vector2 pos)
+        {
+            return new EnergyTankSprite(tankIcon, pos, new Rectangle(0, 0, 8, 8));
         }
     }
 }
