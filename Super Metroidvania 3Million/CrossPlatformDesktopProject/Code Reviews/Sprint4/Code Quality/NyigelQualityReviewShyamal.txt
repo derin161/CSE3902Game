@@ -1,0 +1,23 @@
+﻿Review Author: Nyigel Spann
+Review Date: 11/16/2020
+Sprint No: 4
+Name of the .cs file being reviewed: Samus.cs
+Author of the .cs file being reviewed: Shyamal Shah
+Number of minutes taken to complete the review: 10
+
+============================================================
+
+Coupling: Low
+Comments: Does not really rely on much outside of the class.
+
+Cohesion: Medium
+Comments: The class only focuses on the player but covers many aspects such as hitbox, movements, attacks, etc. 
+
+Maintainability: Medium
+Comments: Magic numbers are everywhere and it would be challenging to make changes to those  
+
+List any "code smells":
+1) Magic numbers are still present
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+Changing the siez of the Samus sprite would be very difficult to implement because the height and width of the sprite would have to be changed in multiple places.
