@@ -1,0 +1,13 @@
+﻿Review Author: Nyigel Spann
+Review Date: 11/16/2020
+Sprint No: 4
+Name of the .cs file being reviewed: PlayerPhysics.cs
+Author of the .cs file being reviewed: Shyamal Shah
+Number of minutes taken to complete the review: 10
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) variable names are ok, could be a little more descriptive
+2) Most methods in the class are short and their implementation is clear
+3) No comments, could use a bit more to explain the logic in some methods
