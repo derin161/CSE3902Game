@@ -51,6 +51,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             SoundManager.Instance.Player.JumpSound.PlaySound();
         }
 
+        public float getYVelocity(){
+            return velocity.Y;
+        }
+
 
     }
 }

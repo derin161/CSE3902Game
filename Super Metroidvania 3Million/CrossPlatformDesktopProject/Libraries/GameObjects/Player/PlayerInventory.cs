@@ -28,8 +28,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 
         public PlayerInventory(int startingEnergyLevel) {
-            CurrentEnergyTanksFilled = 0;
-            CurrentEnergyTanks = 0;
+            CurrentEnergyTanksFilled = 2;
+            CurrentEnergyTanks = 3;
             CurrentMissileRocketCapacity = 0;
             CurrentEnergyLevel = startingEnergyLevel;
             HasLongBeam = false;
@@ -128,7 +128,5 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             SoundManager.Instance.Songs.PlayItemAcquisitionSong();
             //pause not yet implemented
         }
-
-        public int getHealth() { return energyCapacityPerTank; }
     } 
 }
