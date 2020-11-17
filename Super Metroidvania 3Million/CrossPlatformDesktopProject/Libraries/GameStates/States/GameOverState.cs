@@ -6,7 +6,7 @@ using System;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
 {
-    public class GameWinState : IGameState
+    public class GameOverState : IGameState
     {
         public void Update()
         {
