@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
 {
-    interface ISwitch
+    interface ISwitch : IGameObject
     {
         void ActivateSwitch();
     }
