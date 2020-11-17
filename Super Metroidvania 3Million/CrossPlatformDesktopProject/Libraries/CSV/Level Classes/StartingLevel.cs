@@ -9,13 +9,13 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         }
 
-        public void LeftDoor()
+        public void LeftDoor(Game1 game)
         {
             // Do nothing - door does not exist
         }
-        public void RightDoor()
+        public void RightDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 192));
+            LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 192), game);
         }
         public void TopLeftDoor()
         {
