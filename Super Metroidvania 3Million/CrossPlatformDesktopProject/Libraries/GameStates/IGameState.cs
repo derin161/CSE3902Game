@@ -1,8 +1,10 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Container
+﻿using Microsoft.Xna.Framework;
+
+namespace CrossPlatformDesktopProject.Libraries.Container
 {
     //Author: Will Floyd
     public interface IGameState
     {
-        public void Update();
+        public void Update(GameTime gameTime);
     }
 }

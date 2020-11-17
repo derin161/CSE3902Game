@@ -2,16 +2,17 @@
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using System;
+using Microsoft.Xna.Framework.Input;
+
 
 namespace CrossPlatformDesktopProject.Libraries.Container
 {
     //Author: Will Floyd
     public class PausedState : IGameState
     {
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            //While loop to wait until key is pressed to unpause?
-            //Should stop enemy, projectile movement and player movement
+
         }
 
     }

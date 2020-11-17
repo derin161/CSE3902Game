@@ -73,9 +73,8 @@ namespace CrossPlatformDesktopProject
 
         protected override void Update(GameTime gameTime)
         {
+            GameStateMachine.Instance.Update(gameTime);
             keyboard.Update(gameTime);
-            GameObjectContainer.Instance.Update(gameTime);
-            CollisionDetector.Instance.Update();
             SoundManager.Instance.Update(gameTime);
             camera.Update();
             graphics.GraphicsDevice.Viewport = new Viewport(-(int)camera.CameraPosition.X, (int)camera.CameraPosition.Y, 800, 480);

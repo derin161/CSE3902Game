@@ -8,7 +8,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
     //Author: Will Floyd
     public class GameWinState : IGameState
     {
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             //Nothing to do here, gameplay should resume as normal
         }

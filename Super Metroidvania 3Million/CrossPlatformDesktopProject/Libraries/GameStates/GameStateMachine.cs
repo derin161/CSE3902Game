@@ -16,7 +16,10 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         private static GameStateMachine instance = new GameStateMachine();
         private IGameState state;
 
-
+        private GameStateMachine()
+        {
+            state = new PlayingState();
+        }
         public static GameStateMachine Instance
         {
             get
@@ -25,29 +28,34 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             }
         }
 
-        public IGameState Pause
+        public void Pause()
         {
-            get { return new PausedState(); }
+            state = new PausedState();
         }
-        public IGameState Play
+        public void Play()
         {
-            get { return new PlayingState(); }
+            state = new PlayingState();
         }
-        public IGameState GameOver
+        public void GameOver()
         {
-            get { return new GameOverState(); }
+
         }
-        public IGameState GameWin
+        public void GameWin()
         {
-            get { return new GameWinState(); }
+
         }
-        public IGameState RoomTransition
+        public void RoomTransition()
         {
-            get { return new RoomTransitionState(); }
+
         }
-        public IGameState ItemUpgradeSelection
+        public void ItemUpgradeSelection()
         {
-            get { return new ItemUpgradeSelectionState(); }
+
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            state.Update(gameTime);
         }
 
     }

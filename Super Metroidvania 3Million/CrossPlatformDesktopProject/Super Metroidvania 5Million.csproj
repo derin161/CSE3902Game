@@ -85,6 +85,8 @@
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
+    <Compile Include="Libraries\Command\Game State Commands\UnpauseGameCommand.cs" />
+    <Compile Include="Libraries\Command\Game State Commands\PauseGameCommand.cs" />
     <Compile Include="Libraries\Command\ICameraCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerIdleCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamageEnemyCommand.cs" />
