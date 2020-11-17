@@ -1,0 +1,23 @@
+Review Author: Alex Nguyen
+Review Date: 11/16/2020
+Sprint No: 4
+Name of the .cs file being reviewed: KraidSprite.cs
+Author of the .cs file being reviewed: Will Floyd
+Number of minutes taken to complete the review: ~15mins
+
+============================================================
+
+Coupling: Medium
+Comments: Most of the methods don't require too much code from other classes other than for getting frames of the sprites.
+
+Cohesion: High
+Comments: Most/all variables and methods are passed locally and the ones that do call another class are just to prevent magic numbers.
+
+Maintainability: Good
+Comments: Code can be easily change for future purposes and the variables that are called also easily changable.
+
+List any "code smells":
+N/A
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+If the enemy were to gain a new state this could be easily implemented for the sprite by adding another method and then also editing another class as well.
