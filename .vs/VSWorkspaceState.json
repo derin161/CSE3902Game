@@ -4,13 +4,8 @@
     "\\Super Metroidvania 3Million",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player\\SamusStates",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player\\SamusStates\\GameObjects",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\SFactory",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\SFactory\\GOFactory"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player\\SamusStates\\GameObjects\\MorphSamusState.cs",
   "PreviewInSolutionExplorer": false
 }
