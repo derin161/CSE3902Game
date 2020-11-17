@@ -8,8 +8,6 @@ namespace CrossPlatformDesktopProject.Libraries.Container
 {
     public class GameWinState : IGameState
     {
-        private SpriteFont healthFont = content.Load<SpriteFont>("PlayerHealth");
-        private SpriteFont GameOver = PlayerSpriteFactory.Instance.HealthFont();
         public void Update()
         {
             //Do nothing since screen will transition to blank with words game over
