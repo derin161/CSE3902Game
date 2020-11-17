@@ -22,6 +22,7 @@ ___
 * K : Play next music theme.
 * L : Shuffle music themes.
 * O : Unshuffle music themes.
+* P : Pause/Unpause.
 ___
 **PLAYER UPGRADES**
 
@@ -41,12 +42,8 @@ ___
 * Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
 * Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capacity), and the energy shields.
 * Resize some sprites for better balance/collision handling.
-*Missile Rocket Explosion Animation
-*Fix Missile Animation
-*Add HUD
+*Tweak HUD. Make it travel with the camera.
 *Add Item Functionality
-*GameOver Screen
-*Change Player Inventory to use the visitor design pattern
 *Player Upgrades are not implemented
 *Implement Rest of First boss Dungeon
 *Implement Game State Transitions
@@ -57,14 +54,14 @@ ___
 
 * Some textures need to be cleaned up.
 * Health gets printed over
+* Some levels don't get printed completely (believe it's a camera visual glitch with the new camera implementation)
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
 
 * (No Current Errors)
 
-* Warning		Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.	
-    - Unused and/or unrecognized variable/function calls; should be resolved with further feature implementations and clean-up.
+* (No Current Warnings)
 
 ___
 **OTHER TOOLS/PROCESSES**
