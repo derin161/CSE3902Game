@@ -368,9 +368,11 @@
     <Content Include="Code Reviews\Sprint3\Code Readability\DannyReadabilityReviewNyigel.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\WillReadabilityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\AlexQualityReviewWillSPrint4.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Quality\NyigelQualityReviewShyamal.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\TristanQualityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\WillQualityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\AlexReadabilityReviewWillSprint4.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Readability\NyigelReadabilityReviewShyamal.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
