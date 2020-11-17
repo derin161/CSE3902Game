@@ -57,13 +57,15 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 200), this, gameTime));
+
+            Vector2 playerSpawnLocation = new Vector2(250, 352);
+            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
             camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             camera.Focus = GameObjectContainer.Instance.Player;
             camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
             SoundManager.Instance.LoadAllSounds(Content);
             keyboard = new KeyboardController(this);
-            currentLevel.Initialize();
+            currentLevel.Initialize(playerSpawnLocation, this);
         }
 
         protected override void UnloadContent()
@@ -104,12 +106,14 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
-            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(new Vector2(64, 160), this, gameTime));
+
+            Vector2 playerSpawnLocation = new Vector2(250, 352);
+            GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
             camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             camera.Focus = GameObjectContainer.Instance.Player;
             camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
             keyboard = new KeyboardController(this);
-            currentLevel.Initialize();
+            currentLevel.Initialize(playerSpawnLocation, this);
         }
 
         public void Fullscreen()

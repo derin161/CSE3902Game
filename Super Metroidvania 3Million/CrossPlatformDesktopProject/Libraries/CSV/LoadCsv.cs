@@ -22,7 +22,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             }
         }
 
-        public void Load(string levelName, Vector2 playerSpawn)
+        public void Load(string levelName, Vector2 playerSpawn, Game1 game)
         {
             GameObjectContainer.Instance.Clear();
 
@@ -42,6 +42,9 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                 int column = 0;
                 int row;
                 Vector2 location;
+                float cameraX = game.GetCamera().CameraPosition.X;
+                float cameraY = game.GetCamera().CameraPosition.Y;
+
 
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(",");
@@ -52,7 +55,8 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                     string[] fields = parser.ReadFields();
                     foreach (string field in fields)
                     {
-                        location = new Vector2(row * 32, column * 32);
+
+                        location = new Vector2(row * 32 - cameraX , column * 32 - cameraY);
 
                         //Blocks
                         if (File.Exists(projectPath + @"Libraries\GameObjects\Blocks\" + field + ".cs"))
