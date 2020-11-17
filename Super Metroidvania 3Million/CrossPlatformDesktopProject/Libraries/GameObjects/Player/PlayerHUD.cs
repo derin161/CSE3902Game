@@ -12,6 +12,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private Vector2 tanksPosition = new Vector2(32.0f, 66.0f);
         private float tankSpacing = 20f;
         private Vector2 healthPosition = new Vector2(32.0f, 80.0f);
+        private Vector2 rocketPosition = new Vector2(32.0f, 94.0f);
         //private ISprite rocketSprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketSprite();
 
         public PlayerHUD(PlayerInventory inv) {
@@ -31,6 +32,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
                     PlayerSpriteFactory.Instance.EmptyTankSprite(pos).Draw(spriteBatch);
                 }
             }
+            spriteBatch.DrawString(PlayerSpriteFactory.Instance.HealthFont, "Rockets -- " + inventory.CurrentMissileRocketCount.ToString(), rocketPosition, Color.Red);
 
         }
 
