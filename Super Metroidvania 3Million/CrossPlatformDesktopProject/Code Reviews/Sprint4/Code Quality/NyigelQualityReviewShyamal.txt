@@ -20,4 +20,4 @@ List any "code smells":
 1) Magic numbers are still present
 
 A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
-Changing the siez of the Samus sprite would be very difficult to implement because the height and width of the sprite would have to be changed in multiple places.
+Changing the size of the Samus sprite would be very difficult to implement because the height and width of the sprite would have to be changed in multiple places.
