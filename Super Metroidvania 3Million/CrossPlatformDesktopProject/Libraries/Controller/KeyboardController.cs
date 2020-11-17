@@ -82,8 +82,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.W, new PlayerAimUpCommand(player));
             RegisterCommand(Keys.Up, new PlayerAimUpCommand(player));
 
-            RegisterCommand(Keys.S, new PlayerMorphCommand(player));
-            RegisterCommand(Keys.Down, new PlayerMorphCommand(player));
+            RegisterCommand(Keys.S, new PlayerMorphCommand(player), new PlayerIdleCommand(player));
+            RegisterCommand(Keys.Down, new PlayerMorphCommand(player), new PlayerIdleCommand(player));
 
             RegisterCommand(Keys.A, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
             RegisterCommand(Keys.Left, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
