@@ -109,7 +109,6 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.O, new UnShuffleThemesCommand());
             RegisterCommand(Keys.P, new PauseGameCommand());
             RegisterCommand(Keys.Escape, new UnpauseGameCommand());
-
         }
     }
 }
