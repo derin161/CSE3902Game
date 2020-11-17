@@ -111,7 +111,6 @@
     <Compile Include="Libraries\Container\InfoContainer\PlayerUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\ProjectileUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\MiscUtilities.cs" />
-    <Compile Include="Libraries\Container\InfoContainer\SoundUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\InfoContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\CSV\Level Classes\LevelTwo.cs" />
