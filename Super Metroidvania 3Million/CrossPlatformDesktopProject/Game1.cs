@@ -65,6 +65,7 @@ namespace CrossPlatformDesktopProject
             camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
             SoundManager.Instance.LoadAllSounds(Content);
             keyboard = new KeyboardController(this);
+            GameStateMachine.Instance.RegisterKeyboardController(keyboard);
             currentLevel.Initialize(playerSpawnLocation, this);
         }
 

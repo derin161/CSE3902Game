@@ -325,6 +325,7 @@
     </None>
     <None Include="app.manifest" />
     <None Include="Libraries\Levels\KraidDungeon.csv" />
+    <None Include="Libraries\Levels\KraidDungeonSample.csv" />
     <None Include="Libraries\Levels\LevelOne.csv" />
     <None Include="Libraries\Levels\LevelTwo.csv" />
     <None Include="Libraries\Levels\StartingLevel.csv" />

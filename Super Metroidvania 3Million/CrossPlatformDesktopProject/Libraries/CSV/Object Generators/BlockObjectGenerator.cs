@@ -145,32 +145,32 @@ namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
                     GameObjectContainer.Instance.Add(block);
                     break;
 
-                case "RedDoorTopRightBlock":
+                case "RedDoorTopRight":
                     block = new RedDoorTopRightBlock(location);
                     GameObjectContainer.Instance.Add(block);
                     break;
 
-                case "RedDoorMiddleRightBlock":
+                case "RedDoorMiddleRight":
                     block = new RedDoorMiddleRightBlock(location);
                     GameObjectContainer.Instance.Add(block);
                     break;
 
-                case "RedDoorBottomRightBlock":
+                case "RedDoorBottomRight":
                     block = new RedDoorBottomRightBlock(location);
                     GameObjectContainer.Instance.Add(block);
                     break;
 
-                case "RedDoorTopLeftBlock":
+                case "RedDoorTopLeft":
                     block = new RedDoorTopLeftBlock(location);
                     GameObjectContainer.Instance.Add(block);
                     break;
 
-                case "RedDoorMiddleLeftBlock":
+                case "RedDoorMiddleLeft":
                     block = new RedDoorMiddleLeftBlock(location);
                     GameObjectContainer.Instance.Add(block);
                     break;
 
-                case "RedDoorBottomLeftBlock":
+                case "RedDoorBottomLeft":
                     block = new RedDoorBottomLeftBlock(location);
                     GameObjectContainer.Instance.Add(block);
                     break;
