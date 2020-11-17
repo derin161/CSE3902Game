@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using CrossPlatformDesktopProject.Libraries.Container;
+
 
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
@@ -26,13 +28,22 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void Initialize()
         {
-            LoadCsv.Instance.Load("TestStartingLevelLong.csv", new Vector2(250, 400));
+            //LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(3904, 400));
+            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(64, 200));
         }
 
         public void SwitchLevel(Door door)
         {
-  
-            if (state == startingLevel)
+            if (door == Door.left)
+            {
+                //GameObjectContainer.Instance.Player.UpdateLocation();
+            }
+            else
+            {
+
+            }
+
+            /*if (state == startingLevel)
             {
                 RightDoor();
                 state = levelOne;
@@ -57,7 +68,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                 LeftDoor();
                 state = levelOne;
                 
-            }
+            }*/
         }
 
         public void LoadNext()
