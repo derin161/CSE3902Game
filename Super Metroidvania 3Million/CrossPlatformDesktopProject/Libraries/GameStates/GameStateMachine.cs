@@ -47,7 +47,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         }
         public void GameOver()
         {
-
+            state = new GameOverState();
         }
         public void GameWin()
         {

@@ -1,13 +1,16 @@
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
+using Microsoft.Xna.Framework.Content;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
 {
     public class GameOverState : IGameState
     {
+        private void LoadTexture()
+        {
+
+        }
+
         public void Update(GameTime gameTime)
         {
             //Do nothing since screen will transition to blank with words game over
@@ -15,8 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            spriteBatch
         }
-
     }
 }
