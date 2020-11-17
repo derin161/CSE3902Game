@@ -1,6 +1,6 @@
 ﻿namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
 {
-    //Author: Nyigel Spann
+    //Author: Will Floyd
     public interface IEnemy : IGameObject
     {
         public void MoveLeft();

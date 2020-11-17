@@ -85,6 +85,8 @@
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
+    <Compile Include="Libraries\Command\Game State Commands\UnpauseGameCommand.cs" />
+    <Compile Include="Libraries\Command\Game State Commands\PauseGameCommand.cs" />
     <Compile Include="Libraries\Command\ICameraCommand.cs" />
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerIdleCommand.cs" />
     <Compile Include="Libraries\Command\ProjectileDamageEnemyCommand.cs" />
@@ -109,7 +111,6 @@
     <Compile Include="Libraries\Container\InfoContainer\PlayerUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\ProjectileUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\MiscUtilities.cs" />
-    <Compile Include="Libraries\Container\InfoContainer\SoundUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\InfoContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\CSV\Level Classes\LevelTwo.cs" />
@@ -117,8 +118,17 @@
     <Compile Include="Libraries\CSV\LevelStatePattern.cs" />
     <Compile Include="Libraries\CSV\IStageState.cs" />
     <Compile Include="Libraries\CSV\Level Classes\StartingLevel.cs" />
+    <Compile Include="Libraries\CSV\Object Generators\SwitchObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\EnemyObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
+    <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
+    <Compile Include="Libraries\GameStates\IGameState.cs" />
+    <Compile Include="Libraries\GameStates\States\GameOverState.cs" />
+    <Compile Include="Libraries\GameStates\States\GameWinState.cs" />
+    <Compile Include="Libraries\GameStates\States\ItemUpgradeSelectionState.cs" />
+    <Compile Include="Libraries\GameStates\States\RoomTransitionState.cs" />
+    <Compile Include="Libraries\GameStates\States\PlayingState.cs" />
+    <Compile Include="Libraries\GameStates\States\PausedState.cs" />
     <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
     <Compile Include="Libraries\SFactory\MapSpriteFactory.cs" />
     <Compile Include="Libraries\SFactory\ItemSpriteFactory.cs" />
@@ -315,7 +325,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="BurndownCharts\sprint4_burndown_chart.xlsx" />
+    <None Include="Code Reviews\Sprint4\Sprint 4 Reflection.pdf" />
     <None Include="Libraries\Levels\KraidDungeon.csv" />
+    <None Include="Libraries\Levels\KraidDungeonSample.csv" />
     <None Include="Libraries\Levels\LevelOne.csv" />
     <None Include="Libraries\Levels\LevelTwo.csv" />
     <None Include="Libraries\Levels\StartingLevel.csv" />
@@ -344,7 +357,11 @@
     <Content Include="Code Reviews\Sprint3\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\DannyReadabilityReviewNyigel.txt" />
     <Content Include="Code Reviews\Sprint3\Code Readability\WillReadabilityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Quality\AlexQualityReviewWillSPrint4.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Quality\TristanQualityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint4\Code Quality\WillQualityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Readability\AlexReadabilityReviewWillSprint4.txt" />
+    <Content Include="Code Reviews\Sprint4\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <ItemGroup>
