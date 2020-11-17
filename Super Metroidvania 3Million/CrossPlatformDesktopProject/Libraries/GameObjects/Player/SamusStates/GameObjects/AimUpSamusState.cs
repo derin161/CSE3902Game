@@ -53,7 +53,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Morph()
         {
-			samus.State = new MorphSamusState(samus);
+			if (rightFacing)
+			{
+				samus.State = new MorphSamusState(samus, true);
+			}
+			else
+			{
+				samus.State = new MorphSamusState(samus, false);
+			}
 		}
 
 		public void MoveRight()
