@@ -16,6 +16,8 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
         public enum Door { left, right };
         public IStageState state { get; set; } = startingLevel;
 
+        private Game1 game;
+
         private static LevelStatePattern instance = new LevelStatePattern();
        
         public static LevelStatePattern Instance
@@ -26,10 +28,11 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             }
         }
 
-        public void Initialize()
+        public void Initialize(Vector2 playerSpawnLocation, Game1 game)
         {
+            this.game = game;
             //LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(3904, 400));
-            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(64, 200));
+            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(64, 200), game);
         }
 
         public void SwitchLevel(Door door)
@@ -76,13 +79,13 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             switch (levelIndex)
             {
                 case 0:
-                    LoadCsv.Instance.Load("StartingLevel.csv", new Vector2(64, 64));
+                    LoadCsv.Instance.Load("StartingLevel.csv", new Vector2(64, 64), game);
                     break;
                 case 1:
-                    LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 64));
+                    LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 64), game);
                     break;
                 case 2:
-                    LoadCsv.Instance.Load("LevelTwo.csv", new Vector2(64, 64));
+                    LoadCsv.Instance.Load("LevelTwo.csv", new Vector2(64, 64), game);
                     break;
             }
             levelIndex++;
@@ -94,11 +97,11 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void LeftDoor() 
         {
-            state.LeftDoor();
+            state.LeftDoor(game);
         }
         public void RightDoor() 
         {
-            state.RightDoor();
+            state.RightDoor(game);
         }
         public void TopLeftDoor() 
         {

@@ -35,10 +35,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private int jumpLeftOffset = 8;
         private int jumpWidth = 47;
         private int jumpHeight = 52;
+        private bool morph;
         
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
+            morph = false;
             gameTime = g2;
             game = g;
             health = 100;
@@ -75,7 +77,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void Morph()
         {
-            State.Morph();
+            if (!morph){
+                State.Morph();
+                morph = true;
+            }else {
+                morph = false;
+                State.Idle();
+            }
         }
         public void MoveRight()
         {
@@ -172,6 +180,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void UpdateAimHitBox(){
             playerHitBox = new Rectangle(space.X, space.Y, space.Width, space.Height);
+        }
+
+        public bool getMorph(){
+            return morph;
         }
 
     }
