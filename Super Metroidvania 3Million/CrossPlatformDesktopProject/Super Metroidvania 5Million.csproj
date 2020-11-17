@@ -121,6 +121,7 @@
     <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
     <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
     <Compile Include="Libraries\GameStates\IGameState.cs" />
+    <Compile Include="Libraries\GameStates\States\GameOverState.cs" />
     <Compile Include="Libraries\GameStates\States\PlayingState.cs" />
     <Compile Include="Libraries\GameStates\States\PausedState.cs" />
     <Compile Include="Libraries\SFactory\GOFactory\ProjectilesGOFactory.cs" />
