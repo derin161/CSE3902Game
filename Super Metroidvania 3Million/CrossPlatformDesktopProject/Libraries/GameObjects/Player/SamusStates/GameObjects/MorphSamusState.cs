@@ -33,7 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
 		public void Attack()
         {
-			GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateBomb(new Vector2(samus.x, samus.y)));
+			GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateBomb(new Vector2(samus.x, samus.y + 20)));
 		}
 		public void Jump()
         {
