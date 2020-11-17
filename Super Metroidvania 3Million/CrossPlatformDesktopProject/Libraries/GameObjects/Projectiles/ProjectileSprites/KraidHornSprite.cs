@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
@@ -13,7 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private int columns = 4;
         private int currentFrame = 0;
         private int timeSinceLastFrame = 0;
-        private int millisecondsPerFrame = 50;
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
 
         public KraidHornSprite(Texture2D texture, KraidHorn kh)
@@ -45,9 +46,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
             //Only update the frames after each has been displayed for millisecondsPerFrame milliseconds.
             timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
+            if (timeSinceLastFrame > projInfo.KraidHornSpriteMsPerFrame)
             {
-                timeSinceLastFrame -= millisecondsPerFrame;
+                timeSinceLastFrame -= projInfo.KraidHornSpriteMsPerFrame;
 
                 //Advance the current frame and reset back to the first if at the final frame.
                 currentFrame++;

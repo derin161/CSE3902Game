@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
@@ -9,18 +10,24 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private Texture2D texture;
         private MissileRocket missileRocket;
         private Rectangle srcRect;
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
         public MissileRocketSprite(Texture2D texture, MissileRocket mr, bool isHorizontal)
         {
             this.texture = texture;
             missileRocket = mr;
-            srcRect = new Rectangle(0, 4, 16, 8);
+            int x = projInfo.MissileRocketHorizontalSpriteX;
+            int y = projInfo.MissileRocketHorizontalSpriteY;
+            int width = projInfo.MissileRocketHorizontalSpaceWidth;
+            int height = projInfo.MissileRocketHorizontalSpaceHeight;
             if (!isHorizontal)
             {
-                srcRect = new Rectangle(17, 0, 8, 16);
-            } else if (missileRocket.Direction.X < 0) {
-                
+                x = projInfo.MissileRocketVerticalSpriteX;
+                y = projInfo.MissileRocketVerticalSpriteY;
+                width = projInfo.MissileRocketHorizontalSpaceHeight;
+                height = projInfo.MissileRocketHorizontalSpaceWidth;
             }
+            srcRect = new Rectangle(x, y, width, height);
         }
 
         public void Draw(SpriteBatch spriteBatch)

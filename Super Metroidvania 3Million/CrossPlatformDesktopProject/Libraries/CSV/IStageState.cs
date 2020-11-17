@@ -2,8 +2,8 @@
 {
     public interface IStageState
     {
-        void LeftDoor();
-        void RightDoor();
+        void LeftDoor(Game1 game);
+        void RightDoor(Game1 game);
         void TopLeftDoor();
         void TopRightDoor();
         void BottomLeftDoor();

@@ -21,6 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public double KraidHornArcB { get; set; }
         public int KraidHornSpaceHeight { get; set; }
         public int KraidHornSpaceWidth { get; set; }
+        public int KraidHornSpriteMsPerFrame { get; set; }
 
         //KraidMissile info
         public int KraidMissileDamage { get; set; }
@@ -31,6 +32,10 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public int MissileRocketDamage { get; set; }
         public int MissileRocketHorizontalSpaceHeight { get; set; }
         public int MissileRocketHorizontalSpaceWidth { get; set; }
+        public int MissileRocketHorizontalSpriteX { get; set; }
+        public int MissileRocketHorizontalSpriteY { get; set; }
+        public int MissileRocketVerticalSpriteX { get; set; }
+        public int MissileRocketVerticalSpriteY { get; set; }
 
         //MissileRocketExplosion info
         public int MissileRocketExplosionEndTime { get; set; }
@@ -46,9 +51,11 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public int WaveBeamSpaceWidth { get; set; }
         public int WaveBeamDpos { get; set; }
         public int WaveBeamSinAmp { get; set; }
+        public int WaveBeamSpriteDelay { get; set; }
 
         //Other Projectile Info
         public int ShortBeamBound { get; set; }
+
 
         private static ProjectileUtilities instance = new ProjectileUtilities();
 
@@ -75,6 +82,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             KraidHornArcB = 2.0;
             KraidHornSpaceHeight = 16;
             KraidHornSpaceWidth = 16;
+            KraidHornSpriteMsPerFrame = 50;
 
             //KraidMissileInfo
             KraidMissileDamage = 20;
@@ -85,6 +93,11 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             MissileRocketDamage = 50;
             MissileRocketHorizontalSpaceHeight = 8;
             MissileRocketHorizontalSpaceWidth = 16;
+            MissileRocketHorizontalSpriteX = 0;
+            MissileRocketHorizontalSpriteY = 4;
+            MissileRocketVerticalSpriteX = 17;
+            MissileRocketVerticalSpriteY = 0;
+
 
             //MissileRocketExplosion info
             MissileRocketExplosionEndTime = 100; //ms
@@ -100,6 +113,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             WaveBeamSpaceWidth = 8;
             WaveBeamDpos = 3;
             WaveBeamSinAmp = 20;
+            WaveBeamSpriteDelay = 150;
 
             //Other Projectile Info
             ShortBeamBound = 100;
