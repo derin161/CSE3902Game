@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
@@ -11,6 +12,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private WaveBeam beam;
         private Queue<Rectangle> waveSpaceSequence = new Queue<Rectangle>();
         private int time = 0;
+        private ProjectileUtilities projInfo = InfoContainer.Instance.Projectiles;
 
 
         public WaveBeamSprite(Texture2D texture, WaveBeam wb)
@@ -31,7 +33,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             }
 
             spriteBatch.Draw(texture, beam.Space, sourceRec, Color.White);
-            if (time > 150) {
+            if (time > projInfo.WaveBeamSpriteDelay) {
                 spriteBatch.Draw(texture, waveSpaceSequence.Dequeue(), sourceRec, Color.White);
             }
         }
