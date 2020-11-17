@@ -324,6 +324,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
+    <None Include="Code Reviews\Sprint4\Sprint 4 Reflection.pdf" />
     <None Include="Libraries\Levels\KraidDungeon.csv" />
     <None Include="Libraries\Levels\KraidDungeonSample.csv" />
     <None Include="Libraries\Levels\LevelOne.csv" />
