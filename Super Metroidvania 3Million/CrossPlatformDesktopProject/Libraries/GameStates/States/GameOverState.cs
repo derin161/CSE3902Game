@@ -18,7 +18,6 @@ namespace CrossPlatformDesktopProject.Libraries.Container
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch
         }
     }
 }
