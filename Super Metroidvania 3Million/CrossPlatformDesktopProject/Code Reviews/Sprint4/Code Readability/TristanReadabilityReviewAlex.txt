@@ -1,0 +1,14 @@
+Review Author: Tristan Roman
+Review Date: 11/16/2020
+Sprint No: 4
+Name of the .cs file being reviewed: DrawBlockSprite.cs
+Author of the .cs file being reviewed: Alex Nguyen
+Number of minutes taken to complete the review: 4 mins
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) Code is neat and concise - methods named intuatively and are straight forward in functionality.
+2) Much neater and greater concision from previous versions of the block sprite drawing classes.
+3) Missing documentation.
+...

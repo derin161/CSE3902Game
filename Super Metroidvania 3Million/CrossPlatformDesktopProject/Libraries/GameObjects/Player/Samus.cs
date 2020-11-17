@@ -17,12 +17,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public int missile;
         public GameTime gameTime;
         public PlayerPhysics Physics { get; private set; }
+        public PlayerHUD HUD { get; private set; }
         public bool Jumping { get; set; }
         public float x { get; set; }
         public float y { get; set; }
         public float missileSpeed {get; private set;}
         public Vector2 HealthPosition {get; private set;}
-        private SpriteFont healthFont;
+
         private int spriteHeight = 64;
         private int rightIdleOffset = 13;
         private int idleWidth = 40;
@@ -34,10 +35,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private int jumpLeftOffset = 8;
         private int jumpWidth = 47;
         private int jumpHeight = 52;
+        private bool morph;
         
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
 		{
+            morph = false;
             gameTime = g2;
             game = g;
             health = 100;
@@ -51,8 +54,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             Physics = new PlayerPhysics(this);
 			State = new RightIdleSamusState(this);
             Jumping = false;
-            HealthPosition = new Vector2(32.0f, 64.0f);
-			healthFont = PlayerSpriteFactory.Instance.HealthFont();
+            HUD = new PlayerHUD(Inventory);
         }
 
         public void Attack()
@@ -75,7 +77,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void Morph()
         {
-            State.Morph();
+            if (!morph){
+                State.Morph();
+                morph = true;
+            }else {
+                morph = false;
+                State.Idle();
+            }
         }
         public void MoveRight()
         {
@@ -113,7 +121,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void Draw(SpriteBatch spriteBatch)
         {
             State.Draw(spriteBatch);
-			spriteBatch.DrawString(healthFont, Inventory.getHealth().ToString(), HealthPosition, Color.White);
+            HUD.Draw(spriteBatch);
         }
 
         public bool IsDead()
@@ -172,6 +180,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
 
         public void UpdateAimHitBox(){
             playerHitBox = new Rectangle(space.X, space.Y, space.Width, space.Height);
+        }
+
+        public bool getMorph(){
+            return morph;
         }
 
     }

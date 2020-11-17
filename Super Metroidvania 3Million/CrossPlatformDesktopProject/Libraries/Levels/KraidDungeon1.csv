@@ -1,0 +1,16 @@
+BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock
+BluePipesBlock,BluePipesBlock,BluePipesBlock,RedCircleBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,RedCircleBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock
+BluePipesBlock,,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,,,,,,,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,,BluePipesBlock
+BluePipesBlock,,,,,,,,,,,,,,,BluePipesBlock
+BluePipesBlock,,,,,,,,,,,,,,,BluePipesBlock
+BluePipesBlock,,,,,,,,,,,,,,BlueDoorTopLeft,OrangeDoorBlock
+BluePipesBlock,,,,,,,,,,,,,,BlueDoorMiddleLeft,OrangeDoorBlock
+BluePipesBlock,,,,,,,,,,,,,,BlueDoorBottomLeft,OrangeDoorBlock
+BluePipesBlock,,,,,,,,,,,,,,BluePipesBlock,BluePipesBlock
+BluePipesBlock,,,,,Kraid,,,,,,,,,BluePipesBlock,BluePipesBlock
+BluePipesBlock,,StockBlockStone,,,,,,,,,,StockBlockStone,,BluePipesBlock,BluePipesBlock
+BluePipesBlock,,,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,StoneBlockWithEyes,,,,BluePipesBlock
+BluePipesBlock,,,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,,,StoneBlockWithEyes,StoneBlockWithEyes
+BluePipesBlock,,,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,,,StoneBlockWithEyes,StoneBlockWithEyes
+BluePipesBlock,LavaBlockTop,LavaBlockTop,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,BluePipesBlock,LavaBlockTop,LavaBlockTop,StoneBlockWithEyes,StoneBlockWithEyes
+BluePipesBlock,LavaBlock,LavaBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,BlueCircleBlock,LavaBlock,LavaBlock,StoneBlockWithEyes,StoneBlockWithEyes

@@ -13,7 +13,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         private Texture2D leftIdle;
         private Texture2D rightWalk;
         private Texture2D leftWalk;
-        private Texture2D morph;
+        private Texture2D rightMorphAnimation;
+        private Texture2D leftMorphAnimation;
+        private Texture2D movingMorph;
         private Texture2D jumpRight;
         private Texture2D jumpLeft;
         private Texture2D rightAim;
@@ -23,7 +25,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         private Texture2D damaged_leftIdle;
         private Texture2D healthBar;
         //Fonts
-        private SpriteFont healthFont;
+        public SpriteFont HealthFont { get; private set; }
+        private Texture2D tankIcon;
 
         private static PlayerSpriteFactory instance = new PlayerSpriteFactory();
         public static PlayerSpriteFactory Instance
@@ -46,7 +49,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdle");
             rightWalk = content.Load<Texture2D>("PlayerSprites/SamusRightWalk");
             leftWalk = content.Load<Texture2D>("PlayerSprites/SamusLeftWalk");
-            morph = content.Load<Texture2D>("PlayerSprites/SamusRightIdle");
+            rightMorphAnimation = content.Load<Texture2D>("PlayerSprites/RightMorph");
+            leftMorphAnimation = content.Load<Texture2D>("PlayerSprites/LeftMorph");
+            movingMorph = content.Load<Texture2D>("PlayerSprites/MorphDone");
             jumpRight = content.Load<Texture2D>("PlayerSprites/JumpRightSamusSprite");
             jumpLeft = content.Load<Texture2D>("PlayerSprites/JumpLeftSamusSprite");
             damaged_rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdleDamaged");
@@ -54,9 +59,10 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             healthBar = content.Load<Texture2D>("HealthBar");
             rightAim = content.Load<Texture2D>("PlayerSprites/SamusRightAim");
             leftAim = content.Load<Texture2D>("PlayerSprites/SamusLeftAim");
+            tankIcon = content.Load<Texture2D>("TankIcon");
 
             //Fonts
-            healthFont = content.Load<SpriteFont>("PlayerHealth");
+            HealthFont = content.Load<SpriteFont>("PlayerHealth");
         }
 
         public ISprite RightIdleSprite(Samus s)
@@ -79,9 +85,18 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return new LeftWalkSamusSprite(leftWalk, s);
         }
 
-        public MorphSamusSprite MorphSprite(Samus s)
+        public MorphAnimationSamusSprite MorphRightAnimationSprite(Samus s, MorphSamusState currentState)
         {
-            return new MorphSamusSprite(morph, s);
+            return new MorphAnimationSamusSprite(rightMorphAnimation, s, true, currentState);
+        }
+
+        public MorphAnimationSamusSprite MorphLeftAnimationSprite(Samus s, MorphSamusState currentState)
+        {
+            return new MorphAnimationSamusSprite(leftMorphAnimation, s, false, currentState);
+        }
+
+        public MorphDoneAnimationSamusSprite MorphMovingAnimationSprite(Samus s, bool facingRight){
+            return new MorphDoneAnimationSamusSprite(movingMorph, s, facingRight);
         }
 
         public ISprite JumpRightSprite(Samus s)
@@ -109,8 +124,13 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return new Samus(l, g, g2);
         }
 
-        public SpriteFont HealthFont(){
-            return healthFont;
+        public ISprite EmptyTankSprite(Vector2 pos) {
+            return new EnergyTankSprite(tankIcon, pos, new Rectangle(8,0,8,8));
+        }
+
+        public ISprite FullTankSprite(Vector2 pos)
+        {
+            return new EnergyTankSprite(tankIcon, pos, new Rectangle(0, 0, 8, 8));
         }
     }
 }
