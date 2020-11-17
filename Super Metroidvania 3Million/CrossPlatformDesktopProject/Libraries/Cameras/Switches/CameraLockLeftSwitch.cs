@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
 {
-    class CameraLockLeftSwitch : Game1, ISwitch
+    public class CameraLockLeftSwitch : ISwitch
     {
         public CameraLockLeftSwitch(int height, Vector2 pos)
         {
@@ -31,14 +31,29 @@ namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
 
         public Vector2 PositionOld { get; set; }
 
+        private Game1 currentGame;
+
         public void ActivateSwitch()
         {
-            GetCamera().LockedLeft = true;
+            currentGame.GetCamera().LockedLeft = true;
         }
 
-        public void Update()
-        {
+        public void Kill() { }
 
+        public bool IsDead()
+        {
+            return false;
+        }
+        public void Draw(SpriteBatch spriteBatch) { }
+
+        public void Update(GameTime gameTime)
+        {
+            BoundingBox = new Rectangle((int)Position.X, (int)Position.Y, BoundingBox.Width, BoundingBox.Height);
+        }
+
+        public Rectangle SpaceRectangle()
+        {
+            return BoundingBox;
         }
     }
 }
