@@ -12,11 +12,11 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
 
         public void LeftDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(672, 192), game);
+            LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(672, 192), game);
         }
         public void RightDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(672, 192), game);
+            LoadCsv.Instance.Load("KraidDungeon2.csv", new Vector2(96, 192), game);
         }
         public void TopLeftDoor()
         {

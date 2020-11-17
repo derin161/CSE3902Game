@@ -338,7 +338,16 @@
     <None Include="BurndownCharts\sprint4_burndown_chart.xlsx" />
     <None Include="Code Reviews\Sprint4\Sprint 4 Reflection.pdf" />
     <None Include="Libraries\Levels\KraidDungeon.csv" />
+    <None Include="Libraries\Levels\KraidDungeon1.csv" />
+    <None Include="Libraries\Levels\KraidDungeon2.csv" />
+    <None Include="Libraries\Levels\KraidDungeon3.csv" />
+    <None Include="Libraries\Levels\KraidDungeon4.csv" />
+    <None Include="Libraries\Levels\KraidDungeon5.csv" />
+    <None Include="Libraries\Levels\KraidDungeon6.csv" />
+    <None Include="Libraries\Levels\KraidDungeon7.csv" />
+    <None Include="Libraries\Levels\KraidDungeon8.csv" />
     <None Include="Libraries\Levels\KraidDungeonSample.csv" />
+    <None Include="Libraries\Levels\LevelOne - Copy.csv" />
     <None Include="Libraries\Levels\LevelOne.csv" />
     <None Include="Libraries\Levels\LevelTwo.csv" />
     <None Include="Libraries\Levels\StartingLevel.csv" />
@@ -378,6 +387,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code Reviews\Sprint5\" />
+    <Folder Include="Libraries\CSV\Level Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
