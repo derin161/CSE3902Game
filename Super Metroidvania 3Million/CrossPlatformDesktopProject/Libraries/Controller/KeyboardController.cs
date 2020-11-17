@@ -22,7 +22,6 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             oldState = Keyboard.GetState();
             gameState = game;
-            makeDict();
         }
         public void RegisterCommand(Keys key, ICommand releaseCommand)
         {
@@ -69,13 +68,13 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         }
 
-        public void GameOver(bool gameOver) { 
-            //update the controller however necessary for a game over
-        }
 
-        private void makeDict()     // If else of possible actions that updates choice
+        public void MakePlayDict()     // If else of possible actions that updates choice
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
+
+            controllerPressMappings.Clear();
+            controllerReleaseMappings.Clear();
 
             RegisterCommand(Keys.Space, new PlayerJumpCommand(player));
 
@@ -108,7 +107,18 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.L, new ShuffleThemesCommand());
             RegisterCommand(Keys.O, new UnShuffleThemesCommand());
             RegisterCommand(Keys.P, new PauseGameCommand());
-            RegisterCommand(Keys.Escape, new UnpauseGameCommand());
+
+        }
+        public void MakePausedDict()     // If else of possible actions that updates choice
+        {
+            IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
+
+            controllerPressMappings.Clear();
+            controllerReleaseMappings.Clear();
+
+            
+            RegisterCommand(Keys.P, new UnpauseGameCommand());
+
         }
     }
 }
