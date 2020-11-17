@@ -1,0 +1,22 @@
+Review Author: Danny Attia
+Review Date: 10/26/2020
+Sprint No: 3
+Name of the .cs file being reviewed: GameObjectContainer.cs
+Author of the .cs file being reviewed: Nyigel Spann
+Number of minutes taken to complete the review: 10
+
+============================================================
+
+Coupling: Medium
+Comments: Class only relies on information from other classes that is neccessary for the for the function of GameObjectContainer, such as projectileList, blockList, etc.
+
+Cohesion: High
+Comments: Class is used to contain and update all Game Object lists, and methods are simple and effective 
+
+Maintainability: Good
+Comments: Class is very simple and it is easy to add objects to the GameObjectContainer, which will then be used to perform updates and draws on all game objects. Very easy to add
+new objects and update types of objects that can be added in the future 
+
+List any "code smells":
+
+All lists of object types could be combined into a list of lists to reduce code, but this make things more complicated 

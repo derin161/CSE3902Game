@@ -1,0 +1,13 @@
+Review Author: Alex Nguyen
+Review Date: 11/16/2020
+Sprint No: 4
+Name of the .cs file being reviewed: Kraid.cs
+Author of the .cs file being reviewed: Will Floyd
+Number of minutes taken to complete the review: ~10mins
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) Most if not all variables and method names are very self-explanatory.
+2) There are comments where they are necessary.
+3) Everything is spaced out properly making it easier to read.

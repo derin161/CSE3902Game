@@ -1,8 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items.Sprites;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -15,7 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D highJumpItem;
 		private Texture2D iceBeamItem;
 		private Texture2D longBeamItem;
-		private Texture2D missleRocketItem;
+		private Texture2D missileRocketItem;
 		private Texture2D morphBallItem;
 		private Texture2D rocketDropItem;
 		private Texture2D screwAttackItem;
@@ -44,7 +43,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			highJumpItem = content.Load<Texture2D>("Items/HighJump");
 			iceBeamItem = content.Load<Texture2D>("Items/IceBeam");
 			longBeamItem = content.Load<Texture2D>("Items/LongBeam");
-			missleRocketItem = content.Load<Texture2D>("Items/MissleRocket");
+			missileRocketItem = content.Load<Texture2D>("Items/MissleRocket");
 			morphBallItem = content.Load<Texture2D>("Items/MorphBall");
 			rocketDropItem = content.Load<Texture2D>("Items/RocketDropItem");
 			screwAttackItem = content.Load<Texture2D>("Items/ScrewAttack");
@@ -54,53 +53,53 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
 		public ISprite BombItemSprite(BombItem b)
 		{
-			return new BombItemSprite(bombItem, b);
+			return new UpgradeItemSprite(bombItem, b);
 		}
 
 		public ISprite EnergyDropItemSprite(EnergyDropItem ed)
 		{
-			return new EnergyDropItemSprite(energyDropItem, ed);
+			return new UpgradeItemSprite(energyDropItem, ed);
 		}
 
 		public ISprite EnergyTankItemSprite(EnergyTankItem et)
 		{
-			return new EnergyTankItemSprite(energyTankItem, et);
+			return new UpgradeItemSprite(energyTankItem, et);
 		}
 		public ISprite HighJumpItemSprite(HighJumpItem h)
 		{
-			return new HighJumpItemSprite(highJumpItem, h);
+			return new UpgradeItemSprite(highJumpItem, h);
 		}
 		public ISprite IceBeamItemSprite(IceBeamItem i)
 		{
-			return new IceBeamItemSprite(iceBeamItem, i);
+			return new UpgradeItemSprite(iceBeamItem, i);
 		}
 		public ISprite LongBeamItemSprite(LongBeamItem l)
 		{
-			return new LongBeamItemSprite(longBeamItem, l);
+			return new UpgradeItemSprite(longBeamItem, l);
 		}
 		public ISprite MissleRocketItemSprite(MissileRocketItem mr)
 		{
-			return new MissleRocketItemSprite(missleRocketItem, mr);
+			return new UpgradeItemSprite(missileRocketItem, mr);
 		}
 		public ISprite MorphBallItemSprite(MorphBallItem mb)
 		{
-			return new MorphBallItemSprite(morphBallItem, mb);
+			return new UpgradeItemSprite(morphBallItem, mb);
 		}
 		public ISprite RocketDropItemSprite(RocketDropItem r)
 		{
-			return new RocketDropItemSprite(rocketDropItem, r);
+			return new UpgradeItemSprite(rocketDropItem, r);
 		}
 		public ISprite ScrewAttackItemSprite(ScrewAttackItem s)
 		{
-			return new ScrewAttackItemSprite(screwAttackItem, s);
+			return new UpgradeItemSprite(screwAttackItem, s);
 		}
 		public ISprite VariaItemSprite(VariaItem v)
 		{
-			return new VariaItemSprite(variaItem, v);
+			return new UpgradeItemSprite(variaItem, v);
 		}
 		public ISprite WaveBeamItemSprite(WaveBeamItem w)
 		{
-			return new WaveBeamItemSprite(waveBeamItem, w);
+			return new UpgradeItemSprite(waveBeamItem, w);
 		}
 	}
 }

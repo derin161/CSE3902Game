@@ -1,26 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Linq;
 using System.IO;
-using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using CrossPlatformDesktopProject.Libraries.CSV.Object_Generators;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV
 {
-    public class LoadCSV
+    public class LoadCsv
     {
-        public void Load()
+        private static LoadCsv instance = new LoadCsv();
+
+        public static LoadCsv Instance
         {
-            using (TextFieldParser parser = new TextFieldParser(@"~\Levels\StartingLevel.csv"))
+            get
+            {
+                return instance;
+            }
+        }
+
+        public void Load(string levelName, Vector2 playerSpawn)
+        {
+            GameObjectContainer.Instance.Clear();
+
+            GameObjectContainer.Instance.Player.UpdateLocation(playerSpawn);
+
+            string projectPath = @"..\..\..\..\";
+            string levelPath = projectPath + @"Libraries\Levels\" + levelName;
+
+            string[] lines = File.ReadAllLines(levelPath);
+            int rows = lines.Count();
+            int columns = lines[0].Split(',').Length;
+
+            //Game1.ChangeResolution(rows, columns);
+
+            using (TextFieldParser parser = new TextFieldParser(levelPath))
             {
                 int column = 0;
                 int row;
+                Vector2 location;
+
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(",");
                 while (!parser.EndOfData)
@@ -30,32 +52,22 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                     string[] fields = parser.ReadFields();
                     foreach (string field in fields)
                     {
-                        Vector2 location;
-                        IBlock block;
+                        location = new Vector2(row * 32, column * 32);
 
-                        //TODO: Process field
-                        switch (field)
+                        //Blocks
+                        if (File.Exists(projectPath + @"Libraries\GameObjects\Blocks\" + field + ".cs"))
                         {
-                            case "BlueBrickBlock":
-                                location = new Vector2(row*32, column*32);
-                                block = new BlueBrickBlock(location);
-                                GameObjectContainer.Instance.Add(block);
-                                break;
-
-                            case "BushBlockBlue":
-                                location = new Vector2(row * 32, column * 32);
-                                block = new BushBlockBlue(location);
-                                GameObjectContainer.Instance.Add(block);
-                                break;
-
-                            case "TubeBlockBlue":
-                                location = new Vector2(row * 32, column * 32);
-                                block = new TubeBlockBlue(location);
-                                GameObjectContainer.Instance.Add(block);
-                                break;
-
-                            default:
-                                break;
+                            BlockObjectGenerator.Instance.createBlock(location, field);
+                        }
+                        //Items
+                        else if (File.Exists(projectPath + @"Libraries\GameObjects\Items\Game Objects\" + field + ".cs"))
+                        {
+                            ItemObjectGenerator.Instance.createItem(location, field);
+                        }
+                        //Enemies
+                        else if (File.Exists(projectPath + @"Libraries\GameObjects\Enemies\Game Objects\" + field + ".cs"))
+                        {
+                            EnemyObjectGenerator.Instance.createEnemy(location, field);
                         }
                         row++;
                     }
@@ -63,5 +75,6 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                 }
             }
         }
+
     }
 }

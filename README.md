@@ -3,65 +3,68 @@
 
 **PROGRAM DESCRIPTION**
 
-This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight. At the moment, the program showcases all enemies, items, blocks, the player, and all non-collision related behaviors.
+This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight. At the moment, the program has collision related behaviors and a working map design.
 
 ___
 **PROGRAM CONTROLS**
 
-* UpArrow, W : Player jump and enter briefly morph form.
+* UpArrow, W : Player jump.
 * RightArrow, D : Player face and move right.
 * LeftArrow, A : Player face and move left.
-* DownArrow, S : Player crouch and briefly enter morph form.
-* Z, N : Player shoots the beam weapon.
-* E : Player takes damage.
-* C : If in morph form, places bomb. Else, fires missile rocket.
-* Y : Advances the block currently displayed.
-* T : Previous block displayed.
-* I : Advances the item currently displayed.
-* U : Previous item displayed.
-* P : Advances the enemy currently displayed.
-* O : Previous enemy displayed.
+* DownArrow, S : Player enter morph form.
+* Z, N : Player shoots the currently active beam missile weapon or drops bombs if in morph form.
+* Space : Player jump.
+* C : Cycle currently active beam weapon.
 * Q : Quit.
 * R : Reset the program to initial state.
-* Upgrade Toggle Controls: In Metroid NES, the player doesn't really collect different items so much as upgrades to modify the behavior of the player's abilities. Some of the different upgrades are toggleable as listed below with the number keys.
-  * D1, NUM1 : Toggles the ice beam upgrade.
-  * D2,NUM2: Toggles the wave beam upgrade.
-  * D3, NUM3 : Toggles the long beam upgrade.
+* T : Cycle current level being loaded.
+* F : Toggle fullscreen.
+* K : Play next music theme.
+* L : Shuffle music themes.
+* O : Unshuffle music themes.
+___
+**PLAYER UPGRADES**
+
+* Long Beam : Lengthens the attacking range of the beam weapon. Also increases damage.
+* Ice Beam : This allows you to freeze an enemy temporarily. If you already have a long beam, then the ice beam becomes a long beam. This can't be used at the same time as the wave beam.
+* Wave Beam : The beams are wave-shaped and are stronger than normal beams. If you already have a long beam, the long beam becomes a long wave beam.
+* Screw Attack : This super strong Power Item spins in flight to attack the enemy. Samus's armor flashes during a screw attack.
+ * Varia : This raises Samus's powers of resistance and cuts in half the amount of energy he uses up when attacked by an enemy.
+ * Maru Mari : Samus grows small and round like a ball when he gets this Power Item. Useful when travelling along narrow passageways.
+ * Bomb : Samus can use the bomb when he is still small and round. Drop bombs to damage enemies or blast through barriers.
+ * Energy Tank : Energy is stored in these tanks. Normally, the amount of storable energy cannot go above 99, but with each tank it grows by 100. You can collect as many as 6.
+ * Missile Rocket : This stores the missiles. If you capture one, you get 5 more missiles. Collect missiles from defeated enemies. You can store a maximum of 255.
 
 ___
 **PLANNED CHANGES**
 
 * Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
 * Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capacity), and the energy shields.
-* At the moment, the player starts with 50 rockets, and can run out. This number will be displayed in later versions.
-* Plans to make the wave beam and ice beam mutually exclusive.
-* Make the wave beam more sinusoidal.
-* Give the player the ability to shoot upwards.
 * Resize some sprites for better balance/collision handling.
-* Cause the player to toggle morph form.
+*Missile Rocket Explosion Animation
+*Fix Missile Animation
+*Add HUD
+*Add Item Functionality
+*GameOver Screen
+*Change Player Inventory to use the visitor design pattern
+*Player Upgrades are not implemented
+*Implement Rest of First boss Dungeon
+*Implement Game State Transitions
+*Make doors have health/take damage
 
 ___
 **KNOWN BUGS**
 
-* Sometimes the keys (notably 1,2 and 3) can be a little unresponsive. May be due to the supression after a key is pressed not being long enough. May introduce a system to wait for a key to be released before executing a command in the future.
-* Kraid's Horn attack has a very shallow arc.
 * Some textures need to be cleaned up.
+* Health gets printed over
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
 
-Severity	Code	Description	Project	File	Line	Suppression State
-Warning	CS0108	'MapInterface.Update(GameTime)' hides inherited member 'ISprite.Update(GameTime)'. Use the new keyword if hiding was intended.	Super Metroidvania 5Million	C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\Libraries\Sprite\Map\MapInterface.cs	13	Active
+* (No Current Errors)
 
-Severity	Code	Description	Project	File	Line	Suppression State
-Warning	CS0108	'MapInterface.Draw(SpriteBatch)' hides inherited member 'ISprite.Draw(SpriteBatch)'. Use the new keyword if hiding was intended.	Super Metroidvania 5Million	C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\Libraries\Sprite\Map\MapInterface.cs	15	Active
-
-* Both of these are in the new class MapInterface.cs and has not been fully implemented. These errors should be neglegable for the next Sprint.
-
-Severity	Code	Description	Project	File	Line	Suppression State
-Warning	CS0649	Field 'MissileRocketExplosion.explosionAnimationPairs' is never assigned to, and will always have its default value null	Super Metroidvania 5Million	C:\Users\Albatro5s\Source\Repos\derin161\CSE3902Game\Super Metroidvania 3Million\CrossPlatformDesktopProject\Libraries\Sprite\Projectiles\MissileRocketExplosion.cs	20	Active
-
-* This should be resolved as collisions are implemented - this variable is just a NULL variable for the time being.
+* Warning		Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.	
+    - Unused and/or unrecognized variable/function calls; should be resolved with further feature implementations and clean-up.
 
 ___
 **OTHER TOOLS/PROCESSES**
@@ -70,7 +73,7 @@ ___
 
 ___
 **CREDITS**  
-Developed By: Nyigel Spann, Shyamal Shah, Tristan Roman, Alex Nyugen, Will Wloyd, Danny Attia  
+Developed By: Nyigel Spann, Shyamal Shah, Tristan Roman, Alex Nguyen, Will Wloyd, Danny Attia  
 Spritesheets taken from: https://www.spriters-resource.com/nes/metroid/  
 *Metroid NES* Manual: http://www.digitpress.com/library/manuals/nes/Metroid%20v1.pdf  
 

@@ -1,4 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
 {
@@ -14,15 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         }
         public void Execute()
         {
-            /* This logic needs to be moved into the player class
-            if (!samus.jumpDisabled){
-                if (samus.jumpFrames == 10){
-                    samus.UpdateState(Player.State.Jump, 0, samus.facingRight);
-                }else {
-                    samus.UpdateState(Player.State.Jump, samus.jumpFrames, samus.facingRight);
-                }
-            }*/
-
+            player.Jump();
         }
     }
 }

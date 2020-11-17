@@ -1,7 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -21,36 +19,44 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 		}
 
-		public IGameObject CreateBomb(Vector2 Location)
+		public IProjectile CreateBomb(Vector2 Location)
 		{
 
 			return new Bomb(Location);
 		}
 
-		public IGameObject CreateMissileRocket(Vector2 loc, Vector2 dir)
+		public IProjectile CreateMissileRocket(Vector2 loc, Vector2 dir)
 		{
 
 			return new MissileRocket(loc, dir);
 		}
-		
-		public IGameObject CreatePowerBeam(Vector2 loc, Vector2 dir, bool isLongBeam, bool isIceBeam)
+
+		public IProjectile CreateMissileRocketExplosion()
+		{
+
+			return new MissileRocketExplosion();
+		}
+
+		public IProjectile CreatePowerBeam(Vector2 loc, Vector2 dir, bool isLongBeam, bool isIceBeam)
 		{
 			return new PowerBeam(loc, dir, isLongBeam, isIceBeam);
 		}
 
-		public IGameObject CreateWaveBeam(Vector2 loc, Vector2 dir, bool isLongBeam)
+		public IProjectile CreateWaveBeam(Vector2 loc, Vector2 dir, bool isLongBeam)
 		{
 			return new WaveBeam(loc, dir, isLongBeam);
 		}
 
-		public IGameObject CreateKraidHorn(Vector2 loc, bool isMovingRight)
+		public IProjectile CreateKraidHorn(Vector2 loc, bool isMovingRight)
 		{
 			return new KraidHorn(loc, isMovingRight);
 		}
 
-		public IGameObject CreateKraidMissile(Vector2 loc, Vector2 dir)
+		public IProjectile CreateKraidMissile(Vector2 loc, Vector2 dir)
 		{
 			return new KraidMissile(loc, dir);
 		}
+
+
 	}
 }

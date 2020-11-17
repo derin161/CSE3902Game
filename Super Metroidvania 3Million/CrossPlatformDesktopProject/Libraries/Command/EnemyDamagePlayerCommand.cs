@@ -14,6 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
+            //Should be a timer to avoid getting damaged multiple times by one collision, player should blink while timer is active
             player.TakeDamage(enemy.GetDamage());
         }
     }

@@ -1,7 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -16,6 +16,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
         private Texture2D morph;
         private Texture2D jumpRight;
         private Texture2D jumpLeft;
+        private Texture2D rightAim;
+        private Texture2D leftAim;
 
         private Texture2D damaged_rightIdle;
         private Texture2D damaged_leftIdle;
@@ -44,12 +46,14 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdle");
             rightWalk = content.Load<Texture2D>("PlayerSprites/SamusRightWalk");
             leftWalk = content.Load<Texture2D>("PlayerSprites/SamusLeftWalk");
-            morph = content.Load<Texture2D>("PlayerSprites/RightMorph");
+            morph = content.Load<Texture2D>("PlayerSprites/SamusRightIdle");
             jumpRight = content.Load<Texture2D>("PlayerSprites/JumpRightSamusSprite");
             jumpLeft = content.Load<Texture2D>("PlayerSprites/JumpLeftSamusSprite");
             damaged_rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdleDamaged");
             damaged_leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdleDamaged");
             healthBar = content.Load<Texture2D>("HealthBar");
+            rightAim = content.Load<Texture2D>("PlayerSprites/SamusRightAim");
+            leftAim = content.Load<Texture2D>("PlayerSprites/SamusLeftAim");
 
             //Fonts
             healthFont = content.Load<SpriteFont>("PlayerHealth");
@@ -57,37 +61,56 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 
         public ISprite RightIdleSprite(Samus s)
         {
-            return RightIdleSamusSprite(rightIdle, s);
+            return new IdleSamusSprite(rightIdle, s);
         }
 
         public ISprite LeftIdleSprite(Samus s)
         {
-            return LeftIdleSamusSprite(leftIdle, s);
+            return new IdleSamusSprite(leftIdle, s);
         }
 
-        public ISprite RightWalkSprite(Samus s)
+        public RightWalkSamusSprite RightWalkSprite(Samus s)
         {
-            return RightWalkSamusSprite(rightWalk, s);
+            return new RightWalkSamusSprite(rightWalk, s);
         }
 
-        public ISprite LeftWalkSprite(Samus s)
+        public LeftWalkSamusSprite LeftWalkSprite(Samus s)
         {
-            return LeftWalkSamusSprite(leftWalk, s);
+            return new LeftWalkSamusSprite(leftWalk, s);
         }
 
-        public ISprite MorphSprite(Samus s)
+        public MorphSamusSprite MorphSprite(Samus s)
         {
-            return MorphSamusSprite(morph, s);
+            return new MorphSamusSprite(morph, s);
         }
 
-        public ISprite JumpRightSprite(Samus s, bool right, int frame, int y)
+        public ISprite JumpRightSprite(Samus s)
         {
-            return JumpRightSamusSprite(jumpRight, s, right, frame, y);
+            return new JumpSamusSprite(jumpRight, s);
         }
 
-        public ISprite JumpLeftSprite(Samus s, bool left, int frame, int y)
+        public ISprite JumpLeftSprite(Samus s)
         {
-            return JumpLeftSamusSprite(jumpLeft, s, left, frame, y);
+            return new JumpSamusSprite(jumpLeft, s);
+        }
+
+        public ISprite RightAimUpSprite(Samus s)
+        {
+            return new AimUpSamusSprite(rightAim, s);
+        }
+
+        public ISprite LeftAimUpSprite(Samus s)
+        {
+            return new AimUpSamusSprite(leftAim, s);
+        }
+
+        public Samus CreatePlayerSprite(Vector2 l, Game1 g, GameTime g2)
+        {
+            return new Samus(l, g, g2);
+        }
+
+        public SpriteFont HealthFont(){
+            return healthFont;
         }
     }
 }

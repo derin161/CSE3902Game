@@ -1,0 +1,14 @@
+Review Author: Tristan Roman
+Review Date: 10/26/2020
+Sprint No: 3
+Name of the .cs file being reviewed: HighJumpItem.cs
+Author of the .cs file being reviewed: Alex Nguyen
+Number of minutes taken to complete the review: 4 mins
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) Code is generally neat and concise - methods are very straight forward.
+2) Method names and variables are all intiative in name as well as function.
+3) More documentation needed if functionality increases in the future.
+...

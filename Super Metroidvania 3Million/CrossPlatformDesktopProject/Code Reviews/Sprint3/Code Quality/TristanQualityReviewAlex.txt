@@ -1,0 +1,25 @@
+Review Author: Tristan Roman
+Review Date: 10/26/2020
+Sprint No: 3
+Name of the .cs file being reviewed: BombItem.cs
+Author of the .cs file being reviewed: Alex Nguyen
+Number of minutes taken to complete the review: 4 mins
+
+============================================================
+
+Coupling: Low
+Comments: Keep class simple and uses very few parameters outside of global variables. Is used outside of the class, but doesn't rely on many other classes besides sprite drawing.
+
+Cohesion: High
+Comments: Everything is done within the class and most methods are passed few variables, making the class very cohesive - additionally, previous variables have been condensed
+
+Maintainability: Good
+Comments: Methods provide plenty of room and flexability for future additions and additional methods. 
+
+List any "code smells":
+1) Minimal documentation
+2) Currently having minor loading issues, but this is something that will likely be resolved with collisions/mapping
+...
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+Usable items aren't completely implemented yet in their interaction with the player, but this will likely be done through the player class. 

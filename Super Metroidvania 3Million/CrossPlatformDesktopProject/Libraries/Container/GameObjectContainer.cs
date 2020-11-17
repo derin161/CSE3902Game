@@ -1,7 +1,7 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -27,6 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             }
         }
 
+        public Rectangle BoundingBox { get; set; }
+
         public List<IProjectile> ProjectileList
         {
             get{ return projectileList; }
@@ -43,8 +45,9 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public List<IEnemy> EnemyList
         {
             get { return enemyList; }
+            
         }
-        public Player Player
+        public IPlayer Player
         {
             get { return player; }
         }
@@ -78,13 +81,48 @@ namespace CrossPlatformDesktopProject.Libraries.Container
 
         public void Update(GameTime gametime) {
             player.Update(gametime);
-
-            /* Casting the lists to objects then to IGameObject lists to make them IGameObject lists for the updateList method. 
-             * Taken from: https://stackoverflow.com/questions/1917844/how-to-cast-listobject-to-listmyclass/1920865 */
-            updateList((List<IGameObject>) (object) projectileList, gametime);
-            updateList((List<IGameObject>) (object) enemyList, gametime);
-            updateList((List<IGameObject>) (object) blockList, gametime);
-            updateList((List<IGameObject>) (object) itemList, gametime);
+            
+            
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < blockList.Count; i++)
+            {
+                blockList[i].Update(gametime);
+                if (blockList[i].IsDead())
+                {
+                    blockList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < enemyList.Count; i++)
+            {
+                enemyList[i].Update(gametime);
+                if (enemyList[i].IsDead())
+                {
+                    enemyList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                itemList[i].Update(gametime);
+                if (itemList[i].IsDead())
+                {
+                    itemList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
+            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            for (int i = 0; i < projectileList.Count; i++)
+            {
+                projectileList[i].Update(gametime);
+                if (projectileList[i].IsDead())
+                {
+                    projectileList.RemoveAt(i);
+                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
+                }
+            }
         }
 
         public void Draw(SpriteBatch sb)
@@ -108,26 +146,23 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             }
         }
 
+        public Vector2 PlayerPosition() 
+        {
+            Vector2 position = new Vector2(player.SpaceRectangle().X, player.SpaceRectangle().Y);
+            return position;
+        }
+
         public void Clear() {
-            player = null;
+            // player = null;
             projectileList = new List<IProjectile>();
             enemyList = new List<IEnemy>();
             itemList = new List<IItem>();
             blockList = new List<IBlock>();
         }
 
-        private void updateList(List<IGameObject> goList, GameTime gt)
+        public void ClearMap()
         {
-            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
-            for (int i = 0; i < goList.Count; i++)
-            {
-                goList[i].Update(gt);
-                if (goList[i].IsDead())
-                {
-                    goList.RemoveAt(i);
-                    i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
-                }
-            }
+            blockList = new List<IBlock>();
         }
 
     }

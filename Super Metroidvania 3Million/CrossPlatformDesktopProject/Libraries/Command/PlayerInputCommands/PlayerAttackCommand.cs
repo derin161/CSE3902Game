@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+﻿using CrossPlatformDesktopProject.Libraries.Audio;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
@@ -14,6 +15,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         }
         public void Execute()
         {
+            SoundManager.Instance.Projectiles.PowerBeamFireSound.PlaySound();
             player.Attack();
         }
     }

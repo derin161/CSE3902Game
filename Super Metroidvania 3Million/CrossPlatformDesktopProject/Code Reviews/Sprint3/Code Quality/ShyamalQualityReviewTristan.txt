@@ -1,0 +1,23 @@
+Review Author: Shyamal
+Review Date: 10/26/2020
+Sprint No: 3
+Name of the .cs file being reviewed: LoadCsv.cs
+Author of the .cs file being reviewed: Tristan Roman
+Number of minutes taken to complete the review: ##
+
+============================================================
+
+Coupling: Low
+Comments: Does not overly depend on any other class
+
+Cohesion: High
+Comments: ____
+
+Maintainability: Good
+Comments: ____
+
+List any "code smells":
+1) Very Long, Hard coded
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+_____

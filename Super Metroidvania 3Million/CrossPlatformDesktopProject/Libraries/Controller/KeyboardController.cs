@@ -1,8 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using System.Linq;
 using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.PlayerSprite;
+using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
@@ -11,16 +10,12 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     public class KeyboardController : IController
     {
-        //Written by Tristan Roman and Shyamal Shah
-        private Dictionary<Keys, ICommand> controllerMappings = new Dictionary<Keys, ICommand>();
+        //Written by Tristan Roman and Shyamal Shah and Nyigel Spann
+        private Dictionary<Keys, ICommand> controllerPressMappings = new Dictionary<Keys, ICommand>();
+        private Dictionary<Keys, ICommand> controllerReleaseMappings = new Dictionary<Keys, ICommand>();
 
-        //The suppressedKeyTimer keeps track of all the keys and, if mapped to a positive number, how long they are suppressed for.
-        private Dictionary<Keys, int> suppressedKeyTimer = new Dictionary<Keys, int>();
-
-        private int msSuppressTimer = 100;
         private KeyboardState oldState;
         private KeyboardState newState;
-        private Keys[] pressedKeys;
         private Game1 gameState;
 
         public KeyboardController(Game1 game)
@@ -29,30 +24,45 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             gameState = game;
             makeDict();
         }
-        public void RegisterCommand(Keys key, ICommand command)
+        public void RegisterCommand(Keys key, ICommand releaseCommand)
         {
-            if (!controllerMappings.ContainsKey(key))
+            if (!controllerReleaseMappings.ContainsKey(key))
             {
-                controllerMappings.Add(key, command);
-                suppressedKeyTimer.Add(key, 0);
+                controllerReleaseMappings.Add(key, releaseCommand);
             }
             else {
-                controllerMappings[key] = command;
+                controllerReleaseMappings[key] = releaseCommand;
             }
         }
+
+        public void RegisterCommand(Keys key, ICommand pressCommand, ICommand releaseCommand)
+        {
+            if (!controllerPressMappings.ContainsKey(key))
+            {
+                controllerPressMappings.Add(key, pressCommand);
+                controllerReleaseMappings.Add(key, releaseCommand);
+            }
+            else
+            {
+                controllerPressMappings[key] = pressCommand;
+                controllerReleaseMappings[key] = releaseCommand;
+            }
+        }
+
         public void Update(GameTime gameTime)
         {
-            pressedKeys = Keyboard.GetState().GetPressedKeys();
             newState = Keyboard.GetState();
 
-            foreach (Keys key in pressedKeys)
+            foreach (Keys key in oldState.GetPressedKeys())
             {
-                if (controllerMappings.ContainsKey(key) && suppressedKeyTimer[key] < 0) {
-                    controllerMappings[key].Execute();
-                    suppressedKeyTimer[key] = msSuppressTimer;
-                } else if (controllerMappings.ContainsKey(key)) {
-                    suppressedKeyTimer[key] -= (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+                if (controllerPressMappings.ContainsKey(key) && newState.IsKeyDown(key))
+                {
+                    controllerPressMappings[key].Execute();
                 }
+                else if (controllerReleaseMappings.ContainsKey(key) && !newState.IsKeyDown(key)) {
+                    controllerReleaseMappings[key].Execute();
+                }
+                
             }
 
             oldState = newState;
@@ -67,53 +77,38 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
-            ICommand up = new PlayerJumpCommand(player);
-            ICommand down = new PlayerAimUpCommand(player);
-            ICommand left = new PlayerMoveLeftCommand(player);
-            ICommand right = new PlayerMoveRightCommand(player);
-            ICommand missleOrBomb = new CycleBeamMissileCommand(player);
-            ICommand start = new StartCommand(gameState);
-            ICommand select = new SelectCommand(gameState);
-            ICommand damage = new EnemyDamagePlayerCommand(gameState, player);
+            RegisterCommand(Keys.Space, new PlayerJumpCommand(player));
 
-            //Upgrade Toggles
-            ICommand iceToggle = new PlayerGiveItemCommand(Player.UpgradeType.Icebeam, player);
-            ICommand waveToggle = new PlayerGiveItemCommand(Player.UpgradeType.Wavebeam, player);
-            ICommand longToggle = new PlayerGiveItemCommand(Player.UpgradeType.Longbeam, player);
-            ICommand screwToggle = new PlayerGiveItemCommand(Player.UpgradeType.Screw, player);
+            RegisterCommand(Keys.W, new PlayerAimUpCommand(player));
+            RegisterCommand(Keys.Up, new PlayerAimUpCommand(player));
 
+            RegisterCommand(Keys.S, new PlayerMorphCommand(player));
+            RegisterCommand(Keys.Down, new PlayerMorphCommand(player));
 
-            //Upgrade Toggles
-            RegisterCommand(Keys.D1, iceToggle);
-            RegisterCommand(Keys.NumPad1, iceToggle);
-            RegisterCommand(Keys.D2, waveToggle);
-            RegisterCommand(Keys.NumPad2, waveToggle);
-            RegisterCommand(Keys.D3, longToggle);
-            RegisterCommand(Keys.NumPad3, longToggle);
-            RegisterCommand(Keys.D4, longToggle); //Not fully implemented yet.
-            RegisterCommand(Keys.NumPad4, longToggle);
+            RegisterCommand(Keys.A, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
+            RegisterCommand(Keys.Left, new PlayerMoveLeftCommand(player), new PlayerIdleCommand(player));
 
-            RegisterCommand(Keys.C, missleOrBomb);
+            RegisterCommand(Keys.D, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
+            RegisterCommand(Keys.Right, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
 
-            RegisterCommand(Keys.W, up);
-            RegisterCommand(Keys.Up, up);
+            RegisterCommand(Keys.Z, new PlayerAttackCommand(player));
+            RegisterCommand(Keys.N, new PlayerAttackCommand(player));
 
-            RegisterCommand(Keys.S, down);
-            RegisterCommand(Keys.Down, down);
+            RegisterCommand(Keys.C, new CycleBeamMissileCommand(player));
 
-            RegisterCommand(Keys.A, left);
-            RegisterCommand(Keys.Left, left);
+            RegisterCommand(Keys.Q, new QuitCommand(gameState));
 
-            RegisterCommand(Keys.D, right);
-            RegisterCommand(Keys.Right, right);
+            RegisterCommand(Keys.R, new RestartCommand(gameState));
 
-            RegisterCommand(Keys.Q, start);
+            RegisterCommand(Keys.T, new CycleLevelCommand(gameState));
 
-            RegisterCommand(Keys.R, select);
+            RegisterCommand(Keys.F, new ToggleFullscreenCommand(gameState));
 
-            RegisterCommand(Keys.E, damage);
-
-
+            RegisterCommand(Keys.K, new PlayNextThemeCommand());
+            RegisterCommand(Keys.L, new ShuffleThemesCommand());
+            RegisterCommand(Keys.O, new UnShuffleThemesCommand());
+            RegisterCommand(Keys.P, new PauseGameCommand());
+            RegisterCommand(Keys.Escape, new UnpauseGameCommand());
         }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+using CrossPlatformDesktopProject.Libraries.Sprite.Blocks.BlockSprites;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
@@ -22,7 +23,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private Texture2D leftStartingPlatformBlock;
 		private Texture2D redDoorBottomLeftBlock;
 		private Texture2D redDoorBottomRightBlock;
-		private Texture2D redDoorMiddleBlock;
 		private Texture2D redDoorMiddleLeftBlock;
 		private Texture2D redDoorMiddleRightBlock;
 		private Texture2D redDoorTopLeftBlock;
@@ -88,7 +88,6 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			leftStartingPlatformBlock = content.Load<Texture2D>("BlockSprites/LeftStartingPlatform");
 			redDoorBottomLeftBlock = content.Load<Texture2D>("BlockSprites/RedDoorBottomLeft");
 			redDoorBottomRightBlock = content.Load<Texture2D>("BlockSprites/RedDoorBottomRight");
-			redDoorMiddleBlock = content.Load<Texture2D>("BlockSprites/RedDoorMiddle");
 			redDoorMiddleLeftBlock = content.Load<Texture2D>("BlockSprites/RedDoorMiddleLeft");
 			redDoorMiddleRightBlock = content.Load<Texture2D>("BlockSprites/RedDoorMiddleRight");
 			redDoorTopLeftBlock = content.Load<Texture2D>("BlockSprites/RedDoorTopLeft");
@@ -116,7 +115,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			pipeBlockGreen = content.Load<Texture2D>("BlockSprites/GreenPipeBlock");
 			squareBlockGreen = content.Load<Texture2D>("BlockSprites/GreenSquareBlock");
 			lavaBlock = content.Load<Texture2D>("BlockSprites/LavaBlock");
-			lavaBlockTop = content.Load<Texture2D>("BlockSprites/LavaBlockTop");
+			lavaBlockTop = content.Load<Texture2D>("BlockSprites/LavaTop");
 			brickBlockLightBlue = content.Load<Texture2D>("BlockSprites/LightBlueBrickBlock");
 			doorBlockOrange = content.Load<Texture2D>("BlockSprites/OrangeDoorBlock");
 			circleBlockRed = content.Load<Texture2D>("BlockSprites/RedCircleBlock");
@@ -125,212 +124,190 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			pipeRightRed = content.Load<Texture2D>("BlockSprites/RedPipeRight");
 			roofSpikeBlock = content.Load<Texture2D>("BlockSprites/RoofSpikeBlock");
 	}
-		
-		//This method will probably be dropped and replaced by many more methods when the block sprites and game objects are separated.
-		public List<ISprite> CreateBlockSpriteList(Vector2 location)
-		{
-			List<ISprite> blockList = new List<ISprite>();
-
-
-			/*blockList.Add(new BlockSprite(BushBlockBlue, location));
-			blockList.Add(new BlockSprite(bushBlockBlue, location));
-			blockList.Add(new BlockSprite(swirlBlockBlue, location));
-			blockList.Add(new BlockSprite(tubeBlockBlue, location));
-			blockList.Add(new BlockSprite(stockBlockOrange, location));
-			blockList.Add(new BlockSprite(bushBlockOrange, location));
-			blockList.Add(new BlockSprite(swirlBlockOrange, location));
-			blockList.Add(new BlockSprite(tubeBlockOrange, location));*/
-
-			return blockList;
-		}
 
 		public ISprite CreateStockBlockBlueSprite(StockBlockBlue block)
         {
-			return new StockBlockBlueSprite(stockBlockBlue, block);
+			return new DrawBlockSprites(stockBlockBlue, block);
         }
 		public ISprite CreateBlueBrickBlockSprite(BlueBrickBlock block)
 		{
-			return new BlueBrickBlockSprite(brickBlockBlue, block);
+			return new DrawBlockSprites(brickBlockBlue, block);
 		}
 		public ISprite CreateBlueCircleBlockSprite(BlueCircleBlock block)
 		{
-			return new BlueCircleBlockSprite(circleBlockBlue, block);
+			return new DrawBlockSprites(circleBlockBlue, block);
 		}
 		public ISprite CreateBlueDoorBottomLeftSprite(BlueDoorBottomLeft block)
 		{
-			return new BlueDoorBottomLeftSprite(doorBottomLeftBlue, block);
+			return new DrawBlockSprites(doorBottomLeftBlue, block);
 		}
 		public ISprite CreateBlueDoorBottomRightSprite(BlueDoorBottomRight block)
 		{
-			return new BlueDoorBottomRightSprite(doorBottomRightBlue, block);
+			return new DrawBlockSprites(doorBottomRightBlue, block);
 		}
 		public ISprite CreateBlueDoorMiddleLeftSprite(BlueDoorMiddleLeft block)
 		{
-			return new BlueDoorMiddleLeftSprite(doorMiddleLeftBlue, block);
+			return new DrawBlockSprites(doorMiddleLeftBlue, block);
 		}
 		public ISprite CreateBlueDoorMiddleRightSprite(BlueDoorMiddleRight block)
 		{
-			return new BlueDoorMiddleRightSprite(doorMiddleRightBlue, block);
+			return new DrawBlockSprites(doorMiddleRightBlue, block);
 		}
 		public ISprite CreateBlueDoorTopLeftSprite(BlueDoorTopLeft block)
 		{
-			return new BlueDoorTopLeftSprite(doorTopLeftBlue, block);
+			return new DrawBlockSprites(doorTopLeftBlue, block);
 		}
 		public ISprite CreateBlueDoorTopRightSprite(BlueDoorTopRight block)
 		{
-			return new BlueDoorTopRightSprite(doorTopRightBlue, block);
+			return new DrawBlockSprites(doorTopRightBlue, block);
 		}
 		public ISprite CreateBlueFenceBlockSprite(BlueFenceBlock block)
 		{
-			return new BlueFenceBlockSprite(fenceBlockBlue, block);
+			return new DrawBlockSprites(fenceBlockBlue, block);
 		}
 		public ISprite CreateBlueMetalBlockSprite(BlueMetalBlock block)
 		{
-			return new BlueMetalBlockSprite(metalBlockBlue, block);
+			return new DrawBlockSprites(metalBlockBlue, block);
 		}
 		public ISprite CreateBluePipesBlockSprite(BluePipesBlock block)
 		{
-			return new BluePipesBlockSprite(pipesBlockBlue, block);
+			return new DrawBlockSprites(pipesBlockBlue, block);
 		}
 		public ISprite CreateBlueSquareBlockSprite(BlueSquareBlock block)
 		{
-			return new BlueSquareBlockSprite(squareBlockBlue, block);
+			return new DrawBlockSprites(squareBlockBlue, block);
 		}
 		public ISprite CreateGreenBrickBlockSprite(GreenBrickBlock block)
 		{
-			return new GreenBrickBlockSprite(brickBlockGreen, block);
+			return new DrawBlockSprites(brickBlockGreen, block);
 		}
 		public ISprite CreateGreenFenceBlockSprite(GreenFenceBlock block)
 		{
-			return new GreenFenceBlockSprite(fenceBlockGreen, block);
+			return new DrawBlockSprites(fenceBlockGreen, block);
 		}
 		public ISprite CreateGreenPipeBlockSprite(GreenPipeBlock block)
 		{
-			return new GreenPipeBlockSprite(pipeBlockGreen, block);
+			return new DrawBlockSprites(pipeBlockGreen, block);
 		}
 		public ISprite CreateGreenSquareBlockSprite(GreenSquareBlock block)
 		{
-			return new GreenSquareBlockSprite(brickBlockGreen, block);
+			return new DrawBlockSprites(brickBlockGreen, block);
 		}
 		public ISprite CreateLavaBlockSprite(LavaBlock block)
 		{
-			return new LavaBlockSprite(lavaBlock, block);
+			return new DrawBlockSprites(lavaBlock, block);
 		}
 		public ISprite CreateLavaBlockTopSprite(LavaBlockTop block)
 		{
-			return new LavaBlockTopSprite(lavaBlockTop, block);
+			return new DrawBlockSprites(lavaBlockTop, block);
 		}
 		public ISprite CreateLightBlueBrickBlockSprite(LightBlueBrickBlock block)
 		{
-			return new LightBlueBrickBlockSprite(brickBlockLightBlue, block);
+			return new DrawBlockSprites(brickBlockLightBlue, block);
 		}
 		public ISprite CreateOrangeDoorBlockSprite(OrangeDoorBlock block)
 		{
-			return new OrangeDoorBlockSprite(doorBlockOrange, block);
+			return new DrawBlockSprites(doorBlockOrange, block);
 		}
 		public ISprite CreateRedCircleBlockSprite(RedCircleBlock block)
 		{
-			return new RedCircleBlockSprite(circleBlockRed, block);
+			return new DrawBlockSprites(circleBlockRed, block);
 		}
 		public ISprite CreateRedCrackedBlockSprite(RedCrackedBlock block)
 		{
-			return new RedCrackedBlockSprite(crackedBlockRed, block);
+			return new DrawBlockSprites(crackedBlockRed, block);
 		}
 		public ISprite CreateRedPipeLeftSprite(RedPipeLeft block)
 		{
-			return new RedPipeLeftSprite(pipeLeftRed, block);
+			return new DrawBlockSprites(pipeLeftRed, block);
 		}
 		public ISprite CreateRedPipeRightSprite(RedPipeRight block)
 		{
-			return new RedPipeRightSprite(pipeRightRed, block);
+			return new DrawBlockSprites(pipeRightRed, block);
 		}
 		public ISprite CreateRoofSpikeBlockSprite(RoofSpikeBlock block)
 		{
-			return new RoofSpikeBlockSprite(roofSpikeBlock, block);
+			return new DrawBlockSprites(roofSpikeBlock, block);
 		}
 
 		public ISprite CreateSwirlBlockBlueSprite(SwirlBlockBlue block)
 		{
-			return new SwirlBlockBlueSprite(swirlBlockBlue, block);
+			return new DrawBlockSprites(swirlBlockBlue, block);
 		}
 
 		public ISprite CreateBushBlockBlueSprite(BushBlockBlue block)
 		{
-			return new BushBlockBlueSprite(bushBlockBlue, block);
+			return new DrawBlockSprites(bushBlockBlue, block);
 		}
 
 		public ISprite CreateBushBlockSilverSprite(BushBlockSilver block)
 		{
-			return new BushBlockSilverSprite(bushBlockSilver, block);
+			return new DrawBlockSprites(bushBlockSilver, block);
 		}
 
 		public ISprite CreateDualHorizontalBlockStoneSprite(DualHorizontalBlockStone block)
         {
-			return new DualHorizontalBlockStoneSprite(dualHorizontalBlockStone, block);
+			return new DrawBlockSprites(dualHorizontalBlockStone, block);
 		}
 
 		public ISprite CreateLeftStartingPlatformBlockSprite(LeftStartingPlatformBlock block)
 		{
-			return new LeftStartingPlatformBlockSprite(leftStartingPlatformBlock, block);
+			return new DrawBlockSprites(leftStartingPlatformBlock, block);
 		}
 
 		public ISprite CreateRightStartingPlatformBlockSprite(RightStartingPlatformBlock block)
 		{
-			return new RightStartingPlatformBlockSprite(rightStartingPlatformBlock, block);
+			return new DrawBlockSprites(rightStartingPlatformBlock, block);
 		}
 
 		public ISprite CreateRedDoorBottomLeftBlockSprite(RedDoorBottomLeftBlock block)
 		{
-			return new RedDoorBottomLeftBlockSprite(redDoorBottomLeftBlock, block);
+			return new DrawBlockSprites(redDoorBottomLeftBlock, block);
 		}
 
 		public ISprite CreateRedDoorBottomRightBlockSprite(RedDoorBottomRightBlock block)
 		{
-			return new RedDoorBottomRightBlockSprite(redDoorBottomRightBlock, block);
-		}
-		public ISprite CreateRedDoorMiddleBlockSprite(RedDoorMiddleBlock block)
-		{
-			return new RedDoorMiddleBlockSprite(redDoorMiddleBlock, block);
+			return new DrawBlockSprites(redDoorBottomRightBlock, block);
 		}
 
-		public ISprite CreateRedDoorMiddleLeftBlockSprite(RedDoorMiddeLeftBlock block)
+		public ISprite CreateRedDoorMiddleLeftBlockSprite(RedDoorMiddleLeftBlock block)
 		{
-			return new RedDoorMiddeLeftBlockSprite(redDoorMiddleLeftBlock, block);
+			return new DrawBlockSprites(redDoorMiddleLeftBlock, block);
 		}
 
 		public ISprite CreateRedDoorMiddleRightBlockSprite(RedDoorMiddleRightBlock block)
 		{
-			return new RedDoorMiddleRightBlockSprite(redDoorMiddleRightBlock, block);
+			return new DrawBlockSprites(redDoorMiddleRightBlock, block);
 		}
 
 		public ISprite CreateRedDoorTopLeftBlockSprite(RedDoorTopLeftBlock block)
 		{
-			return new RedDoorTopLeftBlockSprite(redDoorTopLeftBlock, block);
+			return new DrawBlockSprites(redDoorTopLeftBlock, block);
 		}
 
 		public ISprite CreateRedDoorTopRightBlockSprite(RedDoorTopRightBlock block)
 		{
-			return new RedDoorTopRightBlockSprite(redDoorTopRightBlock, block);
+			return new DrawBlockSprites(redDoorTopRightBlock, block);
 		}
 
 		public ISprite CreateStockBlockStoneSprite(StockBlockStone block)
         {
-			return new StockBlockStoneSprite(stockBlockStone, block);
+			return new DrawBlockSprites(stockBlockStone, block);
         }
 
 		public ISprite CreateTubeBlockBlueSprite(TubeBlockBlue block)
         {
-			return new TubeBlockBlueSprite(tubeBlockBlue, block);
+			return new DrawBlockSprites(tubeBlockBlue, block);
         }
 
 		public ISprite CreateStoneBlockWithEyesSprite(StoneBlockWithEyes block)
         {
-			return new StoneBlockWithEyesSprite(stoneBlockWithEyes, block);
+			return new DrawBlockSprites(stoneBlockWithEyes, block);
         }
 
 		public ISprite CreateVerticalTubeStoneBlockSprite(VerticalTubeStoneBlock block)
         {
-			return new VerticalTubeStoneBlockSprite(verticalTubeStoneBlock, block);
+			return new DrawBlockSprites(verticalTubeStoneBlock, block);
         }
 
 

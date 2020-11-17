@@ -6,3 +6,13 @@
 /.vs/CSE3902Game/v16/Browse.VC.opendb
 /Super Metroidvania 3Million/.vs/Super Metroidvania 5Million/v16
 /.vs/CSE3902Game/v15/Browse.VC.opendb
+
+*.suo
+*.mgcontent
+*.mgstats
+*.exe
+*.pdb
+*.txt
+*.cache
+[Dd]ebug/
+[Bb]in/
