@@ -10,6 +10,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     {
         private IMenuButton button;
         private String text;
+        
 
         public SimpleButtonSprite(IMenuButton menuButton, String buttonText) {
             button = menuButton;

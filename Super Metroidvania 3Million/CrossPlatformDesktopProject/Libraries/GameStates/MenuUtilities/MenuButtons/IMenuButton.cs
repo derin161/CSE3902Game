@@ -6,6 +6,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     //Author: Nyigel Spann
     public interface IMenuButton
     {
+        public bool IsSelected { get; set; }
         public Rectangle Space { get; }
         public void Press();
         public void Left();

@@ -13,6 +13,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     public class InGameMenu : AbstractMenu
     {
         public InGameMenu() { 
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
