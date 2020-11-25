@@ -9,6 +9,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     public class ResumeMenuButton : IMenuButton
     {
         public Rectangle Space { get; private set; }
+        public bool IsSelected { get; set; } = false;
+
         private ISprite sprite;
 
         public ResumeMenuButton(Rectangle space) {

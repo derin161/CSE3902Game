@@ -8,6 +8,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     public class AudioSettingsMenuButton : IMenuButton
     {
         public Rectangle Space { get; private set; }
+        public bool IsSelected { get; set; } = false;
 
         public AudioSettingsMenuButton(Rectangle space) {
             Space = space;
