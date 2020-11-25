@@ -1,6 +1,6 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
+namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Shyamal Shah
     class UnpauseGameCommand : ICommand

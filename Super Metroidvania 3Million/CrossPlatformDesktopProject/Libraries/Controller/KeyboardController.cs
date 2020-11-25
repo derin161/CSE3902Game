@@ -5,6 +5,7 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.GameStates;
 
 namespace CrossPlatformDesktopProject.Libraries.Controller
 {
@@ -118,6 +119,29 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             
             RegisterCommand(Keys.P, new UnpauseGameCommand());
+
+        }
+
+        public void MakeMenuDict(IMenuState menuState)     // If else of possible actions that updates choice
+        {
+
+            controllerPressMappings.Clear();
+            controllerReleaseMappings.Clear();
+
+
+            RegisterCommand(Keys.W, new MenuUpCommand(menuState));
+            RegisterCommand(Keys.Up, new MenuUpCommand(menuState));
+
+            RegisterCommand(Keys.S, new MenuDownCommand(menuState));
+            RegisterCommand(Keys.Down, new MenuDownCommand(menuState));
+
+            RegisterCommand(Keys.A, new MenuLeftCommand(menuState));
+            RegisterCommand(Keys.Left, new MenuLeftCommand(menuState));
+
+            RegisterCommand(Keys.D, new MenuRightCommand(menuState));
+            RegisterCommand(Keys.Right, new MenuRightCommand(menuState));
+
+            RegisterCommand(Keys.Escape, new MenuExitCommand(menuState));
 
         }
     }

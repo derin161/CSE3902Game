@@ -1,0 +1,19 @@
+﻿using CrossPlatformDesktopProject.Libraries.Container;
+using CrossPlatformDesktopProject.Libraries.GameStates;
+
+namespace CrossPlatformDesktopProject.Libraries.Command
+{
+    //Author: Nyigel Spann
+    class MenuLeftCommand : ICommand
+    {
+        private IMenuState menu;
+        public MenuLeftCommand(IMenuState menuState)
+        {
+            menu = menuState;
+        }
+        public void Execute()
+        {
+            menu.Left();
+        }
+    }
+}

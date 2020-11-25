@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using CrossPlatformDesktopProject.Libraries.Controller;
+using CrossPlatformDesktopProject.Libraries.GameStates;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
 {
@@ -60,6 +61,12 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public void ItemUpgradeSelection()
         {
             //Sprint 5 additional feature
+        }
+
+        public void InGameMenu()
+        {
+            state = new InGameMenu();
+            controller.MakeMenuDict((IMenuState) state); //cast is guaranteed to succeed
         }
 
         public void Update(GameTime gameTime)
