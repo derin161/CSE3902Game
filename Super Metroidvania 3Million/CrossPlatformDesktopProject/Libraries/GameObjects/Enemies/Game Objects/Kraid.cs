@@ -103,7 +103,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
-            //Initiate game over sequence
+            GameStateMachine.Instance.GameWin();
         }
 
         public void MoveLeft()

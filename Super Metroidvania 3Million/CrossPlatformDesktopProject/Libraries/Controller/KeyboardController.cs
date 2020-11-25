@@ -110,7 +110,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.P, new PauseGameCommand());
 
         }
-        public void MakePausedDict()     // If else of possible actions that updates choice
+        public void MakePausedDict()
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
@@ -119,6 +119,17 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             
             RegisterCommand(Keys.P, new UnpauseGameCommand());
+
+        }
+        public void MakeGameWinDict()
+        {
+            IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
+
+            controllerPressMappings.Clear();
+            controllerReleaseMappings.Clear();
+
+
+            RegisterCommand(Keys.R, new RestartCommand(gameState));
 
         }
 

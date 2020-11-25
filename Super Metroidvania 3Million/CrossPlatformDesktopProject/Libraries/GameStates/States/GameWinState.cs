@@ -17,7 +17,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            GameObjectContainer.Instance.Draw(spriteBatch);
+            spriteBatch.GraphicsDevice.Clear(Color.Black);
         }
 
     }
