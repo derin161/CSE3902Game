@@ -109,6 +109,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.O, new UnShuffleThemesCommand());
             RegisterCommand(Keys.P, new PauseGameCommand());
 
+            RegisterCommand(Keys.Escape, new OpenInGameMenuCommand());
+
         }
         public void MakePausedDict()
         {
@@ -154,6 +156,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             RegisterCommand(Keys.Escape, new MenuExitCommand(menuState));
 
+            RegisterCommand(Keys.Enter, new MenuPressCommand(menuState));
         }
     }
 }

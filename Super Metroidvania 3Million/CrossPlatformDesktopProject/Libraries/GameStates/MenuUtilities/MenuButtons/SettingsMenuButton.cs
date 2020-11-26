@@ -1,5 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Container;
+﻿using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,18 +7,16 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.GameStates
 {
     //Author: Nyigel Spann
-    public class ResumeMenuButton : IMenuButton
+    public class SettingsMenuButton : IMenuButton
     {
         public Rectangle Space { get; private set; }
         public bool IsSelected { get; set; } = false;
 
         private ISprite sprite;
-        private ICommand resumeCommand;
 
-        public ResumeMenuButton(Rectangle space) {
+        public SettingsMenuButton(Rectangle space) {
             Space = space;
-            sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, "RESUME");
-            resumeCommand = new UnpauseGameCommand();
+            sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, "SETTINGS");
         }
 
         public void Left()
@@ -29,7 +26,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         public void Press()
         {
-            resumeCommand.Execute();
+            //TODO: Take user to settings screen.
         }
 
         public void Right()

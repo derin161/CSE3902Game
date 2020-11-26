@@ -7,19 +7,23 @@ using System.Collections.Generic;
 namespace CrossPlatformDesktopProject.Libraries.GameStates
 {
     //Author: Nyigel Spann
-    public abstract class AbstractMenu : IMenuState
+    public abstract class AbstractMenuState : IMenuState
     {
         protected int ButtonIndex { get; set; } = 0;
         protected List<IMenuButton> ButtonList { get; private set; } = new List<IMenuButton>();
 
         public void Up()
         {
+            ButtonList[ButtonIndex].IsSelected = false;
             ButtonIndex = (((ButtonIndex - 1) % ButtonList.Count) + ButtonList.Count) % ButtonList.Count; //Mod that works for negative numbers
+            ButtonList[ButtonIndex].IsSelected = true;
         }
 
         public void Down()
         {
+            ButtonList[ButtonIndex].IsSelected = false;
             ButtonIndex = (ButtonIndex + 1) % ButtonList.Count;
+            ButtonList[ButtonIndex].IsSelected = true;
         }
 
         public void Left()
