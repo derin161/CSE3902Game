@@ -14,8 +14,17 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     //Author: Nyigel Spann
     public class SettingsMenuState : AbstractMenuState
     {
+        public Dictionary<IMenuButton, List<IMenuButton>> TabButtonsToSubMenuButtons { get; private set; } = new Dictionary<IMenuButton, List<IMenuButton>>();
+        public List<IMenuButton> TabButtonList { get; private set; } = new List<IMenuButton>();
+        public int TabButtonIndex { get; set; } = 0;
+
         private ISprite menuBackground;
         private ICommand exitCommand;
+        private int tabButtonWidth;
+        private int tabButtonHeight;
+        private int tabButtonXPos;
+        private int tabButtonYPos;
+
 
         public SettingsMenuState(Game1 game, IMenuState backMenuState) {
 
@@ -25,17 +34,18 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             int menuHeight = 480;
             menuBackground = MenuSpriteFactory.Instance.CreateSimpleBackgroundSprite(new Rectangle(0, 0, menuWidth, menuHeight));
 
-            int buttonWidth = 60;
-            int buttonHeight = 20;
-            int buttonXPos = menuWidth / 2 - buttonWidth / 2;
-            int buttonYPos = 80;
 
-            Rectangle buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
-            ICommand buttonCommand = new SetMenuStateCommand(backMenuState);
-            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "BACK"));
 
-            buttonYPos += buttonHeight * 2;
+            tabButtonWidth = 60;
+            tabButtonHeight = 20;
+            tabButtonXPos = 20;
+            tabButtonYPos = 20;
+            IMenuButton backButton = generateTabButtonAndList("BACK");
 
+            generateGameSettings();
+            generateAudioSettings();
+
+            ButtonList = TabButtonsToSubMenuButtons[backButton];
             ButtonList[0].IsSelected = true;
         }
 
@@ -47,15 +57,35 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             }
         }
 
-        //May move this is AbstractMenu and just override it if needed idk yet.
         public override void Update(GameTime gameTime)
         {
-
+            ButtonList = TabButtonsToSubMenuButtons[TabButtonList[TabButtonIndex]];
         }
 
         public override void ExitMenu()
         {
             exitCommand.Execute();
+        }
+
+        private void generateGameSettings() {
+            tabButtonXPos += tabButtonWidth * 2;
+            IMenuButton tabButton = generateTabButtonAndList("GAME SETTINGS");
+
+        }
+
+        private void generateAudioSettings()
+        {
+            tabButtonXPos += tabButtonWidth * 2;
+            IMenuButton tabButton = generateTabButtonAndList("AUDIO SETTINGS");
+        }
+
+        private IMenuButton generateTabButtonAndList(String tabButtonText) {
+            Rectangle tabButtonRectangle = new Rectangle(tabButtonXPos, tabButtonYPos, tabButtonWidth, tabButtonHeight);
+            IMenuButton tabButton = new SettingsTabMenuButton(tabButtonRectangle, tabButtonText, this);
+            TabButtonsToSubMenuButtons.Add(tabButton, new List<IMenuButton>());
+            TabButtonsToSubMenuButtons[tabButton].Add(tabButton);
+            TabButtonList.Add(tabButton);
+            return tabButton;
         }
     }
 }

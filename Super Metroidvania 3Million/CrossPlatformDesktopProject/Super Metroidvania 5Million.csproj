@@ -140,10 +140,10 @@
     <Compile Include="Libraries\GameObjects\Player\EnergyTankSprite.cs" />
     <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuBackGroundSprite.cs" />
+    <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\SettingsTabMenuButton.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\SimpleMenuButton.cs" />
     <Compile Include="Libraries\GameStates\States\IGameState.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\MenuButtonSprites\SimpleButtonSprite.cs" />
-    <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\AudioSettingsMenuButton.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\IMenuButton.cs" />
     <Compile Include="Libraries\GameStates\States\GameOverState.cs" />
     <Compile Include="Libraries\GameStates\States\GameWinState.cs" />

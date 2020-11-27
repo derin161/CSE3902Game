@@ -10,33 +10,33 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     public abstract class AbstractMenuState : IMenuState
     {
         protected int ButtonIndex { get; set; } = 0;
-        protected List<IMenuButton> ButtonList { get; private set; } = new List<IMenuButton>();
+        protected List<IMenuButton> ButtonList { get; set; } = new List<IMenuButton>();
 
-        public void Up()
+        public virtual void Up()
         {
             ButtonList[ButtonIndex].IsSelected = false;
             ButtonIndex = (((ButtonIndex - 1) % ButtonList.Count) + ButtonList.Count) % ButtonList.Count; //Mod that works for negative numbers
             ButtonList[ButtonIndex].IsSelected = true;
         }
 
-        public void Down()
+        public virtual void Down()
         {
             ButtonList[ButtonIndex].IsSelected = false;
             ButtonIndex = (ButtonIndex + 1) % ButtonList.Count;
             ButtonList[ButtonIndex].IsSelected = true;
         }
 
-        public void Left()
+        public virtual void Left()
         {
             ButtonList[ButtonIndex].Left();
         }
 
-        public void Right()
+        public virtual void Right()
         {
             ButtonList[ButtonIndex].Right();
         }
 
-        public void PressButton()
+        public virtual void PressButton()
         {
             ButtonList[ButtonIndex].Press();
         }
