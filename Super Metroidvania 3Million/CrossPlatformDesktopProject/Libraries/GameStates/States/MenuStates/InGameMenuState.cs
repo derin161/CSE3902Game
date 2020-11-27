@@ -1,4 +1,5 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Command;
+using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
@@ -18,24 +19,38 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private ISprite menuBackground;
 
         public InGameMenuState(Game1 game) {
-            menuBackground = MenuSpriteFactory.Instance.CreateInGameMenuBackground(new Rectangle(100, 100, 200, 300));
-            int xPos = 150; //Need to make these good values and tweak them for each button.
-            int yPos = 150;
-            int width = 60;
-            int height = 20;
+            int menuXPos = 100;
+            int menuYPos = 100;
+            int menuWidth = 200;
+            int menuHeight = 300;
+            menuBackground = MenuSpriteFactory.Instance.CreateInGameMenuBackgroundSprite(new Rectangle(menuXPos, menuYPos, menuWidth, menuHeight));
 
-            ButtonList.Add(new ResumeMenuButton(new Rectangle(xPos, yPos, width, height)));
+            int buttonWidth = 60;
+            int buttonHeight = 20;
+            int buttonXPos = menuXPos + menuWidth / 2 - buttonWidth / 2;
+            int buttonYPos = menuYPos + 80;
+            
+            Rectangle buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            ICommand buttonCommand = new UnpauseGameCommand();
+            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "RESUME"));
 
-            yPos += height + 20;
-            ButtonList.Add(new SettingsMenuButton(new Rectangle(xPos, yPos, width, height)));
+            buttonYPos += buttonHeight * 2;
+            buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            buttonCommand = new SetMenuStateCommand(new SettingsMenuState(game, this));
+            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "SETTINGS"));
 
-            yPos += height + 20;
-            ButtonList.Add(new RestartMenuButton(new Rectangle(xPos, yPos, width, height), game));
+            buttonYPos += buttonHeight * 2;
+            buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            buttonCommand = new RestartCommand(game);
+            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "RESTART"));
 
-            yPos += height + 20;
-            ButtonList.Add(new QuitMenuButton(new Rectangle(xPos, yPos, width, height), game));
+            buttonYPos += buttonHeight * 2;
+            buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            buttonCommand = new QuitCommand(game);
+            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "QUIT"));
 
             ButtonList[0].IsSelected = true;
+            
         }
 
         public override void Draw(SpriteBatch spriteBatch)

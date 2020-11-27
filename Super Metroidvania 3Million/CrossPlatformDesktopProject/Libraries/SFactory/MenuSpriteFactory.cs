@@ -13,6 +13,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		private SpriteFont defaultFont;
 		private SpriteFont selectedFont;
 		private Texture2D inGameMenuBackgroundTexture;
+		private Texture2D simpleBackgroundTexture;
 
 		private static MenuSpriteFactory instance = new MenuSpriteFactory();
 		public static MenuSpriteFactory Instance
@@ -32,15 +33,25 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 			//Projectiles
 			defaultFont = content.Load<SpriteFont>("Fonts/defaultMenuButtonFont");
 			selectedFont = content.Load<SpriteFont>("Fonts/selectedMenuButtonFont");
-			inGameMenuBackgroundTexture = content.Load<Texture2D>("Misc/MenuBackgroundCropped");
+
+			//From: https://www.behance.net/gallery/9655183/Game-UI-Background-and-Menu
+			inGameMenuBackgroundTexture = content.Load<Texture2D>("Misc/MenuBackgroundBordered");
+
+			//From: http://sfwallpaper.com/categories/background-gaming.html
+			simpleBackgroundTexture = content.Load<Texture2D>("Misc/SimpleBackground");
 		}
 
 		public ISprite CreateSimpleButtonSprite(IMenuButton menuButton, string buttonText) {
 			return new SimpleButtonSprite(menuButton, buttonText, defaultFont, selectedFont);
 		}
 
-		public ISprite CreateInGameMenuBackground(Rectangle space) {
+		public ISprite CreateInGameMenuBackgroundSprite(Rectangle space) {
 			return new MenuBackgroundSprite(inGameMenuBackgroundTexture, space);
+		}
+
+		public ISprite CreateSimpleBackgroundSprite(Rectangle space)
+		{
+			return new MenuBackgroundSprite(simpleBackgroundTexture, space);
 		}
 
 	}

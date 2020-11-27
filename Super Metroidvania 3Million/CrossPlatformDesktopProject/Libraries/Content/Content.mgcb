@@ -678,13 +678,6 @@
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:File.spritefont;PlayerHealth.spritefont
-
-#begin File.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
 /build:File.spritefont
 
 #begin Fonts/DefaultMenuButtonFont.spritefont
@@ -857,6 +850,18 @@
 /processorParam:TextureFormat=Color
 /build:Items/WaveBeam.png
 
+#begin Misc/MenuBackgroundBordered.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Misc/MenuBackgroundBordered.png
+
 #begin Misc/MenuBackgroundCropped.jpg
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -868,6 +873,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Misc/MenuBackgroundCropped.jpg
+
+#begin Misc/SimpleBackground.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Misc/SimpleBackground.jpg
 
 #begin NES - Metroid - Enemies & Bosses.png
 /importer:TextureImporter

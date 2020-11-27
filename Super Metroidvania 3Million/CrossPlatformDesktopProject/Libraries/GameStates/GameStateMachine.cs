@@ -66,10 +66,9 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             //Sprint 5 additional feature
         }
 
-        public void InGameMenu()
-        {
-            state = new InGameMenuState(game);
-            game.Keyboard.MakeMenuDict((IMenuState) state); //cast is guaranteed to succeed
+        public void MenuState(IMenuState menuState) {
+            state = menuState;
+            game.Keyboard.MakeMenuDict(menuState);
         }
 
         public void Update(GameTime gameTime)

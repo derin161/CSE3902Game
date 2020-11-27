@@ -8,18 +8,18 @@ using System;
 namespace CrossPlatformDesktopProject.Libraries.GameStates
 {
     //Author: Nyigel Spann
-    public class ResumeMenuButton : IMenuButton
+    public class SimpleMenuButton : IMenuButton
     {
         public Rectangle Space { get; private set; }
         public bool IsSelected { get; set; } = false;
 
         private ISprite sprite;
-        private ICommand resumeCommand;
+        private ICommand pressCommand;
 
-        public ResumeMenuButton(Rectangle space) {
+        public SimpleMenuButton(Rectangle space, ICommand pressCommand, String buttonText) {
             Space = space;
-            sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, "RESUME");
-            resumeCommand = new UnpauseGameCommand();
+            sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
+            this.pressCommand = pressCommand;
         }
 
         public void Left()
@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         public void Press()
         {
-            resumeCommand.Execute();
+            pressCommand.Execute();
         }
 
         public void Right()
