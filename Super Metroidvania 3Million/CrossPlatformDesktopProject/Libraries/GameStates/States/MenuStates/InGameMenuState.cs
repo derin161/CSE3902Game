@@ -32,22 +32,22 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             
             Rectangle buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
             ICommand buttonCommand = new UnpauseGameCommand();
-            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "RESUME"));
+            ButtonList.Add(new SimpleMenuButton("RESUME", buttonRectangle, buttonCommand));
 
             buttonYPos += buttonHeight * 2;
             buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
             buttonCommand = new SetMenuStateCommand(new SettingsMenuState(game, this));
-            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "SETTINGS"));
+            ButtonList.Add(new SimpleMenuButton("SETTINGS", buttonRectangle, buttonCommand));
 
             buttonYPos += buttonHeight * 2;
             buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
             buttonCommand = new RestartCommand(game);
-            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "RESTART"));
+            ButtonList.Add(new SimpleMenuButton("RESTART", buttonRectangle, buttonCommand));
 
             buttonYPos += buttonHeight * 2;
             buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
             buttonCommand = new QuitCommand(game);
-            ButtonList.Add(new SimpleMenuButton(buttonRectangle, buttonCommand, "QUIT"));
+            ButtonList.Add(new SimpleMenuButton("QUIT", buttonRectangle, buttonCommand));
 
             ButtonList[0].IsSelected = true;
             

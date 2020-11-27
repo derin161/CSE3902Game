@@ -3,15 +3,17 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
 	//Author: Nyigel Spann
     public class MenuSpriteFactory
     {
-		//Projectiles
-		private SpriteFont defaultFont;
-		private SpriteFont selectedFont;
+		public SpriteFont DefaultFont { get; private set; }
+		public SpriteFont SelectedFont { get; private set; }
+
 		private Texture2D inGameMenuBackgroundTexture;
 		private Texture2D simpleBackgroundTexture;
 
@@ -31,8 +33,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public void LoadAllTextures(ContentManager content)
 		{
 			//Projectiles
-			defaultFont = content.Load<SpriteFont>("Fonts/defaultMenuButtonFont");
-			selectedFont = content.Load<SpriteFont>("Fonts/selectedMenuButtonFont");
+			DefaultFont = content.Load<SpriteFont>("Fonts/defaultMenuButtonFont");
+			SelectedFont = content.Load<SpriteFont>("Fonts/selectedMenuButtonFont");
 
 			//From: https://www.behance.net/gallery/9655183/Game-UI-Background-and-Menu
 			inGameMenuBackgroundTexture = content.Load<Texture2D>("Misc/MenuBackgroundBordered");
@@ -42,7 +44,12 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		}
 
 		public ISprite CreateSimpleButtonSprite(IMenuButton menuButton, string buttonText) {
-			return new SimpleButtonSprite(menuButton, buttonText, defaultFont, selectedFont);
+			return new SimpleButtonSprite(menuButton, buttonText, DefaultFont, SelectedFont);
+		}
+
+		public ISprite CreateLeftRightButtonSprite(LeftRightMenuButton lRMenuButton, string buttonText)
+		{
+			return new LeftRightButtonSprite(lRMenuButton, buttonText, DefaultFont, SelectedFont);
 		}
 
 		public ISprite CreateInGameMenuBackgroundSprite(Rectangle space) {
@@ -53,6 +60,7 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		{
 			return new MenuBackgroundSprite(simpleBackgroundTexture, space);
 		}
+
 
 	}
 }

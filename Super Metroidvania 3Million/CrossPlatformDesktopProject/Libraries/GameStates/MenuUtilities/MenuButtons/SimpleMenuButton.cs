@@ -16,7 +16,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private ISprite sprite;
         private ICommand pressCommand;
 
-        public SimpleMenuButton(Rectangle space, ICommand pressCommand, String buttonText) {
+        public SimpleMenuButton(String buttonText, Rectangle space, ICommand pressCommand)
+        {
             Space = space;
             sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
             this.pressCommand = pressCommand;

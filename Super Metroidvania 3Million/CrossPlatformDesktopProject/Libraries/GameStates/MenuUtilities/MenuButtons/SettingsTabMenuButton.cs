@@ -16,7 +16,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private SettingsMenuState settingsMenu;
         private ISprite sprite;
 
-        public SettingsTabMenuButton(Rectangle space, String buttonText, SettingsMenuState settingsMenuState) {
+        public SettingsTabMenuButton(String buttonText, Rectangle space, SettingsMenuState settingsMenuState)
+        {
             Space = space;
             sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
             settingsMenu = settingsMenuState;
