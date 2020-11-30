@@ -8,6 +8,9 @@ namespace CrossPlatformDesktopProject.Libraries.Container
     //Author:
     public class BlockUtilities
     {
+
+        public int lavaDamage = 5;
+
         private static BlockUtilities instance = new BlockUtilities();
 
         public static BlockUtilities Instance
