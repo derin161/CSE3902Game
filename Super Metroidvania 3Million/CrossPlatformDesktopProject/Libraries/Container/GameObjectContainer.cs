@@ -139,11 +139,11 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             {
                 i.Draw(sb);
             }
+            player.Draw(sb);
             foreach (IBlock b in blockList)
             {
                 b.Draw(sb);
             }
-            player.Draw(sb);
         }
 
         public Vector2 PlayerPosition() 
