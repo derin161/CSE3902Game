@@ -54,7 +54,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
             newCamera.LockedLeft = true;
             newCamera.LockedRight = true;
             newCamera.DoTransition(newPosition);
-            currentGame.SetCamera(newCamera);
+            currentGame.Camera = newCamera;
         }
 
         public void Kill() { }

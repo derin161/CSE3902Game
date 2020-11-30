@@ -83,7 +83,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             player.Update(gametime);
             
             
-            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            /* Doing this as a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
             for (int i = 0; i < blockList.Count; i++)
             {
                 blockList[i].Update(gametime);
@@ -93,7 +93,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
                     i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
                 }
             }
-            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            /* Doing this as a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
             for (int i = 0; i < enemyList.Count; i++)
             {
                 enemyList[i].Update(gametime);
@@ -103,7 +103,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
                     i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
                 }
             }
-            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            /* Doing this as a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
             for (int i = 0; i < itemList.Count; i++)
             {
                 itemList[i].Update(gametime);
@@ -113,7 +113,7 @@ namespace CrossPlatformDesktopProject.Libraries.Container
                     i--; //The element at pos i was just removed, so decrement i to account for the decreasing size of the list.
                 }
             }
-            /* Doing this a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
+            /* Doing this as a for loop rather than for-each loop allows us to remove dead sprites during iteration. */
             for (int i = 0; i < projectileList.Count; i++)
             {
                 projectileList[i].Update(gametime);

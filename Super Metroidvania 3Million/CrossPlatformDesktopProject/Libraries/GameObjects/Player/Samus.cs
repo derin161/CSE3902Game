@@ -9,7 +9,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
     {
         public IPlayerState State;
         public PlayerInventory Inventory { get; set; }
-        public int health;
         public Rectangle space { get; set; }
         private Rectangle playerHitBox;
         private Game1 game;
@@ -43,7 +42,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             morph = false;
             gameTime = g2;
             game = g;
-            health = 100;
             isDead = false;
             x = l.X;
             y = l.Y;
@@ -100,12 +98,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public void TakeDamage(int damage)
         {
             //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
-            health -= damage;
-            if (health <= 0)
-            {
-                health = 0;
-                isDead = true;
-            }
+            Inventory.Damage(damage, this);
         }
         public void Upgrade(IItem item)
         {

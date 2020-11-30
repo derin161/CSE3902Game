@@ -43,6 +43,19 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             HasHiddenPuzzles = false;
         }
 
+        public void Damage(int damage, IPlayer player) {
+            CurrentEnergyLevel -= damage;
+            if (CurrentEnergyLevel <= 0) {
+                CurrentEnergyTanksFilled--;
+                CurrentEnergyLevel = ((CurrentEnergyLevel % energyCapacityPerTank) + energyCapacityPerTank) % energyCapacityPerTank; //Mod that works for negative numbers
+                if (CurrentEnergyTanksFilled < 0)
+                { //Player is dead
+                    player.Kill();
+                }
+            }
+            
+        }
+
         public void GiveItem(BombItem bomb) {
             HasBomb = true;
             upgradePickupSequence();
