@@ -86,6 +86,7 @@ namespace CrossPlatformDesktopProject
             GameStateMachine.Instance.Draw(spriteBatch);
 
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
 

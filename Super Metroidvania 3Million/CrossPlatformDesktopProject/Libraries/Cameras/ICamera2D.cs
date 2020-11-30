@@ -44,22 +44,17 @@ namespace CrossPlatformDesktopProject.Libraries.Cameras
         /// <summary>
         /// Gets the screen center (does not account for Scale)
         /// </summary>
-        /// <value>The screen center.</value>
         Vector2 ScreenCenter { get; }
 
         /// <summary>
         /// Gets the transform that can be applied to 
         /// the SpriteBatch Class.
         /// </summary>
-        /// <see cref="SpriteBatch"/>
-        /// <value>The transform.</value>
         Matrix Transform { get; }
 
         /// <summary>
         /// Gets or sets the focus of the Camera.
         /// </summary>
-        /// <seealso cref="IFocusable"/>
-        /// <value>The focus.</value>
         IFocusable Focus { get; set; }
 
         /// <summary>
