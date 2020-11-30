@@ -15,12 +15,22 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         private SettingsMenuState settingsMenu;
         private ISprite sprite;
+        private ICommand pressCommand;
 
         public SettingsTabMenuButton(String buttonText, Rectangle space, SettingsMenuState settingsMenuState)
         {
             Space = space;
             sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
             settingsMenu = settingsMenuState;
+            this.pressCommand = new DummyCommand();
+        }
+
+        public SettingsTabMenuButton(String buttonText, Rectangle space, SettingsMenuState settingsMenuState, ICommand pressCommand)
+        {
+            Space = space;
+            sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
+            settingsMenu = settingsMenuState;
+            this.pressCommand = pressCommand;
         }
 
         public void Left()
@@ -32,7 +42,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         public void Press()
         {
-            //Do nothing
+            pressCommand.Execute();
         }
 
         public void Right()

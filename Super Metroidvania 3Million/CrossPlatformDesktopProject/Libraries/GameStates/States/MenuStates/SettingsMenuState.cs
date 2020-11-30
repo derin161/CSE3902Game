@@ -86,8 +86,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             
 
             Rectangle buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
-            ICommand leftCommand = null;
-            ICommand rightCommand = null;
+            ICommand leftCommand = new LowerDifficultyCommand();
+            ICommand rightCommand = new RaiseDifficultyCommand();
             List<String> difficultyTexts = new List<string> { "Normal", "Hard" };
             TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("DIFFICULTY", buttonRectangle, leftCommand, rightCommand, difficultyTexts));
 
