@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
             //DampingDistance = 64;
         }
 
-        protected Vector2 CameraCenter => new Vector2(currentPos.X + Viewport.Width / 2 - 16, currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
+        public Vector2 CameraCenter => new Vector2(currentPos.X + Viewport.Width / 2 - 16, currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
        
         public bool LockedRight { get; set; }
         public bool LockedLeft { get; set; }
@@ -50,14 +50,14 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
             }
         }
 
-        /*public Matrix GetViewMatrix()
+        public Matrix GetViewMatrix()
         {
             return
                 Matrix.CreateTranslation(new Vector3(-CameraPosition, 0.0f)) *
                 Matrix.CreateTranslation(new Vector3(-Vector2.Zero, 0.0f)) *
                 Matrix.CreateScale(Zoom, Zoom, 1) *
                 Matrix.CreateTranslation(new Vector3(Vector2.Zero, 0.0f));
-        }*/
+        }
 
         public virtual void Update()
         {
@@ -104,14 +104,14 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
             return inFromBottom && inFromTop && inFromLeft && inFromRight;
         }
 
-        public bool IsRendered(IGameObject gameObject, int leniance)
+        /*public bool IsRendered(IGameObject gameObject, int leniance)
         {
             bool inFromLeft = gameObject.SpaceRectangle().Right > CameraPosition.X - leniance;
             bool inFromRight = gameObject.SpaceRectangle().Left < CameraPosition.X + leniance + Viewport.Width / Zoom;
             bool inFromTop = gameObject.SpaceRectangle().Bottom > CameraPosition.Y - leniance;
             bool inFromBottom = gameObject.SpaceRectangle().Top < CameraPosition.Y + leniance + Viewport.Height / Zoom;
             return inFromBottom && inFromTop && inFromLeft && inFromRight;
-        }
+        }*/
         
         public void DoTransition(Vector2 newPosition)
         {
