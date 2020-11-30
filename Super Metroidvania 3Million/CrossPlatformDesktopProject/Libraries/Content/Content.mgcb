@@ -742,6 +742,18 @@
 /processorParam:TextureFormat=Color
 /build:Items/EnergyTank.png
 
+#begin Items/HiddenPuzzles.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Items/HiddenPuzzles.png
+
 #begin Items/HighJump.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -849,6 +861,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Items/WaveBeam.png
+
+#begin MetroidGameOver.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MetroidGameOver.png
 
 #begin Misc/MenuBackgroundBordered.png
 /importer:TextureImporter
