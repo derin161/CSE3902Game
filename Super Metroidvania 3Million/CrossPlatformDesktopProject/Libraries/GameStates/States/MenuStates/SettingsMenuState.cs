@@ -48,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             buttonXPos = 800 / 2 - buttonWidth / 2;
             buttonYPos = 80;
 
-            IMenuButton backButton = generateTabButtonAndList("BACK");
+            IMenuButton backButton = generateTabButtonAndList("BACK", exitCommand);
 
             generateGameSettings(game);
             generateAudioSettings();
@@ -109,6 +109,16 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private IMenuButton generateTabButtonAndList(String tabButtonText) {
             Rectangle tabButtonRectangle = new Rectangle(tabButtonXPos, tabButtonYPos, tabButtonWidth, tabButtonHeight);
             IMenuButton tabButton = new SettingsTabMenuButton(tabButtonText, tabButtonRectangle, this);
+            TabButtonsToSubMenuButtons.Add(tabButton, new List<IMenuButton>());
+            TabButtonsToSubMenuButtons[tabButton].Add(tabButton);
+            TabButtonList.Add(tabButton);
+            return tabButton;
+        }
+
+        private IMenuButton generateTabButtonAndList(String tabButtonText, ICommand pressCommand)
+        {
+            Rectangle tabButtonRectangle = new Rectangle(tabButtonXPos, tabButtonYPos, tabButtonWidth, tabButtonHeight);
+            IMenuButton tabButton = new SettingsTabMenuButton(tabButtonText, tabButtonRectangle, this, pressCommand);
             TabButtonsToSubMenuButtons.Add(tabButton, new List<IMenuButton>());
             TabButtonsToSubMenuButtons[tabButton].Add(tabButton);
             TabButtonList.Add(tabButton);
