@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool HasVaria { get; private set; }
         public bool HasMaruMari { get; private set; }
         public bool HasBomb { get; private set; }
-
+        public bool HasHiddenPuzzles { get; private set; }
 
         public PlayerInventory(int startingEnergyLevel) {
             CurrentEnergyTanksFilled = 2;
@@ -40,6 +40,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             HasVaria = false;
             HasMaruMari = false;
             HasBomb = false;
+            HasHiddenPuzzles = false;
         }
 
         public void GiveItem(BombItem bomb) {
@@ -67,6 +68,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             {
                 CurrentEnergyTanks++;
             }
+            upgradePickupSequence();
+        }
+
+        public void GiveItem(HiddenPuzzles hp)
+        {
+            HasHiddenPuzzles = true;
             upgradePickupSequence();
         }
 

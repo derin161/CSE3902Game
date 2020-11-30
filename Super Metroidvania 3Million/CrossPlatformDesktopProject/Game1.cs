@@ -12,10 +12,11 @@ namespace CrossPlatformDesktopProject
     ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann, Will Floyd, Danny Attia
     public class Game1 : Game
     {
+        public KeyboardController Keyboard { get; private set; }
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private KeyboardController keyboard;
+        
         private GameTime gameTime;
         private LevelStatePattern currentLevel;
 
@@ -48,6 +49,7 @@ namespace CrossPlatformDesktopProject
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
+            MenuSpriteFactory.Instance.LoadAllTextures(Content);
 
             Vector2 playerSpawnLocation = new Vector2(250, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
@@ -55,8 +57,8 @@ namespace CrossPlatformDesktopProject
             camera.Focus = GameObjectContainer.Instance.Player;
             camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
             SoundManager.Instance.LoadAllSounds(Content);
-            keyboard = new KeyboardController(this);
-            GameStateMachine.Instance.RegisterKeyboardController(keyboard);
+            Keyboard = new KeyboardController(this);
+            GameStateMachine.Instance.RegisterGame(this);
             currentLevel.Initialize(playerSpawnLocation, this);
         }
 
@@ -68,7 +70,7 @@ namespace CrossPlatformDesktopProject
         protected override void Update(GameTime gameTime)
         {
             GameStateMachine.Instance.Update(gameTime);
-            keyboard.Update(gameTime);
+            Keyboard.Update(gameTime);
             SoundManager.Instance.Update(gameTime);
             camera.Update();
             graphics.GraphicsDevice.Viewport = new Viewport(-(int)camera.CameraPosition.X, (int)camera.CameraPosition.Y, 800, 480);
@@ -84,6 +86,7 @@ namespace CrossPlatformDesktopProject
             GameStateMachine.Instance.Draw(spriteBatch);
 
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
 
@@ -104,8 +107,8 @@ namespace CrossPlatformDesktopProject
             camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             camera.Focus = GameObjectContainer.Instance.Player;
             camera.CameraPosition = new Vector2(camera.Focus.SpaceRectangle().X - camera.Viewport.Width / camera.Zoom / 2, camera.CameraPosition.Y);
-            keyboard = new KeyboardController(this);
-            GameStateMachine.Instance.RegisterKeyboardController(keyboard);
+            Keyboard = new KeyboardController(this);
+            GameStateMachine.Instance.RegisterGame(this);
             GameStateMachine.Instance.Play();
             currentLevel.Initialize(playerSpawnLocation, this);
         }

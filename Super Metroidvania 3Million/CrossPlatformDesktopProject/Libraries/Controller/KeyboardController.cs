@@ -11,18 +11,18 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 {
     public class KeyboardController : IController
     {
-        //Written by Tristan Roman and Shyamal Shah and Nyigel Spann
+        //Written by Tristan Roman and Shyamal Shah and Nyigel Spann and Will Floyd
         private Dictionary<Keys, ICommand> controllerPressMappings = new Dictionary<Keys, ICommand>();
         private Dictionary<Keys, ICommand> controllerReleaseMappings = new Dictionary<Keys, ICommand>();
 
         private KeyboardState oldState;
         private KeyboardState newState;
-        private Game1 gameState;
+        private Game1 game;
 
         public KeyboardController(Game1 game)
         {
             oldState = Keyboard.GetState();
-            gameState = game;
+            this.game = game;
         }
         public void RegisterCommand(Keys key, ICommand releaseCommand)
         {
@@ -96,23 +96,25 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             RegisterCommand(Keys.C, new CycleBeamMissileCommand(player));
 
-            RegisterCommand(Keys.Q, new QuitCommand(gameState));
+            RegisterCommand(Keys.Q, new QuitCommand(game));
 
-            RegisterCommand(Keys.R, new RestartCommand(gameState));
+            RegisterCommand(Keys.R, new RestartCommand(game));
 
-            RegisterCommand(Keys.T, new CycleLevelCommand(gameState));
+            RegisterCommand(Keys.T, new CycleLevelCommand(game));
 
-            RegisterCommand(Keys.F, new ToggleFullscreenCommand(gameState));
+            RegisterCommand(Keys.F, new ToggleFullscreenCommand(game));
 
             RegisterCommand(Keys.K, new PlayNextThemeCommand());
             RegisterCommand(Keys.L, new ShuffleThemesCommand());
             RegisterCommand(Keys.O, new UnShuffleThemesCommand());
             RegisterCommand(Keys.P, new PauseGameCommand());
 
+            RegisterCommand(Keys.Escape, new SetMenuStateCommand(new InGameMenuState(game)));
+
         }
         public void MakePausedDict()
         {
-            IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
+            IPlayer player = GameObjectContainer.Instance.Player; // The player GO
 
             controllerPressMappings.Clear();
             controllerReleaseMappings.Clear();
@@ -121,19 +123,19 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.P, new UnpauseGameCommand());
 
         }
-        public void MakeGameWinDict()
+        public void MakeGameWinLoseDict()
         {
-            IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
+            IPlayer player = GameObjectContainer.Instance.Player; // The player GO
 
             controllerPressMappings.Clear();
             controllerReleaseMappings.Clear();
 
 
-            RegisterCommand(Keys.R, new RestartCommand(gameState));
+            RegisterCommand(Keys.R, new RestartCommand(game));
 
         }
 
-        public void MakeMenuDict(IMenuState menuState)     // If else of possible actions that updates choice
+        public void MakeMenuDict(IMenuState menuState)     
         {
 
             controllerPressMappings.Clear();
@@ -154,6 +156,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
             RegisterCommand(Keys.Escape, new MenuExitCommand(menuState));
 
+            RegisterCommand(Keys.Enter, new MenuPressCommand(menuState));
         }
     }
 }

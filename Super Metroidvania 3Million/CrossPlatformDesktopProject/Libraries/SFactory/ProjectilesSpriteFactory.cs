@@ -4,7 +4,8 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.SFactory
 {
-    class ProjectilesSpriteFactory
+	//Author: Nyigel Spann
+    public class ProjectilesSpriteFactory
     {
 		//Projectiles
 		private Texture2D bombTex;

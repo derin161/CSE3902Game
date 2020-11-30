@@ -11,13 +11,14 @@ using CrossPlatformDesktopProject.Libraries.GameStates;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
 {
+    //Authors: Will Floyd & Nyigel Spann
     public class GameStateMachine
     {
 
 
         private static GameStateMachine instance = new GameStateMachine();
         private IGameState state;
-        private KeyboardController controller;
+        private Game1 game;
 
         private GameStateMachine()
         {
@@ -30,31 +31,31 @@ namespace CrossPlatformDesktopProject.Libraries.Container
                 return instance;
             }
         }
-        public void RegisterKeyboardController(KeyboardController c)
+        public void RegisterGame(Game1 game)
         {
-            controller = c;
-            controller.MakePlayDict();
+            this.game = game;
+            game.Keyboard.MakePlayDict();
         }
 
         public void Pause()
         {
             state = new PausedState();
-            controller.MakePausedDict();
+            game.Keyboard.MakePausedDict();
         }
         public void Play()
         {
             state = new PlayingState();
-            controller.MakePlayDict();
+            game.Keyboard.MakePlayDict();
         }
         public void GameOver()
         {
             state = new GameOverState();
-            //controller.MakeGameOverDict();
+            game.Keyboard.MakeGameWinLoseDict();
         }
         public void GameWin()
         {
             state = new GameWinState();
-            controller.MakeGameWinDict();
+            game.Keyboard.MakeGameWinLoseDict();
         }
         public void RoomTransition()
         {
@@ -65,10 +66,9 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             //Sprint 5 additional feature
         }
 
-        public void InGameMenu()
-        {
-            state = new InGameMenu();
-            controller.MakeMenuDict((IMenuState) state); //cast is guaranteed to succeed
+        public void MenuState(IMenuState menuState) {
+            state = menuState;
+            game.Keyboard.MakeMenuDict(menuState);
         }
 
         public void Update(GameTime gameTime)

@@ -4,7 +4,7 @@ using CrossPlatformDesktopProject.Libraries.GameStates;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class MenuLeftCommand : ICommand
+    public class MenuLeftCommand : ICommand
     {
         private IMenuState menu;
         public MenuLeftCommand(IMenuState menuState)

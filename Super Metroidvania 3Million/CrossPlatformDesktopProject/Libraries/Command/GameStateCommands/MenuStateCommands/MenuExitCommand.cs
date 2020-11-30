@@ -4,16 +4,16 @@ using CrossPlatformDesktopProject.Libraries.GameStates;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class MenuUpCommand : ICommand
+    public class MenuExitCommand : ICommand
     {
         private IMenuState menu;
-        public MenuUpCommand(IMenuState menuState)
+        public MenuExitCommand(IMenuState menuState)
         {
             menu = menuState;
         }
         public void Execute()
         {
-            menu.Up();
+            menu.ExitMenu();
         }
     }
 }

@@ -678,7 +678,21 @@
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:File.spritefont;PlayerHealth.spritefont
+/build:File.spritefont
+
+#begin Fonts/DefaultMenuButtonFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/DefaultMenuButtonFont.spritefont
+
+#begin Fonts/SelectedMenuButtonFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/SelectedMenuButtonFont.spritefont
 
 #begin HealthBar.png
 /importer:TextureImporter
@@ -727,6 +741,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Items/EnergyTank.png
+
+#begin Items/HiddenPuzzles.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Items/HiddenPuzzles.png
 
 #begin Items/HighJump.png
 /importer:TextureImporter
@@ -836,6 +862,54 @@
 /processorParam:TextureFormat=Color
 /build:Items/WaveBeam.png
 
+#begin MetroidGameOver.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MetroidGameOver.png
+
+#begin Misc/MenuBackgroundBordered.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Misc/MenuBackgroundBordered.png
+
+#begin Misc/MenuBackgroundCropped.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Misc/MenuBackgroundCropped.jpg
+
+#begin Misc/SimpleBackground.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Misc/SimpleBackground.jpg
+
 #begin NES - Metroid - Enemies & Bosses.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -860,7 +934,7 @@
 /processorParam:TextureFormat=Color
 /build:NES - Metroid - Samus Aran Power Suit.png
 
-#begin PlayerSprites/Jump.png
+#begin PlayerSprites/JumpLeftSamusSprite.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1160,6 +1234,13 @@
 /processorParam:Quality=Best
 /build:Sounds/ExplosionSound.wav
 
+#begin Sounds/File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Sounds/File.spritefont
+
 #begin Sounds/GameOverSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -1237,6 +1318,13 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:Sounds/SecretArea.mp3
+
+#begin Sounds/SelectedMenuButtonFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Sounds/SelectedMenuButtonFont.spritefont
 
 #begin Sounds/TitleTheme.mp3
 /importer:Mp3Importer

@@ -5,16 +5,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
 {
-    public class IceBeamItem : IItem
+    public class HiddenPuzzles : IItem
     {
         private bool isDead = false;
         private ISprite sprite;
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }
 
-        public IceBeamItem(Vector2 initialLocation)
+        public HiddenPuzzles(Vector2 initialLocation)
         {
-            sprite = ItemSpriteFactory.Instance.IceBeamItemSprite(this);
+            sprite = ItemSpriteFactory.Instance.HiddenPuzzlesSprite(this);
             Location = initialLocation;
             Space = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
         }
@@ -50,7 +50,4 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
             pInventory.GiveItem(this);
         }
     }
-
-
 }
-

@@ -1,19 +1,21 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
+﻿
+using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.GameStates;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    class MenuPressCommand : ICommand
+    public class SetMenuStateCommand : ICommand
     {
         private IMenuState menu;
-        public MenuPressCommand(IMenuState menuState)
+
+        public SetMenuStateCommand(IMenuState menuState)
         {
             menu = menuState;
         }
         public void Execute()
         {
-            menu.PressButton();
+            GameStateMachine.Instance.MenuState(menu);
         }
     }
 }
