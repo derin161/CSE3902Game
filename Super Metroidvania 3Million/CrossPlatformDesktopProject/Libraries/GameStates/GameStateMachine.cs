@@ -50,12 +50,12 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         public void GameOver()
         {
             state = new GameOverState();
-            //controller.MakeGameOverDict();
+            game.Keyboard.MakeGameWinLoseDict();
         }
         public void GameWin()
         {
             state = new GameWinState();
-            game.Keyboard.MakeGameWinDict();
+            game.Keyboard.MakeGameWinLoseDict();
         }
         public void RoomTransition()
         {

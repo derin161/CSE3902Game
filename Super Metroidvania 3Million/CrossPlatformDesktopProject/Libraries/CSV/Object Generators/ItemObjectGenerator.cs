@@ -2,10 +2,6 @@
 using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
 {
@@ -32,6 +28,9 @@ namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
                     break;
                 case "EnergyTankItem":
                     GameObjectContainer.Instance.Add(new EnergyTankItem(location));
+                    break;
+                case "HiddenPuzzles":
+                    GameObjectContainer.Instance.Add(new HiddenPuzzles(location));
                     break;
                 case "HighJumpItem":
                     GameObjectContainer.Instance.Add(new HighJumpItem(location));

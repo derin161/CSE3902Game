@@ -123,7 +123,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             RegisterCommand(Keys.P, new UnpauseGameCommand());
 
         }
-        public void MakeGameWinDict()
+        public void MakeGameWinLoseDict()
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player GO
 
