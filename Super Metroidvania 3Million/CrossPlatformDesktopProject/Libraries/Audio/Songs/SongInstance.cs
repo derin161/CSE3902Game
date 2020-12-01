@@ -10,6 +10,9 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
     //Author: Nyigel Spann
     public class SongInstance : ISound
     {
+        public string Name => song.Name;
+        public double Duration => song.Duration.TotalMilliseconds;
+
         private Song song;
         public SongInstance(Song s) {
             song = s;
@@ -22,10 +25,6 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             song = localSi.song;
         }
 
-        public double Duration()
-        {
-            return song.Duration.TotalMilliseconds;
-        }
 
         public void PlaySound() {
             

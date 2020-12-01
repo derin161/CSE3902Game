@@ -23,12 +23,12 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
             defaultFont = defaultSpriteFont;
             float xPos = lRButton.Space.Center.X - defaultFont.MeasureString(label).X / 2;
-            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(label).Y / 2 - 20;
+            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(label).Y / 2;
             defaultLabelDrawPos = new Vector2(xPos, yPos);
 
             selectedFont = selectedSpriteFont;
             xPos = lRButton.Space.Center.X - selectedFont.MeasureString(label).X / 2;
-            yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(label).Y / 2 - 20;
+            yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(label).Y / 2;
             selectedLabelDrawPos = new Vector2(xPos, yPos);
         }
 
@@ -40,8 +40,10 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
             String activeLRText = lRButton.LRTextList[lRButton.LRTextIndex];
 
+            int activeLRTextVerticalOffset = 20;
+
             float xPos = lRButton.Space.Center.X - defaultFont.MeasureString(activeLRText).X / 2;
-            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(activeLRText).Y / 2;
+            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(activeLRText).Y / 2 + activeLRTextVerticalOffset;
             Vector2 activeLRTextPos = new Vector2(xPos, yPos);
 
             
@@ -53,7 +55,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
                 pos = selectedLabelDrawPos;
 
                 xPos = lRButton.Space.Center.X - selectedFont.MeasureString(activeLRText).X / 2;
-                yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(activeLRText).Y / 2;
+                yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(activeLRText).Y / 2 + activeLRTextVerticalOffset;
                 activeLRTextPos = new Vector2(xPos, yPos);
             }
 

@@ -11,20 +11,17 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
     //Author: Nyigel Spann
     public class EffectInstance : ISound
     {
-        
-        private SoundEffect sound;
-        public EffectInstance(SoundEffect s) {
-            this.sound = s;
-        }
+        public string Name => effect.Name;
+        public double Duration => effect.Duration.TotalMilliseconds;
 
-        public double Duration()
-        {
-            return sound.Duration.TotalMilliseconds;
+        private SoundEffect effect;
+        public EffectInstance(SoundEffect soundEffect) {
+            this.effect = soundEffect;
         }
 
         public void PlaySound() {
             
-             sound.Play();
+             effect.Play(SoundManager.Instance.EffectVolume, 0, 0); //pitch = 0.0f, pan = 0.0f
             
         }
     }

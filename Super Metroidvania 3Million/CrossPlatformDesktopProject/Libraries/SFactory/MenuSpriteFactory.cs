@@ -11,8 +11,10 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 	//Author: Nyigel Spann
     public class MenuSpriteFactory
     {
-		public SpriteFont DefaultFont { get; private set; }
-		public SpriteFont SelectedFont { get; private set; }
+		public SpriteFont LargeDefaultFont { get; private set; }
+		public SpriteFont LargeSelectedFont { get; private set; }
+		public SpriteFont SmallDefaultFont { get; private set; }
+		
 
 		private Texture2D inGameMenuBackgroundTexture;
 		private Texture2D simpleBackgroundTexture;
@@ -33,8 +35,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		public void LoadAllTextures(ContentManager content)
 		{
 			//Projectiles
-			DefaultFont = content.Load<SpriteFont>("Fonts/defaultMenuButtonFont");
-			SelectedFont = content.Load<SpriteFont>("Fonts/selectedMenuButtonFont");
+			LargeDefaultFont = content.Load<SpriteFont>("Fonts/defaultMenuButtonFont");
+			LargeSelectedFont = content.Load<SpriteFont>("Fonts/selectedMenuButtonFont");
+			SmallDefaultFont = content.Load<SpriteFont>("Fonts/smallMenuButtonFont");
 
 			//From: https://www.behance.net/gallery/9655183/Game-UI-Background-and-Menu
 			inGameMenuBackgroundTexture = content.Load<Texture2D>("Misc/MenuBackgroundBordered");
@@ -44,12 +47,12 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
 		}
 
 		public ISprite CreateSimpleButtonSprite(IMenuButton menuButton, string buttonText) {
-			return new SimpleButtonSprite(menuButton, buttonText, DefaultFont, SelectedFont);
+			return new SimpleButtonSprite(menuButton, buttonText, LargeDefaultFont, LargeSelectedFont);
 		}
 
 		public ISprite CreateLeftRightButtonSprite(LeftRightMenuButton lRMenuButton, string buttonText)
 		{
-			return new LeftRightButtonSprite(lRMenuButton, buttonText, DefaultFont, SelectedFont);
+			return new LeftRightButtonSprite(lRMenuButton, buttonText, SmallDefaultFont, SmallDefaultFont);
 		}
 
 		public ISprite CreateInGameMenuBackgroundSprite(Rectangle space) {

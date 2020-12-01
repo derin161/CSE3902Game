@@ -80,6 +80,13 @@
     <Compile Include="Libraries\Collision\Collision Handler\PlayerBlockCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\PlayerEnemyCollision.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\CollisionHandler.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\RaiseEffectVolumeCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\LowerEffectVolumeCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\RaiseSongVolumeCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\LowerSongVolumeCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\UnLoopCurrentThemeCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\LoopCurrentThemeCommand.cs" />
+    <Compile Include="Libraries\Command\AudioCommands\PlayPreviousThemeCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\UnShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />

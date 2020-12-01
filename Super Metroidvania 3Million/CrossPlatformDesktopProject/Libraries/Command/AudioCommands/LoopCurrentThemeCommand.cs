@@ -4,14 +4,14 @@ using CrossPlatformDesktopProject.Libraries.CSV;
 namespace CrossPlatformDesktopProject.Libraries.Command
 {
     //Author: Nyigel Spann
-    public class PlayNextThemeCommand : ICommand
+    public class LoopCurrentThemeCommand : ICommand
     {
-        public PlayNextThemeCommand()
+        public LoopCurrentThemeCommand()
         {
         }
         public void Execute()
         {
-            SoundManager.Instance.Songs.Controls.PlayNextTheme();
+            SoundManager.Instance.Songs.Controls.Loop();
         }
     }
 }

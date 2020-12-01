@@ -25,7 +25,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         public SimpleMenuButton(String buttonText, Vector2 point, ICommand pressCommand)
         {
-            Space = new Rectangle(point.ToPoint(), MenuSpriteFactory.Instance.DefaultFont.MeasureString(buttonText).ToPoint());
+            Space = new Rectangle(point.ToPoint(), MenuSpriteFactory.Instance.LargeDefaultFont.MeasureString(buttonText).ToPoint());
             sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
             this.pressCommand = pressCommand;
         }

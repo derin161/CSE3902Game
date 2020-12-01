@@ -33,6 +33,22 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             this.pressCommand = pressCommand;
         }
 
+        public SettingsTabMenuButton(String buttonText, Vector2 point, SettingsMenuState settingsMenuState)
+        {
+            Space = new Rectangle(point.ToPoint(), MenuSpriteFactory.Instance.LargeDefaultFont.MeasureString(buttonText).ToPoint());
+            sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
+            settingsMenu = settingsMenuState;
+            this.pressCommand = new DummyCommand();
+        }
+
+        public SettingsTabMenuButton(String buttonText, Vector2 point, SettingsMenuState settingsMenuState, ICommand pressCommand)
+        {
+            Space = new Rectangle(point.ToPoint(), MenuSpriteFactory.Instance.LargeDefaultFont.MeasureString(buttonText).ToPoint());
+            sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
+            settingsMenu = settingsMenuState;
+            this.pressCommand = pressCommand;
+        }
+
         public void Left()
         {
             settingsMenu.TabButtonList[settingsMenu.TabButtonIndex].IsSelected = false;

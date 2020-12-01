@@ -57,6 +57,8 @@ namespace CrossPlatformDesktopProject
             Camera.Focus = GameObjectContainer.Instance.Player;
             Camera.CameraPosition = new Vector2(Camera.Focus.SpaceRectangle().X - Camera.Viewport.Width / Camera.Zoom / 2, Camera.CameraPosition.Y);
             SoundManager.Instance.LoadAllSounds(Content);
+            SoundManager.Instance.Songs.PlayBrinstarTheme();
+
             Keyboard = new KeyboardController(this);
             GameStateMachine.Instance.RegisterGame(this);
             currentLevel.Initialize(playerSpawnLocation, this);
