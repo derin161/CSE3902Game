@@ -1,8 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     public class Samus : IPlayer
     {

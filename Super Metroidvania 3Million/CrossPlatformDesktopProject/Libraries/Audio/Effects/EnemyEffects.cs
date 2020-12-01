@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 
-namespace CrossPlatformDesktopProject.Libraries.Audio
+namespace SuperMetroidvania5Million.Libraries.Audio
 {
     //Author: Nyigel Spann
     public class EnemyEffects

@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
+namespace SuperMetroidvania5Million.Libraries.Sprite.Items
 {
     //Author: Nyigel Spann
     public interface IItem : IGameObject

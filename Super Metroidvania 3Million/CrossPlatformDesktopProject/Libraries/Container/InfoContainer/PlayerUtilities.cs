@@ -1,4 +1,4 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Container
+﻿namespace SuperMetroidvania5Million.Libraries.Container
 {
     //Author:
     public class PlayerUtilities

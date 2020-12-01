@@ -1,7 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
+﻿using SuperMetroidvania5Million.Libraries.Audio;
 using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     public class PlayerPhysics
     {

@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Audio;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
+using SuperMetroidvania5Million.Libraries.Sprite.EnemySprites;
+using SuperMetroidvania5Million.Libraries.Command;
+using SuperMetroidvania5Million.Libraries.Audio;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
     class ProjectileEnemyCollision
     {

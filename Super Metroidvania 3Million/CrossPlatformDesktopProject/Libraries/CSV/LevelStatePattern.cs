@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV
+namespace SuperMetroidvania5Million.Libraries.CSV
 {
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
     {

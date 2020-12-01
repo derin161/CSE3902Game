@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
+﻿using SuperMetroidvania5Million.Libraries.Audio;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Nyigel Spann
     public class LoopCurrentThemeCommand : ICommand

@@ -1,7 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
     class ProjectileBlockCollision
     {

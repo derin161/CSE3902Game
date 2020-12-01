@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using SuperMetroidvania5Million.Libraries.Sprite.Items;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     public interface IPlayer : IGameObject
     {

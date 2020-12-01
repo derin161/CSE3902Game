@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
+﻿using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Shyamal Shah
     class UnpauseGameCommand : ICommand

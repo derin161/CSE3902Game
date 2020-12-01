@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.CSV;
+﻿using SuperMetroidvania5Million.Libraries.CSV;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     public class CycleLevelCommand : ICommand
     {

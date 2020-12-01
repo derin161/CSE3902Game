@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items.Sprites;
+using SuperMetroidvania5Million.Libraries.Sprite.Items;
+using SuperMetroidvania5Million.Libraries.Sprite.Items.Sprites;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     class ItemSpriteFactory
     {

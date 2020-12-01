@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks.BlockSprites;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks.BlockSprites;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     class BlockSpriteFactory
     {

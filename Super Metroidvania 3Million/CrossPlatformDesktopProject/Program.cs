@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CrossPlatformDesktopProject
+namespace SuperMetroidvania5Million
 {
     /// <summary>
     /// The main class.

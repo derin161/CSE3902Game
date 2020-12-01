@@ -1,10 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Audio;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace CrossPlatformDesktopProject.Libraries.Container
+namespace SuperMetroidvania5Million.Libraries.Container
 {
     //Author: Will Floyd
     public class GameWinState : IGameState

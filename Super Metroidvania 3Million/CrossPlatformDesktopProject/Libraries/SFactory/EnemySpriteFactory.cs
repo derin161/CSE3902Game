@@ -1,8 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.EnemySprites;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     class EnemySpriteFactory
     {

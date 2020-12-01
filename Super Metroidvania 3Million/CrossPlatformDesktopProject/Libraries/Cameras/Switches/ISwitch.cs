@@ -1,4 +1,4 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
+﻿namespace SuperMetroidvania5Million.Libraries.Camera.Switches
 {
     interface ISwitch : IGameObject
     {

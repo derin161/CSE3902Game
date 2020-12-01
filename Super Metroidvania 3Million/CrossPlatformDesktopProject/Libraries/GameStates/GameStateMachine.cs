@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.GameStates;
+using SuperMetroidvania5Million.Libraries.GameStates;
 
-namespace CrossPlatformDesktopProject.Libraries.Container
+namespace SuperMetroidvania5Million.Libraries.Container
 {
     //Authors: Will Floyd & Nyigel Spann
     public class GameStateMachine

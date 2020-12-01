@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Cameras
+namespace SuperMetroidvania5Million.Libraries.Cameras
 {
     public interface ICamera2D
     {
