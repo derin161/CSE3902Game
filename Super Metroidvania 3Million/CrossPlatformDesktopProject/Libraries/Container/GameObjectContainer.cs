@@ -142,10 +142,17 @@ namespace CrossPlatformDesktopProject.Libraries.Container
             {
                 i.Draw(sb);
             }
-            player.Draw(sb);
             foreach (IBlock b in blockList)
             {
                 b.Draw(sb);
+            }
+            player.Draw(sb);
+            foreach (IBlock b in blockList)
+            {
+                if (b is LavaBlockTop)
+                {
+                    b.Draw(sb);
+                }
             }
         }
 

@@ -2,6 +2,7 @@
 using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.CSV;
+using CrossPlatformDesktopProject.Libraries.Container;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
@@ -26,7 +27,10 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.left);
                 }
             }
-
+            else if (block is LavaBlockTop)
+            {
+                sam.TakeDamage(BlockUtilities.Instance.lavaDamage);
+            }
             else
             {
                 //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
