@@ -1,9 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using Microsoft.Xna.Framework;
-using System;
-
-namespace CrossPlatformDesktopProject.Libraries.Container
+﻿namespace CrossPlatformDesktopProject.Libraries.Container
 {
     //Author: Nyigel Spann
     public class ProjectileUtilities

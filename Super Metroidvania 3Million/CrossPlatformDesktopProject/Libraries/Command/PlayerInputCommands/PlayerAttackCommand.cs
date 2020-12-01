@@ -8,8 +8,9 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
         private IPlayer player;
 
-        
-        public PlayerAttackCommand(IPlayer player) {
+
+        public PlayerAttackCommand(IPlayer player)
+        {
             /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
             this.player = player;
         }

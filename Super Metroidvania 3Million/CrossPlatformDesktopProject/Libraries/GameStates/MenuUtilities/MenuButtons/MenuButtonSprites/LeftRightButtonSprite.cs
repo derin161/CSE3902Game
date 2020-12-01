@@ -1,8 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
 
 namespace CrossPlatformDesktopProject.Libraries.GameStates
 {
@@ -17,7 +15,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private Vector2 selectedLabelDrawPos;
 
 
-        public LeftRightButtonSprite(LeftRightMenuButton lRMenuButton, String buttonLabel, SpriteFont defaultSpriteFont, SpriteFont selectedSpriteFont) {
+        public LeftRightButtonSprite(LeftRightMenuButton lRMenuButton, String buttonLabel, SpriteFont defaultSpriteFont, SpriteFont selectedSpriteFont)
+        {
             lRButton = lRMenuButton;
             label = buttonLabel;
 
@@ -46,7 +45,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(activeLRText).Y / 2 + activeLRTextVerticalOffset;
             Vector2 activeLRTextPos = new Vector2(xPos, yPos);
 
-            
+
 
             if (lRButton.IsSelected) //Draw illuminated
             {
@@ -66,7 +65,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             {
                 spriteBatch.DrawString(font, "<", leftArrowPos, Color.Gray);
             }
-            else {
+            else
+            {
                 spriteBatch.DrawString(font, "<", leftArrowPos, color);
             }
 

@@ -12,7 +12,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         public SongController Controls { get; private set; }
         public bool IsMuted => MediaPlayer.IsMuted;
         public float Volume => MediaPlayer.Volume;
-        
+
         public bool LoopMode { get; private set; }
         public bool ShuffleMode { get; private set; }
         public bool IsPaused { get; private set; }
@@ -84,7 +84,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             themeSongs.Add(motherBrainBattleTheme);
             themeSongs.Add(titleTheme);
             themeSongs.Add(darudeSand);
-            shuffledThemes = themeSongs.ConvertAll((s => (ISound) new SongInstance(s)));
+            shuffledThemes = themeSongs.ConvertAll((s => (ISound)new SongInstance(s)));
             activeThemes = themeSongs;
             ActiveThemesNames = activeThemes.ConvertAll(s => s.Name);
 
@@ -109,17 +109,20 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             }
         }
 
-        public void PlayBrinstarTheme() {
+        public void PlayBrinstarTheme()
+        {
             activeSong = brinTheme;
             play();
         }
 
-        public void PlayItemAcquisitionSong() {
+        public void PlayItemAcquisitionSong()
+        {
             activeSong = getItemSong;
             play();
         }
 
-        public void PlayDarudeSandstorm() {
+        public void PlayDarudeSandstorm()
+        {
             activeSong = darudeSand;
             play();
         }
@@ -178,8 +181,9 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             play();
         }
 
-        private void play() {
-            mstimer = (int) activeSong.Duration + 50;
+        private void play()
+        {
+            mstimer = (int)activeSong.Duration + 50;
             activeSong.PlaySound();
         }
 
@@ -218,7 +222,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
                 SongManager.songIndex = (SongManager.songIndex + 1) % SongManager.activeThemes.Count;
                 SongManager.activeSong = SongManager.activeThemes[SongManager.songIndex];
                 SongManager.play();
-                
+
             }
 
             public void RaiseVolume()
@@ -301,7 +305,8 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
                 SongManager.LoopMode = false;
             }
 
-            private void shufflePlay() {
+            private void shufflePlay()
+            {
                 SongManager.ActiveThemesNames.Clear();
                 SongManager.ActiveThemesNames.AddRange(SongManager.activeThemes.ConvertAll(s => s.Name));
                 SongManager.activeSong = SongManager.activeThemes[SongManager.songIndex];

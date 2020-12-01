@@ -21,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         public MissileRocket(Vector2 initialLocation, Vector2 direction)
         {
-            isHorizontal = (int) direction.Y == 0;
+            isHorizontal = (int)direction.Y == 0;
             Location = initialLocation;
             Direction = direction;
             Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.MissileRocketHorizontalSpaceWidth, projInfo.MissileRocketHorizontalSpaceHeight);
@@ -30,7 +30,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 Space = new Rectangle((int)Location.X, (int)Location.Y, projInfo.MissileRocketHorizontalSpaceHeight, projInfo.MissileRocketHorizontalSpaceWidth);
             }
             sprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketSprite(this, isHorizontal);
-            explosion = (MissileRocketExplosion) ProjectilesGOFactory.Instance.CreateMissileRocketExplosion();
+            explosion = (MissileRocketExplosion)ProjectilesGOFactory.Instance.CreateMissileRocketExplosion();
             GameObjectContainer.Instance.Add(explosion);
         }
 
@@ -60,7 +60,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             return projInfo.MissileRocketDamage;
         }
 
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return isDead;
         }
 

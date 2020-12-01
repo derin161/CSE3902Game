@@ -8,7 +8,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
         private IPlayer player;
         private IEnemy enemy;
-        public EnemyDamagePlayerCommand(IPlayer player, IEnemy enemy) {
+        public EnemyDamagePlayerCommand(IPlayer player, IEnemy enemy)
+        {
             this.player = player;
             this.enemy = enemy;
         }

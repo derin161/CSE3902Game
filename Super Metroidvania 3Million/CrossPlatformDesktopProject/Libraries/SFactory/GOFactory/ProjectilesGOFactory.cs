@@ -6,57 +6,57 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
     class ProjectilesGOFactory
     {
 
-		private static ProjectilesGOFactory instance = new ProjectilesGOFactory();
-		public static ProjectilesGOFactory Instance
-		{
-			get
-			{
-				return instance;
-			}
-		}
+        private static ProjectilesGOFactory instance = new ProjectilesGOFactory();
+        public static ProjectilesGOFactory Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
 
-		private ProjectilesGOFactory()
-		{
-		}
+        private ProjectilesGOFactory()
+        {
+        }
 
-		public IProjectile CreateBomb(Vector2 Location)
-		{
+        public IProjectile CreateBomb(Vector2 Location)
+        {
 
-			return new Bomb(Location);
-		}
+            return new Bomb(Location);
+        }
 
-		public IProjectile CreateMissileRocket(Vector2 loc, Vector2 dir)
-		{
+        public IProjectile CreateMissileRocket(Vector2 loc, Vector2 dir)
+        {
 
-			return new MissileRocket(loc, dir);
-		}
+            return new MissileRocket(loc, dir);
+        }
 
-		public IProjectile CreateMissileRocketExplosion()
-		{
+        public IProjectile CreateMissileRocketExplosion()
+        {
 
-			return new MissileRocketExplosion();
-		}
+            return new MissileRocketExplosion();
+        }
 
-		public IProjectile CreatePowerBeam(Vector2 loc, Vector2 dir, bool isLongBeam, bool isIceBeam)
-		{
-			return new PowerBeam(loc, dir, isLongBeam, isIceBeam);
-		}
+        public IProjectile CreatePowerBeam(Vector2 loc, Vector2 dir, bool isLongBeam, bool isIceBeam)
+        {
+            return new PowerBeam(loc, dir, isLongBeam, isIceBeam);
+        }
 
-		public IProjectile CreateWaveBeam(Vector2 loc, Vector2 dir, bool isLongBeam)
-		{
-			return new WaveBeam(loc, dir, isLongBeam);
-		}
+        public IProjectile CreateWaveBeam(Vector2 loc, Vector2 dir, bool isLongBeam)
+        {
+            return new WaveBeam(loc, dir, isLongBeam);
+        }
 
-		public IProjectile CreateKraidHorn(Vector2 loc, bool isMovingRight)
-		{
-			return new KraidHorn(loc, isMovingRight);
-		}
+        public IProjectile CreateKraidHorn(Vector2 loc, bool isMovingRight)
+        {
+            return new KraidHorn(loc, isMovingRight);
+        }
 
-		public IProjectile CreateKraidMissile(Vector2 loc, Vector2 dir)
-		{
-			return new KraidMissile(loc, dir);
-		}
+        public IProjectile CreateKraidMissile(Vector2 loc, Vector2 dir)
+        {
+            return new KraidMissile(loc, dir);
+        }
 
 
-	}
+    }
 }

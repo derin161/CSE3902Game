@@ -6,7 +6,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     class EnemyFreezeCommand : ICommand
     {
         private IEnemy enemy;
-        public EnemyFreezeCommand(IEnemy enemy) {
+        public EnemyFreezeCommand(IEnemy enemy)
+        {
             this.enemy = enemy;
         }
         public void Execute()

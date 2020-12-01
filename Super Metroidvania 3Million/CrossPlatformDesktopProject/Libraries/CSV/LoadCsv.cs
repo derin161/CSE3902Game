@@ -3,9 +3,6 @@ using System.IO;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
 using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.CSV.Object_Generators;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV

@@ -85,7 +85,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Attack();
             if (collision)
             {
-                timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+                timer += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
             stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.SkreeWidth, EnemyUtilities.SkreeHeight);

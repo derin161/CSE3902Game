@@ -34,13 +34,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             movingRight = false;
             damaged = false;
             frozen = false;
-            
+
 
         }
         private void Attack()
         {
             //Should move around the blocks CounterClockwise, temporarily making it move back and forth
-            
+
             //Move left until it gets 2 blocks away
             if (initialX - stateMachine.x < EnemyUtilities.ZeelaHorizDistance && !movingRight)
             {
@@ -55,7 +55,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 movingRight = false;
             }
-            
+
         }
         public void Update(GameTime gameTime)
         {

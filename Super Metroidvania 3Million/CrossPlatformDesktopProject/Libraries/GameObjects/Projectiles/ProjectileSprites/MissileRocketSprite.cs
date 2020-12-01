@@ -38,11 +38,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 spriteBatch.Draw(texture, missileRocket.Space, srcRect, Color.White, 0, center, SpriteEffects.FlipHorizontally, 0);
             }
-            else {
+            else
+            {
                 spriteBatch.Draw(texture, missileRocket.Space, srcRect, Color.White);
             }
-                 
-            
+
+
         }
 
         public void Update(GameTime gameTime)

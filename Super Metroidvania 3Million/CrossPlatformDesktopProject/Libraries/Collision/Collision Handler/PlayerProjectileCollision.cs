@@ -18,7 +18,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 new ProjectileDamagePlayerCommand(player, projectile).Execute();
             }
         }
-        
+
     }
 
 }

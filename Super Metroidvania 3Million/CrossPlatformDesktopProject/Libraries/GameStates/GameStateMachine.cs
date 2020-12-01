@@ -1,12 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using CrossPlatformDesktopProject.Libraries.Controller;
 using CrossPlatformDesktopProject.Libraries.GameStates;
 
 namespace CrossPlatformDesktopProject.Libraries.Container
@@ -59,14 +52,15 @@ namespace CrossPlatformDesktopProject.Libraries.Container
         }
         public void RoomTransition()
         {
-            
+
         }
         public void ItemUpgradeSelection()
         {
             //Sprint 5 additional feature
         }
 
-        public void MenuState(IMenuState menuState) {
+        public void MenuState(IMenuState menuState)
+        {
             state = menuState;
             game.Keyboard.MakeMenuDict(menuState);
         }

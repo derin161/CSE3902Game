@@ -1,12 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.Audio
 {
@@ -35,7 +29,8 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         }
 
         //private contructor for singleton
-        private SoundManager() {
+        private SoundManager()
+        {
             MediaPlayer.Volume = 0.5f;  //Volume scales from 0.0f (silent) to 1.0f
             Projectiles = ProjectileEffects.Instance;
             Player = PlayerEffects.Instance;
@@ -45,7 +40,8 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             Items = ItemEffects.Instance;
             Songs = SongManager.Instance;
         }
-        public void LoadAllSounds(ContentManager content) {
+        public void LoadAllSounds(ContentManager content)
+        {
             Projectiles.LoadAllSounds(content);
             Songs.LoadAllSounds(content);
             Enemies.LoadAllSounds(content);
@@ -55,11 +51,13 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             Player.LoadAllSounds(content);
         }
 
-        public void Update(GameTime gtime) {
+        public void Update(GameTime gtime)
+        {
             Songs.Update(gtime);
         }
 
-        public void RaiseEffectVolume() {
+        public void RaiseEffectVolume()
+        {
             EffectVolume += EffectVolumeChange;
             if (EffectVolume > maxEffectVolume)
             {
@@ -68,7 +66,8 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             playTestEffect();
         }
 
-        public void LowerEffectVolume() {
+        public void LowerEffectVolume()
+        {
             EffectVolume -= EffectVolumeChange;
             if (EffectVolume < minEffectVolume)
             {
@@ -77,11 +76,12 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             playTestEffect();
         }
 
-        private void playTestEffect() {
+        private void playTestEffect()
+        {
             Player.JumpSound.PlaySound();
         }
 
-    
+
 
     }
 }

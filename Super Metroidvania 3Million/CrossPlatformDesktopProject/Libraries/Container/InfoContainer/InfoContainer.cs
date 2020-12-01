@@ -1,15 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CrossPlatformDesktopProject.Libraries.Container
+﻿namespace CrossPlatformDesktopProject.Libraries.Container
 {
     //Author: Nyigel Spann
     public class InfoContainer

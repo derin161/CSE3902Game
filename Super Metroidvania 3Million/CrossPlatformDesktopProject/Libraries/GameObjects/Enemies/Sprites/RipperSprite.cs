@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame = 0;
             totalFrames = Rows * Columns;
             ripper = r;
-            
+
         }
 
         public void Update(GameTime gameTime)
@@ -35,7 +35,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             //Stay on frame 0
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;

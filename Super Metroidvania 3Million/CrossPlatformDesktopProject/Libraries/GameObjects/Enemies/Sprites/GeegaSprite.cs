@@ -48,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             //Draw the sprite

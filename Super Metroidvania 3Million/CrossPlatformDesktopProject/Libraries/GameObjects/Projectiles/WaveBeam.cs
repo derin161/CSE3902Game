@@ -24,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public WaveBeam(Vector2 initialLocation, Vector2 direction, bool isLongBeam)
         {
 
-            isHorizontal = (int) direction.Y == 0;
+            isHorizontal = (int)direction.Y == 0;
             Direction = direction;
             isDead = false;
             this.isLongBeam = isLongBeam;
@@ -65,7 +65,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             //Update position and Space
             relativePos = new Vector2(x, y);
             Location = Vector2.Add(initialLocation, relativePos);
-            Space = new Rectangle((int) Location.X, (int) Location.Y, Space.Width, Space.Height);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, Space.Width, Space.Height);
 
 
             //If the Projectile is not a Long Beam, it dies after moving a set distance.
@@ -75,7 +75,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 //Compare with isDead so the proj doesn't come back to life
                 isDead = isDead || isHorizontal && (relativePos.X > bound || relativePos.X < -bound) || !isHorizontal && (relativePos.Y > bound || relativePos.Y < -bound);
             }
-            else {
+            else
+            {
                 //Die if a collision occurs or the projectile leaves the screen
                 //Compare with isDead so the proj doesn't come back to life
                 isDead = isDead || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
@@ -83,7 +84,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             sprite.Update(gameTime);
         }
 
-        public int GetDamage() {
+        public int GetDamage()
+        {
             return projInfo.WaveBeamDamage;
         }
 
@@ -91,7 +93,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         {
             return Space;
         }
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return isDead;
         }
 

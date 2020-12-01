@@ -41,7 +41,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 MoveLeft();
             }
-            else if (playerSpace.X -EnemyUtilities.KraidDistanceBuffer > stateMachine.x)
+            else if (playerSpace.X - EnemyUtilities.KraidDistanceBuffer > stateMachine.x)
             {
                 MoveRight();
             }

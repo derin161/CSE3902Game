@@ -42,10 +42,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             }
             count++;
 
-            
+
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
@@ -62,6 +62,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             return false;
         }
-        
+
     }
 }

@@ -16,7 +16,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         {
             sprite = ItemSpriteFactory.Instance.BombItemSprite(this);
             Location = initialLocation;
-            Space = new Rectangle((int) Location.X, (int) Location.Y, 32, 32);
+            Space = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
         }
 
         public void Update(GameTime gameTime)
@@ -29,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
         {
             sprite.Draw(spriteBatch);
         }
-        
+
         public bool IsDead()
         {
             return isDead;

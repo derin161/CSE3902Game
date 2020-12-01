@@ -30,7 +30,8 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             {
                 controllerReleaseMappings.Add(key, releaseCommand);
             }
-            else {
+            else
+            {
                 controllerReleaseMappings[key] = releaseCommand;
             }
         }
@@ -59,10 +60,11 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
                 {
                     controllerPressMappings[key].Execute();
                 }
-                else if (controllerReleaseMappings.ContainsKey(key) && !newState.IsKeyDown(key)) {
+                else if (controllerReleaseMappings.ContainsKey(key) && !newState.IsKeyDown(key))
+                {
                     controllerReleaseMappings[key].Execute();
                 }
-                
+
             }
 
             oldState = newState;
@@ -119,7 +121,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
             controllerPressMappings.Clear();
             controllerReleaseMappings.Clear();
 
-            
+
             RegisterCommand(Keys.P, new UnpauseGameCommand());
 
         }
@@ -135,7 +137,7 @@ namespace CrossPlatformDesktopProject.Libraries.Controller
 
         }
 
-        public void MakeMenuDict(IMenuState menuState)     
+        public void MakeMenuDict(IMenuState menuState)
         {
 
             controllerPressMappings.Clear();

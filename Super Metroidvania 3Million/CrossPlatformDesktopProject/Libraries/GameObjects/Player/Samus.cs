@@ -1,5 +1,4 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -20,8 +19,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool Jumping { get; set; }
         public float x { get; set; }
         public float y { get; set; }
-        public float missileSpeed {get; private set;}
-        public Vector2 HealthPosition {get; private set;}
+        public float missileSpeed { get; private set; }
+        public Vector2 HealthPosition { get; private set; }
 
         private int spriteHeight = 64;
         private int rightIdleOffset = 13;
@@ -35,22 +34,22 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         private int jumpWidth = 47;
         private int jumpHeight = 52;
         private bool morph;
-        
+
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
-		{
+        {
             morph = false;
             gameTime = g2;
             game = g;
             isDead = false;
             x = l.X;
             y = l.Y;
-            space = new Rectangle((int) x, (int) y, 64, 64);
+            space = new Rectangle((int)x, (int)y, 64, 64);
             playerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, idleWidth, spriteHeight);
             missile = 0;
             Inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
-			State = new RightIdleSamusState(this);
+            State = new RightIdleSamusState(this);
             Jumping = false;
             HUD = new PlayerHUD(Inventory);
         }
@@ -64,7 +63,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             if (missile == 2)
             {
                 missile = 0;
-            }else
+            }
+            else
             {
                 missile++;
             }
@@ -75,10 +75,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void Morph()
         {
-            if (!morph){
+            if (!morph)
+            {
                 State.Morph();
                 morph = true;
-            }else {
+            }
+            else
+            {
                 morph = false;
                 State.Idle();
             }
@@ -122,7 +125,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             return isDead;
         }
 
-        public void Idle() { 
+        public void Idle()
+        {
             State.Idle();
         }
 
@@ -136,7 +140,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             return space;
         }
 
-        public Rectangle SpriteRectangle(){
+        public Rectangle SpriteRectangle()
+        {
             return space;
         }
 
@@ -147,35 +152,43 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             space = new Rectangle((int)x, (int)y, 64, 64);
         }
 
-        public void UpdateRightIdleHitBox(){
+        public void UpdateRightIdleHitBox()
+        {
             playerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, idleWidth, spriteHeight);
         }
 
-        public void UpdateLeftIdleHitBox(){
+        public void UpdateLeftIdleHitBox()
+        {
             playerHitBox = new Rectangle(space.X + leftIdleOffset, space.Y, idleWidth, spriteHeight);
         }
 
-        public void UpdateRightWalkHitBox(){
+        public void UpdateRightWalkHitBox()
+        {
             playerHitBox = new Rectangle(space.X + rightWalkOffset, space.Y, walkWidth, spriteHeight);
         }
 
-        public void UpdateLeftWalkHitBox(){
+        public void UpdateLeftWalkHitBox()
+        {
             playerHitBox = new Rectangle(space.X + leftWalkOffset, space.Y, walkWidth, spriteHeight);
         }
 
-        public void UpdateJumpRightHitBox(){
+        public void UpdateJumpRightHitBox()
+        {
             playerHitBox = new Rectangle(space.X + jumpRightOffset, space.Y, jumpWidth, jumpHeight);
         }
 
-        public void UpdateJumpLeftHitBox(){
+        public void UpdateJumpLeftHitBox()
+        {
             playerHitBox = new Rectangle(space.X + jumpLeftOffset, space.Y, jumpWidth, jumpHeight);
         }
 
-        public void UpdateAimHitBox(){
+        public void UpdateAimHitBox()
+        {
             playerHitBox = new Rectangle(space.X, space.Y, space.Width, space.Height);
         }
 
-        public bool getMorph(){
+        public bool getMorph()
+        {
             return morph;
         }
 

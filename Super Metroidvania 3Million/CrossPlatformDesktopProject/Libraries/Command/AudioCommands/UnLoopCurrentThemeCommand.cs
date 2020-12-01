@@ -1,5 +1,4 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.CSV;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
 {

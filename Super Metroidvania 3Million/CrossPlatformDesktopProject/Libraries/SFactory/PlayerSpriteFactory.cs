@@ -95,7 +95,8 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return new MorphAnimationSamusSprite(leftMorphAnimation, s, false, currentState);
         }
 
-        public MorphDoneAnimationSamusSprite MorphMovingAnimationSprite(Samus s, bool facingRight){
+        public MorphDoneAnimationSamusSprite MorphMovingAnimationSprite(Samus s, bool facingRight)
+        {
             return new MorphDoneAnimationSamusSprite(movingMorph, s, facingRight);
         }
 
@@ -124,8 +125,9 @@ namespace CrossPlatformDesktopProject.Libraries.SFactory
             return new Samus(l, g, g2);
         }
 
-        public ISprite EmptyTankSprite(Vector2 pos) {
-            return new EnergyTankSprite(tankIcon, pos, new Rectangle(8,0,8,8));
+        public ISprite EmptyTankSprite(Vector2 pos)
+        {
+            return new EnergyTankSprite(tankIcon, pos, new Rectangle(8, 0, 8, 8));
         }
 
         public ISprite FullTankSprite(Vector2 pos)

@@ -13,20 +13,21 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
         private CollisionHandler handler = new CollisionHandler();
         private static CollisionDetector instance = new CollisionDetector();
 
-        public static CollisionDetector Instance {
+        public static CollisionDetector Instance
+        {
             get { return instance; }
         }
 
         private CollisionDetector() //Private constructor for singleton
         {
-            
+
         }
 
         public void Update()
         {
             IPlayer player = GameObjectContainer.Instance.Player;
             //Check if the player is colliding with any enemies
-            foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList) 
+            foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList)
             {
                 if (CheckCollisions(player, enemy))
                 {
@@ -64,7 +65,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
             //check if the enemies are colliding with any blocks
             foreach (IEnemy enemy in GameObjectContainer.Instance.EnemyList)
             {
-                foreach(IBlock block in GameObjectContainer.Instance.BlockList)
+                foreach (IBlock block in GameObjectContainer.Instance.BlockList)
                 {
                     if (CheckCollisions(enemy, block))
                     {

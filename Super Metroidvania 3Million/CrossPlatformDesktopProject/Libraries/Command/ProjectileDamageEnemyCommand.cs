@@ -8,7 +8,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
     {
         private IEnemy enemy;
         private IProjectile projectile;
-        public ProjectileDamageEnemyCommand(IProjectile projectile, IEnemy enemy) {
+        public ProjectileDamageEnemyCommand(IProjectile projectile, IEnemy enemy)
+        {
             this.enemy = enemy;
             this.projectile = projectile;
         }

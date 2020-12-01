@@ -48,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             float b = EnemyUtilities.SidehopperJumpB;
             float c = EnemyUtilities.SidehopperJumpC;
 
-            stateMachine.y = a*(count * count) - b * count + initialY+c;
+            stateMachine.y = a * (count * count) - b * count + initialY + c;
             stateMachine.x += direction;
         }
 

@@ -1,5 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
@@ -16,7 +15,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private Vector2 selectedDrawPos;
 
 
-        public SimpleButtonSprite(IMenuButton menuButton, String buttonText, SpriteFont defaultSpriteFont, SpriteFont selectedSpriteFont) {
+        public SimpleButtonSprite(IMenuButton menuButton, String buttonText, SpriteFont defaultSpriteFont, SpriteFont selectedSpriteFont)
+        {
             button = menuButton;
             text = buttonText;
 
@@ -38,7 +38,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             {
                 spriteBatch.DrawString(selectedFont, text, selectedDrawPos, Color.White);
             }
-            else { //Button is not selected
+            else
+            { //Button is not selected
                 spriteBatch.DrawString(defaultFont, text, defaultDrawPos, Color.Blue);
             }
         }

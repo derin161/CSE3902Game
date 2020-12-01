@@ -1,13 +1,9 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CrossPlatformDesktopProject.Libraries.Audio;
 
 namespace CrossPlatformDesktopProject.Libraries.GameStates
@@ -31,7 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private int buttonStartingYPos;
         private int buttonVerticalOffset;
 
-        public SettingsMenuState(Game1 game, IMenuState backMenuState) {
+        public SettingsMenuState(Game1 game, IMenuState backMenuState)
+        {
 
             exitCommand = new SetMenuStateCommand(backMenuState);
 
@@ -63,10 +60,12 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             menuBackground.Draw(spriteBatch);
 
             //The selected tabButton will get drawn twice but who cares.
-            foreach (IMenuButton button in ButtonList) {
+            foreach (IMenuButton button in ButtonList)
+            {
                 button.Draw(spriteBatch);
             }
-            foreach (IMenuButton tabButton in TabButtonList) {
+            foreach (IMenuButton tabButton in TabButtonList)
+            {
                 tabButton.Draw(spriteBatch);
             }
         }
@@ -81,7 +80,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             exitCommand.Execute();
         }
 
-        private void generateGameSettings(Game1 game) {
+        private void generateGameSettings(Game1 game)
+        {
             IMenuButton tabButton = generateTabButtonAndList("GAME SETTINGS");
 
             int buttonYPos = buttonStartingYPos;
@@ -109,7 +109,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             ICommand leftCommand = new LowerSongVolumeCommand();
             ICommand rightCommand = new RaiseSongVolumeCommand();
             List<String> percentageTexts = new List<string> { "0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" };
-            int startingIndex = (int) (SongManager.Instance.Volume / SongManager.Instance.Controls.VolumeChange);
+            int startingIndex = (int)(SongManager.Instance.Volume / SongManager.Instance.Controls.VolumeChange);
             TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("SONG VOLUME", buttonRectangle, leftCommand, rightCommand, percentageTexts, startingIndex));
 
             buttonYPos += buttonVerticalOffset;
@@ -135,7 +135,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             {
                 startingIndex = 1;
             }
-            else {
+            else
+            {
                 startingIndex = 0;
             }
             TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("SHUFFLE SONGS", buttonRectangle, leftCommand, rightCommand, offOnTexts, startingIndex));
@@ -158,7 +159,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         }
 
-        private IMenuButton generateTabButtonAndList(String tabButtonText) {
+        private IMenuButton generateTabButtonAndList(String tabButtonText)
+        {
             Vector2 tabButtonPos = new Vector2(tabButtonXPos, tabButtonYPos);
             IMenuButton tabButton = new SettingsTabMenuButton(tabButtonText, tabButtonPos, this);
             tabButtonXPos += tabButton.Space.Width + 40;

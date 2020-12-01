@@ -76,7 +76,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 spriteBatch.Draw(Texture, reverseSideHopper.Space, sourceRectangle, Color.DodgerBlue);
             }
-            else 
+            else
             {
                 spriteBatch.Draw(Texture, reverseSideHopper.Space, sourceRectangle, Color.White);
             }

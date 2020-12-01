@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Draw(SpriteBatch spriteBatch)
         {
             sprite.Draw(spriteBatch);
-            
+
         }
 
         public void Update(GameTime gameTime)
@@ -53,7 +53,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             return projInfo.KraidMissileDamage;
         }
 
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return isDead;
         }
 

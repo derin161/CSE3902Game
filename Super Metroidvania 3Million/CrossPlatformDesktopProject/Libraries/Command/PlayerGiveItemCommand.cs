@@ -1,5 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using CrossPlatformDesktopProject.Libraries.Sprite.Player;
 
 namespace CrossPlatformDesktopProject.Libraries.Command
@@ -9,7 +8,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
 
         private IItem item;
         private IPlayer player;
-        public PlayerGiveItemCommand(IItem item, IPlayer player) {
+        public PlayerGiveItemCommand(IItem item, IPlayer player)
+        {
             this.item = item;
             this.player = player;
         }

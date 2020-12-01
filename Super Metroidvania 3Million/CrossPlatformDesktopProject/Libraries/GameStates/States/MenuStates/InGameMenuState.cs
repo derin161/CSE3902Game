@@ -1,14 +1,8 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
 using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.GameStates
 {
@@ -18,7 +12,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private ICommand exitCommand = new UnpauseGameCommand();
         private ISprite menuBackground;
 
-        public InGameMenuState(Game1 game) {
+        public InGameMenuState(Game1 game)
+        {
             int menuXPos = 100;
             int menuYPos = 100;
             int menuWidth = 200;
@@ -29,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             int buttonHeight = 20;
             int buttonXPos = menuXPos + menuWidth / 2 - buttonWidth / 2;
             int buttonYPos = menuYPos + 80;
-            
+
             Rectangle buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
             ICommand buttonCommand = new UnpauseGameCommand();
             ButtonList.Add(new SimpleMenuButton("RESUME", buttonRectangle, buttonCommand));
@@ -50,14 +45,15 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             ButtonList.Add(new SimpleMenuButton("QUIT", buttonRectangle, buttonCommand));
 
             ButtonList[0].IsSelected = true;
-            
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             GameObjectContainer.Instance.Draw(spriteBatch); //draw the GOContainer first so that the menu then goes overtop.
             menuBackground.Draw(spriteBatch);
-            foreach (IMenuButton button in ButtonList) {
+            foreach (IMenuButton button in ButtonList)
+            {
                 button.Draw(spriteBatch);
             }
         }

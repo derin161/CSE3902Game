@@ -27,7 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool HasBomb { get; private set; }
         public bool HasHiddenPuzzles { get; private set; }
 
-        public PlayerInventory(int startingEnergyLevel) {
+        public PlayerInventory(int startingEnergyLevel)
+        {
             CurrentEnergyTanksFilled = 2;
             CurrentEnergyTanks = 3;
             CurrentMissileRocketCapacity = 0;
@@ -43,9 +44,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             HasHiddenPuzzles = false;
         }
 
-        public void Damage(int damage, IPlayer player) {
+        public void Damage(int damage, IPlayer player)
+        {
             CurrentEnergyLevel -= damage;
-            if (CurrentEnergyLevel <= 0) {
+            if (CurrentEnergyLevel <= 0)
+            {
                 CurrentEnergyTanksFilled--;
                 CurrentEnergyLevel = ((CurrentEnergyLevel % energyCapacityPerTank) + energyCapacityPerTank) % energyCapacityPerTank; //Mod that works for negative numbers
                 if (CurrentEnergyTanksFilled < 0)
@@ -53,10 +56,11 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
                     player.Kill();
                 }
             }
-            
+
         }
 
-        public void GiveItem(BombItem bomb) {
+        public void GiveItem(BombItem bomb)
+        {
             HasBomb = true;
             upgradePickupSequence();
         }
@@ -90,12 +94,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             upgradePickupSequence();
         }
 
-        public void GiveItem(HighJumpItem hj) {
+        public void GiveItem(HighJumpItem hj)
+        {
             HasHighJump = true;
             upgradePickupSequence();
         }
 
-        public void GiveItem(IceBeamItem ib) {
+        public void GiveItem(IceBeamItem ib)
+        {
             HasIceBeam = true;
             upgradePickupSequence();
         }
@@ -144,9 +150,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             upgradePickupSequence();
         }
 
-        private void upgradePickupSequence() {
+        private void upgradePickupSequence()
+        {
             SoundManager.Instance.Songs.PlayItemAcquisitionSong();
             //pause not yet implemented
         }
-    } 
+    }
 }

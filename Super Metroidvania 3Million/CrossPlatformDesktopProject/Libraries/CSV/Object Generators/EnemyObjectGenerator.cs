@@ -1,12 +1,7 @@
 ﻿using CrossPlatformDesktopProject.Libraries.Container;
 using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
 {

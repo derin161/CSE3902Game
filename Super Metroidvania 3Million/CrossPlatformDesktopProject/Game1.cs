@@ -17,11 +17,11 @@ namespace CrossPlatformDesktopProject
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        
+
         private GameTime gameTime;
         private LevelStatePattern currentLevel;
 
-        
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -39,7 +39,7 @@ namespace CrossPlatformDesktopProject
         {
             base.Initialize();
         }
-        
+
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -92,7 +92,8 @@ namespace CrossPlatformDesktopProject
             base.Draw(gameTime);
         }
 
-        public void Restart(){
+        public void Restart()
+        {
             // Create a new SpriteBatch, which can be used to draw textures.
             gameTime = new GameTime();
             SoundManager.Instance.Songs.PlayBrinstarTheme();

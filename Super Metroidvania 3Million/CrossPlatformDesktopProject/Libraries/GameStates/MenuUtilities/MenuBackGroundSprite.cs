@@ -1,7 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 
 namespace CrossPlatformDesktopProject.Libraries.GameStates
 {
@@ -10,8 +8,9 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
     {
         private Rectangle space;
         private Texture2D texture;
-       
-        public MenuBackgroundSprite(Texture2D texture, Rectangle space) {
+
+        public MenuBackgroundSprite(Texture2D texture, Rectangle space)
+        {
             this.space = space;
             this.texture = texture;
         }

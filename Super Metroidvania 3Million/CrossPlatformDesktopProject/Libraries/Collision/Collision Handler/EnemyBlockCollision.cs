@@ -43,7 +43,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 }
             }
         }
-        
+
     }
 
 }

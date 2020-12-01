@@ -76,13 +76,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 Kill();
             }
-            
+
         }
         public void Update(GameTime gameTime)
         {
             Attack();
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.GeegaWidth,EnemyUtilities.GeegaHeight);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.GeegaWidth, EnemyUtilities.GeegaHeight);
             currentSprite.Update(gameTime);
             if (isDead)
             {

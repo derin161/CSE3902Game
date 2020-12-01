@@ -44,7 +44,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 boomFlag = true;
                 SoundManager.Instance.Projectiles.ExplosionSound.PlaySound();
             }
-            else if (!boomFlag){
+            else if (!boomFlag)
+            {
                 Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0);
             }
 
@@ -60,7 +61,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             return projInfo.BombDamage;
         }
 
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return isDead;
         }
 
