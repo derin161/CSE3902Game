@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     public class JumpSamusSprite : ISprite
     {

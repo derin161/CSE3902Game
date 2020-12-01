@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
+namespace SuperMetroidvania5Million.Libraries.Camera.Switches
 {
     class CameraFocusSwitch : ISwitch
     {

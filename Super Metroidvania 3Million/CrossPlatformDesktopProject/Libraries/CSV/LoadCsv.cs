@@ -2,10 +2,10 @@
 using System.IO;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.CSV.Object_Generators;
+using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.CSV.Object_Generators;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV
+namespace SuperMetroidvania5Million.Libraries.CSV
 {
     public class LoadCsv
     {

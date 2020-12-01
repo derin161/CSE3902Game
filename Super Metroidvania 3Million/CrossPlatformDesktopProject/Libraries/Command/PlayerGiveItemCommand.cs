@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Items;
+using SuperMetroidvania5Million.Libraries.Sprite.Player;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
-    class PlayerGiveItemCommand : ICommand
+    public class PlayerGiveItemCommand : ICommand
     {
 
         private IItem item;

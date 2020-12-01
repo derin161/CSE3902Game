@@ -1,4 +1,4 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Command
+﻿namespace SuperMetroidvania5Million.Libraries.Command
 {
     interface ICameraCommand
     {

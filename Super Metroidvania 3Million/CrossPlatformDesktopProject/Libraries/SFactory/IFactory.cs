@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     //we might wanna get rid of this
     public interface IFactory

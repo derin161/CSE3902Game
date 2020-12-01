@@ -1,13 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using CrossPlatformDesktopProject.Libraries.Command.PlayerCommands;
+using SuperMetroidvania5Million.Libraries.Command;
+using SuperMetroidvania5Million.Libraries.Sprite.Player;
+using SuperMetroidvania5Million.Libraries.Command.PlayerCommands;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.GameStates;
+using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.GameStates;
 
-namespace CrossPlatformDesktopProject.Libraries.Controller
+namespace SuperMetroidvania5Million.Libraries.Controller
 {
     public class KeyboardController : IController
     {

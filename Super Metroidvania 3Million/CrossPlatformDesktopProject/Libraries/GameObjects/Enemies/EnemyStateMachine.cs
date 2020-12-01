@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+﻿using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     public class EnemyStateMachine

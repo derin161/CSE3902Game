@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
+﻿using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.GameStates
+namespace SuperMetroidvania5Million.Libraries.GameStates
 {
     //Author: Nyigel Spann
     public interface IMenuState : IGameState

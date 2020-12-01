@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Container
+namespace SuperMetroidvania5Million.Libraries.Container
 {
     public class GameOverState : IGameState
     {

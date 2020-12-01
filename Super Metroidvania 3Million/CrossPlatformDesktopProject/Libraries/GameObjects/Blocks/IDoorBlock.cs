@@ -1,4 +1,4 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Sprite.Blocks
+﻿namespace SuperMetroidvania5Million.Libraries.Sprite.Blocks
 {
     interface IDoorBlock : IBlock
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 
 //Author: Nyigel Spann
-namespace CrossPlatformDesktopProject.Libraries.Audio
+namespace SuperMetroidvania5Million.Libraries.Audio
 {
     public interface ISound
     {

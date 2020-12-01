@@ -1,7 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using SuperMetroidvania5Million.Libraries.Audio;
+using SuperMetroidvania5Million.Libraries.Sprite.Player;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Nyigel Spann
     class PlayerAttackCommand : ICommand

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV
+namespace SuperMetroidvania5Million.Libraries.CSV
 {
     class KraidDungeon5 : IStageState
     {

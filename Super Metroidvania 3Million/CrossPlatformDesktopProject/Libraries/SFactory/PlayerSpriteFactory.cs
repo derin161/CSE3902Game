@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+using SuperMetroidvania5Million.Libraries.Sprite.Player;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     /*Author: Shyamal Shah*/
     class PlayerSpriteFactory

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.GameStates
+namespace SuperMetroidvania5Million.Libraries.GameStates
 {
     //Author: Nyigel Spann
     public interface IMenuButton

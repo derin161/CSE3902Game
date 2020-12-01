@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
 
-namespace CrossPlatformDesktopProject.Libraries.Audio
+namespace SuperMetroidvania5Million.Libraries.Audio
 {
     //Author: Nyigel Spann
     public class ProjectileEffects

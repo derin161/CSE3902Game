@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.Sprite.Map;
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+using SuperMetroidvania5Million.Libraries.Sprite.Map;
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     class MapSpriteFactory
     {

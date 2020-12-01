@@ -1,9 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     public class Samus : IPlayer
     {
@@ -52,7 +51,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             Physics = new PlayerPhysics(this);
             State = new RightIdleSamusState(this);
             Jumping = false;
-            HUD = new PlayerHUD(Inventory);
+            HUD = new PlayerHUD(this);
         }
 
         public void Attack()
@@ -101,7 +100,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void TakeDamage(int damage)
         {
-            SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
+            //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
             Inventory.Damage(damage, this);
         }
         public void Upgrade(IItem item)
@@ -113,6 +112,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         {
             State.Update(gameTime);
             Physics.Update();
+            HUD.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)

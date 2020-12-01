@@ -1,8 +1,8 @@
 ﻿
-using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using SuperMetroidvania5Million.Libraries.Audio;
+using SuperMetroidvania5Million.Libraries.Sprite.Items;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     //Author: Nyigel Spann
     public class PlayerInventory

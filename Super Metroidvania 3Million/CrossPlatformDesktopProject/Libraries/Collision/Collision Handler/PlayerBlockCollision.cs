@@ -1,10 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.CSV;
-using CrossPlatformDesktopProject.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.CSV;
+using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
     //Author: Nyigel Spann and Will Floyd
     public class PlayerBlockCollision

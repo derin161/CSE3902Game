@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
+﻿using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.Sprite.EnemySprites;
 using Microsoft.Xna.Framework;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
+namespace SuperMetroidvania5Million.Libraries.CSV.Object_Generators
 {
     public class EnemyObjectGenerator
     {

@@ -1,9 +1,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.SFactory;
+using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     /*Author: Shyamal Shah*/
     public class JumpLeftSamusState : IPlayerState

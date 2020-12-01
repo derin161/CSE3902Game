@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
+namespace SuperMetroidvania5Million.Libraries.CSV.Object_Generators
 {
     public class SwitchObjectGenerator
     {

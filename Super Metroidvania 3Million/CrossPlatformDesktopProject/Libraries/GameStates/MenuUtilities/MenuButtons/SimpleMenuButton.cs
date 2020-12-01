@@ -1,10 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Command;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.GameStates
+namespace SuperMetroidvania5Million.Libraries.GameStates
 {
     //Author: Nyigel Spann
     public class SimpleMenuButton : IMenuButton

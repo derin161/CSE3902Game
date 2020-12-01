@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.GameStates;
+﻿using SuperMetroidvania5Million.Libraries.GameStates;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     //Author: Nyigel Spann
     public class MenuSpriteFactory

@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     //This class isn't needed until collisions are added.

@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.Container;
 
 
-namespace CrossPlatformDesktopProject.Libraries.Camera
+namespace SuperMetroidvania5Million.Libraries.Camera
 {
     public class Camera
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject.Libraries.Cameras
+namespace SuperMetroidvania5Million.Libraries.Cameras
 {
     public interface IFocusable
     {

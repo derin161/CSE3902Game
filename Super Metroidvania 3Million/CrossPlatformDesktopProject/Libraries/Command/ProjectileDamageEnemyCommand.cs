@@ -1,7 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.EnemySprites;
+using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Nyigel Spann
     class ProjectileDamageEnemyCommand : ICommand

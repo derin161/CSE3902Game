@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject.Libraries.Camera
+namespace SuperMetroidvania5Million.Libraries.Camera
 {
     internal class HorizontalCamera : Camera
     {

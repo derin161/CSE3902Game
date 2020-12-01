@@ -1,7 +1,7 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     class ProjectilesGOFactory
     {

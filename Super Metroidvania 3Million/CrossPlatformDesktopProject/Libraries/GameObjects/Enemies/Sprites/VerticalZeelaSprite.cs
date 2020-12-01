@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class VerticalZeelaSprite : ISprite

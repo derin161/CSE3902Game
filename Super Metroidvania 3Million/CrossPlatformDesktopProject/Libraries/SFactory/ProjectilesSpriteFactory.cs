@@ -1,8 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.SFactory
+namespace SuperMetroidvania5Million.Libraries.SFactory
 {
     //Author: Nyigel Spann
     public class ProjectilesSpriteFactory

@@ -1,13 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Controller;
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.CSV;
-using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Camera;
+using SuperMetroidvania5Million.Libraries.SFactory;
+using SuperMetroidvania5Million.Libraries.Controller;
+using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.CSV;
+using SuperMetroidvania5Million.Libraries.Audio;
+using SuperMetroidvania5Million.Libraries.Camera;
 
-namespace CrossPlatformDesktopProject
+namespace SuperMetroidvania5Million
 {
     ///Authors: Alex Nguyen, Tristan Roman, Shyamal Shah, Nyigel Spann, Will Floyd, Danny Attia
     public class Game1 : Game
