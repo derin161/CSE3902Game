@@ -51,7 +51,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             Physics = new PlayerPhysics(this);
             State = new RightIdleSamusState(this);
             Jumping = false;
-            HUD = new PlayerHUD(Inventory);
+            HUD = new PlayerHUD(this);
         }
 
         public void Attack()
@@ -112,6 +112,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         {
             State.Update(gameTime);
             Physics.Update();
+            HUD.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
