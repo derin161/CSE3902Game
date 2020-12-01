@@ -6,7 +6,8 @@ using CrossPlatformDesktopProject.Libraries.Container;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
-    class PlayerBlockCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class PlayerBlockCollision
     {
         public PlayerBlockCollision()
         {

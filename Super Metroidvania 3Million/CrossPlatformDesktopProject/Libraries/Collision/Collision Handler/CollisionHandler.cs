@@ -7,7 +7,8 @@ using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
-    class CollisionHandler
+    //Author: Nyigel Spann and Will Floyd
+    public class CollisionHandler
     {
         public CollisionHandler()
         {

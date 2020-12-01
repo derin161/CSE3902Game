@@ -8,7 +8,8 @@ using Microsoft.Xna.Framework;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
-    class CollisionDetector
+    //Author: Nyigel Spann and Will Floyd
+    public class CollisionDetector
     {
         private CollisionHandler handler = new CollisionHandler();
         private static CollisionDetector instance = new CollisionDetector();

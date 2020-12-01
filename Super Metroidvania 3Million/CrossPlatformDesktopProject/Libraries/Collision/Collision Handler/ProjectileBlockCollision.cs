@@ -3,7 +3,8 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
-    class ProjectileBlockCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class ProjectileBlockCollision
     {
         public ProjectileBlockCollision()
         {

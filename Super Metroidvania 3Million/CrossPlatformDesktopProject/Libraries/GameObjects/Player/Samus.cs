@@ -1,4 +1,5 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+﻿using CrossPlatformDesktopProject.Libraries.Audio;
+using CrossPlatformDesktopProject.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -100,7 +101,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         }
         public void TakeDamage(int damage)
         {
-            //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
+            SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
             Inventory.Damage(damage, this);
         }
         public void Upgrade(IItem item)

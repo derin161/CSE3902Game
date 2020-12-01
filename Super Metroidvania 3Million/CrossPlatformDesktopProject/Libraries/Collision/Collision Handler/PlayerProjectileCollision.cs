@@ -4,7 +4,8 @@ using CrossPlatformDesktopProject.Libraries.Command;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
-    class PlayerProjectileCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class PlayerProjectileCollision
     {
         public PlayerProjectileCollision()
         {

@@ -5,7 +5,8 @@ using CrossPlatformDesktopProject.Libraries.Audio;
 
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
-    class ProjectileEnemyCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class ProjectileEnemyCollision
     {
         public ProjectileEnemyCollision()
         {

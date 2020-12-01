@@ -3,7 +3,8 @@ using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 namespace CrossPlatformDesktopProject.Libraries.Collision
 {
-    class EnemyBlockCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class EnemyBlockCollision
     {
         public EnemyBlockCollision()
         {
