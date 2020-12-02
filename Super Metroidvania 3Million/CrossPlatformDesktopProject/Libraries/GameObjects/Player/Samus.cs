@@ -1,12 +1,13 @@
 ﻿using SuperMetroidvania5Million.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperMetroidvania5Million.Libraries.GameObjects.Player;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     public class Samus : IPlayer
     {
-        public IPlayerState State;
+        public IPlayerState State { get; set; }
         public PlayerInventory Inventory { get; set; }
         public Rectangle space { get; set; }
         private Rectangle playerHitBox;
@@ -108,6 +109,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             if (!invincible)
             {
                 Inventory.Damage(damage, this);
+                State = new DamagedPlayerStateDecorator(State, Color.Red);
                 invincible = true;
             }
         }
@@ -130,7 +132,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!invincible) State.Draw(spriteBatch);
+            State.Draw(spriteBatch);
             HUD.Draw(spriteBatch);
         }
 

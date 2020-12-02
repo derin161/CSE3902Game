@@ -8,8 +8,8 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
     /*Author: Shyamal Shah*/
     public class MorphSamusState : IPlayerState
     {
+        public IPlayerSprite Sprite { get; set; }
         private Samus samus;
-        private ISprite sprite;
         private MorphDoneAnimationSamusSprite movingSprite;
         private Vector2 missileLoc;
         private Vector2 direction;
@@ -23,14 +23,14 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             doneMorph = false;
             spriteChange = false;
             this.facingRight = facingRight;
-            movingSprite = PlayerSpriteFactory.Instance.MorphMovingAnimationSprite(sam, this.facingRight);
+            movingSprite = (MorphDoneAnimationSamusSprite) PlayerSpriteFactory.Instance.MorphMovingAnimationSprite(sam, this.facingRight);
             if (this.facingRight)
             {
-                sprite = PlayerSpriteFactory.Instance.MorphRightAnimationSprite(samus, this);
+                Sprite = PlayerSpriteFactory.Instance.MorphRightAnimationSprite(samus, this);
             }
             else
             {
-                sprite = PlayerSpriteFactory.Instance.MorphLeftAnimationSprite(samus, this);
+                Sprite = PlayerSpriteFactory.Instance.MorphLeftAnimationSprite(samus, this);
             }
         }
 
@@ -44,7 +44,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             {
                 samus.Physics.Jump();
                 samus.Jumping = true;
-                sprite.Update(samus.gameTime);
+                Sprite.Update(samus.gameTime);
             }
         }
 
@@ -60,7 +60,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
                 facingRight = true;
                 samus.Physics.MoveRight();
                 movingSprite.setDirection(facingRight);
-                sprite.Update(samus.gameTime);
+                Sprite.Update(samus.gameTime);
             }
         }
 
@@ -71,7 +71,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
                 facingRight = false;
                 samus.Physics.MoveLeft();
                 movingSprite.setDirection(facingRight);
-                sprite.Update(samus.gameTime);
+                Sprite.Update(samus.gameTime);
             }
         }
 
@@ -84,7 +84,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         {
             if (!spriteChange && doneMorph)
             {
-                sprite = movingSprite;
+                Sprite = movingSprite;
                 spriteChange = true;
             }
 
@@ -93,14 +93,14 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
                 samus.Jumping = false;
             }
 
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
             //Update player hitbox
             samus.UpdateRightIdleHitBox();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch);
+            Sprite.Draw(spriteBatch);
         }
 
         public void Idle()

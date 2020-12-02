@@ -150,6 +150,9 @@
     <Compile Include="Libraries\GameObjects\Items\Game Objects\HiddenPuzzles.cs" />
     <Compile Include="Libraries\GameObjects\Player\PlayerHUD.cs" />
     <Compile Include="Libraries\GameObjects\Player\EnergyTankSprite.cs" />
+    <Compile Include="Libraries\GameObjects\Player\SamusDecorators\DamagedPlayerStateDecorator.cs" />
+    <Compile Include="Libraries\GameObjects\Player\SamusDecorators\AbstractPlayerStateDecorator.cs" />
+    <Compile Include="Libraries\GameObjects\Player\SamusStates\Sprites\IPlayerSprite.cs" />
     <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuBackGroundSprite.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\MenuButtonSprites\LeftRightButtonSprite.cs" />

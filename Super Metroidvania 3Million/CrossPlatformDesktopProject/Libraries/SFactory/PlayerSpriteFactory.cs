@@ -65,57 +65,57 @@ namespace SuperMetroidvania5Million.Libraries.SFactory
             HealthFont = content.Load<SpriteFont>("PlayerHealth");
         }
 
-        public ISprite RightIdleSprite(Samus s)
+        public IPlayerSprite RightIdleSprite(Samus s)
         {
             return new IdleSamusSprite(rightIdle, s);
         }
 
-        public ISprite LeftIdleSprite(Samus s)
+        public IPlayerSprite LeftIdleSprite(Samus s)
         {
             return new IdleSamusSprite(leftIdle, s);
         }
 
-        public RightWalkSamusSprite RightWalkSprite(Samus s)
+        public IPlayerSprite RightWalkSprite(Samus s)
         {
             return new RightWalkSamusSprite(rightWalk, s);
         }
 
-        public LeftWalkSamusSprite LeftWalkSprite(Samus s)
+        public IPlayerSprite LeftWalkSprite(Samus s)
         {
             return new LeftWalkSamusSprite(leftWalk, s);
         }
 
-        public MorphAnimationSamusSprite MorphRightAnimationSprite(Samus s, MorphSamusState currentState)
+        public IPlayerSprite MorphRightAnimationSprite(Samus s, MorphSamusState currentState)
         {
             return new MorphAnimationSamusSprite(rightMorphAnimation, s, true, currentState);
         }
 
-        public MorphAnimationSamusSprite MorphLeftAnimationSprite(Samus s, MorphSamusState currentState)
+        public IPlayerSprite MorphLeftAnimationSprite(Samus s, MorphSamusState currentState)
         {
             return new MorphAnimationSamusSprite(leftMorphAnimation, s, false, currentState);
         }
 
-        public MorphDoneAnimationSamusSprite MorphMovingAnimationSprite(Samus s, bool facingRight)
+        public IPlayerSprite MorphMovingAnimationSprite(Samus s, bool facingRight)
         {
             return new MorphDoneAnimationSamusSprite(movingMorph, s, facingRight);
         }
 
-        public ISprite JumpRightSprite(Samus s)
+        public IPlayerSprite JumpRightSprite(Samus s)
         {
             return new JumpSamusSprite(jumpRight, s);
         }
 
-        public ISprite JumpLeftSprite(Samus s)
+        public IPlayerSprite JumpLeftSprite(Samus s)
         {
             return new JumpSamusSprite(jumpLeft, s);
         }
 
-        public ISprite RightAimUpSprite(Samus s)
+        public IPlayerSprite RightAimUpSprite(Samus s)
         {
             return new AimUpSamusSprite(rightAim, s);
         }
 
-        public ISprite LeftAimUpSprite(Samus s)
+        public IPlayerSprite LeftAimUpSprite(Samus s)
         {
             return new AimUpSamusSprite(leftAim, s);
         }
