@@ -1,6 +1,8 @@
 ﻿using SuperMetroidvania5Million.Libraries.Sprite.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperMetroidvania5Million.Libraries.SFactory;
+using SuperMetroidvania5Million.Libraries.Container;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
@@ -105,6 +107,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void TakeDamage(int damage)
         {
             //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
+            /*Only takes damage if not invincible*/
             if (!invincible)
             {
                 Inventory.Damage(damage, this);
@@ -121,6 +124,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             State.Update(gameTime);
             Physics.Update();
             HUD.Update();
+            /*Updating invincibility if enough time has passed*/
             if (invincible && (timer += (int)gameTime.ElapsedGameTime.TotalMilliseconds) > interval)
             {
                 invincible = false;
@@ -147,6 +151,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void Kill()
         {
             isDead = true;
+            GameStateMachine.Instance.GameOver();
         }
 
         public Rectangle SpaceRectangle()
