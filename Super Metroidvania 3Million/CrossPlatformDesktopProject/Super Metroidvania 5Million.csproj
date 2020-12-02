@@ -91,6 +91,7 @@
     <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
+    <Compile Include="Libraries\Command\SettingsMenuCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\GameStateCommands\MenuStateCommands\SetMenuStateCommand.cs" />
     <Compile Include="Libraries\Command\GameStateCommands\MenuStateCommands\MenuDownCommand.cs" />
@@ -162,6 +163,7 @@
     <Compile Include="Libraries\GameStates\States\GameWinState.cs" />
     <Compile Include="Libraries\GameStates\States\ItemUpgradeSelectionState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\AbstractMenuState.cs" />
+    <Compile Include="Libraries\GameStates\States\MenuStates\StartMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\SettingsMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\InGameMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\IMenuState.cs" />

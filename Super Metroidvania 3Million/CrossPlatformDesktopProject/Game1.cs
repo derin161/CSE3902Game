@@ -6,6 +6,7 @@ using SuperMetroidvania5Million.Libraries.Container;
 using SuperMetroidvania5Million.Libraries.CSV;
 using SuperMetroidvania5Million.Libraries.Audio;
 using SuperMetroidvania5Million.Libraries.Camera;
+using SuperMetroidvania5Million.Libraries.GameStates;
 
 namespace SuperMetroidvania5Million
 {
@@ -61,6 +62,7 @@ namespace SuperMetroidvania5Million
 
             Keyboard = new KeyboardController(this);
             GameStateMachine.Instance.RegisterGame(this);
+            GameStateMachine.Instance.MenuState(new StartMenuState(this));
             currentLevel.Initialize(playerSpawnLocation, this);
         }
 
