@@ -1,8 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.CSV;
+﻿using SuperMetroidvania5Million.Libraries.Audio;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
+    //Author: Nyigel Spann
     public class PlayNextThemeCommand : ICommand
     {
         public PlayNextThemeCommand()

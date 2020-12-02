@@ -1,15 +1,12 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Command;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SuperMetroidvania5Million.Libraries.Audio;
 
-namespace CrossPlatformDesktopProject.Libraries.GameStates
+namespace SuperMetroidvania5Million.Libraries.GameStates
 {
     //Author: Nyigel Spann
     public class SettingsMenuState : AbstractMenuState
@@ -20,37 +17,38 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         private ISprite menuBackground;
         private ICommand exitCommand;
-        private int tabButtonWidth;
-        private int tabButtonHeight;
+
         private int tabButtonXPos;
         private int tabButtonYPos;
-        private int buttonWidth = 60;
-        private int buttonHeight = 20;
+
+        private int buttonWidth;
+        private int buttonHeight;
         private int buttonXPos;
-        private int buttonYPos = 80;
+        private int buttonStartingYPos;
+        private int buttonVerticalOffset;
 
+        public SettingsMenuState(Game1 game, IMenuState backMenuState)
+        {
 
-        public SettingsMenuState(Game1 game, IMenuState backMenuState) {
+            exitCommand = new SetMenuStateCommand(backMenuState);
 
-            exitCommand = new SetMenuStateCommand(backMenuState);   
+            //I have no idea what is going on with the camera or what is going to be changed so this is not going to be drawn in the right location.
+            menuBackground = MenuSpriteFactory.Instance.CreateSimpleBackgroundSprite(new Rectangle(0, 0, game.Window.ClientBounds.Width, game.Window.ClientBounds.Height));
 
-            int menuWidth = 800;
-            int menuHeight = 480;
-            menuBackground = MenuSpriteFactory.Instance.CreateSimpleBackgroundSprite(new Rectangle(0, 0, menuWidth, menuHeight));
-
-            tabButtonWidth = 100;
-            tabButtonHeight = 20;
             tabButtonXPos = 20;
             tabButtonYPos = 20;
 
             buttonWidth = 60;
             buttonHeight = 20;
-            buttonXPos = 800 / 2 - buttonWidth / 2;
-            buttonYPos = 80;
+            buttonStartingYPos = 80;
+            buttonVerticalOffset = 40;
 
-            IMenuButton backButton = generateTabButtonAndList("BACK");
+            buttonXPos = game.Window.ClientBounds.Size.X / 2 - buttonWidth / 2;
+
+            IMenuButton backButton = generateTabButtonAndList("BACK", exitCommand);
 
             generateGameSettings(game);
+
             generateAudioSettings();
 
             ButtonList = TabButtonsToSubMenuButtons[backButton];
@@ -62,10 +60,12 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             menuBackground.Draw(spriteBatch);
 
             //The selected tabButton will get drawn twice but who cares.
-            foreach (IMenuButton button in ButtonList) {
+            foreach (IMenuButton button in ButtonList)
+            {
                 button.Draw(spriteBatch);
             }
-            foreach (IMenuButton tabButton in TabButtonList) {
+            foreach (IMenuButton tabButton in TabButtonList)
+            {
                 tabButton.Draw(spriteBatch);
             }
         }
@@ -80,18 +80,18 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             exitCommand.Execute();
         }
 
-        private void generateGameSettings(Game1 game) {
-            tabButtonXPos += tabButtonWidth * 2;
+        private void generateGameSettings(Game1 game)
+        {
             IMenuButton tabButton = generateTabButtonAndList("GAME SETTINGS");
-            
 
+            int buttonYPos = buttonStartingYPos;
             Rectangle buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
             ICommand leftCommand = new LowerDifficultyCommand();
             ICommand rightCommand = new RaiseDifficultyCommand();
             List<String> difficultyTexts = new List<string> { "Normal", "Hard" };
             TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("DIFFICULTY", buttonRectangle, leftCommand, rightCommand, difficultyTexts));
 
-            buttonYPos += buttonHeight * 2;
+            buttonYPos += buttonVerticalOffset;
             buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
             leftCommand = new ToggleFullscreenCommand(game);
             rightCommand = new ToggleFullscreenCommand(game);
@@ -102,13 +102,81 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         private void generateAudioSettings()
         {
-            tabButtonXPos += tabButtonWidth * 2;
             IMenuButton tabButton = generateTabButtonAndList("AUDIO SETTINGS");
+
+            int buttonYPos = buttonStartingYPos;
+            Rectangle buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            ICommand leftCommand = new LowerSongVolumeCommand();
+            ICommand rightCommand = new RaiseSongVolumeCommand();
+            List<String> percentageTexts = new List<string> { "0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" };
+            int startingIndex = (int)(SongManager.Instance.Volume / SongManager.Instance.Controls.VolumeChange);
+            TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("SONG VOLUME", buttonRectangle, leftCommand, rightCommand, percentageTexts, startingIndex));
+
+            buttonYPos += buttonVerticalOffset;
+            buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            leftCommand = new LowerEffectVolumeCommand();
+            rightCommand = new RaiseEffectVolumeCommand();
+            startingIndex = (int)(SoundManager.Instance.EffectVolume / SoundManager.Instance.EffectVolumeChange);
+            TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("EFFECT VOLUME", buttonRectangle, leftCommand, rightCommand, percentageTexts, startingIndex));
+
+            buttonYPos += buttonVerticalOffset;
+            buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            leftCommand = new PlayPreviousThemeCommand();
+            rightCommand = new PlayNextThemeCommand();
+            startingIndex = SongManager.Instance.ActiveThemesNames.IndexOf(SongManager.Instance.ActiveSongName);
+            TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("ACTIVE SONG", buttonRectangle, leftCommand, rightCommand, SongManager.Instance.ActiveThemesNames, startingIndex));
+
+            buttonYPos += buttonVerticalOffset;
+            buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            leftCommand = new UnShuffleThemesCommand();
+            rightCommand = new ShuffleThemesCommand();
+            List<String> offOnTexts = new List<string> { "Off", "On" };
+            if (SongManager.Instance.ShuffleMode)
+            {
+                startingIndex = 1;
+            }
+            else
+            {
+                startingIndex = 0;
+            }
+            TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("SHUFFLE SONGS", buttonRectangle, leftCommand, rightCommand, offOnTexts, startingIndex));
+
+            buttonYPos += buttonVerticalOffset;
+            buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
+            leftCommand = new UnLoopCurrentThemeCommand();
+            rightCommand = new LoopCurrentThemeCommand();
+            if (SongManager.Instance.LoopMode)
+            {
+                startingIndex = 1;
+            }
+            else
+            {
+                startingIndex = 0;
+            }
+            TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("LOOP ACTIVE SONG", buttonRectangle, leftCommand, rightCommand, offOnTexts, startingIndex));
+
+
+
         }
 
-        private IMenuButton generateTabButtonAndList(String tabButtonText) {
-            Rectangle tabButtonRectangle = new Rectangle(tabButtonXPos, tabButtonYPos, tabButtonWidth, tabButtonHeight);
-            IMenuButton tabButton = new SettingsTabMenuButton(tabButtonText, tabButtonRectangle, this);
+        private IMenuButton generateTabButtonAndList(String tabButtonText)
+        {
+            Vector2 tabButtonPos = new Vector2(tabButtonXPos, tabButtonYPos);
+            IMenuButton tabButton = new SettingsTabMenuButton(tabButtonText, tabButtonPos, this);
+            tabButtonXPos += tabButton.Space.Width + 40;
+
+            TabButtonsToSubMenuButtons.Add(tabButton, new List<IMenuButton>());
+            TabButtonsToSubMenuButtons[tabButton].Add(tabButton);
+            TabButtonList.Add(tabButton);
+            return tabButton;
+        }
+
+        private IMenuButton generateTabButtonAndList(String tabButtonText, ICommand pressCommand)
+        {
+            Vector2 tabButtonPos = new Vector2(tabButtonXPos, tabButtonYPos);
+            IMenuButton tabButton = new SettingsTabMenuButton(tabButtonText, tabButtonPos, this, pressCommand);
+            tabButtonXPos += tabButton.Space.Width + 40;
+
             TabButtonsToSubMenuButtons.Add(tabButton, new List<IMenuButton>());
             TabButtonsToSubMenuButtons[tabButton].Add(tabButton);
             TabButtonList.Add(tabButton);

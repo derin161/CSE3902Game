@@ -694,6 +694,13 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/SelectedMenuButtonFont.spritefont
 
+#begin Fonts/SmallMenuButtonFont .spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/SmallMenuButtonFont .spritefont;Fonts/SmallMenuButtonFont.spritefont
+
 #begin HealthBar.png
 /importer:TextureImporter
 /processor:TextureProcessor

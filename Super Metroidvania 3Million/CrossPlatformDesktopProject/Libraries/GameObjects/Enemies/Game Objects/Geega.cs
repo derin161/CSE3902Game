@@ -1,10 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class Geega : IEnemy
@@ -76,13 +76,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 Kill();
             }
-            
+
         }
         public void Update(GameTime gameTime)
         {
             Attack();
             stateMachine.Update();
-            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.GeegaWidth,EnemyUtilities.GeegaHeight);
+            Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.GeegaWidth, EnemyUtilities.GeegaHeight);
             currentSprite.Update(gameTime);
             if (isDead)
             {

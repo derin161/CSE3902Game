@@ -1,14 +1,7 @@
-﻿using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Content;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
 
-namespace CrossPlatformDesktopProject.Libraries.Audio
+namespace SuperMetroidvania5Million.Libraries.Audio
 {
     //Author: Nyigel Spann
     public class PlayerEffects
@@ -28,7 +21,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         //private contructor for singleton
         private PlayerEffects()
         {
-            
+
         }
         public void LoadAllSounds(ContentManager content)
         {

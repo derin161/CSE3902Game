@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
+namespace SuperMetroidvania5Million.Libraries.Sprite.Map
 {
     class MapSprite : MapInterface
     {
@@ -14,7 +14,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
 
         public void Update(GameTime gameTime)
         {
-            
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -23,15 +23,16 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Map
             int height = Texture.Height;
 
             Rectangle sourceRectangle = new Rectangle(0, 0, width, height);
-            Rectangle destinationRectangle = new Rectangle(400 - Texture.Width/2, 400 - Texture.Height/2, width, height);
+            Rectangle destinationRectangle = new Rectangle(400 - Texture.Width / 2, 400 - Texture.Height / 2, width, height);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);;
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White); ;
         }
 
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return false;
         }
 
-        
+
     }
 }

@@ -1,10 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Audio;
+using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     public class Bomb : IProjectile
@@ -44,7 +44,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 boomFlag = true;
                 SoundManager.Instance.Projectiles.ExplosionSound.PlaySound();
             }
-            else if (!boomFlag){
+            else if (!boomFlag)
+            {
                 Space = new Rectangle((int)Location.X, (int)Location.Y, 0, 0);
             }
 
@@ -60,7 +61,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             return projInfo.BombDamage;
         }
 
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return isDead;
         }
 

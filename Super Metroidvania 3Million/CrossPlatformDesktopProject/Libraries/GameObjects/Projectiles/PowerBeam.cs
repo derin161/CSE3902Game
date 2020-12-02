@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     public class PowerBeam : IProjectile
@@ -32,16 +32,17 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 sprite = ProjectilesSpriteFactory.Instance.CreateIceBeamSprite(this);
             }
-            else {
+            else
+            {
                 sprite = ProjectilesSpriteFactory.Instance.CreatePowerBeamSprite(this);
             }
-            
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             sprite.Draw(spriteBatch);
-            
+
         }
 
         public void Update(GameTime gameTime)
@@ -53,7 +54,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             Space = new Rectangle((int)Location.X, (int)Location.Y, Space.Width, Space.Height);
 
             //If the Projectile is not a Long Beam, it dies after moving a set distance.
-            if (!isLongBeam) {
+            if (!isLongBeam)
+            {
 
                 //Determine relative position and the bounds
                 int relativeX = (int)(Location.X - initialLocation.X);
@@ -62,7 +64,9 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
                 //Compare with isDead so the proj doesn't come back to life
                 isDead = isDead || relativeX > bound || relativeX < -bound || relativeY > bound || relativeY < -bound;
 
-            } else {
+            }
+            else
+            {
 
                 //Die if a collision occurs or the projectile leaves the screen
                 //Compare with isDead so the proj doesn't come back to life
@@ -81,7 +85,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             return projInfo.PowerBeamDamage;
         }
 
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return isDead;
         }
 

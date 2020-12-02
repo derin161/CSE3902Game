@@ -1,10 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.GameStates;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.GameStates
+namespace SuperMetroidvania5Million.Libraries.GameStates
 {
     //Author: Nyigel Spann
     public abstract class AbstractMenuState : IMenuState

@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Nyigel Spann
     class CycleBeamMissileCommand : ICommand
@@ -8,7 +8,8 @@ namespace CrossPlatformDesktopProject.Libraries.Command
         private IPlayer player;
 
         //This should probably be changed at some point, but this class essentially just redirects to ShootMissleRocket or DropBomb depending on the player's state.
-        public CycleBeamMissileCommand(IPlayer player) {
+        public CycleBeamMissileCommand(IPlayer player)
+        {
             /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
             this.player = player;
         }

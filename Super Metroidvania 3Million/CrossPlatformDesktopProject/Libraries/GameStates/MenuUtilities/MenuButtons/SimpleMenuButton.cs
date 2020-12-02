@@ -1,11 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Command;
-using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Command;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.GameStates
+namespace SuperMetroidvania5Million.Libraries.GameStates
 {
     //Author: Nyigel Spann
     public class SimpleMenuButton : IMenuButton
@@ -25,7 +24,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
         public SimpleMenuButton(String buttonText, Vector2 point, ICommand pressCommand)
         {
-            Space = new Rectangle(point.ToPoint(), MenuSpriteFactory.Instance.DefaultFont.MeasureString(buttonText).ToPoint());
+            Space = new Rectangle(point.ToPoint(), MenuSpriteFactory.Instance.LargeDefaultFont.MeasureString(buttonText).ToPoint());
             sprite = MenuSpriteFactory.Instance.CreateSimpleButtonSprite(this, buttonText);
             this.pressCommand = pressCommand;
         }

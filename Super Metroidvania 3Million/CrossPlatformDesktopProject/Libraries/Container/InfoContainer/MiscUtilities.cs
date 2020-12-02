@@ -1,9 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using Microsoft.Xna.Framework;
-using System;
-
-namespace CrossPlatformDesktopProject.Libraries.Container
+﻿namespace SuperMetroidvania5Million.Libraries.Container
 {
     //Author:
     public class MiscUtilities

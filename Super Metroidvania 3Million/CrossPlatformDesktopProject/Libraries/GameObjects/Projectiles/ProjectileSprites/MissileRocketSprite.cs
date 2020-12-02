@@ -1,8 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
+﻿using SuperMetroidvania5Million.Libraries.Container;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     public class MissileRocketSprite : ISprite
@@ -38,11 +38,12 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             {
                 spriteBatch.Draw(texture, missileRocket.Space, srcRect, Color.White, 0, center, SpriteEffects.FlipHorizontally, 0);
             }
-            else {
+            else
+            {
                 spriteBatch.Draw(texture, missileRocket.Space, srcRect, Color.White);
             }
-                 
-            
+
+
         }
 
         public void Update(GameTime gameTime)

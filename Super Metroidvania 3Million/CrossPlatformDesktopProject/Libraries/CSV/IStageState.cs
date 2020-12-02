@@ -1,4 +1,4 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.CSV
+﻿namespace SuperMetroidvania5Million.Libraries.CSV
 {
     public interface IStageState
     {

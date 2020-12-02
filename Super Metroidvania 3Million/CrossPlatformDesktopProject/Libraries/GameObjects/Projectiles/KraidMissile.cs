@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     public class KraidMissile : IProjectile
@@ -27,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         public void Draw(SpriteBatch spriteBatch)
         {
             sprite.Draw(spriteBatch);
-            
+
         }
 
         public void Update(GameTime gameTime)
@@ -53,7 +53,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             return projInfo.KraidMissileDamage;
         }
 
-        public bool IsDead() {
+        public bool IsDead()
+        {
             return isDead;
         }
 

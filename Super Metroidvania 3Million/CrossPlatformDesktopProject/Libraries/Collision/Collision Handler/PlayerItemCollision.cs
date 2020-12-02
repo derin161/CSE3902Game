@@ -1,10 +1,11 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Command;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
+using SuperMetroidvania5Million.Libraries.Sprite.Items;
+using SuperMetroidvania5Million.Libraries.Command;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
-    class PlayerItemCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class PlayerItemCollision
     {
         public PlayerItemCollision()
         {

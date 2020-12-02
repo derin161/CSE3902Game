@@ -1,10 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using CrossPlatformDesktopProject.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class ReverseSideHopper : IEnemy
@@ -45,7 +45,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             float b = EnemyUtilities.SidehopperJumpB;
             float c = EnemyUtilities.SidehopperJumpC;
 
-            stateMachine.y = - a * (count*count) + b * count + initialY - c;
+            stateMachine.y = -a * (count * count) + b * count + initialY - c;
             stateMachine.x += direction;
         }
         public Rectangle SpaceRectangle()

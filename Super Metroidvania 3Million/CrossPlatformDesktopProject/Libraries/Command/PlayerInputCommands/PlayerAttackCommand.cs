@@ -1,15 +1,16 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using SuperMetroidvania5Million.Libraries.Audio;
+using SuperMetroidvania5Million.Libraries.Sprite.Player;
 
-namespace CrossPlatformDesktopProject.Libraries.Command
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Nyigel Spann
     class PlayerAttackCommand : ICommand
     {
         private IPlayer player;
 
-        
-        public PlayerAttackCommand(IPlayer player) {
+
+        public PlayerAttackCommand(IPlayer player)
+        {
             /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
             this.player = player;
         }

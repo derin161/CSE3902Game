@@ -1,8 +1,8 @@
 ﻿
-using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
+using SuperMetroidvania5Million.Libraries.Audio;
+using SuperMetroidvania5Million.Libraries.Sprite.Items;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     //Author: Nyigel Spann
     public class PlayerInventory
@@ -27,7 +27,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
         public bool HasBomb { get; private set; }
         public bool HasHiddenPuzzles { get; private set; }
 
-        public PlayerInventory(int startingEnergyLevel) {
+        public PlayerInventory(int startingEnergyLevel)
+        {
             CurrentEnergyTanksFilled = 2;
             CurrentEnergyTanks = 3;
             CurrentMissileRocketCapacity = 0;
@@ -43,7 +44,23 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             HasHiddenPuzzles = false;
         }
 
-        public void GiveItem(BombItem bomb) {
+        public void Damage(int damage, IPlayer player)
+        {
+            CurrentEnergyLevel -= damage;
+            if (CurrentEnergyLevel <= 0)
+            {
+                CurrentEnergyTanksFilled--;
+                CurrentEnergyLevel = ((CurrentEnergyLevel % energyCapacityPerTank) + energyCapacityPerTank) % energyCapacityPerTank; //Mod that works for negative numbers
+                if (CurrentEnergyTanksFilled < 0)
+                { //Player is dead
+                    player.Kill();
+                }
+            }
+
+        }
+
+        public void GiveItem(BombItem bomb)
+        {
             HasBomb = true;
             upgradePickupSequence();
         }
@@ -77,12 +94,14 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             upgradePickupSequence();
         }
 
-        public void GiveItem(HighJumpItem hj) {
+        public void GiveItem(HighJumpItem hj)
+        {
             HasHighJump = true;
             upgradePickupSequence();
         }
 
-        public void GiveItem(IceBeamItem ib) {
+        public void GiveItem(IceBeamItem ib)
+        {
             HasIceBeam = true;
             upgradePickupSequence();
         }
@@ -131,9 +150,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
             upgradePickupSequence();
         }
 
-        private void upgradePickupSequence() {
+        private void upgradePickupSequence()
+        {
             SoundManager.Instance.Songs.PlayItemAcquisitionSong();
             //pause not yet implemented
         }
-    } 
+    }
 }

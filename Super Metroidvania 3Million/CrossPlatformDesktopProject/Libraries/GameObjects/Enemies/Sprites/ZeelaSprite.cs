@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class ZeelaSprite : ISprite
@@ -23,7 +23,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             currentFrame = 0;
             totalFrames = Rows * Columns;
             count = 0;
-            zeela = z;            
+            zeela = z;
         }
 
         public void Update(GameTime gameTime)
@@ -42,10 +42,10 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
                 }
                 count++;
             }
-            
+
         }
 
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
             int width = Texture.Width / Columns;
@@ -74,6 +74,6 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
         {
             return false;
         }
-        
+
     }
 }

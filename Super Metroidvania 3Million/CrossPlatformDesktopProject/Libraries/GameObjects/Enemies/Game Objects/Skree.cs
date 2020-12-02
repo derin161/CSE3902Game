@@ -1,10 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class Skree : IEnemy
@@ -85,7 +85,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             Attack();
             if (collision)
             {
-                timer += (int) gameTime.ElapsedGameTime.TotalMilliseconds;
+                timer += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
             stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.SkreeWidth, EnemyUtilities.SkreeHeight);

@@ -1,10 +1,11 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Command;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
+using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
+using SuperMetroidvania5Million.Libraries.Command;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
-    class PlayerProjectileCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class PlayerProjectileCollision
     {
         public PlayerProjectileCollision()
         {
@@ -18,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 new ProjectileDamagePlayerCommand(player, projectile).Execute();
             }
         }
-        
+
     }
 
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     public class KraidMissileSprite : ISprite
@@ -19,7 +19,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         {
             Rectangle sourceRec = new Rectangle(0, 0, texture.Width, texture.Height);
             spriteBatch.Draw(texture, kraidMissile.Space, sourceRec, Color.White);
-            
+
         }
 
         public void Update(GameTime gameTime)

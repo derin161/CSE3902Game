@@ -1,11 +1,13 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.CSV;
+using SuperMetroidvania5Million.Libraries.CSV;
+using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
-    class PlayerBlockCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class PlayerBlockCollision
     {
         public PlayerBlockCollision()
         {
@@ -26,7 +28,10 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.left);
                 }
             }
-
+            else if (block is LavaBlockTop)
+            {
+                sam.TakeDamage(BlockUtilities.Instance.lavaDamage);
+            }
             else
             {
                 //Use collisionZone to determine LEFT/RIGHT or TOP/BOTTOM collision.
@@ -68,8 +73,8 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                     }
                 }
             }
-        
-    }
+
+        }
 
     }
 }

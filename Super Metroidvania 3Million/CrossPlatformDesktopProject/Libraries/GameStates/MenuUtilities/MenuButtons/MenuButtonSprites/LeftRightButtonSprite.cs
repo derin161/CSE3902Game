@@ -1,10 +1,8 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.GameStates
+namespace SuperMetroidvania5Million.Libraries.GameStates
 {
     //Author: Nyigel Spann
     public class LeftRightButtonSprite : ISprite
@@ -17,18 +15,19 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
         private Vector2 selectedLabelDrawPos;
 
 
-        public LeftRightButtonSprite(LeftRightMenuButton lRMenuButton, String buttonLabel, SpriteFont defaultSpriteFont, SpriteFont selectedSpriteFont) {
+        public LeftRightButtonSprite(LeftRightMenuButton lRMenuButton, String buttonLabel, SpriteFont defaultSpriteFont, SpriteFont selectedSpriteFont)
+        {
             lRButton = lRMenuButton;
             label = buttonLabel;
 
             defaultFont = defaultSpriteFont;
             float xPos = lRButton.Space.Center.X - defaultFont.MeasureString(label).X / 2;
-            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(label).Y / 2 - 20;
+            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(label).Y / 2;
             defaultLabelDrawPos = new Vector2(xPos, yPos);
 
             selectedFont = selectedSpriteFont;
             xPos = lRButton.Space.Center.X - selectedFont.MeasureString(label).X / 2;
-            yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(label).Y / 2 - 20;
+            yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(label).Y / 2;
             selectedLabelDrawPos = new Vector2(xPos, yPos);
         }
 
@@ -40,11 +39,13 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
 
             String activeLRText = lRButton.LRTextList[lRButton.LRTextIndex];
 
+            int activeLRTextVerticalOffset = 20;
+
             float xPos = lRButton.Space.Center.X - defaultFont.MeasureString(activeLRText).X / 2;
-            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(activeLRText).Y / 2;
+            float yPos = lRButton.Space.Center.Y - defaultFont.MeasureString(activeLRText).Y / 2 + activeLRTextVerticalOffset;
             Vector2 activeLRTextPos = new Vector2(xPos, yPos);
 
-            
+
 
             if (lRButton.IsSelected) //Draw illuminated
             {
@@ -53,7 +54,7 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
                 pos = selectedLabelDrawPos;
 
                 xPos = lRButton.Space.Center.X - selectedFont.MeasureString(activeLRText).X / 2;
-                yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(activeLRText).Y / 2;
+                yPos = lRButton.Space.Center.Y - selectedFont.MeasureString(activeLRText).Y / 2 + activeLRTextVerticalOffset;
                 activeLRTextPos = new Vector2(xPos, yPos);
             }
 
@@ -64,7 +65,8 @@ namespace CrossPlatformDesktopProject.Libraries.GameStates
             {
                 spriteBatch.DrawString(font, "<", leftArrowPos, Color.Gray);
             }
-            else {
+            else
+            {
                 spriteBatch.DrawString(font, "<", leftArrowPos, color);
             }
 

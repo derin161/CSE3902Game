@@ -1,7 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-using CrossPlatformDesktopProject.Libraries.Container;
-
-namespace CrossPlatformDesktopProject.Libraries.Command
+﻿namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Nyigel Spann
     public class RaiseDifficultyCommand : ICommand

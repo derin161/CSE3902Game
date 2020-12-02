@@ -1,6 +1,4 @@
-﻿using CrossPlatformDesktopProject.Libraries.Audio;
-
-namespace CrossPlatformDesktopProject.Libraries.Command
+﻿namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Shyamal Shah
     public class RestartCommand : ICommand

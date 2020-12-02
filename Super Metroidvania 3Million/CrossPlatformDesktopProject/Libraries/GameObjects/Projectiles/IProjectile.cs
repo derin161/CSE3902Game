@@ -1,4 +1,4 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+﻿namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     public interface IProjectile : IGameObject

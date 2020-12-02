@@ -1,13 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+﻿using SuperMetroidvania5Million.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV.Object_Generators
+namespace SuperMetroidvania5Million.Libraries.CSV.Object_Generators
 {
     public class BlockObjectGenerator
     {

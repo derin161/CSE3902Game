@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
+﻿using SuperMetroidvania5Million.Libraries.Container;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     public class WaveBeamSprite : ISprite
@@ -33,7 +33,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
             }
 
             spriteBatch.Draw(texture, beam.Space, sourceRec, Color.White);
-            if (time > projInfo.WaveBeamSpriteDelay) {
+            if (time > projInfo.WaveBeamSpriteDelay)
+            {
                 spriteBatch.Draw(texture, waveSpaceSequence.Dequeue(), sourceRec, Color.White);
             }
         }

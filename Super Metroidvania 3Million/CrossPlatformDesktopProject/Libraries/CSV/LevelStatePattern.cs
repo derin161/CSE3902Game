@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.CSV
+namespace SuperMetroidvania5Million.Libraries.CSV
 {
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
     {
@@ -28,7 +27,7 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
         private Game1 game;
 
         private static LevelStatePattern instance = new LevelStatePattern();
-       
+
         public static LevelStatePattern Instance
         {
             get
@@ -68,13 +67,13 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
                 {
                     LeftDoor();
                     state = kraidDungeon1;
-                    
+
                 }
                 else
                 {
                     RightDoor();
                     state = kraidDungeon3;
-                    
+
                 }
             }
             else if (state == kraidDungeon3)
@@ -180,27 +179,27 @@ namespace CrossPlatformDesktopProject.Libraries.CSV
             }
         }
 
-        public void LeftDoor() 
+        public void LeftDoor()
         {
             state.LeftDoor(game);
         }
-        public void RightDoor() 
+        public void RightDoor()
         {
             state.RightDoor(game);
         }
-        public void TopLeftDoor() 
+        public void TopLeftDoor()
         {
             state.TopLeftDoor();
         }
-        public void TopRightDoor() 
+        public void TopRightDoor()
         {
             state.TopRightDoor();
         }
-        public void BottomLeftDoor() 
+        public void BottomLeftDoor()
         {
             state.BottomLeftDoor();
         }
-        public void BottomRightDoor() 
+        public void BottomRightDoor()
         {
             state.BottomRightDoor();
         }

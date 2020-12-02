@@ -1,109 +1,113 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.SFactory;
+using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Player
+namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
-	/*Author: Shyamal Shah*/
-	public class JumpLeftSamusState : IPlayerState 
-	{
-		private Samus samus;
-		private ISprite sprite;
-		private Vector2 missileLoc;
-		private Vector2 direction;
-		private Vector2 currentVelocity;
+    /*Author: Shyamal Shah*/
+    public class JumpLeftSamusState : IPlayerState
+    {
+        private Samus samus;
+        private ISprite sprite;
+        private Vector2 missileLoc;
+        private Vector2 direction;
+        private Vector2 currentVelocity;
 
-		public JumpLeftSamusState(Samus sam)
-		{
-			samus = sam;
-			sprite = PlayerSpriteFactory.Instance.JumpLeftSprite(samus);
-			missileLoc = new Vector2(samus.x + 19, samus.y + 32);
-			direction = new Vector2(-10.0f, 0.0f);
-			if(!samus.Jumping){
-				samus.Physics.Jump();
-				samus.Jumping = true;
-			}
-			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-		}
-
-		public void Attack()
-		{
-			missileLoc = new Vector2(samus.x + 19, samus.y + 32);
-			if (samus.missile == 0)
-			{
-				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
-			}
-			else if (samus.missile == 1)
-			{
-				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.Inventory.HasLongBeam, samus.Inventory.HasIceBeam));
-			}
-			else
-			{
-				GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateWaveBeam(missileLoc, direction, samus.Inventory.HasLongBeam));
-			}
-
-		}
-
-		public void Jump()
+        public JumpLeftSamusState(Samus sam)
         {
-			//Does Nothing
-		}
+            samus = sam;
+            sprite = PlayerSpriteFactory.Instance.JumpLeftSprite(samus);
+            missileLoc = new Vector2(samus.x + 19, samus.y + 32);
+            direction = new Vector2(-10.0f, 0.0f);
+            if (!samus.Jumping)
+            {
+                samus.Physics.Jump();
+                samus.Jumping = true;
+            }
+            currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+        }
 
-		public void Morph()
+        public void Attack()
         {
-			//Nothing for now
-		}
+            missileLoc = new Vector2(samus.x + 19, samus.y + 32);
+            if (samus.missile == 0)
+            {
+                GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateMissileRocket(missileLoc, direction));
+            }
+            else if (samus.missile == 1)
+            {
+                GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreatePowerBeam(missileLoc, direction, samus.Inventory.HasLongBeam, samus.Inventory.HasIceBeam));
+            }
+            else
+            {
+                GameObjectContainer.Instance.Add(ProjectilesGOFactory.Instance.CreateWaveBeam(missileLoc, direction, samus.Inventory.HasLongBeam));
+            }
 
-		public void MoveRight()
+        }
+
+        public void Jump()
         {
-			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
-			samus.Physics.MoveRight();
-			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-			samus.State = new JumpRightSamusState(samus);
-		}
+            //Does Nothing
+        }
 
-		public void MoveLeft()
+        public void Morph()
         {
-			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
-			samus.Physics.MoveLeft();
-			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-		}
+            //Nothing for now
+        }
 
-		public void AimUp()
+        public void MoveRight()
         {
-			samus.State = new AimUpSamusState(samus, false);
-		}
+            samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+            samus.Physics.MoveRight();
+            currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+            samus.State = new JumpRightSamusState(samus);
+        }
 
-		public void Update(GameTime gameTime)
-		{
-			samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
-			samus.Physics.Update();
-			samus.UpdateJumpLeftHitBox(); 
-			/*if ( (int) samus.Physics.velocity.Y == 0){
+        public void MoveLeft()
+        {
+            samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+            samus.Physics.MoveLeft();
+            currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+        }
+
+        public void AimUp()
+        {
+            samus.State = new AimUpSamusState(samus, false);
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
+            samus.Physics.Update();
+            samus.UpdateJumpLeftHitBox();
+            /*if ( (int) samus.Physics.velocity.Y == 0){
 				this.Idle();
 			}*/
-			currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-			sprite.Update(gameTime);
-		}
+            currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+            sprite.Update(gameTime);
+        }
 
-		public void Draw(SpriteBatch spriteBatch)
-		{
-			sprite.Draw(spriteBatch);
-		}
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            sprite.Draw(spriteBatch);
+        }
 
-		public void Idle () 
-		{
-			if (!samus.Jumping){
-				samus.Physics.velocity = new Vector2(currentVelocity.X, 0);
-				currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-				samus.State = new LeftIdleSamusState(samus);
-			}else {
-				samus.Physics.velocity = new Vector2(currentVelocity.X, 0);
-				samus.Physics.HortizontalBreak();
-				currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-			}
+        public void Idle()
+        {
+            if (!samus.Jumping)
+            {
+                samus.Physics.velocity = new Vector2(currentVelocity.X, 0);
+                currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+                samus.State = new LeftIdleSamusState(samus);
+            }
+            else
+            {
+                samus.Physics.velocity = new Vector2(currentVelocity.X, 0);
+                samus.Physics.HortizontalBreak();
+                currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
+            }
 
-		}
-	}
+        }
+    }
 }

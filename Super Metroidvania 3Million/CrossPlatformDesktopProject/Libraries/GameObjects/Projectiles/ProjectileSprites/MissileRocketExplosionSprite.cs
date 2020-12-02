@@ -1,23 +1,23 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     //Author: Nyigel Spann
     //This class isn't needed until collisions are added.
     class MissileRocketExplosionSprite : ISprite
     {
-        enum AnimationPos { 
+        enum AnimationPos
+        {
             Right, BottomRight, Bottom, BottomLeft, Left, UpperLeft, Upper, UpperRight
         }
 
         private Dictionary<AnimationPos, Vector2> explosionAnimationPairs = new Dictionary<AnimationPos, Vector2>(); //Contains animationPos mapped to their relative positions (to explosion origin)
         private Texture2D texture;
         private MissileRocketExplosion projectile;
-        public MissileRocketExplosionSprite(Texture2D texture, MissileRocketExplosion mre) {
+        public MissileRocketExplosionSprite(Texture2D texture, MissileRocketExplosion mre)
+        {
             this.texture = texture;
             projectile = mre;
 
@@ -32,30 +32,32 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-                foreach (KeyValuePair<AnimationPos, Vector2> entry in explosionAnimationPairs)
+            foreach (KeyValuePair<AnimationPos, Vector2> entry in explosionAnimationPairs)
+            {
+                Rectangle recSrc = new Rectangle(26, 0, 8, 8); //Explosion corner texture
+                if (entry.Value.X == 0 || entry.Value.Y == 0)
                 {
-                    Rectangle recSrc = new Rectangle(26, 0, 8, 8); //Explosion corner texture
-                    if (entry.Value.X == 0 || entry.Value.Y == 0) {
-                        recSrc = new Rectangle(35, 0, 8, 8); //Explosion side texture
-                    }
-                    Rectangle recDest = new Rectangle((int)(projectile.Location.X + entry.Value.X), (int)(projectile.Location.Y + entry.Value.Y), 8, 8);
-                    rotateAndDraw(spriteBatch, entry.Key, recDest, recSrc);
+                    recSrc = new Rectangle(35, 0, 8, 8); //Explosion side texture
                 }
+                Rectangle recDest = new Rectangle((int)(projectile.Location.X + entry.Value.X), (int)(projectile.Location.Y + entry.Value.Y), 8, 8);
+                rotateAndDraw(spriteBatch, entry.Key, recDest, recSrc);
+            }
         }
 
         public void Update(GameTime gameTime)
         {
-            
+
 
             Vector2 right = new Vector2(1, 0);
             Vector2 left = new Vector2(-1, 0);
             Vector2 up = new Vector2(0, -1);
             Vector2 down = new Vector2(0, 1);
             //Adjust all x and y relative positions to push them further from the explosion origin
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 7; i++)
+            {
                 /*This is kind've stupid but allows me to change to dictionary during iteration whereas a foreach loop wouldn't
                   This cast is guaranteed to succeed as well as the dictionary indexing. */
-                AnimationPos key = (AnimationPos) i;
+                AnimationPos key = (AnimationPos)i;
                 Vector2 pos = explosionAnimationPairs[key];
                 if (pos.X > 0)
                 {
@@ -79,11 +81,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
 
         }
 
-        
 
-        private void rotateAndDraw(SpriteBatch sb, AnimationPos pos, Rectangle dest, Rectangle src) {
-            Vector2 center = new Vector2(src.Width/2, src.Height / 2);
-            switch (pos) {
+
+        private void rotateAndDraw(SpriteBatch sb, AnimationPos pos, Rectangle dest, Rectangle src)
+        {
+            Vector2 center = new Vector2(src.Width / 2, src.Height / 2);
+            switch (pos)
+            {
                 case AnimationPos.Right:
                     sb.Draw(texture, dest, src, Color.White, 0, center, SpriteEffects.FlipHorizontally, 0);
                     break;

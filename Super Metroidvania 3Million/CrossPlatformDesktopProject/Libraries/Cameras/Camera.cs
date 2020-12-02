@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using CrossPlatformDesktopProject.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.Container;
 
 
-namespace CrossPlatformDesktopProject.Libraries.Camera
+namespace SuperMetroidvania5Million.Libraries.Camera
 {
     public class Camera
     {
@@ -25,7 +20,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
         }
 
         public Vector2 CameraCenter => new Vector2(currentPos.X + Viewport.Width / 2 - 16, currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
-       
+
         public bool LockedRight { get; set; }
         public bool LockedLeft { get; set; }
         public bool LockedUp { get; set; }
@@ -34,7 +29,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
         public Viewport Viewport { get; set; }
         public bool Transitioning { get; set; }
         public float Zoom { get; set; }
-        protected float DampingDistance { get; }   
+        protected float DampingDistance { get; }
         public IGameObject Focus { get; set; }
 
         public Vector2 CameraPosition
@@ -112,7 +107,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera
             bool inFromBottom = gameObject.SpaceRectangle().Top < CameraPosition.Y + leniance + Viewport.Height / Zoom;
             return inFromBottom && inFromTop && inFromLeft && inFromRight;
         }*/
-        
+
         public void DoTransition(Vector2 newPosition)
         {
             originalPos = CameraPosition;

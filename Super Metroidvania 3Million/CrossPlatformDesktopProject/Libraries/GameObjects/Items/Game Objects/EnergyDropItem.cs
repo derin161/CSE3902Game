@@ -1,9 +1,9 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
-using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using SuperMetroidvania5Million.Libraries.SFactory;
+using SuperMetroidvania5Million.Libraries.Sprite.Player;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Items
+namespace SuperMetroidvania5Million.Libraries.Sprite.Items
 {
     public class EnergyDropItem : IItem
     {

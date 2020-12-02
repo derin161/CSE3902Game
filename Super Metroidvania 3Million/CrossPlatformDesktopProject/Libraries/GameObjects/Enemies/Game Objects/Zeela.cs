@@ -1,11 +1,11 @@
-﻿using CrossPlatformDesktopProject.Libraries.SFactory;
+﻿using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using CrossPlatformDesktopProject.Libraries.Container;
+using SuperMetroidvania5Million.Libraries.Container;
 
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     class Zeela : IEnemy
@@ -34,13 +34,13 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             movingRight = false;
             damaged = false;
             frozen = false;
-            
+
 
         }
         private void Attack()
         {
             //Should move around the blocks CounterClockwise, temporarily making it move back and forth
-            
+
             //Move left until it gets 2 blocks away
             if (initialX - stateMachine.x < EnemyUtilities.ZeelaHorizDistance && !movingRight)
             {
@@ -55,7 +55,7 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
             {
                 movingRight = false;
             }
-            
+
         }
         public void Update(GameTime gameTime)
         {

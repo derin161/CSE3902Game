@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
 
-namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
+namespace SuperMetroidvania5Million.Libraries.Command.PlayerCommands
 {
     //Author: Nyigel Spann
     class PlayerMoveLeftCommand : ICommand
@@ -10,7 +10,7 @@ namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
         public PlayerMoveLeftCommand(IPlayer player)
         {
             /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
-            this.player = player; 
+            this.player = player;
         }
         public void Execute()
         {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
+namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
 {
     class PostBoomBombSprite : ISprite
     {
@@ -9,7 +9,8 @@ namespace CrossPlatformDesktopProject.Libraries.Sprite.Projectiles
         private int time = 0;
         private Texture2D texture;
 
-        public PostBoomBombSprite(Texture2D texture, Bomb b) {
+        public PostBoomBombSprite(Texture2D texture, Bomb b)
+        {
             bomb = b;
             this.texture = texture;
         }

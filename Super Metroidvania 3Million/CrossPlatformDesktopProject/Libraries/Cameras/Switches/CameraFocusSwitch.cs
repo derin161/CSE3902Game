@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrossPlatformDesktopProject.Libraries.CSV;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
+namespace SuperMetroidvania5Million.Libraries.Camera.Switches
 {
     class CameraFocusSwitch : ISwitch
     {
@@ -54,7 +48,7 @@ namespace CrossPlatformDesktopProject.Libraries.Camera.Switches
             newCamera.LockedLeft = true;
             newCamera.LockedRight = true;
             newCamera.DoTransition(newPosition);
-            currentGame.SetCamera(newCamera);
+            currentGame.Camera = newCamera;
         }
 
         public void Kill() { }

@@ -1,4 +1,4 @@
-﻿namespace CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites
+﻿namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
     //Author: Will Floyd
     public interface IEnemy : IGameObject

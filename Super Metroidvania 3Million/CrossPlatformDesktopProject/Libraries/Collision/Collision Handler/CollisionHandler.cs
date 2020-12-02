@@ -1,13 +1,14 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.Player;
-using CrossPlatformDesktopProject.Libraries.Sprite.Projectiles;
-using CrossPlatformDesktopProject.Libraries.Sprite.Items;
-using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.Player;
+using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
+using SuperMetroidvania5Million.Libraries.Sprite.Items;
+using SuperMetroidvania5Million.Libraries.Sprite.EnemySprites;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
-    class CollisionHandler
+    //Author: Nyigel Spann and Will Floyd
+    public class CollisionHandler
     {
         public CollisionHandler()
         {

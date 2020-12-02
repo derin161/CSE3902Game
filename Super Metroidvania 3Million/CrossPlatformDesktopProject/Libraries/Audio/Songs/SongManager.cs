@@ -4,22 +4,20 @@ using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 
-namespace CrossPlatformDesktopProject.Libraries.Audio
+namespace SuperMetroidvania5Million.Libraries.Audio
 {
     //Author: Nyigel Spann
     public class SongManager
     {
         public SongController Controls { get; private set; }
-        public bool IsMuted
-        {
-            get
-            {
-                return MediaPlayer.IsMuted;
-            }
-        }
+        public bool IsMuted => MediaPlayer.IsMuted;
+        public float Volume => MediaPlayer.Volume;
+
         public bool LoopMode { get; private set; }
         public bool ShuffleMode { get; private set; }
         public bool IsPaused { get; private set; }
+        public List<String> ActiveThemesNames { get; private set; }
+        public String ActiveSongName => activeThemes[songIndex].Name;
 
         private static SongManager instance = new SongManager();
         private ISound tourianTheme;
@@ -40,7 +38,7 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         private List<ISound> shuffledThemes = new List<ISound>();
         private List<ISound> activeThemes;
 
-        private int mstimer = 0; //Timer used for looping or playing next song
+        private int mstimer = 100000; //Timer used for looping or playing next song
         private int songIndex = 0;
 
 
@@ -86,8 +84,9 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             themeSongs.Add(motherBrainBattleTheme);
             themeSongs.Add(titleTheme);
             themeSongs.Add(darudeSand);
-            shuffledThemes = themeSongs.ConvertAll((s => (ISound) new SongInstance(s)));
+            shuffledThemes = themeSongs.ConvertAll((s => (ISound)new SongInstance(s)));
             activeThemes = themeSongs;
+            ActiveThemesNames = activeThemes.ConvertAll(s => s.Name);
 
         }
 
@@ -110,17 +109,20 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             }
         }
 
-        public void PlayBrinstarTheme() {
+        public void PlayBrinstarTheme()
+        {
             activeSong = brinTheme;
             play();
         }
 
-        public void PlayItemAcquisitionSong() {
+        public void PlayItemAcquisitionSong()
+        {
             activeSong = getItemSong;
             play();
         }
 
-        public void PlayDarudeSandstorm() {
+        public void PlayDarudeSandstorm()
+        {
             activeSong = darudeSand;
             play();
         }
@@ -179,8 +181,9 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             play();
         }
 
-        private void play() {
-            mstimer = (int) activeSong.Duration() + 50;
+        private void play()
+        {
+            mstimer = (int)activeSong.Duration + 50;
             activeSong.PlaySound();
         }
 
@@ -192,9 +195,10 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
         public class SongController
         {
 
+            public float VolumeChange { get; private set; } = 0.1f;
+
             private float maxVolume = 1f;
             private float minVolume = 0f;
-            private float volumeChange = 0.1f;
 
             private SongManager SongManager;
 
@@ -218,27 +222,31 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
                 SongManager.songIndex = (SongManager.songIndex + 1) % SongManager.activeThemes.Count;
                 SongManager.activeSong = SongManager.activeThemes[SongManager.songIndex];
                 SongManager.play();
-                
+
             }
 
             public void RaiseVolume()
             {
-                float volume = MediaPlayer.Volume + volumeChange;
+                float volume = MediaPlayer.Volume + VolumeChange;
                 if (volume > maxVolume)
+
+
                 {
                     volume = maxVolume;
                 }
                 MediaPlayer.Volume = volume;
+                SongManager.play();
             }
 
             public void LowerVolume()
             {
-                float volume = MediaPlayer.Volume - volumeChange;
+                float volume = MediaPlayer.Volume - VolumeChange;
                 if (volume < minVolume)
                 {
                     volume = minVolume;
                 }
                 MediaPlayer.Volume = volume;
+                SongManager.play();
             }
 
             public void Pause()
@@ -267,16 +275,14 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
                     SongManager.shuffledThemes[n] = theme;
                 }
                 SongManager.activeThemes = SongManager.shuffledThemes;
-                SongManager.songIndex = 0;
-                SongManager.mstimer = 0;
+                shufflePlay();
             }
 
             public void UnShuffle()
             {
                 SongManager.ShuffleMode = false;
                 SongManager.activeThemes = SongManager.themeSongs;
-                SongManager.songIndex = 0;
-                SongManager.mstimer = 0;
+                shufflePlay();
             }
 
             public void Mute()
@@ -297,6 +303,14 @@ namespace CrossPlatformDesktopProject.Libraries.Audio
             public void UnLoop()
             {
                 SongManager.LoopMode = false;
+            }
+
+            private void shufflePlay()
+            {
+                SongManager.ActiveThemesNames.Clear();
+                SongManager.ActiveThemesNames.AddRange(SongManager.activeThemes.ConvertAll(s => s.Name));
+                SongManager.activeSong = SongManager.activeThemes[SongManager.songIndex];
+                SongManager.play();
             }
 
         }

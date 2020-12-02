@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace CrossPlatformDesktopProject
+namespace SuperMetroidvania5Million
 {
     public interface IGameObject
     {

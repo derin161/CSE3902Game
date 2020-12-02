@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CrossPlatformDesktopProject
+namespace SuperMetroidvania5Million
 {
     /// <summary>
     /// The main class.
@@ -14,8 +14,8 @@ namespace CrossPlatformDesktopProject
         static void Main()
         {
             using (var game = new Game1())
-            game.Run();
- 
+                game.Run();
+
 
         }
     }

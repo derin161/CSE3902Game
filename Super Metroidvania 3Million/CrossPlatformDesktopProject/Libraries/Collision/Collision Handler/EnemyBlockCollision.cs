@@ -1,9 +1,10 @@
-﻿using CrossPlatformDesktopProject.Libraries.Sprite.EnemySprites;
-using CrossPlatformDesktopProject.Libraries.Sprite.Blocks;
+﻿using SuperMetroidvania5Million.Libraries.Sprite.EnemySprites;
+using SuperMetroidvania5Million.Libraries.Sprite.Blocks;
 using Microsoft.Xna.Framework;
-namespace CrossPlatformDesktopProject.Libraries.Collision
+namespace SuperMetroidvania5Million.Libraries.Collision
 {
-    class EnemyBlockCollision
+    //Author: Nyigel Spann and Will Floyd
+    public class EnemyBlockCollision
     {
         public EnemyBlockCollision()
         {
@@ -43,7 +44,7 @@ namespace CrossPlatformDesktopProject.Libraries.Collision
                 }
             }
         }
-        
+
     }
 
 }
