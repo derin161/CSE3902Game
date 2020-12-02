@@ -4,6 +4,8 @@ using SuperMetroidvania5Million.Libraries.Sprite.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using SuperMetroidvania5Million.Libraries.GameStates;
+using SuperMetroidvania5Million.Libraries.Command;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 {
@@ -20,8 +22,9 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
         private int horizSpeed, vertSpeed;
         private int health;
         public bool damaged;
+        Game1 game;
 
-        public Kraid(Vector2 location)
+        public Kraid(Vector2 location, Game1 game)
         {
             spriteRight = EnemySpriteFactory.Instance.KraidSprite(this);
             spriteLeft = EnemySpriteFactory.Instance.KraidSpriteLeft(this);
@@ -31,6 +34,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             vertSpeed = EnemyUtilities.KraidInitialVertSpeed;
             health = EnemyUtilities.EnemyHealth;
             damaged = false;
+            this.game = game;
         }
 
         private void Attack()
@@ -103,7 +107,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
-            GameStateMachine.Instance.GameWin();
+            new GameWinMenuCommand(game).Execute();
         }
 
         public void MoveLeft()
