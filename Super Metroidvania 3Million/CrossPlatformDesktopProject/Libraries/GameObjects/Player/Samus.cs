@@ -34,11 +34,15 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         private int jumpWidth = 47;
         private int jumpHeight = 52;
         private bool morph;
+        private bool invincible;
+        private int timer = 0;
+        private int interval = 1000;
 
 
         public Samus(Vector2 l, Game1 g, GameTime g2)
         {
             morph = false;
+            invincible = false;
             gameTime = g2;
             game = g;
             isDead = false;
@@ -101,7 +105,11 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void TakeDamage(int damage)
         {
             //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
-            Inventory.Damage(damage, this);
+            if (!invincible)
+            {
+                Inventory.Damage(damage, this);
+                invincible = true;
+            }
         }
         public void Upgrade(IItem item)
         {
@@ -113,11 +121,16 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             State.Update(gameTime);
             Physics.Update();
             HUD.Update();
+            if (invincible && (timer += (int)gameTime.ElapsedGameTime.TotalMilliseconds) > interval)
+            {
+                invincible = false;
+                timer = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            State.Draw(spriteBatch);
+            if (!invincible) State.Draw(spriteBatch);
             HUD.Draw(spriteBatch);
         }
 
