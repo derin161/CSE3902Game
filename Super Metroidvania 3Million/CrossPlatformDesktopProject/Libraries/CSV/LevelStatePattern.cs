@@ -68,7 +68,6 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                 {
                     LeftDoor();
                     state = kraidDungeon1;
-
                 }
                 else
                 {
@@ -127,13 +126,13 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                 if (door == Door.left)
                 {
                     LeftDoor();
-                    state = kraidDungeon7;
+                    state = kraidDungeon5;
 
                 }
                 else
                 {
                     RightDoor();
-                    state = kraidDungeon5;
+                    state = kraidDungeon7;
 
                 }
             }
@@ -155,7 +154,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             else if (state == kraidDungeon8)
             {
                 LeftDoor();
-                state = levelOne;
+                state = kraidDungeon7;
             }
         }
 

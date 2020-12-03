@@ -143,5 +143,17 @@ namespace SuperMetroidvania5Million
         {
             return Camera;
         }
+        public void EnterSecretRoom()
+        {
+            SoundManager.Instance.Songs.PlaySecretAreaTheme();
+        }
+        public void EnterBrinstarRoom()
+        {
+            SoundManager.Instance.Songs.PlayBrinstarTheme();
+        }
+        public void EnterBossRoom()
+        {
+            SoundManager.Instance.Songs.PlayRidleysHidoutTheme();
+        }
     }
 }
