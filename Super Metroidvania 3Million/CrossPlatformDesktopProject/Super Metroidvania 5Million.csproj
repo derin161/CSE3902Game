@@ -91,6 +91,8 @@
     <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
+    <Compile Include="Libraries\Command\GameWinMenuCommand.cs" />
+    <Compile Include="Libraries\Command\MainMenuCommand.cs" />
     <Compile Include="Libraries\Command\SettingsMenuCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\GameStateCommands\MenuStateCommands\SetMenuStateCommand.cs" />
@@ -150,6 +152,9 @@
     <Compile Include="Libraries\GameObjects\Items\Game Objects\HiddenPuzzles.cs" />
     <Compile Include="Libraries\GameObjects\Player\PlayerHUD.cs" />
     <Compile Include="Libraries\GameObjects\Player\EnergyTankSprite.cs" />
+    <Compile Include="Libraries\GameObjects\Player\SamusDecorators\DamagedPlayerStateDecorator.cs" />
+    <Compile Include="Libraries\GameObjects\Player\SamusDecorators\AbstractPlayerStateDecorator.cs" />
+    <Compile Include="Libraries\GameObjects\Player\SamusStates\Sprites\IPlayerSprite.cs" />
     <Compile Include="Libraries\GameStates\GameStateMachine.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuBackGroundSprite.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\MenuButtonSprites\LeftRightButtonSprite.cs" />
@@ -160,9 +165,9 @@
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\MenuButtonSprites\SimpleButtonSprite.cs" />
     <Compile Include="Libraries\GameStates\MenuUtilities\MenuButtons\IMenuButton.cs" />
     <Compile Include="Libraries\GameStates\States\GameOverState.cs" />
-    <Compile Include="Libraries\GameStates\States\GameWinState.cs" />
     <Compile Include="Libraries\GameStates\States\ItemUpgradeSelectionState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\AbstractMenuState.cs" />
+    <Compile Include="Libraries\GameStates\States\MenuStates\GameWinMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\StartMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\SettingsMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\InGameMenuState.cs" />

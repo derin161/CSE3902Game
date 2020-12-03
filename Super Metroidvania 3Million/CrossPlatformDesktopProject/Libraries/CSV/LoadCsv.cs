@@ -70,7 +70,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                         //Enemies
                         else if (File.Exists(projectPath + @"Libraries\GameObjects\Enemies\Game Objects\" + field + ".cs"))
                         {
-                            EnemyObjectGenerator.Instance.createEnemy(location, field);
+                            EnemyObjectGenerator.Instance.createEnemy(location, field, game);
                         }
                         row++;
                     }

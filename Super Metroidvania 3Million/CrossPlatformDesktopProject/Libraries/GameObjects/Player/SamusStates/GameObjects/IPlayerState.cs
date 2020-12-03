@@ -5,17 +5,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     public interface IPlayerState
     {
-        /*Author: Shyamal Shah*/
-        /* I don't think we need any of these -Nyigel
-        public void JumpAnimation(SpriteBatch spriteBatch);
-        public void CrouchAnimation(SpriteBatch spriteBatch);
-        public void MoveLeftAnimation(SpriteBatch spriteBatch);
-        public void MoveRightAnimation(SpriteBatch spriteBatch);
-
-        public void AttackAnimation(SpriteBatch spriteBatch);
-
-        public void DamageAnimation(SpriteBatch spriteBatch);
-        public void IdleAnimation(SpriteBatch spriteBatch);*/
+        public IPlayerSprite Sprite { get; set; }
         public void Attack(); //Shoots active beam missile device or places bomb.
         public void Jump();
         public void Morph();

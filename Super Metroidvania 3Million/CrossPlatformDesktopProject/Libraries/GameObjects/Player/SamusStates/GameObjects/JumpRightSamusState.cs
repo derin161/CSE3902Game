@@ -8,8 +8,8 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
     /*Author: Shyamal Shah*/
     public class JumpRightSamusState : IPlayerState
     {
+        public IPlayerSprite Sprite { get; set; }
         private Samus samus;
-        private ISprite sprite;
         private Vector2 missileLoc;
         private Vector2 direction;
         private Vector2 currentVelocity;
@@ -17,7 +17,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public JumpRightSamusState(Samus sam)
         {
             samus = sam;
-            sprite = PlayerSpriteFactory.Instance.JumpRightSprite(samus);
+            Sprite = PlayerSpriteFactory.Instance.JumpRightSprite(samus);
             missileLoc = new Vector2(samus.x + 45, samus.y + 32);
             direction = new Vector2(10.0f, 0.0f);
             if (!samus.Jumping)
@@ -86,14 +86,14 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 				this.Idle();
 			}*/
             currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             samus.Physics.velocity = new Vector2(currentVelocity.X, currentVelocity.Y);
             currentVelocity = new Vector2(samus.Physics.velocity.X, samus.Physics.velocity.Y);
-            sprite.Draw(spriteBatch);
+            Sprite.Draw(spriteBatch);
         }
 
         public void Idle()

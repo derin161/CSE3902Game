@@ -4,8 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     /*Author: Shyamal Shah*/
-    public class MorphDoneAnimationSamusSprite : ISprite
+    public class MorphDoneAnimationSamusSprite : IPlayerSprite
     {
+        public Color Color { get; set; }
         public Texture2D texture { get; set; }
         private MorphSamusState state;
         private int rows;
@@ -35,6 +36,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             currentFrame = 0;
             totalFrames = 3;
             interval = 50;
+            Color = Color.White;
 
         }
 
@@ -69,7 +71,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 
             Rectangle sourceRectangle = new Rectangle(column, row, width, height);
             samus.space = new Rectangle(samus.space.X, samus.space.Y, width, height);
-            spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
+            spriteBatch.Draw(texture, samus.space, sourceRectangle, Color);
             samus.space = new Rectangle(samus.space.X, samus.space.Y, 64, 64);
         }
 

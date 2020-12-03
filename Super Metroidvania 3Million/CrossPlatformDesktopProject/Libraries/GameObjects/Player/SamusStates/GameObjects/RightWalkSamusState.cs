@@ -8,15 +8,15 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
     /*Author: Shyamal Shah*/
     public class RightWalkSamusState : IPlayerState
     {
+        public IPlayerSprite Sprite { get; set; }
         private Samus samus;
-        private ISprite sprite;
         private Vector2 missileLoc;
         private Vector2 direction;
 
         public RightWalkSamusState(Samus sam)
         {
             samus = sam;
-            sprite = PlayerSpriteFactory.Instance.RightWalkSprite(samus);
+            Sprite = PlayerSpriteFactory.Instance.RightWalkSprite(samus);
             missileLoc = new Vector2(samus.x + 60, samus.y + 32);
             direction = new Vector2(10.0f, 0.0f);
             samus.Jumping = false;
@@ -67,7 +67,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
             samus.Physics.MoveRight();
             /*Updating Player Hit Box*/
             samus.UpdateRightWalkHitBox();
@@ -75,7 +75,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch);
+            Sprite.Draw(spriteBatch);
         }
 
         public void Idle()

@@ -8,8 +8,8 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
     /*Author: Shyamal Shah*/
     public class AimUpSamusState : IPlayerState
     {
+        public IPlayerSprite Sprite { get; set; }
         private Samus samus;
-        private ISprite sprite;
         private Vector2 missileLoc;
         private Vector2 direction;
         private bool rightFacing;
@@ -24,11 +24,11 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             rightFacing = facingRight;
             if (rightFacing)
             {
-                sprite = PlayerSpriteFactory.Instance.RightAimUpSprite(samus);
+                Sprite = PlayerSpriteFactory.Instance.RightAimUpSprite(samus);
             }
             else
             {
-                sprite = PlayerSpriteFactory.Instance.LeftAimUpSprite(samus);
+                Sprite = PlayerSpriteFactory.Instance.LeftAimUpSprite(samus);
             }
         }
 
@@ -91,7 +91,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch);
+            Sprite.Draw(spriteBatch);
         }
 
         public void Idle()

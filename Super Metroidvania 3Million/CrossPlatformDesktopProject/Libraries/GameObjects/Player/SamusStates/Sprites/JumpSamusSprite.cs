@@ -3,8 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
-    public class JumpSamusSprite : ISprite
+    public class JumpSamusSprite : IPlayerSprite
     {
+        public Color Color { get; set; }
         public Texture2D texture { get; set; }
         private int rows;
         private int columns;
@@ -19,6 +20,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             rows = 1;
             columns = 1;
             currentFrame = 0;
+            Color = Color.White;
         }
 
         public void Update(GameTime gameTime)
@@ -34,7 +36,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             int column = 0;
 
             Rectangle sourceRectangle = new Rectangle(column, row, width, height);
-            spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
+            spriteBatch.Draw(texture, samus.space, sourceRectangle, Color);
             currentFrame++;
         }
     }

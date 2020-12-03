@@ -4,8 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
     /*Author: Shyamal Shah*/
-    public class RightWalkSamusSprite : ISprite
+    public class RightWalkSamusSprite : IPlayerSprite
     {
+        public Color Color { get; set; }
         public Texture2D texture { get; set; }
         private int rows;
         private int columns;
@@ -25,6 +26,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             totalFrames = 4;
             interval = 50;
             timer = 0;
+            Color = Color.White;
 
         }
 
@@ -47,7 +49,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             int column = currentFrame * width;
 
             Rectangle sourceRectangle = new Rectangle(column, row, width, height);
-            spriteBatch.Draw(texture, samus.space, sourceRectangle, Color.White);
+            spriteBatch.Draw(texture, samus.space, sourceRectangle, Color);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV.Object_Generators
             }
         }
 
-        public void createEnemy(Vector2 location, String enemyType)
+        public void createEnemy(Vector2 location, String enemyType, Game1 game)
         {
             switch (enemyType)
             {
@@ -33,7 +33,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV.Object_Generators
                     GameObjectContainer.Instance.Add(new Geega(location));
                     break;
                 case "Kraid":
-                    GameObjectContainer.Instance.Add(new Kraid(location));
+                    GameObjectContainer.Instance.Add(new Kraid(location, game));
                     break;
                 case "Zeela":
                     GameObjectContainer.Instance.Add(new Zeela(location));
