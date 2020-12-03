@@ -22,7 +22,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
 
 
         public enum Door { left, right };
-        public IStageState state { get; set; } = kraidDungeon1;
+        public IStageState state { get; set; } = kraidDungeon5;
 
         private Game1 game;
 
@@ -39,7 +39,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void Initialize(Vector2 playerSpawnLocation, Game1 game)
         {
             this.game = game;
-            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(64, 200), game);
+            LoadCsv.Instance.Load("KraidDungeon5.csv", new Vector2(368, 354), game);
             //LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
         }
 

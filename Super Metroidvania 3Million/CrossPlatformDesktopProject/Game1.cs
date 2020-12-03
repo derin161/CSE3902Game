@@ -55,7 +55,7 @@ namespace SuperMetroidvania5Million
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             MenuSpriteFactory.Instance.LoadAllTextures(Content);
 
-            Vector2 playerSpawnLocation = new Vector2(250, 352);
+            Vector2 playerSpawnLocation = new Vector2(368, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
             Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             Camera.Focus = GameObjectContainer.Instance.Player;
@@ -117,7 +117,7 @@ namespace SuperMetroidvania5Million
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
 
-            Vector2 playerSpawnLocation = new Vector2(250, 352);
+            Vector2 playerSpawnLocation = new Vector2(368, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
             Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             Camera.Focus = GameObjectContainer.Instance.Player;
