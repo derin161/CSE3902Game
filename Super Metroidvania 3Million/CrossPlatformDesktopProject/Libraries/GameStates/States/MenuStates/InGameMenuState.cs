@@ -14,8 +14,8 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
 
         public InGameMenuState(Game1 game)
         {
-            int menuXPos = 100;
-            int menuYPos = 100;
+            int menuXPos = 0;
+            int menuYPos = 0;
             int menuWidth = 200;
             int menuHeight = 300;
             menuBackground = MenuSpriteFactory.Instance.CreateInGameMenuBackgroundSprite(new Rectangle(menuXPos, menuYPos, menuWidth, menuHeight));

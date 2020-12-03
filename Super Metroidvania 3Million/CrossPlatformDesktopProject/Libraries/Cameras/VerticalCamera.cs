@@ -10,13 +10,13 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         }
 
         override
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             while (Focus.SpaceRectangle().Y <= CameraCenter.Y && !LockedUp)
                 Transform(-Vector2.UnitY);
             while (Focus.SpaceRectangle().Y >= CameraCenter.Y && !LockedDown)
                 Transform(Vector2.UnitY);
-            base.Update();
+            base.Update(gameTime);
         }
     }
 }
