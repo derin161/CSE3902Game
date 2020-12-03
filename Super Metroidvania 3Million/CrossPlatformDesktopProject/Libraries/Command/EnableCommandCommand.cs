@@ -4,16 +4,16 @@ using SuperMetroidvania5Million.Libraries.GameStates;
 namespace SuperMetroidvania5Million.Libraries.Command
 {
     //Author: Nyigel Spann
-    public class GameWinMenuCommand : ICommand
+    public class EnableCommandCommand : ICommand
     {
-        Game1 game;
-        public GameWinMenuCommand(Game1 game)
+        private IDisableableCommand toEnable;
+        public EnableCommandCommand(IDisableableCommand disableableCommand)
         {
-            this.game = game;
+            toEnable = disableableCommand;
         }
         public void Execute()
         {
-            GameStateMachine.Instance.MenuState(new GameWinMenuState(game));
+            toEnable.Disabled = false;
         }
     }
 }

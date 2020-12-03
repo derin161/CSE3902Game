@@ -79,10 +79,12 @@ namespace SuperMetroidvania5Million.Libraries.Controller
             controllerPressMappings.Clear();
             controllerReleaseMappings.Clear();
 
-            RegisterCommand(Keys.Space, new PlayerJumpCommand(player));
+            IDisableableCommand jump = new PlayerJumpCommand(player);
+            RegisterCommand(Keys.Space, jump, new EnableCommandCommand(jump));
 
-            RegisterCommand(Keys.W, new PlayerAimUpCommand(player));
-            RegisterCommand(Keys.Up, new PlayerAimUpCommand(player));
+            IDisableableCommand aimUp = new PlayerAimUpCommand(player);
+            RegisterCommand(Keys.W, aimUp, new EnableCommandCommand(aimUp));
+            RegisterCommand(Keys.Up, aimUp, new EnableCommandCommand(aimUp));
 
             RegisterCommand(Keys.S, new PlayerMorphCommand(player), new PlayerIdleCommand(player));
             RegisterCommand(Keys.Down, new PlayerMorphCommand(player), new PlayerIdleCommand(player));
@@ -93,10 +95,12 @@ namespace SuperMetroidvania5Million.Libraries.Controller
             RegisterCommand(Keys.D, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
             RegisterCommand(Keys.Right, new PlayerMoveRightCommand(player), new PlayerIdleCommand(player));
 
-            RegisterCommand(Keys.Z, new PlayerAttackCommand(player));
-            RegisterCommand(Keys.N, new PlayerAttackCommand(player));
+            IDisableableCommand attack = new PlayerAttackCommand(player);
+            RegisterCommand(Keys.Z, attack, new EnableCommandCommand(attack));
+            RegisterCommand(Keys.N, attack, new EnableCommandCommand(attack));
 
-            RegisterCommand(Keys.C, new CycleBeamMissileCommand(player));
+            IDisableableCommand cycleBeamMissile = new CycleBeamMissileCommand(player);
+            RegisterCommand(Keys.C, cycleBeamMissile, new EnableCommandCommand(cycleBeamMissile));
 
             RegisterCommand(Keys.Q, new QuitCommand(game));
 
