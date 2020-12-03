@@ -2,6 +2,7 @@
 
 namespace SuperMetroidvania5Million.Libraries.CSV
 {
+    //Author: Tristan Roman, Danny Attia
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
     {
         // public int [InsertItemPickupNameHere] { get; private set; }

@@ -2,6 +2,7 @@
 
 namespace SuperMetroidvania5Million.Libraries.CSV
 {
+    //Author: Tristan Roman
     class LevelTwo : IStageState
     {
         public LevelTwo()

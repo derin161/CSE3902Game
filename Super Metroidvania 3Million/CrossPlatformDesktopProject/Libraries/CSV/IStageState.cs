@@ -1,5 +1,6 @@
 ﻿namespace SuperMetroidvania5Million.Libraries.CSV
 {
+    //Author: Tristan Roman
     public interface IStageState
     {
         void LeftDoor(Game1 game);

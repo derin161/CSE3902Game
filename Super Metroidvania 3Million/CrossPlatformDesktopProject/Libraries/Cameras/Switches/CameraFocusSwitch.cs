@@ -6,7 +6,6 @@ namespace SuperMetroidvania5Million.Libraries.Camera.Switches
     class CameraFocusSwitch : ISwitch
     {
         private Game1 currentGame;
-        ISprite sprite;
         string cameraType;
         bool transitionRight;
         public CameraFocusSwitch(int width, int height, Vector2 initialLocation, string cameraTypeInput, bool transitionRightInput)

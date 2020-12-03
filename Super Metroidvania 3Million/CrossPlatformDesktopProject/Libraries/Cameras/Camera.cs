@@ -5,6 +5,7 @@ using SuperMetroidvania5Million.Libraries.Container;
 
 namespace SuperMetroidvania5Million.Libraries.Camera
 {
+    //Author: Tristan Roman
     public class Camera
     {
         private Vector2 focusVector = GameObjectContainer.Instance.PlayerPosition();

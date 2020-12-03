@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMetroidvania5Million.Libraries.Camera
 {
+    //Author: Tristan Roman
     internal class VerticalCamera : Camera
     {
         public VerticalCamera(Viewport viewport) : base(viewport)

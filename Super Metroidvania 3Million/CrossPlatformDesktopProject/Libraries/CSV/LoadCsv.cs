@@ -7,6 +7,7 @@ using SuperMetroidvania5Million.Libraries.CSV.Object_Generators;
 
 namespace SuperMetroidvania5Million.Libraries.CSV
 {
+    //Author: Tristan Roman
     public class LoadCsv
     {
         private int levelWidth;
