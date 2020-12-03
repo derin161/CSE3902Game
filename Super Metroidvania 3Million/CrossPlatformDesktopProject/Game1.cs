@@ -35,8 +35,8 @@ namespace SuperMetroidvania5Million
             //graphics.PreferredBackBufferHeight = 1260;
 
             //Standard NES resolution:
-            //graphics.PreferredBackBufferWidth = 256*2;        
-            //graphics.PreferredBackBufferHeight = 240*2;
+            graphics.PreferredBackBufferWidth = 256*2;        
+            graphics.PreferredBackBufferHeight = 240*2;
         }
 
         protected override void Initialize()
