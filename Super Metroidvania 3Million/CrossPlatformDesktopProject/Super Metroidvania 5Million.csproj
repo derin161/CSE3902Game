@@ -91,9 +91,9 @@
     <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
-    <Compile Include="Libraries\Command\GameWinMenuCommand.cs" />
+    <Compile Include="Libraries\Command\EnableCommandCommand.cs" />
     <Compile Include="Libraries\Command\MainMenuCommand.cs" />
-    <Compile Include="Libraries\Command\SettingsMenuCommand.cs" />
+    <Compile Include="Libraries\Command\IDisableableCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\GameStateCommands\MenuStateCommands\SetMenuStateCommand.cs" />
     <Compile Include="Libraries\Command\GameStateCommands\MenuStateCommands\MenuDownCommand.cs" />
