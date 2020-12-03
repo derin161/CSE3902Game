@@ -35,6 +35,9 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                 return instance;
             }
         }
+        private LevelStatePattern() { //private constructor for singleton
+        
+        }
 
         public void Initialize(Vector2 playerSpawnLocation, Game1 game)
         {

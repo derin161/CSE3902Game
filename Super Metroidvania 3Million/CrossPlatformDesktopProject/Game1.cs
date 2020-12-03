@@ -28,7 +28,7 @@ namespace SuperMetroidvania5Million
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             gameTime = new GameTime();
-            currentLevel = new LevelStatePattern();
+            currentLevel = LevelStatePattern.Instance;
             graphics.IsFullScreen = false;
 
             //graphics.PreferredBackBufferWidth = 1900;
