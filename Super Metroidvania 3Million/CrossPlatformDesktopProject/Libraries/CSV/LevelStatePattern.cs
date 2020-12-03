@@ -39,23 +39,24 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void Initialize(Vector2 playerSpawnLocation, Game1 game)
         {
             this.game = game;
-            //LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(3904, 400));
-            LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
+            LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(64, 200), game);
+            //LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
         }
 
         public void SwitchLevel(Door door)
         {
-            /*
+            
             if (door == Door.left)
             {
-                //GameObjectContainer.Instance.Player.UpdateLocation();
+                //GameObjectContainer.Instance.Player.UpdateLocation();             ////////
             }
             else
             {
 
             }
-            */
+            
 
+            // Probably need to remove
             if (state == kraidDungeon1)
             {
                 RightDoor();
@@ -187,7 +188,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         {
             state.RightDoor(game);
         }
-        public void TopLeftDoor()
+        /*public void TopLeftDoor()
         {
             state.TopLeftDoor();
         }
@@ -211,6 +212,6 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void FarBottomRightDoor()
         {
             state.FarBottomRightDoor();
-        }
+        }*/
     }
 }

@@ -65,6 +65,11 @@ namespace SuperMetroidvania5Million.Libraries.Container
             game.Keyboard.MakeMenuDict(menuState);
         }
 
+        public bool IsPlaying()
+        {
+            return state is PlayingState;
+        }
+
         public void Update(GameTime gameTime)
         {
             state.Update(gameTime);

@@ -9,6 +9,8 @@ namespace SuperMetroidvania5Million.Libraries.CSV
 {
     public class LoadCsv
     {
+        private int levelWidth;
+        private int levelHeight;
         private static LoadCsv instance = new LoadCsv();
 
         public static LoadCsv Instance
@@ -29,8 +31,8 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             string levelPath = projectPath + @"Libraries\Levels\" + levelName;
 
             string[] lines = File.ReadAllLines(levelPath);
-            int rows = lines.Count();
-            int columns = lines[0].Split(',').Length;
+            levelHeight = lines.Count();
+            levelWidth = lines[0].Split(',').Length;
 
             //Game1.ChangeResolution(rows, columns);
 
@@ -75,6 +77,11 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                     column++;
                 }
             }
+        }
+
+        public Vector2 LevelDimensions()
+        {
+            return new Vector2(levelWidth, levelHeight);
         }
 
     }

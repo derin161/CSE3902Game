@@ -54,7 +54,7 @@ namespace SuperMetroidvania5Million.Libraries.Camera
                 Matrix.CreateTranslation(new Vector3(Vector2.Zero, 0.0f));
         }
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
             if (Transitioning)
             {
