@@ -60,16 +60,6 @@
     <Compile Include="Libraries\Cameras\HorizontalCamera.cs" />
     <Compile Include="Libraries\Cameras\ICamera2D.cs" />
     <Compile Include="Libraries\Cameras\IFocusable.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraFocusSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraUnlockDownSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraLockDownSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraUnlockLeftSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraUnlockRightSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraLockRightSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraUnlockUpSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraLockUpSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\CameraLockLeftSwitch.cs" />
-    <Compile Include="Libraries\Cameras\Switches\ISwitch.cs" />
     <Compile Include="Libraries\Cameras\VerticalCamera.cs" />
     <Compile Include="Libraries\Collision\Collision Detector\CollisionDetector.cs" />
     <Compile Include="Libraries\Collision\Collision Handler\EnemyBlockCollision.cs" />
@@ -92,6 +82,7 @@
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnableCommandCommand.cs" />
+    <Compile Include="Libraries\Command\DungeonBCommand.cs" />
     <Compile Include="Libraries\Command\MainMenuCommand.cs" />
     <Compile Include="Libraries\Command\IDisableableCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
@@ -134,6 +125,7 @@
     <Compile Include="Libraries\Container\InfoContainer\MiscUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\InfoContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB1.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon1.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon2.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon3.cs" />
@@ -170,7 +162,7 @@
     <Compile Include="Libraries\GameStates\States\ItemUpgradeSelectionState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\AbstractMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\GameWinMenuState.cs" />
-	<Compile Include="Libraries\Command\GameStateCommands\GameOverCommand.cs" />
+    <Compile Include="Libraries\Command\GameStateCommands\GameOverCommand.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\StartMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\SettingsMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\InGameMenuState.cs" />
@@ -379,6 +371,7 @@
     <None Include="Code Reviews\Sprint4\Sprint 4 Reflection.pdf" />
     <None Include="Libraries\Levels\KraidDungeon.csv" />
     <None Include="Libraries\Levels\KraidDungeon1.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB1.csv" />
     <None Include="Libraries\Levels\KraidDungeon2.csv" />
     <None Include="Libraries\Levels\KraidDungeon3.csv" />
     <None Include="Libraries\Levels\KraidDungeon4.csv" />

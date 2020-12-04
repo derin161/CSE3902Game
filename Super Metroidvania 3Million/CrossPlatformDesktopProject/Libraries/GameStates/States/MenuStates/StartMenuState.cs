@@ -62,11 +62,15 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
 
         private void generateStartMenu()
         {
-            int buttonYPos = 250;
+            int buttonYPos = 230;
             int buttonYOffset = 50;
 
             SimpleMenuButton playButton = new SimpleMenuButton("Play", new Vector2(buttonXPos, buttonYPos), new UnpauseGameCommand());
             ButtonList.Add(playButton);
+            buttonYPos += buttonYOffset;
+
+            SimpleMenuButton DungeonBButton = new SimpleMenuButton("Dungeon B", new Vector2(buttonXPos, buttonYPos), new DungeonBCommand(game));
+            ButtonList.Add(DungeonBButton);
             buttonYPos += buttonYOffset;
 
             SimpleMenuButton EndlessButton = new SimpleMenuButton("Endless Mode", new Vector2(buttonXPos, buttonYPos), new EndlessModeCommand(game));

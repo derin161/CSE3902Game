@@ -21,6 +21,9 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         private static KraidDungeon7 kraidDungeon7 = new KraidDungeon7();
         private static KraidDungeon8 kraidDungeon8 = new KraidDungeon8();
 
+        private static KraidDungeonB1 kraidDungeonB1 = new KraidDungeonB1();
+
+
 
         public enum Door { left, right };
         public IStageState state { get; set; } = kraidDungeon5;
@@ -40,11 +43,18 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         
         }
 
-        public void Initialize(Vector2 playerSpawnLocation, Game1 game)
+        public void Initialize(Game1 game)
         {
             this.game = game;
             LoadCsv.Instance.Load("KraidDungeon5.csv", new Vector2(368, 354), game);
-            //LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
+            game.SetCamera(true);
+        }
+
+        public void InitializeB(Game1 game)
+        {
+            this.game = game;
+            LoadCsv.Instance.Load("KraidDungeonB1.csv", new Vector2(64, 200), game);
+            game.SetCamera(false);
         }
 
         public void InitializeEndlessMode(Game1 game)
@@ -52,6 +62,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             this.game = game;
             game.endlessMode = true;
             LoadCsv.Instance.Load("EndlessLevel.csv", new Vector2(368, 354), game);
+            game.SetCamera(true);
         }
 
         public void SwitchLevel(Door door)
