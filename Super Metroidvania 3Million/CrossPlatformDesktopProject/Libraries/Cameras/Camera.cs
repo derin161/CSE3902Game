@@ -17,7 +17,6 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         protected Camera(Viewport viewport)
         {
             Viewport = viewport;
-            //DampingDistance = 64;
         }
 
         public Vector2 CameraCenter => new Vector2(currentPos.X + Viewport.Width / 2 - 16, currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
@@ -30,7 +29,6 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         public Viewport Viewport { get; set; }
         public bool Transitioning { get; set; }
         public float Zoom { get; set; }
-        protected float DampingDistance { get; }
         public IGameObject Focus { get; set; }
 
         public Vector2 CameraPosition

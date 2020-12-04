@@ -133,7 +133,6 @@
     <Compile Include="Libraries\Container\InfoContainer\ProjectileUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\MiscUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\InfoContainer.cs" />
-    <Compile Include="Libraries\Controller\CameraController.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon1.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon2.cs" />
