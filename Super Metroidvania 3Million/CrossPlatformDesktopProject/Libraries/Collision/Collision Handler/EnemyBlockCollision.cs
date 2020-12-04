@@ -26,6 +26,10 @@ namespace SuperMetroidvania5Million.Libraries.Collision
                 { //RIGHT Collision 
 
                 }
+                if (enemy is Zeela)
+                {
+                    enemy.ChangeDirection();
+                }
             }
             else
             { //TOP/BOTTOM collision 
