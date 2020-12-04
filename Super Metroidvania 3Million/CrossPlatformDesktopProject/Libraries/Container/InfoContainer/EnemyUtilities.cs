@@ -25,6 +25,7 @@
         //Kraid and KraidSprite magic numbers
         public static int KraidInitialVertSpeed = 0;
         public static int KraidInitialHorizSpeed = 1;
+        public static int KraidHealth = 1000;
         public static int KraidDistanceBuffer = 72;
         public static int KraidHeight = 64;
         public static int KraidWidth = 48;
