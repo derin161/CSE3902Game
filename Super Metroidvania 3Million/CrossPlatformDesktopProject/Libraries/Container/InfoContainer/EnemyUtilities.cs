@@ -51,7 +51,7 @@
         public static int SidehopperSpriteFrameSpeed = 64;
         public static int SidehopperSpriteFrameReset = 3;
         public static int ReverseSidehopperSpriteFrameReset = 6;
-
+        
         //Skree and skree sprite magic numbers
         public static int SkreeInitialVertSpeed = 0;
         public static int SkreeInitialHorizSpeed = 0;
@@ -69,11 +69,11 @@
         //Memu and memu sprite magic numbers
         public static int MemuVertSpeed = 0;
         public static int MemuHorizSpeed = 3;
-        public static int MemuHeight = 32;
+        public static int MemuHeight = 16;
         public static int MemuWidth = 32;
         public static int MemuSpriteRows = 1;
         public static int MemuSpriteColumns = 2;
-        public static int MemuSpriteFrameSpeed = 10;
+        public static int MemuSpriteFrameSpeed = 4;
         public static int MemuSpriteFrameReset = 2;
 
         //Ripper and ripper sprite magic numbers

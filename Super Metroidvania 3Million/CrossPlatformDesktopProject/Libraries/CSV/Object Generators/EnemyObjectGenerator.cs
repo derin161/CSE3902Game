@@ -38,6 +38,9 @@ namespace SuperMetroidvania5Million.Libraries.CSV.Object_Generators
                 case "Zeela":
                     GameObjectContainer.Instance.Add(new Zeela(location));
                     break;
+                case "Memu":
+                    GameObjectContainer.Instance.Add(new Memu(location));
+                    break;
             }
         }
     }
