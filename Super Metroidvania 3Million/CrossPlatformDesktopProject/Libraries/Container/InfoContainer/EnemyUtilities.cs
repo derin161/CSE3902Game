@@ -67,8 +67,8 @@
         public static int SkreeSpriteFrameReset = 3;
 
         //Memu and memu sprite magic numbers
-        public static int MemuVertSpeed = 0;
-        public static int MemuHorizSpeed = 3;
+        public static int MemuVertSpeed = 1;
+        public static int MemuHorizSpeed = 1;
         public static int MemuHeight = 16;
         public static int MemuWidth = 32;
         public static int MemuSpriteRows = 1;

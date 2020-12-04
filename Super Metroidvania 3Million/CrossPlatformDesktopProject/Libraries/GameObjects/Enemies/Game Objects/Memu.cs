@@ -30,8 +30,34 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 
         }
 
+        private void Attack()
+        {
+            int playerX = GameObjectContainer.Instance.Player.SpaceRectangle().X;
+            int playerY = GameObjectContainer.Instance.Player.SpaceRectangle().Y;
+
+            //Move left-right toward player
+            if (playerX < stateMachine.x)
+            {
+                MoveLeft();
+            }
+            else
+            {
+                MoveRight();
+            }
+
+            //Move up-down toward player
+            if (playerY < stateMachine.y)
+            {
+                MoveUp();
+            }
+            else
+            {
+                MoveDown();
+            }
+        }
         public void Update(GameTime gameTime)
         {
+            Attack();
             stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.MemuWidth, EnemyUtilities.MemuHeight);
             sprite.Update(gameTime);

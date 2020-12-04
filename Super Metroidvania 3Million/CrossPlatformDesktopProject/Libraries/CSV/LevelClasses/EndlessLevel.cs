@@ -69,10 +69,10 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             int index = new Random().Next(0, enemyList.Count);
             String enemy = enemyList[index];
 
-            int xLocation = new Random().Next(64, 736);
 
             if (GameObjectContainer.Instance.EnemyList.Count == 2)
             {
+                int xLocation = new Random().Next(64, 736);
                 EnemyObjectGenerator.Instance.createEnemy(new Vector2(xLocation, enemyDict[enemy]), enemy, game);
             }
         }
