@@ -125,6 +125,7 @@
     <Compile Include="Libraries\Command\PlayerInputCommands\PlayerMoveRightCommand.cs" />
     <Compile Include="Libraries\Command\ICommand.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Libraries\Command\EndlessModeCommand.cs" />
     <Compile Include="Libraries\Container\GameObjectContainer.cs" />
     <Compile Include="Libraries\Container\InfoContainer\BlockUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\ItemUtilities.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon8.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\LevelOne.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\LevelTwo.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\EndlessLevel.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\StartingLevel.cs" />
     <Compile Include="Libraries\CSV\LevelStatePattern.cs" />
     <Compile Include="Libraries\CSV\IStageState.cs" />
@@ -389,6 +391,7 @@
     <None Include="Libraries\Levels\LevelOne - Copy.csv" />
     <None Include="Libraries\Levels\LevelOne.csv" />
     <None Include="Libraries\Levels\LevelTwo.csv" />
+    <None Include="Libraries\Levels\EndlessLevel.csv" />
     <None Include="Libraries\Levels\StartingLevel.csv" />
     <None Include="Libraries\Levels\TestStartingLevelLong.csv" />
   </ItemGroup>

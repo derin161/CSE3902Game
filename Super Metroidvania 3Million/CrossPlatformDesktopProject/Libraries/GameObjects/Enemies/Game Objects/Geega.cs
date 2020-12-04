@@ -11,7 +11,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
     {
         public Rectangle Space { get; set; }
         private ISprite spriteLeft, spriteRight, currentSprite;
-        private bool isDead, isRight;
+        private bool isDead, isRight, flewOffScreen;
         private EnemyStateMachine stateMachine;
         private int horizSpeed, vertSpeed;
         private int health, respawnTimer;
@@ -35,6 +35,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             respawnTimer = 0;
             damaged = false;
             frozen = false;
+            flewOffScreen = false;
 
 
         }
@@ -74,6 +75,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
 
             if (stateMachine.x < EnemyUtilities.OffScreenLeft || stateMachine.x > EnemyUtilities.OffScreenRight)
             {
+                flewOffScreen = true;
                 Kill();
             }
 
@@ -118,7 +120,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
-            stateMachine.Kill();
+            if (!flewOffScreen)
+            {
+                stateMachine.Kill();
+            }
 
             //set back to initial position
             horizSpeed = 0;
@@ -173,6 +178,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             damaged = true;
             if (health <= 0)
             {
+                flewOffScreen = false;
                 Kill();
             }
         }

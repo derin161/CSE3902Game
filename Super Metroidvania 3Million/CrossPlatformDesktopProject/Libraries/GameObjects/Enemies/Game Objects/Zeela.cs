@@ -19,10 +19,11 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
         private float initialX, initialY;
         public bool damaged, frozen;
         private EnemyUtilities EnemyUtilities = InfoContainer.Instance.Enemies;
+        private Game1 game;
 
 
 
-        public Zeela(Vector2 location)
+        public Zeela(Vector2 location, Game1 game)
         {
             sprite = EnemySpriteFactory.Instance.ZeelaSprite(this);
             stateMachine = new EnemyStateMachine(location);
@@ -34,6 +35,12 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             movingRight = false;
             damaged = false;
             frozen = false;
+            this.game = game;
+
+            if (game.endlessMode)
+            {
+                MoveLeft();
+            }
 
 
         }
@@ -57,9 +64,15 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             }
 
         }
+     
         public void Update(GameTime gameTime)
         {
-            Attack();
+            
+            if (!game.endlessMode)
+            {
+                Attack();
+            }
+
             stateMachine.Update();
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.ZeelaWidth, EnemyUtilities.ZeelaHeight);
             sprite.Update(gameTime);

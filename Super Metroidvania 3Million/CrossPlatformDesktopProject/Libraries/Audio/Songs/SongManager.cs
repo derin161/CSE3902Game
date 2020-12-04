@@ -17,7 +17,7 @@ namespace SuperMetroidvania5Million.Libraries.Audio
         public bool ShuffleMode { get; private set; }
         public bool IsPaused { get; private set; }
         public List<String> ActiveThemesNames { get; private set; }
-        public String ActiveSongName => activeThemes[songIndex].Name;
+        public string ActiveSongName => activeThemes[songIndex].Name;
 
         private static SongManager instance = new SongManager();
         private ISound tourianTheme;

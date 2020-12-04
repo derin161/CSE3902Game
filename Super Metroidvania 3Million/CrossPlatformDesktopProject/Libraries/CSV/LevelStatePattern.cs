@@ -47,6 +47,13 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             //LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
         }
 
+        public void InitializeEndlessMode(Game1 game)
+        {
+            this.game = game;
+            game.endlessMode = true;
+            LoadCsv.Instance.Load("EndlessLevel.csv", new Vector2(368, 354), game);
+        }
+
         public void SwitchLevel(Door door)
         {
             

@@ -26,6 +26,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
         private int buttonXPos;
         private int buttonStartingYPos;
         private int buttonVerticalOffset;
+        private LeftRightMenuButton activeSongButton; //alias allows for the song to update while the audio settings are open
 
         public SettingsMenuState(Game1 game, IMenuState backMenuState)
         {
@@ -73,6 +74,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
         public override void Update(GameTime gameTime)
         {
             ButtonList = TabButtonsToSubMenuButtons[TabButtonList[TabButtonIndex]];
+            activeSongButton.LRTextIndex = SongManager.Instance.ActiveThemesNames.IndexOf(SongManager.Instance.ActiveSongName);
         }
 
         public override void ExitMenu()
@@ -124,7 +126,8 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
             leftCommand = new PlayPreviousThemeCommand();
             rightCommand = new PlayNextThemeCommand();
             startingIndex = SongManager.Instance.ActiveThemesNames.IndexOf(SongManager.Instance.ActiveSongName);
-            TabButtonsToSubMenuButtons[tabButton].Add(new LeftRightMenuButton("ACTIVE SONG", buttonRectangle, leftCommand, rightCommand, SongManager.Instance.ActiveThemesNames, startingIndex));
+            activeSongButton = new LeftRightMenuButton("ACTIVE SONG", buttonRectangle, leftCommand, rightCommand, SongManager.Instance.ActiveThemesNames, startingIndex);
+            TabButtonsToSubMenuButtons[tabButton].Add(activeSongButton);
 
             buttonYPos += buttonVerticalOffset;
             buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
