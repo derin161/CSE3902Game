@@ -28,12 +28,15 @@ namespace SuperMetroidvania5Million
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             gameTime = new GameTime();
-            currentLevel = new LevelStatePattern();
+            currentLevel = LevelStatePattern.Instance;
             graphics.IsFullScreen = false;
 
+            //graphics.PreferredBackBufferWidth = 1920;
+            //graphics.PreferredBackBufferHeight = 1080;
+
             //Standard NES resolution:
-            //graphics.PreferredBackBufferWidth = 256*2;        
-            //graphics.PreferredBackBufferHeight = 240*2;
+            graphics.PreferredBackBufferWidth = 256*2;        
+            graphics.PreferredBackBufferHeight = 240*2;
         }
 
         protected override void Initialize()
@@ -52,11 +55,12 @@ namespace SuperMetroidvania5Million
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             MenuSpriteFactory.Instance.LoadAllTextures(Content);
 
-            Vector2 playerSpawnLocation = new Vector2(250, 352);
+            Vector2 playerSpawnLocation = new Vector2(368, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
             Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             Camera.Focus = GameObjectContainer.Instance.Player;
-            Camera.CameraPosition = new Vector2(Camera.Focus.SpaceRectangle().X - Camera.Viewport.Width / Camera.Zoom / 2, Camera.CameraPosition.Y);
+            //Camera.CameraPosition = new Vector2(Camera.Focus.SpaceRectangle().X - Camera.Viewport.Width / Camera.Zoom / 2, Camera.CameraPosition.Y);
+            Camera.CameraPosition = new Vector2(0, 0);
             SoundManager.Instance.LoadAllSounds(Content);
             SoundManager.Instance.Songs.PlayBrinstarTheme();
 
@@ -76,8 +80,14 @@ namespace SuperMetroidvania5Million
             GameStateMachine.Instance.Update(gameTime);
             Keyboard.Update(gameTime);
             SoundManager.Instance.Update(gameTime);
-            Camera.Update();
-            graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)Camera.CameraPosition.Y, 800, 480);
+            Camera.Update(gameTime);
+            
+            if (GameStateMachine.Instance.IsPlaying()) {
+                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)Camera.CameraPosition.Y, 1600, 1600);
+            } else {
+                graphics.GraphicsDevice.Viewport = new Viewport(0, 0, 800, 480);
+            }
+
             base.Update(gameTime);
         }
 
@@ -107,11 +117,9 @@ namespace SuperMetroidvania5Million
             PlayerSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
 
-            Vector2 playerSpawnLocation = new Vector2(250, 352);
+            Vector2 playerSpawnLocation = new Vector2(368, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
-            Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             Camera.Focus = GameObjectContainer.Instance.Player;
-            Camera.CameraPosition = new Vector2(Camera.Focus.SpaceRectangle().X - Camera.Viewport.Width / Camera.Zoom / 2, Camera.CameraPosition.Y);
             Keyboard = new KeyboardController(this);
             GameStateMachine.Instance.RegisterGame(this);
             GameStateMachine.Instance.Play();
@@ -131,6 +139,18 @@ namespace SuperMetroidvania5Million
         public Camera GetCamera()
         {
             return Camera;
+        }
+        public void EnterSecretRoom()
+        {
+            SoundManager.Instance.Songs.PlaySecretAreaTheme();
+        }
+        public void EnterBrinstarRoom()
+        {
+            SoundManager.Instance.Songs.PlayBrinstarTheme();
+        }
+        public void EnterBossRoom()
+        {
+            SoundManager.Instance.Songs.PlayRidleysHidoutTheme();
         }
     }
 }

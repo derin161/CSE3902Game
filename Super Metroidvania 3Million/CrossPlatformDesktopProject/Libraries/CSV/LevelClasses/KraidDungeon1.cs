@@ -2,6 +2,7 @@
 
 namespace SuperMetroidvania5Million.Libraries.CSV
 {
+    //Author: Tristan Roman, Danny Attia
     class KraidDungeon1 : IStageState
     {
         public KraidDungeon1()
@@ -15,7 +16,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         }
         public void RightDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("KraidDungeon2.csv", new Vector2(96, 192), game);
+            LoadCsv.Instance.Load("KraidDungeon2.csv", new Vector2(64, 192), game);
         }
         public void TopLeftDoor()
         {

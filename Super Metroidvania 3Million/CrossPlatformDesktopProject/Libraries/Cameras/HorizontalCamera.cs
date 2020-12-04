@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMetroidvania5Million.Libraries.Camera
 {
+    //Author: Tristan Roman
     internal class HorizontalCamera : Camera
     {
         public HorizontalCamera(Viewport viewport) : base(viewport)
@@ -10,13 +11,13 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         }
 
         override
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             while (Focus.SpaceRectangle().X <= CameraCenter.X && !LockedLeft)
                 Transform(-Vector2.UnitX);
             while (Focus.SpaceRectangle().X >= CameraCenter.X && !LockedRight)
                 Transform(Vector2.UnitX);
-            base.Update();
+            base.Update(gameTime);
         }
     }
 }

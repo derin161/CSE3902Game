@@ -2,6 +2,7 @@
 
 namespace SuperMetroidvania5Million.Libraries.CSV
 {
+    //Author: Tristan Roman, Danny Attia
     public class LevelStatePattern // We can use this to additionally track game states (i.e. game over/starting screen/etc.)
     {
         // public int [InsertItemPickupNameHere] { get; private set; }
@@ -22,7 +23,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
 
 
         public enum Door { left, right };
-        public IStageState state { get; set; } = kraidDungeon1;
+        public IStageState state { get; set; } = kraidDungeon5;
 
         private Game1 game;
 
@@ -35,27 +36,31 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                 return instance;
             }
         }
+        private LevelStatePattern() { //private constructor for singleton
+        
+        }
 
         public void Initialize(Vector2 playerSpawnLocation, Game1 game)
         {
             this.game = game;
-            //LoadCsv.Instance.Load("KraidDungeonSample.csv", new Vector2(3904, 400));
-            LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
+            LoadCsv.Instance.Load("KraidDungeon5.csv", new Vector2(368, 354), game);
+            //LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
         }
 
         public void SwitchLevel(Door door)
         {
-            /*
+            
             if (door == Door.left)
             {
-                //GameObjectContainer.Instance.Player.UpdateLocation();
+                //GameObjectContainer.Instance.Player.UpdateLocation();             ////////
             }
             else
             {
 
             }
-            */
+            
 
+            // Probably need to remove
             if (state == kraidDungeon1)
             {
                 RightDoor();
@@ -67,7 +72,6 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                 {
                     LeftDoor();
                     state = kraidDungeon1;
-
                 }
                 else
                 {
@@ -126,13 +130,13 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                 if (door == Door.left)
                 {
                     LeftDoor();
-                    state = kraidDungeon7;
+                    state = kraidDungeon5;
 
                 }
                 else
                 {
                     RightDoor();
-                    state = kraidDungeon5;
+                    state = kraidDungeon7;
 
                 }
             }
@@ -154,7 +158,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             else if (state == kraidDungeon8)
             {
                 LeftDoor();
-                state = levelOne;
+                state = kraidDungeon7;
             }
         }
 
@@ -187,7 +191,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         {
             state.RightDoor(game);
         }
-        public void TopLeftDoor()
+        /*public void TopLeftDoor()
         {
             state.TopLeftDoor();
         }
@@ -211,6 +215,6 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void FarBottomRightDoor()
         {
             state.FarBottomRightDoor();
-        }
+        }*/
     }
 }

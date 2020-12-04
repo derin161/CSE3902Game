@@ -7,9 +7,9 @@ OrangeDoorBlock,BlueDoorTopRight,,__,__,,,,,,,,,,,,,,,,,__,__,BlueDoorTopLeft,Or
 OrangeDoorBlock,BlueDoorMiddleRight,,__,__,,,,,,,,,,,,,,,,,__,__,BlueDoorMiddleLeft,OrangeDoorBlock
 OrangeDoorBlock,BlueDoorBottomRight,,__,__,,,,,,,,,,,,,,,,,__,__,BlueDoorBottomLeft,OrangeDoorBlock
 StockBlockBlue,TubeBlockBlue,TubeBlockBlue,StockBlockBlue,__,,,,,,,,,,,,,,,,,StockBlockBlue,TubeBlockBlue,TubeBlockBlue,StockBlockBlue
-StockBlockBlue,__,__,__,__,,,,,,,,,,,,,,,,,__,__,__,StockBlockBlue
-StockBlockBlue,__,__,__,__,,,,,,,,,,,,,,,,,,,,StockBlockBlue
-StockBlockBlue,__,__,__,__,,Zeela,,,,,,,,,,,,Zeela,,,,,,StockBlockBlue
-StockBlockBlue,__,__,__,__,,,,,,,,,,,,,,,,,__,__,__,StockBlockBlue
+StockBlockBlue,__,__,__,__,,,,,,StockBlockBlue,,,,,,,,,,,__,__,__,StockBlockBlue
+StockBlockBlue,__,__,__,__,,,,StockBlockBlue,,BushBlockBlue,,,,,,,,,,,,,,StockBlockBlue
+StockBlockBlue,__,__,__,__,,,,BushBlockBlue,,,,,,,,,,,,,,,,StockBlockBlue
+StockBlockBlue,__,__,__,__,,Zeela,,,,,,,,,,,Zeela,,,,__,__,__,StockBlockBlue
 StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue
 StockBlockBlue,BushBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,BushBlockBlue,BushBlockBlue,StockBlockBlue,StockBlockBlue,BushBlockBlue,BushBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,BushBlockBlue,BushBlockBlue,StockBlockBlue,StockBlockBlue,BushBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,BushBlockBlue,BushBlockBlue,StockBlockBlue

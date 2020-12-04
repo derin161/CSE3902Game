@@ -31,7 +31,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
             exitCommand = new QuitCommand(game);
 
             IMenuState settingsMenu = new SettingsMenuState(game, this);
-            settingsMenuCommand = new SettingsMenuCommand(settingsMenu);
+            settingsMenuCommand = new SetMenuStateCommand(settingsMenu);
 
             generateStartMenu();
 

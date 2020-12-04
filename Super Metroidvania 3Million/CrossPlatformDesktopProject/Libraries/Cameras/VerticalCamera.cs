@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMetroidvania5Million.Libraries.Camera
 {
+    //Author: Tristan Roman
     internal class VerticalCamera : Camera
     {
         public VerticalCamera(Viewport viewport) : base(viewport)
@@ -10,13 +11,13 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         }
 
         override
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             while (Focus.SpaceRectangle().Y <= CameraCenter.Y && !LockedUp)
                 Transform(-Vector2.UnitY);
             while (Focus.SpaceRectangle().Y >= CameraCenter.Y && !LockedDown)
                 Transform(Vector2.UnitY);
-            base.Update();
+            base.Update(gameTime);
         }
     }
 }

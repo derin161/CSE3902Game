@@ -5,6 +5,7 @@ using SuperMetroidvania5Million.Libraries.Container;
 
 namespace SuperMetroidvania5Million.Libraries.Camera
 {
+    //Author: Tristan Roman
     public class Camera
     {
         private Vector2 focusVector = GameObjectContainer.Instance.PlayerPosition();
@@ -54,7 +55,7 @@ namespace SuperMetroidvania5Million.Libraries.Camera
                 Matrix.CreateTranslation(new Vector3(Vector2.Zero, 0.0f));
         }
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
             if (Transitioning)
             {

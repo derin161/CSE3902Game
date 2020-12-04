@@ -3,8 +3,9 @@
 namespace SuperMetroidvania5Million.Libraries.Command.PlayerCommands
 {
     //Author: Nyigel Spann
-    public class PlayerAimUpCommand : ICommand
+    public class PlayerAimUpCommand : IDisableableCommand
     {
+        public bool Disabled { get; set; } = false;
         private IPlayer player;
 
         public PlayerAimUpCommand(IPlayer player)
@@ -12,9 +13,14 @@ namespace SuperMetroidvania5Million.Libraries.Command.PlayerCommands
             /*Although we could get the player from the GOContainer, take a player into the constructor for better future co-op support. */
             this.player = player;
         }
+
         public void Execute()
         {
-            this.player.AimUp();
+            if (!Disabled)
+            {
+                this.player.AimUp();
+                Disabled = true;
+            }
         }
     }
 }

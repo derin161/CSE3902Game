@@ -12,7 +12,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
     //Author: Will Floyd
     class Kraid : IEnemy
     {
-
+        
         private ISprite spriteRight, spriteLeft, currentSprite;
         private int msBetweenAttack = EnemyUtilities.KraidAttackDelay;
         private int msUntilAttack = EnemyUtilities.KraidAttackDelay;
@@ -23,6 +23,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
         private int health;
         public bool damaged;
         Game1 game;
+        private ICommand killCommand;
 
         public Kraid(Vector2 location, Game1 game)
         {
@@ -35,6 +36,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             health = EnemyUtilities.EnemyHealth;
             damaged = false;
             this.game = game;
+            killCommand = new SetMenuStateCommand(new GameWinMenuState(game));
         }
 
         private void Attack()
@@ -107,7 +109,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
-            new GameWinMenuCommand(game).Execute();
+            killCommand.Execute();
         }
 
         public void MoveLeft()
