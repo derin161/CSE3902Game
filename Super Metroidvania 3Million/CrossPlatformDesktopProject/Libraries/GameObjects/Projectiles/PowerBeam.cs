@@ -65,13 +65,6 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Projectiles
                 isDead = isDead || relativeX > bound || relativeX < -bound || relativeY > bound || relativeY < -bound;
 
             }
-            else
-            {
-
-                //Die if a collision occurs or the projectile leaves the screen
-                //Compare with isDead so the proj doesn't come back to life
-                isDead = isDead || Location.X > 800 || Location.X < 0 || Location.Y > 480 || Location.Y < 0;
-            }
 
             sprite.Update(gameTime);
         }
