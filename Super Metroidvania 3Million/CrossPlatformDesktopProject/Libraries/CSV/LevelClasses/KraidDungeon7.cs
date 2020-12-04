@@ -17,6 +17,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void RightDoor(Game1 game)
         {
             LoadCsv.Instance.Load("KraidDungeon8.csv", new Vector2(64, 224), game);
+            game.EnterSecretRoom();
         }
         public void TopLeftDoor()
         {

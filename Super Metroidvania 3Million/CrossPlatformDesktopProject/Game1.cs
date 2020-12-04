@@ -142,15 +142,18 @@ namespace SuperMetroidvania5Million
         }
         public void EnterSecretRoom()
         {
-            SoundManager.Instance.Songs.PlaySecretAreaTheme();
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlaySecretAreaTheme();           
         }
         public void EnterBrinstarRoom()
         {
-            SoundManager.Instance.Songs.PlayBrinstarTheme();
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlayBrinstarTheme();
         }
         public void EnterBossRoom()
         {
-            SoundManager.Instance.Songs.PlayRidleysHidoutTheme();
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlayRidleysHidoutTheme();
         }
     }
 }
