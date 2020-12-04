@@ -169,6 +169,7 @@
     <Compile Include="Libraries\GameStates\States\ItemUpgradeSelectionState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\AbstractMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\GameWinMenuState.cs" />
+	<Compile Include="Libraries\Command\GameStateCommands\GameOverCommand.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\StartMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\SettingsMenuState.cs" />
     <Compile Include="Libraries\GameStates\States\MenuStates\InGameMenuState.cs" />

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMetroidvania5Million.Libraries.GameObjects.Player;
+using SuperMetroidvania5Million.Libraries.Command;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
@@ -22,6 +23,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public float y { get; set; }
         public float missileSpeed { get; private set; }
         public Vector2 HealthPosition { get; private set; }
+        private ICommand gameOverCommand;
 
         private int spriteHeight = 64;
         private int rightIdleOffset = 13;
@@ -57,6 +59,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             State = new RightIdleSamusState(this);
             Jumping = false;
             HUD = new PlayerHUD(this);
+            gameOverCommand = new GameOverCommand();
         }
 
         public void Attack()
@@ -149,6 +152,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void Kill()
         {
             isDead = true;
+            gameOverCommand.Execute();
         }
 
         public Rectangle SpaceRectangle()

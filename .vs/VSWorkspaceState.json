@@ -4,13 +4,13 @@
     "\\Super Metroidvania 3Million",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Container",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player\\SamusDecorators",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player\\SamusStates",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player\\SamusStates\\Sprites"
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Enemies",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Enemies\\Game Objects",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates\\States",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates\\States\\MenuStates"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player\\SamusStates\\GameObjects\\AimUpSamusState.cs",
+  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Game1.cs",
   "PreviewInSolutionExplorer": false
 }
