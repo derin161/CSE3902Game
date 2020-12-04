@@ -65,6 +65,16 @@ namespace SuperMetroidvania5Million.Libraries.Container
             return state is PlayingState;
         }
 
+        public bool IsPaused()
+        {
+            return state is PausedState;
+        }
+
+        public bool IsGameOver()
+        {
+            return state is GameOverState;
+        }
+
         public void Update(GameTime gameTime)
         {
             state.Update(gameTime);
