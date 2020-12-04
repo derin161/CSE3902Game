@@ -134,10 +134,7 @@
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon6.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon7.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon8.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\LevelOne.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\LevelTwo.cs" />
     <Compile Include="Libraries\CSV\LevelClasses\EndlessLevel.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\StartingLevel.cs" />
     <Compile Include="Libraries\CSV\LevelStatePattern.cs" />
     <Compile Include="Libraries\CSV\IStageState.cs" />
     <Compile Include="Libraries\CSV\Object Generators\SwitchObjectGenerator.cs" />

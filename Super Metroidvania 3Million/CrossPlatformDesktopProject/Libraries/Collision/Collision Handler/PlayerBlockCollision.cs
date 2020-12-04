@@ -21,11 +21,11 @@ namespace SuperMetroidvania5Million.Libraries.Collision
             {
                 if (collisionZone.X >= 240)
                 {
-                    LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.right);
+                    LevelStatePattern.Instance.RightDoor();
                 }
                 else
                 {
-                    LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.left);
+                    LevelStatePattern.Instance.LeftDoor();
                 }
             }
             else if (block is LavaBlockTop)

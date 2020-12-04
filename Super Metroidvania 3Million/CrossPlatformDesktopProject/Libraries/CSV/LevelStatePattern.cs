@@ -8,9 +8,9 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         // public int [InsertItemPickupNameHere] { get; private set; }
         int levelIndex = 1, numLevels = 3;
 
-        private static StartingLevel startingLevel = new StartingLevel();
+        /*private static StartingLevel startingLevel = new StartingLevel();
         private static LevelOne levelOne = new LevelOne();
-        private static LevelTwo levelTwo = new LevelTwo();
+        private static LevelTwo levelTwo = new LevelTwo();*/
 
         private static KraidDungeon1 kraidDungeon1 = new KraidDungeon1();
         private static KraidDungeon2 kraidDungeon2 = new KraidDungeon2();
@@ -65,20 +65,9 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             game.SetCamera(true);
         }
 
-        public void SwitchLevel(Door door)
-        {
-            
-            if (door == Door.left)
-            {
-                //GameObjectContainer.Instance.Player.UpdateLocation();             ////////
-            }
-            else
-            {
+        /*public void SwitchLevel(Door door)
+        {           
 
-            }
-            
-
-            // Probably need to remove
             if (state == kraidDungeon1)
             {
                 RightDoor();
@@ -178,7 +167,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
                 LeftDoor();
                 state = kraidDungeon7;
             }
-        }
+        }*/
 
         public void LoadNext()
         {
@@ -209,30 +198,21 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         {
             state.RightDoor(game);
         }
-        /*public void TopLeftDoor()
+        public void TopLeftDoor()
         {
-            state.TopLeftDoor();
+            state.TopLeftDoor(game);
         }
         public void TopRightDoor()
         {
-            state.TopRightDoor();
+            state.TopRightDoor(game);
         }
         public void BottomLeftDoor()
         {
-            state.BottomLeftDoor();
+            state.BottomLeftDoor(game);
         }
         public void BottomRightDoor()
         {
-            state.BottomRightDoor();
+            state.BottomRightDoor(game);
         }
-
-        public void FarBottomLeftDoor()
-        {
-            state.FarBottomLeftDoor();
-        }
-        public void FarBottomRightDoor()
-        {
-            state.FarBottomRightDoor();
-        }*/
     }
 }
