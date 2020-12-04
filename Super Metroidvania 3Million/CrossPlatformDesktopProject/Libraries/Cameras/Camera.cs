@@ -46,6 +46,19 @@ namespace SuperMetroidvania5Million.Libraries.Camera
             }
         }
 
+        public Vector2 CameraFocus
+        {
+            get
+            {
+                return focusVector;
+            }
+
+            set
+            {
+                focusVector = value;
+            }
+        }
+
         public Matrix GetViewMatrix()
         {
             return
@@ -57,6 +70,7 @@ namespace SuperMetroidvania5Million.Libraries.Camera
 
         public virtual void Update(GameTime gameTime)
         {
+
             if (Transitioning)
             {
                 float lerpedX = MathHelper.Lerp(originalPos.X, destinationPos.X, lerpProgress);
