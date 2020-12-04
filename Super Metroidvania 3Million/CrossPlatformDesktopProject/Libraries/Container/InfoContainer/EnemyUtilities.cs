@@ -49,7 +49,7 @@
         public static int SidehopperSpriteRows = 2;
         public static int SidehopperSpriteColumns = 6;
         public static int SidehopperSpriteFrameSpeed = 64;
-        public static int SidehopperSpriteFrameReset = 2;
+        public static int SidehopperSpriteFrameReset = 3;
         public static int ReverseSidehopperSpriteFrameReset = 6;
 
         //Skree and skree sprite magic numbers
