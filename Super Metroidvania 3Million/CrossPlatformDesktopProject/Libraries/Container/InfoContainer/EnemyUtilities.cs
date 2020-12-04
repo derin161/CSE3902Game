@@ -4,7 +4,7 @@
     public class EnemyUtilities
     {
         //General enemy magic numbers
-        public static int EnemyDamage = 25;
+        public static int EnemyDamage = 3;
         public static int OffScreenLeft = 0;
         public static int OffScreenRight = 800;
         public static int EnemyHealth = 100;
