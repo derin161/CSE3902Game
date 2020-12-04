@@ -9,8 +9,8 @@
     <ProjectGuid>{3363B47E-7523-41E5-B4C3-51E4A16DF98D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CrossPlatformDesktopProject</RootNamespace>
-    <AssemblyName>CrossPlatformDesktopProject</AssemblyName>
+    <RootNamespace>SuperMetroidvania5Million</RootNamespace>
+    <AssemblyName>SuperMetroidvania5Million</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
