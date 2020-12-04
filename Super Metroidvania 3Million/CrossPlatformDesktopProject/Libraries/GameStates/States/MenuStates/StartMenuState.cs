@@ -18,13 +18,14 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
         private ICommand exitCommand;
         private ICommand settingsMenuCommand;
 
-        private int buttonWidth;
+        private int buttonWidth = 60;
         private int buttonXPos;
+        private Game1 game;
 
         public StartMenuState(Game1 game)
         {
+            this.game = game;
 
-            //I have no idea what is going on with the camera or what is going to be changed so this is not going to be drawn in the right location.
             menuBackground = MenuSpriteFactory.Instance.CreateSimpleBackgroundSprite(new Rectangle(0, 0, game.Window.ClientBounds.Width, game.Window.ClientBounds.Height));
 
             buttonXPos = game.Window.ClientBounds.Size.X / 2 - buttonWidth / 2;
@@ -68,8 +69,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
             ButtonList.Add(playButton);
             buttonYPos += buttonYOffset;
 
-            //Endless mode just plays regular game for now
-            SimpleMenuButton EndlessButton = new SimpleMenuButton("Endless Mode", new Vector2(buttonXPos, buttonYPos), new UnpauseGameCommand());
+            SimpleMenuButton EndlessButton = new SimpleMenuButton("Endless Mode", new Vector2(buttonXPos, buttonYPos), new EndlessModeCommand(game));
             ButtonList.Add(EndlessButton);
             buttonYPos += buttonYOffset;
 

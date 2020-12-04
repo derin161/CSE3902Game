@@ -42,6 +42,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             Space = new Rectangle((int)stateMachine.x, (int)stateMachine.y, EnemyUtilities.SidehopperWidth, EnemyUtilities.SidehopperHeight);
             sprite.Update(gameTime);
         }
+      
         public void Jump(float count, int direction)
         {
             float a = EnemyUtilities.SidehopperJumpA;

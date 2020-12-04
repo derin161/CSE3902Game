@@ -12,7 +12,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
     {
         public Rectangle Space { get; private set; }
         public bool IsSelected { get; set; } = false;
-        public int LRTextIndex { get; private set; } = 0;
+        public int LRTextIndex { get; set; } = 0;
         public List<String> LRTextList { get; private set; }
 
         private ISprite sprite;

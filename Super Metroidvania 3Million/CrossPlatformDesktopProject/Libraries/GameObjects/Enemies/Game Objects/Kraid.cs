@@ -109,7 +109,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
         public void Kill()
         {
             isDead = true;
-            killCommand.Execute();
+            if (!game.endlessMode)
+            {
+                killCommand.Execute();
+            }
         }
 
         public void MoveLeft()

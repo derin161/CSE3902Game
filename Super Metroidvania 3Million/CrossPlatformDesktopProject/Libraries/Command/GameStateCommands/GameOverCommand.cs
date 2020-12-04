@@ -1,6 +1,6 @@
-﻿using CrossPlatformDesktopProject.Libraries.Container;
+﻿using SuperMetroidvania5Million.Libraries.Container;
 
-namespace CrossPlatformDesktopProject.Libraries.Command.PlayerCommands
+namespace SuperMetroidvania5Million.Libraries.Command
 {
     class GameOverCommand : ICommand
     {

@@ -4,7 +4,7 @@
     public class EnemyUtilities
     {
         //General enemy magic numbers
-        public static int EnemyDamage = 25;
+        public static int EnemyDamage = 3;
         public static int OffScreenLeft = 0;
         public static int OffScreenRight = 800;
         public static int EnemyHealth = 100;
@@ -49,9 +49,9 @@
         public static int SidehopperSpriteRows = 2;
         public static int SidehopperSpriteColumns = 6;
         public static int SidehopperSpriteFrameSpeed = 64;
-        public static int SidehopperSpriteFrameReset = 2;
+        public static int SidehopperSpriteFrameReset = 3;
         public static int ReverseSidehopperSpriteFrameReset = 6;
-
+        
         //Skree and skree sprite magic numbers
         public static int SkreeInitialVertSpeed = 0;
         public static int SkreeInitialHorizSpeed = 0;
@@ -67,13 +67,13 @@
         public static int SkreeSpriteFrameReset = 3;
 
         //Memu and memu sprite magic numbers
-        public static int MemuVertSpeed = 0;
-        public static int MemuHorizSpeed = 3;
-        public static int MemuHeight = 32;
+        public static int MemuVertSpeed = 1;
+        public static int MemuHorizSpeed = 1;
+        public static int MemuHeight = 16;
         public static int MemuWidth = 32;
         public static int MemuSpriteRows = 1;
         public static int MemuSpriteColumns = 2;
-        public static int MemuSpriteFrameSpeed = 10;
+        public static int MemuSpriteFrameSpeed = 4;
         public static int MemuSpriteFrameReset = 2;
 
         //Ripper and ripper sprite magic numbers

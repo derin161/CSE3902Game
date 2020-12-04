@@ -15,13 +15,13 @@ namespace SuperMetroidvania5Million
     {
         public KeyboardController Keyboard { get; private set; }
         public Camera Camera { get; set; }
+        public bool endlessMode;
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-
         private GameTime gameTime;
         private LevelStatePattern currentLevel;
-
+        private EndlessLevel endlessLevel;
 
         public Game1()
         {
@@ -30,7 +30,7 @@ namespace SuperMetroidvania5Million
             gameTime = new GameTime();
             currentLevel = LevelStatePattern.Instance;
             graphics.IsFullScreen = false;
-
+            endlessLevel = new EndlessLevel(this);
             //graphics.PreferredBackBufferWidth = 1920;
             //graphics.PreferredBackBufferHeight = 1080;
 
@@ -86,6 +86,11 @@ namespace SuperMetroidvania5Million
                 graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)Camera.CameraPosition.Y, 1600, 1600);
             } else {
                 graphics.GraphicsDevice.Viewport = new Viewport(0, 0, 800, 480);
+            }
+
+            if (endlessMode)
+            {
+                endlessLevel.AddEnemy();
             }
 
             base.Update(gameTime);
