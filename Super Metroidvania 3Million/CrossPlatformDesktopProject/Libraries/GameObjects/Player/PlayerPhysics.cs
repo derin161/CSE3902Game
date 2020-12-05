@@ -10,7 +10,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public Vector2 velocity { get; set; }
         private float maxFallVelocity = 8;
         private float horizontalRunSpeed = 3;
-        private float jumpSpeed = -8f;
+        private float jumpSpeed = -7f;
         private Samus player;
 
         public PlayerPhysics(Samus player)
@@ -65,7 +65,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         }
 
         public void setHighJump(){
-            jumpSpeed = -16f;
+            jumpSpeed = -8f;
         }
 
 
