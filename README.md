@@ -3,8 +3,7 @@
 
 **PROGRAM DESCRIPTION**
 
-This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight. At the moment, the program has collision related behaviors and a working map design.
-
+This program is a clone of the original *Metroid NES* first mini-boss hideout. The player character, Samus, is able to move around and use her beam cannon, missile rockets, and bombs to combat enemies while exploring. Samus can pickup items and upgrades that augment her ability to fight.
 ___
 **PROGRAM CONTROLS**
 
@@ -48,8 +47,10 @@ ___
 
 ___
 **KNOWN BUGS**
-
-
+* The camera does not stop side scrolling when approaching the edge of a room.
+* Sometimes the player appears in the wrong room when entering a new room.
+* The player hitbox doesn't change in morph form.
+* The player can still cycle to beam weapons he does not have.
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
