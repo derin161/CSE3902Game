@@ -386,6 +386,7 @@
     </None>
     <None Include="app.manifest" />
     <None Include="BurndownCharts\sprint4_burndown_chart.xlsx" />
+    <None Include="BurndownCharts\sprint5_burndown_chart.xlsx" />
     <None Include="Code Reviews\Sprint4\Sprint 4 Reflection.pdf" />
     <None Include="Libraries\Levels\KraidDungeon.csv" />
     <None Include="Libraries\Levels\KraidDungeon1.csv" />

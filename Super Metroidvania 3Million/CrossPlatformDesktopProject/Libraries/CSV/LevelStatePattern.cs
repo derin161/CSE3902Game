@@ -71,7 +71,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         {
             this.game = game;
             LoadCsv.Instance.Load("KraidDungeonB3.csv", new Vector2(368, 354), game);
-            game.SetCamera(false);
+            game.SetCamera(true);
         }
 
         public void InitializeEndlessMode(Game1 game)
