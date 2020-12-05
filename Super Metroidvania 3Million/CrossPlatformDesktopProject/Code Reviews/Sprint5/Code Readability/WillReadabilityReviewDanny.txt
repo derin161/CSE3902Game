@@ -1,14 +1,13 @@
 ﻿Review Author: Will Floyd
 Review Date: 12/4/2020
 Sprint No: 5
-Name of the .cs file being reviewed: LevelStatePattern.cs
+Name of the .cs file being reviewed: BlockSpriteFactory.cs
 Author of the .cs file being reviewed: Danny Attia
 Number of minutes taken to complete the review: 10
 
 ======================================================
 
 Specific comments on what is readable and what is not:
-1) variable names are descriptive and it is clear what information they are storing
-2) Methods in the class have descriptive names and it is clear what they do
-3) No comments
-4) A few methods are a bit complex and could use a comment or two to explain the implementation
+1) Tons of variables but all of the names are descriptive
+2) Methods are all well named and one line of code, easy to tell what they do
+3) No comments, but they really aren't needed

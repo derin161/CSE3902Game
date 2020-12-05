@@ -1,0 +1,14 @@
+Review Author: Danny Attia
+Review Date: 12/4/2020
+Sprint No: 5
+Name of the .cs file being reviewed: InGameMenuState
+Author of the .cs file being reviewed: Nyigel Spann
+Number of minutes taken to complete the review: 10
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) Variable names are easily understandable 
+2) A little hard to follow what's happening with all the calculations for button positions
+3) Few comments
+4) Logic in constructor is sort of long and may be able to split into multiple methods

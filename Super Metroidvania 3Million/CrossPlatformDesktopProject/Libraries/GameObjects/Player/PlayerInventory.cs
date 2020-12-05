@@ -14,6 +14,8 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         private int MaximumEnergyTanks = 6;
 
         public int CurrentMissileRocketCount { get; private set; }
+
+
         private int CurrentMissileRocketCapacity = 0;
         private int MaximumMissileRocketCapacity = 255;
 
@@ -31,7 +33,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         {
             CurrentEnergyTanksFilled = 2;
             CurrentEnergyTanks = 3;
-            CurrentMissileRocketCapacity = 0;
+            CurrentMissileRocketCapacity = 25;
             CurrentEnergyLevel = startingEnergyLevel;
             HasLongBeam = false;
             HasIceBeam = false;
@@ -118,7 +120,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         }
         public void GiveItem(MissileRocketItem mr)
         {
-            CurrentMissileRocketCapacity += 5;
+            CurrentMissileRocketCapacity += 25;
             if (CurrentMissileRocketCapacity > MaximumMissileRocketCapacity)
             {
                 CurrentMissileRocketCapacity = MaximumMissileRocketCapacity;
@@ -128,9 +130,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         }
         public void GiveItem(RocketDropItem rd)
         {
-            if (CurrentMissileRocketCount < CurrentMissileRocketCapacity)
+            CurrentMissileRocketCount += 5;
+            if (CurrentMissileRocketCount > CurrentMissileRocketCapacity)
             {
-                CurrentMissileRocketCount++;
+                CurrentMissileRocketCount = CurrentMissileRocketCapacity;
             }
         }
 
@@ -154,6 +157,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         {
             SoundManager.Instance.Songs.PlayItemAcquisitionSong();
             //pause not yet implemented
+        }
+
+        public void useRocket(){
+            CurrentMissileRocketCount -= 1;
         }
     }
 }

@@ -6,6 +6,10 @@
 
         public int lavaDamage = 5;
 
+        //Level spawn location magic numbers
+        public int LevelSpawnX { get; set; }
+        public int LevelSpawnY { get; set; }
+
         private static BlockUtilities instance = new BlockUtilities();
 
         public static BlockUtilities Instance
