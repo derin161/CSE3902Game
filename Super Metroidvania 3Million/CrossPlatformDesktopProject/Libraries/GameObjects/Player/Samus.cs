@@ -56,7 +56,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             y = l.Y;
             space = new Rectangle((int)x, (int)y, 64, 64);
             playerHitBox = new Rectangle(space.X + rightIdleOffset, space.Y, idleWidth, spriteHeight);
-            missile = 0;
+            missile = 1;
             Inventory = new PlayerInventory(30);
             Physics = new PlayerPhysics(this);
             State = new RightIdleSamusState(this);
