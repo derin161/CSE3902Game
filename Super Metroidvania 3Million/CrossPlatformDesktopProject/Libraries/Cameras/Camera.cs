@@ -12,6 +12,7 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         private Vector2 currentPos;
         private Vector2 originalPos;
         private Vector2 destinationPos;
+        private bool isHorizontal;
         private float lerpProgress;
 
         protected Camera(Viewport viewport)
@@ -54,6 +55,19 @@ namespace SuperMetroidvania5Million.Libraries.Camera
             set
             {
                 focusVector = value;
+            }
+        }
+
+        public bool isHorizontalCamera
+        {
+            get
+            {
+                return isHorizontal;
+            }
+
+            set
+            {
+                isHorizontal = value;
             }
         }
 

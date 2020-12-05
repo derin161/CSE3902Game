@@ -42,8 +42,8 @@ namespace SuperMetroidvania5Million.Libraries.Container
         }
         public void GameOver()
         {
-            state = new GameOverState();
-            game.Keyboard.MakeGameWinLoseDict();
+            //state = new GameOverState();
+            //game.Keyboard.MakeGameWinLoseDict();
         }
         public void RoomTransition()
         {

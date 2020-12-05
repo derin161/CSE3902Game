@@ -8,9 +8,9 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         // public int [InsertItemPickupNameHere] { get; private set; }
         int levelIndex = 1, numLevels = 3;
 
-        private static StartingLevel startingLevel = new StartingLevel();
+        /*private static StartingLevel startingLevel = new StartingLevel();
         private static LevelOne levelOne = new LevelOne();
-        private static LevelTwo levelTwo = new LevelTwo();
+        private static LevelTwo levelTwo = new LevelTwo();*/
 
         private static KraidDungeon1 kraidDungeon1 = new KraidDungeon1();
         private static KraidDungeon2 kraidDungeon2 = new KraidDungeon2();
@@ -20,6 +20,9 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         private static KraidDungeon6 kraidDungeon6 = new KraidDungeon6();
         private static KraidDungeon7 kraidDungeon7 = new KraidDungeon7();
         private static KraidDungeon8 kraidDungeon8 = new KraidDungeon8();
+
+        private static KraidDungeonB1 kraidDungeonB1 = new KraidDungeonB1();
+
 
 
         public enum Door { left, right };
@@ -40,11 +43,18 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         
         }
 
-        public void Initialize(Vector2 playerSpawnLocation, Game1 game)
+        public void Initialize(Game1 game)
         {
             this.game = game;
             LoadCsv.Instance.Load("KraidDungeon5.csv", new Vector2(368, 354), game);
-            //LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(64, 200), game);
+            game.SetCamera(true);
+        }
+
+        public void InitializeB(Game1 game)
+        {
+            this.game = game;
+            LoadCsv.Instance.Load("KraidDungeonB1.csv", new Vector2(64, 200), game);
+            game.SetCamera(false);
         }
 
         public void InitializeEndlessMode(Game1 game)
@@ -52,121 +62,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
             this.game = game;
             game.endlessMode = true;
             LoadCsv.Instance.Load("EndlessLevel.csv", new Vector2(368, 354), game);
-        }
-
-        public void SwitchLevel(Door door)
-        {
-            
-            if (door == Door.left)
-            {
-                //GameObjectContainer.Instance.Player.UpdateLocation();             ////////
-            }
-            else
-            {
-
-            }
-            
-
-            // Probably need to remove
-            if (state == kraidDungeon1)
-            {
-                RightDoor();
-                state = kraidDungeon2;
-            }
-            else if (state == kraidDungeon2)
-            {
-                if (door == Door.left)
-                {
-                    LeftDoor();
-                    state = kraidDungeon1;
-                }
-                else
-                {
-                    RightDoor();
-                    state = kraidDungeon3;
-
-                }
-            }
-            else if (state == kraidDungeon3)
-            {
-                if (door == Door.left)
-                {
-                    LeftDoor();
-                    state = kraidDungeon2;
-
-                }
-                else
-                {
-                    RightDoor();
-                    state = kraidDungeon4;
-
-                }
-            }
-            else if (state == kraidDungeon4)
-            {
-                if (door == Door.left)
-                {
-                    LeftDoor();
-                    state = kraidDungeon3;
-
-                }
-                else
-                {
-                    RightDoor();
-                    state = kraidDungeon5;
-
-                }
-            }
-            else if (state == kraidDungeon5)
-            {
-                if (door == Door.left)
-                {
-                    LeftDoor();
-                    state = kraidDungeon4;
-
-                }
-                else
-                {
-                    RightDoor();
-                    state = kraidDungeon6;
-
-                }
-            }
-            else if (state == kraidDungeon6)
-            {
-                if (door == Door.left)
-                {
-                    LeftDoor();
-                    state = kraidDungeon5;
-
-                }
-                else
-                {
-                    RightDoor();
-                    state = kraidDungeon7;
-
-                }
-            }
-            else if (state == kraidDungeon7)
-            {
-                if (door == Door.left)
-                {
-                    LeftDoor();
-                    state = kraidDungeon6;
-
-                }
-                else
-                {
-                    RightDoor();
-                    state = kraidDungeon8;
-
-                }
-            }
-            else if (state == kraidDungeon8)
-            {
-                LeftDoor();
-                state = kraidDungeon7;
-            }
+            game.SetCamera(true);
         }
 
         public void LoadNext()
@@ -198,30 +94,21 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         {
             state.RightDoor(game);
         }
-        /*public void TopLeftDoor()
+        public void TopLeftDoor()
         {
-            state.TopLeftDoor();
+            state.TopLeftDoor(game);
         }
         public void TopRightDoor()
         {
-            state.TopRightDoor();
+            state.TopRightDoor(game);
         }
         public void BottomLeftDoor()
         {
-            state.BottomLeftDoor();
+            state.BottomLeftDoor(game);
         }
         public void BottomRightDoor()
         {
-            state.BottomRightDoor();
+            state.BottomRightDoor(game);
         }
-
-        public void FarBottomLeftDoor()
-        {
-            state.FarBottomLeftDoor();
-        }
-        public void FarBottomRightDoor()
-        {
-            state.FarBottomRightDoor();
-        }*/
     }
 }
