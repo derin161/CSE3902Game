@@ -84,7 +84,7 @@ namespace SuperMetroidvania5Million
             Camera.Update(gameTime);
 
             if (GameStateMachine.Instance.IsPlaying() && Camera.isHorizontalCamera) {
-                graphics.GraphicsDevice.Viewport = new Viewport((int)(-Camera.CameraPosition.X - StartingCameraPos.X), (int)Camera.CameraPosition.Y, 1600, 2000);  // Offset 208
+                graphics.GraphicsDevice.Viewport = new Viewport((int)(-Camera.CameraPosition.X - StartingCameraPos.X), (int)Camera.CameraPosition.Y, 1600, 2000);
             } else if ((GameStateMachine.Instance.IsPlaying() && !Camera.isHorizontalCamera)) {
                 graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)(-Camera.CameraPosition.Y - StartingCameraPos.Y - 32), 1600, 2000); ; // Offset 32
             } else {
