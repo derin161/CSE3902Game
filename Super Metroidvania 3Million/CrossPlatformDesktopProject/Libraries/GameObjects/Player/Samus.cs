@@ -14,6 +14,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         private Rectangle playerHitBox;
         private Game1 game;
         private bool isDead;
+        private bool godMode;
         public int missile;
         public GameTime gameTime;
         public PlayerPhysics Physics { get; private set; }
@@ -60,6 +61,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             Jumping = false;
             HUD = new PlayerHUD(this);
             gameOverCommand = new GameOverCommand();
+            godMode = false;
         }
 
         public void Attack()
@@ -109,7 +111,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void TakeDamage(int damage)
         {
             //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
-            if (!invincible)
+            if (!godMode && !invincible)
             {
                 Inventory.Damage(damage, this);
                 State = new DamagedPlayerStateDecorator(State, Color.Red);
@@ -210,6 +212,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public bool getMorph()
         {
             return morph;
+        }
+
+        public void setGodMode(){
+            godMode = true;
         }
 
     }

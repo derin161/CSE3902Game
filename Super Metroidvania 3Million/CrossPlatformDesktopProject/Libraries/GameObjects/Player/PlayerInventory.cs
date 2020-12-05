@@ -31,7 +31,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         {
             CurrentEnergyTanksFilled = 2;
             CurrentEnergyTanks = 3;
-            CurrentMissileRocketCapacity = 0;
+            CurrentMissileRocketCapacity = 10;
             CurrentEnergyLevel = startingEnergyLevel;
             HasLongBeam = false;
             HasIceBeam = false;
@@ -154,6 +154,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         {
             SoundManager.Instance.Songs.PlayItemAcquisitionSong();
             //pause not yet implemented
+        }
+
+        public int rocketStock(){
+            return CurrentMissileRocketCapacity;
         }
     }
 }
