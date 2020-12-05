@@ -15,6 +15,7 @@ namespace SuperMetroidvania5Million
     {
         public KeyboardController Keyboard { get; private set; }
         public Camera Camera { get; set; }
+        public Camera HorizontalCamera;
         public Vector2 StartingCameraPos;
 
         public bool endlessMode;
@@ -60,6 +61,7 @@ namespace SuperMetroidvania5Million
 
             Vector2 playerSpawnLocation = new Vector2(368, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
+            HorizontalCamera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
             SetCamera(true); // Horizontal camera
             SoundManager.Instance.LoadAllSounds(Content);
             SoundManager.Instance.Songs.PlayBrinstarTheme();
@@ -82,7 +84,7 @@ namespace SuperMetroidvania5Million
             Camera.Update(gameTime);
 
             if (GameStateMachine.Instance.IsPlaying() && Camera.isHorizontalCamera) {
-                graphics.GraphicsDevice.Viewport = new Viewport((int)(-Camera.CameraPosition.X - StartingCameraPos.X + 208), (int)Camera.CameraPosition.Y, 1600, 2000);  // Offset 208
+                graphics.GraphicsDevice.Viewport = new Viewport((int)(-Camera.CameraPosition.X - StartingCameraPos.X), (int)Camera.CameraPosition.Y, 1600, 2000);  // Offset 208
             } else if ((GameStateMachine.Instance.IsPlaying() && !Camera.isHorizontalCamera)) {
                 graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)(-Camera.CameraPosition.Y - StartingCameraPos.Y - 32), 1600, 2000); ; // Offset 32
             } else {
@@ -149,8 +151,9 @@ namespace SuperMetroidvania5Million
         {
             if (isHorizontal)
             {
-                Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
-                StartingCameraPos = new Vector2((int)(GameObjectContainer.Instance.Player.GetPlayerLocation().X), 0);
+                Camera = HorizontalCamera;
+                //Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
+                //StartingCameraPos = new Vector2((int)(GameObjectContainer.Instance.Player.GetPlayerLocation().X), 0);
             }
             else
             {

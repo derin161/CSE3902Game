@@ -3,9 +3,9 @@ BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueMetalBlock,BlueM
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,BlueCircleBlock,,,Skree,Skree,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,StoneBlockWithEyes,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,StoneBlockWithEyes,,,,,,,,BlueBrickBlock,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,VerticalTubeStoneBlock,,Skree,,,VerticalTubeStoneBlock,,,,,,VariaItem,,BlueBrickBlock,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
-OrangeDoorBlock,RedDoorTopRight,,,,,VerticalTubeStoneBlock,,,,,VerticalTubeStoneBlock,,,,,,VerticalTubeStoneBlock,,BlueBrickBlock,,,,,,,,RedDoorTopLeft,OrangeDoorBlock
-OrangeDoorBlock,RedDoorMiddleRight,,,,,VerticalTubeStoneBlock,,,,,VerticalTubeStoneBlock,,,,,BlueCircleBlock,BlueBrickBlock,BlueBrickBlock,BlueCircleBlock,,,,,,,,RedDoorMiddleLeft,OrangeDoorBlock
-OrangeDoorBlock,RedDoorBottomRight,,,,,StoneBlockWithEyes,,,,,StoneBlockWithEyes,,,,,,,,,,,,,,,,RedDoorBottomLeft,OrangeDoorBlock
+OrangeDoorBlock,RedDoorTopRightBlock,,,,,VerticalTubeStoneBlock,,,,,VerticalTubeStoneBlock,,,,,,VerticalTubeStoneBlock,,BlueBrickBlock,,,,,,,,RedDoorTopLeftBlock,OrangeDoorBlock
+OrangeDoorBlock,RedDoorMiddleRightBlock,,,,,VerticalTubeStoneBlock,,,,,VerticalTubeStoneBlock,,,,,BlueCircleBlock,BlueBrickBlock,BlueBrickBlock,BlueCircleBlock,,,,,,,,RedDoorMiddleLeftBlock,OrangeDoorBlock
+OrangeDoorBlock,RedDoorBottomRightBlock,,,,,StoneBlockWithEyes,,,,,StoneBlockWithEyes,,,,,,,,,,,,,,,,RedDoorBottomLeftBlock,OrangeDoorBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,StoneBlockWithEyes,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock

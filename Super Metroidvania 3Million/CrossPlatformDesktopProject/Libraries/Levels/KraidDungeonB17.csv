@@ -3,9 +3,9 @@ BluePipesBlock,BluePipesBlock,BluePipesBlock,RedCircleBlock,BluePipesBlock,BlueP
 BluePipesBlock,,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,,,,,,,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,,BluePipesBlock
 BluePipesBlock,,,,,,,,,,,,,,,BluePipesBlock
 BluePipesBlock,,,,,,,,,,,,,,,BluePipesBlock
-BluePipesBlock,,,,,,,,,,,,,,RedDoorTopLeft,OrangeDoorBlock
-BluePipesBlock,,,,,,,,,,,,,,RedDoorMiddleLeft,OrangeDoorBlock
-BluePipesBlock,,,,,,,,,,,,,,RedDoorBottomLeft,OrangeDoorBlock
+BluePipesBlock,,,,,,,,,,,,,,RedDoorTopLeftBlock,OrangeDoorBlock
+BluePipesBlock,,,,,,,,,,,,,,RedDoorMiddleLeftBlock,OrangeDoorBlock
+BluePipesBlock,,,,,,,,,,,,,,RedDoorBottomLeftBlock,OrangeDoorBlock
 BluePipesBlock,,,,,,,,,,,,,,BluePipesBlock,BluePipesBlock
 BluePipesBlock,,,,Kraid,,,,,,,,,,BluePipesBlock,BluePipesBlock
 BluePipesBlock,,StockBlockStone,,,,,,,,,,StockBlockStone,,BluePipesBlock,BluePipesBlock

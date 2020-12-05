@@ -3,9 +3,9 @@ GreenBrickBlock,GreenFenceBlock,GreenFenceBlock,GreenSquareBlock,GreenSquareBloc
 VerticalTubeStoneBlock,GreenFenceBlock,GreenFenceBlock,GreenSquareBlock,GreenSquareBlock,RedCircleBlock,GreenFenceBlock,GreenSquareBlock,GreenSquareBlock,RedCircleBlock,GreenFenceBlock,GreenSquareBlock,GreenSquareBlock,GreenFenceBlock,GreenFenceBlock,VerticalTubeStoneBlock
 VerticalTubeStoneBlock,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,GreenSquareBlock,GreenSquareBlock,GreenSquareBlock,GreenSquareBlock,GreenSquareBlock,GreenSquareBlock,GreenSquareBlock,GreenSquareBlock,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,VerticalTubeStoneBlock
 VerticalTubeStoneBlock,,,,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,,,RoofSpikeBlock,RoofSpikeBlock,RoofSpikeBlock,,,,VerticalTubeStoneBlock
-OrangeDoorBlock,RedDoorTopRight,,,,,,,,,,,,,RedDoorTopLeft,OrangeDoorBlock
-OrangeDoorBlock,RedDoorMiddleRight,,,,,,,,,,,,,RedDoorMiddleLeft,OrangeDoorBlock
-OrangeDoorBlock,RedDoorBottomRight,,,,,,,,,,,,,RedDoorBottomLeft,OrangeDoorBlock
+OrangeDoorBlock,RedDoorTopRightBlock,,,,,,,,,,,,,BlueDoorTopLeft,OrangeDoorBlock
+OrangeDoorBlock,RedDoorMiddleRightBlock,,,,,,,,,,,,,BlueDoorMiddleLeft,OrangeDoorBlock
+OrangeDoorBlock,RedDoorBottomRightBlock,,,,,,,,,,,,,BlueDoorBottomLeft,OrangeDoorBlock
 VerticalTubeStoneBlock,StockBlockStone,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,BlueFenceBlock,StockBlockStone,StockBlockStone
 StockBlockStone,StockBlockStone,BlueCircleBlock,BlueCircleBlock,,,,,,,,,BlueCircleBlock,BlueCircleBlock,StockBlockStone,StockBlockStone
 BushBlockSilver,VerticalTubeStoneBlock,BlueCircleBlock,BlueCircleBlock,,,,,,,,,BlueCircleBlock,BlueCircleBlock,BushBlockSilver,VerticalTubeStoneBlock
