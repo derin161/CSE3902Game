@@ -1,0 +1,13 @@
+﻿Review Author: Nyigel Spann
+Review Date: 12/4/2020
+Sprint No: 5
+Name of the .cs file being reviewed: MorphSamusState
+Author of the .cs file being reviewed: Shyamal Shah
+Number of minutes taken to complete the review: 5
+
+======================================================
+
+Specific comments on what is readable and what is not:
+1) The variable "spriteChange" is a bit vaguely named.
+2) Some magic numbers are not clear.
+3) Comments in aimUp explain how this state does not react to  this method call.
