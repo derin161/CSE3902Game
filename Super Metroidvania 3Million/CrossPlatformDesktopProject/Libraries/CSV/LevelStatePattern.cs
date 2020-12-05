@@ -63,6 +63,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void Initialize(Game1 game)
         {
             this.game = game;
+            state = kraidDungeon5;
             LoadCsv.Instance.Load("KraidDungeon5.csv", new Vector2(368, 354), game);
             game.SetCamera(true);
         }
@@ -70,6 +71,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void InitializeB(Game1 game)
         {
             this.game = game;
+            state = kraidDungeonB3;
             LoadCsv.Instance.Load("KraidDungeonB3.csv", new Vector2(368, 354), game);
             game.SetCamera(true);
         }

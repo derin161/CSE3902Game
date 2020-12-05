@@ -71,10 +71,14 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             if ((!morph && missile == 0 && Inventory.CurrentMissileRocketCount > 0)){
                 State.Attack();
                 Inventory.useRocket();
+                SoundManager.Instance.Projectiles.MissileRocketFireSound.PlaySound();
             }else if (!morph && missile == 2 && Inventory.HasWaveBeam){
                 State.Attack();
-            }else if (morph || missile == 1){
+                SoundManager.Instance.Projectiles.WaveBeamFireSound.PlaySound();
+            }
+            else if (morph || missile == 1){
                 State.Attack();
+                SoundManager.Instance.Projectiles.PowerBeamFireSound.PlaySound();
             }
         }
         public void CycleBeamMissile()

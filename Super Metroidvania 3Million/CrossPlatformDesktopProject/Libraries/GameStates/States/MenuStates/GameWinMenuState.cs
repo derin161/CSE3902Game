@@ -31,7 +31,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
             buttonXPos = game.Window.ClientBounds.Size.X / 2 - buttonWidth / 2;
             exitCommand = new QuitCommand(game);
             menuState = new StartMenuState(game);
-            MainMenuCommand = new MainMenuCommand(menuState);
+            MainMenuCommand = new SetMenuStateCommand(menuState);
 
             generateStartMenu();
 
