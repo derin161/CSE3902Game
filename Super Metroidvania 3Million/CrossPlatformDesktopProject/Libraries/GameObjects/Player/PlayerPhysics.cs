@@ -64,6 +64,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             return velocity.Y;
         }
 
+        public void setHighJump(){
+            jumpSpeed = -16f;
+        }
+
 
     }
 }

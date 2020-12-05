@@ -100,6 +100,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void GiveItem(HighJumpItem hj)
         {
             HasHighJump = true;
+
             upgradePickupSequence();
         }
 

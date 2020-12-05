@@ -90,6 +90,9 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         }
         public void Jump()
         {
+            if (Inventory.HasHighJump){
+                Physics.setHighJump();
+            }
             State.Jump();
         }
         public void Morph()
