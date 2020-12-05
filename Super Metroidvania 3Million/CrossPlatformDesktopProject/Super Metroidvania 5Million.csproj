@@ -456,9 +456,11 @@
     <Content Include="Code Reviews\Sprint4\Code Readability\WillReadabilityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint5\Code Quality\AlexQualityReviewWillSprint5.txt" />
     <Content Include="Code Reviews\Sprint5\Code Quality\DannyQualityReviewNyigel.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Quality\TristanQualityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint5\Code Quality\WillQualityReviewDanny.txt" />
     <Content Include="Code Reviews\Sprint5\Code Readability\AlexReadabilityReviewWillSprint5.txt" />
     <Content Include="Code Reviews\Sprint5\Code Readability\DannyReadabilityReviewNyigel.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint5\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
   <ItemGroup />
