@@ -179,5 +179,15 @@ namespace SuperMetroidvania5Million
             if (!SongManager.Instance.LoopMode)
                 SongManager.Instance.PlayRidleysHidoutTheme();
         }
+        public void BeatTheGame()
+        {
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlayEndingTheme();
+        }
+        public void EnterTheMainMenu()
+        {
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlayGameStartSong();
+        }
     }
 }

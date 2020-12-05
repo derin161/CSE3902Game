@@ -27,12 +27,13 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
 
             //I have no idea what is going on with the camera or what is going to be changed so this is not going to be drawn in the right location.
             menuBackground = MenuSpriteFactory.Instance.CreateSimpleBackgroundSprite(new Rectangle(0, 0, game.Window.ClientBounds.Width, game.Window.ClientBounds.Height));
+            game.BeatTheGame();
 
             buttonXPos = game.Window.ClientBounds.Size.X / 2 - buttonWidth / 2;
             exitCommand = new QuitCommand(game);
             menuState = new StartMenuState(game);
             MainMenuCommand = new SetMenuStateCommand(menuState);
-
+            
             generateStartMenu();
 
             ButtonList[0].IsSelected = true;
