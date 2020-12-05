@@ -79,6 +79,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             {
                 CurrentEnergyLevel = energyCapacityPerTank;
             }
+            SoundManager.Instance.Items.EnergyPickupSound.PlaySound();
         }
 
         public void GiveItem(EnergyTankItem entank)
@@ -156,7 +157,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         private void upgradePickupSequence()
         {
             SoundManager.Instance.Songs.PlayItemAcquisitionSong();
-            //pause not yet implemented
+            //pause not implemented for good flow when picking up all of the items
         }
 
         public void useRocket(){

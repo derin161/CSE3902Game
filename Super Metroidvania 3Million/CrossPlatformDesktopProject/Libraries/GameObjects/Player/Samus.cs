@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperMetroidvania5Million.Libraries.GameObjects.Player;
 using SuperMetroidvania5Million.Libraries.Command;
 using SuperMetroidvania5Million.Libraries.GameStates;
+using SuperMetroidvania5Million.Libraries.Audio;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
@@ -118,12 +119,12 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         }
         public void TakeDamage(int damage)
         {
-            //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
             if (!godMode && !invincible)
             {
                 Inventory.Damage(damage, this);
                 State = new DamagedPlayerStateDecorator(State, Color.Red);
                 invincible = true;
+                SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
             }
         }
         public void Upgrade(IItem item)
