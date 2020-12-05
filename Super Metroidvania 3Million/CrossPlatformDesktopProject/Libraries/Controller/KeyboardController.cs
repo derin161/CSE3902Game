@@ -72,7 +72,7 @@ namespace SuperMetroidvania5Million.Libraries.Controller
         }
 
 
-        public void MakePlayDict()     // If else of possible actions that updates choice
+        public void MakePlayDict()
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
