@@ -20,9 +20,9 @@ BushBlockSilver,StockBlockStone,StockBlockStone,StockBlockStone,,,,Zeela,,,BushB
 BushBlockSilver,StockBlockStone,BushBlockSilver,BushBlockSilver,,,,StockBlockStone,TubeBlockBlue,StockBlockStone,BushBlockSilver,StockBlockStone,BushBlockSilver,BushBlockSilver,BushBlockSilver,VerticalTubeStoneBlock
 StockBlockStone,BushBlockSilver,StockBlockStone,StockBlockStone,,,,,,,StockBlockStone,BushBlockSilver,StockBlockStone,StockBlockStone,StockBlockStone,StockBlockStone
 VerticalTubeStoneBlock,StockBlockStone,,,,,,,,,,,,,VerticalTubeStoneBlock,BushBlockSilver
-StockBlockStone,StockBlockStone,,,,,,,,,,,,,RedDoorTopLeft,OrangeDoorBlock
-BushBlockSilver,VerticalTubeStoneBlock,StockBlockStone,StockBlockStone,BushBlockSilver,StockBlockStone,,,,,,,,,RedDoorMiddleLeft,OrangeDoorBlock
-StockBlockStone,StockBlockStone,BushBlockSilver,StockBlockStone,StockBlockStone,StockBlockStone,,,,,,,,,RedDoorBottomLeft,OrangeDoorBlock
+StockBlockStone,StockBlockStone,,,,,,,,,,,,,RedDoorTopLeftBlock,OrangeDoorBlock
+BushBlockSilver,VerticalTubeStoneBlock,StockBlockStone,StockBlockStone,BushBlockSilver,StockBlockStone,,,,,,,,,RedDoorMiddleLeftBlock,OrangeDoorBlock
+StockBlockStone,StockBlockStone,BushBlockSilver,StockBlockStone,StockBlockStone,StockBlockStone,,,,,,,,,RedDoorBottomLeftBlock,OrangeDoorBlock
 VerticalTubeStoneBlock,BushBlockSilver,BushBlockSilver,StockBlockStone,BushBlockSilver,BushBlockSilver,,,,,,StockBlockStone,TubeBlockBlue,StockBlockStone,BushBlockSilver,StockBlockStone
 VerticalTubeStoneBlock,StockBlockStone,StockBlockStone,BushBlockSilver,StockBlockStone,StockBlockStone,,,,,,,,,StockBlockStone,StockBlockStone
 StockBlockStone,StockBlockStone,,,,,,,Zeela,,,,,,BushBlockSilver,VerticalTubeStoneBlock
