@@ -65,7 +65,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
             int buttonYPos = 230;
             int buttonYOffset = 50;
 
-            SimpleMenuButton playButton = new SimpleMenuButton("Play", new Vector2(buttonXPos, buttonYPos), new UnpauseGameCommand());
+            SimpleMenuButton playButton = new SimpleMenuButton("Play", new Vector2(buttonXPos, buttonYPos), new PlayCommand(game));
             ButtonList.Add(playButton);
             buttonYPos += buttonYOffset;
 

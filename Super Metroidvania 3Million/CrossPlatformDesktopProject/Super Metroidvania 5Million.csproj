@@ -81,6 +81,7 @@
     <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
+    <Compile Include="Libraries\Command\PlayCommand.cs" />
     <Compile Include="Libraries\Command\EnableCommandCommand.cs" />
     <Compile Include="Libraries\Command\DungeonBCommand.cs" />
     <Compile Include="Libraries\Command\MainMenuCommand.cs" />
