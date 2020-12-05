@@ -2,9 +2,7 @@
 using SuperMetroidvania5Million.Libraries.SFactory;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using SuperMetroidvania5Million.Libraries.Audio;
 
 namespace SuperMetroidvania5Million.Libraries.GameStates
 {
@@ -49,7 +47,9 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
             {
                 button.Draw(spriteBatch);
             }
-            
+            SpriteFont font = MenuSpriteFactory.Instance.LargeDefaultFont;
+            spriteBatch.DrawString(font, "You Win!", new Vector2(200, 150), Color.Blue);
+
         }
 
         public override void Update(GameTime gameTime)
