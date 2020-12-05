@@ -15,6 +15,7 @@ namespace SuperMetroidvania5Million
     {
         public KeyboardController Keyboard { get; private set; }
         public Camera Camera { get; set; }
+        public Vector2 StartingCameraPos;
 
         public bool endlessMode;
 
@@ -81,9 +82,9 @@ namespace SuperMetroidvania5Million
             Camera.Update(gameTime);
 
             if (GameStateMachine.Instance.IsPlaying() && Camera.isHorizontalCamera) {
-                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X - 144, (int)Camera.CameraPosition.Y, 1600, 2000); 
+                graphics.GraphicsDevice.Viewport = new Viewport((int)(-Camera.CameraPosition.X - StartingCameraPos.X + 208), (int)Camera.CameraPosition.Y, 1600, 2000);  // Offset 208
             } else if ((GameStateMachine.Instance.IsPlaying() && !Camera.isHorizontalCamera)) {
-                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, -(int)Camera.CameraPosition.Y - GameObjectContainer.Instance.Player.getPlayerLocation().Y, 1600, 2000); ; // Offset 126
+                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)(-Camera.CameraPosition.Y - StartingCameraPos.Y - 32), 1600, 2000); ; // Offset 32
             } else {
                 graphics.GraphicsDevice.Viewport = new Viewport(0, 0, 800, 480);
             }
@@ -149,10 +150,12 @@ namespace SuperMetroidvania5Million
             if (isHorizontal)
             {
                 Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
-
-            } else
+                StartingCameraPos = new Vector2((int)(GameObjectContainer.Instance.Player.GetPlayerLocation().X), 0);
+            }
+            else
             {
                 Camera = new VerticalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
+                StartingCameraPos = new Vector2(0, (int)(GameObjectContainer.Instance.Player.GetPlayerLocation().Y)+200);
             }
             Camera.Focus = GameObjectContainer.Instance.Player;
             Camera.isHorizontalCamera = isHorizontal;
