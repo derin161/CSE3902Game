@@ -80,6 +80,7 @@
     <Compile Include="Libraries\Command\AudioCommands\UnShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\ShuffleThemesCommand.cs" />
     <Compile Include="Libraries\Command\AudioCommands\PlayNextThemeCommand.cs" />
+    <Compile Include="Libraries\Command\ProjectileDamageDoorBlockCommand.cs" />
     <Compile Include="Libraries\Command\CycleLevelCommand.cs" />
     <Compile Include="Libraries\Command\EnableCommandCommand.cs" />
     <Compile Include="Libraries\Command\DungeonBCommand.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Libraries\CSV\Object Generators\SwitchObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\EnemyObjectGenerator.cs" />
     <Compile Include="Libraries\CSV\Object Generators\ItemObjectGenerator.cs" />
+    <Compile Include="Libraries\GameObjects\Blocks\IDoorOpenBlock .cs" />
     <Compile Include="Libraries\GameObjects\Items\Game Objects\HiddenPuzzles.cs" />
     <Compile Include="Libraries\GameObjects\Player\PlayerHUD.cs" />
     <Compile Include="Libraries\GameObjects\Player\EnergyTankSprite.cs" />
