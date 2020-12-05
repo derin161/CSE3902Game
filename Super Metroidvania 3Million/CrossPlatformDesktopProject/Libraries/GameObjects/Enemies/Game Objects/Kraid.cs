@@ -33,7 +33,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.EnemySprites
             stateMachine = new EnemyStateMachine(location);
             horizSpeed = EnemyUtilities.KraidInitialHorizSpeed;
             vertSpeed = EnemyUtilities.KraidInitialVertSpeed;
-            health = EnemyUtilities.EnemyHealth;
+            health = EnemyUtilities.KraidHealth;
             damaged = false;
             this.game = game;
             killCommand = new SetMenuStateCommand(new GameWinMenuState(game));

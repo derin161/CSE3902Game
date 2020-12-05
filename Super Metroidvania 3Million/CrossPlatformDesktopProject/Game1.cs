@@ -15,6 +15,7 @@ namespace SuperMetroidvania5Million
     {
         public KeyboardController Keyboard { get; private set; }
         public Camera Camera { get; set; }
+
         public bool endlessMode;
 
         private GraphicsDeviceManager graphics;
@@ -31,6 +32,7 @@ namespace SuperMetroidvania5Million
             currentLevel = LevelStatePattern.Instance;
             graphics.IsFullScreen = false;
             endlessLevel = new EndlessLevel(this);
+
             //graphics.PreferredBackBufferWidth = 1920;
             //graphics.PreferredBackBufferHeight = 1080;
 
@@ -57,17 +59,13 @@ namespace SuperMetroidvania5Million
 
             Vector2 playerSpawnLocation = new Vector2(368, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
-            Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
-            Camera.Focus = GameObjectContainer.Instance.Player;
-            //Camera.CameraPosition = new Vector2(Camera.Focus.SpaceRectangle().X - Camera.Viewport.Width / Camera.Zoom / 2, Camera.CameraPosition.Y);
-            Camera.CameraPosition = new Vector2(0, 0);
+            SetCamera(true); // Horizontal camera
             SoundManager.Instance.LoadAllSounds(Content);
             SoundManager.Instance.Songs.PlayBrinstarTheme();
 
             Keyboard = new KeyboardController(this);
             GameStateMachine.Instance.RegisterGame(this);
             GameStateMachine.Instance.MenuState(new StartMenuState(this));
-            currentLevel.Initialize(playerSpawnLocation, this);
         }
 
         protected override void UnloadContent()
@@ -81,9 +79,11 @@ namespace SuperMetroidvania5Million
             Keyboard.Update(gameTime);
             SoundManager.Instance.Update(gameTime);
             Camera.Update(gameTime);
-            
-            if (GameStateMachine.Instance.IsPlaying()) {
-                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)Camera.CameraPosition.Y, 1600, 1600);
+
+            if (GameStateMachine.Instance.IsPlaying() && Camera.isHorizontalCamera) {
+                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X - 144, (int)Camera.CameraPosition.Y, 1600, 1600); 
+            } else if ((GameStateMachine.Instance.IsPlaying() && !Camera.isHorizontalCamera)) {
+                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, -(int)Camera.CameraPosition.Y - 126, 1600, 1600); // Offset
             } else {
                 graphics.GraphicsDevice.Viewport = new Viewport(0, 0, 800, 480);
             }
@@ -124,11 +124,10 @@ namespace SuperMetroidvania5Million
 
             Vector2 playerSpawnLocation = new Vector2(368, 352);
             GameObjectContainer.Instance.RegisterPlayer(PlayerSpriteFactory.Instance.CreatePlayerSprite(playerSpawnLocation, this, gameTime));
-            Camera.Focus = GameObjectContainer.Instance.Player;
+            SetCamera(true);
             Keyboard = new KeyboardController(this);
             GameStateMachine.Instance.RegisterGame(this);
-            GameStateMachine.Instance.Play();
-            currentLevel.Initialize(playerSpawnLocation, this);
+            GameStateMachine.Instance.MenuState(new StartMenuState(this));
         }
 
         public void Fullscreen()
@@ -145,17 +144,34 @@ namespace SuperMetroidvania5Million
         {
             return Camera;
         }
+        public void SetCamera(bool isHorizontal)
+        {
+            if (isHorizontal)
+            {
+                Camera = new HorizontalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
+
+            } else
+            {
+                Camera = new VerticalCamera(graphics.GraphicsDevice.Viewport) { Zoom = 2f };
+            }
+            Camera.Focus = GameObjectContainer.Instance.Player;
+            Camera.isHorizontalCamera = isHorizontal;
+
+        }
         public void EnterSecretRoom()
         {
-            SoundManager.Instance.Songs.PlaySecretAreaTheme();
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlaySecretAreaTheme();           
         }
         public void EnterBrinstarRoom()
         {
-            SoundManager.Instance.Songs.PlayBrinstarTheme();
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlayBrinstarTheme();
         }
         public void EnterBossRoom()
         {
-            SoundManager.Instance.Songs.PlayRidleysHidoutTheme();
+            if (!SongManager.Instance.LoopMode)
+                SongManager.Instance.PlayRidleysHidoutTheme();
         }
     }
 }

@@ -4,7 +4,7 @@
     public class EnemyUtilities
     {
         //General enemy magic numbers
-        public static int EnemyDamage = 25;
+        public static int EnemyDamage = 3;
         public static int OffScreenLeft = 0;
         public static int OffScreenRight = 800;
         public static int EnemyHealth = 100;
@@ -25,6 +25,7 @@
         //Kraid and KraidSprite magic numbers
         public static int KraidInitialVertSpeed = 0;
         public static int KraidInitialHorizSpeed = 1;
+        public static int KraidHealth = 1000;
         public static int KraidDistanceBuffer = 72;
         public static int KraidHeight = 64;
         public static int KraidWidth = 48;

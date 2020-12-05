@@ -2,21 +2,24 @@
 
 namespace SuperMetroidvania5Million.Libraries.CSV
 {
-    //Author: Tristan Roman
-    public class StartingLevel : IStageState
+    //Author: Tristan Roman, Danny Attia
+    class KraidDungeonB1 : IStageState
     {
-        public StartingLevel()
+        public KraidDungeonB1()
         {
-
+            
         }
 
         public void LeftDoor(Game1 game)
         {
-            // Do nothing - door does not exist
+            LoadCsv.Instance.Load("KraidDungeon1.csv", new Vector2(672, 192), game);
+            LevelStatePattern.Instance.state = new KraidDungeon1();
         }
         public void RightDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("LevelOne.csv", new Vector2(64, 192), game);
+            LoadCsv.Instance.Load("KraidDungeon2.csv", new Vector2(64, 192), game);
+            LevelStatePattern.Instance.state = new KraidDungeon2();
+            game.EnterBrinstarRoom();
         }
         public void TopLeftDoor(Game1 game)
         {
@@ -34,6 +37,5 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         {
             // Do nothing - door does not exist
         }
-
     }
 }

@@ -12,12 +12,12 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         private Vector2 currentPos;
         private Vector2 originalPos;
         private Vector2 destinationPos;
+        private bool isHorizontal;
         private float lerpProgress;
 
         protected Camera(Viewport viewport)
         {
             Viewport = viewport;
-            //DampingDistance = 64;
         }
 
         public Vector2 CameraCenter => new Vector2(currentPos.X + Viewport.Width / 2 - 16, currentPos.Y + focusVector.Y + Viewport.Height / (Zoom * 2));
@@ -30,7 +30,6 @@ namespace SuperMetroidvania5Million.Libraries.Camera
         public Viewport Viewport { get; set; }
         public bool Transitioning { get; set; }
         public float Zoom { get; set; }
-        protected float DampingDistance { get; }
         public IGameObject Focus { get; set; }
 
         public Vector2 CameraPosition
@@ -56,6 +55,19 @@ namespace SuperMetroidvania5Million.Libraries.Camera
             set
             {
                 focusVector = value;
+            }
+        }
+
+        public bool isHorizontalCamera
+        {
+            get
+            {
+                return isHorizontal;
+            }
+
+            set
+            {
+                isHorizontal = value;
             }
         }
 

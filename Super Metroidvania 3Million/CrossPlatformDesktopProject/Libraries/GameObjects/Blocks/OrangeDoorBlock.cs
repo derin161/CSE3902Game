@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Blocks
 {
-    class OrangeDoorBlock : IBlock
+    class OrangeDoorBlock : IDoorOpenBlock
     {
         public Vector2 Location { get; set; }
         public Rectangle Space { get; set; }

@@ -17,15 +17,37 @@ namespace SuperMetroidvania5Million.Libraries.Collision
         public void HandleCollision(IPlayer player, IBlock block, Rectangle collisionZone)
         {
             Samus sam = ((Samus)player);
-            if (block is IDoorBlock) //&& ((IDoorBlock)block).isOpen())
+            if ((block is IDoorOpenBlock))
             {
                 if (collisionZone.X >= 240)
                 {
-                    LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.right);
+                    if (collisionZone.Y < 400)
+                    {
+                        LevelStatePattern.Instance.TopRightDoor();
+                    }
+                    else if (collisionZone.Y < 800)
+                    {
+                        LevelStatePattern.Instance.RightDoor();
+                    }
+                    else
+                    {
+                        LevelStatePattern.Instance.BottomRightDoor();
+                    }
                 }
                 else
                 {
-                    LevelStatePattern.Instance.SwitchLevel(LevelStatePattern.Door.left);
+                    if (collisionZone.Y < 400)
+                    {
+                        LevelStatePattern.Instance.TopLeftDoor();
+                    }
+                    else if (collisionZone.Y < 800)
+                    {
+                        LevelStatePattern.Instance.LeftDoor();
+                    }
+                    else
+                    {
+                        LevelStatePattern.Instance.BottomLeftDoor();
+                    }
                 }
             }
             else if (block is LavaBlockTop)
