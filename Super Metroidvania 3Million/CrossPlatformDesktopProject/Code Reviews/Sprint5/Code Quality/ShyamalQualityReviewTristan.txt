@@ -1,0 +1,23 @@
+Review Author: Shyamal
+Review Date: 12/4/2020
+Sprint No: 5
+Name of the .cs file being reviewed: KraidDungeon8.cs
+Author of the .cs file being reviewed: Tristan Roman
+Number of minutes taken to complete the review: ##
+
+============================================================
+
+Coupling: Low
+Comments: Does not overly depend on any other class
+
+Cohesion: High
+Comments: ____
+
+Maintainability: Good
+Comments: ____
+
+List any "code smells":
+1) Pretty Short, and Simple
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+_____

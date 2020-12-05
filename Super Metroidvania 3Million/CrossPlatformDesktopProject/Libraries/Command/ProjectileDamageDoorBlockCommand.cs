@@ -74,7 +74,7 @@ namespace SuperMetroidvania5Million.Libraries.Command
                 middle.Kill();
                 top.Kill();
             }
-            else if (block is RedDoorBottomRightBlock || block is RedDoorMiddleRightBlock || block is RedDoorTopRightBlock)
+            else if ((block is RedDoorBottomRightBlock || block is RedDoorMiddleRightBlock || block is RedDoorTopRightBlock) && (projectile is MissileRocket || projectile is MissileRocketExplosion))
             {
                 IBlock bottom = block;
                 IBlock middle = block;
@@ -101,7 +101,7 @@ namespace SuperMetroidvania5Million.Libraries.Command
                 middle.Kill();
                 top.Kill();
             }
-            else if (block is RedDoorBottomLeftBlock || block is RedDoorMiddleLeftBlock || block is RedDoorTopLeftBlock)
+            else if ((block is RedDoorBottomLeftBlock || block is RedDoorMiddleLeftBlock || block is RedDoorTopLeftBlock) && (projectile is MissileRocket || projectile is MissileRocketExplosion))
             {
                 IBlock bottom = block;
                 IBlock middle = block;
