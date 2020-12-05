@@ -67,7 +67,14 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 
         public void Attack()
         {
-            State.Attack();
+            if ((!morph && Inventory.CurrentMissileRocketCount > 0)){
+                State.Attack();
+                Inventory.useRocket();
+            }else if ((!morph && missile > 0)){
+                State.Attack();
+            }else if (morph){
+                State.Attack();
+            }
         }
         public void CycleBeamMissile()
         {
