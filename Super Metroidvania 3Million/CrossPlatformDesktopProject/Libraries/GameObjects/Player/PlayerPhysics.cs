@@ -65,7 +65,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         }
 
         public void setHighJump(){
-            jumpSpeed = -8f;
+            jumpSpeed = -8.765f;
         }
 
 
