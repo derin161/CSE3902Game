@@ -48,7 +48,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
                 button.Draw(spriteBatch);
             }
             SpriteFont font = MenuSpriteFactory.Instance.LargeDefaultFont;
-            spriteBatch.DrawString(font, "You Lose!", new Vector2(200, 150), Color.Blue);
+            spriteBatch.DrawString(font, "You Win!", new Vector2(200, 150), Color.Blue);
 
         }
 
