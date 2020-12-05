@@ -27,6 +27,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void CycleBeamMissile();
         public void Idle();
         public void UpdateLocation(Vector2 l);
+        public Vector2 GetPlayerLocation();
         public Rectangle SpriteRectangle();
 
     }
