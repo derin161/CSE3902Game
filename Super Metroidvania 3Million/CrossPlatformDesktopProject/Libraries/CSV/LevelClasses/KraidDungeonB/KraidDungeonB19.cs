@@ -25,7 +25,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         }
         public void TopRightDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("KraidDungeonB12.csv", new Vector2(64, 224), game);
+            LoadCsv.Instance.Load("KraidDungeonB12.csv", new Vector2(64, 1200), game);
             LevelStatePattern.Instance.state = new KraidDungeonB12();
             game.SetCamera(false);
         }
