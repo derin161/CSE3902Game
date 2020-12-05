@@ -8,7 +8,7 @@ OrangeDoorBlock,BlueDoorMiddleRight,,__,__,__,,__,,__,__,__,__,,,StockBlockBlue
 OrangeDoorBlock,BlueDoorBottomRight,,__,__,__,__,__,__,__,__,__,__,,,StockBlockBlue
 StockBlockBlue,TubeBlockBlue,TubeBlockBlue,StockBlockBlue,__,__,__,__,__,__,__,__,__,,,StockBlockBlue
 StockBlockBlue,__,__,__,__,__,__,__,__,__,__,__,__,__,__,StockBlockBlue
-StockBlockBlue,__,__,__,__,__,__,__,__,MorphballItem,__,,BombItem,__,__,StockBlockBlue
+StockBlockBlue,__,__,__,__,__,__,__,__,MorphBallItem,__,,BombItem,__,__,StockBlockBlue
 StockBlockBlue,__,__,__,__,__,__,__,__,VerticalTubeStoneBlock,,__,VerticalTubeStoneBlock,,__,StockBlockBlue
 StockBlockBlue,__,__,__,__,__,__,__,__,VerticalTubeStoneBlock,__,__,VerticalTubeStoneBlock,__,__,StockBlockBlue
 StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue
