@@ -14,6 +14,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
 
         public InGameMenuState(Game1 game)
         {
+
             int menuXPos = 0;
             int menuYPos = 0;
             int menuWidth = 200;
@@ -41,8 +42,8 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
 
             buttonYPos += buttonHeight * 2;
             buttonRectangle = new Rectangle(buttonXPos, buttonYPos, buttonWidth, buttonHeight);
-            buttonCommand = new QuitCommand(game);
-            ButtonList.Add(new SimpleMenuButton("QUIT", buttonRectangle, buttonCommand));
+            buttonCommand = new SetMenuStateCommand(new StartMenuState(game));
+            ButtonList.Add(new SimpleMenuButton("MAIN MENU", buttonRectangle, buttonCommand));
 
             ButtonList[0].IsSelected = true;
 
