@@ -27,7 +27,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
             this.game = game;
 
             menuBackground = MenuSpriteFactory.Instance.CreateSimpleBackgroundSprite(new Rectangle(0, 0, game.Window.ClientBounds.Width, game.Window.ClientBounds.Height));
-            game.EnterTheMainMenu();
+            //game.EnterTheMainMenu();
 
             buttonXPos = game.Window.ClientBounds.Size.X / 2 - buttonWidth / 2;
             exitCommand = new QuitCommand(game);
