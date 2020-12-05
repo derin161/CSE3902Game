@@ -1,0 +1,24 @@
+﻿Review Author: Nyigel Spann
+Review Date: 12/4/2020
+Sprint No: 5
+Name of the .cs file being reviewed: Samus.cs
+Author of the .cs file being reviewed: Shyamal Shah
+Number of minutes taken to complete the review: 10
+
+============================================================
+
+Coupling: Medium
+Comments: Has a lot of public properties being set elsewhere.
+
+Cohesion: Low
+Comments: The player seems to have a lot of info about the states such as offset values. This class is responsible for all of the different upgrade functionality.
+
+Maintainability: Low-Medium
+Comments: Lots and lots of magic numbers, low cohesion, and a lot of additional public methods apart from the interface being implemented will make it hard to maintain this class.
+
+List any "code smells":
+1) Many variables seem to represent similar concepts
+2) A lot of booleans and checks that probably could be factored away elsewhere
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+Adding Co-op or another player variant would be very difficult with all of the additional methods and properties in the Samus class compared to the IPlayer interface.
