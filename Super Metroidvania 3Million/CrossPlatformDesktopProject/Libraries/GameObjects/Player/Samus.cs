@@ -126,6 +126,9 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         }
         public void TakeDamage(int damage)
         {
+            if (Inventory.HasHiddenPuzzles){
+                setGodMode();
+            }
             if (!godMode && !invincible)
             {
                 Inventory.Damage(damage, this);
@@ -181,6 +184,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public Rectangle SpriteRectangle()
         {
             return space;
+        }
+
+        public Vector2 GetPlayerLocation(){
+            return new Vector2(x, y);
         }
 
         public void UpdateLocation(Vector2 l)
