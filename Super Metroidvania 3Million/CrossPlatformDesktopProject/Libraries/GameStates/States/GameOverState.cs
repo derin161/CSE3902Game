@@ -33,7 +33,7 @@ namespace SuperMetroidvania5Million.Libraries.GameStates
 
              generateStartMenu();
 
-             ButtonList[0].IsSelected = true;*
+             ButtonList[0].IsSelected = true;
 
         }
 
