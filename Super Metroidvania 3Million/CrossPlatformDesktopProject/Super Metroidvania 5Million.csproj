@@ -85,7 +85,6 @@
     <Compile Include="Libraries\Command\PlayCommand.cs" />
     <Compile Include="Libraries\Command\EnableCommandCommand.cs" />
     <Compile Include="Libraries\Command\DungeonBCommand.cs" />
-    <Compile Include="Libraries\Command\MainMenuCommand.cs" />
     <Compile Include="Libraries\Command\IDisableableCommand.cs" />
     <Compile Include="Libraries\Command\EnemyFreezeCommand.cs" />
     <Compile Include="Libraries\Command\GameStateCommands\MenuStateCommands\SetMenuStateCommand.cs" />
