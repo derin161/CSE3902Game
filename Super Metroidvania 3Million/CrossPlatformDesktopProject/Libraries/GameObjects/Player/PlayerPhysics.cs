@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
+    //Author: Nyigel Spann & Shyama; Shah
     public class PlayerPhysics
     {
         private Vector2 acceleration = new Vector2(0, 0.3f);
