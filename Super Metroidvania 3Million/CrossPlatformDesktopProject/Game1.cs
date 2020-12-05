@@ -66,7 +66,6 @@ namespace SuperMetroidvania5Million
             Keyboard = new KeyboardController(this);
             GameStateMachine.Instance.RegisterGame(this);
             GameStateMachine.Instance.MenuState(new StartMenuState(this));
-            currentLevel.Initialize(this);
         }
 
         protected override void UnloadContent()
@@ -82,7 +81,7 @@ namespace SuperMetroidvania5Million
             Camera.Update(gameTime);
 
             if (GameStateMachine.Instance.IsPlaying() && Camera.isHorizontalCamera) {
-                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, (int)Camera.CameraPosition.Y, 1600, 1600); 
+                graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X - 144, (int)Camera.CameraPosition.Y, 1600, 1600); 
             } else if ((GameStateMachine.Instance.IsPlaying() && !Camera.isHorizontalCamera)) {
                 graphics.GraphicsDevice.Viewport = new Viewport(-(int)Camera.CameraPosition.X, -(int)Camera.CameraPosition.Y - 126, 1600, 1600); // Offset
             } else {
@@ -128,8 +127,7 @@ namespace SuperMetroidvania5Million
             SetCamera(true);
             Keyboard = new KeyboardController(this);
             GameStateMachine.Instance.RegisterGame(this);
-            GameStateMachine.Instance.Play();
-            currentLevel.Initialize(this);
+            GameStateMachine.Instance.MenuState(new StartMenuState(this));
         }
 
         public void Fullscreen()

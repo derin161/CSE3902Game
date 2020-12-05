@@ -12,21 +12,21 @@ namespace SuperMetroidvania5Million.Libraries.CSV
 
         public void LeftDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("KraidDungeon2.csv", new Vector2(300, 192), game);
-            LevelStatePattern.Instance.state = new KraidDungeon2();
+            // Do nothing - door does not exist
         }
         public void RightDoor(Game1 game)
         {
-            LoadCsv.Instance.Load("KraidDungeon4.csv", new Vector2(64, 224), game);
-            LevelStatePattern.Instance.state = new KraidDungeon4();
+            // Do nothing - door does not exist
         }
         public void TopLeftDoor(Game1 game)
         {
-            // Do nothing - door does not exist
+            LoadCsv.Instance.Load("KraidDungeon2.csv", new Vector2(300, 192), game);
+            LevelStatePattern.Instance.state = new KraidDungeon2();
         }
         public void TopRightDoor(Game1 game)
         {
-            // Do nothing - door does not exist
+            LoadCsv.Instance.Load("KraidDungeon4.csv", new Vector2(64, 224), game);
+            LevelStatePattern.Instance.state = new KraidDungeon4();
         }
         public void BottomLeftDoor(Game1 game)
         {

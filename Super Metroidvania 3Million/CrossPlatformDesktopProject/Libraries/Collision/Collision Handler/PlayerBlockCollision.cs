@@ -21,11 +21,33 @@ namespace SuperMetroidvania5Million.Libraries.Collision
             {
                 if (collisionZone.X >= 240)
                 {
-                    LevelStatePattern.Instance.RightDoor();
+                    if (collisionZone.Y < 400)
+                    {
+                        LevelStatePattern.Instance.TopRightDoor();
+                    }
+                    else if (collisionZone.Y < 800)
+                    {
+                        LevelStatePattern.Instance.RightDoor();
+                    }
+                    else
+                    {
+                        LevelStatePattern.Instance.BottomRightDoor();
+                    }
                 }
                 else
                 {
-                    LevelStatePattern.Instance.LeftDoor();
+                    if (collisionZone.Y < 400)
+                    {
+                        LevelStatePattern.Instance.TopLeftDoor();
+                    }
+                    else if (collisionZone.Y < 800)
+                    {
+                        LevelStatePattern.Instance.LeftDoor();
+                    }
+                    else
+                    {
+                        LevelStatePattern.Instance.BottomLeftDoor();
+                    }
                 }
             }
             else if (block is LavaBlockTop)
