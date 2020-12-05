@@ -4,13 +4,13 @@
     "\\Super Metroidvania 3Million",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command\\GameStateCommands",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\Command\\GameStateCommands\\MenuStateCommands",
     "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Enemies",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Enemies\\Game Objects",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates\\States",
-    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates\\States\\MenuStates"
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameObjects\\Player",
+    "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates"
   ],
-  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Game1.cs",
+  "SelectedNode": "\\Super Metroidvania 3Million\\CrossPlatformDesktopProject\\Libraries\\GameStates\\GameStateMachine.cs",
   "PreviewInSolutionExplorer": false
 }

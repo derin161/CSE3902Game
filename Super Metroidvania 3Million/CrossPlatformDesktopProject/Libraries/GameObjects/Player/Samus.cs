@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMetroidvania5Million.Libraries.GameObjects.Player;
 using SuperMetroidvania5Million.Libraries.Command;
+using SuperMetroidvania5Million.Libraries.GameStates;
 
 namespace SuperMetroidvania5Million.Libraries.Sprite.Player
 {
@@ -14,6 +15,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         private Rectangle playerHitBox;
         private Game1 game;
         private bool isDead;
+        private bool godMode;
         public int missile;
         public GameTime gameTime;
         public PlayerPhysics Physics { get; private set; }
@@ -59,12 +61,20 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
             State = new RightIdleSamusState(this);
             Jumping = false;
             HUD = new PlayerHUD(this);
-            gameOverCommand = new GameOverCommand();
+            gameOverCommand = new SetMenuStateCommand(new GameOverState(g));
+            godMode = false;
         }
 
         public void Attack()
         {
-            State.Attack();
+            if ((!morph && Inventory.CurrentMissileRocketCount > 0)){
+                State.Attack();
+                Inventory.useRocket();
+            }else if ((!morph && missile > 0)){
+                State.Attack();
+            }else if (morph){
+                State.Attack();
+            }
         }
         public void CycleBeamMissile()
         {
@@ -109,7 +119,7 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public void TakeDamage(int damage)
         {
             //SoundManager.Instance.Player.PlayerDamageSound.PlaySound();
-            if (!invincible)
+            if (!godMode && !invincible)
             {
                 Inventory.Damage(damage, this);
                 State = new DamagedPlayerStateDecorator(State, Color.Red);
@@ -210,6 +220,10 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         public bool getMorph()
         {
             return morph;
+        }
+
+        public void setGodMode(){
+            godMode = true;
         }
 
     }

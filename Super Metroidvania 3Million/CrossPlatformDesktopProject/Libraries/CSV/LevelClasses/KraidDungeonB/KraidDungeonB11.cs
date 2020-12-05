@@ -3,9 +3,9 @@
 namespace SuperMetroidvania5Million.Libraries.CSV
 {
     //Author: Tristan Roman, Danny Attia
-    class KraidDungeonB1 : IStageState
+    class KraidDungeonB11 : IStageState
     {
-        public KraidDungeonB1()
+        public KraidDungeonB11()
         {
             
         }

@@ -127,16 +127,34 @@
     <Compile Include="Libraries\Container\InfoContainer\MiscUtilities.cs" />
     <Compile Include="Libraries\Container\InfoContainer\InfoContainer.cs" />
     <Compile Include="Libraries\Controller\KeyboardController.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB1.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon1.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon2.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon3.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon4.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon5.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon6.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon7.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeon8.cs" />
-    <Compile Include="Libraries\CSV\LevelClasses\EndlessLevel.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB19.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB18.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB17.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB16.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB15.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB14.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB13.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB12.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB11.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB10.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB9.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB8.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB7.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB6.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB5.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB4.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB3.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB2.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonB\KraidDungeonB1.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon1.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon2.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon3.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon4.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon5.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon6.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon7.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\KraidDungeonA\KraidDungeon8.cs" />
+    <Compile Include="Libraries\CSV\LevelClasses\EndlessLevel\EndlessLevel.cs" />
     <Compile Include="Libraries\CSV\LevelStatePattern.cs" />
     <Compile Include="Libraries\CSV\IStageState.cs" />
     <Compile Include="Libraries\CSV\Object Generators\SwitchObjectGenerator.cs" />
@@ -372,6 +390,21 @@
     <None Include="Libraries\Levels\KraidDungeon.csv" />
     <None Include="Libraries\Levels\KraidDungeon1.csv" />
     <None Include="Libraries\Levels\KraidDungeonB1.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB10.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB11.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB12.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB13.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB14.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB15.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB16.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB17.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB18.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB19.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB2.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB3.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB4.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB5.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB6.csv" />
     <None Include="Libraries\Levels\KraidDungeon2.csv" />
     <None Include="Libraries\Levels\KraidDungeon3.csv" />
     <None Include="Libraries\Levels\KraidDungeon4.csv" />
@@ -379,6 +412,9 @@
     <None Include="Libraries\Levels\KraidDungeon6.csv" />
     <None Include="Libraries\Levels\KraidDungeon7.csv" />
     <None Include="Libraries\Levels\KraidDungeon8.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB7.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB8.csv" />
+    <None Include="Libraries\Levels\KraidDungeonB9.csv" />
     <None Include="Libraries\Levels\KraidDungeonSample.csv" />
     <None Include="Libraries\Levels\LevelOne - Copy.csv" />
     <None Include="Libraries\Levels\LevelOne.csv" />
@@ -418,10 +454,14 @@
     <Content Include="Code Reviews\Sprint4\Code Readability\NyigelReadabilityReviewShyamal.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\TristanReadabilityReviewAlex.txt" />
     <Content Include="Code Reviews\Sprint4\Code Readability\WillReadabilityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Quality\AlexQualityReviewWillSprint5.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Quality\DannyQualityReviewNyigel.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Quality\WillQualityReviewDanny.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Readability\AlexReadabilityReviewWillSprint5.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Readability\DannyReadabilityReviewNyigel.txt" />
+    <Content Include="Code Reviews\Sprint5\Code Readability\WillReadabilityReviewDanny.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code Reviews\Sprint5\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

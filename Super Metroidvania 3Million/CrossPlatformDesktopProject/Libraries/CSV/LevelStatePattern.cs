@@ -22,7 +22,24 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         private static KraidDungeon8 kraidDungeon8 = new KraidDungeon8();
 
         private static KraidDungeonB1 kraidDungeonB1 = new KraidDungeonB1();
-
+        private static KraidDungeonB2 kraidDungeonB2 = new KraidDungeonB2();
+        private static KraidDungeonB3 kraidDungeonB3 = new KraidDungeonB3();
+        private static KraidDungeonB4 kraidDungeonB4 = new KraidDungeonB4();
+        private static KraidDungeonB5 kraidDungeonB5 = new KraidDungeonB5();
+        private static KraidDungeonB6 kraidDungeonB6 = new KraidDungeonB6();
+        private static KraidDungeonB7 kraidDungeonB7 = new KraidDungeonB7();
+        private static KraidDungeonB8 kraidDungeonB8 = new KraidDungeonB8();
+        private static KraidDungeonB9 kraidDungeonB9 = new KraidDungeonB9();
+        private static KraidDungeonB10 kraidDungeonB10 = new KraidDungeonB10();
+        private static KraidDungeonB11 kraidDungeonB11 = new KraidDungeonB11();
+        private static KraidDungeonB12 kraidDungeonB12 = new KraidDungeonB12();
+        private static KraidDungeonB13 kraidDungeonB13 = new KraidDungeonB13();
+        private static KraidDungeonB14 kraidDungeonB14 = new KraidDungeonB14();
+        private static KraidDungeonB15 kraidDungeonB15 = new KraidDungeonB15();
+        private static KraidDungeonB16 kraidDungeonB16 = new KraidDungeonB16();
+        private static KraidDungeonB17 kraidDungeonB17 = new KraidDungeonB17();
+        private static KraidDungeonB18 kraidDungeonB18 = new KraidDungeonB18();
+        private static KraidDungeonB19 kraidDungeonB19 = new KraidDungeonB19();
 
 
         public enum Door { left, right };
@@ -53,7 +70,7 @@ namespace SuperMetroidvania5Million.Libraries.CSV
         public void InitializeB(Game1 game)
         {
             this.game = game;
-            LoadCsv.Instance.Load("KraidDungeonB1.csv", new Vector2(64, 200), game);
+            LoadCsv.Instance.Load("KraidDungeonB3.csv", new Vector2(368, 354), game);
             game.SetCamera(false);
         }
 
