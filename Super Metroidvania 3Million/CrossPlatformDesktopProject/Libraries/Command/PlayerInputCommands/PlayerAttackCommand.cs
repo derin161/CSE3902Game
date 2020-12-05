@@ -20,7 +20,7 @@ namespace SuperMetroidvania5Million.Libraries.Command
         {
             if (!Disabled)
             {
-                SoundManager.Instance.Projectiles.PowerBeamFireSound.PlaySound();
+                
                 player.Attack();
                 Disabled = true;
             }
