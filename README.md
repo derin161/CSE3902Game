@@ -8,6 +8,16 @@ This program is a clone of the original *Metroid NES* first mini-boss hideout. T
 ___
 **PROGRAM CONTROLS**
 
+MENU CONTROLS
+* UpArrow, W : Move up to the previous button.
+* RightArrow, D : Next option on setting button.
+* LeftArrow, A : Previous option on setting button.
+* DownArrow, S : Move down to the next button.
+* ENTER : Select the active button.
+* ESCAPE : Back to previous menu/resume gameplay.
+
+
+IN-GAME CONTROLS
 * UpArrow, W : Player jump.
 * RightArrow, D : Player face and move right.
 * LeftArrow, A : Player face and move left.
@@ -15,14 +25,9 @@ ___
 * Z, N : Player shoots the currently active beam missile weapon or drops bombs if in morph form.
 * Space : Player jump.
 * C : Cycle currently active beam weapon.
-* Q : Quit.
-* R : Reset the program to initial state.
 * T : Cycle current level being loaded.
-* F : Toggle fullscreen.
-* K : Play next music theme.
-* L : Shuffle music themes.
-* O : Unshuffle music themes.
 * P : Pause/Unpause.
+* ESCAPE : Pause and open in-game menu.
 ___
 **PLAYER UPGRADES**
 
@@ -37,24 +42,14 @@ ___
  * Missile Rocket : This stores the missiles. If you capture one, you get 5 more missiles. Collect missiles from defeated enemies. You can store a maximum of 255.
 
 ___
-**PLANNED CHANGES**
-
-* Currently, the player does not "die" when health drops below 0. Will add a gameover sequence.
-* Need to implement some of the player upgrades, such as the Varia suit (reducing incoming damage), the hi-jump boots (1.5 jump height), the energy and missile tanks (increasing energy and missile capacity), and the energy shields.
-* Resize some sprites for better balance/collision handling.
-*Tweak HUD. Make it travel with the camera.
-*Add Item Functionality
-*Player Upgrades are not implemented
-*Implement Rest of First boss Dungeon
-*Implement Game State Transitions
-*Make doors have health/take damage
+**UNIMPLEMENTED FEATURES**
+* Red doors that can only be opened with missiles.
+* Difficulty settings.
 
 ___
 **KNOWN BUGS**
 
-* Some textures need to be cleaned up.
-* Health gets printed over
-* Some levels don't get printed completely (believe it's a camera visual glitch with the new camera implementation)
+
 
 ___
 **DETAILS ON CURRENT ERRORS/WARNINGS / CODE ANALYSIS**
@@ -72,5 +67,7 @@ ___
 **CREDITS**  
 Developed By: Nyigel Spann, Shyamal Shah, Tristan Roman, Alex Nguyen, Will Wloyd, Danny Attia  
 Spritesheets taken from: https://www.spriters-resource.com/nes/metroid/  
-*Metroid NES* Manual: http://www.digitpress.com/library/manuals/nes/Metroid%20v1.pdf  
+Sound Effects taken from: https://www.sounds-resource.com/nes/metroid/sound/4866/
+*Metroid NES* Manual: http://www.digitpress.com/library/manuals/nes/Metroid%20v1.pdf
+*Sandstorm* by *Darude*
 

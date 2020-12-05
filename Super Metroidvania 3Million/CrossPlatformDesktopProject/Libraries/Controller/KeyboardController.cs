@@ -72,7 +72,7 @@ namespace SuperMetroidvania5Million.Libraries.Controller
         }
 
 
-        public void MakePlayDict()     // If else of possible actions that updates choice
+        public void MakePlayDict()
         {
             IPlayer player = GameObjectContainer.Instance.Player; // The player sprite
 
@@ -102,17 +102,7 @@ namespace SuperMetroidvania5Million.Libraries.Controller
             IDisableableCommand cycleBeamMissile = new CycleBeamMissileCommand(player);
             RegisterCommand(Keys.C, cycleBeamMissile, new EnableCommandCommand(cycleBeamMissile));
 
-            RegisterCommand(Keys.Q, new QuitCommand(game));
-
-            RegisterCommand(Keys.R, new RestartCommand(game));
-
             RegisterCommand(Keys.T, new CycleLevelCommand(game));
-
-            RegisterCommand(Keys.F, new ToggleFullscreenCommand(game));
-
-            RegisterCommand(Keys.K, new PlayNextThemeCommand());
-            RegisterCommand(Keys.L, new ShuffleThemesCommand());
-            RegisterCommand(Keys.O, new UnShuffleThemesCommand());
             RegisterCommand(Keys.P, new PauseGameCommand());
 
             RegisterCommand(Keys.Escape, new SetMenuStateCommand(new InGameMenuState(game)));
