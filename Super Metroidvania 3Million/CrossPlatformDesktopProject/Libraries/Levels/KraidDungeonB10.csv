@@ -8,9 +8,9 @@ OrangeDoorBlock,RedDoorMiddleRightBlock,,,,,VerticalTubeStoneBlock,,,,,VerticalT
 OrangeDoorBlock,RedDoorBottomRightBlock,,,,,StoneBlockWithEyes,,,,,StoneBlockWithEyes,,,,,,,,,,,,,,,,RedDoorBottomLeftBlock,OrangeDoorBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
-BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,StoneBlockWithEyes,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
-BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,SideHopper,,,,,,,,,VerticalTubeStoneBlock,,,SideHopper,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
-BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,VerticalTubeStoneBlock,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
+BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
+BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,SideHopper,,,,,,,,,,,,SideHopper,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
+BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,,,,,,,,,,,,,,,,,,,,,,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,LavaBlockTop,BlueBrickBlock,BlueBrickBlock,RedPipeLeft,RedPipeRight,BlueBrickBlock,BlueBrickBlock,LavaBlockTop,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,LavaBlockTop,BlueBrickBlock,RedPipeLeft,RedPipeRight,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,LavaBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,LavaBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,LavaBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock,BlueBrickBlock
 ,,,,,,,,,,,,Geega,,,,,,,,,,Geega,,,,,,
