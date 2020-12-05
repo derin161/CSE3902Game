@@ -3,8 +3,8 @@ StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,StockBlockBlue,Stock
 StockBlockBlue,__,__,StockBlockBlue,__,__,__,__,__,__,__,StockBlockBlue,__,__,__,__,__,__,__,__,__,__,__,__,StockBlockBlue
 StockBlockBlue,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,StockBlockBlue
 StockBlockBlue,,,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,StockBlockBlue
-OrangeDoorBlock,BlueDoorTopRight,,__,__,__,__,LongBeamItem,__,IceBeamItem,__,MissileRocketItem,__,MorphBallItem,__,RocketDropItem,__,__,__,__,__,,,,StockBlockBlue
-OrangeDoorBlock,BlueDoorMiddleRight,,__,__,__,__,__,ScrewAttackItem,__,VariaItem,__,WaveBeamItem,__,__,__,__,__,__,__,__,,,,StockBlockBlue
+OrangeDoorBlock,BlueDoorTopRight,,__,__,__,__,LongBeamItem,__,IceBeamItem,__,MissileRocketItem,__,MorphBallItem,__,HiddenPuzzles,__,__,__,__,__,,,,StockBlockBlue
+OrangeDoorBlock,BlueDoorMiddleRight,,__,__,__,__,__,ScrewAttackItem,__,VariaItem,__,WaveBeamItem,__,RocketDropItem,__,__,__,__,__,__,,,,StockBlockBlue
 OrangeDoorBlock,BlueDoorBottomRight,,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,,,,StockBlockBlue
 StockBlockBlue,TubeBlockBlue,TubeBlockBlue,StockBlockBlue,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,,,,StockBlockBlue
 StockBlockBlue,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,StockBlockBlue
