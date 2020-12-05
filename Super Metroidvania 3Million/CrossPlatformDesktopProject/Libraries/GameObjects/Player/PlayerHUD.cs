@@ -14,21 +14,20 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
         private Vector2 healthPosition;
         private Vector2 rocketPosition;
         private float xPos;
-        //private ISprite rocketSprite = ProjectilesSpriteFactory.Instance.CreateMissileRocketSprite();
 
         public PlayerHUD(Samus samus)
         {
             inventory = samus.Inventory;
             this.samus = samus;
-            xPos = samus.x - 10;
-            tanksPosition = new Vector2(xPos, 66.0f);
-            healthPosition = new Vector2(xPos, 80.0f);
-            rocketPosition = new Vector2(xPos, 94.0f);
+            xPos = samus.x - 150;
+            tanksPosition = new Vector2(xPos, 60.0f);
+            healthPosition = new Vector2(xPos, 74.0f);
+            rocketPosition = new Vector2(xPos, 93.0f);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(PlayerSpriteFactory.Instance.HealthFont, "EN -- " + inventory.CurrentEnergyLevel.ToString(), healthPosition, Color.LightSkyBlue);
+            spriteBatch.DrawString(PlayerSpriteFactory.Instance.HUDFont, "EN -- " + inventory.CurrentEnergyLevel.ToString(), healthPosition, Color.LightSkyBlue);
             for (int i = 0; i < inventory.CurrentEnergyTanks; i++)
             { //Draws the energy tank boxes. 
                 Vector2 pos = new Vector2(tanksPosition.X + tankSpacing * i, tanksPosition.Y);
@@ -42,16 +41,15 @@ namespace SuperMetroidvania5Million.Libraries.Sprite.Player
                     PlayerSpriteFactory.Instance.EmptyTankSprite(pos).Draw(spriteBatch);
                 }
             }
-            //Put a rocket symbol next to it in the future.
-            spriteBatch.DrawString(PlayerSpriteFactory.Instance.HealthFont, "Rockets -- " + inventory.CurrentMissileRocketCount.ToString(), rocketPosition, Color.Red);
+            spriteBatch.DrawString(PlayerSpriteFactory.Instance.HUDFont, "Rockets -- " + inventory.CurrentMissileRocketCount.ToString(), rocketPosition, Color.Red);
 
         }
 
         public void Update() {
             xPos = samus.x - 150;
-            tanksPosition = new Vector2(xPos, 66.0f);
-            healthPosition = new Vector2(xPos, 80.0f);
-            rocketPosition = new Vector2(xPos, 94.0f);
+            tanksPosition = new Vector2(xPos, 60.0f);
+            healthPosition = new Vector2(xPos, 74.0f);
+            rocketPosition = new Vector2(xPos, 93.0f);
         }
 
     }

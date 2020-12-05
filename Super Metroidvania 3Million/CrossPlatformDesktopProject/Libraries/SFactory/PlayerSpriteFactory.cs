@@ -21,11 +21,8 @@ namespace SuperMetroidvania5Million.Libraries.SFactory
         private Texture2D rightAim;
         private Texture2D leftAim;
 
-        private Texture2D damaged_rightIdle;
-        private Texture2D damaged_leftIdle;
-        private Texture2D healthBar;
         //Fonts
-        public SpriteFont HealthFont { get; private set; }
+        public SpriteFont HUDFont { get; private set; }
         private Texture2D tankIcon;
 
         private static PlayerSpriteFactory instance = new PlayerSpriteFactory();
@@ -54,15 +51,12 @@ namespace SuperMetroidvania5Million.Libraries.SFactory
             movingMorph = content.Load<Texture2D>("PlayerSprites/MorphDone");
             jumpRight = content.Load<Texture2D>("PlayerSprites/JumpRightSamusSprite");
             jumpLeft = content.Load<Texture2D>("PlayerSprites/JumpLeftSamusSprite");
-            damaged_rightIdle = content.Load<Texture2D>("PlayerSprites/SamusRightIdleDamaged");
-            damaged_leftIdle = content.Load<Texture2D>("PlayerSprites/SamusLeftIdleDamaged");
-            healthBar = content.Load<Texture2D>("HealthBar");
             rightAim = content.Load<Texture2D>("PlayerSprites/SamusRightAim");
             leftAim = content.Load<Texture2D>("PlayerSprites/SamusLeftAim");
             tankIcon = content.Load<Texture2D>("TankIcon");
 
             //Fonts
-            HealthFont = content.Load<SpriteFont>("PlayerHealth");
+            HUDFont = content.Load<SpriteFont>("Fonts/PlayerHUDFont");
         }
 
         public IPlayerSprite RightIdleSprite(Samus s)
