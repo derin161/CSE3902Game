@@ -1,0 +1,23 @@
+Review Author: Tristan Roman
+Review Date: 12/4/2020
+Sprint No: 5
+Name of the .cs file being reviewed: UpgradeItemSprite.cs
+Author of the .cs file being reviewed: Alex Nguyen
+Number of minutes taken to complete the review: 4 mins
+
+============================================================
+
+Coupling: Low
+Comments: Class kept simple, very few parameters outside global variables. Is used outside of the class, doesn't rely on many other classes besides sprite drawing.
+
+Cohesion: High
+Comments: Everything is done within the class, methods are passed few variables making the class very cohesive - additionally, previous classes have been condensed into these classes by a significant factor
+
+Maintainability: Excellent
+Comments: Methods provide flexability for future additions and methods. Very intuitive to update. 
+
+List any "code smells":
+1) Minimal documentation, if necessary (?)
+...
+
+No further suggestions on my part.
